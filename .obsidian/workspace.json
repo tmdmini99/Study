@@ -11,8 +11,13 @@
             "id": "7ed1dbb1dad9b01a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "daily note/2023-12-08.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "daily note/2023-12-08.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "daily note/2023-12-08.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "daily note/2023-12-08.md"
+              }
             }
           },
           {
@@ -164,7 +173,8 @@
   },
   "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "2023-12-08.md",
+    "daily note",
+    "daily note/2023-12-08.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/수도 코드/수도코드.md",
     "Spaces/Home/Java/상속/super.md",
