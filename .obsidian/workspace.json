@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c2396fa2668880dd",
+        "id": "f5cda9c45b5534fe",
         "type": "tabs",
         "children": [
           {
-            "id": "1763fa903e425d71",
+            "id": "7ed1dbb1dad9b01a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Java/추상화/추상화.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -94,14 +89,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/추상화/추상화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -111,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/추상화/추상화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Spaces/Home/Java/추상화/추상화.md"
-              }
+              "state": {}
             }
           },
           {
@@ -143,6 +134,14 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "b7d067efa8d71b04",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
               "state": {}
             }
           }
@@ -163,23 +162,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1763fa903e425d71",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Spaces/Home/Java/캡슐화/캡슐화.md",
-    "Spaces/Home/Java/추상화/추상화.md",
+    "2023-12-08.md",
+    "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/수도 코드/수도코드.md",
+    "Spaces/Home/Java/상속/super.md",
+    "Spaces/Home/Java/추상화/추상화.md",
+    "Spaces/Home/Java/다형성/다형성.md",
+    "Spaces/Home/Java/캡슐화/캡슐화.md",
+    "Spaces/Home/Java/추상화/추상클래스.md",
+    "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/Exception/Exception.md",
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/Class/Class.md",
-    "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/상속/상속.md",
     "Spaces/Home/Java/제어자/제어자.md",
     "Spaces/Home/Java/수도 코드",
-    "Spaces/Home/Java/Json/Json.md",
-    "Spaces/Home/Java/추상화/인터페이스.md",
-    "Spaces/Home/Java/추상화/추상클래스.md",
     "private.md",
-    "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Pasted image 20231208163544.png",
     "Spaces/Home/Java",
