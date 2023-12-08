@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/추상화/추상화.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "546bf682f4a1b981",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/상속/super.md",
+                "file": "Spaces/Home/Class/Object Class.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/상속/super.md",
+                "file": "Spaces/Home/Class/Object Class.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/상속/super.md",
+                "file": "Spaces/Home/Class/Object Class.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/상속/super.md"
+                "file": "Spaces/Home/Class/Object Class.md"
               }
             }
           }
@@ -167,17 +154,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "546bf682f4a1b981",
+  "active": "1763fa903e425d71",
   "lastOpenFiles": [
-    "Spaces/Home/추상화/추상화.md",
-    "Spaces/Home/상속/super.md",
+    "Spaces/Home/Class/Class.md",
+    "Spaces/Home/Class/Object Class.md",
     "Spaces/Home/상속/상속.md",
-    "[super.md",
-    "().md",
-    "(susper).md",
+    "Spaces/Home/Class",
+    "Spaces/Home/다형성/다형성.md",
+    "Spaces/Home/다형성",
+    "Spaces/Home/상속/super.md",
+    "Spaces/Home/Json/Json.md",
+    "Spaces/Home/추상화/추상화.md",
     "Spaces/Home/추상화/인터페이스.md",
     "Spaces/Home/추상화/추상클래스.md",
-    "Spaces/Home/Json/Json.md",
+    "().md",
+    "[super.md",
+    "(susper).md",
     "Spaces/Home/상속",
     "Spaces/Home/추상화",
     "Spaces/Home/Json",
