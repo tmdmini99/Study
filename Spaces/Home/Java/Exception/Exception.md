@@ -1,6 +1,3 @@
----
-ddd: []
----
 # **자바(JAVA) - 예외 처리(Exception Handling)**
 
 ---
@@ -143,6 +140,48 @@ public void method2() throws ClassNotFoundException {
  Class clazz = Class.forName("java.lang.String22");
 }
 ```
+
+### **사용자 정의 예외와 예외 발생**
+
+사용자 정의 예외 클래스란 개발자가 직접 정의하여 만드는 예외를 말합니다. 일반 예외(Checked Exceptino)나 실행 예외(RuntimeException, UnChecked Exception) 중 하나로 만들 수 있습니다. 전자는 Exception을 상속하면 되고, 후자는 RuntimeException을 상속하면 됩니다.
+
+```java
+public class AnyCreateException extends Exception {
+  public AnyCreateException() {};
+  public AnyCreateException(String message) {
+     super(message);
+// 사용자 정의 예외의 생성. 생성자는 보통 두 가지를 선언하는데
+// 두 번째의 경우 에외 메시지를 전달하기 위해 String 타입의 매개 변수를 갖는 생성자이다.
+ }
+}
+.....
+public class Account{
+int balance = 100;
+ public void withdraw(int money) throws AnyCreateException {
+  if(balance < money){
+   throw new AnyCreateException("Excpetion 발생!");
+// AnyCreateException 의 두 번째 생성자를 선택한 것이다.
+// 모든 예외는 Exception이 가지고 있는 메소드들을 호출 할 수 있다.
+// 그 중 getMessage 메소드가 이 예외 메시지를 리턴한다. 사용은 아래에 구현했다.
+ }
+}
+....
+public static void main(String[] args){
+ Account account = new Account();
+ try{
+ account.wtihdraw(30000);
+}
+ catch ( AnyCreateException e ) {
+  String message = e.getMessage(); // 메시지를 담은 생성자를 선택했을 때, 그 메시지를
+                              // getMessage() 메소드가 리턴한다.
+  System.out.println(message);
+  e.printStackTrace(); // 예외가 어디에서 발생했는지 출력해준다.
+}
+```
+
+
+
+
 
 
 
