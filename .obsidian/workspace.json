@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
+                "file": "Spaces/Home/Java/제어자/제어자.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
+                "file": "Spaces/Home/Java/제어자/제어자.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
+                "file": "Spaces/Home/Java/제어자/제어자.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md"
+                "file": "Spaces/Home/Java/제어자/제어자.md"
               }
             }
           },
@@ -165,8 +165,10 @@
   },
   "active": "1763fa903e425d71",
   "lastOpenFiles": [
-    "Spaces/Home/Java/제어자/제어자.md",
+    "Pasted image 20231208163544.png",
+    "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
+    "Spaces/Home/Java/제어자/제어자.md",
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java",
@@ -177,7 +179,6 @@
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
-    "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/Class/Class.md",
     "Spaces/Home/Java/Class",
