@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "546bf682f4a1b981",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/2023-12-04.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/2023-12-08.md",
+                "file": "Spaces/Home/2023-12-04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,8 +123,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/2023-12-08.md",
-                "linksCollapsed": false,
+                "file": "Spaces/Home/2023-12-04.md",
+                "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -133,12 +146,11 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/2023-12-08.md"
+                "file": "Spaces/Home/2023-12-04.md"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -155,10 +167,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1763fa903e425d71",
+  "active": "546bf682f4a1b981",
   "lastOpenFiles": [
-    "Spaces/Home/추상화.md",
     "Spaces/Home/2023-12-08.md",
+    "Spaces/Home/추상화.md",
     "Spaces/Home/2023-12-04.md",
     "인터페이스.md",
     "Spaces/Home",
