@@ -41,10 +41,50 @@ this() 메소드가 같은 클래스의 다른 생성자를 호출할 때 사용
 
 추상 클래스와 인터페이스 모두 반드시 오버라이딩을 해야함
 ```java
+class Parent {
 
+    int a;
+
+    Parent() { a = 10; }
+
+    Parent(int n) { a = n; }
+
+}
+
+class Child extends Parent {
+
+    int b;
+
+    Child() {
+
+**①**      //super(40);
+
+        b = 20;
+
+    }
+
+    void display() {
+
+        System.out.println(a);
+
+        System.out.println(b);
+
+    }
+
+}
+
+public class Inheritance04 {
+
+    public static void main(String[] args) {
+
+        Child ch = new Child();
+
+        ch.display();
+
+    }
+
+}
 ```
-
-
 
 
 
