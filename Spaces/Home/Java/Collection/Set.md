@@ -43,7 +43,7 @@ Set<String> set = new HashSet<>();
 
 | 메소드                       | 설 명                                                  |
 | ---------------------------- | ------------------------------------------------------ |
-| boolean add(Object obj)      | 새로운 객체를 저장한다.                                |
+| boolean [add](#add,-addall-객체 추가)(Object obj)      | 새로운 객체를 저장한다.                                |
 | boolean addAll(Collection c) | 주어진 컬렉션에 저장된 모든 객체들을 추가한다.(합집합) |
 |void clear()|저장된 모든 객체를 삭제한다.|
 |Object clone()|HashSet을 복사해서 반환한다.(얕은 복사)|
@@ -95,7 +95,7 @@ HashSet 내부 코드를 보면 [[Map|HashMap]]을 사용하여 구현되어 �
 지정 하지 않았을때의 디폴트 값은 75%로 load factor가 0.75이다.
 
 
-### add, addAll - 객체 추가
+### add, addAll 객체 추가
 
 ```java
 Set hashSet1 = new HashSet();// set은 중복이 불가하기 때문에 중복된 노드들은 제거됐다.
