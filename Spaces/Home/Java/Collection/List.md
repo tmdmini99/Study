@@ -197,7 +197,7 @@ public class LinkedListDemo {
 
 ```
 LinkedList의 <span style="background:#fff88f">get(index)</span> 메소드를 사용하면 LinkedList의 원하는 index의 값이 리턴됩니다. 
-전체 출력은 대부분 for문을 통해서 출력을 하고 Iterator를 사용해서 출력을 할 수도 있습니다.
+전체 출력은 대부분 for문을 통해서 출력을 하고 [[Iterator]]를 사용해서 출력을 할 수도 있습니다.
 LinkedList의 경우 인덱스를 사용하여 연산을 수행할 수 있도록 get(index) 메소드를 제공하지만, 메소드 내부의 동작은 순차 탐색으로 이루어져 있어 ArrayList의 get(index)메서드보다 속도가 느립니다.
 
 
@@ -218,7 +218,9 @@ LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(
 
 
 
-    
+
+---
+
 # **<font color="#ff0000">Vector</font>**  
 
 과거에 대용량 처리를 위해 사용했으며, 내부에서 자동으로 동기화처리가 일어나 비교적 성능이 좋지 않고 무거워 잘 쓰이지 않음  
@@ -231,18 +233,59 @@ Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레�
 
 ### **Vector 선언하기**
 ```java
+Vector V = new Vector(); // 타입 설정x Object로 사용 
+Vector<VectorDemo> demo = new Vector<VectorDemo>(); // 타입설정 VectorDemo 객체로 선언 
+Vector<Integer> i = new Vector<Integer>(); // int 타입으로 선언 
+Vector<Integer> i2 = new Vector<>(); // 타입 선언 생략
+Vector<Integer> i3 = new Vector<Integer>(10); // 초기 용량 세팅 
+Vector<Integer> i4 = new Vector<Integer>(Arrays.asList(1, 2, 3, 4)); // 초기 값 세팅 
+		
+Vector<String> s = new Vector<String>(); // String 타입 사용 
+Vector<Character> ch = new Vector<Character>(); // char 타입 사용
+
+출처: [https://crazykim2.tistory.com/570](https://crazykim2.tistory.com/570) [차근차근 개발일기+일상:티스토리]
+```
+
+Vector의 선언방법입니다
+
+위의 예제와 같이 Class, Integer, String, Character 등의 다양한 타입으로 선언이 가능합니다
+
+
+
+### **Vector 값 추가하기**
+```java
+import java.util.Vector;
+
+public class VectorDemo {
+	public static void main(String[] args)  {
+		Vector V = new Vector(); 
+		
+		V.add("Hello");
+		V.add("Hello");
+		V.add(1, "World");
+		V.add(null);
+		
+		System.out.print(V);
+	}
+}
+
+출처: [https://crazykim2.tistory.com/570](https://crazykim2.tistory.com/570) [차근차근 개발일기+일상:티스토리]
+```
+
+### **Vector 값 변경하기**
+```java
+
+```
+
+### **Vector 값 제거하기**
+```java
 
 ```
 
 
 
+---
 
-
-
-
-
-      
-    
 # **<font color="#ff0000">ArrayList</font>**  
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
 
@@ -261,4 +304,6 @@ Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레�
 참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이
 https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움
 https://crazykim2.tistory.com/566
+
+vector  https://crazykim2.tistory.com/570
 
