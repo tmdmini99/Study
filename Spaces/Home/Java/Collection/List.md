@@ -5,7 +5,7 @@
 
   
 
-- **LinkedList**  
+- # **LinkedList**  
     - 양방향 포인터 구조로 데이터의 삽입, 삭제가 빈번할 경우 데이터의 위치정보만 수정하면 되기에 유용  
     - 스택, 큐, 양방향 큐 등을 만들기 위한 용도로 쓰임  
     - LinkedList란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
@@ -17,9 +17,9 @@
 
 데이터는 포인터와 주소를 사용하여 연결합니다
 
-각 데이터는 노드라 불리며 배열에서 자주 삽입, 삭제가 이루어지는 경우 용이하여 ArrayList보다 선호됩니다
+각 데이터는 노드라 불리며 배열에서 자주 삽입, 삭제가 이루어지는 경우 용이하여 [ArrayList](#ArrayList)보다 선호됩니다
 
-하지만 ArrayList보다 검색에 있어서는 느리다는 단점이 있습니다
+하지만 [ArrayList](#ArrayList)보다 검색에 있어서는 느리다는 단점이 있습니다
 
 	![[Pasted image 20231211120131.png]]
 	
@@ -157,7 +157,7 @@ remove(int Index) : Index 위치의 데이터를 삭제
 
 clear() : List의 모든 데이터를 삭제 -> removeAll(LinkedList)로도 모든 데이터 삭제가 가능합니다
 
-size() : LinkedList의 크기
+size() : [LinkedList](#LinkedList)의 크기
 
 
 ### LinkedList 값 출력
@@ -228,7 +228,7 @@ Vector란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 
 ArrayList와 동일한 구조를 가지며 배열의 크기가 늘어나고, 줄어듬에 따라서 자동으로 크기가 조절이 됩니다
 Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레임워크에 없는 메서드들을 사용이 가능합니다
 하지만 동기화라는 특징이 있어 스레드가 아닌 환경에서는 거의 사용이 되지 않습니다
-그리고 항상 동기화되므로 스레드 환경에서의 안정성은 높지만 ArrayList와 비교하여 추가, 검색, 삭제의 성능은 떨어지는 단점이 있습니다
+그리고 항상 동기화되므로 스레드 환경에서의 안정성은 높지만 [ArrayList](#ArrayList)와 비교하여 추가, 검색, 삭제의 성능은 떨어지는 단점이 있습니다
 
 
 ### **Vector 선언하기**
@@ -268,25 +268,66 @@ public class VectorDemo {
 		System.out.print(V);
 	}
 }
-
-출처: [https://crazykim2.tistory.com/570](https://crazykim2.tistory.com/570) [차근차근 개발일기+일상:티스토리]
 ```
 
 ### **Vector 값 변경하기**
 ```java
+import java.util.Vector;
 
+public class VectorDemo {
+	public static void main(String[] args)  {
+		Vector V = new Vector(); 
+		
+		V.add("Hello");
+		V.add("Hello");
+		V.add(1, "World");
+		
+		System.out.println(V);
+		
+		V.set(1, "Hello");
+
+		System.out.println(V);
+	}
+}
 ```
 
 ### **Vector 값 제거하기**
 ```java
+import java.util.Vector;
 
+public class VectorDemo {
+	public static void main(String[] args)  {
+		Vector V = new Vector(); 
+		
+		V.add("Hello");
+		V.add("World");
+		V.add("Hello");
+		V.add("World");
+		
+		System.out.println(V);
+		
+		V.remove(1); // Index 1의 값 제거
+
+		System.out.println(V);
+
+		V.removeAllElements(); // 모든 데이터 제거 
+
+		System.out.println(V);
+
+		V.add("Hello");
+		V.add("World");
+		V.clear(); // 모든 데이터 제거
+
+		System.out.println(V);
+	}
+}
 ```
 
 
 
 ---
 
-# **<font color="#ff0000">ArrayList</font>**  
+# **ArrayList**  
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
 
 
