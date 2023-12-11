@@ -4,16 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f5cda9c45b5534fe",
+        "id": "17e52b49dd7b0fb5",
         "type": "tabs",
         "children": [
           {
-            "id": "7ed1dbb1dad9b01a",
+            "id": "cd6a1f2b8c0867af",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Spaces/Home"
+                "file": "Spaces/Home/Java/Stack/Stack.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -71,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spaces/Home/Java/Stack/Stack.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spaces/Home/Java/Stack/Stack.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Spaces/Home/Java/Stack/Stack.md"
+              }
             }
           },
           {
@@ -165,10 +171,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7ed1dbb1dad9b01a",
+  "active": "cd6a1f2b8c0867af",
   "lastOpenFiles": [
-    "daily note/2023-12-11.md",
+    "Pasted image 20231211095828.png",
+    "Spaces/Home/Java/Stack/Stack.md",
     "Study.md",
+    "Spaces/Home/Java/Stack/Stack 1.md",
+    "Spaces/Home/Java/Stack",
+    "daily note/2023-12-11.md",
     "daily note/2023-12-08.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/다형성/다형성.md",
@@ -198,7 +208,6 @@
     "[super.md",
     "(susper).md",
     "Spaces/Home/Java/상속",
-    "Spaces/Home/Java/추상화",
     "인터페이스.md"
   ]
 }

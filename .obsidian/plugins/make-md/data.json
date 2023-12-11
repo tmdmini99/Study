@@ -41,23 +41,15 @@
     "//Spaces/Spaces/Home/Spaces/Home/Java",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/추상화",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Class",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Exception",
     "//Spaces/Spaces/Home/Spaces/Home/Java",
     "//Spaces/Spaces/Home",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/다형성",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/상속",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/제어자",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Json",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Json",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Json",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Json",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Json",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Json",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Exception",
-    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/다형성",
     "//daily note",
     "//Spaces/Spaces/Home/Spaces/Home/Java",
-    "//Spaces/Spaces/Home"
+    "//Spaces/Spaces/Home",
+    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Exception",
+    "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/다형성"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
@@ -82,7 +74,9 @@
     "/",
     "spaces://$tags"
   ],
-  "rootSpaces": [],
+  "rootSpaces": [
+    "Spaces/Home/Java/Stack"
+  ],
   "spacesUseAlias": false,
   "fmKeyAlias": "aliases",
   "fmKeyBanner": "banner",
