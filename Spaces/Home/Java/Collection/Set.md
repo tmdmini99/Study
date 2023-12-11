@@ -37,13 +37,35 @@ Set<String> set = new HashSet<>();
     - 순서를 예측할 수 없음  
 	HashSet은 `Set 인터페이스`에서 지원하는 구현 클래스이다. 때문에 `Set`의 성질을 그대로 상속받는 다는 것이 특징이다.
 
-HashSet의 성질
+
+### HashSet 메서드
+
+
+| 메소드                       | 설 명                                                  |
+| ---------------------------- | ------------------------------------------------------ |
+| boolean add(Object obj)      | 새로운 객체를 저장한다.                                |
+| boolean addAll(Collection c) | 주어진 컬렉션에 저장된 모든 객체들을 추가한다.(합집합) |
+|void clear()|저장된 모든 객체를 삭제한다.|
+|Object clone()|HashSet을 복사해서 반환한다.(얕은 복사)|
+|boolean contains(Object obj)|지정된 객체를 포함하고 있는지 알려준다.|
+|boolean containsAll(Collection c)|주어진 컬렉션에 저장된 모든 객체들을 포함하고 있는지 알려준다.|
+|boolean isEmpty()|HashSet이 비었는지 알려준다.|
+|Iterator iterator()|Iterator를 반환한다.|
+|boolean remove(Object obj)|지정된 객체를 HashSet에서 삭제한다.  <br>(성공하면 true, 실패하면 false를 반환한다.)|
+|boolean removeAll(Collection c)|주어진 컬렉션에 저장된 모든 객체와 동일한 것들을   <br>HashSet에서 삭제한다.(차집합)  <br>(성공하면 true, 실패하면 false를 반환한다.)|
+|boolean retainAll(Collection c)|주어진 컬렉션에 저장된 객체와 동일한 것만 남기고 삭제한다. (교집합)|
+|int size()|저장된 객체의 개수를 반환한다.|
+|Object[] toArray()|저장된 객체들을 객체배열의 형태로 반환한다.|
+|Object[] toArray(Object[] arr)|저장된 객체들을 주어진 객체배열(arr)에 담는다.|
+
+
+
+
 ### HashSet의 성질
 
 1. HashSet은 중복된 값을 허용하지 않습니다.
 
   값의 존재 유무를 파악할 때 사용할 수 있다.
-
 
 2. List 등과는 다르게 저장한 순서가 보장되지 않습니다.
 
