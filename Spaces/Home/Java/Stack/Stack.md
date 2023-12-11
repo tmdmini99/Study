@@ -23,7 +23,7 @@
 | **stack.size();**      | 스택의 크기 출력                                                                                                                                   |
 | **stack.empty();**     | 스택이 비어 있으면 true, 비어 있지 않으면 false를 반환                                                                                             |
 | **stack.peek();**      | 스택의 제일 상단에 있는(마지막으로 저장된) 요소를 반환   성공시 return Data 만약 Stack이 비어있을 경우 throw EmptyStackException                                                                                          |
-| **stack.pop();**       | 스택의 제일 상단에 있는(마지막으로 저장된) 요소를 반환후,  <br>**해당 요소를 스택에서 제거함. (값을 remove 할때 pop 을 사용하면된다.)**            |
+| **stack.pop();**       | 스택의 제일 상단에 있는(마지막으로 저장된) 요소를 반환후,  <br>**해당 요소를 스택에서 제거함. (값을 remove 할때 pop 을 사용하면된다.)**     비어있을 경우 throw EmptyStackException       |
 | **stack.search(1);**   | 스택에서 전달된 객체가 존재하는 위치의 인덱스를 반환  <br>이때 인덱스는 제일 상단에 있는(마지막으로 저장된) 요소의 위치부터 0이 아닌 1부터 시작함. 값이 없으면 -1 반환|
 | **stack.contains(1);** | 스택에 1이 있으면 true, 없으면 false 를 반환                                                                                                       |
 
