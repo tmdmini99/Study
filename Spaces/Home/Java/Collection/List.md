@@ -10,6 +10,9 @@
     - 양방향 포인터 구조로 데이터의 삽입, 삭제가 빈번할 경우 데이터의 위치정보만 수정하면 되기에 유용  
     - 스택, 큐, 양방향 큐 등을 만들기 위한 용도로 쓰임  
     - LinkedList란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
+    - LinkedList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
+
+
 
 이 클래스는 데이터가 연속된 위치에 저장되지 않고 모든 데이터가 데이터 부분과 주소 부분을 별도로 가지고 있습니다
 
@@ -57,6 +60,15 @@ public class LinkedListDemo {
 
 ```
 
+LinkedList의 값을 추가하기 위해서는 add() 메서드를 사용합니다
+
+add() 메서드의 사용방법은 두 가지가 있습니다
+
+add(Object) : 기본적으로 add를 사용하여 추가하면 LinkedList의 마지막에 데이터를 추가합니다
+
+add(int Index, Object) : LinkedList의 Index에 데이터를 추가합니다
+
+위의 코드를 실행하면 ll.add(1, "World");를 하여 "Hello"와 "Hello" 사이에 "World"가 추가된 것을 확인할 수 있습니다
 
 ## **LinkedList 값 변경하기**
 ```java
@@ -79,6 +91,16 @@ public class LinkedListDemo {
 }
 
 ```
+
+LinkedList의 값을 변경하는 방법은 set() 메서드를 사용합니다
+
+값을 바꾸는 것이기 때문에 값을 바꾸려면 Index를 알아야 변경이 가능합니다
+
+set(int Index, Object)로 변경할 수 있습니다
+
+위의 예제를 실행하면 "Hello", "World", "Hello"를 set(1, "Hello")를 사용하여
+
+"Hello", "Hello", "Hello"로 변경합니다
 
 
 
@@ -135,6 +157,17 @@ clear() : List의 모든 데이터를 삭제 -> removeAll(LinkedList)로도 모�
     
 - **Vector**  
     - 과거에 대용량 처리를 위해 사용했으며, 내부에서 자동으로 동기화처리가 일어나 비교적 성능이 좋지 않고 무거워 잘 쓰이지 않음  
+	Vector란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
+	ArrayList와 동일한 구조를 가지며 배열의 크기가 늘어나고, 줄어듬에 따라서 자동으로 크기가 조절이 됩니다
+	Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레임워크에 없는 메서드들을 사용이 가능합니다하지만 동기화라는 특징이 있어 스레드가 아닌 환경에서는 거의 사용이 되지 않습니다
+    그리고 항상 동기화되므로 스레드 환경에서의 안정성은 높지만 ArrayList와 비교하여 추가, 검색, 삭제의 성능은 떨어지는 단점이 있습니다
+
+
+
+
+
+
+
       
     
 - **ArrayList**  

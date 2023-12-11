@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Queue.md",
+                "file": "Spaces/Home/Java/Collection/List.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Queue.md",
+                "file": "Spaces/Home/Java/Collection/List.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Queue.md",
+                "file": "Spaces/Home/Java/Collection/List.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Queue.md"
+                "file": "Spaces/Home/Java/Collection/List.md"
               }
             }
           },
@@ -173,6 +173,7 @@
   },
   "active": "cd6a1f2b8c0867af",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
     "Spaces/Home/Java/String/String.md",
     "daily note/2023-12-11.md",
@@ -183,7 +184,6 @@
     "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/Set.md",
     "Spaces/Home/Java/Collection/Collection.md",
-    "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Pasted image 20231211101644.png",
     "Pasted image 20231211120131.png",
     "Spaces/Home/Java/Class/Object Class.md",
