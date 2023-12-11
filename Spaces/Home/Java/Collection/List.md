@@ -13,19 +13,32 @@
 
 
 
-| 메서드                 | 설명                                 |
-|:---------------------- |:------------------------------------ |
-| add(object)            | LinkedList의 마지막에 데이터 추가    |
-| add(index, object)     | LinkedList의 index위치에 데이터 추가 |
-| addFirst(object)       | 가장 앞에 데이터 추가                |
-| addLast(object)        | 가장 뒤에 데이터 추가                |
-| set(int Index, Object) | index위치에 데이터 변경              |
-| remove()               | 첫번째 데이터 삭제                   |
-| removeFirst()          | 첫번째 데이터 삭제                   |
-| removeLast()           | 마지막 데이터 삭제                   |
-| clear()                | 모든 데이터 삭제                     |
-| removeAll()            | 모든 데이터 삭제                     |
-|                        |                                      |
+| 메서드                          | 설명                                                                |
+|:------------------------------- |:------------------------------------------------------------------- |
+| boolean add(object)             | LinkedList의 마지막에 데이터 추가                                   |
+| void add(index, object)         | LinkedList의 index위치에 데이터 추가                                |
+| void addFirst(object)            | 가장 앞에 데이터 추가                                               |
+| void addLast(object)            | 가장 뒤에 데이터 추가                                               |
+| void set(int Index, Object)     | index위치에 데이터 변경                                             |
+| Object remove(int index)        | 첫번째 데이터 삭제                                                  |
+| Obejct removeFirst()            | 첫번째 데이터 삭제                                                  |
+| Object removeLast()             | 마지막 데이터 삭제                                                  |
+| void clear()                    | 모든 데이터 삭제                                                    |
+| boolean removeAll(Collection c) | 지정한 컬렉션에 저장된 것과 동일한 노드들을 LinkedList에서 제거한다 |
+| boolean remove(Object obj)      | 지정된 객체를 제거한다. (성공하면 true)                             |
+| int size()                      | LinkedList에 저장된 객체의 개수를 반환한다.                         |
+| boolean isEmpty()               |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+|                                 |                                                                     |
+
+
+
 
 
 이 클래스는 데이터가 연속된 위치에 저장되지 않고 모든 데이터가 데이터 부분과 주소 부분을 별도로 가지고 있습니다
@@ -393,6 +406,7 @@ Vector의 값을 삭제하는 방법입니다
 참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이
 https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움
 https://crazykim2.tistory.com/566
+https://inpa.tistory.com/entry/JAVA-%E2%98%95-LinkedList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
 
 vector  https://crazykim2.tistory.com/570
 
