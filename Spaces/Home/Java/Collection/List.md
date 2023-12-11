@@ -298,20 +298,21 @@ Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레�
 ## Vector 메서드
 
 
-| 메서드                             | 설명                                       |
-| ---------------------------------- | ------------------------------------------ |
-| void add(int index, Object object) | 지정한 인덱스의 위치에 객체를 추가함       |
-| void addElement(Object objec)      | 벡터의 끝에 객체를 추가한다                |
-| Object remove(int index)           | 지정한 위치의 객제를 벡터에서 제거         |
-| boolean remove(Object object)      | 지정한 객체를 벡터에서 제거                |
-| void clear()                       | 벡터의 모든 요소를 제거                    |
-| Object elementAt(int index)        | 지정한 위치의 객체를 리턴                  |
-| Object get(int index)              | 지정한 위치의 객체를 리턴0                 |
-| int capcity()                      | 벡터의 현재 크기 리턴                      |
-| boolean contains(Object object)    | 주어진 요소가 벡터에 있는지 알아낸다.      |
-| int indexof(Object object)         | 주어진 요소의 위치를 리턴(없으면 -1)       |
-| int size()                         | 벡터에 포함되어 갯수를 리턴                |
-| void trimToSize()                  | 벡터의 용량을 현재 벡터의 크기에 맞게 수정 |
+| 메서드                             | 설명                                       |     |                                    |                                      |
+| ---------------------------------- | ------------------------------------------ | 
+| boolean add() | 마지막에 데이터를 추가       |     
+| void add(int index, Object object) | 지정한 인덱스의 위치에 객체를 추가함 |
+| void addElement(Object objec)      | 벡터의 끝에 객체를 추가한다                |     |                                    |                                      |
+| Object remove(int index)           | 지정한 위치의 객제를 벡터에서 제거         |     |                                    |                                      |
+| boolean remove(Object object)      | 지정한 객체를 벡터에서 제거                |     |                                    |                                      |
+| void clear()                       | 벡터의 모든 요소를 제거                    |     |                                    |                                      |
+| Object elementAt(int index)        | 지정한 위치의 객체를 리턴                  |     |                                    |                                      |
+| Object get(int index)              | 지정한 위치의 객체를 리턴0                 |     |                                    |                                      |
+| int capcity()                      | 벡터의 현재 크기 리턴                      |     |                                    |                                      |
+| boolean contains(Object object)    | 주어진 요소가 벡터에 있는지 알아낸다.      |     |                                    |                                      |
+| int indexof(Object object)         | 주어진 요소의 위치를 리턴(없으면 -1)       |     |                                    |                                      |
+| int size()                         | 벡터에 포함되어 갯수를 리턴                |     |                                    |                                      |
+| void trimToSize()                  | 벡터의 용량을 현재 벡터의 크기에 맞게 수정 |     |                                    |                                      |
 
 
 
