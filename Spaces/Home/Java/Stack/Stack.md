@@ -77,6 +77,37 @@ public class Solution {
 
 
 
+```java
+import java.io.BufferedReader; 
+import java.io.InputStreamReader; 
+import java.util.Stack; 
+import java.io.IOException; 
+public class Main{ 
+	public static void main(String[] args) throws IOException{ 
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+	StringBuilder sb = new StringBuilder(); 
+	int T = Integer.parseInt(br.readLine()); 
+	for(int i = 0; i < T; i++){ 
+		Stack<String> stack = new Stack<>(); 
+		String temp = br.readLine(); 
+		for(char c : temp.toCharArray()){ 
+			if(!stack.isEmpty() && stack.peek().equals("(") && Character.toString(c).equals(")")){ 
+				stack.pop(); 
+			} else { 
+				stack.add(Character.toString(c)); 
+				} 
+		} 
+		if(stack.isEmpty()){ 
+			sb.append("YES" +"\n"); 
+		} else{
+			sb.append("NO" + "\n"); 
+		} 
+		} 
+		System.out.println(sb); 
+		} 
+	}
+```
+
 
 
 
