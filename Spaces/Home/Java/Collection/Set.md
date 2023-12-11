@@ -11,6 +11,12 @@ Set은 비선형 구조이기 때문에 '순서'의 개념과 '인덱스'가 존
 때문에 값을 추가 / 삭제 하는 경우 Set 내부에 해당 값을 검색하여 해당 기능을 수행해야 한다. 이로 인해 처리 속도가 List구조에 느리다는 것이 단점이다.
 
 
+![[Pasted image 20231211183405.png]]
+ ![[Pasted image 20231211183416.png]]
+
+
+
+
 
 > **Set 특성**
 
@@ -413,6 +419,24 @@ HashSet과 동일한 구조를 가지지만 HashSet은 순서를 관리하지 �
 
 HashSet과 동일한 특징들이 있는데 마찬가지로 중복 값을 허용하지 않습니다
 
+
+### LinkedHashSet 메소드
+| add(E e)    반환형: boolean| 매개변수로 입력된 element를 LinkedList객체의 끝에 추가합니다. | |clear()    반환형: void | LinkedList객체의 모든 element를 삭제합니다. |
+|clone()    반환형: Object| LinkedList객체와 동일한 element를 가진 LinkedList객체를 생성합니다. 생성된 객체는 원본 LinkedList와는 참조주소가 다릅니다. |
+|contains(Object o)    반환형: boolean | 입력된 o가 LinkedList객체에 존재하면 true, 아니면 false를 반환합니다. |
+|get(int index)    반환형: E | 입력된 index에 해당하는 element를 반환합니다. 
+index가 LinkedList객체의 index범위를 벗어나면 IndexOutOfBoundsException이 발생합니다. |
+|remove(int index)    반환형: E |입력된 index에 해당하는 element를 삭제하고 그 값을 반환합니다. |
+
+index가 LinkedList객체의 index범위를 벗어나면 IndexOutOfBoundsException이 발생합니다. 
+
+- size()    반환형: int
+
+LinkedList객체의 element의 개수를 반환합니다. 
+
+출처: [https://developer-syubrofo.tistory.com/35](https://developer-syubrofo.tistory.com/35) [공부는 관성이다.:티스토리]
+
+
 ### **LinkedHashSet 선언하기**
 
 ```java
@@ -433,6 +457,135 @@ public class LinkedHashSetDemo {
 	}
 }
 ```
+
+LinkedHashSet의 선언하는 방법입니다
+
+LinkedHashSet 변수명 = new LinkedHashSet(); 으로 기본적으로 선언이 가능합니다
+
+LinkedHashSet<타입> 변수명 = new LinkedHashSet<타입>(); 으로 LinkedHashSet의 타입을 설정 가능합니다
+
+타입은 클래스, Integer, String, Character 등 다양한 방식으로 선언이 가능합니다
+
+LinkedHashSet<타입>(크기); 를 하면 크기를 설정가능합니다
+
+LinkedHashSet<타입>(Arrays.asList(값)); 초기값을 설정하면서 선언이 가능합니다
+
+이렇게 다양한 방법으로 변수를 선언할 수 있습니다
+
+
+### **LinkedHashSet 값 추가하기**
+```java
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+	public static void main(String[] args)  {
+		LinkedHashSet<String> str = new LinkedHashSet<String>(); // LinkedHashSet 선언
+		
+		// 값 추가
+		str.add("Hello1");
+		str.add("World2");
+		str.add("Hello3");
+		str.add("World4");
+		str.add("World2");
+				
+		System.out.print(str); // 결과 출력
+	}
+}
+```
+
+LinkedHashSet의 값을 추가하는 방법입니다
+
+add(Object) 메서드를 사용하여 값을 추가합니다
+
+예제를 보면 "World2"를 추가하지만 중복값이라 결과를 조회할 때는 제외하고 출력된 것을 볼 수 있습니다
+
+### **LinkedHashSet 값 삭제하기**
+
+```java
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+	public static void main(String[] args)  {
+		LinkedHashSet<String> str = new LinkedHashSet<String>(); // LinkedHashSet 선언
+		
+		// 값 추가
+		str.add("Hello1");
+		str.add("World2");
+		str.add("Hello3");
+		str.add("World4");
+		
+		System.out.println(str); // 결과 출력		
+		
+		str.remove("World2"); // World2 값 삭제
+		System.out.println(str); // 결과 출력	
+		
+		str.clear(); // 모든 값 삭제
+		System.out.println(str); // 결과 출력	
+	}
+}
+```
+LinkedHashSet에서 값을 삭제하는 방법입니다
+
+LinkedHashSet에서는 Linked로 서로 연결하여 값을 관리하기때문에 순서만 관리할 뿐 앞/뒤 데이터만 삭제가 불가능합니다
+
+remove(Obejct) 메서드를 사용하여 원하는 값을 제거가 가능합니다
+
+clear() 메서드를 사용하면 모든 값을 삭제합니다
+
+### **LinkedHashSet 크기 구하기**
+
+```java
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+	public static void main(String[] args)  {
+		LinkedHashSet<String> str = new LinkedHashSet<String>(); // LinkedHashSet 선언
+		
+		// 값 추가
+		str.add("Hello1");
+		str.add("World2");
+		str.add("Hello3");
+		str.add("World4");
+		
+		System.out.println(str); // 결과 출력	
+		System.out.println("LinkedHashSet의 크기는? " + str.size()); // 결과 출력	
+	}
+}
+```
+LinkedHashSet의 크기를 구하는 방법은 size() 메서드를 사용하면 됩니다
+
+LinkedHashSet 안에 있는 값의 갯수를 출력해줍니다
+
+
+### **LinkedHashSet 값 출력하기**
+
+```java
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+	public static void main(String[] args)  {
+		LinkedHashSet<String> str = new LinkedHashSet<String>(); // LinkedHashSet 선언
+		
+		// 값 추가
+		str.add("Hello1");
+		str.add("World2");
+		str.add("Hello3");
+		str.add("World4");
+		
+		/* Iterator를 사용 HashSet 배열 출력 */
+		Iterator iter = str.iterator();
+		while(iter.hasNext())
+			System.out.print(iter.next() + " ");
+	}
+}
+```
+
+LinkedHashSet의 값을 출력하는 방법입니다
+
+하나의 값만 출력하는 메서드는 따로 제공하지 않아 Iterator를 사용하여 값을 출력해줘야합니다
+
+
 
 
 
