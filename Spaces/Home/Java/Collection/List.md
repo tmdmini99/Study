@@ -105,9 +105,6 @@ LinkedList<Character> ch = new LinkedList<Character>(); // Char 타입 사용
 
 ```
 
-
-
-
 ## **LinkedList 값 추가하기**
 ```java
 import java.util.LinkedList;
@@ -301,18 +298,24 @@ Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레�
 
 
 ## Vector 메서드
-| void add(int index, Object object) | 지정한 인덱스의 위치에 객체를 추가함|
-| void addElement(Object objec) | 벡터의 끝에 객체를 추가한다|
-| Object remove(int index) | 지정한 위치의 객제를 벡터에서 제거|
-| boolean remove(Object object) | 지정한 객체를 벡터에서 제거|
-| void clear() | 벡터의 모든 요소를 제거|
-| Object elementAt(int index) | 지정한 위치의 객체를 리턴|
-| Object get(int index) | 지정한 위치의 객체를 리턴0 |
-|int capcity() – 벡터의 현재 크기 리턴|
-boolean contains(Object object) – 주어진 요소가 벡터에 있는지 알아낸다.
-int indexof(Object object) – 주어진 요소의 위치를 리턴(없으면 -1)
-int size() – 벡터에 포함되어 갯수를 리턴
-void trimToSize() – 벡터의 용량을 현재 벡터의 크기에 맞게 수정
+
+
+| 메서드                             | 설명                                       |
+| ---------------------------------- | ------------------------------------------ |
+| void add(int index, Object object) | 지정한 인덱스의 위치에 객체를 추가함       |
+| void addElement(Object objec)      | 벡터의 끝에 객체를 추가한다                |
+| Object remove(int index)           | 지정한 위치의 객제를 벡터에서 제거         |
+| boolean remove(Object object)      | 지정한 객체를 벡터에서 제거                |
+| void clear()                       | 벡터의 모든 요소를 제거                    |
+| Object elementAt(int index)        | 지정한 위치의 객체를 리턴                  |
+| Object get(int index)              | 지정한 위치의 객체를 리턴0                 |
+| int capcity()                      | 벡터의 현재 크기 리턴                      |
+| boolean contains(Object object)    | 주어진 요소가 벡터에 있는지 알아낸다.      |
+| int indexof(Object object)         | 주어진 요소의 위치를 리턴(없으면 -1)       |
+| int size()                         | 벡터에 포함되어 갯수를 리턴                |
+| void trimToSize()                  | 벡터의 용량을 현재 벡터의 크기에 맞게 수정 |
+
+
 
 ## **Vector 선언하기**
 ```java
@@ -444,13 +447,140 @@ Vector의 값을 삭제하는 방법입니다
 
 # **ArrayList**  
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
+ArrayList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
+ArrayList는 자바에서 기본적으로 많이 사용되는 클래스입니다.
+
+![](https://blog.kakaocdn.net/dn/b10vWe/btq49R6wfJE/lnqP0STxU0wtvnSpXVC0U0/img.png)
+
+표준 배열보다는 느리지만 배열에서 많은 조작이 필요한 경우 유용하게 사용할 수 있습니다
+List 인터페이스에서 상속받아 사용이 됩니다
+ArrayList는 객체가 추가되어 용량을 초과하면 자동으로 부족한 크기만큼 용량이 늘어납니다
+ArrayList는 자바의 List 인터페이스를 상속받은 여러 클래스 중 하나입니다.
+일반 배열과 동일하게 연속된 메모리 공간을 사용하며 인덱스는 0부터 시작합니다.
 
 
+## ArrayList 선언하기
+
+```java
+ArrayList list = new ArrayList(); // 타입 설정x Object로 사용
+ArrayList<ArrayListDemo> demo = new ArrayList<ArrayListDemo>(); // 타입설정 ArrayListDemo 객체로 선언
+ArrayList<Integer> i = new ArrayList<Integer>(); // int 타입으로 선언
+ArrayList<Integer> i2 = new ArrayList<>(); // Integer 타입 사용
+ArrayList<Integer> i3 = new ArrayList<Integer>(10); // 초기 용량 세팅
+ArrayList<Integer> i4 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4)); // 초기 값 세팅
+		
+ArrayList<String> s = new ArrayList<String>(); // String 타입 사용
+ArrayList<Character> ch = new ArrayList<Character>(); // char 타입 사용
+```
 
 
+ArrayList의 선언방법입니다
+
+주로 Integer타입으로 선언을 많이하고, 추가로 다른 타입(String, Character) 등의 타입으로 선언이 가능합니다
+
+타입을 선언하면 해당 타입의 데이터만 추가가 가능합니다
+
+ArrayList를 선언하면서 초기용량 및 초기값을 세팅할 수 있는데 위의 예제를 참고바랍니다
+
+## **ArrayList 값 추가하기**
+
+ArrayList의 값을 추가하기 위해서는 add() 메서드를 사용합니다
+
+add()의 사용법에는 두 가지가 있습니다
+
+**add(Object)** : ArrayList의 마지막에 데이터를 추가합니다
+
+**add(int index, Object)** : ArrayList의 index에 데이터를 추가합니다
 
 
+```java
+import java.util.ArrayList;
 
+public class ArrayListDemo {
+	public static void main(String[] args)  {
+		ArrayList<String> al = new ArrayList<>();
+		
+		al.add("Hello");
+		al.add("Hello");
+		al.add(1, "World");
+		
+		System.out.print(al);
+	}
+}
+```
+
+## **ArrayList 값 변경하기**
+
+ArrayList 값 변경은 set() 메서드를 사용합니다
+
+set()을 사용하기 위해서는 바꾸려면 데이터의 위치Index를 알아야 변경이 가능합니다
+
+**set(int index, Object)**를 사용합니다
+
+```java
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+	public static void main(String[] args)  {
+		ArrayList<String> al = new ArrayList<>();
+		
+		al.add("Hello");
+		al.add("Hello");
+		al.add("Hello");
+		
+		System.out.println("초기값 : " + al);
+		
+		al.set(1, "World");
+
+		System.out.println("변경된 값 : " + al);
+	}
+}
+```
+
+
+## **ArrayList 값 삭제하기**
+
+ArrayList 값을 삭제하는 방법에는 remove()와 clear()가 있습니다
+
+clear()는 ArrayList의 모든 값을 삭제할 때 사용됩니다
+
+remove()는 값을 하나씩 제거할 때 사용됩니다
+
+remove()는 두 개의 사용법이 있는데
+
+**remove(Object)** : Object를 파라미터로 넘기는 경우 해당 ArrayList의 Object와 같은 값을 삭제합니다
+
+ 만약 같은 값이 두 개인 경우 첫 번째 같은 값을 제거합니다
+
+**remove(int index)** : ArrayList의 index에 해당하는 값을 삭제합니다
+```java
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+	public static void main(String[] args)  {
+		ArrayList<String> al = new ArrayList<>();
+		
+		al.add("Hello");
+		al.add("World");
+		al.add("Hello");
+		al.add("World");
+		
+		System.out.println("초기값 : " + al);
+		
+		al.remove("Hello");
+
+		System.out.println("1번 삭제 : " + al);
+
+		al.remove(1);
+
+		System.out.println("2번 삭제 : " + al);
+		
+		al.clear();
+
+		System.out.println("3번 삭제 : " + al);
+	}
+}
+```
 
 
 
@@ -463,4 +593,8 @@ https://crazykim2.tistory.com/566
 https://inpa.tistory.com/entry/JAVA-%E2%98%95-LinkedList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
 
 vector  https://crazykim2.tistory.com/570
+https://blog.naver.com/manymoa/150004980532
+
+ArrayList - https://crazykim2.tistory.com/558
+
 
