@@ -1,6 +1,5 @@
-**1. List 인터페이스**
+# <font color="#ff0000">1. List 인터페이스</font>
 
-  
 
 순서가 있는 데이터의 집합으로 데이터의 중복을 허용한다.
 
@@ -41,7 +40,7 @@ LinkedList<Character> ch = new LinkedList<Character>(); // Char 타입 사용
 
 
 
-## **LinkedList 값 추가하기**
+### **LinkedList 값 추가하기**
 ```java
 import java.util.LinkedList;
 
@@ -76,7 +75,7 @@ addLast(Object): 가장 뒤에 데이터 추가
 
 위의 코드를 실행하면 ll.add(1, "World");를 하여 "Hello"와 "Hello" 사이에 "World"가 추가된 것을 확인할 수 있습니다
 
-## **LinkedList 값 변경하기**
+### **LinkedList 값 변경하기**
 ```java
 import java.util.LinkedList;
 
@@ -110,7 +109,7 @@ set(int Index, Object)로 변경할 수 있습니다
 
 
 
-## **LinkedList 값 삭제하기**
+### **LinkedList 값 삭제하기**
 ```java
 import java.util.LinkedList;
 
@@ -220,12 +219,21 @@ LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(
 
 
     
-- **Vector**  
-    - 과거에 대용량 처리를 위해 사용했으며, 내부에서 자동으로 동기화처리가 일어나 비교적 성능이 좋지 않고 무거워 잘 쓰이지 않음  
-    - Vector란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
-    - ArrayList와 동일한 구조를 가지며 배열의 크기가 늘어나고, 줄어듬에 따라서 자동으로 크기가 조절이 됩니다
-    - Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레임워크에 없는 메서드들을 사용이 가능합니다하지만 동기화라는 특징이 있어 스레드가 아닌 환경에서는 거의 사용이 되지 않습니다
-    - 그리고 항상 동기화되므로 스레드 환경에서의 안정성은 높지만 ArrayList와 비교하여 추가, 검색, 삭제의 성능은 떨어지는 단점이 있습니다
+# **<font color="#ff0000">Vector</font>**  
+
+과거에 대용량 처리를 위해 사용했으며, 내부에서 자동으로 동기화처리가 일어나 비교적 성능이 좋지 않고 무거워 잘 쓰이지 않음  
+Vector란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
+ArrayList와 동일한 구조를 가지며 배열의 크기가 늘어나고, 줄어듬에 따라서 자동으로 크기가 조절이 됩니다
+Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레임워크에 없는 메서드들을 사용이 가능합니다
+하지만 동기화라는 특징이 있어 스레드가 아닌 환경에서는 거의 사용이 되지 않습니다
+그리고 항상 동기화되므로 스레드 환경에서의 안정성은 높지만 ArrayList와 비교하여 추가, 검색, 삭제의 성능은 떨어지는 단점이 있습니다
+
+
+### **Vector 선언하기**
+```java
+
+```
+
 
 
 
@@ -235,7 +243,7 @@ LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(
 
       
     
-- **ArrayList**  
+# **<font color="#ff0000">ArrayList</font>**  
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
 
 
