@@ -11,7 +11,7 @@
     - LinkedList란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
     - LinkedList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
 
-
+## LinkedList  메서드
 
 | 메서드                                   | 설명                                                                   |
 |:---------------------------------------- |:---------------------------------------------------------------------- |
@@ -49,67 +49,36 @@
 | ListIterator listIterator(int index) | LinkedList의 지정된 위치부터 시작하는 ListIterator를 반환한다 |
 
 
-### **Linked****List 스택 & 큐 지원**
+### **Linked** **List 스택 & 큐 지원**
 
 
 | **메서드** | **설명** |
 | ---------- | -------- |
-|            |          |
 |Object element()| LinkedList에 첫 번째 노드를 반환  |
 |boolean offer(Obejct obj)| 지정된 객체(obj)를 LinkedList의 끝에 추가.  성공하면 true 실패하면 false  |
-
-| Object peek() |
-LinkedList의 첫 번째 요소를 반환 |
-
-
-|Object poll()| LinkedList의 첫 번째 요소를 반환  
-LInkedList의 요소에서는 제거된다. |
-
-| void push(Object obj) |
-맨 앞에 객체(obj)를 추가 (addFirst와 동일) |
-
+| Object peek() | LinkedList의 첫 번째 요소를 반환 |
+|Object poll()| LinkedList의 첫 번째 요소를 반환  LInkedList의 요소에서는 제거된다. |
+| void push(Object obj) | 맨 앞에 객체(obj)를 추가 (addFirst와 동일) |
 | Iterator descendingItorator() | 역순으로 조회하기 위한 DescendingItorator를 반환 |
-
-| Object getFrist()|
-LinkedList의 첫번째 노드를 반환 |
-
-| Object getLast()|
-LinkedList의 마지막 노드를 반환|
-
-| boolean offerFirst(Object obj) |
-지정된 객체(obj)를 LinkedList의 맨 앞에 추가, 성공하면 ture |
-
-| boolean offerLast(Object obj) |
-지정된 객체(obj)를 LinkedList의 맨 뒤에 추가, 성공하면 ture |
-
-Object peakFirst() |
-첫번째 노드를 반환 |
-
-Object peakLast()
-마지막 노드를 반환
-
-Object pollFirst()
-첫번째 노드를 반환하면서 제거
-
-Object pollLast()
-마지막 노드를 반환하면서 제거
-
-Object pop()
-첫번째 노드를 제거 (removeFirst와 동일)
+| Object getFrist()                         | LinkedList의 첫번째 노드를 반환                             |     | Object getLast() | LinkedList의 마지막 노드를 반환 |
+| boolean offerFirst(Object obj)            | 지정된 객체(obj)를 LinkedList의 맨 앞에 추가, 성공하면 ture |     |                  |                                 |
+| boolean offerLast(Object obj)             | 지정된 객체(obj)를 LinkedList의 맨 뒤에 추가, 성공하면 ture |     |                  |                                 |
+| Object peakFirst()                        | 첫번째 노드를 반환                                          |     |                  |                                 |
+| Object peakLast()                         | 마지막 노드를 반환                                          |     |                  |                                 |
+| Object pollFirst()                        | 첫번째 노드를 반환하면서 제거                               |     |                  |                                 |
+| Object pollLast()                         | 마지막 노드를 반환하면서 제거                               |     |                  |                                 |
+| Object pop()                              | 첫번째 노드를 제거 (removeFirst와 동일)                     |     |                  |                                 |
+| boolean removeFirstOccurrence(Obejct obj) | 첫번째로 일치하는 객체를 제거                               |     |                  |                                 |
+| boolean removeLastOccurrence(Obejct obj)  | 마지막으로 일치하는 객체를 제거                             |     |                  |                                 |
 
 
-boolean removeFirstOccurrence(  
-Obejct obj)
-첫번째로 일치하는 객체를 제거
-
-
-boolean removeLastOccurrence(  
-Obejct obj)
-마지막으로 일치하는 객체를 제거
-
-출처: [https://inpa.tistory.com/entry/JAVA-☕-LinkedList-구조-사용법-완벽-정복하기](https://inpa.tistory.com/entry/JAVA-%E2%98%95-LinkedList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0) [Inpa Dev 👨‍💻:티스토리]
-
-
+### **LinkedList 동기화 처리**
+```java
+/* ArrayList 동기화 처리 */
+List<String> l1 = Collections.synchronizedList(new ArrayList<>());
+/* LinkedList 동기화 처리 */
+List<String> l2 = Collections.synchronizedList(new LinkedList<>());
+```
 
 
 이 클래스는 데이터가 연속된 위치에 저장되지 않고 모든 데이터가 데이터 부분과 주소 부분을 별도로 가지고 있습니다
@@ -139,7 +108,7 @@ LinkedList<Character> ch = new LinkedList<Character>(); // Char 타입 사용
 
 
 
-### **LinkedList 값 추가하기**
+## **LinkedList 값 추가하기**
 ```java
 import java.util.LinkedList;
 
@@ -174,7 +143,7 @@ addLast(Object): 가장 뒤에 데이터 추가
 
 위의 코드를 실행하면 ll.add(1, "World");를 하여 "Hello"와 "Hello" 사이에 "World"가 추가된 것을 확인할 수 있습니다
 
-### **LinkedList 값 변경하기**
+## **LinkedList 값 변경하기**
 ```java
 import java.util.LinkedList;
 
@@ -208,7 +177,7 @@ set(int Index, Object)로 변경할 수 있습니다
 
 
 
-### **LinkedList 값 삭제하기**
+## **LinkedList 값 삭제하기**
 ```java
 import java.util.LinkedList;
 
@@ -259,7 +228,7 @@ clear() : List의 모든 데이터를 삭제 -> removeAll(LinkedList)로도 모�
 size() : [LinkedList](#LinkedList)의 크기
 
 
-### LinkedList 값 출력
+## LinkedList 값 출력
 
 ```java
 import java.util.Iterator;
@@ -300,7 +269,7 @@ LinkedList의 <span style="background:#fff88f">get(index)</span> 메소드를 �
 LinkedList의 경우 인덱스를 사용하여 연산을 수행할 수 있도록 get(index) 메소드를 제공하지만, 메소드 내부의 동작은 순차 탐색으로 이루어져 있어 ArrayList의 get(index)메서드보다 속도가 느립니다.
 
 
-### LinkedList 값 검색
+## LinkedList 값 검색
 
 ```java
   
