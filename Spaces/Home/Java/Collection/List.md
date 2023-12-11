@@ -53,7 +53,7 @@ public class LinkedListDemo {
 		ll.add("Hello");
 		ll.add(1, "World");
 		ll.addFirst("11");
-		ll.addLast
+		ll.addLast("22");
 		
 		System.out.print(ll);
 	}
@@ -70,6 +70,10 @@ add(Object) : 기본적으로 add를 사용하여 추가하면 LinkedList의 마
 
 add(int Index, Object) : LinkedList의 Index에 데이터를 추가합니다
 
+addFirst(Object) : 가장 앞에 데이터 추가
+
+addLast(Object): 가장 뒤에 데이터 추가
+
 위의 코드를 실행하면 ll.add(1, "World");를 하여 "Hello"와 "Hello" 사이에 "World"가 추가된 것을 확인할 수 있습니다
 
 ## **LinkedList 값 변경하기**
@@ -82,7 +86,7 @@ public class LinkedListDemo {
 		
 		ll.add("Hello");
 		ll.add("Hello");
-		ll.add(1, "World");
+		ll.add(1, "World"); //index 1에 데이터 10 추가가
 		
 		System.out.println(ll);
 		
@@ -154,6 +158,65 @@ remove(int Index) : Index 위치의 데이터를 삭제
 
 clear() : List의 모든 데이터를 삭제 -> removeAll(LinkedList)로도 모든 데이터 삭제가 가능합니다
 
+size() : LinkedList의 크기
+
+
+### LinkedList 값 출력
+
+```java
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class LinkedListDemo {
+	public static void main(String[] args)  {
+		LinkedList<String> ll = new LinkedList<String>();
+		
+		/* 값을 추가한다 */
+		ll.add("Hello");
+		ll.add("World");
+		ll.add("Hello");
+		ll.add("World");
+		
+		/* get(i) 메서드를 사용하여 값 출력 */
+		for(int i = 0; i < ll.size(); i++)
+			System.out.print(ll.get(i) + " ");
+		
+		System.out.println();
+
+		/* 향상된for문을 사용하여 값 출력 */
+		for(String str : ll)
+			System.out.print(str + " ");
+		
+		System.out.println();
+
+		/* Iterator를 사용하여 값 출력 */
+		Iterator iter = ll.iterator();
+		while(iter.hasNext())
+			System.out.print(iter.next() + " ");
+	}
+}
+
+```
+LinkedList의 <span style="background:#fff88f">get(index)</span> 메소드를 사용하면 LinkedList의 원하는 index의 값이 리턴됩니다. 
+전체 출력은 대부분 for문을 통해서 출력을 하고 Iterator를 사용해서 출력을 할 수도 있습니다.
+LinkedList의 경우 인덱스를 사용하여 연산을 수행할 수 있도록 get(index) 메소드를 제공하지만, 메소드 내부의 동작은 순차 탐색으로 이루어져 있어 ArrayList의 get(index)메서드보다 속도가 느립니다.
+
+
+### LinkedList 값 검색
+
+```java
+  
+LinkedList<Integer> list = new LinkedList<Integer>(Arrays.asList(1,2,3));
+
+System.out.println(list.contains(1)); //list에 1이 있는지 검색 : true
+
+System.out.println(list.indexOf(1)); //1이 있는 index반환 없으면 -1
+```
+
+LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(value) 메소드를 사용하면 됩니다. 
+만약 값이 있다면 true가 리턴되고 값이 없다면 false가 리턴됩니다. 
+값을 있는 index를 찾으려면 indexOf(value) 메소드를 사용하면 되고 만약 값이 없다면 -1을 리턴합니다.
+
 
 
     
@@ -189,4 +252,5 @@ clear() : List의 모든 데이터를 삭제 -> removeAll(LinkedList)로도 모�
 
 참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이
 https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움
+https://crazykim2.tistory.com/566
 
