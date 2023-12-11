@@ -299,7 +299,22 @@ Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레�
 그리고 항상 동기화되므로 스레드 환경에서의 안정성은 높지만 [ArrayList](#ArrayList)와 비교하여 추가, 검색, 삭제의 성능은 떨어지는 단점이 있습니다
 
 
-### **Vector 선언하기**
+
+## Vector 메서드
+| void add(int index, Object object) | 지정한 인덱스의 위치에 객체를 추가함|
+| void addElement(Object objec) | 벡터의 끝에 객체를 추가한다|
+| Object remove(int index) | 지정한 위치의 객제를 벡터에서 제거|
+| boolean remove(Object object) | 지정한 객체를 벡터에서 제거|
+| void clear() | 벡터의 모든 요소를 제거|
+| Object elementAt(int index) | 지정한 위치의 객체를 리턴|
+| Object get(int index) | 지정한 위치의 객체를 리턴0 |
+|int capcity() – 벡터의 현재 크기 리턴|
+boolean contains(Object object) – 주어진 요소가 벡터에 있는지 알아낸다.
+int indexof(Object object) – 주어진 요소의 위치를 리턴(없으면 -1)
+int size() – 벡터에 포함되어 갯수를 리턴
+void trimToSize() – 벡터의 용량을 현재 벡터의 크기에 맞게 수정
+
+## **Vector 선언하기**
 ```java
 Vector V = new Vector(); // 타입 설정x Object로 사용 
 Vector<VectorDemo> demo = new Vector<VectorDemo>(); // 타입설정 VectorDemo 객체로 선언 
@@ -320,7 +335,7 @@ Vector의 선언방법입니다
 
 
 
-### **Vector 값 추가하기**
+## **Vector 값 추가하기**
 ```java
 import java.util.Vector;
 
@@ -351,7 +366,7 @@ add(int Index, Object) : Vextor의 Index위치에 데이터를 추가합니다
 위의 코드를 실행하면 V.add(1, "World");를 하여 "Hello"와 "Hello" 사이에 "World"가 추가된 것을 확인할 수 있습니다
 
 
-### **Vector 값 변경하기**
+## **Vector 값 변경하기**
 ```java
 import java.util.Vector;
 
@@ -383,8 +398,7 @@ set(int Index, Object)로 변경할 수 있습니다
 "Hello", "Hello", "Hello"로 변경합니다
 
 
-
-### **Vector 값 제거하기**
+## **Vector 값 제거하기**
 ```java
 import java.util.Vector;
 
