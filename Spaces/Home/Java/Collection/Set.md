@@ -43,7 +43,7 @@ Set<String> set = new HashSet<>();
 
 | 메소드                       | 설 명                                                  |
 | ---------------------------- | ------------------------------------------------------ |
-| boolean [add](#add,-addall-객체 추가)(Object obj)      | 새로운 객체를 저장한다.                                |
+| boolean add(Object obj)      | 새로운 객체를 저장한다.                                |
 | boolean addAll(Collection c) | 주어진 컬렉션에 저장된 모든 객체들을 추가한다.(합집합) |
 |void clear()|저장된 모든 객체를 삭제한다.|
 |Object clone()|HashSet을 복사해서 반환한다.(얕은 복사)|
@@ -120,7 +120,101 @@ System.out.println(hashSet2); // 결과 : [[1, 1, 2, 3, 4]
 
 
 
-    
+### clear - 모든 데이터 삭제
+
+```java
+Set set = new HashSet(); 
+set.add(1);set.add(2);
+System.out.println(set); // 결과 : [1, 2] 
+set.clear();System.out.println(set); // 결과 : []
+```
+
+
+### clone - 복제
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2);
+System.out.println(set1); // 결과 : [1, 2] 
+HashSet set2 = (HashSet) set1.clone();
+system.out.println(set2); // 결과 : [1, 2]
+```
+
+### contains, containsAll - 데이터 확인
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2);
+System.out.println(set1.contains(3)); // 결과 : false 
+HashSet set2 = new HashSet();
+set2.add(1);
+set2.add(2);
+System.out.println(set2.containsAll(set1)); // true
+```
+
+
+### isEmpty() - 비었는지 확인
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2);
+System.out.println(set1.isEmpty()); // 결과 : false 
+HashSet set2 = new HashSet();
+System.out.println(set2.isEmpty()); // true
+```
+
+
+### iterator() - Iterator반환
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2); 
+Iterator it = set1.iterator(); 
+while (it.hasNext()) {	
+	System.out.print(it.next()); // 결과 : 12
+}
+```
+
+### remove, removeAll - 삭제
+
+
+
+### retainAll - 동일한 것만 남기고 삭제
+
+
+### size() - 저장 개수 반환
+
+```
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2); System.out.println(set1.size()); // 결과 : 2
+```
+
+### toArray() - 배열화
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2);
+set1.add(3); 
+Object[] objArr = set1.toArray();
+```
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2);
+set1.add(3); 
+Object[] tmpArr = new Object[set1.size()];
+Object[] objArr = set1.toArray(tmpArr);
+```
+
+
+
 - **TreeSet**  
     - 정렬방법을 지정할 수 있음
 - **LinkedHashSet**  
