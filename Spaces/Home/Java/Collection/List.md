@@ -596,5 +596,6 @@ vector  https://crazykim2.tistory.com/570
 https://blog.naver.com/manymoa/150004980532
 
 ArrayList - https://crazykim2.tistory.com/558
-
+https://junjangsee.github.io/2019/07/25/java/arraylist-Method/
+https://da2uns2.tistory.com/entry/Java-ArrayList-%EC%82%AC%EC%9A%A9%EB%B2%95%EA%B3%BC-%EC%A3%BC%EC%9A%94-%EB%A9%94%EC%86%8C%EB%93%9C
 
