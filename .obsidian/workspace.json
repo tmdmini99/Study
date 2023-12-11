@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#add",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -174,10 +173,13 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Pasted image 20231211181812.png",
-    "Pasted image 20231211181537.png",
+    "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/List.md",
     "Spaces/Home/Java/Collection/Set.md",
+    "Spaces/Home/Java/Collection/Collection.md",
+    "Spaces/Home/Mark/MarkDown/MarkDown.md",
+    "Pasted image 20231211181812.png",
+    "Pasted image 20231211181537.png",
     "Spaces/Home/Html",
     "Spaces/Home/Mark/MarkUp",
     "Spaces/Home/Mark/MarkDown",
@@ -190,8 +192,6 @@
     "Spaces/Home/Java/Exception/Exception.md",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
-    "Spaces/Home/Java/Collection/Map.md",
-    "Spaces/Home/Java/Collection/Collection.md",
     "daily note/2023-12-11.md",
     "daily note/2023-12-08.md",
     "Spaces/Home/Java/Class/Object Class.md",

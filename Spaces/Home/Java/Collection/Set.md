@@ -275,6 +275,40 @@ JDK 1.2부터 제공되고 있는 TreeSet은 HashSet과 마찬가지로 Set �
 그렇기에 HashSet보다 데이터의 추가와 삭제는 시간이 더 걸리지만 검색과 정렬에는 유리합니다. 
 TreeSet은 데이터를 저장할 시 이진탐색트리(BinarySearchTree)의 형태로 데이터를 저장하기에 기본적으로 nature ordering를 지원하며 생성자의 매개변수로 Comparator객체를 입력하여 정렬 방법을 임의로 지정해 줄 수도 있습니다.
 
+### TreeSet 메소드
+
+| 메소드                                                                                              | 설명                                                                                                                                                                  |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **boolean** add(Object o)                                                                           | ·       지정된 객체(o)의 객체들을 Collection에 추가합니다.                                                                                                            |
+| **boolean** addAll(Collection c)                                                                    | ·       지정된 Collection(c)의 객체들을 Collection에 추가합니다.                                                                                                      |
+| Object ceiling(Object o)                                                                            | ·       지정된 객체와 같은 객체를 반환합니다.  <br>·       없으면 큰 값을 가진 객체 중 제일 가까운 값의 객체를 반환합니다. 없으면 null                                |
+| **void** clear()                                                                                    | ·       저장된 모든 객체를 삭제합니다.                                                                                                                                |
+| Object clone()                                                                                      | ·       TreeSet을 복제하여 반환합니다.                                                                                                                                |
+| Comparator comparator()                                                                             | ·       TreeSet의 정렬기준(Comparator)를 반환합니다.                                                                                                                  |
+| **boolean** contains(Object o)                                                                      | ·       지정된 객체(o)의 객체들이 포함되어 있는지 확인합니다.                                                                                                         |
+| **boolean** containsAll(Collection c)                                                               | ·       지정된 Collection의 객체들이 포함되어 있는지 확인합니다.                                                                                                      |
+| NavigableSet descendingSet()                                                                        | ·       TreeSet에 저장된 요소들을 역순으로 정렬해서 반환합니다.                                                                                                       |
+| Object first()                                                                                      | ·       정렬된 순서에서 첫 번째 객체를 반환합니다.                                                                                                                    |
+| Object floor(Object o)                                                                              | ·       지정된 객체와 같은 객체를 반환합니다.  <br>·       없으면 작은 값을 가진 객체 중 가장 가까운 값의 객체를 반환합니다. 없으면 null                              |
+| SortedSet headSet(Object toElement)                                                                 | ·       지정된 객체보다 작은 값의 객체들을 반환합니다.                                                                                                                |
+| NavigableSet headSet(Object toElement, boolean inclusive)                                           | ·       지정된 객체보다 작은 값으 객체들을 반환합니다.  <br>·       inclusive가 true이면 같은 값의 객체도 포함합니다.                                                 |
+| Object higher(Object o)                                                                             | ·       지정된 객체보다 큰 값을 가진 객체 중 제일 가까운 값의 객체를 반환합니다. 없으면 null                                                                          |
+| **boolean** isEmpty()                                                                               | ·       TreeSet이 비어 있는지 확인합니다.                                                                                                                             |
+| Iterator iterator()                                                                                 | ·       TreeSet의 Iterator를 반환합니다.                                                                                                                              |
+| Object last()                                                                                       | ·       정렬된 순서에서 마지막 객체를 반환합니다.                                                                                                                     |
+| Object lower(Object o)                                                                              | ·       지정된 객체보다 작은 값을 가진 객체 중 제일 가까운 값의 객체를 반환합니다. 없으면 null                                                                        |
+| Object pollFirst()                                                                                  | ·       TreeSet의 첫번째 요소(제일 작은 값의 객체)를 반환합니다.                                                                                                      |
+| Object pollLast()                                                                                   | ·       TreeSet의 마지막 요소(제일 큰 값의 객체)를 반환합니다.                                                                                                        |
+| **boolean** remove(Object o)                                                                        | ·       지정된 객체를 제거합니다.                                                                                                                                     |
+| **boolean** retainAll(Collection c)                                                                 | ·       주어진 컬렉션과 공통된 요소만을 남기고 삭제합니다.(교집합)                                                                                                    |
+| **int** size()                                                                                      | ·       저장된 객체의 개수를 반환합니다.                                                                                                                              |
+| Spliterator spliterator()                                                                           | ·       TreeSet의 spliterator를 반환합니다.                                                                                                                           |
+| SortedSet subSet(Object frontElement, Object toElement)                                             | ·       범위검색(fromElement와 toElement사이)의 결과를 반환합니다.  <br>·       끝 범위인 toElement는 범위에 포함되지 않습니다.                                       |
+| NavigableSet'<'E> subSet(E fromElement, **boolean** fromInclusive, E toElement, booleantoInclusive) | ·       범위검색(fromElement와 toElement사이)의 결과를 반환합니다.  <br>·       fromInclusive가 true이면 시작값이 포함되고, toInclusive가 true이면 끝값이 포함됩니다. |
+| SortedSet tailSet(Object fromElement)                                                               | ·       지정된 객체보다 큰 값의 객체들을 반환합니다.                                                                                                                  |
+| Object[] toArray()                                                                                  | ·       저장된 객체를 객체배열로 반환합니다.                                                                                                                          |
+| Object[] toArray(Object[] a)                                                                        | ·       저장된 객체를 주어진 객체배열에 저장하여 반환합니다.                                                                                                          |
+
 ### 레드-블랙 트리(Red-Black Tree)
 
 ![[Pasted image 20231211181537.png]]
@@ -288,12 +322,18 @@ TreeSet은 이진탐색트리 중에서도 성능을 향상시킨 레드-블랙
 
 ###  TreeSet 사용법
 
-#### 
-``
+#### TreeSet 선언
+```java
+TreeSet<Integer> set1 = new TreeSet<Integer>();//TreeSet생성
 
+TreeSet<Integer> set2 = new TreeSet<>();//new에서 타입 파라미터 생략가능
 
+TreeSet<Integer> set3 = new TreeSet<Integer>(set1);//set1의 모든 값을 가진 TreeSet생성
 
-
+TreeSet<Integer> set4 = new TreeSet<Integer>(Arrays.asList(1,2,3));//초기값 지정
+```
+TreeSet을 생성하기 위해서는 저장할 객체 타입을 파라미터로 표기하고 기본 생성자를 호출하면 됩니다. 
+생성하는 명령어는 HashSet과 크게 다르지 않으나 선언 시 크기를 지정해줄 수는 없습니다.
 
 
 
@@ -318,16 +358,82 @@ TreeSet에 값을 추가하려면 add(value) 메소드를 사용하면 됩니다
 
 
 #### TreeSet 값 삭제
+```java
+TreeSet<Integer> set = new TreeSet<Integer>();//TreeSet생성
+
+set.remove(1);//값 1 제거
+
+set.clear();//모든 값 제거
+```
+TreeSet에 값을 삭제하려면 remove(value) 메소드를 사용하면 됩니다. 
+매개변수 value의 값이 존재한다면 그 값을 삭제한 후 true를 반환하고 없으면 false를 반환합니다. 모든 값을 제거하려면 clear() 메서드를 사용하면 됩니다.
 
 
+#### TreeSet 크기 구하기
 
+```java
+TreeSet<Integer> set = new TreeSet<Integer>(Arrays.asList(1,2,3));//초기값 지정
 
+System.out.println(set.size());//크기 : 3
+```
+TreeSet의 크기를 구하려면 size() 메소드를 사용하면 됩니다.
+
+#### TreeSet 값 출력
+
+```java
+TreeSet<Integer> set = new TreeSet<Integer>(Arrays.asList(4,2,3));//초기값 지정
+System.out.println(set); //전체출력 [2,3,4]
+System.out.println(set.first());//최소값 출력
+System.out.println(set.last());//최대값 출력
+System.out.println(set.higher(3));//입력값보다 큰 데이터중 최소값 출력 없으면 null
+System.out.println(set.lower(3));//입력값보다 작은 데이터중 최대값 출력 없으면 null
+		
+Iterator iter = set.iterator();	// Iterator 사용
+while(iter.hasNext()) {//값이 있으면 true 없으면 false
+    System.out.println(iter.next());
+}
+
+```
+TreeSet을 그냥 pirnt하게 되면 대괄호 []로 묶어서 전체 값이 출력됩니다. 
+TreeSet에는 값을 리턴하는 다양한 메서드가 있는데 first() 메서드는 최솟값, last()는 최댓값, higher(value)은 입력값보다 큰 데이터중 최솟값, lower(value)은 입력값보다 작은 데이터중 최대값을 리턴합니다. 
+TreeSet에는 객체 전체를 대상으로 한 번씩 반복해서 가져오는 반복자(Iterator)를 제공합니다. 
+반복자 이터레이터는 iterator() 메서드를 호출하면 얻을 수 있습니다. 
+iterator에서 하나의 객체를 가져올 때에는 next() 메서드를 사용합니다. 
+next() 메서드를 사용하기 전에 먼저 가져올 객체가 있는지 hasNext() 메서드를 활용하여 먼저 확인하는 것이 좋습니다. 
+hasNext() 메서드는 가져올 객체가 있으면 true, 없으면 false를 리턴합니다.
 
 
 
 
 ## **LinkedHashSet**  
     - 데이터를 중복해서 저장할 수없고, 입력한 순서대로 데이터를 저장한다
+HashSet과 동일한 구조를 가지지만 HashSet은 순서를 관리하지 않아 값을 출력할 때마다 다른 순서대로 출력이 됩니다
+
+하지만 LinkedHashSet은 삽입된 순서대로 반복합니다
+
+HashSet과 동일한 특징들이 있는데 마찬가지로 중복 값을 허용하지 않습니다
+
+### **LinkedHashSet 선언하기**
+
+```java
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+	public static void main(String[] args)  {
+		LinkedHashSet hs = new LinkedHashSet(); // 타입 설정x Object 입력
+		LinkedHashSet<LinkedHashSetDemo> demo = new LinkedHashSet<LinkedHashSetDemo>(); // 클래스로 타입 설정
+		LinkedHashSet<Integer> i = new LinkedHashSet<Integer>(); // Integer 타입 선언
+		LinkedHashSet<Integer> i2 = new LinkedHashSet(); // 뒷부분 타입 선언 생략 가능
+		LinkedHashSet<Integer> i3 = new LinkedHashSet<Integer>(10); // 크기 10으로 선언
+		LinkedHashSet<Integer> i4 = new LinkedHashSet<Integer>(Arrays.asList(1, 2, 3, 4)); // 선언과 동시에 초기 값 설정
+		
+		LinkedHashSet<String> str = new LinkedHashSet<String>(); // String 타입 선언
+		LinkedHashSet<Character> ch = new LinkedHashSet<Character>(); // Char 타입 선언		
+	}
+}
+```
+
 
 
 
@@ -336,3 +442,5 @@ HashSet - https://velog.io/@acacia__u/hashSet
 https://staticclass.tistory.com/104
 
 TreeSet - https://coding-factory.tistory.com/555
+
+LinkedHashSet - https://crazykim2.tistory.com/582
