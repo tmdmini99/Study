@@ -11,8 +11,13 @@
             "id": "cd6a1f2b8c0867af",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Java/Stack&Queue/Queue.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spaces/Home/Java/Stack&Queue/Queue.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spaces/Home/Java/Stack&Queue/Queue.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Spaces/Home/Java/Stack&Queue/Queue.md"
+              }
             }
           },
           {
@@ -164,26 +173,27 @@
   },
   "active": "cd6a1f2b8c0867af",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Stack&Queue/Stack.md",
+    "Spaces/Home/Java/String/String.md",
+    "daily note/2023-12-11.md",
+    "Spaces/Home/Java/Json/Json.md",
+    "Study.md",
     "daily note/2023-12-08.md",
     "Spaces/Home/Java/Collection/List.md",
     "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/Set.md",
     "Spaces/Home/Java/Collection/Collection.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
-    "Spaces/Home/Java/Stack&Queue/Stack.md",
     "Pasted image 20231211101644.png",
     "Pasted image 20231211120131.png",
     "Spaces/Home/Java/Class/Object Class.md",
     "Pasted image 20231211115426.png",
     "Spaces/Home/Java/Collection",
-    "Spaces/Home/Java/String/String.md",
     "Spaces/Home/Java/String",
-    "Study.md",
     "Spaces/Home/Java/Exception/Exception.md",
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/상속/super.md",
-    "daily note/2023-12-11.md",
     "Spaces/Home/Java/수도 코드/수도코드.md",
     "Pasted image 20231211095828.png.md",
     "Pasted image 20231211095828.png",
@@ -194,7 +204,6 @@
     "Spaces/Home/Java/상속/상속.md",
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
-    "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/Class/Class.md",
     "daily note",
     "Spaces/Home/Java/수도 코드",

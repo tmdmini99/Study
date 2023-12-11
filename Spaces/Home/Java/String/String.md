@@ -54,7 +54,7 @@ String arrayString = String.valueOf(ary);
 
 두 메소드 모두 Object의 값을 String으로 변환하지만 변경하고자 하는Object가 null인 경우 다르다.
 
-**toString()과 같은 경우 Null PointerException(NPE)을 발생**시키지만 **valueOf는 "null"이라는 문자열로 처리**한다.
+**toString()과 같은 경우 [[Exception|Null PointerException]](NPE)을 발생**시키지만 **valueOf는 "null"이라는 문자열로 처리**한다.
 
   
 
