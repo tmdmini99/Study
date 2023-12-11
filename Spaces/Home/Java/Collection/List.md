@@ -5,12 +5,27 @@
 
   
 
-- # **LinkedList**  
+# **LinkedList**  
     - 양방향 포인터 구조로 데이터의 삽입, 삭제가 빈번할 경우 데이터의 위치정보만 수정하면 되기에 유용  
     - 스택, 큐, 양방향 큐 등을 만들기 위한 용도로 쓰임  
     - LinkedList란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
     - LinkedList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
 
+
+
+| 메서드                 | 설명                                 |
+|:---------------------- |:------------------------------------ |
+| add(object)            | LinkedList의 마지막에 데이터 추가    |
+| add(index, object)     | LinkedList의 index위치에 데이터 추가 |
+| addFirst(object)       | 가장 앞에 데이터 추가                |
+| addLast(object)        | 가장 뒤에 데이터 추가                |
+| set(int Index, Object) | index위치에 데이터 변경              |
+| remove()               | 첫번째 데이터 삭제                   |
+| removeFirst()          | 첫번째 데이터 삭제                   |
+| removeLast()           | 마지막 데이터 삭제                   |
+| clear()                | 모든 데이터 삭제                     |
+| removeAll()            | 모든 데이터 삭제                     |
+|                        |                                      |
 
 
 이 클래스는 데이터가 연속된 위치에 저장되지 않고 모든 데이터가 데이터 부분과 주소 부분을 별도로 가지고 있습니다
@@ -270,6 +285,19 @@ public class VectorDemo {
 }
 ```
 
+Vector의 값을 추가하기 위해서는 add() 메서드를 사용합니다
+
+add() 메서드의 사용방법은 두 가지가 있습니다
+
+add(Object) : 기본적으로 add를 사용하여 추가하면 Vector의 마지막에 데이터를 추가합니다
+
+add(int Index, Object) : Vextor의 Index위치에 데이터를 추가합니다
+
+참고사항으로 Vector는 null을 허용하여 null값도 추가할 수 있습니다
+
+위의 코드를 실행하면 V.add(1, "World");를 하여 "Hello"와 "Hello" 사이에 "World"가 추가된 것을 확인할 수 있습니다
+
+
 ### **Vector 값 변경하기**
 ```java
 import java.util.Vector;
@@ -290,6 +318,18 @@ public class VectorDemo {
 	}
 }
 ```
+
+Vector의 값을 변경하는 방법은 set() 메서드를 사용합니다
+
+값을 바꾸려면 조건이 필요한데 Index를 알아야 원하는 값을 변경이 가능합니다
+
+set(int Index, Object)로 변경할 수 있습니다
+
+위의 예제를 실행하면 "Hello", "World", "Hello"를 set(1, "Hello")를 사용하여
+
+"Hello", "Hello", "Hello"로 변경합니다
+
+
 
 ### **Vector 값 제거하기**
 ```java
@@ -322,6 +362,14 @@ public class VectorDemo {
 	}
 }
 ```
+
+
+
+Vector의 값을 삭제하는 방법입니다
+
+원하는 값을 삭제하는 방법은 remove(int Index)를 사용하여 삭제합니다
+
+값을 한꺼번에 삭제하려면 removeAllElements(), clear() 메서드를 사용하여 삭제할 수 있습니다
 
 
 
