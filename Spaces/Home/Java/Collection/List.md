@@ -13,30 +13,101 @@
 
 
 
-| 메서드                          | 설명                                                                |
-|:------------------------------- |:------------------------------------------------------------------- |
-| boolean add(object)             | LinkedList의 마지막에 데이터 추가                                   |
-| void add(index, object)         | LinkedList의 index위치에 데이터 추가                                |
-| void addFirst(object)            | 가장 앞에 데이터 추가                                               |
-| void addLast(object)            | 가장 뒤에 데이터 추가                                               |
-| void set(int Index, Object)     | index위치에 데이터 변경                                             |
-| Object remove(int index)        | 첫번째 데이터 삭제                                                  |
-| Obejct removeFirst()            | 첫번째 데이터 삭제                                                  |
-| Object removeLast()             | 마지막 데이터 삭제                                                  |
-| void clear()                    | 모든 데이터 삭제                                                    |
-| boolean removeAll(Collection c) | 지정한 컬렉션에 저장된 것과 동일한 노드들을 LinkedList에서 제거한다 |
-| boolean remove(Object obj)      | 지정된 객체를 제거한다. (성공하면 true)                             |
-| int size()                      | LinkedList에 저장된 객체의 개수를 반환한다.                         |
-| boolean isEmpty()               |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
-|                                 |                                                                     |
+| 메서드                                   | 설명                                                                   |
+|:---------------------------------------- |:---------------------------------------------------------------------- |
+| boolean add(object)                      | LinkedList의 마지막에 데이터 추가                                      |
+| void add(index, object)                  | LinkedList의 index위치에 데이터 추가                                   |
+| void addFirst(object)                    | 가장 앞에 데이터 추가                                                  |
+| void addLast(object)                     | 가장 뒤에 데이터 추가                                                  |
+| void set(int Index, Object)              | index위치에 데이터 변경                                                |
+| Object remove(int index)                 | 첫번째 데이터 삭제                                                     |
+| Obejct removeFirst()                     | 첫번째 데이터 삭제                                                     |
+| Object removeLast()                      | 마지막 데이터 삭제                                                     |
+| void clear()                             | 모든 데이터 삭제                                                       |
+| boolean removeAll(Collection c)          | 지정한 컬렉션에 저장된 것과 동일한 노드들을 LinkedList에서 제거한다    |
+| boolean remove(Object obj)               | 지정된 객체를 제거한다. (성공하면 true)                                |
+| int size()                               | LinkedList에 저장된 객체의 개수를 반환한다.                            |
+| boolean isEmpty()                        | LinkedList가 비어있는지 확인한다.                                      |
+| boolean contains(Object obj)             | 지정된 객체(obj)가 LinkedList에 포함되어 있는지 확인한다.              |
+| boolean containsAll(Collection c)        | 지정된 컬렉션의 모든 요소가 포함되었는지 알려줌.                       |
+| int indexOf(Object obj)                  | 지정된 객체(obj)가 저장된 위치를 찾아 반환한다.                        |
+| int lastIndexOf(Object obj)              | 지정된 객체(obj)가 저장된 위치를 뒤에서 부터 역방향으로 찾아 반환한다. |
+| Object get(in index)                     | 지정된 위치(index)에 저장된 객체를 반환한다.                           |
+| List subList(int fromIndex, int toIndex) | fromIndex부터 toIndex사이에 저장된 객체를 List로 반환한다.             |
+| Object set(int index, Object obj)        | 지정한 위치(index)의 객체를 주어진 객체로 바꾼다.                      |
+| Object[] toArray()                       | LinkedList에 저장된 모든 객체들을 객체배열로 반환한다.                 |
+| Object[] toArray(Obejct[] objArr)        | LinkedList에 저장된 모든 객체들을 객체배열 objArr에 담아 반환한다.     |
 
+
+#### **Linked**  **List 이터레이터**
+
+
+| 메서드                               | 설명                                                          |
+|:------------------------------------ |:------------------------------------------------------------- |
+| Iterator iterator()                  | LinkedList의 Iterator객체를 반환한다                          |
+| ListIterator listIterator()          | LinkedList의 ListIterator를 반환한다                          |
+| ListIterator listIterator(int index) | LinkedList의 지정된 위치부터 시작하는 ListIterator를 반환한다 |
+
+
+### **Linked****List 스택 & 큐 지원**
+
+
+| **메서드** | **설명** |
+| ---------- | -------- |
+|            |          |
+|Object element()| LinkedList에 첫 번째 노드를 반환  |
+|boolean offer(Obejct obj)| 지정된 객체(obj)를 LinkedList의 끝에 추가.  성공하면 true 실패하면 false  |
+
+| Object peek() |
+LinkedList의 첫 번째 요소를 반환 |
+
+
+|Object poll()| LinkedList의 첫 번째 요소를 반환  
+LInkedList의 요소에서는 제거된다. |
+
+| void push(Object obj) |
+맨 앞에 객체(obj)를 추가 (addFirst와 동일) |
+
+| Iterator descendingItorator() | 역순으로 조회하기 위한 DescendingItorator를 반환 |
+
+| Object getFrist()|
+LinkedList의 첫번째 노드를 반환 |
+
+| Object getLast()|
+LinkedList의 마지막 노드를 반환|
+
+| boolean offerFirst(Object obj) |
+지정된 객체(obj)를 LinkedList의 맨 앞에 추가, 성공하면 ture |
+
+| boolean offerLast(Object obj) |
+지정된 객체(obj)를 LinkedList의 맨 뒤에 추가, 성공하면 ture |
+
+Object peakFirst() |
+첫번째 노드를 반환 |
+
+Object peakLast()
+마지막 노드를 반환
+
+Object pollFirst()
+첫번째 노드를 반환하면서 제거
+
+Object pollLast()
+마지막 노드를 반환하면서 제거
+
+Object pop()
+첫번째 노드를 제거 (removeFirst와 동일)
+
+
+boolean removeFirstOccurrence(  
+Obejct obj)
+첫번째로 일치하는 객체를 제거
+
+
+boolean removeLastOccurrence(  
+Obejct obj)
+마지막으로 일치하는 객체를 제거
+
+출처: [https://inpa.tistory.com/entry/JAVA-☕-LinkedList-구조-사용법-완벽-정복하기](https://inpa.tistory.com/entry/JAVA-%E2%98%95-LinkedList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0) [Inpa Dev 👨‍💻:티스토리]
 
 
 
