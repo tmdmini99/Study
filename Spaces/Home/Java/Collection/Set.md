@@ -86,6 +86,39 @@ HashSet 내부 코드를 보면 [[Map|HashMap]]을 사용하여 구현되어 �
 |HashSet(int initialCapacity)|주어진 값을 초기용량으로 하는 HashSet객체를 생성한다.|
 |HashSet(int initialCapacity, float loadFactor)|초기용량과 load factor를 지정하는 생성자.|
 
+**load factor?**
+
+저장공간이 가득 차기 전에 미리 용량을 확보하기 위한 것
+
+예를 들어 이 값이 0.7면 저장공간의 70%가 채워졌을 때 용량이 2배로 늘어난다.
+
+지정 하지 않았을때의 디폴트 값은 75%로 load factor가 0.75이다.
+
+
+### add, addAll - 객체 추가
+
+```java
+Set hashSet1 = new HashSet();// set은 중복이 불가하기 때문에 중복된 노드들은 제거됐다.
+hashSet1.add(1); // Integer 타입의 숫자 1
+hashSet1.add("1"); // 문자열 1
+hashSet1.add("2"); // 문자열 2
+hashSet1.add("2"); // 문자열 2
+hashSet1.add("3"); // 문자열 3
+hashSet1.add("3"); // 문자열 3 //숫자 1과 문자 1은 타입이 다르기 때문에 제거되지 않는다.
+System.out.println(hashSet1); //결과 : [1, 1, 2, 3]
+```
+
+```java
+Set hashSet2 = new HashSet(); 
+hashSet2.add("1");
+hashSet2.add("2");
+hashSet2.add("4"); //set은 중복이 불가하기 때문에 hashSet1의 노드중 
+//hashSet2의 노드와 동일한 값이 있다면 제거된다.
+hashSet2.addAll(hashSet1); // hashSet1의 모든 노드를 hashSet2에 저장한다.
+System.out.println(hashSet2); // 결과 : [[1, 1, 2, 3, 4]
+```
+
+
 
     
 - **TreeSet**  
@@ -97,3 +130,4 @@ HashSet 내부 코드를 보면 [[Map|HashMap]]을 사용하여 구현되어 �
 
 참조 - https://godsu94.tistory.com/173
 HashSet - https://velog.io/@acacia__u/hashSet
+https://staticclass.tistory.com/104
