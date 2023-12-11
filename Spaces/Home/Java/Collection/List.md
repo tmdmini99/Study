@@ -52,6 +52,8 @@ public class LinkedListDemo {
 		ll.add("Hello");
 		ll.add("Hello");
 		ll.add(1, "World");
+		ll.addFirst("11");
+		ll.addLast
 		
 		System.out.print(ll);
 	}
@@ -172,5 +174,19 @@ clear() : List의 모든 데이터를 삭제 -> removeAll(LinkedList)로도 모�
     
 - **ArrayList**  
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
-      
-    
+
+
+
+
+
+
+
+
+
+
+※제네릭스는 선언할 수 있는 타입이 객체 타입입니다. int는 기본자료형이기 때문에 들어갈 수 없으므로 int를 객체화시킨 wrapper클래스를 사용해야 합니다
+
+
+참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이
+https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움
+
