@@ -720,7 +720,9 @@ class Fruit {
 출처: [https://hianna.tistory.com/567](https://hianna.tistory.com/567) [어제 오늘 내일:티스토리]
 ```
 
-원본을 cloneㅇ
+원본을 clone으로 복사후 원본 데이터를 추가, 삭제가 아니라 원본의 원소를 변경시 clone한 list도 같이 변경
+Refernce타입만 가능 주소를 따라가기 때문에 clone도 같이 수정
+clone 수정되지 않으려면 새롭게 만들어야함
 
 
 
