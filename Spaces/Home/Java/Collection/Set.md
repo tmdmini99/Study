@@ -118,6 +118,9 @@ hashSet2.addAll(hashSet1); // hashSet1의 모든 노드를 hashSet2에 저장한
 System.out.println(hashSet2); // 결과 : [[1, 1, 2, 3, 4]
 ```
 
+- HashSet 내부에 존재하지 않는다면 그 값을 HashSet에 추가하고 true 를 반환한다.
+- HashSet 내부에 존재한다면 false를 반환한다.
+
 
 
 ### clear - 모든 데이터 삭제
@@ -154,6 +157,9 @@ set2.add(2);
 System.out.println(set2.containsAll(set1)); // true
 ```
 
+원하는 값에 대해 `contains(value)` 메소드를 통해 Hash 내부에 존재하는 지 확인이 가능하다.
+
+
 
 ### isEmpty() - 비었는지 확인
 
@@ -179,20 +185,66 @@ while (it.hasNext()) {
 }
 ```
 
+Set 컬렉션을 그냥 'print' 처리 할 경우 대괄호( '[ ]' )로 묶여 Set의 전체값이 출력된다.  
+때문에, 전체 객체를 대상으로 한번씩 반복해서 가져오는 `반복자 (Iterator)`를 사용해 출력해야 한다.
+
 ### remove, removeAll - 삭제
 
+```java
 
-
-### retainAll - 동일한 것만 남기고 삭제
-
-
-### size() - 저장 개수 반환
-
-```
 HashSet set1 = new HashSet();
 set1.add(1);
-set1.add(2); System.out.println(set1.size()); // 결과 : 2
+set1.add(2);
+
+set1.remove(2); // true;
+set1.remove(3); // false;
+
+System.out.println(set1); // 결과 : [2]
+
+HashSet set2 = new HashSet();
+set2.add(1);
+set2.add(2);
+set2.add(3);
+
+set2.removeAll(set1); // 하나라도 삭제되면 true
+System.out.println(set2); // 결과 : [2, 3]
 ```
+
+`remove(value)` 와 `clear()` 메소드를 사용하여 Hash값을 제거할 수 있다.
+만약 삭제하려는 값이
+
+- HashSet 내부에 존재한다면 그 값을 삭제하고 true를 반환한다.
+- HashSet 내부에 존재하지 않는 다면, false를 반환한다.
+### retainAll - 동일한 것만 남기고 삭제
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2);
+set1.add(3);
+
+HashSet set2 = new HashSet();
+set2.add(1);
+set2.add(2);
+set2.add(4);
+
+
+
+set2.retainAll(set1); // 일치하는 1, 2 외에 다 제거|
+
+System.out.println(set2); // 결과 : [1, 2]|
+
+```
+### size() - 저장 개수 반환
+
+```java
+HashSet set1 = new HashSet();
+set1.add(1);
+set1.add(2); 
+System.out.println(set1.size()); // 결과 : 2
+```
+
+	size()` 메소드를 사용하여 Hash의 크기를 구할 수 있다.
 
 ### toArray() - 배열화
 
@@ -215,9 +267,66 @@ Object[] objArr = set1.toArray(tmpArr);
 
 
 
-- **TreeSet**  
+## **TreeSet**  
     - 정렬방법을 지정할 수 있음
-- **LinkedHashSet**  
+JDK 1.2부터 제공되고 있는 TreeSet은 HashSet과 마찬가지로 Set 인터페이스를 구현한 클래스로써 객체를 중복해서 저장할 수 없고 저장 순서가 유지되지 않는다는 Set의 성질을 그대로 가지고 있습니다. 
+하지만 HashSet과는 달리 TreeSet은 이진 탐색 트리(BinarySearchTree) 구조로 이루어져 있습니다. 
+이진 탐색 트리는 추가와 삭제에는 시간이 조금 더 걸리지만 정렬, 검색에 높은 성능을 보이는 자료구조입니다. 
+그렇기에 HashSet보다 데이터의 추가와 삭제는 시간이 더 걸리지만 검색과 정렬에는 유리합니다. 
+TreeSet은 데이터를 저장할 시 이진탐색트리(BinarySearchTree)의 형태로 데이터를 저장하기에 기본적으로 nature ordering를 지원하며 생성자의 매개변수로 Comparator객체를 입력하여 정렬 방법을 임의로 지정해 줄 수도 있습니다.
+
+### 레드-블랙 트리(Red-Black Tree)
+
+![[Pasted image 20231211181537.png]]
+
+
+TreeSet은 이진탐색트리 중에서도 성능을 향상시킨 레드-블랙 트리(Red-Black Tree)로 구현되어 있습니다. 
+일반적인 이진 탐색 트리는 트리의 높이만큼 시간이 걸립니다. 
+데이터의 값이 트리에 잘 분산되어 있다면 효율성에 큰 문제가 없으나 데이터가 들어올 때 값이 편향되게 들어올 경우 한쪽으로 크게 치우쳐진 트리가 되어 굉장히 비효율적인 퍼포먼스를 냅니다. 이 문제를 보완하기 위해 레드 블랙 트리가 등장하였습니다. 
+레드 블랙 트리는  부모노드보다 작은 값을 가지는 노드는 왼쪽 자식으로, 큰 값을 가지는 노드는 오른쪽 자식으로 배치하여 데이터의 추가나 삭제 시 트리가 한쪽으로 치우쳐지지 않도록 균형을 맞추어줍니다.
+
+
+###  TreeSet 사용법
+
+#### 
+``
+
+
+
+
+
+
+
+```java
+TreeSet<Integer> set = new TreeSet<Integer>();//TreeSet생성
+
+set.add(7); //값추가
+
+set.add(4);
+
+set.add(9);
+
+set.add(1);
+
+set.add(5);
+```
+TreeSet에 값을 추가하려면 add(value) 메소드를 사용하면 됩니다. 
+입력되는 값이 TreeSet 내부에 존재하지 않는다면 그 값을 추가한 뒤 true를 반환하고 내부에 값이 존재한다면 false를 반환합니다.
+#### TreeSet에 값이 추가되는 과정
+![[Pasted image 20231211181812.png]]
+7,4,9,2,5를 차례대로 TreeSet에 저장한다면 위와같은 과정을 거치게 됩니다.
+
+
+#### TreeSet 값 삭제
+
+
+
+
+
+
+
+
+## **LinkedHashSet**  
     - 데이터를 중복해서 저장할 수없고, 입력한 순서대로 데이터를 저장한다
 
 
@@ -225,3 +334,5 @@ Object[] objArr = set1.toArray(tmpArr);
 참조 - https://godsu94.tistory.com/173
 HashSet - https://velog.io/@acacia__u/hashSet
 https://staticclass.tistory.com/104
+
+TreeSet - https://coding-factory.tistory.com/555
