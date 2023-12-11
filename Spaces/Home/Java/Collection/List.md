@@ -476,20 +476,27 @@ ArrayList는 자바의 List 인터페이스를 상속받은 여러 클래스 중
 | .retainAll(arr2)            | argument로 제공한 컬렉션 내에 들어있는 값을 제외하고 모두 지워줌                                                                                |
 | **.removeAll(arr2)**        | argument로 제공한 컬렉션 내에 들어있는 값과 일치하는 값을 모두 지워줌, retainAll() 메소드와 반대                                                |
 | **.size()**                 | 요소 개수 반환                                                                                                                                  |
+| .forEach()                  | for문 대신 바로 사용 가능                                                                                                                                                 |
 
-boolean add(T value)| 요소를 추가
-void add(int index, T value)| 요소를 특정 위치에 추가
-boolean remove(Object value)| 요소를 삭제
-T remove(int index)| 특정 위치에 있는 요소를 삭제
-T get(int index)| 요소 가져오기
-void set(int index, T value)| 특정 위치에 있는 요소를 새 요소로 대체
-boolean contains(Object value)| 특정 요소가 리스트에 있는지 여부를 확인
-int indexOf(Object value)| 특정 요소가 몇 번째 위치에 있는지를 반환 (순차 검색)
-int lastIndexOf(Object o)| 특정 요소가 몇 번째 위치에 있는지를 반환 (역순 검색)
-int size()| 요소의 개수를 반환
-boolean isEmpty()| 요소가 비어있는지
-public void clear()| 요소를 모두 삭제
+| 메서드                         | 설명                                                 |
+| ------------------------------ | ---------------------------------------------------- |
+| boolean [add](#add)(T value)           | 요소를 추가                                          |
+| void add(int index, T value)   | 요소를 특정 위치에 추가                              |
+| boolean [remove](#remove)(Object value)   | 요소를 삭제                                          |
+| T remove(int index)            | 특정 위치에 있는 요소를 삭제                         |
+| T get(int index)               | 요소 가져오기                                        |
+| void [set](#set)(int index, T value)   | 특정 위치에 있는 요소를 새 요소로 대체               |
+| boolean contains(Object value) | 특정 요소가 리스트에 있는지 여부를 확인              |
+| int indexOf(Object value)      | 특정 요소가 몇 번째 위치에 있는지를 반환 (순차 검색) |
+| int lastIndexOf(Object o)      | 특정 요소가 몇 번째 위치에 있는지를 반환 (역순 검색) |
+| int size()                     | 요소의 개수를 반환                                   |
+| boolean isEmpty()              | 요소가 비어있는지                                    |
+| public void clear()            | 요소를 모두 삭제                                     |
 
+```java
+fruits.forEach(item -> System.out.println("item : " + item));
+```
+람다 표현식
 
 
 ## ArrayList 선언하기
@@ -516,6 +523,9 @@ ArrayList의 선언방법입니다
 ArrayList를 선언하면서 초기용량 및 초기값을 세팅할 수 있는데 위의 예제를 참고바랍니다
 
 ## **ArrayList 값 추가하기**
+
+###### add
+
 
 ArrayList의 값을 추가하기 위해서는 add() 메서드를 사용합니다
 
@@ -548,7 +558,8 @@ ArrayList 값 변경은 set() 메서드를 사용합니다
 
 set()을 사용하기 위해서는 바꾸려면 데이터의 위치Index를 알아야 변경이 가능합니다
 
-**set(int index, Object)**를 사용합니다
+###### set
+ **set(int index, Object)**를 사용합니다
 
 ```java
 import java.util.ArrayList;
@@ -572,6 +583,7 @@ public class ArrayListDemo {
 
 
 ## **ArrayList 값 삭제하기**
+###### remove
 
 ArrayList 값을 삭제하는 방법에는 remove()와 clear()가 있습니다
 
