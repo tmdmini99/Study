@@ -628,6 +628,102 @@ public class ArrayListDemo {
 
 
 
+## **ArrayList 값 Clone**
+
+```java
+import java.util.ArrayList;
+
+ 
+
+public class CloneArrayList {
+
+    public static void main(String[] args) {
+
+ 
+
+        // 1. ArrayList 준비
+
+        ArrayList<Fruit> fruitList = new ArrayList<Fruit>();
+
+        fruitList.add(new Fruit("Apple", 1000));
+
+        fruitList.add(new Fruit("Banana", 2000));
+
+ 
+
+        // 2. ArrayList 복사 - clone()
+
+        ArrayList<Fruit> copyOfFruitList = (ArrayList<Fruit>) fruitList.clone();
+
+        
+
+        // 3. 복사된 결과 출력
+
+        System.out.println("=== ArrayList 복사(clone()) ===");
+
+        System.out.println("fruitList : " + fruitList);  // [[ Apple: 1000 ], [ Banana: 2000 ]]
+
+        System.out.println("copyOfFruitList : " + copyOfFruitList); // [[ Apple: 1000 ], [ Banana: 2000 ]]
+
+ 
+
+        // 4. 원본 ArrayList 변경
+
+        fruitList.add(new Fruits("Orange", 500));
+
+ 
+
+        // 5. 결과 출력
+
+        System.out.println("=== 원본 ArrayList 변경 ===");
+
+        System.out.println("fruitList : " + fruitList);  // [[ Apple: 1000 ], [ Banana: 2000 ], [ Orange: 500 ]]
+
+        System.out.println("copyOfFruitList : " + copyOfFruitList); // [[ Apple: 1000 ], [ Banana: 2000 ]]
+
+    }
+
+}
+
+ 
+
+class Fruit {
+
+ 
+
+    private String name;
+
+    private int price;
+
+ 
+
+    public Fruit(String name, int price) {
+
+        this.name = name;
+
+        this.price = price;
+
+    }
+
+ 
+
+    @Override
+
+    public String toString() {
+
+        return "[ " + this.name + ": " + this.price + " ]";
+
+    }
+
+}
+
+출처: [https://hianna.tistory.com/567](https://hianna.tistory.com/567) [어제 오늘 내일:티스토리]
+```
+
+원본을 cloneㅇ
+
+
+
 ※제네릭스는 선언할 수 있는 타입이 객체 타입입니다. int는 기본자료형이기 때문에 들어갈 수 없으므로 int를 객체화시킨 wrapper클래스를 사용해야 합니다
 
 
@@ -643,3 +739,6 @@ ArrayList - https://crazykim2.tistory.com/558
 https://junjangsee.github.io/2019/07/25/java/arraylist-Method/
 https://da2uns2.tistory.com/entry/Java-ArrayList-%EC%82%AC%EC%9A%A9%EB%B2%95%EA%B3%BC-%EC%A3%BC%EC%9A%94-%EB%A9%94%EC%86%8C%EB%93%9C
 https://kadosholy.tistory.com/118
+
+
+clone - https://hianna.tistory.com/567
