@@ -421,20 +421,17 @@ HashSet과 동일한 특징들이 있는데 마찬가지로 중복 값을 허용
 
 
 ### LinkedHashSet 메소드
-| add(E e)    반환형: boolean| 매개변수로 입력된 element를 LinkedList객체의 끝에 추가합니다. | |clear()    반환형: void | LinkedList객체의 모든 element를 삭제합니다. |
-|clone()    반환형: Object| LinkedList객체와 동일한 element를 가진 LinkedList객체를 생성합니다. 생성된 객체는 원본 LinkedList와는 참조주소가 다릅니다. |
-|contains(Object o)    반환형: boolean | 입력된 o가 LinkedList객체에 존재하면 true, 아니면 false를 반환합니다. |
-|get(int index)    반환형: E | 입력된 index에 해당하는 element를 반환합니다. 
-index가 LinkedList객체의 index범위를 벗어나면 IndexOutOfBoundsException이 발생합니다. |
-|remove(int index)    반환형: E |입력된 index에 해당하는 element를 삭제하고 그 값을 반환합니다. |
+| 메소드                                | 설명                                                                                                                       |                                               |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | 
+| add(E e)    반환형: boolean           | 매개변수로 입력된 element를 LinkedList객체의 끝에 추가합니다. | 
+| clear()    반환형: void | LinkedList객체의 모든 element를 삭제합니다. |
+| clone()    반환형: Object             | LinkedList객체와 동일한 element를 가진 LinkedList객체를 생성합니다. 생성된 객체는 원본 LinkedList와는 참조주소가 다릅니다. |     |     
+| contains(Object o)    반환형: boolean | 입력된 o가 LinkedList객체에 존재하면 true, 아니면 false를 반환합니다.                                                      |     |             
+| get(int index)    반환형: E           | 입력된 index에 해당하는 element를 반환합니다. index가 LinkedList객체의 index범위를 벗어나면 IndexOutOfBoundsException이 발생합니다. |
+|remove(int index)    반환형: E |입력된 index에 해당하는 element를 삭제하고 그 값을 반환합니다.index가 LinkedList객체의 index범위를 벗어나면 IndexOutOfBoundsException이 발생합니다. |
+|size()    반환형: int |LinkedList객체의 element의 개수를 반환합니다. |
 
-index가 LinkedList객체의 index범위를 벗어나면 IndexOutOfBoundsException이 발생합니다. 
-
-- size()    반환형: int
-
-LinkedList객체의 element의 개수를 반환합니다. 
-
-출처: [https://developer-syubrofo.tistory.com/35](https://developer-syubrofo.tistory.com/35) [공부는 관성이다.:티스토리]
+메소드는  HashSet과 비슷
 
 
 ### **LinkedHashSet 선언하기**
@@ -597,3 +594,5 @@ https://staticclass.tistory.com/104
 TreeSet - https://coding-factory.tistory.com/555
 
 LinkedHashSet - https://crazykim2.tistory.com/582
+https://developer-syubrofo.tistory.com/35
+
