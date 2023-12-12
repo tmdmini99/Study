@@ -11,8 +11,103 @@ Map 인터페이스는 Collection 인터페이스와는 다른 저장 방식�
 ##  **Hashtable**  
     - HashMap보다는 느리지만 동기화 지원  
     - null불가  
-      
-    
+
+### **HashTable 선언하기**
+
+```java
+import java.util.Hashtable;
+
+public class HashTableDemo {
+	public static void main(String[] args)  {
+		Hashtable ht = new Hashtable(); // 타입 설정x Object 설정
+		Hashtable<Integer, Integer> i = new Hashtable<Integer, Integer>(); // Integer, Integer 타입 선언
+		Hashtable<Integer, Integer> i2 = new Hashtable<>(); // new는 타입 생략 가능
+		Hashtable<Integer, Integer> i3 = new Hashtable<Integer, Integer>(i); // i의 Hashtable을 i3으로 값 이전
+		Hashtable<Integer, Integer> i4 = new Hashtable<Integer, Integer>(10); // 초기용량 지정
+		Hashtable<Integer, Integer> i5 = new Hashtable<Integer, Integer>() {{ // 변수 선언 + 초기값 지정
+			put(1, 100);
+			put(2, 200);
+		}};
+		
+		Hashtable<String, String> str = new Hashtable<String, String>(); // String, String 타입 선언
+		Hashtable<Character, Character> ch = new Hashtable<Character, Character>(); // Char, Char 타입 선언
+	}
+}
+```
+
+HashTable을 선언하는 방법은 여러가지가 있습니다
+
+HashTable은 하나의 Entry에 Key, Value 2개를 가지고 있습니다
+
+타입을 선언하려면 두 개를 동시에 선언해줘야합니다
+
+Hashtable<타입, 타입> 변수명 = new Hashtable<타입, 타입>(); 으로 선언을 해줍니다
+
+나머지 HashTable의 선언 방법들은 위의 예제와 주석을 참고바랍니다
+
+### **HashTable 값 추가하기**
+
+```java
+import java.util.Hashtable;
+
+public class HashTableDemo {
+	public static void main(String[] args)  {
+		Hashtable<String, String> ht = new Hashtable<String, String>(); // Hashtable 선언
+		
+		// 값 추가
+		ht.put("1", "Hello1");
+		ht.put("2", "World2");
+		ht.put("3", "Hello3");
+		ht.put("4", "World4");
+		ht.put("2", "WorldWorld2");
+		
+		System.out.println(ht); // 결과출력
+	}
+}
+```
+
+HashTable의 값을 추가하는 방법은 put(Key, Value) 메서드를 사용하여 값을 추가합니다
+
+put() 메서드를 사용하여 Key가 같고 Value가 다른 값을 중복해서 넣으면 나중에 넣은 Value값으로 변경됩니다
+
+**결과**
+
+![](https://blog.kakaocdn.net/dn/bdUlXE/btq5MuaDAh2/RL6W74XnP2esJ5EgnbrYu0/img.png)
+
+
+### **HashTable 값 삭제하기**
+
+```java
+import java.util.Hashtable;
+
+public class HashTableDemo {
+	public static void main(String[] args)  {
+		Hashtable<String, String> ht = new Hashtable<String, String>(); // Hashtable 선언
+		
+		// 값 추가
+		ht.put("1", "Hello1");
+		ht.put("2", "World2");
+		ht.put("3", "Hello3");
+		ht.put("4", "World4");
+		
+		System.out.println(ht); // 결과출력
+		
+		ht.remove("2");
+		System.out.println(ht); // 결과출력
+
+		ht.clear();
+		System.out.println(ht); // 결과출력
+	}
+}
+```
+
+HashTable의 값을 삭제하는 방법은 여러가지가 있습니다
+
+그 중에서 remove(Key값) 메서드는 Key값에 해당하는 값을 하나 삭제해줍니다
+
+clear() 메서드는 HashTable의 모든 값을 삭제할 때 사용합니다
+
+---
 ## **HashMap**  
     - 중복과 순서가 허용되지 않으며 null값이 올 수 있다.  
 HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다. Map 인터페이스를 상속하고 있기에 Map의 성질을 그대로 가지고 있습니다. Map은 키와 값으로 구성된 Entry객체를 저장하는 구조를 가지고 있는 자료구조입니다. 여기서 키와 값은 모두 객체입니다. 값은 중복 저장될 수 있지만 키는 중복 저장될 수 없습니다. 만약 기존에 저장된 키와 동일한 키로 값을 저장하면 기존의 값은 없어지고 새로운 값으로 대치됩니다.
@@ -23,7 +118,7 @@ HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다.
 
 주요 메소드
 
-| 메소드                                         | 설명                                                                                                                                  |
+| 메소드                                         | 설명                                                                                                                              |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | void clear()                                   | 해당 맵(map)의 모든 매핑(mapping)을 제거함.                                                                                       |
 | boolean containsKey(Object key)                | 해당 맵이 전달된 키를 포함하고 있는지를 확인함.                                                                                   |
@@ -37,6 +132,8 @@ HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다.
 | V replace(K key, V value)                      | 해당 맵에서 전달된 키에 대응하는 값을 특정 값으로 대체함.                                                                         |
 | boolean replace(K key, V oldValue, V newValue) | 해당 맵에서 특정 값에 대응하는 전달된 키의 값을 새로운 값으로 대체함.                                                             |
 | int size()                                     | 해당 맵의 매핑의 총 개수를 반환함.                                                                                                |
+| V getKey()                                     | key값                                                                                                                           |
+| V getValue()                                   | value값                                                                                                                                  |
 
 
 
@@ -178,13 +275,40 @@ while(keys.hasNext()){
 HashMap의 전체출력 시 반복문을 사용하지 않고 Iterator를 사용하여도 됩니다. iterator로 Map안의 전체 요소를 출력하는 방법은 위와 같습니다.
 
       
-    
+
+
+---
 ## **TreeMap**  
     - 정렬된 순서대로 키(Key)와 값(Value)을 저장하여 검색이 빠름
 
+TreeMap은 이진트리를 기반으로 한 Map 컬렉션이다.  
+   
+같은 Tree구조로 이루어진 TreeSet과의 차이점은 TreeSet은 그냥 값만 저장한다면, TreeMap은 키와 값이 저장된 Map, Entry를 저장한다는 점이다.  
+   
+TreeMap에 객체를 저장하면 자동 정렬되는데, 키는 저장과 동시에 자동 오름차순으로 정렬되고 타입이 숫자일 경우 값으로, 문자열일 경우 유니코드로 정렬한다.   
+   
+정렬 순서는 기본적으로 부모 키값과 비교해서 키값이 낮은 것은 왼쪽 자식 노드에 키 값이 높은 것은 오른쪽 자식 노드에 Map.Entry 객체를 저장한다.  
+   
+TreeMap은 일반적으로 Map으로써 성능이 HashMap보다 떨어진다.  
+TreeMap은 데이터를 저장할 때 즉시 정렬하기에 추가나 삭제가 HashMap보다 오래 걸린다.  
+하지만 정렬된 상태로 Map을 유지해야 하거나 정렬된 데이터를 조회해야 하는 범위 검색이 필요한 경우 TreeMap을 사용하는 것이 효율성면에서 좋다.
+
+## **레드-블랙 트리(Red-Black Tree)**
+
+![[Pasted image 20231212110141.png]]
 
 
 
+
+
+
+
+
+---
 
 참조 - https://devlogofchris.tistory.com/41 HashMap 
 https://gre-eny.tistory.com/97
+
+HashTable - https://crazykim2.tistory.com/589
+
+TreeMap

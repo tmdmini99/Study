@@ -284,6 +284,7 @@ LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(
 
 ---
 
+---
 # **<font color="#ff0000">Vector</font>**  
 
 과거에 대용량 처리를 위해 사용했으며, 내부에서 자동으로 동기화처리가 일어나 비교적 성능이 좋지 않고 무거워 잘 쓰이지 않음  
@@ -444,6 +445,7 @@ Vector의 값을 삭제하는 방법입니다
 
 ---
 
+---
 # **ArrayList**  
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
 ArrayList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
@@ -728,7 +730,7 @@ clone 수정되지 않으려면 새롭게 만들어야함
 
 ※제네릭스는 선언할 수 있는 타입이 객체 타입입니다. int는 기본자료형이기 때문에 들어갈 수 없으므로 int를 객체화시킨 wrapper클래스를 사용해야 합니다
 
-
+---
 참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이
 https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움
 https://crazykim2.tistory.com/566
