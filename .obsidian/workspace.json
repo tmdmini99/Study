@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/Collection/Set.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/Collection/Set.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/Collection/Set.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md"
+                "file": "Spaces/Home/Java/Collection/Set.md"
               }
             }
           },
@@ -173,8 +173,8 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
+    "Spaces/Home/Java/JVM/JVM.md",
     "Study.md",
     "Spaces/Home/Java/JVM",
     "Spaces/Home/Java/Collection/Map.md",
