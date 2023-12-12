@@ -11,12 +11,9 @@
             "id": "885d6f7c1defb95c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "daily note/2023-12-11.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "path": "Spaces/Home/Java/Exception"
               }
             }
           }
@@ -95,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-11.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +108,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-11.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,9 +129,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "daily note/2023-12-11.md"
-              }
+              "state": {}
             }
           },
           {
@@ -174,9 +167,11 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "daily note/2023-12-08.md",
+    "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
+    "Spaces/Home/Java/수도 코드/수도코드.md",
     "daily note/2023-12-11.md",
+    "daily note/2023-12-08.md",
     "Spaces/Home/Java/Collection/Set.md",
     "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/List.md",
@@ -196,12 +191,10 @@
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/Exception/Exception.md",
-    "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/상속/super.md",
-    "Spaces/Home/Java/수도 코드/수도코드.md",
     "Spaces/Home/Java/String/String.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Spaces/Home/Java/추상화/추상화.md",
