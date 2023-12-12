@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Stack.md",
+                "file": "Spaces/Home/Java/다형성/캐스팅.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Stack.md",
+                "file": "Spaces/Home/Java/다형성/캐스팅.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Stack.md",
+                "file": "Spaces/Home/Java/다형성/캐스팅.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Stack.md"
+                "file": "Spaces/Home/Java/다형성/캐스팅.md"
               }
             }
           },
@@ -173,9 +173,9 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Stack&Queue/Stack.md",
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
-    "Spaces/Home/Java/Stack&Queue/Stack.md",
     "Spaces/Home/Java/Class/Class.md",
     "Spaces/Home/Java/Collection/List.md",
     "Spaces/Home/Java/Collection/Map.md",
