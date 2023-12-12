@@ -13,7 +13,7 @@
 |protected Object clone()|해당 객체의 복제본을 생성하여 반환함.|
 |boolean equals(Object obj)|해당 객체와 전달받은 객체가 같은지 여부를 반환함.|
 |protected void finalize()|해당 객체를 더는 아무도 참조하지 않아 가비지 컬렉터가 객체의 리소스를 정리하기 위해 호출함.|
-|Class<T> getClass()|해당 객체의 클래스 타입을 반환함.|
+|Class\<T> getClass()|해당 객체의 클래스 타입을 반환함.|
 |int hashCode()|해당 객체의 해시 코드값을 반환함.|
 |void notify()|해당 객체의 대기(wait)하고 있는 하나의 스레드를 다시 실행할 때 호출함.|
 |void notifyAll()|해당 객체의 대기(wait)하고 있는 모든 스레드를 다시 실행할 때 호출함.|
@@ -40,4 +40,5 @@
 
 
 
-참조 - 
+참조 -   https://wickedmagic.tistory.com/60
+https://jaimemin.tistory.com/1545
