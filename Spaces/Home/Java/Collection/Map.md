@@ -19,23 +19,27 @@ HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다.
 
 
 ### HashMap Method
-| **void** clear()|
-| **boolean** isEmpty()|
-| **int** size()|
-| **boolean** containsKey(Object Key)|
-| **boolean** containsValue(Object value)|
-| **Set<Map.Entry<K, V>>** entrySet()|
-| **Set'<'K>** keySet()|
-| **Collection'<'V>** values()|
-| **V** get(Object key)|
-| **V** put(K key, V value)|
-| **V** remove(Object key)|
-| **V** replace(K key, V value)|
-| **void** forEach(BiConsumer'<''? super K,? super~~ V> action)|
-| **V** getOrDefault(Object key, V defaultValue)|
-| **V** putIfAbsent(K key, V value)|
-| **V** computeIfAbsent(K key, Function'<''? super K, ? extends V> mappingFunction)|
-| **V** computeIfPresent(K key, BiFunction'<''? super K, ? super V, ? extends V> remappingFunction)|
+| 메소드                                                                                            | 설명                                                                                                                                                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **void** clear()                                                                                  | HashMap 안에 들어있던 기존에 요소들을 모두 지운다. 반환값은 없다.                                                                                                                                                                                                                                                         |
+| **boolean** isEmpty()                                                                             | HashMap 에 element가 있는지를 판단한다. 없다면 true를 있다면 false를 반환한다.                                                                                                                                                                                                                                            |
+| **int** size()                                                                                    | size 메소드는 Map의 갯수를 리턴한다.                                                                                                                                                                                                                                                                                      |
+| **boolean** containsKey(Object Key)                                                               | 인자로 주어진 Key가 현재 HashMap에 존재하는지를 판단하여 boolean값을 반환한다.                                                                                                                                                                                                                                            |
+| **boolean** containsValue(Object value)                                                           | 인자로 주어진 Value를 가진 Key가 현재 HashMap에 존재하는지를 판단하여 boolean값을 반환한다.                                                                                                                                                                                                                               |
+| **Set<Map.Entry<K, V>>** entrySet()                                                               | HashMap의 모든 요소를 'Key=Value' 형태로 묶어 Set으로 반환한다.                                                                                                                                                                                                                                                           |
+| **Set'<'K>** keySet()                                                                             | HashMap의 모든 요소의 키만 'Key' 형태로 묶어 Set으로 반환한다.                                                                                                                                                                                                                                                            |
+| **Collection'<'V>** values()                                                                      | HashMap의 모든 요소의 값만 묶어 반환한다.                                                                                                                                                                                                                                                                                 |
+| **V** get(Object key)                                                                             | 인자로 주어진 key와 매핑되는 value를 반환해준다. HashMap에 key가 없다면 null을 반환한다.                                                                                                                                                                                                                                  |
+| **V** put(K key, V value)                                                                         | 인자로 주어진 key=value 쌍을 HashMap에 추가한다. 만약 이미 HashMap안에 key가 존재할 경우, 나중에 put된 value가 들어간다.                                                                                                                                                                                                  |
+| **V** remove(Object key)                                                                          | HashMap에 주어진 key가 있으면 그 key=value 쌍을 제거하고 value를 반환한다. 주어진 key가 HashMap에 없다면 null을 반환한다.                                                                                                                                                                                                 |
+| **V** replace(K key, V value)                                                                     | 기존에 존재하던 HashMap의 key=old_value를 새로운 key=value로 바꾼다.  replace에 성공하면 기존에 존재하던 old_value를 반환하고, key가 존재하지않아 replace에 실패하면 null을 반환한다.                                                                                                                                     |
+| **void** forEach(BiConsumer'<''? super K,? super~~ V> action)                                     | - forEach를 사용하여 HashMap의 각 key=value 쌍에 접근할 수 있다. lambda식도 사용가능하므로 Iterator를 통한 순회보다 더욱 더 간단하게 코드를 짤 수 있다.  keySet()이나 entrySet(), values()를 통하여 만들어진 Set들도 forEach문으로 접근이 가능하다.                                                                       |
+| **V** getOrDefault(Object key, V defaultValue)                                                    | 기존의 HashMap.get(K key) 메소드는 해당 key가 존재하지 않을 경우 null을 반환했다. 그러나 HashMap.getOrDefault() 메소드는 key가 존재할 경우 key에 매핑되는 value를 반환하고, key가 존재하지 않는다면 defaultValue를 반환한다.                                                                                              |
+| **V** putIfAbsent(K key, V value)                                                                 | putIfAbsent의 성공시 반환값은 put과 동일하다. (key가 존재하지 않아서 성공하면 null 반환) 그러나 put은 key가 이미 존재하면 새로운 value로 업데이트를 해버린다. putIfAbsent는 key가 기존에 없을 때만 put이 진행된다. 기존에 이미 key가 존재한다면, 그 key에 매핑되는 value를 반환하고, 새로운 value를 업데이트 하지 않는다. |
+| **V** computeIfAbsent(K key, Function'<''? super K, ? extends V> mappingFunction)                 | computeIfAbsent()는 HashMap에 파라미터로 전달된 key가 없으면, mappingFunction이 호출되는 구조이다. 만약 key가 있다면, mappingFunction은 호출되지 않는다. key가 없으면 값을 구하기 위하여 mappingFunction을 호출하여 가져온 후, key=value 값을 HashMap에 추가한다.                                                         |
+| **V** computeIfPresent(K key, BiFunction'<''? super K, ? super V, ? extends V> remappingFunction) | computeIfPresent()는 HashMap에 파라미터로 전달된 key가 있으면, remappingFunction이 호출되는 구조이다. 만약 key가 없다면, remappingFunction은 호출되지 않는다. key가 있으면 값을 구하기 위하여 remappingFunction을 호출하여 가져온 후, key=value 값을 HashMap에 갱신한다.                                                  |
+
+
 
 
 ###  HashMap 사용법
