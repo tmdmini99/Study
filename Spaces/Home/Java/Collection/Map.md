@@ -31,7 +31,7 @@ HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다.
 | **V** put(K key, V value)|
 | **V** remove(Object key)|
 | **V** replace(K key, V value)|
-| **void** forEach(BiConsumer'<''? super K,? super V> action)|
+| **void** forEach(BiConsumer'<''? super K,? super~~ V> action)|
 | **V** getOrDefault(Object key, V defaultValue)|
 | **V** putIfAbsent(K key, V value)|
 | **V** computeIfAbsent(K key, Function'<''? super K, ? extends V> mappingFunction)|

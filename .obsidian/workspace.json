@@ -11,9 +11,12 @@
             "id": "885d6f7c1defb95c",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Spaces/Home/Mark/MarkUp"
+                "file": "Spaces/Home/Java/Collection/Map.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -92,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spaces/Home/Java/Collection/Map.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spaces/Home/Java/Collection/Map.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Spaces/Home/Java/Collection/Map.md"
+              }
             }
           },
           {
@@ -167,6 +174,7 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Collection/List.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
     "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/Set.md",
@@ -175,7 +183,6 @@
     "Spaces/Home/Java/수도 코드/수도코드.md",
     "daily note/2023-12-11.md",
     "daily note/2023-12-08.md",
-    "Spaces/Home/Java/Collection/List.md",
     "Spaces/Home/Java/Collection/Collection.md",
     "Pasted image 20231211183416.png",
     "Pasted image 20231211183405.png",
