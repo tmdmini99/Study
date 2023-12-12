@@ -293,13 +293,118 @@ TreeMap은 일반적으로 Map으로써 성능이 HashMap보다 떨어진다.
 TreeMap은 데이터를 저장할 때 즉시 정렬하기에 추가나 삭제가 HashMap보다 오래 걸린다.  
 하지만 정렬된 상태로 Map을 유지해야 하거나 정렬된 데이터를 조회해야 하는 범위 검색이 필요한 경우 TreeMap을 사용하는 것이 효율성면에서 좋다.
 
-## **레드-블랙 트리(Red-Black Tree)**
-
-![[Pasted image 20231212110141.png]]
-
+### **레드-블랙 트리(Red-Black Tree)**
+![[Pasted image 20231211181537.png]]
 
 
+TreeSet은 이진탐색트리의 문제점을 보완한 레드-블랙 트리(Red-Black Tree)로 구현되어 있다.  
+   
+일반적인 이진 탐색 트리는 트리의 높이만큼 시간이 걸린다.  
+   
+데이터의 값이 트리에 잘 분산되어 있다면 효율성에 큰 문제가 없으나 데이터가 들어올 때 값이 편향되게 들어올 경우  
+   
+한 쪽으로 크게 치우쳐진 트리가 되어 굉장히 비효율적인 퍼포먼스를 낸다.  
+   
+이 문제를 보완하기 위해 레드 블랙 트리가 등장했다.  
+   
+레드 블랙 트리는 부모노드보다 작은 값을 가지는 노드는 왼쪽 자식으로, 큰 값을 가지는 노드는 오른쪽 자식으로 배치하여  
+   
+데이터의 추가나 삭제 시 트리가 한 쪽으로 치우쳐지지 않도록 균형을 맞추어준다.
 
+
+## **TreeMap 사용법**
+
+**TreeMap 선언**
+
+```java
+TreeMap<Integer,String> map1 = new TreeMap<Integer,String>();//TreeMap생성 
+TreeMap<Integer,String> map2 = new TreeMap<>();//new에서 타입 파라미터 생략가능 
+TreeMap<Integer,String> map3 = new TreeMap<>(map1);//map1의 모든 값을 가진 TreeMap생성
+TreeMap<Integer,String> map6 = new TreeMap<Integer,String>(){{//초기값 설정   
+put(1,"a");}};
+```
+
+생성하는 명령어는 HashMap과 크게 다르지 않으나 **선언 시 크기를 지정할 수 없다.**
+
+---
+
+**TreeMap 값 추가**
+
+```java
+TreeMap<Integer,String> map = new TreeMap<Integer,String>();//TreeMap생성
+map.put(1, "사과");//값 추가
+map.put(2, "복숭아");
+map.put(3, "수박");
+```
+
+TreeMap은 구조만 HashMap과 다를 뿐 기본적으로 Map 인터페이스를 같이 상속받고 있으므로 기본적인 메소드의 사용법 자체는 HashMap과 동일하다.
+
+---
+
+**TreeMap 값 삭제**
+
+```java
+TreeMap<Integer, String> map = new TreeMap<Integer,String>(){{//초기값 설정    put(1, "사과");//값 추가    put(2, "복숭아");    put(3, "수박");}};map.remove(1); //key값 1 제거map.clear(); //모든 값 제거
+```
+
+---
+
+**TreeMap 단일 값 출력**
+
+```java
+TreeMap<Integer,String> map = new TreeMap<Integer,String>(){{//초기값 설정    put(1, "사과");//값 추가    put(2, "복숭아");    put(3, "수박");}};		System.out.println(map); //전체 출력 : {1=사과, 2=복숭아, 3=수박}System.out.println(map.get(1));//key값 1의 value얻기 : 사과System.out.println(map.firstEntry());//최소 Entry 출력 : 1=사과System.out.println(map.firstKey());//최소 Key 출력 : 1System.out.println(map.lastEntry());//최대 Entry 출력: 3=수박System.out.println(map.lastKey());//최대 Key 출력 : 3
+```
+
+TreeMap을 그냥 print하게 되면 { }로 묶어 Map의 전체 key값, value가 출력된다.  
+특정 key값의 value를 가져오고 싶다면 get(key)를 사용하면 된다.  
+TreeMap은 HashMap과 달리 Tree구조로 이루어져 있기에 항상 정렬이 되어있어 최소값,최대값을 바로 가져오는 메소드를 지원한다.  
+**firstEntry는 최소 Entry값**, **firstKey는 최소 Key값**,   
+**lastEntry는 최대 Entry값**, **lastKey는 최대 Key값**을 리턴한다.
+
+---
+
+**TreeMap 전체 값 출력**
+
+```java
+TreeMap<Integer,String> map = new TreeMap<Integer,String>(){{//초기값 설정    put(1, "사과");//값 추가    put(2, "복숭아");    put(3, "수박");}}; //entrySet() 활용for (Entry<Integer, String> entry : map.entrySet()) {    System.out.println("[Key]:" + entry.getKey() + " [Value]:" + entry.getValue());}//[Key]:1 [Value]:사과//[Key]:2 [Value]:복숭아//[Key]:3 [Value]:수박 //KeySet() 활용for(Integer i : map.keySet()){ //저장된 key값 확인    System.out.println("[Key]:" + i + " [Value]:" + map.get(i));}//[Key]:1 [Value]:사과//[Key]:2 [Value]:복숭아//[Key]:3 [Value]:수박
+```
+
+TreeMap의 전체요소를 출력하려면 HashMap과 마찬가지로 entrySet()이나 keySet() 메소드를 활용한다.  
+   
+**특정 key값의 value를 가져오고 싶다면 get(key)를 사용**하면 되고,  
+**전체를 출력하려면 entrySet()이나 keySet()메소드를 활용하여 Map의 객체를 반환받은 후 출력**하면 된다.  
+   
+**entrySet()은 key와 value가 모두 필요할 경우 사용**하며  
+**keySet()은 key 값만 필요할 경우 사용**하는데 **key값만 받아서 get(key)를 활용하여 value를 출력**할 수도 있다.  
+하지만, key 값을 이용해 value를 찾는 과정에서 시간이 많이 소모되므로 많은 양의 데이터를 가져와야 한다면 entrySet()이 좋다.  
+(약 20%~200% 성능 저하가 있다고 한다.)
+
+---
+
+   
+**Iterator 사용**
+
+```java
+TreeMap<Integer,String> map = new TreeMap<Integer,String>(){{//초기값 설정    
+put(1, "사과");//값 추가    
+put(2, "복숭아");    
+put(3, "수박");}};		//entrySet().iterator()
+Iterator<Entry<Integer, String>> entries = map.entrySet().iterator();
+while(entries.hasNext()){    
+Map.Entry<Integer, String> entry = entries.next();   
+System.out.println("[Key]:" + entry.getKey() + " [Value]:" +  entry.getValue());}
+//[Key]:1 [Value]:사과
+//[Key]:2 [Value]:복숭아
+//[Key]:3 [Value]:수박		
+//keySet().iterator()
+Iterator<Integer> keys = map.keySet().iterator();
+while(keys.hasNext()){    
+int key = keys.next();    
+System.out.println("[Key]:" + key + " [Value]:" +  map.get(key));}
+//[Key]:1 [Value]:사과
+//[Key]:2 [Value]:복숭아
+//[Key]:3 [Value]:수박
+```
 
 
 
@@ -311,4 +416,4 @@ https://gre-eny.tistory.com/97
 
 HashTable - https://crazykim2.tistory.com/589
 
-TreeMap
+TreeMap- https://dev-coco.tistory.com/39
