@@ -180,3 +180,6 @@ stack.size(1);
 
 
 https://velog.io/@1_dohyeon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-3-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C-%EC%8A%A4%ED%83%9Dstack-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-java
+
+
+https://hbase.tistory.com/122 
