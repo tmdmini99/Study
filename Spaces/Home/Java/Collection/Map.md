@@ -312,7 +312,7 @@ TreeSet은 이진탐색트리의 문제점을 보완한 레드-블랙 트리(Red
 데이터의 추가나 삭제 시 트리가 한 쪽으로 치우쳐지지 않도록 균형을 맞추어준다.
 
 
-## **TreeMap 사용법**
+### **TreeMap 사용법**
 
 **TreeMap 선언**
 
@@ -328,7 +328,7 @@ put(1,"a");}};
 
 ---
 
-**TreeMap 값 추가**
+### **TreeMap 값 추가**
 
 ```java
 TreeMap<Integer,String> map = new TreeMap<Integer,String>();//TreeMap생성
@@ -341,7 +341,7 @@ TreeMap은 구조만 HashMap과 다를 뿐 기본적으로 Map 인터페이스�
 
 ---
 
-**TreeMap 값 삭제**
+### **TreeMap 값 삭제**
 
 ```java
 TreeMap<Integer, String> map = new TreeMap<Integer,String>(){{//초기값 설정    put(1, "사과");//값 추가    put(2, "복숭아");    put(3, "수박");}};map.remove(1); //key값 1 제거map.clear(); //모든 값 제거
@@ -349,7 +349,7 @@ TreeMap<Integer, String> map = new TreeMap<Integer,String>(){{//초기값 설정
 
 ---
 
-**TreeMap 단일 값 출력**
+### **TreeMap 단일 값 출력**
 
 ```java
 TreeMap<Integer,String> map = new TreeMap<Integer,String>(){{//초기값 설정    put(1, "사과");//값 추가    put(2, "복숭아");    put(3, "수박");}};		System.out.println(map); //전체 출력 : {1=사과, 2=복숭아, 3=수박}System.out.println(map.get(1));//key값 1의 value얻기 : 사과System.out.println(map.firstEntry());//최소 Entry 출력 : 1=사과System.out.println(map.firstKey());//최소 Key 출력 : 1System.out.println(map.lastEntry());//최대 Entry 출력: 3=수박System.out.println(map.lastKey());//최대 Key 출력 : 3
@@ -363,7 +363,7 @@ TreeMap은 HashMap과 달리 Tree구조로 이루어져 있기에 항상 정렬�
 
 ---
 
-**TreeMap 전체 값 출력**
+### **TreeMap 전체 값 출력**
 
 ```java
 TreeMap<Integer,String> map = new TreeMap<Integer,String>(){{//초기값 설정    put(1, "사과");//값 추가    put(2, "복숭아");    put(3, "수박");}}; //entrySet() 활용for (Entry<Integer, String> entry : map.entrySet()) {    System.out.println("[Key]:" + entry.getKey() + " [Value]:" + entry.getValue());}//[Key]:1 [Value]:사과//[Key]:2 [Value]:복숭아//[Key]:3 [Value]:수박 //KeySet() 활용for(Integer i : map.keySet()){ //저장된 key값 확인    System.out.println("[Key]:" + i + " [Value]:" + map.get(i));}//[Key]:1 [Value]:사과//[Key]:2 [Value]:복숭아//[Key]:3 [Value]:수박
@@ -382,7 +382,7 @@ TreeMap의 전체요소를 출력하려면 HashMap과 마찬가지로 entrySet()
 ---
 
    
-**Iterator 사용**
+### **Iterator 사용**
 
 ```java
 TreeMap<Integer,String> map = new TreeMap<Integer,String>(){{//초기값 설정    

@@ -18,7 +18,7 @@
   "saveAllContextToFrontmatter": true,
   "editorFlowStyle": "seamless",
   "autoOpenFileContext": false,
-  "activeView": "/",
+  "activeView": "Spaces/Home",
   "hideFrontmatter": true,
   "activeSpace": "",
   "defaultDateFormat": "MMM dd yyyy",
@@ -59,7 +59,9 @@
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Collection",
     "//Spaces/Spaces/Home/Spaces/Home/Mark",
     "//Spaces/Spaces/Home/Spaces/Home/Mark/Spaces/Home/Mark/MarkUp",
-    "//daily note"
+    "//daily note",
+    "Spaces/Home/Spaces/Home/Java",
+    "Spaces/Home/Spaces/Home/Mark"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
