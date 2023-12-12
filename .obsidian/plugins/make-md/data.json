@@ -45,7 +45,6 @@
     "//Spaces/Spaces/Home",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/상속",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/제어자",
-    "//daily note",
     "//Spaces/Spaces/Home/Spaces/Home/Java",
     "//Spaces/Spaces/Home",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Exception",
@@ -59,7 +58,8 @@
     "//Spaces/Spaces/Home/Spaces/Home/Html",
     "//Spaces/Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/Collection",
     "//Spaces/Spaces/Home/Spaces/Home/Mark",
-    "//Spaces/Spaces/Home/Spaces/Home/Mark/Spaces/Home/Mark/MarkUp"
+    "//Spaces/Spaces/Home/Spaces/Home/Mark/Spaces/Home/Mark/MarkUp",
+    "//daily note"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

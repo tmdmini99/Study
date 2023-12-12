@@ -165,8 +165,8 @@
     "hiddenItems": {
       "switcher:퀵 스위처 열기": false,
       "canvas:새 캔버스 만들기": false,
-      "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
       "graph:그래프 뷰 열기": false,
       "command-palette:명령어 팔레트 열기": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
@@ -174,9 +174,11 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "daily note/2023-12-12.md",
+    "Study.md",
+    "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/List.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
-    "Spaces/Home/Java/Collection/Map.md",
     "Spaces/Home/Java/Collection/Set.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
@@ -206,8 +208,6 @@
     "Spaces/Home/Java/String/String.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Spaces/Home/Java/추상화/추상화.md",
-    "Spaces/Home/Java/Json/Json.md",
-    "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Pasted image 20231211101644.png",
     "Spaces/Home/Java/Iterator",
     "Pasted image 20231211120131.png",
