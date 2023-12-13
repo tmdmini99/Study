@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/제어자.md",
+                "file": "Spaces/Home/Java/상속/상속.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/제어자.md",
+                "file": "Spaces/Home/Java/상속/상속.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/제어자.md",
+                "file": "Spaces/Home/Java/상속/상속.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/제어자.md"
+                "file": "Spaces/Home/Java/상속/상속.md"
               }
             }
           },
@@ -173,9 +173,10 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Exception/Exception.md",
+    "Spaces/Home/Java/캡슐화/제어자.md",
     "Pasted image 20231213163142.png",
     "Pasted image 20231208163544.png.md",
-    "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/Class/Class.md",
@@ -217,7 +218,6 @@
     "Spaces/Home/Java/Generic/Collection",
     "Spaces/Home/Java/String",
     "Pasted image 20231211095828.png",
-    "Spaces/Home/Java/Stack&Queue",
-    "Pasted image 20231208163544.png"
+    "Spaces/Home/Java/Stack&Queue"
   ]
 }
