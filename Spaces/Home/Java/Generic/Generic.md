@@ -38,3 +38,5 @@
 
 참조 - https://m.blog.naver.com/wlgh325/221339419993
 https://mangkyu.tistory.com/241
+
+https://velog.io/@e1psycongr00/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-item31-%ED%95%9C%EC%A0%95%EC%A0%81-%EC%99%80%EC%9D%BC%EB%93%9C-%EC%B9%B4%EB%93%9C%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-API%EC%9D%98-%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84-%EB%86%92%EC%97%AC%EB%9D%BC
