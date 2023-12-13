@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/상속/super.md",
+                "file": "Spaces/Home/Java/추상화/인터페이스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/상속/super.md",
+                "file": "Spaces/Home/Java/추상화/인터페이스.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/상속/super.md",
+                "file": "Spaces/Home/Java/추상화/인터페이스.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/상속/super.md"
+                "file": "Spaces/Home/Java/추상화/인터페이스.md"
               }
             }
           },
@@ -171,13 +171,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/추상화/추상클래스.md",
+    "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/상속/상속.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/상속/this.md",
-    "Spaces/Home/Java/상속/super.md",
-    "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/Class/Class.md",
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
