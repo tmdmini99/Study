@@ -21,7 +21,7 @@ _links:
 ```java
 MakeStack<Integer> ms = new MakeStack<Integer>();
 ```
-   =를 기준으로 앞에는 레퍼런스 변수 뒤에 n
+   =를 기준으로 앞에는 레퍼런스 변수 뒤에 new를 사용하여 객체 생성
 
 ```java
 MakeStack<Integer> ms = new MakeStack<Integer>();
