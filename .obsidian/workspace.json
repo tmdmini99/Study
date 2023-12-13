@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/추상화/추상클래스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/추상화/추상클래스.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/추상화/추상클래스.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md"
+                "file": "Spaces/Home/Java/추상화/추상클래스.md"
               }
             }
           },
@@ -173,8 +173,11 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Spaces/Home/Java/Generic/Generic.md",
+    "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
+    "Spaces/Home/Java/상속/상속.md",
+    "Spaces/Home/Java/Generic/Collection/List.md",
+    "Spaces/Home/Java/Generic/Generic.md",
     "daily note/2023-12-08.md",
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/제어자/제어자.md",
@@ -186,7 +189,6 @@
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/Exception/Exception.md",
     "Spaces/Home/Java/Generic/Collection/Collection.md",
-    "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Generic",
     "daily note/2023-12-13.md",
     "daily note/2023-12-12.md",
@@ -207,8 +209,6 @@
     "Pasted image 20231211183416.png",
     "Pasted image 20231212110141.png",
     "Pasted image 20231211183405.png",
-    "Spaces/Home/Mark/MarkUp/MarkUp.md",
-    "daily note/2023-12-11.md",
     "Spaces/Home/Html",
     "Spaces/Home/Mark/MarkUp",
     "Spaces/Home/Mark/MarkDown",
