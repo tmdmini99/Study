@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/추상화/추상화.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/추상화/추상화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/추상화/추상화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md"
+                "file": "Spaces/Home/Java/추상화/추상화.md"
               }
             }
           },
@@ -171,8 +171,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "885d6f7c1defb95c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
@@ -181,7 +182,6 @@
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/JVM/JVM.md",
-    "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Spaces/Home/Java/Exception/Exception.md",
