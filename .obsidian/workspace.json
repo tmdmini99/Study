@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md",
+                "file": "Spaces/Home/Java/Generic/Collection/List.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md",
+                "file": "Spaces/Home/Java/Generic/Collection/List.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md",
+                "file": "Spaces/Home/Java/Generic/Collection/List.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md"
+                "file": "Spaces/Home/Java/Generic/Collection/List.md"
               }
             }
           },
@@ -173,6 +173,7 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "daily note/2023-12-08.md",
     "Spaces/Home/Java/추상화/추상화.md",
@@ -184,7 +185,6 @@
     "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/Exception/Exception.md",
-    "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Generic",
