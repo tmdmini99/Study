@@ -21,7 +21,7 @@ _links:
 ```java
 MakeStack<Integer> ms = new MakeStack<Integer>();
 ```
-`&uarr;`
+   =를 기준으로 앞에는 레퍼런스 변수 뒤에 n
 
 ```java
 MakeStack<Integer> ms = new MakeStack<Integer>();
@@ -35,6 +35,7 @@ public String toString(){
 }
 ```
 이런식으로 return값을 바꿔주면 된다
+
 
 
 
