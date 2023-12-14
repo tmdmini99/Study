@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/다형성/다형성.md",
+                "file": "Spaces/Home/Java/추상화/인터페이스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/다형성/다형성.md",
+                "file": "Spaces/Home/Java/추상화/인터페이스.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/다형성/다형성.md",
+                "file": "Spaces/Home/Java/추상화/인터페이스.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/다형성/다형성.md"
+                "file": "Spaces/Home/Java/추상화/인터페이스.md"
               }
             }
           },
@@ -173,10 +173,12 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Pasted image 20231214153117.png",
+    "Spaces/Home/Java/캡슐화/제어자.md",
+    "Spaces/Home/Java/캡슐화/캡슐화.md",
+    "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
-    "Spaces/Home/Java/다형성/다형성.md",
+    "Pasted image 20231214153117.png",
     "Pasted image 20231214151140.png",
     "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/상속/오버라이딩.md",
@@ -184,8 +186,6 @@
     "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/추상화/추상화.md",
-    "Spaces/Home/Java/캡슐화/제어자.md",
-    "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/Pseudo Code/Pseudo Code.md",
@@ -210,7 +210,6 @@
     "Pasted image 20231211115426.png",
     "Pasted image 20231211183416.png",
     "Pasted image 20231212110141.png",
-    "Pasted image 20231211183405.png",
     "Spaces/Home/Html",
     "Spaces/Home/Mark/MarkUp",
     "Spaces/Home/Mark/MarkDown",
