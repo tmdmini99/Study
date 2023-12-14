@@ -265,7 +265,7 @@ public class LinkedListDemo {
 
 ```
 LinkedList의 <span style="background:#fff88f">get(index)</span> 메소드를 사용하면 LinkedList의 원하는 index의 값이 리턴됩니다. 
-전체 출력은 대부분 for문을 통해서 출력을 하고 [[Iterator]]를 사용해서 출력을 할 수도 있습니다.
+전체 출력은 대부분 for문을 통해서 출력을 하고 [[Spaces/Home/Java/Iterator/Iterator]]를 사용해서 출력을 할 수도 있습니다.
 LinkedList의 경우 인덱스를 사용하여 연산을 수행할 수 있도록 get(index) 메소드를 제공하지만, 메소드 내부의 동작은 순차 탐색으로 이루어져 있어 ArrayList의 get(index)메서드보다 속도가 느립니다.
 
 
