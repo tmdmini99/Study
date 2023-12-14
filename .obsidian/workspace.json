@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/추상화/추상클래스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/추상화/추상클래스.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/추상화/추상클래스.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md"
+                "file": "Spaces/Home/Java/추상화/추상클래스.md"
               }
             }
           },
@@ -173,6 +173,8 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/추상화/추상화.md",
+    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
@@ -190,7 +192,6 @@
     "Spaces/Home/Java/Generic/Collection/Set.md",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
-    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/Class/Class.md",
@@ -199,7 +200,6 @@
     "Spaces/Home/Java/상속/this.md",
     "Spaces/Home/Java/상속/상속.md",
     "Pasted image 20231213163142.png",
-    "Pasted image 20231208163544.png.md",
     "Spaces/Home/Java/Generic",
     "Spaces/Home/Java/JVM",
     "Pasted image 20231211181537.png",
