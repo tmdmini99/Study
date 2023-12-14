@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -173,6 +174,7 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Pasted image 20231214151140.png",
     "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/상속/오버라이딩.md",
     "Spaces/Home/Java/상속/상속.md",
@@ -198,7 +200,6 @@
     "Spaces/Home/Java/String/String.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
-    "Spaces/Home/Java/다형성/오버로딩.md",
     "Pasted image 20231213163142.png",
     "Spaces/Home/Java/Generic",
     "Spaces/Home/Java/JVM",
