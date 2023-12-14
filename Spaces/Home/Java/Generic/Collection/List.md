@@ -88,7 +88,13 @@ List<String> l2 = Collections.synchronizedList(new LinkedList<>());
 
 	![[Pasted image 20231211120131.png]]
 	
-	
+
+
+
+
+![[Pasted image 20231214154739.png]]
+
+
 
 ```java
 LinkedList li = new LinkedList(); // 타입 설정x Object로 입력
