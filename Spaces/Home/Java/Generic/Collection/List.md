@@ -826,6 +826,10 @@ https://crazykim2.tistory.com/566
 https://inpa.tistory.com/entry/JAVA-%E2%98%95-LinkedList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
 https://kimvampa.tistory.com/79 
 
+LinkedList - https://jinyoungchoi95.tistory.com/10
+
+
+
 vector  https://crazykim2.tistory.com/570
 https://blog.naver.com/manymoa/150004980532
 
