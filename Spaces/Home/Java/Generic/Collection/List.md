@@ -39,6 +39,39 @@ HEAD : 첫번째 노드를 가리키는 변수.
 
  LinkedList에서 저장한 값을 찾기 위해서든, 값을 추가하거나 삭제하든 반드시 첫번째 노드 값을 알아야만 데이터를 다룰 수 있습니다. 따라서 첫 번째 노드를 가리키는 HEAD는 linkedList에서 매우 중요합니다.
 
+
+
+
+
+
+![[Pasted image 20231215174020.png]]
+
+ 이런 LinkedList가 존재하고 있을 때 0x01의 Node가 삭제된다면 0x00 Node가 다음 Node로 참조하고 있던 주소는 0x01이 아니라 0x02가 되어서 연결된 주소를 변경시켜 준다면 삭제가 된다.
+
+![[Pasted image 20231215174002.png]]
+
+추가는 Node와 Node 사이에 새로운 Node를 만들고 삭제에서 했던 것처럼 주소를 이동시켜준다.
+
+
+![[Pasted image 20231215174007.png]]
+
+
+ 0x04의 주소를 가진 Node를 새로 추가를 해주었기 때문에 그 이전의 0x00 Node는 0x04 주소를 참조하고 0x04가 0x00이 참조하던 0x01을 주소를 참조한다.
+ 단, 이 LinkedList는 `Singly LinkedList(단일 연결 리스트)`라고 불린다. 다음 요소로 이어지는 방향이 단방향이기 때문에 이렇게 지어졌는데 단방향이라 이전 요소로 넘어가는 것이 어려워서 실제 LinkedList는 `Doubly LinkedList(이중 연결 리스트)`를 사용하며 지금도 이중 연결 리스트를 구현할 것이다.
+
+ 이중 연결 리스트라고 막 복잡한 것이아니라 Node들에 이전의 Node에 대한 주소를 추가해주는 것에 불과하다.
+
+![](https://blog.kakaocdn.net/dn/r9rAr/btq0A2ecq3X/4E1jADr6cFKkgOTSaycgYk/img.png)
+
+Double LinkedList
+
+  
+
+ 따라서 우리가 어떠한 node를 찾을 때 굳이 header부터 시작하지 않고 중간의 어떤 node에서 검색을 시작하더라도 검색이 가능하게 변경되었다.
+
+
+
+
 ### **2.  데이터 조작과정**
 
  이번 포스팅에선 LinkedList가 데이터를 검색, 삭제, 추가하는 과정을 이해해보고자 합니다. 왜냐하면 이 과정을 이해한다면 LinkedList가 ArrayList에 비해 데이터를 추가하고 삭제하는 것이 왜 빠른지와 LinkedList가 ArrayList에 비해 데이터를 검색하는 과정은 왜 늦는지를 알 수 있기 때문입니다. 
