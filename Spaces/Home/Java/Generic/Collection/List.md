@@ -10,6 +10,55 @@ List 인터페이스
     - LinkedList란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
     - LinkedList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
 
+ 
+###  ****1. LinkedList란?****
+
+> 각 노드가 '데이터'와 '포인터'를 가지고 한 줄로 연결되어 잇는 방식으로 저장하는 자료구조
+
+*데이터 : 실제 값이 저장되는 장소.
+
+*포인터 : 다음 노드의 주소값이 저장되는 장소
+
+ 쉽게 말해 LinkedList는 엘리먼트와 엘리먼트 간의 연결(Link)을 통해서 리스트를 구현한 자료구조입니다. 배열을 통해서 리스트를 구현한 ArrayList와는 대비됩니다.
+
+ ArrayList에선 각각의 데이터를 담은 요소들을 엘리먼트(element)라고 표현하였지만 LinkedList는 각각의 요소들이 연결이라는 특성을 가지기 때문에 "node(마디,교점)"혹은 "vertex(꼭지점, 정점)"라고 표현합니다. 이러한 노드를 표현하기 위해서 C언어는 '구조체'를 사용하고 객체지향 프로그래밍 언어에선 '객체'를 사용합니다.
+
+![[Pasted image 20231215161630.jpg]]
+
+![[Pasted image 20231215161638.jpg]]
+
+Data field : 실제 값이 저장되는 변수입니다.
+
+Link field : 다음 노드의 포인터나 참조값을 저장하는 변수입니다.
+
+node(or vertex) :  LinkedList에서 데이터가 저장되는 요소입니다. Data field와 Linke field로 구성되었습니다.
+
+HEAD : 첫번째 노드를 가리키는 변수.
+
+ ArrayList구조(그림 1)의 경우 하나의 주소 값에 배열을 생성하여 데이터들을 저장하였습니다. 그와 다르게 LinkedList의 경우 데이터가 저장되는 하나하나의 요소들이 주소 값을 차지합니다. 이러한 개개의 요소들은 LinkedList에서 노드라고 표현되는데 이렇게 흩어진 노드들은 각 노드들이 다음 노드를 지목함으로써 데이터들 간에 관계를 가지게 됩니다.
+
+ LinkedList에서 저장한 값을 찾기 위해서든, 값을 추가하거나 삭제하든 반드시 첫번째 노드 값을 알아야만 데이터를 다룰 수 있습니다. 따라서 첫 번째 노드를 가리키는 HEAD는 linkedList에서 매우 중요합니다.
+
+### **2.  데이터 조작과정**
+
+ 이번 포스팅에선 LinkedList가 데이터를 검색, 삭제, 추가하는 과정을 이해해보고자 합니다. 왜냐하면 이 과정을 이해한다면 LinkedList가 ArrayList에 비해 데이터를 추가하고 삭제하는 것이 왜 빠른지와 LinkedList가 ArrayList에 비해 데이터를 검색하는 과정은 왜 늦는지를 알 수 있기 때문입니다. 
+
+ LinkedList의 데이터 추가와 삭제는 visualgo.net 홈페이지를 통해서 이해해보고자 합니다.
+#### **(1) 데이터 추가**
+
+ LinkeList에서 새로운 노드를 추가하는 전체 적인 과정은 다음과 같습니다. ( 편의를 위해서 새로 추가될 노드를 'new노드', 새로추가 될 노드의 바로 앞 노드를 'before노드', 새로 추가될 노드의 바로 뒤 노드를 'after노드'라고 지칭하겠습니다.)
+
+1. 가장 먼저 'new노드'와 'before노드'를 찾습니다.
+
+2. 'new노드'를 생성합니다.
+
+3. 'before노드'의 Link field(다음 노드를 가리키는 참조값을 저장하는 변수)를 'new노드'를 가리키도록 변경합니다.
+
+4. 'new 노드'의 Linke filed를 'after노드'를 가리키도록 변경합니다.
+
+**데이터 추가 속도 : ArrayList < LinkedList** 
+
+ 위의 과정을 보게 되면 LinkedList에서 새로운 노드를 추가하는 방식은 ArrayList에서 새로운 엘리먼트를 추가하는 방식보다 훨씬 간결하다는 것을 알 수 있습니다. ArrayList는 내부적으로 크기를 변경할 수 없는 배열을 사용하기 때문에 데이터를 추가할 시엔 크기가 더 큰 배열을 생성해서 값을 옮겨야 하는 복잡한 과정을 거치기 때문입니다.
 ## LinkedList  메서드
 
 | 메서드                                   | 설명                                                                   |
@@ -742,6 +791,7 @@ clone 수정되지 않으려면 새롭게 만들어야함
 https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움
 https://crazykim2.tistory.com/566
 https://inpa.tistory.com/entry/JAVA-%E2%98%95-LinkedList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
+https://kimvampa.tistory.com/79 
 
 vector  https://crazykim2.tistory.com/570
 https://blog.naver.com/manymoa/150004980532
