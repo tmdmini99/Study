@@ -45,6 +45,13 @@ Dog dog = (Dog) animal; // ClassCastException 발생
 
 
 
+
+
+
+
+
+
+
 ### **예외 처리 코드** (try~catch~finally~…)
 
 본격적으로 예외를 처리(handling) 하는 것에 대해 알아보겠습니다. 기본 형태는 아래와 같습니다.
@@ -142,7 +149,27 @@ public void method2() throws ClassNotFoundException {
 ```
 
 
-예외 처리는 귀찮은 일이다. 그래서 예외를 다음 사용자에게 전가(throw)하거나 try...catch로 감싸고 아무것도 하지 않고 싶은 유혹에 빠지기 쉽다. 하지만 예외는 API를 사용하면서 발생할 수 있는 잠재적 위협에 대한 API 개발자의 강력한 암시다. 이 암시를 무시해서는 안 된다. 물론 더욱 고민스러운 것은 예외 처리 방법에 정답이 없다는 것이겠지만 말이다.
+예외 처리는 귀찮은 일이다. 그래서 예외를 다음 사용자에게 전가(throws)하거나 try...catch로 감싸고 아무것도 하지 않고 싶은 유혹에 빠지기 쉽다. 하지만 예외는 API를 사용하면서 발생할 수 있는 잠재적 위협에 대한 API 개발자의 강력한 암시다. 이 암시를 무시해서는 안 된다. 물론 더욱 고민스러운 것은 예외 처리 방법에 정답이 없다는 것이겠지만 말이다.
+
+
+
+### **throw(예외 발생 시키기)**
+
+
+| 예외                      | 사용해야 할 상황                            |
+| ------------------------- | ------------------------------------------- |
+| IllegalArgumentException  | 매개변수가 의도하지 않은 상황을 유발시킬 때 |
+| IllegalStateException     | 메소드를 호출하기 위한 상태가 아닐 때       |
+| NullPointerException      | 매개 변수 값이 null 일 때                   |
+| IndexOutOfBoundsException | 인덱스 매개 변수 값이 범위를 벗어날 때      |
+| ArithmeticException       | 산술적인 연산에 오류가 있을 때              |
+| IOException                          |      try...catch하거나 throw 해야 한다는 뜻                                       |
+
+
+사용법
+```java
+	throw new IOException
+```
 
 ### **사용자 정의 예외와 예외 발생**
 
