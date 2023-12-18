@@ -230,13 +230,84 @@ e.printStackTrace();
 
 
 ##### 예제
+
+
+**getMessage()**
 ```java
-package joon; public class codeTest { public static void main(String[] args) throws Exception{ try{ /* int로 형변환이 안되는 문자열을 넣어 강제로 Exception 발생 */ String product = "사과"; int productCnt = Integer.valueOf(product); }catch (Exception e){ System.out.println(e.getMessage()); } } }
+package joon;
+
+public class codeTest {
+    public static void main(String[] args) throws Exception{
+        try{
+        /* int로 형변환이 안되는 문자열을 넣어 강제로 Exception 발생 */
+            String product = "사과";
+            int productCnt = Integer.valueOf(product);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
 ```
 
+결과
+
+![[Pasted image 20231218133627.png]]
+
+-> For input string: "사과"
+e.getMessage() 은 정말 Exception의 유형도 없이 정말 간단하게 왜 에러가 발생하였는지 보여주기만 합니다.
+
+---
+**e.toString()**
+```java
+package joon;
+
+public class codeTest {
+    public static void main(String[] args) throws Exception{
+        try{
+            String product = "사과";
+            int productCnt = Integer.valueOf(product);
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
+    }
+}
+```
+![[Pasted image 20231218133755.png]]
+
+
+---
+**e.printStackTrace()**
+```java
+package joon;
+
+public class codeTest {
+    public static void main(String[] args) throws Exception{
+        try{
+            String product = "사과";
+            int productCnt = Integer.valueOf(product);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+![[Pasted image 20231218133759.png]]
 
 
 
+
+
+
+
+
+
+
+
+
+
+# 참조 사이트
+---
 
 
 참조 - https://chanhuiseok.github.io/posts/java-3/
