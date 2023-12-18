@@ -92,3 +92,6 @@ Runtime Data Area - (출처는 맨 하단에 기재)
 - 또한 Method Area에는 상수형을 저장하고 중복을 막는 Runtime Constant Pool이 존재
 
 출처: https://backendcode.tistory.com/161
+
+
+https://velog.io/@supark4170/Java-heap-space%EA%B0%80-%EB%B6%80%EC%A1%B1%ED%95%B4%EC%9A%94
