@@ -199,9 +199,50 @@ finally {
 
 
 
+#### **catch 안에 쓸수 있는 코드(Exception Method)**
+
+##### e.getMessage()
+오류에 대한 기본적인 내용을 출력해준다. 상세하지 않다.
+
+사용법
+```java
+	System.out.println(e.getMessage());
+```
+
+##### e.toString()
+e.toString() 은 어떤 Exception이 발생하였으며, 원인이유를 보여준다.
+하지만 에러의 발생위치는 보여주지않는다.
+에러는 발생했지만 위 로그만 가지고는 에러의 위치를 찾기는 힘들다.
+```java
+System.out.println(e.toString());
+```
+
+##### e.printStackTrace()
+메소드 getMessage, toString과는 다르게 printStackTrace는 리턴값이 없다. 
+이 메소드를 호출하면 메소드가 내부적으로 예외 결과를 화면에 출력한다. 
+printStackTrace는 가장 자세한 예외 정보를 제공한다.
+```java
+e.printStackTrace();
+```
+
+**log4에서는 e.printStackTrace()를 log 안에 담을수 없기 떄문에**
+**log.error("error : ", e); 로 사용하면 된다.**
+
+
+##### 예제
+```java
+package joon; public class codeTest { public static void main(String[] args) throws Exception{ try{ /* int로 형변환이 안되는 문자열을 넣어 강제로 Exception 발생 */ String product = "사과"; int productCnt = Integer.valueOf(product); }catch (Exception e){ System.out.println(e.getMessage()); } } }
+```
+
 
 
 
 
 
 참조 - https://chanhuiseok.github.io/posts/java-3/
+
+https://opentutorials.org/course/1223/6226
+https://opentutorials.org/course/1223/6227
+https://opentutorials.org/course/1223/6228
+
+https://lnsideout.tistory.com/entry/JAVA-etoString-egetMessage-eprintStackTrace-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC

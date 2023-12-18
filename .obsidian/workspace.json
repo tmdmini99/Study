@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/Exception/Exception.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/Exception/Exception.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md"
+                "file": "Spaces/Home/Java/Exception/Exception.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/Exception/Exception.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,9 +173,9 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/JVM/Thread.md",
-    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/추상화/추상화.md",
