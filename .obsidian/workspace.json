@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
+                "file": "Spaces/Home/Java/Generic/Collection/List.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
+                "file": "Spaces/Home/Java/Generic/Collection/List.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Map.md"
+                "file": "Spaces/Home/Java/Generic/Collection/List.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
+                "file": "Spaces/Home/Java/Generic/Collection/List.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,8 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/Generic/Collection/Map.md",
+    "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Exception/Exception.md",
     "Images/Pasted image 20231218133759.png",
