@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md"
+                "file": "Spaces/Home/Java/JVM/JVM.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,20 +173,25 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Images/Pasted image 20231218172854.png",
-    "Images/Pasted image 20231218172847.png",
-    "Spaces/Home/Java/Generic/Collection/Hash.md",
-    "Collections.md",
-    "Spaces/Home/Java/Generic/Collection/Map.md",
-    "Spaces/Home/Java/Generic/Collection/List.md",
-    "Spaces/Home/Java/Generic/Collection/Collection.md",
-    "Spaces/Home/Java/Exception/Exception.md",
-    "Images/Pasted image 20231218133759.png",
-    "Images/Pasted image 20231218133755.png",
-    "Images/Pasted image 20231218133627.png",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/JVM/Thread.md",
+    "Spaces/Home/Java/Generic/Generic.md",
+    "Spaces/Home/Java/Generic/Collection/Iterator.md",
+    "Spaces/Home/Java/Generic/Collection/Hash.md",
+    "Spaces/Home/Java/Generic/Collection/Collection.md",
+    "Spaces/Home/Java/Class/Class.md",
+    "Spaces/Home/Java/Class/Object Class.md",
+    "Spaces/Home/Java/Exception/Exception.md",
+    "Images/Pasted image 20231218172854.png",
+    "Images/Pasted image 20231218172847.png",
+    "Collections.md",
+    "Spaces/Home/Java/Generic/Collection/Map.md",
+    "Spaces/Home/Java/Generic/Collection/List.md",
+    "Images/Pasted image 20231218133759.png",
+    "Images/Pasted image 20231218133755.png",
+    "Images/Pasted image 20231218133627.png",
     "Spaces/Home/Java/추상화/인터페이스.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/추상화/추상화.md",
@@ -197,19 +202,14 @@
     "Images/Pasted image 20231215174007.png",
     "Images/Pasted image 20231215174002.png",
     "Images/Pasted image 20231215161638.jpg",
-    "Images/Pasted image 20231215161630.jpg",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
     "ArrayList.md",
     "Spaces/Home/Java/상속/this.md",
     "Spaces/Home/Java/Generic/Collection/Set.md",
     "Spaces/Home/Java/상속/super.md",
-    "Spaces/Home/Java/Generic/Collection/Iterator.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Study.md",
     "Images",
-    "Spaces/Home/Java/Stack&Queue/Queue.md",
-    "Spaces/Home/Mark/MarkDown/MarkDown.md",
-    "Spaces/Home/Java/다형성/오버로딩.md",
     "Spaces/Home/Java/람다",
     "Spaces/Home/Java/Generic",
     "Spaces/Home/Java/JVM",
