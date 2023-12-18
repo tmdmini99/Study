@@ -54,29 +54,29 @@ Runtime Data Area - (출처는 맨 하단에 기재)
 
 ※ Java는 멀티 스레드 환경으로 모든 스레드는 **Heap, Method Area를 공유**한다.
 
-**▷ PC Register**
+#### **▷ PC Register**
 
 - JVM은 스택 기반의 가상 머신으로, CPU에 직접 접근하지 않고 [[Stack]]에서 주소를 뽑아서 가져온다. 가져온 주소는       PC Register에 저장된다.
 - 따라서, 현재 어떤 명령을 실행해야 할 지에 대한 기록을 담당
 
-**▷ JVM Stacks**
+#### **▷ JVM Stacks**
 
 - 호출된 메서드의 파라미터, 지역 변수, 리턴 값 및 연산 값 등이 저장되는 영역
 - 프로그램 실행 시 임시로 할당되었다가 메서드를 빠져나가게 되면 소멸되는 특성의 데이터들이 저장되는 영역
 - 메서드 호출 시마다 스택에 각각의 스택 프레임이 생성되고, 수행이 끝나면 스택 포인트에서 해당 프레임을 제거
 
-**▷ Native Method Stacks**
+#### **▷ Native Method Stacks**
 
 - Java 이외의 언어에 제공되는 Method의 정보가 저장되는 공간 / Java Native Interface를 통해 바이트 코드로 저장
 - Kernel이 자체적으로 Stack을 잡아 독자적으로 프로그램을 실행시키는 영역
 
-**▷ Heap**
+#### **▷ Heap**
 
-- [[Garbage Collection|GC(가비지 컬렉션)]]|의 대상이 되는 영역
+- [[Garbage Collection|GC(가비지 컬렉션)]]의 대상이 되는 영역
 - 객체를 동적으로 생성하게 되면 인스턴스가 Heap 영역의 메모리에 할당된다.
 - 단, 레퍼런스 변수의 경우, Heap에 인스턴스가 저장되는 것이 아닌 포인터가 저장된다.
 
-**▷ Method Area**
+#### **▷ Method Area**
 
 - 클래스 정보를 처음 메모리에 올릴 때 초기화되는 대상을 저장하기 위한 영역
 - **올라가는 정보는 다음과 같다.**
@@ -94,6 +94,8 @@ Runtime Data Area - (출처는 맨 하단에 기재)
 - Class 인지 Interface 인지 혹은 Type의 속성, 이름, super class의 이름 등
 - 또한 Method Area에는 상수형을 저장하고 중복을 막는 Runtime Constant Pool이 존재
 
+
+---
 출처: https://backendcode.tistory.com/161
 
 
