@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-18.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-18.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2023-12-18.md"
+                "file": "Spaces/Home/Java/JVM/JVM.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-18.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,11 +173,16 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/JVM/Process.md",
+    "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/JVM.md",
+    "Spaces/Home/Java/추상화/인터페이스.md",
+    "Spaces/Home/Java/추상화/추상클래스.md",
+    "Spaces/Home/Java/추상화/추상화.md",
+    "daily note/2023-12-18.md",
     "Images/Pasted image 20231218121117.png",
     "Spaces/Home/Java/Generic/Collection/Map.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
-    "daily note/2023-12-18.md",
     "daily note/2023-12-15.md",
     "Images/Pasted image 20231215174020.png",
     "Images/Pasted image 20231215174007.png",
@@ -197,9 +202,6 @@
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Study.md",
     "Images",
-    "Spaces/Home/Java/추상화/추상화.md",
-    "Spaces/Home/Java/추상화/인터페이스.md",
-    "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
@@ -207,7 +209,6 @@
     "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/상속/오버라이딩.md",
-    "Spaces/Home/Java/상속/상속.md",
     "Images/Pasted image 20231211181537.png",
     "Spaces/Home/Java/람다",
     "Spaces/Home/Java/Generic",
