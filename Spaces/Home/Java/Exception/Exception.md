@@ -135,11 +135,14 @@ public void method1(){
  catch (ClassNotFoundException e1) {
   System.out.println("클래스가 존재하지 않음.");
 }
-
+//------------------------------------------------------------------------
 public void method2() throws ClassNotFoundException {
  Class clazz = Class.forName("java.lang.String22");
 }
 ```
+
+
+예외 처리는 귀찮은 일이다. 그래서 예외를 다음 사용자에게 전가(throw)하거나 try...catch로 감싸고 아무것도 하지 않고 싶은 유혹에 빠지기 쉽다. 하지만 예외는 API를 사용하면서 발생할 수 있는 잠재적 위협에 대한 API 개발자의 강력한 암시다. 이 암시를 무시해서는 안 된다. 물론 더욱 고민스러운 것은 예외 처리 방법에 정답이 없다는 것이겠지만 말이다.
 
 ### **사용자 정의 예외와 예외 발생**
 
@@ -293,6 +296,8 @@ public class codeTest {
 ```
 
 ![[Pasted image 20231218133759.png]]
+
+
 
 
 
