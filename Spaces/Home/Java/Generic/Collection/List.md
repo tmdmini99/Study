@@ -369,6 +369,278 @@ LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(
 값을 있는 index를 찾으려면 indexOf(value) 메소드를 사용하면 되고 만약 값이 없다면 -1을 리턴합니다.
 
 
+## LinkedList Class 직접 구현
+
+```java
+
+package Week1;  
+  
+import java.util.*;  
+  
+  
+  
+class Node<E>{  
+  
+    public E data;  
+    public Node<E> nextNode;  
+    public Node<E> preNode;  
+  
+    public Node(){  
+        //처음 생성시 값이 있으면 안되기 때문  
+        this.data=null;  
+        this.nextNode=null;  
+        this.preNode=null;  
+  
+    }  
+    public Node(E obj){  
+        //처음 생성시 값이 있으면 안되기 때문  
+        this.data=obj;  
+        this.nextNode=null;  
+        this.preNode=null;  
+  
+    }  
+    public Node(E obj, Node next){  
+        //첫번쨰  
+        this.data=obj;  
+        this.nextNode=next;  
+        this.preNode=null;  
+  
+    }  
+    public Node(E obj, Node next, Node pre){  
+        //그 다음부터  
+        this.data=obj;  
+        this.nextNode=next;  
+        this.preNode=pre;  
+  
+    }  
+  
+  
+  
+  
+}  
+  
+public class MakeLinkedList<E> implements List<E> {  
+  
+  
+    private Node<E> first;  
+    private Node<E> last;  
+    private int size;  
+  
+    public MakeLinkedList(){  
+        size=0;  
+    }  
+  
+  
+  
+  
+    public void addLast(E e) {  
+        //처음 일시 null값 저장  
+        Node<E> l = this.last;  
+        //새로운 객체 생성 객체를 만들어서 보관하는것이기 때문에 객체를 각각 생성해줘야함  
+        Node<E> newNode = new Node<E>(e,null,l);  
+        //이전노드값 저장  
+        this.last=newNode;  
+        //처음 값 입력했을때  
+        if(l == null){  
+            this.first = newNode;  
+        }else {  
+            //첫 노드 다음노드 주소 저장  
+            l.nextNode=newNode;  
+        }  
+        size++;  
+    }  
+  
+    public void addFirst(E e) {  
+        Node<E> f = this.first;  
+        Node<E> newNode = new Node<E>(e,first,null);  
+        this.first=newNode;  
+        if(f ==null){  
+            this.last = newNode;  
+        }else {  
+            f.preNode=newNode;  
+  
+        }  
+        size++;  
+    }    
+public E peek(){  
+        return (first == null) ? null : first.data;  
+}  
+    @Override  
+    public boolean add(E e) {  
+  
+        return true;  
+    }  
+    public boolean offer(E e) {  
+        this.addLast(e);  
+        return true;  
+    }  
+  
+    public String toString(){  
+        if(size == 0){  
+            return "데이터 없음";  
+        }else {  
+            Node<E> n = first;  
+            StringBuilder sb = new StringBuilder();  
+            sb.append("["+n.data);  
+  
+            if(first == null){  
+                return "[]";  
+            }else{  
+                while (n.nextNode !=null){  
+                    n=n.nextNode;  
+                    sb.append(n.data);  
+                }  
+  
+  
+            }  
+            sb.append("]");  
+            return  sb.toString();  
+        }  
+    }  
+  
+  
+    public E poll(){  
+  
+        return  null;  
+    }  
+  
+    @Override  
+    public E remove(int index) {  
+  
+        return  null;  
+    }  
+    @Override  
+    public boolean isEmpty() {  
+  
+        return first == null;  
+    }  
+    public Object removeFirst(){  
+        Node<E> n = first;  
+        if(size == 1){  
+            first=null;  
+            last=null;  
+        }else{  
+  
+            first = first.nextNode;  
+            first.preNode=null;  
+        }  
+            size--;  
+        return n.data;  
+    }  
+    public Object pop(){  
+        return this.removeFirst();  
+    }  
+  
+  
+    public Object removeLast(){  
+        Node<E> n = last;  
+        if(size == 1){  
+            first=null;  
+            last=null;  
+        }else{  
+            last = last.preNode;  
+            last.nextNode=null;  
+        }  
+            size--;  
+        return n.data;  
+    }  
+  
+  
+//````````````````````````````````````````````````````````````````````````````````````  
+  
+    @Override  
+    public boolean remove(Object o) {  
+        return false;  
+    }  
+    @Override  
+    public int size() {  
+        return size;  
+    }  
+    @Override  
+    public void clear() {  
+        last =null;  
+        first=null;  
+        size =0;  
+    }  
+  
+  
+  
+  
+    @Override  
+    public boolean contains(Object o) {  
+        return false;  
+    }  
+  
+    @Override  
+    public Iterator<E> iterator() {  
+        return null;  
+    }  
+  
+    @Override  
+    public Object[] toArray() {  
+        return new Object[0];  
+    }  
+  
+    @Override  
+    public <T> T[] toArray(T[] a) {  
+        return null;  
+    }  
+    @Override  
+    public boolean containsAll(Collection<?> c) {  
+        return false;  
+    }    
+    @Override  
+    public boolean addAll(Collection<? extends E> c) {  
+        return false;  
+    }  
+    @Override  
+    public boolean addAll(int index, Collection<? extends E> c) {  
+        return false;  
+    }    
+    @Override  
+    public boolean removeAll(Collection<?> c) {  
+        return false;  
+    }  
+    @Override  
+    public boolean retainAll(Collection<?> c) {  
+        return false;  
+    }  
+    @Override  
+    public E get(int index) {  
+        return null;  
+    }  
+    @Override  
+    public E set(int index, E element) {  
+        return null;  
+    }  
+  
+    @Override  
+    public void add(int index, E element) {  
+    }  
+  
+    @Override  
+    public int indexOf(Object o) {  
+        return 0;  
+    }  
+    @Override  
+    public int lastIndexOf(Object o) {  
+        return 0;  
+    }  
+    @Override  
+    public ListIterator<E> listIterator() {  
+        return null;  
+    }  
+    @Override  
+    public ListIterator<E> listIterator(int index) {  
+        return null;  
+    }  
+    @Override  
+    public List<E> subList(int fromIndex, int toIndex) {  
+        return null;  
+    }  
+}
+```
+
 
 
 ---
@@ -818,6 +1090,169 @@ clone 수정되지 않으려면 새롭게 만들어야함
 
 
 ※제네릭스는 선언할 수 있는 타입이 객체 타입입니다. int는 기본자료형이기 때문에 들어갈 수 없으므로 int를 객체화시킨 wrapper클래스를 사용해야 합니다
+
+
+## ArrayList Class 직접구현
+
+```java
+package Week1;  
+  
+import java.util.*;  
+import java.util.stream.IntStream;  
+  
+public class MakeArrayList<E> implements List<E> {  
+    private int size;  
+    //직접 제네릭 배열은 생성불가  
+    private E [] list;  
+    private int num;  
+    public MakeArrayList(){  
+        //강제 형변환을 이용하여 생성  
+        //초기값을 0으로 하는 이유는 10개로 생성시 값을 집어넣지 않으면 0으로 표현되기 때문  
+        list = (E[])new Object[0];  
+        size=list.length;  
+        num=0;  
+    }  
+    public boolean add(E e){  
+        if(num== list.length){  
+            E [] newList =(E[])new Object[list.length+1];  
+            //배열을 for문을 사용하지 않고 복사하는 방법  
+            //              원본  ,어디서부터 복사할지(index),  새로운 배열 이름   시작위치   원본에서 복사본으로 쓸 길이  
+            System.arraycopy(list, 0,               newList, 0, list.length);  
+            list=newList;  
+        }  
+        try {  
+            list[num]=e;  
+            num++;  
+            return true;  
+        }catch (Exception ee){  
+            return false;  
+        }  
+    }  
+    //Array.toString(list)  
+    //배열의 값을 출력하기 위한 코드 그냥 String.valueof(list)하면 주소값이 나옴  
+    /*public String toString() {  
+        String str = "[";        for (int i = 0 ; i < size; i++) {            str += Data[i];            if(i < size -1) {                str+=",";            }        }        return str + "]";    }*/    public String toString(){  
+        return Arrays.toString(list);  
+    }  
+    public boolean remove(Object obj){  
+        //Stream을 사용하여 간단하게 출력  
+        list=(E[])Arrays.stream(list).filter(item ->item.equals(obj)).toArray(Object[]::new);  
+        return true;  
+    }  
+    public E remove(int index){  
+        E e =list[index];  
+        list= (E[])IntStream.range(0, list.length).filter(idx ->idx !=index).mapToObj(idx ->list[idx]).toArray(Object[]::new);  
+        return e;  
+    }  
+    public int lastIndexOf(Object o){  
+        return Arrays.asList(list).lastIndexOf(o);  
+    }  
+  
+    @Override  
+    public boolean containsAll(Collection<?> c) {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean addAll(Collection<? extends E> c) {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean addAll(int index, Collection<? extends E> c) {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean removeAll(Collection<?> c) {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean retainAll(Collection<?> c) {  
+        return false;  
+    }  
+  
+    @Override  
+    public void clear() {  
+  
+        list =(E[]) new Object[0];  
+    }  
+  
+    @Override  
+    public E get(int index) {  
+  
+        return list[index];  
+    }  
+  
+    @Override  
+    public E set(int index, E element) {  
+        E e =list[index];  
+        list[index]=element;  
+        return e;  
+    }  
+  
+    @Override  
+    public void add(int index, E element) {  
+  
+    }  
+  
+  
+    @Override  
+    public int indexOf(Object o) {  
+        return 0;  
+    }  
+  
+  
+  
+    @Override  
+    public ListIterator<E> listIterator() {  
+        return null;  
+    }  
+  
+    @Override  
+    public ListIterator<E> listIterator(int index) {  
+        return null;  
+    }  
+  
+    @Override  
+    public List<E> subList(int fromIndex, int toIndex) {  
+        return null;  
+    }  
+  
+    public  int size(){  
+  
+  
+        return list.length;  
+    }  
+  
+    @Override  
+    public boolean isEmpty() {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean contains(Object o) {  
+        return false;  
+    }  
+  
+    @Override  
+    public Iterator<E> iterator() {  
+        return null;  
+    }  
+  
+    @Override  
+    public Object[] toArray() {  
+        return new Object[0];  
+    }  
+  
+    @Override  
+    public <T> T[] toArray(T[] a) {  
+        return null;  
+    }  
+}
+```
+
 
 ---
 참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이

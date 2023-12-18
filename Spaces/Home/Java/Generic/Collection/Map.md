@@ -409,6 +409,116 @@ System.out.println("[Key]:" + key + " [Value]:" +  map.get(key));}
 
 
 
+### Map Class 직접 구현
+
+```java
+package Week1;  
+  
+import java.util.*;  
+  
+public class MakeMap<K,V> extends AbstractMap<K,V> implements Map<K,V> {  
+  
+    private MakeArrayList<K> keys;  
+    private MakeArrayList<V> values;  
+  
+    public MakeMap(){  
+        this.keys= new MakeArrayList<K>();  
+        this.values=new MakeArrayList<V>();  
+    }  
+  
+//Arrays.asList(str).indexOf("two"); // 1반환  
+    @Override  
+    public int size() {  
+        return keys.size();  
+    }  
+    @Override  
+    public V get(Object key) {  
+        return values.get(Arrays.asList(key).indexOf(key));  
+    }  
+    @Override  
+    public V remove(Object key) {  
+        ;  
+        //Arrays.asList(key).indexOf(key)  
+        //Array의 key값의 인덱스 번호를 찾아 그 번호로 지움  
+        keys.remove(Arrays.asList(key).indexOf(key));  
+        return values.remove(Arrays.asList(key).indexOf(key));  
+    }  
+  
+    @Override  
+    public V put(K key, V value) {  
+        keys.add(key);  
+        values.add(value);  
+        return null;  
+    }  
+    public final String toString(){  
+        if(keys.size() ==0){  
+            //값이 없는 경우 빈 배열로 출력  
+            return"{}";  
+        }  
+        //값이 있는 경우 key=value, 이렇게 나오기 때문에 for문으로 값을 합쳐서 출력  
+        StringBuilder sb = new StringBuilder();  
+        for(int i=0; i< keys.size(); i++){  
+            sb.append(keys.get(i)+"="+values.get(i));  
+            if(i!= keys.size()-1){  
+                sb.append(", ");  
+            }  
+        }  
+  
+        return "{"+sb+"}";  
+    }  
+    public V replace(K k, V v){  
+        //key값은 변하지 않고 value값만 변하기때문에 value값만 고치고 이전 value값 출력  
+        V vv=values.get(Arrays.asList(k).indexOf(k));  
+        values.set(Arrays.asList(k).indexOf(k),v);  
+        return vv;  
+    }  
+  
+    //-----------------------------------------------  
+  
+    @Override  
+    public boolean isEmpty() {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean containsKey(Object key) {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean containsValue(Object value) {  
+        return false;  
+    }  
+  
+  
+  
+  
+  
+  
+    @Override  
+    public void putAll(Map<? extends K, ? extends V> m) {  
+  
+    }  
+    @Override  
+    public void clear() {  
+  
+    }  
+    @Override  
+    public Set<K> keySet() {  
+        return null;  
+    }  
+  
+    @Override  
+    public Collection<V> values() {  
+        return null;  
+    }  
+  
+    @Override  
+    public Set<Entry<K, V>> entrySet() {  
+        return null;  
+    }  
+}
+```
 
 ---
 

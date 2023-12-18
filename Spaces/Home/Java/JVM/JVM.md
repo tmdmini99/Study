@@ -27,6 +27,11 @@
 
 ![JVM 구조 - (출처는 맨 하단에 기재)](https://blog.kakaocdn.net/dn/cssiwB/btrDAQE2Zod/U7NTDqHKKGkKqpG3jOlBX0/img.png)
 
+
+![[Pasted image 20231218121117.png]]
+
+
+
 JVM 구조 - (출처는 맨 하단에 기재)
 
 **JVM의 구조**에는 크게 **Class Loader, Runtime data areas, Execution Engine, GC** 으로 나누어져 있다.
@@ -41,9 +46,7 @@ JVM 구조 - (출처는 맨 하단에 기재)
 
 간단하게 말하자면 프로그램을 수행하기 위해 OS로부터 할당받은 메모리 영역을 의미한다. (**Java 메모리 공간**)
 
-Runtime Data Area에는
-
-또다시 **Method Area, Heap, PC Registers, Java Stacks, Native Method Stacks**로 나누어진다.
+Runtime Data Area에는 또다시 **Method Area, Heap, PC Registers, Java Stacks, Native Method Stacks**로 나누어진다.
 
 ![Runtime Data Area - (출처는 맨 하단에 기재)](https://blog.kakaocdn.net/dn/XLtjO/btrDyGDpp0C/K8wEGphqloy5uKZTC08Y7k/img.png)
 
@@ -95,3 +98,9 @@ Runtime Data Area - (출처는 맨 하단에 기재)
 
 
 https://velog.io/@supark4170/Java-heap-space%EA%B0%80-%EB%B6%80%EC%A1%B1%ED%95%B4%EC%9A%94
+
+
+https://velog.io/@jomminii/whiteship-java-01-what-is-jvm
+
+
+https://steady-coding.tistory.com/587
