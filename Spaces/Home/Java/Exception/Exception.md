@@ -384,8 +384,8 @@ checked 예외는 반드시 예외처리를 해야 하는 되는 것이고, unch
 
 #### 나만의 예외 만들기
 ```java 
-package` `org.opentutorials.javatutorials.exception;
-class DivideException extends` `RuntimeException {
+package org.opentutorials.javatutorials.exception;
+class DivideException extends RuntimeException {
 
 DivideException(){
 
@@ -393,41 +393,41 @@ super();
 
 }
 
-DivideException(String message){`
+DivideException(String message){
 
-super``(message);`
+super(message);
 
-}`
+}
 
-}`
+}
 
-class` `Calculator{`
+class Calculator{
 
-int` `left, right;`
+int left, right;
 
-public` `void` `setOprands(``int` `left,` `int` `right){`
+public void setOprands(int left, int right){
 
-this``.left = left;`
+this.left = left;`
 
-this``.right = right;`
+this.right = right;
 
-}`
+}
 
-public` `void` `divide(){`
+public void divide(){
 
 if(this.right == 0){
 
-throw` `new` `DivideException(``"0으로 나누는 것은 허용되지 않습니다."``);`
+throw new DivideException("0으로 나누는 것은 허용되지 않습니다.");
 
-}`
+}
 
-System.out.print(``this``.left/``this``.right);`
+System.out.print(this.left/this.right);
 
-}`
+}
 
-}`
+}
 
-public` class CalculatorDemo {`
+public class CalculatorDemo {
 
 public` `static void main(String[] args) {
 
@@ -441,6 +441,75 @@ c1.divide();
 
 }
 ```
+
+
+
+
+```java
+package org.opentutorials.javatutorials.exception;
+class DivideException extends Exception {
+
+DivideException(){
+
+super();
+
+}
+
+DivideException(String message){
+
+super(message);
+
+}
+
+}
+
+class Calculator{
+
+int left, right;
+
+public void setOprands(int left, int right){
+
+this.left = left;`
+
+this.right = right;
+
+}
+
+public void divide(){
+
+if(this.right == 0){
+	try{
+		throw new DivideException("0으로 나누는 것은 허용되지 않습니다.");
+	}catch(DivideException e){
+		e.printStackTrace();
+	}
+
+
+
+}
+
+System.out.print(this.left/this.right);
+
+}
+
+}
+
+public class CalculatorDemo {
+
+public` `static void main(String[] args) {
+
+Calculator c1 = new Calculator();
+
+c1.setOprands(10, 0);
+
+c1.divide();
+
+}
+
+}
+```
+
+
 
 
 # 참조 사이트
