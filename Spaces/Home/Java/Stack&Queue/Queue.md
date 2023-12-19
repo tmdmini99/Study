@@ -31,16 +31,16 @@ Java에서는 **java.util.Queue** 큐 클래스를 임포트 하면 Queue를 �
 
 | 메서드                           | 설명                                                                                                                                           |
 |:-------------------------------- |:---------------------------------------------------------------------------------------------------------------------------------------------- |
-| queue.add()                      | 데이터 추가       반환 값(boolean): 삽입 성공 시 true / 실패 시  Exception발생                                                                 |
-| queue.offer()                    | 데이터 추가               반환 값(boolean): 삽입 성공 시 true / 실패 시 false 반환                                                             |
-| queue.poll()                     | 데이터 삭제    queue에 첫번째 값을 반환하고 제거 비어있다면 null                                                                               |
-| queue.remove()                   | 데이터 삭제     queue에 첫번째 값 제거     반환 값(삭제된 value의 자료형): 삭제된 value / 공백 큐이면 Exception("NoSuchElementException") 발생 |
-| queue.clear()                    | 데이터 모든값 삭제 queue 초기화    반환값 void                                                                                                 |
-| queue.peek()                     | 데이터 첫번째 값 가져옴            queue의 첫번째 값 참조    반환값 큐 헤드에 위치한 value/공백이면 null                                       |
-| queue.size()                     | queue 사이즈 크기        반환값 int                                                                                                            |
-| queue.contains("찾고싶은 value") | 찾고 싶음 value값이 있는지 확인 있을경우 true/ 없으면 false 반환값 boolean                                                                     |
-| queue.isEmpty();                 | 공백이면 true / 값이 있으면 false 반환값 boolean                                                                                               |
-| queue.element();                 | 큐의 첫번째 값 반환 공백큐이면 Exception("NoSuchElementException")발생 반환값 큐 헤드에 위치한 value                                           |
+| **queue.add()**                      | 데이터 추가       반환 값(boolean): 삽입 성공 시 true / 실패 시  Exception발생                                                                 |
+| **queue.offer()**                    | 데이터 추가               반환 값(boolean): 삽입 성공 시 true / 실패 시 false 반환                                                             |
+| **queue.poll()**                     | 데이터 삭제    queue에 첫번째 값을 반환하고 제거 비어있다면 null                                                                               |
+| **queue.remove()**                   | 데이터 삭제     queue에 첫번째 값 제거     반환 값(삭제된 value의 자료형): 삭제된 value / 공백 큐이면 Exception("NoSuchElementException") 발생 |
+| **queue.clear()**                    | 데이터 모든값 삭제 queue 초기화    반환값 void                                                                                                 |
+| **queue.peek()**                     | 데이터 첫번째 값 가져옴            queue의 첫번째 값 참조    반환값 큐 헤드에 위치한 value/공백이면 null                                       |
+| **queue.size()**                     | queue 사이즈 크기        반환값 int                                                                                                            |
+| **queue.contains("찾고싶은 value")** | 찾고 싶음 value값이 있는지 확인 있을경우 true/ 없으면 false 반환값 boolean                                                                     |
+| **queue.isEmpty();**                 | 공백이면 true / 값이 있으면 false 반환값 boolean                                                                                               |
+| **queue.element();**                 | 큐의 첫번째 값 반환 공백큐이면 Exception("NoSuchElementException")발생 반환값 큐 헤드에 위치한 value                                           |
 | **queue.remove(삭제할 value);**  | 반환 값(boolean): 큐에 해당 value가 존재하면 해당 값 삭제 후 true / 존재하지 않으면 false 반환                                                                                                                                               |
 
 ### Queue 선언
