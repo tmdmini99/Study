@@ -30,6 +30,10 @@ JVM의 Heap영역은 처음 설계될 때 다음의 2가지를 전제(Weak Gener
 
 즉, 객체는 대부분 일회성되며, 메모리에 오랫동안 남아있는 경우는 드물다는 것이다. 그렇기 때문에 객체의 생존 기간에 따라 물리적인 Heap 영역을 나누게 되었고 Young, Old 총 2가지 영역으로 설계되었다. 초기에는 Perm 영역이 존재하였지만 Java8부터 제거되었다.
 
+
+![[Pasted image 20231219100858.png]]
+
+
 ![](https://blog.kakaocdn.net/dn/va8qQ/btqUSpSocbS/kxTvtnmrdhf4bnVPXth0UK/img.png)
 
 GC 영역 및 흐름
@@ -49,7 +53,28 @@ GC 영역 및 흐름
 
 Old 영역이 Young 영역보다 크게 할당되는 이유는 Young 영역의 수명이 짧은 객체들은 큰 공간을 필요로 하지 않으며 큰 객체들은 Young 영역이 아니라 바로 Old 영역에 할당되기 때문이다.
 
+또 다시 힙 영역은 더욱 효율적인 GC를 위해 **Young 영역**을 **3가지 영역(Eden, survivor 0, survivor 1)** 으로 나눈다.
+
+
+![[Pasted image 20231219101425.png]]
+
+
+#### **Eden** 
+
+- new를 통해 새로 생성된 객체가 위치. 
+- 정기적인 쓰레기 수집 후 살아남은 객체들은 Survivor 영역으로 보냄
+
+#### **Survivor 0 / Survivor 1** 
+
+- 최소 1번의 GC 이상 살아남은 객체가 존재하는 영역
+- Survivor 영역에는 특별한 규칙이 있는데, Survivor 0 또는 Survivor 1 둘 중 하나에는 꼭 비어 있어야 하는 것이다.
+
+이렇게 하나의 힙 영역을 세부적으로 쪼갬으로서 객체의 생존 기간을 면밀하게 제어하여 가비지 컬렉터(GC)를 보다 정확하게 불필요한 객체를 제거하는 프로세스를 실행하도록 한다.
+
+
 예외적인 상황으로 Old 영역에 있는 객체가 Young 영역의 객체를 참조하는 경우도 존재할 것이다. 이러한 경우를 대비하여 Old 영역에는 512 bytes의 덩어리(Chunk)로 되어 있는 카드 테이블(Card Table)이 존재한다.
+
+
 
 ![](https://blog.kakaocdn.net/dn/FOLU3/btqUOBF35cJ/BMKuD1iqfq6R0lAqMlfkC0/img.png)
 
@@ -78,6 +103,7 @@ Stop The World는 가비지 컬렉션을 실행하기 위해 JVM이 애플리케
 Stop The World를 통해 모든 작업을 중단시키면, GC는 스택의 모든 변수 또는 Reachable 객체를 스캔하면서 각각이 어떤 객체를 참고하고 있는지를 탐색하게 된다. 그리고 사용되고 있는 메모리를 식별하는데, 이러한 과정을 Mark라고 한다. 이후에 Mark가 되지 않은 객체들을 메모리에서 제거하는데, 이러한 과정을 Sweep라고 한다.
 
 ### **[ Minor GC의 동작 방식 ]**
+
 
 Minor GC를 정확히 이해하기 위해서는 Young 영역의 구조에 대해 이해를 해야 한다. Young 영역은 1개의 Eden 영역과 2개의 Survivor 영역, 총 3가지로 나뉘어진다.
 
@@ -219,3 +245,5 @@ java -XX:+UseG1GC -jar Application.java
 
 참조 - https://mangkyu.tistory.com/118
 https://mangkyu.tistory.com/119
+
+https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EA%B0%80%EB%B9%84%EC%A7%80-%EC%BB%AC%EB%A0%89%EC%85%98GC-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%F0%9F%92%AF-%EC%B4%9D%EC%A0%95%EB%A6%AC
