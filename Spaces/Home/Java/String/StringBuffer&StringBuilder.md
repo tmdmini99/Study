@@ -70,40 +70,21 @@ System.out.println("마지막 상태 : " + sb); // 마지막상태 : kjihgfedcba
 |메서드|설  명|
 |---|---|
 |StringBuffer( )|버퍼의 길이를 지정하지 않으면 크기가  16 인 버퍼를 생성|
-StringBuffer(int length)|length 길이를 가진  StringBuffer 클래스의 인스턴스(buffer)를 생성|
-StringBuffer(String str)|지정한 문자열( str )의 길이보다  16 만큼 더 큰 버퍼를 생성|
-StringBuffer append(boolean b)  <br>StringBuffer append(char c)  <br>StringBuffer append(char[ ] str)  <br>StringBuffer append(double d)  <br>StringBuffer append(float f)  <br>StringBuffer append(int i)  <br>StringBuffer append(long l)  <br>StringBuffer append(Object obj)  <br>StringBuffer append(String str)|
-매개변수로 입력된 값을 문자열로 변환하여  StringBuffer 인스턴스가 저장하고 있는 문자열의 뒤에 덧붙임|
-int capacity( )|
-StringBuffer 인스턴스의 버퍼크기 반환 (자료형의 할당된 크기를 반환)|
-int length( )|
-StringBuffer 인스턴스에 저장된 문자열의 길이 반환 (버퍼에 담긴 문자열 데이터를 반환)|
-char charAt(int index)|
-지정된 위치( index )에 있는 문자를 반환|
-StringBuffer delete(int start, int end)|
-시작위치( start )부터 끝 위치( end )사이에 있는 문자를 제거  <br>단,  end 위치의 문자는 제외(start <= x < end)|
-StringBuffer deleteCharAt(int index)|
-지정된 위치( index )의 문자를 제거|
-StringBuffer insert(int pos, boolean b)  <br>StringBuffer insert(int pos, char c)  <br>StringBuffer insert(int pos, char[ ] str)  <br>StringBuffer insert(int pos, doule d)  <br>StringBuffer insert(int pos, float f)  <br>StringBuffer insert(int pos, int i)  <br>StringBuffer insert(int pos, long l)  <br>StringBuffer insert(int pos, Object obj)  <br>StringBuffer insert(int pos, String str)|
-두 번째 매개변수로 받은 값을 문자열로 변환하여 지정된 위치( pos )에 추가  <br>( pos 는 0부터 시작)|
-StringBuffer replace(int start, int end, String str)|
-지정된 범위( start  ~  end )의 문자들을 주어진 문자열로 바꾼다.  <br>단,  end 의 위치는 범위에 포함되지 X (start <= x < end)|
-StringBuffer reverse( )|
-StringBuffer 인스턴스에 저장되어 있는 문자열의 순서를 거꾸로 나열|
-void setCharAt(int index, char ch)|
-지정된 위치( index )의 문자를 주어진 문자( ch )로 바꾼다.|
-void setLength(int newLength)|
-지정된 길이로 문자열의 길이를 변경  <br>길이를 늘리는 경우에는 나머지 빈공간들을 널문자( \u0000 )로 채운다.|
-String toString( )|
-StringBuffer 인스턴스의 문자열을  String 으로 변환|
-String substring(int start)  <br>String substring(int start, int end)|
-지정된 범위 내의 문자열을  String 으로 뽑아서 반환  <br>(시작위치( start )만 지정하면 시작위치부터 끝까지 뽑아서 반환)|
-
-|      |      |      |
-|:-----|:-----|:-----|
-|      |      |      |
-|      |      |      |
-|      |      |      |
+|StringBuffer(int length)|length 길이를 가진  StringBuffer 클래스의 인스턴스(buffer)를 생성|
+|StringBuffer(String str)|지정한 문자열( str )의 길이보다  16 만큼 더 큰 버퍼를 생성|
+|StringBuffer append(boolean b)<br>StringBuffer append(char c)<br>StringBuffer append(char[ ] str) <br>StringBuffer append(double d)<br>StringBuffer append(float f) <br>StringBuffer append(int i) <br>StringBuffer append(long l)<br>StringBuffer append(Object obj)<br>StringBuffer append(String str)| 매개변수로 입력된 값을 문자열로 변환하여  StringBuffer 인스턴스가 저장하고 있는 문자열의 뒤에 덧붙임|
+|int capacity( )|StringBuffer 인스턴스의 버퍼크기 반환 (자료형의 할당된 크기를 반환)|
+|int length( )|StringBuffer 인스턴스에 저장된 문자열의 길이 반환 (버퍼에 담긴 문자열 데이터를 반환)|
+|char charAt(int index)| 지정된 위치( index )에 있는 문자를 반환|
+|StringBuffer delete(int start, int end)|시작위치( start )부터 끝 위치( end )사이에 있는 문자를 제거  <br>단,  end 위치의 문자는 제외(start <= x < end)|
+|StringBuffer deleteCharAt(int index)|지정된 위치( index )의 문자를 제거|
+|StringBuffer insert(int pos, boolean b)  <br>|StringBuffer insert(int pos, char c)  <br>|StringBuffer insert(int pos, char[ ] str)  <br>|StringBuffer insert(int pos, doule d)  <br>|StringBuffer insert(int pos, float f)  <br>|StringBuffer insert(int pos, int i)  <br>|StringBuffer insert(int pos, long l)  <br>|StringBuffer insert(int pos, Object obj)  <br>|StringBuffer insert(int pos, String str)| 두 번째 매개변수로 받은 값을 문자열로 변환하여 지정된 위치( pos )에 추가  <br>( pos 는 0부터 시작)|
+|StringBuffer replace(int start, int end, String str)| 지정된 범위( start  ~  end )의 문자들을 주어진 문자열로 바꾼다. 단,  end 의 위치는 범위에 포함되지 X (start <= x < end)|
+|StringBuffer reverse( )|StringBuffer 인스턴스에 저장되어 있는 문자열의 순서를 거꾸로 나열|
+|void setCharAt(int index, char ch)|지정된 위치( index )의 문자를 주어진 문자( ch )로 바꾼다.|
+|void setLength(int newLength)| 지정된 길이로 문자열의 길이를 변경  <br>길이를 늘리는 경우에는 나머지 빈공간들을 널문자( \u0000 )로 채운다.|
+|String toString( )| StringBuffer 인스턴스의 문자열을  String 으로 변환|
+|String substring(int start)  String substring(int start, int end)| 지정된 범위 내의 문자열을  String 으로 뽑아서 반환  <br>(시작위치( start )만 지정하면 시작위치부터 끝까지 뽑아서 반환)|
 
 
 
