@@ -184,6 +184,52 @@ HotSpot JVM에서는 Eden 영역에 객체를 빠르게 할당(Allocation)하기
 ### **[ Major GC의 동작 방식 ]**
 
 Young 영역에서 오래 살아남은 객체는 Old 영역으로 Promotion됨을 확인할 수 있었다. 그리고 Major GC는 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 발생하게 된다. Young 영역은 일반적으로 Old 영역보다 크키가 작기 때문에 GC가 보통 0.5초에서 1초 사이에 끝난다. 그렇기 때문에 Minor GC는 애플리케이션에 크게 영향을 주지 않는다. 하지만 Old 영역은 Young 영역보다 크며 Young 영역을 참조할 수도 있다. 그렇기 때문에 Major GC는 일반적으로 Minor GC보다 시간이 오래걸리며, 10배 이상의 시간을 사용한다. 참고로 Young 영역과 Old 영역을 동시하 처리하는 GC는 Full GC라고 한다.
+![[Pasted image 20231219103743.png]]
+Old Generation은 길게 살아남는 메모리들이 존재하는 공간이다.
+
+Old Generation의 객체들은 거슬러 올라가면 처음에는 Young Generation에 의해 시작되었으나, GC 과정 중에 제거되지 않은 경우 age 임계값이 차게되어 이동된 녀석들이다.
+
+그리고 **Ma** **jor GC**는 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 발생하게 된다.
+> Tip
+> Major GC는 Full GC라고도 불리운다
+
+Minor GC와 Major GC 차이점을 표로 정리하면 다음과 같이 된다.
+
+[![java-Major GC](https://blog.kakaocdn.net/dn/bQinW1/btrIOSeHYMd/rd1iSnwNConXoRVWiDvDS0/img.png)](https://blog.kakaocdn.net/dn/bQinW1/btrIOSeHYMd/rd1iSnwNConXoRVWiDvDS0/img.png)
+
+---
+
+**1.** 객체의 age가 임계값(여기선 8로 설정)에 도달하게 되면,
+
+[![java-Major GC](https://blog.kakaocdn.net/dn/c3ZKIh/btrITnE39P2/cL0xncLtqvQxqOmxmyt8V0/img.png)](https://blog.kakaocdn.net/dn/c3ZKIh/btrITnE39P2/cL0xncLtqvQxqOmxmyt8V0/img.png)
+
+**2.** 이 객체들은 Old Generation 으로 이동된다. 이를 promotion 이라 부른다.
+
+[![java-Major GC](https://blog.kakaocdn.net/dn/GJGPb/btrIUmFRmQO/SZDmkA2vbBcqKcXrNiIhOk/img.png)](https://blog.kakaocdn.net/dn/GJGPb/btrIUmFRmQO/SZDmkA2vbBcqKcXrNiIhOk/img.png)
+
+**3.** 위의 과정이 반복되어 Old Generation 영역의 공간(메모리)가 부족하게 되면 Major GC가 발생되게 된다.
+
+[![java-Major GC](https://blog.kakaocdn.net/dn/mnBRi/btrIUm6WXIl/obIsxDpns6wEkkKfjdvLCK/img.gif)](https://blog.kakaocdn.net/dn/mnBRi/btrIUm6WXIl/obIsxDpns6wEkkKfjdvLCK/img.gif)
+
+**Major GC**는 Old 영역은 데이터가 가득 차면 GC를 실행하는 단순한 방식이다. 
+
+Old 영역에 할당된 메모리가 허용치를 넘게 되면, Old 영역에 있는 모든 객체들을 검사하여 참조되지 않는 객체들을 한꺼번에 삭제하는 Major GC가 실행되게 된다.
+
+하지만 Old Generation은 Young Generation에 비해 상대적으로 큰 공간을 가지고 있어, 이 공간에서 메모리 상의 객체 제거에 많은 시간이 걸리게 된다.
+
+예를들어 Young 영역은 일반적으로 Old 영역보다 크키가 작기 때문에 GC가 보통 0.5초에서 1초 사이에 끝난다.
+
+그렇기 때문에 Minor GC는 애플리케이션에 크게 영향을 주지 않는다.
+
+하지만 Old 영역의 Major GC는 일반적으로 Minor GC보다 시간이 오래걸리며, 10배 이상의 시간을 사용한다.
+
+바로 여기서 본문 초반에 소개했던 **Stop-The-World** 문제가 발생하게 된다.
+
+Major GC가 일어나면 Thread가 멈추고 Mark and Sweep 작업을 해야 해서 CPU에 부하를 주기 때문에 멈추거나 버벅이는 현상이 일어나기 때문이다.
+
+따라서 자바 개발진들은 끊임 없이 **가비지 컬렉션 알고리즘을 발전** 시켜왔다.
+
+
 
 ## **3. Garbage Collection(가비지 컬렉션) 내용 요약**
 
@@ -206,11 +252,24 @@ JVM이 메모리를 자동으로 관리해주는 것은 개발자의 입장에�
 
 Serial GC의 Young 영역은 앞서 설명한 알고리즘(Mark Sweep)대로 수행된다. 하지만 Old 영역에서는 Mark Sweep Compact 알고리즘이 사용되는데, 기존의 Mark Sweep에 Compact라는 작업이 추가되었다. Compact는 Heap 영역을 정리하기 위한 단계로 유요한 객체들이 연속되게 쌓이도록 힙의 가장 앞 부분부터 채워서 객체가 존재하는 부분과 객체가 존재하지 않는 부분으로 나누는 것이다.
 
-```
+#### **Serial GC 실행 명령어**
+
+- 자바 프로그램을 실행할때 -XX:+UseSerialGC GC 옵션을 지정하여 해당 가비지 컬렉션 알고리즘으로 힙 메모리를 관리하도록 실행할 수 있다.
+
+```java
 java -XX:+UseSerialGC -jar Application.java
 ```
 
+
 Serial GC는 서버의 CPU 코어가 1개일 때 사용하기 위해 개발되었으며, 모든 가비지 컬렉션 일을 처리하기 위해 1개의 쓰레드만을 이용한다. 그렇기 때문에 CPU의 코어가 여러 개인 운영 서버에서 Serial GC를 사용하는 것은 반드시 피해야 한다.
+- 서버의 CPU 코어가 1개일 때 사용하기 위해 개발된 가장 단순한 GC
+- GC를 처리하는 쓰레드가 1개 (싱글 쓰레드) 이어서 가장 stop-the-world 시간이 길다
+- Minor GC 에는 Mark-Sweep을 사용하고, Major GC에는 Mark-Sweep-Compact를 사용한다.
+-  보통 실무에서 사용하는 경우는 없다 (디바이스 성능이 안좋아서 CPU 코어가 1개인 경우에만 사용) 
+![[Pasted image 20231219103939.png]]
+
+
+
 
 ### **[ Parallel GC ]**
 
@@ -232,6 +291,44 @@ Parallel GC가 GC의 오버헤드를 상당히 줄여주었고, Java8까지 기�
 
 Parallel Old GC는 JDK5 update6부터 제공한 GC이며, 앞서 설명한 Parallel GC와 Old 영역의 GC 알고리즘만 다르다. Parallel Old GC에서는 Mark Sweep Compact가 아닌 Mark Summary Compaction이 사용되는데, Summary 단계에서는 앞서 GC를 수행한 영역에 대해서 별도로 살아있는 객체를 색별한다는 점에서 다르며 조금 더 복잡하다.
 
+- Java 8의 디폴트 GC
+- Serial GC와 기본적인 알고리즘은 같지만, Young 영역의 Minor GC를 멀티 쓰레드로 수행 (Old 영역은 여전히 싱글 쓰레드)
+- Serial GC에 비해 stop-the-world 시간 감소
+
+![[Pasted image 20231219104049.png]]
+
+#### **Parallel GC 실행 명령어**
+
+- GC 스레드는 기본적으로 cpu 개수만큼 할당된다.
+- 옵션을 통해 GC를 수행할 쓰레드의 갯수 등을 설정해줄 수 있다.
+
+```bash
+java -XX:+UseParallelGC -jar Application.java 
+# -XX:ParallelGCThreads=N : 사용할 쓰레드의 갯수
+```
+
+
+### **Parallel Old GC (Parallel Compacting Collector)**
+
+- Parallel GC를 개선한 버전
+- Young 영역 뿐만 아니라, Old 영역에서도 멀티 쓰레드로 GC 수행
+- 새로운 가비지 컬렉션 청소 방식인 Mark-Summary-Compact 방식을 이용 (Old 영역도 멀티 쓰레드로 처리)
+
+
+![[Pasted image 20231219104223.png]]
+
+
+#### **Parallel Old GC 실행 명령어**
+
+
+
+```bash
+java -XX:+UseParallelOldGC -jar Application.java
+# -XX:ParallelGCThreads=N : 사용할 쓰레드의 갯수
+```
+
+
+
 ### **[ CMS(Concurrent Mark Sweep) GC ]**
 
 CMS(Concurrent Mark Sweep) GC는 Parallel GC와 마찬가지로 여러 개의 쓰레드를 이용한다. 하지만 기존의 Serial GC나 Parallel GC와는 다르게 Mark Sweep 알고리즘을 Concurrent하게 수행하게 된다.
@@ -242,12 +339,20 @@ CMS(Concurrent Mark Sweep) GC는 Parallel GC와 마찬가지로 여러 개의 �
 
 하지만 이러한 CMS GC는 다른 GC 방식보다 메모리와 CPU를 더 많이 필요로 하며, Compaction 단계를 수행하지 않는다는 단점이 있다. 이 때문에 시스템이 장기적으로 운영되다가 조각난 메모리들이 많아 Compaction 단계가 수행되면 오히려 Stop The World 시간이 길어지는 문제가 발생할 수 있다.
 
+#### **CMS GC 실행 명령어**
 ```
 // deprecated in java9 and finally dropped in java14
 java -XX:+UseConcMarkSweepGC -jar Application.java
 ```
 
 만약 GC가 수행되면서 98% 이상의 시간이 CMS GC에 소요되고, 2% 이하의 시간이 Heap의 정리에 사영된다면 CMS GC에 의해 OutOfMemoryError가 던져질 것이다. 물론 이를 disable 하는 옵션이 있지만, CMS GC는 Java9 버젼부터 deprecated 되었고 결국 Java14에서는 사용이 중지되었기 때문에 굳이 알아볼 필요는 없을 것 같다.
+- 어플리케이션의 쓰레드와 GC 쓰레드가 동시에 실행되어 stop-the-world 시간을 최대한 줄이기 위해 고안된 GC
+- 단, GC 과정이 매우 복잡해짐.
+- GC 대상을 파악하는 과정이 복잡한 여러단계로 수행되기 때문에 다른 GC 대비 CPU 사용량이 높다
+- 메모리 파편화 문제
+- CMS GC는 Java9 버젼부터 deprecated 되었고 결국 Java14에서는 사용이 중지
+
+
 
 ### **[ G1(Garbage First) GC ]**
 
@@ -277,12 +382,67 @@ Eden 지역에서 GC가 수행되면 살아남은 객체를 식별(Mark)하고, 
 
 물론 G1 GC는 다른 GC 방식에 비해 잦게 호출될 것이다. 하지만 작은 규모의 메모리 정리 작업이고 Concurrent하게 수행되기 때문이 지연이 크지 않으며, 가비지가 많은 지역에 대해 정리를 하므로 훨씬 효율적이다.
 
+
+#### **G1 GC 실행 명령어**
 ```
 java -XX:+UseG1GC -jar Application.java
 ```
 
 이러한 구조의 G1 GC는 당연히 앞의 어떠한 GC 방식보다 처리 속도가 빠르며 큰 메모리 공간에서 멀티 프로레스 기반으로 운영되는 애플리케이션을 위해 고안되었다. 또한 G1 GC는 다른 GC 방식의 처리속도를 능가하기 때문에 Java9부터 기본 가비지 컬렉터(Default Garbage Collector)로 사용되게 되었다.
 
+- CMS GC를 대체하기 위해 jdk 7 버전에서 최초로 release된 GC
+- Java 9+ 버전의 디폴트 GC로 지정
+- 4GB 이상의 힙 메모리, Stop the World 시간이 0.5초 정도 필요한 상황에 사용 (Heap이 너무작을경우 미사용 권장)
+- 기존의 GC 알고리즘에서는 Heap 영역을 물리적으로 고정된 Young / Old 영역으로 나누어 사용하였지만,   
+    G1 gc는 아예 이러한 개념을 뒤엎는 Region이라는 개념을 새로 도입하여 사용.  
+    전체 Heap 영역을 Region이라는 영역으로 체스같이 분할하여 상황에 따라 Eden, Survivor, Old 등 역할을 고정이 아닌 동적으로 부여
+- Garbage로 가득찬 영역을 빠르게 회수하여 빈 공간을 확보하므로, 결국 GC 빈도가 줄어드는 효과를 얻게 되는 원리
+
+
+![[Pasted image 20231219104351.png]] ![[Pasted image 20231219104404.png]]
+
+**[ G1 GC의 효율성 ]**  
+Java9+ 부터 기본 GC로 자리잡은 G1 GC에서는 이전의 GC들처럼 일일히 메모리를 탐색해 객체들을 제거하지 않는다.   
+대신 메모리가 많이 차있는 영역(region)을 인식하는 기능을 통해 메모리가 많이 차있는 영역을 우선적으로 GC 한다.   
+즉, G1 GC는 Heap Memory 전체를 탐색하는 것이 아닌 영역(region)을 나눠 탐색하고 영역(region)별로 GC가 일어난다.  
+  
+또한 이전의 GC 들은 Young Generation에 있는 객체들이 GC가 돌때마다 살아남으면 Eden → Survivor0 → Survivor1으로 순차적으로 이동했지만, G1 GC에서는 순차적으로 이동하지는 않는다.   
+대신 G1 GC는 더욱 효율적이라고 생각하는 위치로 객체를 Reallocate(재할당) 시킨다.   
+예를 들어 Survivor1 영역에 있는 객체가 Eden 영역으로 할당하는 것이 더 효율적이라고 판단될 경우 Eden 영역으로 이동시킨다.
+
+
+### **Shenandoah GC**
+- Java 12에 release 
+- 레드 햇에서 개발한 GC
+- 기존 CMS가 가진 단편화, G1이 가진 pause의 이슈를 해결
+- 강력한 Concurrency와 가벼운 GC 로직으로 heap 사이즈에 영향을 받지 않고 일정한 pause 시간이 소요가 특징
+
+[![Shenandoah GC](https://blog.kakaocdn.net/dn/lHh4s/btrISNkkpMV/cuFxgmAT0DuafPhABn0L00/img.png)](https://blog.kakaocdn.net/dn/lHh4s/btrISNkkpMV/cuFxgmAT0DuafPhABn0L00/img.png)
+
+#### **Shenandoah GC 실행 명령어**
+
+
+
+```bash
+java -XX:+UseShenandoahGC -jar Application.java
+```
+
+---
+
+### **ZGC (Z Garbage Collector)**
+
+- Java 15에 release
+- 대량의 메모리(8MB ~ 16TB)를 low-latency로 잘 처리하기 위해 디자인 된 GC
+- G1의 Region 처럼,  ZGC는 ZPage라는 영역을 사용하며, G1의 Region은 크기가 고정인데 비해, ZPage는 2mb 배수로 동적으로 운영됨. (큰 객체가 들어오면 2^ 로 영역을 구성해서 처리)
+- ZGC가 내세우는 최대 장점 중 하나는 힙 크기가 증가하더도 'stop-the-world'의 시간이 절대 10ms를 넘지 않는다는 것
+
+[![ZGC](https://blog.kakaocdn.net/dn/IKx8x/btrIT9f9qjM/f1g0NHSGJI7ce9rfxPZyuk/img.png)](https://blog.kakaocdn.net/dn/IKx8x/btrIT9f9qjM/f1g0NHSGJI7ce9rfxPZyuk/img.png)
+
+#### **Z** **GC 실행 명령어**
+
+```bash
+java -XX:+UnlockExperimentalVMOptions -XX:+UseZGC -jar Application.java
+```
 
 
 
@@ -290,6 +450,8 @@ java -XX:+UseG1GC -jar Application.java
 
 
 
+
+---
 
 참조 - https://mangkyu.tistory.com/118
 https://mangkyu.tistory.com/119

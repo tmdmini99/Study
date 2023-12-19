@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md"
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,6 +173,14 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Images/Pasted image 20231219104404.png",
+    "Images/Pasted image 20231219104351.png",
+    "Images/Pasted image 20231219104223.png",
+    "Images/Pasted image 20231219104049.png",
+    "Images/Pasted image 20231219103939.png",
+    "Images/Pasted image 20231219103934.png",
+    "Images/Pasted image 20231219103743.png",
+    "Spaces/Home/Java/Exception/Exception.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Images/Pasted image 20231219101425.png",
     "Images/Pasted image 20231219100858.png",
@@ -201,16 +209,8 @@
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Spaces/Home/Java/Class/Class.md",
-    "Spaces/Home/Java/Class/Object Class.md",
-    "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Iterator",
     "Images/Pasted image 20231218182627.png",
-    "Images/Pasted image 20231218172854.png",
-    "Images/Pasted image 20231218172847.png",
-    "Images/Pasted image 20231218133759.png",
-    "Images/Pasted image 20231218133755.png",
-    "Images/Pasted image 20231218133627.png",
-    "Images/Pasted image 20231218121117.png",
     "Images",
     "Spaces/Home/Java/람다",
     "Spaces/Home/Java/Generic",
