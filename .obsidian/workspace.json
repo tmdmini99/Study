@@ -11,8 +11,13 @@
             "id": "885d6f7c1defb95c",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "daily note/2023-12-19.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           },
           {
@@ -21,15 +26,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/Json/Json.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "daily note/2023-12-19.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md"
+                "file": "daily note/2023-12-19.md"
               }
             }
           },
@@ -141,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "daily note/2023-12-19.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -181,11 +185,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "fe54ba33846f2fb9",
+  "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Images/Pasted image 20231219163520.png",
-    "Spaces/Home/Java/JVM/JVM.md",
+    "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
+    "Spaces/Home/Java/JVM/Process.md",
+    "Spaces/Home/Java/JVM/JVM.md",
+    "Spaces/Home/Java/JVM/Thread.md",
+    "Images/Pasted image 20231219164401.png",
+    "Images/Pasted image 20231219163520.png",
     "Spaces/Home/Java/상속/this.md",
     "Spaces/Home/Java/상속/오버라이딩.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
@@ -195,8 +203,6 @@
     "Spaces/Home/Http/Http.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/다형성/다형성.md",
-    "Spaces/Home/Java/JVM/Thread.md",
-    "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/Generic/Collection/Iterator.md",
     "Spaces/Home/Java/Generic/Collection/Hash.md",
@@ -215,7 +221,6 @@
     "Font/SpoqaHanSansNeo-Thin.ttf",
     "Font",
     "Spaces/Home/Java/Generic/Collection/Map.md",
-    "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Pseudo Code/Pseudo Code.md",
     "Spaces/Home/Http",
@@ -225,8 +230,6 @@
     "Images/Pasted image 20231219104049.png",
     "Images/Pasted image 20231219103939.png",
     "Images/Pasted image 20231219103934.png",
-    "Images/Pasted image 20231219103743.png",
-    "Images/Pasted image 20231219101425.png",
     "Spaces/Home/Java/객체 지향 프로그래밍",
     "Images"
   ]
