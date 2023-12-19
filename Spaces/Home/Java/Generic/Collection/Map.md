@@ -462,109 +462,136 @@ System.out.println("[Key]:" + key + " [Value]:" +  map.get(key));}
 ```java
 package Week1;  
   
-import java.util.*;  
   
-public class MakeMap<K,V> extends AbstractMap<K,V> implements Map<K,V> {  
+class Nodes<K, V> {  
+    private final K key;  
+    private V value;  
+    private Nodes<K, V> next;  
   
-    private MakeArrayList<K> keys;  
-    private MakeArrayList<V> values;  
-  
-    public MakeMap(){  
-        this.keys= new MakeArrayList<K>();  
-        this.values=new MakeArrayList<V>();  
+    public Nodes(K key, V value) {  
+        this.key = key;  
+        this.value = value;  
+        this.next = null;  
     }  
   
-//Arrays.asList(str).indexOf("two"); // 1반환  
-    @Override  
-    public int size() {  
-        return keys.size();  
-    }  
-    @Override  
-    public V get(Object key) {  
-        return values.get(Arrays.asList(key).indexOf(key));  
-    }  
-    @Override  
-    public V remove(Object key) {  
-        ;  
-        //Arrays.asList(key).indexOf(key)  
-        //Array의 key값의 인덱스 번호를 찾아 그 번호로 지움  
-        keys.remove(Arrays.asList(key).indexOf(key));  
-        return values.remove(Arrays.asList(key).indexOf(key));  
+    public K getKey() {  
+        return key;  
     }  
   
-    @Override  
-    public V put(K key, V value) {  
-        keys.add(key);  
-        values.add(value);  
-        return null;  
+    public V getValue() {  
+        return value;  
     }  
-    public final String toString(){  
-        if(keys.size() ==0){  
-            //값이 없는 경우 빈 배열로 출력  
-            return"{}";  
-        }  
-        //값이 있는 경우 key=value, 이렇게 나오기 때문에 for문으로 값을 합쳐서 출력  
-        StringBuilder sb = new StringBuilder();  
-        for(int i=0; i< keys.size(); i++){  
-            sb.append(keys.get(i)+"="+values.get(i));  
-            if(i!= keys.size()-1){  
-                sb.append(", ");  
+  
+    public void setValue(V value) {  
+        this.value = value;  
+    }  
+  
+    public Nodes<K, V> getNext() {  
+        return next;  
+    }  
+  
+    public void setNext(Nodes<K, V> next) {  
+        this.next = next;  
+    }  
+}  
+  
+public class MakeMap<K, V> {  
+    private int capacity;  
+    private int size;  
+    private Nodes<K, V>[] buckets;  
+  
+  
+  
+    public MakeMap() {  
+        this.capacity = 16; //용량 자동지정  
+        this.size = 0;  
+        this.buckets = new Nodes[capacity];  
+    }  
+  
+    public MakeMap(int capacity) {  
+        this.capacity = capacity;  
+        this.size = 0;  
+        this.buckets = new Nodes[capacity];  
+    }  
+    private int getIndex(K key) {  
+        int hashCode = key.hashCode();  
+        int index = hashCode % capacity;  
+        return index;  
+    }  
+    public void put(K key, V value) {  
+        //hashMap으로 키값 지정  
+        int index = getIndex(key);  
+        Nodes<K, V> node = buckets[index];  
+        while (node != null) {//hash code가 같지만 안에 내용이 다를경우가 있기때문에  
+            if (node.getKey().equals(key)) {  
+                node.setValue(value);  
+                return;  
             }  
+            node = node.getNext(); //다음 노드와 비교하기위해 다음 노드 주소지를 입력  
         }  
-  
-        return "{"+sb+"}";  
-    }  
-    public V replace(K k, V v){  
-        //key값은 변하지 않고 value값만 변하기때문에 value값만 고치고 이전 value값 출력  
-        V vv=values.get(Arrays.asList(k).indexOf(k));  
-        values.set(Arrays.asList(k).indexOf(k),v);  
-        return vv;  
+        Nodes<K, V> newNode = new Nodes<>(key, value);  
+        newNode.setNext(buckets[index]); //값이 첫번째로 오게 됨 그로 인해 다음 노드를 현재노드의 다음 노드로 설정  
+        buckets[index] = newNode;     //지금 인덱스에 새로운 값 지정  
+        size++;  
     }  
   
-    //-----------------------------------------------  
+    public V get(K key) {  
+        int index = getIndex(key);  
+        Nodes<K, V> node = buckets[index];  
+        while (node != null) {  
+            if (node.getKey().equals(key)) {  
+                return node.getValue();  
+            }  
+            node = node.getNext();  
+        }  
+        return null;  
+    }  
+    //hashMap같은 경우 첫번쨰 인덱스에 값이 들어오는 구조  
+    public void remove(K key) {  
+        int index = getIndex(key);  
+        Nodes<K, V> node = buckets[index]; //index에 값이 있는지 확인  
+        Nodes<K, V> prev = null;  
+        while (node != null) { //값이 있을 경우  
+            if (node.getKey().equals(key)) { //그 값이 일치할경우  
+                // 삭제할 노드가 첫 번째 노드인 경우  
+                if (prev == null) { //이전 노드가 null인지 파악  
+                    //이러면 원래 해쉬코드 값이 변하나?  
+                    buckets[index] = node.getNext(); //지금 인덱스에 node의 다음 값 대입  
+                } else {  
+                    //이게 한번이라도 들어오면 이전노드가 지금 노드의 다음 노드 주소값을 받음  
+                    prev.setNext(node.getNext()); //이전 노드의 다음 주소값에 지금 노드의 다음 주소값 대입  
+                }  
+                size--;  
+                //일치할 경우 remove를 종료 while이 아닌 메소드 전체가 종료  
+                return;  
+            }  
+            //해쉬코드는 같지만 값이 다를때  
+            prev = node; //이전 노드에 지금 노드 대입  
+            node = node.getNext(); //노드에 다음 노드 대입  
+        }  
+    }  
   
-    @Override  
+    public boolean containsKey(K key) {  
+        int index = getIndex(key);  
+        Nodes<K, V> node = buckets[index];  
+        while (node != null) {  
+            if (node.getKey().equals(key)) {  
+                return true;  
+            }  
+            node = node.getNext();  
+        }  
+        return false;  
+    }  
+  
     public boolean isEmpty() {  
-        return false;  
+        return size == 0;  
     }  
   
-    @Override  
-    public boolean containsKey(Object key) {  
-        return false;  
-    }  
-  
-    @Override  
-    public boolean containsValue(Object value) {  
-        return false;  
+    public int size() {  
+        return size;  
     }  
   
   
-  
-  
-  
-  
-    @Override  
-    public void putAll(Map<? extends K, ? extends V> m) {  
-  
-    }  
-    @Override  
-    public void clear() {  
-  
-    }  
-    @Override  
-    public Set<K> keySet() {  
-        return null;  
-    }  
-  
-    @Override  
-    public Collection<V> values() {  
-        return null;  
-    }  
-  
-    @Override  
-    public Set<Entry<K, V>> entrySet() {  
-        return null;  
-    }  
 }
 ```
 
