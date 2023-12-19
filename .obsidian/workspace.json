@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md"
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md"
               }
             }
           },
@@ -141,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/JVM.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -183,6 +183,7 @@
   },
   "active": "fe54ba33846f2fb9",
   "lastOpenFiles": [
+    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/Generic/Generic.md",
@@ -191,7 +192,6 @@
     "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Generic/Collection/Set.md",
-    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "daily note/2023-12-19.md",
     "Spaces/Home/Java/Iterator/Iterator.md",

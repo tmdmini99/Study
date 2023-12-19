@@ -6,5 +6,8 @@
   "editing-toolbar",
   "calendar",
   "obsidian-style-settings",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "obsidian-contextual-typography",
+  "obsidian-hider",
+  "dataview"
 ]
