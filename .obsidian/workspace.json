@@ -162,8 +162,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "885d6f7c1defb95c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Font/SpoqaHanSansNeo-Thin.ttf",
+    "Font",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Generic/Collection/Map.md",
     "Spaces/Home/Java/Generic/Collection/Set.md",
@@ -190,7 +192,6 @@
     "Spaces/Home/Java/상속/this.md",
     "Spaces/Home/Java/람다/Streams.md",
     "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
-    "Spaces/Home/Java/String/String.md",
     "Images/Pasted image 20231219104404.png",
     "Images/Pasted image 20231219104351.png",
     "Images/Pasted image 20231219104223.png",
@@ -208,7 +209,6 @@
     "Spaces/Home/Java/Generic",
     "Spaces/Home/Java/JVM",
     "Spaces/Home/Http/Html",
-    "Spaces/Home/Mark/MarkUp",
-    "Spaces/Home/Mark/MarkDown"
+    "Spaces/Home/Mark/MarkUp"
   ]
 }
