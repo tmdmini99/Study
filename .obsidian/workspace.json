@@ -19,12 +19,9 @@
             "id": "fe54ba33846f2fb9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "Images/Pasted image 20231211115426.png"
               }
             }
           }
@@ -83,7 +80,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -103,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Images/Pasted image 20231211115426.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md"
+                "file": "Images/Pasted image 20231211115426.png"
               }
             }
           },
@@ -141,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Images/Pasted image 20231211115426.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -183,6 +181,13 @@
   },
   "active": "fe54ba33846f2fb9",
   "lastOpenFiles": [
+    "Images/Pasted image 20231211101644.png",
+    "Spaces/Home/Http/Http.md",
+    "Spaces/Home/Java/다형성/캐스팅.md",
+    "Spaces/Home/Java/다형성/오버로딩.md",
+    "Spaces/Home/Java/다형성/다형성.md",
+    "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/Process.md",
@@ -192,7 +197,6 @@
     "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/Generic/Collection/Set.md",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "daily note/2023-12-19.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Spaces/Home/Java/Iterator",
@@ -209,14 +213,8 @@
     "Spaces/Home/Java/Stack&Queue/Queue.md",
     "Spaces/Home/Java/Pseudo Code/Pseudo Code.md",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
-    "Spaces/Home/Http/Http.md",
     "Spaces/Home/Http",
-    "Spaces/Home/Java/다형성/오버로딩.md",
-    "Spaces/Home/Java/다형성/다형성.md",
-    "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/상속/상속.md",
-    "Spaces/Home/Java/상속/오버라이딩.md",
-    "Spaces/Home/Java/상속/super.md",
     "Images/Pasted image 20231219104404.png",
     "Images/Pasted image 20231219104351.png",
     "Images/Pasted image 20231219104223.png",
