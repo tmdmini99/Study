@@ -372,7 +372,6 @@ LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(
 ## LinkedList Class 직접 구현
 
 ```java
-
 package Week1;  
   
 import java.util.*;  
@@ -461,13 +460,36 @@ public class MakeLinkedList<E> implements List<E> {
   
         }  
         size++;  
-    }    
+    }  
+//public void addFirst(E data) {  
+//    if (first == null) { // 링크드 리스트가 비어있을 경우  
+//        first = new Node<E>(data); // head에 새로운 노드를 생성하여 추가  
+//        last = first; // tail도 동일한 노드를 가리키도록 설정  
+//    } else { //노드가 존재한다면?  
+//        Node<E> node = new Node<E>(data); // 새로운 노드 생성  
+//        node.nextNode = first; // 새로운 노드의 다음 노드로 현재 head를 설정 / 과거 헤드를 뒤로 밀어버림  
+//        first.preNode=node;  
+//        first = node; // head를 새로운 노드로 업데이트  
+//    }  
+//}  
+//    public void addLast(E data) {  
+//        if (first == null) { // 링크드 리스트가 비어있을 경우  
+//            first = new Node<E>(data); // head에 새로운 노드를 생성하여 추가  
+//            last = first;  
+//        } else { //노드가 존재한다면?  
+//            Node<E> node = this.last; // 현재 head 노드를 넣는다.  
+//            Node<E> node2 = new Node<E>(data);  
+//            node.nextNode=node2;  
+//            node2.preNode=node;  
+//            last = node2;  
+//        } // next 가 null이라면 현재 링크드 리스트의 마지막을 알 수 있다.  
+//    }  
 public E peek(){  
         return (first == null) ? null : first.data;  
 }  
     @Override  
     public boolean add(E e) {  
-  
+        this.addLast(e);  
         return true;  
     }  
     public boolean offer(E e) {  
@@ -501,7 +523,7 @@ public E peek(){
   
     public E poll(){  
   
-        return  null;  
+        return  (E) this.removeFirst();  
     }  
   
     @Override  
@@ -563,13 +585,47 @@ public E peek(){
         size =0;  
     }  
   
-  
-  
-  
     @Override  
     public boolean contains(Object o) {  
-        return false;  
+        boolean check = false;  
+        Node<E> node = first;  
+        while (node.nextNode != null){  
+            if(node.data == o){  
+                check = true;  
+                break;  
+            }  
+            node = node.nextNode;  
+        }  
+        return check;  
     }  
+  
+    @Override  
+    public E get(int index) {  
+  
+        Node<E> node = first;  
+        int num=0;  
+        while (node.nextNode != null){  
+            if(num == index){  
+                return node.data;  
+            }  
+            node = node.nextNode;  
+        }  
+        return null;  
+    }  
+  
+    @Override  
+    public E set(int index, E element) {  
+        return null;  
+    }  
+  
+    @Override  
+    public ListIterator<E> listIterator() {  
+        return null;  
+    }  
+  
+    //----------------------------------------------------------  
+  
+  
   
     @Override  
     public Iterator<E> iterator() {  
@@ -585,60 +641,72 @@ public E peek(){
     public <T> T[] toArray(T[] a) {  
         return null;  
     }  
+  
+  
+  
+  
+  
     @Override  
     public boolean containsAll(Collection<?> c) {  
         return false;  
-    }    
+    }  
+  
     @Override  
     public boolean addAll(Collection<? extends E> c) {  
         return false;  
     }  
+  
     @Override  
     public boolean addAll(int index, Collection<? extends E> c) {  
         return false;  
-    }    
+    }  
+  
     @Override  
     public boolean removeAll(Collection<?> c) {  
         return false;  
     }  
+  
     @Override  
     public boolean retainAll(Collection<?> c) {  
         return false;  
     }  
-    @Override  
-    public E get(int index) {  
-        return null;  
-    }  
-    @Override  
-    public E set(int index, E element) {  
-        return null;  
-    }  
+  
+  
+  
+  
+  
+  
+  
   
     @Override  
     public void add(int index, E element) {  
+  
     }  
+  
   
     @Override  
     public int indexOf(Object o) {  
         return 0;  
     }  
+  
     @Override  
     public int lastIndexOf(Object o) {  
         return 0;  
     }  
-    @Override  
-    public ListIterator<E> listIterator() {  
-        return null;  
-    }  
+  
+  
+  
     @Override  
     public ListIterator<E> listIterator(int index) {  
         return null;  
     }  
+  
     @Override  
     public List<E> subList(int fromIndex, int toIndex) {  
         return null;  
     }  
 }
+
 ```
 
 
@@ -1181,7 +1249,6 @@ public class MakeArrayList<E> implements List<E> {
   
     @Override  
     public E get(int index) {  
-  
         return list[index];  
     }  
   
@@ -1250,6 +1317,8 @@ public class MakeArrayList<E> implements List<E> {
     public <T> T[] toArray(T[] a) {  
         return null;  
     }  
+  
+  
 }
 ```
 

@@ -98,6 +98,31 @@ Queue에서 첫번째로 저장된 값을 참조하고 싶다면 peek()라는 �
 
 
 
+Queue 직접 구현
+```java
+package Week1;  
+  
+import java.util.LinkedList;  
+  
+public class MakeQue<E> extends LinkedList<E> {  
+    private MakeLinkedList<E> ls;  
+    public MakeQue(){  
+        ls=new MakeLinkedList<E>();  
+    }  
+    public boolean offer(E e){  
+        return ls.add(e);  
+    }  
+    public String toString(){  
+        return String.valueOf(ls);  
+    }  
+    public E poll(){  
+        return ls.poll();  
+    }  
+    public  E peek(){  
+        return ls.peek();  
+    }  
+}
+```
 
 
 

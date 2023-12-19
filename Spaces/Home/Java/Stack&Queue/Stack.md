@@ -171,6 +171,58 @@ stack.size(1);
 12번째 )로 stack에서 하나 지움
 
 
+## Stack 직접 구현
+
+```java
+package Week1;  
+  
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.EmptyStackException;  
+import java.util.Vector;  
+  
+public class MakeStack<E> extends Vector<E> {  
+     MakeArrayList<E> ar;  
+     int size;  
+    public MakeStack(){  
+        this.ar=new MakeArrayList<E>();  
+  
+    }  
+    public String toString(){  
+        return String.valueOf(ar);  
+    }  
+    //push  
+    public E push(E e){  
+        ar.add(e);  
+        return  e;  
+    }  
+    //pop  
+    public E pop(){  
+        try{  
+            return ar.remove(ar.size()-1);  
+        }catch(EmptyStackException e){  
+            System.out.println("배열 안에 값이 없음");  
+            return null;  
+        }  
+    }  
+    public int size(){  
+        return ar.size();  
+    }  
+    public boolean add(E e){  
+        return ar.add(e);  
+    }  
+    public boolean empty(){  
+        return ar.isEmpty();  
+    }  
+//    public void clear(){  
+//        ar.clear();  
+//    }  
+    public E peek(){  
+        return  ar.get(ar.size()-1);  
+    }  
+}
+```
+
 
 
 
