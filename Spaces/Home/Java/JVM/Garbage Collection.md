@@ -112,6 +112,54 @@ Minor GC를 정확히 이해하기 위해서는 Young 영역의 구조에 대해
 
 객체가 새롭게 생성되면 Young 영역 중에서도 Eden 영역에 할당(Allocation)이 된다. 그리고 Eden 영역이 꽉 차면 Minor GC가 발생하게 되는데, 사용되지 않는 메모리는 해제되고 Eden 영역에 존재하는 객체는 (사용중인) Survivor 영역으로 옮겨지게 된다. Survivor 영역은 총 2개이지만 반드시 1개의 영역에만 데이터가 존재해야 하는데, Young 영역의 동작 순서를 자세히 살펴보도록 하자.
 
+**1.** 처음 생성된 객체는 Young Generation 영역의 일부인 Eden 영역에 위치
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/cXg3ZZ/btrITpQET0n/aJSAYDEziQIKlVCvxaSpg0/img.png)](https://blog.kakaocdn.net/dn/cXg3ZZ/btrITpQET0n/aJSAYDEziQIKlVCvxaSpg0/img.png)
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/dnDTuC/btrISOQKFwn/ullhkIEtDiPY7HUahMKvW1/img.png)](https://blog.kakaocdn.net/dn/dnDTuC/btrISOQKFwn/ullhkIEtDiPY7HUahMKvW1/img.png)
+
+**2.** 객체가 계속 생성되어 Eden 영역이 꽉차게 되고 Minor GC가 실행
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/tySvx/btrITpwlB0D/JtcEmTbIYaPnHAAoNU8vB0/img.png)](https://blog.kakaocdn.net/dn/tySvx/btrITpwlB0D/JtcEmTbIYaPnHAAoNU8vB0/img.png)
+
+**3.** Mark 동작을 통해 reachable 객체를 탐색
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/cJl67l/btrIXRd6Izv/ZwTbTqbKkuaH71Llqzog6k/img.png)](https://blog.kakaocdn.net/dn/cJl67l/btrIXRd6Izv/ZwTbTqbKkuaH71Llqzog6k/img.png)
+
+**4.** Eden 영역에서 살아남은 객체는 1개의 Survivor 영역으로 이동
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/bxY6Md/btrIWNwtetB/4EpRJFGM5v7Fwk9dk0Wc9K/img.png)](https://blog.kakaocdn.net/dn/bxY6Md/btrIWNwtetB/4EpRJFGM5v7Fwk9dk0Wc9K/img.png)
+
+**5.** Eden 영역에서 사용되지 않는 객체(unreachable)의 메모리를 해제(sweep)
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/ssSMf/btrIWMYFQlZ/KqHBu6rr18ANKo1ngOnMQk/img.png)](https://blog.kakaocdn.net/dn/ssSMf/btrIWMYFQlZ/KqHBu6rr18ANKo1ngOnMQk/img.png)
+
+**6.** 살아남은 모든 객체들은 age값이 1씩 증가
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/Dno6M/btrIPYfc2VC/BLLkKAXLVRYKUAu3R6Vefk/img.png)](https://blog.kakaocdn.net/dn/Dno6M/btrIPYfc2VC/BLLkKAXLVRYKUAu3R6Vefk/img.png)
+**7.** 또다시 Eden 영역에 신규 객체들로 가득 차게 되면 다시한번 minor GC 발생하고 mark 한다
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/cNoD2j/btrIT8gQrk9/vIqyTQJvZ16ByIGplen2D0/img.png)](https://blog.kakaocdn.net/dn/cNoD2j/btrIT8gQrk9/vIqyTQJvZ16ByIGplen2D0/img.png)
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/8XX01/btrIPYsHxbi/FothJXlh95Tc6DSYSkZb10/img.png)](https://blog.kakaocdn.net/dn/8XX01/btrIPYsHxbi/FothJXlh95Tc6DSYSkZb10/img.png)
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/cRhJ1g/btrIXPtPw5o/gN8t1V7BjNXaRqPjKueVX1/img.png)](https://blog.kakaocdn.net/dn/cRhJ1g/btrIXPtPw5o/gN8t1V7BjNXaRqPjKueVX1/img.png)
+
+**8.** marking 한 객체들을 비어있는 Survival 1으로 이동하고 sweep
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/dsj6Og/btrIRHqHljJ/00JVcQ3KD1E8he6qejuLik/img.png)](https://blog.kakaocdn.net/dn/dsj6Og/btrIRHqHljJ/00JVcQ3KD1E8he6qejuLik/img.png)
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/blilhe/btrISO4eRF3/sMVxubaUB19Sm1XsVJE90k/img.png)](https://blog.kakaocdn.net/dn/blilhe/btrISO4eRF3/sMVxubaUB19Sm1XsVJE90k/img.png)
+
+**10.** 다시 살아남은 모든 객체들은 age가 1씩 증가
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/d8v4Vk/btrIXwVy4Uj/iGv5H94KNcZhQ0GufntWg0/img.png)](https://blog.kakaocdn.net/dn/d8v4Vk/btrIXwVy4Uj/iGv5H94KNcZhQ0GufntWg0/img.png)
+
+**11.** 이러한 과정을 반복
+
+[![java-Minor GC](https://blog.kakaocdn.net/dn/2WHEq/btrIUaeDqLG/qN0f490z0nGddd0Vl7ECdk/img.gif)](https://blog.kakaocdn.net/dn/2WHEq/btrIUaeDqLG/qN0f490z0nGddd0Vl7ECdk/img.gif)
+
+
 1. 새로 생성된 객체가 Eden 영역에 할당된다.
 2. 객체가 계속 생성되어 Eden 영역이 꽉차게 되고 Minor GC가 실행된다.
     
