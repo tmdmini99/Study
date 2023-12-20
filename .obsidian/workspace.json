@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-20.md",
+                "file": "Spaces/Home/Java/캡슐화/제어자.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-20.md",
+                "file": "Spaces/Home/Java/캡슐화/제어자.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2023-12-20.md"
+                "file": "Spaces/Home/Java/캡슐화/제어자.md"
               }
             }
           },
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-20.md",
+                "file": "Spaces/Home/Java/캡슐화/제어자.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,8 +187,9 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "daily note/2023-12-19.md",
+    "Spaces/Home/Java/캡슐화/Drawing 2023-12-19 15.03.37.excalidraw.md",
     "daily note/2023-12-20.md",
+    "daily note/2023-12-19.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/JVM/Process.md",
@@ -214,7 +214,6 @@
     "Spaces/Home/Java/Generic/Collection/Set.md",
     "Spaces/Home/Java/Iterator/Iterator.md",
     "Spaces/Home/Java/Iterator",
-    "Spaces/Home/Java/캡슐화/Drawing 2023-12-19 15.03.37.excalidraw.md",
     "daily note/2023-12-14.md",
     "Font/SpoqaHanSansNeo-Regular.ttf",
     "Font/SpoqaHanSansNeo-Medium.ttf",
