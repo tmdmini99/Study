@@ -40,10 +40,27 @@ JVM 구조 - (출처는 맨 하단에 기재)
 **JVM의 구조**에는 크게 **Class Loader, Runtime data areas, Execution Engine, GC** 으로 나누어져 있다.
 
 **Class Loader**는 클래스 파일을 Runtime Data Area의 메서드 영역으로 불러오는 역할을 한다.
+#### 1. Class Loader(클래스 로더)
+
+JVM내로 클래스파일(.class)를 로드하고, 링크를 통해 배치하는 작업을 수행하는 모듈이다. Runtime 시점에 클래스를 로딩하게 해 주며 클래스의 인스턴스를 생성하면 클래스 로더를 통해 메모리에 로드하게 된다.
 
 **Execution Engine은. class파일과** 같은 ByteCode를 실행 가능하도록 해석한다.
+#### 2. Execution Engine(실행 엔진)
+
+로드된 클래스의 바이트코드를 실행하는 런타임 모듈이 바로 실행 엔진이다. 클래스 로더를 통해 JVM내의 Runtime Data Areas에 배치된 바이트코드는 실행 엔진에 의해 실행되며, 실행 엔진은 자바 바이트 코드를 명령어 단위로 읽어서 실행한다. 여기서 Interpreter(인터프리터) 방식과 JIT compiler 방식을 사용하게 된다.
+##### 3. Interpreter(인터프리터)
+
+인터프리터는 프로그래밍 언어의 소스 코드를 바로 실행하는 프로그램을 말한다. 원시 코드를 기계어로 번역하는 컴파일러와 대비된다. 자바는 인터프리터 방식을 사용하여 자바 바이트 코드를 명령어 단위로 읽어서 실행한다. 하지만 한 줄씩 수행하기 때문에 수행 속도가 느리다는 단점이 있다.
+
+##### 4. JIT Compiler (Just In Time Compiler)
+
+인터프리터 방식의 단점을 보완하기 위해 JIT 컴파일러가 도입되었다. JIT 컴파일러는 바이트코드를 컴파일하여 native code(네이티브 코드)로 변환하여 사용한다. 즉 한 번 컴파일된 코드는 빠르게 수행하게 되어 수행 속도가 빠르게 된다. 하지만 컴파일하는 과정에 비용이 들게 된다. 따라서 한 번만 수행할 코드라면 컴파일하지 않고 인터프리팅 하는 것이 유리하다. 따라서 JVM은 인터프리터 방식을 사용하다가 일정한 기준이 넘어가면 JIT 컴파일러를 사용하는 혼합 방식을 사용한다. 
+
 
 **GC(Garbage Collector)는**  메모리 관리 기법 중 하나로, Heap 영역에 배치된 객체들을 관리하는 모듈이다.
+#### 5. Garbage Collector(가비지 컬렉터)
+
+가비지 컬렉터는 유효하지 않은 메모리인 가비지(Garbage)를 정리해주는 역할을 한다. 즉 Garbage Collection(GC)를 담당한다.
 
 **Runtime Data Area**는 런타임 시 클래스 데이터와 같은 메타 데이터와 실제 데이터가 저장되는 곳이다.
 
@@ -53,7 +70,7 @@ Runtime Data Area에는 또다시 **Method Area, Heap, PC Registers, Java Stacks
 
 ![Runtime Data Area - (출처는 맨 하단에 기재)](https://blog.kakaocdn.net/dn/XLtjO/btrDyGDpp0C/K8wEGphqloy5uKZTC08Y7k/img.png)
 
-Runtime Data Area - (출처는 맨 하단에 기재)
+Runtime Data Area 
 
 ※ Java는 멀티 스레드 환경으로 모든 스레드는 **Heap, Method Area를 공유**한다.
 
@@ -113,6 +130,15 @@ Runtime Data Area - (출처는 맨 하단에 기재)
 2. 메모리 사용량 : JVM은 자체적인 메모리 사용량이 상대적으로 크다. JVM 자체의 오버헤드 및 가비지 컬렉션 작업에 필요한 추가적인 메모리를 사용하기 때문에, 자원이 제한적인 환경에서는 부담이 될 수 있다.
 3. 시작 시간 : JVM은 초기화 및 클래스 로딩 등의 작업이 필요하므로, 프로그램의 시작 시간이 상대적으로 오래 걸릴 수 있다. 특히 작은 규모의 애플리케이션의 경우, 이러한 시작 시간이 부담이 될 수 있다.
 4. 리소스 관리 : 가비지 컬렉션은 자동으로 메모리를 관리하지만, 이로 인해 일시적인 정지나 실행 속도 저하가 발생할 수 있다. 특히 대규모 및 실시간 시스템에서는 이러한 리소스 관리 문제가 중요한 고려 사항이 될 수 있다.
+
+
+## **▶ JVM의 실행 과정**
+1. 자바 프로그램이 실행되면 JVM은 OS로부터 프로그램 실행에 필요한 메모리를 할당받는다. JVM은 이 메모리를 용도에 따라 여러 영역으로 나누어 관리한다.
+2. 자바 컴파일러(javac)가 자바 소스코드(.java)를 읽어 들여 자바 바이트코드(.class)로 변환시킨다.
+3. 클래스 로더(Class Loader)를 통해 클래스 파일(.class)을 JVM으로 로딩한다.
+4. 로딩된 클래스 파일은 실행 엔진(Execution Engine)을 통해 해석된다.
+5. 해석된 바이트코드는 Runtime Data Area에 배치되어 실질적인 수행이 이루어진다.
+6. 위 실행과정 속에서 JVM은 필요에 따라 스레드 동기화(Thread Synchronization)와 GC 같은 작업을 수행한다.
 
 
 ---
