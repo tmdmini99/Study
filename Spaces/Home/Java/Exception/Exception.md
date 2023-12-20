@@ -241,7 +241,7 @@ int balance = 100;
 public static void main(String[] args){
  Account account = new Account();
  try{
- account.wtihdraw(30000);
+ account.wtithdraw(30000);
 }
  catch ( AnyCreateException e ) {
   String message = e.getMessage(); // 메시지를 담은 생성자를 선택했을 때, 그 메시지를
