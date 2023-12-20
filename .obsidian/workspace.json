@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
+                "file": "Spaces/Home/Java/Exception/Exception.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
+                "file": "Spaces/Home/Java/Exception/Exception.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md"
+                "file": "Spaces/Home/Java/Exception/Exception.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
+                "file": "Spaces/Home/Java/Exception/Exception.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,10 +185,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
+    "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/Drawing 2023-12-19 15.03.37.excalidraw.md",
     "daily note/2023-12-20.md",
     "daily note/2023-12-19.md",
