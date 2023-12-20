@@ -5,7 +5,6 @@ List 인터페이스
     - 양방향 포인터 구조로 데이터의 삽입 삭제가 빈번할 경우 데이터의 위치정보만 수정하면 되기에 유용 
     - 스택, 큐, 양방향 큐 등을 만들기 위한 용도로 쓰임  
     - LinkedList란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
-    - LinkedList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
 
  
 ###  ***1. LinkedList란?***
@@ -458,29 +457,7 @@ public class MakeLinkedList<E> implements List<E> {
         }  
         size++;  
     }  
-//public void addFirst(E data) {  
-//    if (first == null) { // 링크드 리스트가 비어있을 경우  
-//        first = new Node<E>(data); // head에 새로운 노드를 생성하여 추가  
-//        last = first; // tail도 동일한 노드를 가리키도록 설정  
-//    } else { //노드가 존재한다면?  
-//        Node<E> node = new Node<E>(data); // 새로운 노드 생성  
-//        node.nextNode = first; // 새로운 노드의 다음 노드로 현재 head를 설정 / 과거 헤드를 뒤로 밀어버림  
-//        first.preNode=node;  
-//        first = node; // head를 새로운 노드로 업데이트  
-//    }  
-//}  
-//    public void addLast(E data) {  
-//        if (first == null) { // 링크드 리스트가 비어있을 경우  
-//            first = new Node<E>(data); // head에 새로운 노드를 생성하여 추가  
-//            last = first;  
-//        } else { //노드가 존재한다면?  
-//            Node<E> node = this.last; // 현재 head 노드를 넣는다.  
-//            Node<E> node2 = new Node<E>(data);  
-//            node.nextNode=node2;  
-//            node2.preNode=node;  
-//            last = node2;  
-//        } // next 가 null이라면 현재 링크드 리스트의 마지막을 알 수 있다.  
-//    }  
+
 public E peek(){  
         return (first == null) ? null : first.data;  
 }  
