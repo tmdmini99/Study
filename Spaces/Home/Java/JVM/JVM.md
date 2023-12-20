@@ -59,7 +59,7 @@ Runtime Data Area - (출처는 맨 하단에 기재)
 
 #### **▷ PC Register**
 
-- JVM은 스택 기반의 가상 머신으로, CPU에 직접 접근하지 않고 [[Stack]]에서 주소를 뽑아서 가져온다. 가져온 주소는       PC Register에 저장된다.
+- JVM은 스택 기반의 가상 머신으로, CPU에 직접 접근하지 않고 [[Stack]]에서 주소를 뽑아서 가져온다. 가져온 주소는  PC Register에 저장된다.
 - 따라서, 현재 어떤 명령을 실행해야 할 지에 대한 기록을 담당
 
 #### **▷ JVM Stacks**
