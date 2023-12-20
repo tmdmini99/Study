@@ -156,6 +156,8 @@ public void method2() throws ClassNotFoundException {
 ### **throw(예외 발생 시키기)**
 
 
+
+
 | 예외                      | 사용해야 할 상황                            |
 | ------------------------- | ------------------------------------------- |
 | IllegalArgumentException  | 매개변수가 의도하지 않은 상황을 유발시킬 때 |
@@ -173,9 +175,35 @@ public void method2() throws ClassNotFoundException {
 	
 ```
 
-결과
-```java
 
+
+예제 코드
+```java
+class  Test {  
+    public void tests(String a, String b) throws NumberFormatException{  
+        try {  
+            int sum = Integer.parseInt(a) + Integer.parseInt(a);  
+            System.out.println("문자 입력 합은 "+sum);  
+        }catch (NumberFormatException e){  
+            System.out.println("숫자형 문자 x");  
+            throw e;  
+        }  
+    }  
+}
+
+public class Main {  
+  
+    public static void main(String[] ars) {  
+  
+        Test test = new Test();  
+  
+        try {  
+            test.tests("d","d");  
+  
+        }catch (NumberFormatException e){  
+            System.out.println("숫자 x");  
+        }
+}
 
 
 ```
