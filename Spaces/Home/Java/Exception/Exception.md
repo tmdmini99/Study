@@ -155,8 +155,12 @@ public void method2() throws ClassNotFoundException {
 
 ### **throw(예외 발생 시키기)**
 
+throw는 **개발자가 직접 예외를 발생시키고싶을 때 쓰는 것**이다.
+주로 `RuntimeException(UnCheckedException)` 처리를 위해 쓰는 방식이다.
 
-
+**throw는 Exception을 던질 때 예외 내용도 던져주지 않는다.**
+그래서 개발자가 직접 Exception을 따로 커스터마이징해서 만들고 그 안에 메시지를 넣어서 던져주는 방식이다.
+throw는 개발자가 직접 예외를 발생시키고싶을 때 쓰는 것이지만 **추가적으로 Exception 재정의**해서 사용하기도 한다. (**CustomException**)
 
 | 예외                      | 사용해야 할 상황                            |
 | ------------------------- | ------------------------------------------- |
@@ -166,6 +170,8 @@ public void method2() throws ClassNotFoundException {
 | IndexOutOfBoundsException | 인덱스 매개 변수 값이 범위를 벗어날 때      |
 | ArithmeticException       | 산술적인 연산에 오류가 있을 때              |
 | IOException                          |      try...catch하거나 throw 해야 한다는 뜻                                       |
+
+**ExceptionHandler** ?
 
 
 사용법
@@ -402,7 +408,86 @@ public class codeTest {
 - checked 예외 - RuntimeException을 제외한 Exception의 하위 클래스
 - unchekced 예외 - RuntimeException의 하위 클래스
 
+![[Pasted image 20231220111541.png]]
+#### 1) Checked Exception
+
+체크 예외는 예외를 잡아서 처리하거나(`try ~ catch`), 이게 안되면, 예외를 밖으로 던지는 `throw 예외`를 필수로 선언해야 한다.  
+그렇지 않으면 컴파일 오류가 발생한다. 이것 때문에 장점과 단점이 동시에 존재한다.
+
+- 장점 : 개발자가 실수로 예외를 누락하지 않도록 `컴파일러를 통해 문제를 잡아주는` `훌륭한 안전 장치`이다.
+    
+- 단점 : 하지만 실제로는 개발자가 모든 체크 예외를 반드시 잡거나 던지도록 처리해야 하기 때문에, `너무 번거로운 일`이 된다. 크게 신경쓰고 싶지 않은 예외까지 모두 챙겨야 한다. 특히 `의존관계`가 생긴다!
+    
+- 종류
+    
+
+```java
+* IOException : 파일, 소켓 등에 대한 읽기 또는 쓰기와 같이 잘못될 수 있는 입출력 작업에 대한 일반적인 예외
+* SQLException : 데이터베이스 관련 예외를 처리하는 데 사용
+* ClassNotFoundException : 일반적으로 Java의 리플렉션 메커니즘을 사용할 때 런타임에 클래스를 찾을 수 없을 때 발생
+```
+
+#### 2) RuntimeException(Unchecked Exception)
+
+**런타임 예외**란 프로그래밍 소스코드를 작성하여 컴파일과정에서는 문제를 발견하지 못하고 정상적으로 컴파일이 진행되었으나, 프로그램을 실행중에 발생하는 오류사항들을 대체로 예외라고 정의한다. Unchecked Exception은 이 `런타임 예외`를 상속한다.
+
+Unchecked Exception은 `복구 불가능한 예외`이다.  
+=> 예외 발생시 `런타임 중지! 즉, 프로그램이 종료가 된다는 뜻`이다!  
+(**Unchecked Exception**)
+
+ex) 범위를 넘어선 배열접근, 정수를 0으로 나누는 경우(ArithmeticException), Null포인터 오류등이 있다.
+
+**그럼 이러한 오류가 발생하면 개발자는 어떻게 처리를 해주어야 하느냐?**
+
+> **결론적으로 말하자면**, 이 `Exception에 대한 에러 메시지를 출력`하는 것이다.  
+>   
+>   
+> 사실, `Checked Exception을 만나면` `더 구체적인 Unchecked Exception`을 발생시켜 **정확한 정보를 전달하고 로직의 흐름을 끊는 것이 좋다**. ex. SQLException  
+> Spring이나 JPA 등에서 SQLException을 처리하지 않는 이유도 적절한 RuntimeException으로 던져주고 있기 때문이다.
+
+- 종류
+
+```java
+* NullPointerException : null 참조를 사용하여 객체의 메서드나 필드에 액세스하려고 하면 발생
+* ArithmeticException : 산술 연산(예: 0으로 나누기)으로 인해 오류가 발생
+* ArrayIndexOutOfBoundsException : 잘못된 인덱스가 있는 배열 요소에 액세스하려고 하면 발생
+* IllegalArgumentException : 잘못된 인수가 메소드에 전달되면 발생
+* InvalidFormatException : 데이터 형식이 유효하지 않은 상황에 직면하고 이 문제를 나타내기 위해 예외를 발생
+* NumberFormatException : 문자열을 숫자로 변환하려고 시도했지만 형식이 유효하지 않은 경우 발생
+...
+```
+
+
+#### 1) CheckedException 처리전략
+
+- 기본원칙은 `언체크(런타임) 예외`를 사용하자.
+    
+- CheckedException는 비즈니스 로직상 `의도적으로` 던지는 예외로만(try ~ catch & throws) 사용하자.
+    
+- throws Exception 사용 x => 구체적인 체크 예외로 밖으로 던지는 방식(try ~ catch & throws)으로 하자.  
+    `SQLException`,`ConnectionException` 같은 시스템 예외는 Controller, Service 클래스에서는 대부분 복구가 불가능하고 처리할 수 없는 체크 예외이다. 따라서 다음과 같이 처리해주어야 한다.
+    
+
+```java
+void method() thorws SQLException, ConnectionException {...}
+```
+
+#### 2) UnCheckedException 처리전략
+
+- 런타임 예외를 사용하면 중간에 기술이 변경되어도 해당 예외를 사용하지 않는 controller, service에서는 `코드를 변경하지 않아도 된다.`
+- 그래서 스프링에서도 `기본적으로 런타임 예외를 제공`한다.
+
+```java
+throw new ArithmeticException("Division by zero");
+```
+
+- 예외를 `공통으로 처리`하는 `ExceptionHandler`를 만들어서 처리하자.
+
+
+
 checked 예외는 반드시 예외처리를 해야 하는 되는 것이고, unchekced는 해도 되고 안 해도 되는 예외다. 바로 이 지점이 IOException과 ArithmeticException의 차이점이다. 아래는 두개 클래스들의 가계도를 보여준다.
+
+
 
 ![](https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/module/516/2093.png)
 
@@ -551,3 +636,4 @@ https://opentutorials.org/course/1223/6227
 https://opentutorials.org/course/1223/6228
 
 https://lnsideout.tistory.com/entry/JAVA-etoString-egetMessage-eprintStackTrace-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC
+https://velog.io/@mooh2jj/%EC%9E%90%EB%B0%94-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%ACtry-catch-throw-throws
