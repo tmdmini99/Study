@@ -126,6 +126,35 @@ clear() 메서드는 HashTable의 모든 값을 삭제할 때 사용합니다
 HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다. Map 인터페이스를 상속하고 있기에 Map의 성질을 그대로 가지고 있습니다. Map은 키와 값으로 구성된 Entry객체를 저장하는 구조를 가지고 있는 자료구조입니다. 여기서 키와 값은 모두 객체입니다. 값은 중복 저장될 수 있지만 키는 중복 저장될 수 없습니다. 만약 기존에 저장된 키와 동일한 키로 값을 저장하면 기존의 값은 없어지고 새로운 값으로 대치됩니다.
 
 
+
+데이터를 저장하려면 자료구조가 필요하다. 
+HashMap은 자료구조로 배열(array)을 사용한다. 
+배열은 '인덱스'를 통해 바로 접근이 가능하다는 장점이 있다. 
+HashMap은 해싱(Hashing)을 통해 Map 데이터가 저장 될 위치의 인덱스를 구한다. 
+그래서 이름이 HashMap이다.
+key(X)를 해싱함수(function)에 넣어 인덱스(Y)를 산출한 후, 해당 인덱스에 Map 데이터를 저장하는 것이 HashMap의 기본 원리이다.
+
+
+![[Pasted image 20231220133649.png]]
+
+
+해싱은 인덱스를 구하는 것이 목적이다. 그러므로 지켜야 될 조건이 있다.
+
+1. hasing의 결과는 정수여야 한다.
+
+2. hasing의 결과는 배열의 크기를 넘어서면 안 된다.
+
+
+![[Pasted image 20231220133729.png]]
+
+
+이렇듯, HashMap은 key만 있다면 해싱함수를 통해 바로 해당 인덱스의 위치로 이동할 수 있다. key를 통해 인덱스를 산출 후, 데이터에 접근하면 시간복잡도가 O(1)이다. HashMap의 데이터접근성능이 정말 뛰어나다고 할 수 있다.
+
+여기서 이 배열을 버킷(bucket)이라 부른다. 앞으로 HashMap에 사용된 배열을 버킷이라 부르겠다. 버킷 안에 저장된 Map 데이터를 자바에서는 Node객체로 만들어 관리한다.
+
+해시 버킷 개수의 기본값은 16이고 최대 개수는 2^30개이고. 데이터의 개수가 임계점이 이를 때마다 버킷 개수의 크기를 2배식 증가시킵니다.
+
+
 ### HashMap Method
 
 
@@ -611,6 +640,7 @@ public class MakeMap<K, V> {
 ## 참조
 참조 - https://devlogofchris.tistory.com/41 HashMap 
 https://gre-eny.tistory.com/97
+https://lordofkangs.tistory.com/78
 
 HashTable - https://crazykim2.tistory.com/589
 
