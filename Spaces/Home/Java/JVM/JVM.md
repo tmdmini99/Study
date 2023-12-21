@@ -134,6 +134,17 @@ Runtime Data Area
 ![[Pasted image 20231221140257.png]]
 
 
+스택 영역은 각 스레드마다 하나씩 존재하며, 스레드가 시작될 때 할당된다.
+
+프로세스가 메모리에 로드 될 때 스택 사이즈가 고정되어 있어, 런타임 시에 스택 사이즈를 바꿀 수는 없다.
+
+만일 고정된 크기의 JVM 스택에서 프로그램 실행 중 메모리 크기가 충분하지 않다면 StackOverFlowError가 발생하게 된다.
+
+쓰레드를 종료하면 런타임 스택도 사라진다.
+
+
+![[Pasted image 20231221140323.png]]
+
 
 #### **▷ Native Method Stacks**
 
@@ -147,6 +158,25 @@ Runtime Data Area
 - [[Garbage Collection|GC(가비지 컬렉션)]]의 대상이 되는 영역
 - 객체를 동적으로 생성하게 되면 인스턴스가 Heap 영역의 메모리에 할당된다.
 - 단, 레퍼런스 변수의 경우, Heap에 인스턴스가 저장되는 것이 아닌 포인터가 저장된다.
+
+
+**new 연산자로 생성되는 클래스와 인스턴스 변수, 배열 타입 등 Reference Type이 저장**되는 곳이다.
+
+당연히 Method Area 영역에 저장된 클래스만이 생성이 되어 적재된다
+
+![[Pasted image 20231221140411.png]]
+
+**※ 힙 영역의 사용기간 및 스레드 공유 범위**  
+- 객체가 더 이상 사용되지 않거나 명시적으로 null 선언 시   
+- GC(Garbage Collection) 대상
+
+
+![[Pasted image 20231221140443.png]]
+
+![[Pasted image 20231221140513.png]]
+
+
+
 
 #### **▷ Method Area**
 
