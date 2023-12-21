@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md"
+                "file": "Spaces/Home/Java/JVM/JVM.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
+                "file": "Spaces/Home/Java/JVM/JVM.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -187,11 +187,21 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Images/Pasted image 20231221140257.png",
+    "Images/Pasted image 20231221140205.png",
+    "Images/Pasted image 20231221140100.png",
+    "Images/Pasted image 20231221140052.png",
+    "Images/Pasted image 20231221140048.png",
+    "Images/Pasted image 20231221140019.png",
+    "Images/Pasted image 20231221135744.png",
+    "Images/Pasted image 20231221135630.png",
+    "Images/Pasted image 20231221135555.png",
+    "Images/Pasted image 20231221135408.png",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/Exception/Exception.md",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "daily note/2023-12-21.md",
     "daily note/2023-12-20.md",
     "Spaces/Home/Java/String/String.md",
@@ -208,20 +218,11 @@
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Images/Pasted image 20231220174416.png",
     "Spaces/Home/Java/Generic/Collection/Collection.md",
-    "Images/Pasted image 20231220133729.png",
-    "Images/Pasted image 20231220133649.png",
-    "Images/Pasted image 20231220132619.png",
-    "Images/Pasted image 20231220111541.png",
     "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/Drawing 2023-12-19 15.03.37.excalidraw.md",
     "daily note/2023-12-19.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/JVM/Thread.md",
-    "Images/Pasted image 20231219164401.png",
-    "Images/Pasted image 20231219163520.png",
-    "Spaces/Home/Java/상속/오버라이딩.md",
-    "Images/Pasted image 20231211115426.png",
-    "Images/Pasted image 20231211101644.png",
     "Spaces/Home/Java/Iterator",
     "Font/SpoqaHanSansNeo-Regular.ttf",
     "Font/SpoqaHanSansNeo-Medium.ttf",
@@ -230,7 +231,6 @@
     "Font/SpoqaHanSansNeo-Thin.ttf",
     "Font",
     "Spaces/Home/Http",
-    "Images/Pasted image 20231219104404.png",
     "Spaces/Home/Java/객체 지향 프로그래밍",
     "Images"
   ]

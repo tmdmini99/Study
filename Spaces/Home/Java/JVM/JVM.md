@@ -39,12 +39,30 @@ JVM 구조 - (출처는 맨 하단에 기재)
 
 **JVM의 구조**에는 크게 **Class Loader, Runtime data areas, Execution Engine, GC** 으로 나누어져 있다.
 
-**Class Loader**는 클래스 파일을 Runtime Data Area의 메서드 영역으로 불러오는 역할을 한다.
+###  **Class Loader**는 클래스 파일을 Runtime Data Area의 메서드 영역으로 불러오는 역할을 한다.
 #### 1. Class Loader(클래스 로더)
 
 JVM내로 클래스파일(.class)를 로드하고, 링크를 통해 배치하는 작업을 수행하는 모듈이다. Runtime 시점에 클래스를 로딩하게 해 주며 클래스의 인스턴스를 생성하면 클래스 로더를 통해 메모리에 로드하게 된다.
 
-**Execution Engine은. class파일과** 같은 ByteCode를 실행 가능하도록 해석한다.
+
+![[Pasted image 20231221135408.png]]
+클래스 파일의 로딩 순서는 다음과 같이 3단계로 구성된다. (Loading → Linking → Initialization)
+
+![[Pasted image 20231221135555.png]]
+
+- **Loading(로드)** : 클래스 파일을 가져와서 JVM의 메모리에 로드한다.
+- **Linking(링크)** : 클래스 파일을 사용하기 위해 검증하는 과정이다.
+    
+    1. **Verifying(검증)** : 읽어들인 클래스가 JVM 명세에 명시된 대로 구성되어 있는지 검사한다.
+    2. **preparing(준비)** : 클래스가 필요로 하는 메모리를 할당한다.
+    3. **Resolving(분석)** : 클래스의 상수 풀 내 모든 심볼릭 레퍼런스를 다이렉트 레퍼런스로 변경한다.
+    
+- **Initialization(초기화)** : 클래스 변수들을 적절한 값으로 초기화한다. ( static 필드들을 설정된 값으로 초기화 등 )
+
+
+
+
+### **Execution Engine은. class파일과** 같은 ByteCode를 실행 가능하도록 해석한다.
 #### 2. Execution Engine(실행 엔진)
 
 로드된 클래스의 바이트코드를 실행하는 런타임 모듈이 바로 실행 엔진이다. 클래스 로더를 통해 JVM내의 Runtime Data Areas에 배치된 바이트코드는 실행 엔진에 의해 실행되며, 실행 엔진은 자바 바이트 코드를 명령어 단위로 읽어서 실행한다. 여기서 Interpreter(인터프리터) 방식과 JIT compiler 방식을 사용하게 된다.
@@ -56,13 +74,20 @@ JVM내로 클래스파일(.class)를 로드하고, 링크를 통해 배치하는
 
 인터프리터 방식의 단점을 보완하기 위해 JIT 컴파일러가 도입되었다. JIT 컴파일러는 바이트코드를 컴파일하여 native code(네이티브 코드)로 변환하여 사용한다. 즉 한 번 컴파일된 코드는 빠르게 수행하게 되어 수행 속도가 빠르게 된다. 하지만 컴파일하는 과정에 비용이 들게 된다. 따라서 한 번만 수행할 코드라면 컴파일하지 않고 인터프리팅 하는 것이 유리하다. 따라서 JVM은 인터프리터 방식을 사용하다가 일정한 기준이 넘어가면 JIT 컴파일러를 사용하는 혼합 방식을 사용한다. 
 
+**네이티브 코드**란,JAVA에서 부모가 되는 C언어나, C++, 어셈블리어로 구성된 코드를 의미한다.
 
-**GC(Garbage Collector)는**  메모리 관리 기법 중 하나로, Heap 영역에 배치된 객체들을 관리하는 모듈이다.
+
+![[Pasted image 20231221135630.png]]
+
+
+
+
+###  **GC(Garbage Collector)는**  메모리 관리 기법 중 하나로, Heap 영역에 배치된 객체들을 관리하는 모듈이다.
 #### 5. Garbage Collector(가비지 컬렉터)
 
 가비지 컬렉터는 유효하지 않은 메모리인 가비지(Garbage)를 정리해주는 역할을 한다. 즉 Garbage Collection(GC)를 담당한다.
 
-**Runtime Data Area**는 런타임 시 클래스 데이터와 같은 메타 데이터와 실제 데이터가 저장되는 곳이다.
+### **Runtime Data Area**는 런타임 시 클래스 데이터와 같은 메타 데이터와 실제 데이터가 저장되는 곳이다.
 
 간단하게 말하자면 프로그램을 수행하기 위해 OS로부터 할당받은 메모리 영역을 의미한다. (**Java 메모리 공간**)
 
@@ -77,7 +102,13 @@ Runtime Data Area
 #### **▷ PC Register**
 
 - JVM은 스택 기반의 가상 머신으로, CPU에 직접 접근하지 않고 [[Stack]]에서 주소를 뽑아서 가져온다. 가져온 주소는  PC Register에 저장된다.
-- 따라서, 현재 어떤 명령을 실행해야 할 지에 대한 기록을 담당
+- 따라서, 현재 어떤 명령을 실기록을 담당
+
+![[Pasted image 20231221140100.png]]행해야 할 지에 대한 
+
+만약에 스레드가 자바 메소드를 수행하고 있으면 JVM 명령(Instruction)의 주소를 PC Register에 저장한다.
+
+그러다 만약 자바가 아닌 다른 언어(C언어, 어셈블리)의 메소드를 수행하고 있다면, undefined 상태가 된다.
 
 #### **▷ JVM Stacks**
 
@@ -85,11 +116,32 @@ Runtime Data Area
 - 프로그램 실행 시 임시로 할당되었다가 메서드를 빠져나가게 되면 소멸되는 특성의 데이터들이 저장되는 영역
 - 메서드 호출 시마다 스택에 각각의 스택 프레임이 생성되고, 수행이 끝나면 스택 포인트에서 해당 프레임을 제거
 
+![[Pasted image 20231221140205.png]]
+
+자료구조 Stack은 마지막에 들어온 값이 먼저 나가는 LIFO  구조로 push와 pop 기능 사용방식으로 동작한다.
+
+스택 프레임
+	메소드가 호출될 때마다 프레임이 만들어지며, 현재 실행중인 메소드 상태 정보를 저장하는 곳이다  
+	메서드 호출 범위가 종료되면 스택에서 제거된다.  
+	스택 프레임에 쌓이는 데이터는 메서드의 매개변수, 지역변수, 리턴값, 연산시 결과값 등이 있다.
+
+단, 데이터의 타입에 따라 스택(stack) 과 힙(haeap)에 저장되는 방식이 다르다는 점은 유의해야 한다.
+
+- 기본(원시)타입 변수는 스택 영역에 직접 값을 가진다.
+- 참조타입 변수는 힙 영역이나 메소드 영역의 객체 주소를 가진다.
+- 
+
+![[Pasted image 20231221140257.png]]
+
+
+
 #### **▷ Native Method Stacks**
 
 - Java 이외의 언어에 제공되는 Method의 정보가 저장되는 공간 / Java Native Interface를 통해 바이트 코드로 저장
 - Kernel이 자체적으로 Stack을 잡아 독자적으로 프로그램을 실행시키는 영역
+- 사용되는 메모리 영역으로는 일반적인 C 스택을 사용한다.
 
+![[Pasted image 20231221140019.png]]
 #### **▷ Heap**
 
 - [[Garbage Collection|GC(가비지 컬렉션)]]의 대상이 되는 영역
@@ -114,6 +166,9 @@ Runtime Data Area
 - Class 인지 Interface 인지 혹은 Type의 속성, 이름, super class의 이름 등
 - 또한 Method Area에는 상수형을 저장하고 중복을 막는 Runtime Constant Pool이 존재
 
+
+
+![[Pasted image 20231221135744.png]]
 
 
 ## **▶ JVM의 주요 장점**
@@ -155,3 +210,5 @@ https://velog.io/@jomminii/whiteship-java-01-what-is-jvm
 https://steady-coding.tistory.com/587
 
 https://doozi0316.tistory.com/entry/1%EC%A3%BC%EC%B0%A8-JVM%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%93%9C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%B8%EA%B0%80
+
+https://inpa.tistory.com/entry/JAVA-%E2%98%95-JVM-%EB%82%B4%EB%B6%80-%EA%B5%AC%EC%A1%B0-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD-%EC%8B%AC%ED%99%94%ED%8E%B8
