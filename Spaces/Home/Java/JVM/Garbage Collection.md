@@ -136,8 +136,6 @@ GC는 객체에 Mark를 하고 Mark가 되지 않은 객체의 메모리를 해�
 
 결국에 Mark가 안된 객체는 Unreachable 객체이다.
 
-이미 Reachability에서 다뤘던 내용이기 때문에 쉽게 이해할 수 있었다.
-
 더 자세한 내용이 궁금하면 아래의 블로그를 참고해보자
 
 - 가비지 컬렉터(Garbage Collector)와 Mark & Sweep
