@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Class/Method.md",
+                "file": "Spaces/Home/Java/객체.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Class/Method.md",
+                "file": "Spaces/Home/Java/객체.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Class/Method.md"
+                "file": "Spaces/Home/Java/객체.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Class/Method.md",
+                "file": "Spaces/Home/Java/객체.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,14 +185,19 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "885d6f7c1defb95c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
+    "Spaces/Home/Java/String/String.md",
+    "Spaces/Home/Java/Stack&Queue/Stack.md",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
+    "Spaces/Home/Java/JVM/JVM.md",
+    "Spaces/Home/Java/Generic/Collection/Iterator.md",
+    "Spaces/Home/Java/Class/Method.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
     "Spaces/Home/Java/객체.md",
-    "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
-    "Spaces/Home/Java/Class/Method.md",
     "Spaces/Home/Java/Json/Json.md",
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
@@ -205,7 +210,6 @@
     "Images/Pasted image 20231221142512.png",
     "Spaces/Home/Spring",
     "Images/Pasted image 20231221141321.png",
-    "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Spring/AOP",
     "Images/Pasted image 20231221140513.png",
     "Images/Pasted image 20231221140443.png",
@@ -214,18 +218,14 @@
     "Images/Pasted image 20231221140257.png",
     "Images/Pasted image 20231221140205.png",
     "Images/Pasted image 20231221140100.png",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2023-12-21.md",
     "daily note/2023-12-20.md",
-    "Spaces/Home/Java/String/String.md",
     "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/상속/this.md",
     "Spaces/Home/Java/Class/Class.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
-    "Spaces/Home/Java/Generic/Collection/Iterator.md",
-    "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Java/Iterator",
     "Font/SpoqaHanSansNeo-Regular.ttf",
     "Font/SpoqaHanSansNeo-Medium.ttf",
