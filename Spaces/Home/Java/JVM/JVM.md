@@ -101,15 +101,15 @@ Runtime Data Area
 - 클래스 정보를 처음 메모리에 올릴 때 초기화되는 대상을 저장하기 위한 영역
 - **올라가는 정보는 다음과 같다.**
 
-#### **Field Information**
+##### **Field Information**
 
 - 멤버 변수에 대한 정보 (이름, 타입, 접근 지정자 등)
 
-#### **Method Information**
+##### **Method Information**
 
 - 메서드에 대한 정보 (이름, 리턴 타입, 파라미터, 접근 지정자 등)
 
-#### **Type Information**
+##### **Type Information**
 
 - Class 인지 Interface 인지 혹은 Type의 속성, 이름, super class의 이름 등
 - 또한 Method Area에는 상수형을 저장하고 중복을 막는 Runtime Constant Pool이 존재
@@ -153,3 +153,5 @@ https://velog.io/@jomminii/whiteship-java-01-what-is-jvm
 
 
 https://steady-coding.tistory.com/587
+
+https://doozi0316.tistory.com/entry/1%EC%A3%BC%EC%B0%A8-JVM%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%93%9C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%B8%EA%B0%80
