@@ -542,7 +542,7 @@ System.out.print(this.left/this.right);
 
 public class CalculatorDemo {
 
-public` `static void main(String[] args) {
+public static void main(String[] args) {
 
 Calculator c1 = new Calculator();
 
