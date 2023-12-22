@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-21.md",
+                "file": "Spaces/Home/API/Open API.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-21.md",
+                "file": "Spaces/Home/API/Open API.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2023-12-21.md"
+                "file": "Spaces/Home/API/Open API.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-21.md",
+                "file": "Spaces/Home/API/Open API.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,8 +185,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "885d6f7c1defb95c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/API/Parsing",
+    "Spaces/Home/API/API.md",
+    "Spaces/Home/API/Open API.md",
+    "Spaces/Home/Protocol/Http/Http.md",
+    "Spaces/Home/API",
+    "Spaces/Home/Protocol",
+    "daily note/2023-12-21.md",
     "Spaces/Home/Java/객체.md",
     "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
     "Spaces/Home/Java/String/String.md",
@@ -220,18 +227,11 @@
     "Images/Pasted image 20231221140100.png",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/Exception/Exception.md",
-    "daily note/2023-12-21.md",
     "daily note/2023-12-20.md",
-    "Spaces/Home/Java/상속/super.md",
-    "Spaces/Home/Java/상속/this.md",
-    "Spaces/Home/Java/Class/Class.md",
-    "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/Iterator",
     "Font/SpoqaHanSansNeo-Regular.ttf",
     "Font/SpoqaHanSansNeo-Medium.ttf",
     "Font/SpoqaHanSansNeo-Light.ttf",
-    "Font/SpoqaHanSansNeo-Bold.ttf",
-    "Font/SpoqaHanSansNeo-Thin.ttf",
-    "Font"
+    "Font/SpoqaHanSansNeo-Bold.ttf"
   ]
 }
