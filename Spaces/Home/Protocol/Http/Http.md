@@ -10,6 +10,14 @@ HTTP로 보낼 수 있는 데이터는 **HTML문서, 이미지, 동영상, 오�
 
 하이퍼텍스트 기반으로(Hypertext) 데이터를 전송하겠다(Transfer) = **링크기반으로 데이터에 접속**하겠다는 의미이다.
 
+![[0_w4ZmrsM9Z22HCL0s.webp]]
+
+
+
+![[1_EGRs3qcL6YDNGZdhxOXXEA.webp]]
+
+
+
 
 **1.2 Connectionless & Stateless**
 
@@ -20,9 +28,6 @@ HTTP는 Connectionless 방식으로 작동한다. 
 기본적으로는 자원 하나에 대해서 하나의 연결을 만든다. 
 
 이런 작동방식은 각각 아래의 장점과 단점을 가진다
-
-
-
 
 
 **HTTP**(**H**yper**T**ext **T**ransfer **P**rotocol, [문화어](https://ko.wikipedia.org/wiki/%EB%AC%B8%ED%99%94%EC%96%B4 "문화어"): 초본문전송규약, 하이퍼본문전송규약)는 [W3](https://ko.wikipedia.org/wiki/WWW "WWW") 상에서 정보를 주고받을 수 있는 [프로토콜](https://ko.wikipedia.org/wiki/%ED%86%B5%EC%8B%A0_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C "통신 프로토콜")이다. 주로 [HTML](https://ko.wikipedia.org/wiki/HTML "HTML") 문서를 주고받는 데에 쓰인다. 주로 [TCP](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%86%A1_%EC%A0%9C%EC%96%B4_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C "전송 제어 프로토콜")를 사용하고 HTTP/3부터는 [UDP](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B7%B8%EB%9E%A8_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C "사용자 데이터그램 프로토콜")를 사용하며, 80번 포트를 사용한다. [1996년](https://ko.wikipedia.org/wiki/1996%EB%85%84 "1996년") 버전 1.0, 그리고 [1999년](https://ko.wikipedia.org/wiki/1999%EB%85%84 "1999년") 1.1이 각각 발표되었다.

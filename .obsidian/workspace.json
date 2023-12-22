@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/Http.md",
+                "file": "Spaces/Home/Protocol/OSI 7 Layer.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/Http.md",
+                "file": "Spaces/Home/Protocol/OSI 7 Layer.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/Http.md"
+                "file": "Spaces/Home/Protocol/OSI 7 Layer.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/Http.md",
+                "file": "Spaces/Home/Protocol/OSI 7 Layer.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -187,8 +187,12 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Images/Pasted image 20231222095740.jpg",
     "Spaces/Home/Protocol/Protocol.md",
+    "Spaces/Home/Protocol/OSI 7 Layer.md",
     "Spaces/Home/Protocol/Http/Http.md",
+    "Images/1_EGRs3qcL6YDNGZdhxOXXEA.webp",
+    "Images/0_w4ZmrsM9Z22HCL0s.webp",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
     "Spaces/Home/Mark/MarkUp/Html/Html.md",
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
@@ -214,8 +218,6 @@
     "Spaces/Home/Java/Class/Object Class.md",
     "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
     "Spaces/Home/Java/상속/오버라이딩.md",
-    "Spaces/Home/Java/File/FIle.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
     "Spaces/Home/Java/File",
     "Images/Pasted image 20231221142524.png",
     "Images/Pasted image 20231221142512.png",
@@ -227,8 +229,6 @@
     "Images/Pasted image 20231221140411.png",
     "Images/Pasted image 20231221140323.png",
     "Images/Pasted image 20231221140257.png",
-    "Images/Pasted image 20231221140205.png",
-    "Images/Pasted image 20231221140100.png",
     "Spaces/Home/Java/Iterator",
     "Font/SpoqaHanSansNeo-Regular.ttf",
     "Font/SpoqaHanSansNeo-Medium.ttf",
