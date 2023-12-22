@@ -3,5 +3,7 @@ REST API는 _REST(REpresentational State Transfer)_ 아키텍처 스타일의 
 
 
 
+
+
 ---
 참조 - https://www.ibm.com/kr-ko/topics/rest-apis
