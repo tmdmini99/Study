@@ -8,6 +8,21 @@
 ![[Pasted image 20231222124447.png]]
 
 
+- 송신측 클라이언트의 애플리케이션 계층에서 어느 웹 페이지를 보고 싶다라는 HTTP 요청을 지시한다.
+- 그 다음에 있는 트랜스포트 계층에서는 애플리케이션 계층에서 받은 데이터(HTTP 메시지)를 통신하기 쉽게 조각내어 안내 번호와 포트 번호(TCP 패킷)를 붙여 네트워크 계층에 전달한다.
+- 네트워크 계층에서 데이터에 IP 패킷을 추가해서 링크 계층에 전달한다.
+- 링크 계층에서는 수신지 MAC 주소와 이더넷 프레임을 추가한다. 
+- 이로써 네트워크를 통해 송신할 준비가 되었다.
+- 수신측 서버는 링크 계층에서 데이터를 받아들여 순서대로 위의 계층에 전달하여 애플리케이션 계층까지 도달한다.
+- 수신측 애플리케이션 계층에 도달하게 되면 클라이언트가 발신했던 HTTP 리퀘스트를 수신할 수 있다.
+
+
+
+
+
+
+
+
 
 ![[27786B485715047219.gif]]
 
@@ -70,3 +85,6 @@ https://velog.io/@hidaehyunlee/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%A0%84%EB
 https://backendcode.tistory.com/167
 
 https://aws-hyoh.tistory.com/entry/TCPIP-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+
+
+https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-TCP-IP-%EC%A0%95%EB%A6%AC-%F0%9F%91%AB%F0%9F%8F%BD-TCP-IP-4%EA%B3%84%EC%B8%B5#tcp_/_ip_4%EA%B3%84%EC%B8%B5_%EB%8F%99%EC%9E%91_%EC%88%9C%EC%84%9C
