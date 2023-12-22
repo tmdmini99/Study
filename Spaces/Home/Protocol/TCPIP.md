@@ -4,6 +4,10 @@
 ![[W3E1x5BqrRingHUDAX2LW8fHs7DHHGeGgaTDQIw5wdZhcF1kP5P73zprvMhTijQ61XSyhUzIZIqG14pvzGXNeDO-Jje0CeIbgcM6GBqbjZxT4NZBVs_lEalwvMrpsCp23Qg-YeudLDVYzX8Xr2T40w.webp]]
 
 
+
+![[27786B485715047219.gif]]
+
+
 **1계층 네트워크 액세스 계층(Network Access Layer or Network Interface Layer)**
 
 OSI 7계층의 물리계층과 데이터 링크 계층에 해당한다.
@@ -66,3 +70,8 @@ TCP는 말 그대로 **전송 제어를 위한 작업을 해주는 역할**을 
 
 ---
 참조- https://kotlinworld.com/94
+
+https://velog.io/@hidaehyunlee/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%A0%84%EB%8B%AC%EB%90%98%EB%8A%94-%EC%9B%90%EB%A6%AC-OSI-7%EA%B3%84%EC%B8%B5-%EB%AA%A8%EB%8D%B8%EA%B3%BC-TCPIP-%EB%AA%A8%EB%8D%B8
+
+
+https://backendcode.tistory.com/167
