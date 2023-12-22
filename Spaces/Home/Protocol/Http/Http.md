@@ -107,3 +107,5 @@ Data를 압축해서 전달이 가능하도록 하여 전달하는 Data 양이 �
 
 https://shlee0882.tistory.com/107
 
+
+https://velog.io/@surim014/HTTP%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80
