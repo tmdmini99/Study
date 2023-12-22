@@ -1,4 +1,4 @@
-# HTTP 프로토콜이란?
+# HTTP이란?
 
 HTTP(Hypertext Transfer Protocol)는 인터넷상에서 데이터를 주고 받기 위한 **서버/클라이언트 모델**을 따르는 프로토콜이다.
 
