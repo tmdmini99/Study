@@ -9,6 +9,8 @@ IP는 비신뢰성(unreliability)과 비연결성(connectionlessness)이 특징�
 
 
 
+
+
 ---
 참조 - https://m.blog.naver.com/itexpert2007/30027614442
 
