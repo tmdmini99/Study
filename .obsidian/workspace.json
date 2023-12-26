@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/Data/XML.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/Data/XML.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md"
+                "file": "Spaces/Home/Data/XML.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/Data/XML.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -187,6 +187,8 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Spaces/Home/Data/JSON.md",
+    "Spaces/Home/Data/XML.md",
     "Spaces/Home/Data/Parsing/Parsing.md",
     "Images/Pasted image 20231226113008.png",
     "Spaces/Home/Data/Data 제공 형태.md",
@@ -196,7 +198,6 @@
     "Images/Pasted image 20231226110942.png",
     "Images/Pasted image 20231226110938.png",
     "Images/Pasted image 20231226105834.jpg",
-    "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Data",
     "Spaces/Home/API/API.md",
     "Spaces/Home/API/Open API.md",
