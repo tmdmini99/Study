@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/Data 제공 형태.md",
+                "file": "Spaces/Home/API/Rest API.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/Data 제공 형태.md",
+                "file": "Spaces/Home/API/Rest API.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/Data 제공 형태.md"
+                "file": "Spaces/Home/API/Rest API.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/Data 제공 형태.md",
+                "file": "Spaces/Home/API/Rest API.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -187,11 +187,13 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
+    "Images/Pasted image 20231226112653.png",
+    "Spaces/Home/Java/다형성/오버로딩.md",
+    "Spaces/Home/Data/Data 제공 형태.md",
     "Images/Pasted image 20231226110942.png",
     "Images/Pasted image 20231226110938.png",
     "Images/Pasted image 20231226105834.jpg",
     "Spaces/Home/Data/JSON.md",
-    "Spaces/Home/Data/Data 제공 형태.md",
     "Spaces/Home/Data",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/API/API.md",
@@ -217,7 +219,6 @@
     "Images/Pasted image 20231222130612.png",
     "Images/Pasted image 20231222130215.png",
     "Images/Pasted image 20231222125637.png",
-    "Images/Pasted image 20231222125540.png",
     "Spaces/Home/Protocol/Port",
     "Spaces/Home/Protocol/Layer",
     "Spaces/Home/Java/Annotation.md",
@@ -228,7 +229,6 @@
     "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
     "Spaces/Home/Java/String/String.md",
     "Spaces/Home/Java/Stack&Queue/Stack.md",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/File",
     "Spaces/Home/Spring",
     "Spaces/Home/Spring/AOP",
