@@ -2,7 +2,7 @@
 ```sql
 show databases; -- database 조회--
 select user, host from user; -- 사용자 조회--
-
+show grants for test@host; -- 사용자 권한 조회--
 ```
 
 ###  User 생성 
