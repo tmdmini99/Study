@@ -72,6 +72,7 @@ CREATE DATABASE [database name] CHARACTER SET [character set];
 CREATE DATABASE Account CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 CREATE DATABASE study_db default CHARACTER SET UTF8;
+--한글을 사용할 수 있는 UTF8로 문자열을 저장--
 
 ```
 
