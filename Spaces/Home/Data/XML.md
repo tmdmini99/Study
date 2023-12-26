@@ -27,7 +27,7 @@ XML의 중요한 특징은 다음과 같습니다.
 
 
 
-▶ XML 문법
+#### XML 문법
 
 - XML문서는 매우 규칙적, 예측이 가능한 구조이다.
 - 모든 XML 요소는 종료 태그를 가져야 한다. 생략되면 오류가 발생.
@@ -36,28 +36,49 @@ XML의 중요한 특징은 다음과 같습니다.
 - XML은 띄어쓰기를 인식한다.
 
 
-▶ XML 주석
+#### XML 데이터 예시
 
-- <!-- 으로 시작하여 --> 으로 끝난다.
+- 간단한 예시로 형태를 확인해본다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<note>
+  <date>
+    <day>07</day>
+    <month>01</month>
+    <year>2021</year>
+  </date>
+  <tistory>
+    <title>XML은 무엇인가</title>
+    <writer>annajang</writer>
+  </tistory>
+  <remark>
+    <![CDATA[  CDATA부분에는 < > & " 등과 같은 문자를 그대로 표현할 수 있다  ]]>
+  </remark>
+ </note>
+```
+
+
+#### XML 주석
+
+- ```<!-- 으로 시작하여 --> ```으로 끝난다.
 - 시작태그에는 느낌표가 있지만 종료 태그에는 느낌표가 없다.
 
   
-▶CDATA
+#### CDATA
 
 - Character DATA의 약자이다. 문자 데이터를 XML 데이터로 해석하지 않고 그대로 표현하는 것을 의미한다.
-- <![CDATA[ 특수문자 혹은 노출하고 싶은 문자열을 적어준다 ]]>
-- <![CDATA[ 와 ]]> 에는 공백을 포함하면 안된다.
+
+```xml
+<![CDATA[ 특수문자 혹은 노출하고 싶은 문자열을 적어준다 ]]>
+<![CDATA[ 와 ]]> 에는 공백을 포함하면 안된다.
+```
 
   
-▶ XML 요소
+####  XML 요소
 
 - 아래처럼 시작과 종료 태그로 한 쌍이 되어야 한다.
 - <시작태그명> 요소내용 </종료태그명>
-
-
-
-
-
 
 
 #### XML 기반의 언어
@@ -87,4 +108,6 @@ XML을 기반으로 하는 대표적인 언어는 다음과 같습니다.
 ---
 참조 - https://mommoo.tistory.com/17
 https://tcpschool.com/xml/xml_intro_basic
+
+https://annajang.tistory.com/43
 
