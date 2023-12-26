@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-22.md",
+                "file": "daily note/2023-12-26.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-22.md",
+                "file": "daily note/2023-12-26.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2023-12-22.md"
+                "file": "daily note/2023-12-26.md"
               }
             }
           },
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-22.md",
+                "file": "daily note/2023-12-26.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,8 +187,9 @@
   },
   "active": "885d6f7c1defb95c",
   "lastOpenFiles": [
-    "daily note/2023-12-21.md",
     "daily note/2023-12-22.md",
+    "daily note/2023-12-26.md",
+    "daily note/2023-12-21.md",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/API/Parsing/Parsing.md",
     "Spaces/Home/API/Open API.md",
@@ -228,7 +228,6 @@
     "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/Generic/Collection/Iterator.md",
     "Spaces/Home/Java/Class/Method.md",
-    "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/File",
     "Spaces/Home/Spring",
     "Spaces/Home/Spring/AOP",
