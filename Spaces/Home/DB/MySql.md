@@ -1,4 +1,10 @@
 
+```sql
+show databases; -- database 조회--
+select user, host from user; -- 사용자 조회--
+
+```
+
 ###  User 생성 
 ```sql
 create user 유저명@host identified by 비밀번호; 
@@ -45,6 +51,15 @@ SHOW GRANTS FOR '계정아이디'@'호스트';
 ```
 
 권한 부여 이후 **flush privileges** 명령어를 통해 최종적으로 권한을 적용시켜야 하며, 위 **show grants for** 명령어를 통해 권한이 부여되었는지 확인할 수도 있습니다.
+
+### 권한 삭제
+```sql
+
+revoke {권한} privileges on {스키마}.{테이블} from {username}@{ip};
+
+REVOKE ALL ON *.* FROM test@host;
+
+```
 
 
 ### 계정 삭제
