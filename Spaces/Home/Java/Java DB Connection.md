@@ -1,5 +1,4 @@
 
-
 ```java
 - JDBC (Java Database Connectivity)는 자바에서 데이터베이스에 접속할 수 있도록 하는 자바 API이다
 ```
@@ -110,7 +109,12 @@
 
 https://fora.tistory.com/71
 
-https://brilliantdevelop.tistory.com/54
+https://brilliantdevelop.tistory.com/54 - classforName
 
 
 https://smile-place.tistory.com/entry/JAVA-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-OPEN-API-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0
+
+
+
+
+https://programmingbeginner.tistory.com/124
