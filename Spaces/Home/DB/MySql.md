@@ -70,6 +70,9 @@ ex) delete from user where user = 'testId1';
 CREATE DATABASE [database name] CHARACTER SET [character set];
 
 CREATE DATABASE Account CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+CREATE DATABASE study_db default CHARACTER SET UTF8;
+
 ```
 
 

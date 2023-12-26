@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md",
+                "file": "Spaces/Home/DB/MySql.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md",
+                "file": "Spaces/Home/DB/MySql.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md"
+                "file": "Spaces/Home/DB/MySql.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md",
+                "file": "Spaces/Home/DB/MySql.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -174,8 +174,9 @@
   },
   "active": "00bddfdc80b9f46a",
   "lastOpenFiles": [
-    "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/Oracle.md",
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Data/Parsing.md",
     "Spaces/Home/Data/CSV.md",
     "Spaces/Home/DB",
@@ -208,7 +209,6 @@
     "Spaces/Home/Protocol/Layer/TCPIP.md",
     "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
     "Spaces/Home/Protocol/Port/Port.md",
-    "Spaces/Home/Protocol/IP.md",
     "Images/Pasted image 20231222163411.jpg",
     "Images/Pasted image 20231222163405.jpg",
     "Images/Pasted image 20231222141543.png",
