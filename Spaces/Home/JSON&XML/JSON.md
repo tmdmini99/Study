@@ -15,3 +15,10 @@
 •JSONObjent 는 { } 로 JSONArray는 [ ] 로 묶어 나뉜다.
 
 •JsonArray안엔 json 데이터가 배열로 들어가는걸 뜻하는데, JsonArray에 jsonObject 객체를 저장하거나, Json 데이터를 배열형태로 저장하는게 가능하다. 또한 JsonArray에 있는 데이터를 순서대로 꺼내서 출력도 가능하다.
+
+
+
+
+https://spidyweb.tistory.com/159
+
+https://m.blog.naver.com/cocoscan/222804679427
