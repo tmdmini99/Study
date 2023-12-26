@@ -58,9 +58,9 @@ REST는 다음과 같은 3가지로 구성이 되어있다. 
 
 ![](https://blog.kakaocdn.net/dn/bnwnOY/btqUTmALH2G/KNTMYZVfN1P9QqtHdGGadk/img.png)
 
-****RESPT API란 REST의 원리를 따르는 API를 의미합니다.****
+**RESPT API란 REST의 원리를 따르는 API를 의미합니다.**
 
-****하지만 REST API를 올바르게 설계하기 위해서는 지켜야 하는 몇가지 규칙이 있으며 해당 규칙을 알아 보겠습니다.****
+**하지만 REST API를 올바르게 설계하기 위해서는 지켜야 하는 몇가지 규칙이 있으며 해당 규칙을 알아 보겠습니다.**
 
 ### **REST API 설계 예시**
 
@@ -92,9 +92,9 @@ REST는 다음과 같은 3가지로 구성이 되어있다. 
 
 ![](https://blog.kakaocdn.net/dn/Prbbr/btqUOBFqxzH/zhpIrKuFxPKI9QvRzmiBe1/img.png)
 
-**RESTFUL이란 REST의 원리를 따르는 시스템을 의미합니다. 하지만 REST를 사용했다 하여 모두가 RESTful 한 것은 아닙니다.  **REST API의 설계 규칙을 올바르게 지킨 시스템을 RESTful하다 말할 수 있으며****
+**RESTFUL이란 REST의 원리를 따르는 시스템을 의미합니다. 하지만 REST를 사용했다 하여 모두가 RESTful 한 것은 아닙니다. REST API의 설계 규칙을 올바르게 지킨 시스템을 RESTful하다 말할 수 있으며**
 
-****모든 CRUD 기능을 POST로 처리 하는 API 혹은 URI 규칙을 올바르게 지키지 않은 API는** REST API의 설계 규칙을 올바르게 지키지 못한 시스템은 REST API를 사용하였지만 RESTful 하지 못한 시스템이라고 할 수 있습니다.**
+모든 CRUD 기능을 POST로 처리 하는 API 혹은 URI 규칙을 올바르게 지키지 않은 API는**REST API**의 설계 규칙을 올바르게 지키지 못한 시스템은 REST API를 사용하였지만 RESTful 하지 못한 시스템이라고 할 수 있습니다.
 
 
 
