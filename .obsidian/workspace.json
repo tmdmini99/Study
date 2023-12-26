@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-26.md",
+                "file": "Spaces/Home/Java/Java DB Connection.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-26.md",
+                "file": "Spaces/Home/Java/Java DB Connection.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2023-12-26.md"
+                "file": "Spaces/Home/Java/Java DB Connection.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-26.md",
+                "file": "Spaces/Home/Java/Java DB Connection.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -174,8 +174,10 @@
   },
   "active": "00bddfdc80b9f46a",
   "lastOpenFiles": [
-    "daily note/2023-12-22.md",
+    "Spaces/Home/Protocol/TCP,UDP.md",
+    "Spaces/Home/Protocol/Protocol.md",
     "daily note/2023-12-26.md",
+    "daily note/2023-12-22.md",
     "Spaces/Home/Java/Java DB Connection.md",
     "Spaces/Home/Java/Java DB 연결 방법.md",
     "Spaces/Home/DB/Oracle.md",
@@ -191,7 +193,6 @@
     "Spaces/Home/Java/상속/오버라이딩.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
-    "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/API/Open API.md",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/Data/HTML.md",
@@ -202,7 +203,6 @@
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
-    "Spaces/Home/Mark/MarkUp/Html/Html.md",
     "Images/Pasted image 20231226113008.png",
     "Images/Pasted image 20231226112653.png",
     "Images/Pasted image 20231226110942.png",
