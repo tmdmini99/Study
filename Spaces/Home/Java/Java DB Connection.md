@@ -106,3 +106,8 @@
 참조- https://itstudy402.tistory.com/79
 
 [12. JDBC (notion.site)](https://marble-plastic-56b.notion.site/12-JDBC-cc30aa2d5ecd4d0094149b31e71af38f)
+
+
+https://fora.tistory.com/71
+
+https://brilliantdevelop.tistory.com/54
