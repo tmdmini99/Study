@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md",
+                "file": "Spaces/Home/Data/Parsing.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md",
+                "file": "Spaces/Home/Data/Parsing.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md"
+                "file": "Spaces/Home/Data/Parsing.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md",
+                "file": "Spaces/Home/Data/Parsing.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,12 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
+    "Spaces/Home/Data/Data  형태.md",
     "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Data/XML.md",
     "Spaces/Home/Data/Parsing.md",
     "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Data/CSV.md",
-    "Spaces/Home/Data/Data  형태.md",
     "Images/LIST/단방향.png",
     "Images/Set/TreeSet1.png",
     "Images/다형성/this 사용법1.png",
