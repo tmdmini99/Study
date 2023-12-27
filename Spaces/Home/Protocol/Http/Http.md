@@ -31,11 +31,11 @@ HTTP로 보낼 수 있는 데이터는 **HTML문서, 이미지, 동영상, 오�
 
 하이퍼텍스트 기반으로(Hypertext) 데이터를 전송하겠다(Transfer) = **링크기반으로 데이터에 접속**하겠다는 의미이다.
 
-![[0_w4ZmrsM9Z22HCL0s.webp]]
+![[HTTP1.webp]]
 
 
 
-![[1_EGRs3qcL6YDNGZdhxOXXEA.webp]]
+![[HTTP2.webp]]
 
 
 
@@ -62,8 +62,8 @@ Plain text로 부터 JSON 데이터 및 XML과 같은 형태의 정보도 주고
 - HTTP 기본적으로 **request**(요청)/**response**(응답) 구조로 되어있다.  
 	클라이언트가 HTTP request를 서버에 보내면 서버는 HTTP response를 보내는 구조  
 	클라이언트와 서버의 모든 통신이 요청과 응답으로 이루어 진다.
-
-	![](https://velog.velcdn.com/post-images%2Fsurim014%2Fe0aa5520-2d59-11ea-86da-fb3b00230640%2Fimage.png)
+	
+	![[HTTP3.png]]
 
 
 
@@ -109,7 +109,8 @@ HTML 문서를 전송 받은 뒤 연결을 끊고 다시 연결하여 데이터�
 단순 동작(연결 수립, 동작, 연결 해제)이 반복되어 통신 부하 문제 발생  
 ex) 네이버 메인 페이지에 그림이 1개 있으면 연결,동작,해제가 10번 반복됨
 
-![](https://velog.velcdn.com/images/hyemin0111/post/d1f80e43-b93b-4445-9471-e775233a150b/image.png)
+![[HTTP4.png]]
+
 
 #### HTTP 1.1의 특징
 
@@ -124,7 +125,8 @@ HTTP 1.0과는 달리 Server가 갖는 하나의 IP Address와 다수의 Web Sit
 빠른 속도와 Internet Protocol 설계에 최적화될 수 있도록 Cache 사용  
 Data를 압축해서 전달이 가능하도록 하여 전달하는 Data 양이 감소
 
-![](https://velog.velcdn.com/images/hyemin0111/post/23c07a84-4188-4970-84e4-31484d2921cb/image.png)
+![[HTTP6.png]]
+
 
 # #Request (요청)
 
@@ -152,7 +154,7 @@ Upgrade-Insecure-Requests: 1
 ```
 
 
-![[Pasted image 20231222141533.png]]
+![[HTTP7.png]]
 
 
 
@@ -177,7 +179,7 @@ Upgrade-Insecure-Requests: 1
 
 **서버가 요청에 대한 답변을 클라이언트에게 보내는 것**을 응답이라고 한다.
 
-![[Pasted image 20231222141543.png]]
+![[HTTP8.png]]
 
 ## #Status Code (상태 코드)
 
@@ -257,9 +259,10 @@ Content-Type: text/html;
 
 응답에는 대부분의 경우 본문이 있다. 보통 데이터를 요청하고 응답 메시지에는 **요청한 데이터를 담아서 보내주기 때문이다. 응답 메시지에 HTML이 담겨 있는데 이 HTML을 받아 브라우저가 화면에 렌더링한다.**
 
----
 
-![](https://blog.kakaocdn.net/dn/dcBnNq/btrNwjyhT3u/xkwKKlvckhpiBpcgeen90k/img.png)
+---
+![[HTTP9.png]]
+
 
 HTTP 메시지의 요청과 응답은 유사한 구조를 가진다.
 

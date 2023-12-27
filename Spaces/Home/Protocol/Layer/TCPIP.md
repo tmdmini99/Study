@@ -1,11 +1,11 @@
 현재 수많은 프로그램들이 인터넷으로 통신하는 데 있어 가장 기반이 되는 [[Protocol|프로토콜]]. 실제 대다수 프로그램은 TCP와 IP로 통신(정확히는 '네트워킹')하고 있다.
 
 
-![[W3E1x5BqrRingHUDAX2LW8fHs7DHHGeGgaTDQIw5wdZhcF1kP5P73zprvMhTijQ61XSyhUzIZIqG14pvzGXNeDO-Jje0CeIbgcM6GBqbjZxT4NZBVs_lEalwvMrpsCp23Qg-YeudLDVYzX8Xr2T40w.webp]]
+![[TCPIP1.webp]]
 
 
 
-![[Pasted image 20231222124447.png]]
+![[TCPIP2.png]]
 
 
 - 송신측 클라이언트의 애플리케이션 계층에서 어느 웹 페이지를 보고 싶다라는 HTTP 요청을 지시한다.
@@ -24,7 +24,7 @@
 
 
 
-![[27786B485715047219.gif]]
+![[TCPIP3.gif]]
 
 
 **1계층 네트워크 액세스 계층(Network Access Layer or Network Interface Layer)**

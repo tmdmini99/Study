@@ -17,10 +17,10 @@ Aspect-Oriented Programming이란 단어를 번역하면 **관점(관심) 지�
     - 각각의 모듈들의 주 목적 외에 필요한 부가적인 기능들
 
 
-![[Pasted image 20231221142512.png]]
+![[AOP1.png]]
 
 각각의 Service의 핵심기능에서 바라보았을 때 User과 Order는 공통된 요소가 없습니다. 하지만 부가기능 관점에서 바라보면 이야기가 달라집니다.
-![[Pasted image 20231221142524.png]]
+![[AOP2.png]]
 
 부가기능 관점에서 바라보면 각각의 Service의 getXX 메서드를 호출하는 전후에 before과 after라는 메서드가 공통되는 것을 확인할 수 있습니다.  
 기존에 OOP에서 바라보던 관점을 다르게 하여 부가기능적인 측면에서 보았을때 공통된 요소를 추출하자는 것입니다. 이때 가로(횡단) 영역의 공통된 부분을 잘라냈다고 하여, AOP를 **크로스 컷팅(Cross-Cutting)** 이라고 부르기도 합니다.
@@ -37,7 +37,7 @@ OOP에선 공통된 기능을 재사용하는 방법으로 상속이나 위임�
 
 
 
-![[Pasted image 20231221141321.png]]
+![[AOP3.png]]
 
 위와 같이 흩어진 관심사를 **Aspect로 모듈화하고 핵심적인 비즈니스 로직에서 분리하여 재사용하겠다는 것이 AOP의 취지**다.
 
@@ -78,7 +78,8 @@ OOP에선 공통된 기능을 재사용하는 방법으로 상속이나 위임�
 
 ---
 
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-1.PNG?raw=true)
+![[AOP4.png]]
+
 
 - Join point
     - **추상적인 개념** 으로 advice가 적용될 수 있는 모든 위치를 말합니다.
@@ -124,7 +125,8 @@ implementation 'org.springframework.boot:spring-boot-starter-aop'
 해당 의존성을 추가하게 되면 자동 프록시 생성기(AnnotationAwareAspectJAutoProxyCreator)를 사용할 수 있게 되고, 이것이 Advisor 기반으로 프록시를 생성하는 역할을 합니다.  
 이와 더불어, 자동 프록시 생성기는 **@Aspect를 보고 Advisor로 변환해서 저장하는 작업** 을 수행합니다.
 
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-2.PNG?raw=true)  
+![[AOP5.png]]
+
 자동 프록시 생성기에 의해 @Asepct에서 Advisor로 변환된 Advisor는 @Aspect Advisor 빌더 내부에 저장됩니다.
 
   
@@ -133,7 +135,9 @@ implementation 'org.springframework.boot:spring-boot-starter-aop'
 ### 동작 과정
 
 그럼 자동 프록시 생성기에 의해 성성된 Advisor는 기존 로직에서 어느 시점에 끼어드는지 보겠습니다.  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-3.PNG?raw=true)
+
+![[AOP6.png]]
+
 
 1. 스프링 빈 대상이 되는 객체를 생성한다.(@Bean, 콤포넌트 스캔 대상)
 2. 생성된 객체를 빈 저장소에 등록하기 직전에 빈 후처리기에 전달한다.
@@ -355,7 +359,8 @@ public class AspectV5Order {
 
 위에서는 내부 static 클래스로 분리했지만, 따로 클래스를 분리해도 됩니다.  
 결과적으로 아래 그림처럼 동작하게 됩니다.  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-5.PNG?raw=true)
+![[AOP7.png]]
+
 
 ### 포인트컷 분리
 
@@ -727,6 +732,7 @@ void args() {
 
 #### @target, @within
 
+![[AOP9.png]]
 ![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-6.PNG?raw=true)
 
 - @target
@@ -849,7 +855,8 @@ JDK 동적 프록시는 인터페이스 기반이므로 프록시를 생성합�
         - 프록시의 대상 객체로 판단하기 때문에 MemberServiceImpl은 AOP 적용 대상입니다.
 
 **CGLIB 프록시**  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-8.PNG?raw=true)  
+![[AOP8.png]]
+
 CGLIB은 구체 클래스 기반으로 프록시를 생성하여 빈으로 등록합니다.
 
 - MemberService 인터페이스를 지정했을 때

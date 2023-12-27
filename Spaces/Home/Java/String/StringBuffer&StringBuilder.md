@@ -272,8 +272,7 @@ System.out.println(sb_tmp.equals(sb2_tmp)); // true
 
 사실 자바는 문자열에 + 연산을 사용하면, 컴파일 전 내부적으로 StringBuilder 클래스를 만든 후 다시 문자열로 돌려준다고 한다.
 
-![[Pasted image 20231227164354.png]]
-[![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/bYHqK3/btrJCoJdVdL/2b6a2stQ8xSE3KlU0UMfD1/img.png)](https://blog.kakaocdn.net/dn/bYHqK3/btrJCoJdVdL/2b6a2stQ8xSE3KlU0UMfD1/img.png)
+![[StringBuffer&StringBuilder5.png]]
 
 즉, "hello" + "world" 문자열 연산이 있다면 이는 new StringBuilder("hello").append("world").toString() 과 같다는 말이다.
 
@@ -348,8 +347,7 @@ String d = new StringBuilder("hello").append("world").toString();
 
 String.concat 같은 경우, 이 메소드는 호출할 때마다 원본 문자열의 매번 배열을 재구성 하는 과정을 거치기 때문에 당연히 느릴 수밖에 없다. 반면 StringBuilder나 StringBuffer는 처음부터 배열 크기를 일정하게 잡고 시작하기 때문에 합치는 과정이 String.concat 보다 월등히 빠르다.
 
-[![String.concat-stringbuilder-stringbuffer](https://blog.kakaocdn.net/dn/dkVybJ/btrJSXR5xT3/K9qcr6WzHL9NJoUbYxXWk1/img.png)](https://blog.kakaocdn.net/dn/dkVybJ/btrJSXR5xT3/K9qcr6WzHL9NJoUbYxXWk1/img.png)
-
+![[StringBuffer&StringBuilder6.png]]
 #### **성능상에서 문자열 자료형 선택 결론**
 
 그렇다면 무조건 StringBuffer / StringBuilder를 사용하는 것이 좋을다고 맹신할수 있겠지만, 그건 상황에 따라 다르다.
@@ -371,7 +369,8 @@ StringBuffer와 StringBuilder 클래스는 둘 다 크기가 유연하게 변하
 
 ### **쓰레드의 안정성**
 
-[![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/cHSE1K/btrJDhwhFLY/kCCeH9MJoDukajQxTsgIu1/img.png)](https://blog.kakaocdn.net/dn/cHSE1K/btrJDhwhFLY/kCCeH9MJoDukajQxTsgIu1/img.png)
+![[StringBuffer&StringBuilder7.png]]
+
 
 - StringBuffer 클래스는 쓰레드에서 안전하다. (thread safe)
 - StringBuilder 클래스는 쓰레드에서 안전하지 않다.(thread unsafe) 
@@ -522,7 +521,8 @@ StringBuilder의 append()을 이용한 경우 : 3
 
 StringBuffer와 StringBuilder 의 차이는 쓰레드 안정성에 있다고 학습했는데, 아무래도 쓰레드 안전성을 버린 StringBuilder가 좀더 덜 따지고 연산을 하니 당연히 좀 더 빠를 수 밖에 없다.
 
-[![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/lPDkD/btrJMBiSxRl/cAxkMIIfw2RKoxcbmyV6k0/img.png)](https://blog.kakaocdn.net/dn/lPDkD/btrJMBiSxRl/cAxkMIIfw2RKoxcbmyV6k0/img.png)
+![[StringBuffer&StringBuilder8.png]]
+
 
 위 그래프를 보면 10만번 이상의 연산시 String 객체는 수행시간이 기하급수적으로 늘어나지만, StringBuilder와 StringBuffer는 1000만번까지 버티며, 그 이상은 StringBuilder가 우월하다는 것을 볼 수 있다.
 

@@ -1,9 +1,9 @@
 
-![[Pasted image 20231222124635.png]]
+![[TCPUDP1.png]]
 
 ## **TCP vs UDP**
 
-![[Pasted image 20231222125637.png]]
+![[TCPUDP2.png]]
 
 
 
@@ -55,7 +55,7 @@ TCP는 네트워크에 연결된 컴퓨터에서 실행되는 프로그램 간�
 
 **TCP의 연결 과정 ( 3-way handshake)**
 
-![[Pasted image 20231222125027.jpg]]
+![[TCPUDP3.jpg]]
 - **받을 대상 노드(호스트)가 서비스 가능(연결 가능) 상태인지 확인 및 연결을 수립하는 역할**
 - **전송을 제어해주는 정보를 패킷에 추가해주는 역할**
 
@@ -103,7 +103,7 @@ TCP는 네트워크에 연결된 컴퓨터에서 실행되는 프로그램 간�
 
 
 **TCP의 연결 해제 과정 (4-way handshake)**
-![[Pasted image 20231222125207.jpg]]
+![[TCPUDP4.jpg]]
 
 - **STEP1 (Client → Server : FIN(+ACK)**
     
@@ -147,7 +147,7 @@ TCP는 네트워크에 연결된 컴퓨터에서 실행되는 프로그램 간�
 
 
 
-![[Pasted image 20231222125540.png]]
+![[TCPUDP5.png]]
 
 
 **UDP의 특징**
