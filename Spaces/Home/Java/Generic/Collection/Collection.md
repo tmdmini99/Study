@@ -12,7 +12,7 @@ JCF(Java Collections Framework)는 이러한 데이터, 자료구조인 컬렌�
 
 
 
-![[Pasted image 20231211115426.png]]
+![[Collection.png]]
 
 
 

@@ -1,7 +1,7 @@
 List 인터페이스
 순서가 있는 데이터의 집합으로 데이터의 중복을 허용한다.
 
-![[Pasted image 20231220174416.png]]
+![[자료구조.png]]
 
 
 
@@ -25,9 +25,9 @@ List 인터페이스
 
  ArrayList에선 각각의 데이터를 담은 요소들을 엘리먼트(element)라고 표현하였지만 LinkedList는 각각의 요소들이 연결이라는 특성을 가지기 때문에 "node(마디,교점)"혹은 "vertex(꼭지점, 정점)"라고 표현합니다. 이러한 노드를 표현하기 위해서 C언어는 '구조체'를 사용하고 객체지향 프로그래밍 언어에선 '객체'를 사용합니다.
 
-![[Pasted image 20231215161630.jpg]]
+![[arrayList.jpg]]
 
-![[Pasted image 20231215161638.jpg]]
+![[LinkedList.jpg]]
 
 Data field : 실제 값이 저장되는 변수입니다.
 
@@ -46,16 +46,16 @@ HEAD : 첫번째 노드를 가리키는 변수.
 
 
 
-![[Pasted image 20231215174020.png]]
+![[단방향.png]]
 
  이런 LinkedList가 존재하고 있을 때 0x01의 Node가 삭제된다면 0x00 Node가 다음 Node로 참조하고 있던 주소는 0x01이 아니라 0x02가 되어서 연결된 주소를 변경시켜 준다면 삭제가 된다.
 
-![[Pasted image 20231215174002.png]]
+![[LinkedList 순서 바꾸기.png]]
 
 추가는 Node와 Node 사이에 새로운 Node를 만들고 삭제에서 했던 것처럼 주소를 이동시켜준다.
 
 
-![[Pasted image 20231215174007.png]]
+![[LinkedList2.png]]
 
 
  0x04의 주소를 가진 Node를 새로 추가를 해주었기 때문에 그 이전의 0x00 Node는 0x04 주소를 참조하고 0x04가 0x00이 참조하던 0x01을 주소를 참조한다.
@@ -63,8 +63,8 @@ HEAD : 첫번째 노드를 가리키는 변수.
 
  이중 연결 리스트라고 막 복잡한 것이아니라 Node들에 이전의 Node에 대한 주소를 추가해주는 것에 불과하다.
 
-![](https://blog.kakaocdn.net/dn/r9rAr/btq0A2ecq3X/4E1jADr6cFKkgOTSaycgYk/img.png)
 
+![[LinkedList3.png]]
 Double LinkedList
 
   

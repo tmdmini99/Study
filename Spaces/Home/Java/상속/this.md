@@ -16,13 +16,13 @@
    this( )는 생성자 코드안에서 사용될 때 **첫번째 문장으로 다른 코드보다 가장 윗줄에 위치**해야 합니다. 
 
 
-![[Pasted image 20231215154212.png]]
+![[this 사용법1.png]]
 
 
-![[Pasted image 20231215154215.png]]
+![[this main.png]]
 
 실행 결
-![[Pasted image 20231215154232.png]]
+![[this 실행결과.png]]
 
 
 
