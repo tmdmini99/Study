@@ -24,9 +24,129 @@
             "id": "7613f4870d278e96",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222125207.jpg"
+              }
+            }
+          },
+          {
+            "id": "3863e994e3e6c303",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222125027.jpg"
+              }
+            }
+          },
+          {
+            "id": "3cf5438df959c4d1",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222124635.png"
+              }
+            }
+          },
+          {
+            "id": "679330828db71c69",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222124336.png"
+              }
+            }
+          },
+          {
+            "id": "33b83d0e67f57ba4",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222124336.png"
+              }
+            }
+          },
+          {
+            "id": "a0994f7e29ee35bb",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222124332.png"
+              }
+            }
+          },
+          {
+            "id": "cafec3d1f52f2dca",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222124328.png"
+              }
+            }
+          },
+          {
+            "id": "17d99913a8385d74",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231222124314.png"
+              }
+            }
+          },
+          {
+            "id": "e476130897c0cb12",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231221142524.png"
+              }
+            }
+          },
+          {
+            "id": "3175645a6ecd8bbb",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231221142512.png"
+              }
+            }
+          },
+          {
+            "id": "26174ff7abf4d884",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231221140513.png"
+              }
+            }
+          },
+          {
+            "id": "251364b5f72620be",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20231221140048.png"
+              }
+            }
+          },
+          {
+            "id": "069da154db51c298",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
+                "file": "Spaces/Home/Protocol/Layer/TCPIP.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -34,7 +154,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 13
       }
     ],
     "direction": "vertical"
@@ -108,7 +228,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
+                "file": "Spaces/Home/Protocol/Layer/TCPIP.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +256,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Layer/OSI 7 Layer.md"
+                "file": "Spaces/Home/Protocol/Layer/TCPIP.md"
               }
             }
           },
@@ -146,7 +266,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
+                "file": "Spaces/Home/Protocol/Layer/TCPIP.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -186,11 +306,23 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "7613f4870d278e96",
+  "active": "069da154db51c298",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Protocol.md",
-    "Spaces/Home/Protocol/Layer/TCPIP.md",
     "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
+    "Spaces/Home/Protocol/Layer/TCPIP.md",
+    "Images/W3E1x5BqrRingHUDAX2LW8fHs7DHHGeGgaTDQIw5wdZhcF1kP5P73zprvMhTijQ61XSyhUzIZIqG14pvzGXNeDO-Jje0CeIbgcM6GBqbjZxT4NZBVs_lEalwvMrpsCp23Qg-YeudLDVYzX8Xr2T40w.webp",
+    "Spaces/Home/Data/CSV.md",
+    "Images/Pasted image 20231211101644.png",
+    "Images/0_w4ZmrsM9Z22HCL0s.webp",
+    "Images/1_EGRs3qcL6YDNGZdhxOXXEA.webp",
+    "Images/27786B485715047219.gif",
+    "무제 파일.canvas",
+    "Images/Pasted image 20231213163142.png",
+    "Images/Pasted image 20231211183416.png",
+    "Images/Pasted image 20231211181812.png",
+    "Images/Pasted image 20231211181537.png",
+    "Images/Pasted image 20231221140100.png",
+    "Spaces/Home/Protocol/Protocol.md",
     "Spaces/Home/Protocol/IP.md",
     "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/Protocol/Port/Port.md",
@@ -203,10 +335,8 @@
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Data/Parsing.md",
-    "Spaces/Home/Data/CSV.md",
     "Spaces/Home/DB",
     "Spaces/Home/Data/JSON.md",
-    "Images/Pasted image 20231226151419.png",
     "Spaces/Home/Java/상속/상속.md",
     "Spaces/Home/Java/상속/super.md",
     "Spaces/Home/Java/상속/오버라이딩.md",
@@ -215,17 +345,7 @@
     "Spaces/Home/API/Open API.md",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/Data/HTML.md",
-    "Spaces/Home/Data/Data  형태.md",
-    "Images/Pasted image 20231226134220.png",
-    "Images/Pasted image 20231226113008.png",
-    "Images/Pasted image 20231226112653.png",
-    "Images/Pasted image 20231226110942.png",
-    "Images/Pasted image 20231226110938.png",
-    "Images/Pasted image 20231226105834.jpg",
     "Spaces/Home/Data",
-    "Images/Pasted image 20231222163411.jpg",
-    "Images/Pasted image 20231222163405.jpg",
-    "Images/Pasted image 20231222141543.png",
     "Spaces/Home/Protocol/Port",
     "Spaces/Home/Protocol/Layer",
     "Spaces/Home/Data/Parsing",
