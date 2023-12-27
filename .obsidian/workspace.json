@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-27.md",
+                "file": "Spaces/Home/Protocol/IP.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2023-12-27.md",
+                "file": "Spaces/Home/Protocol/IP.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2023-12-27.md"
+                "file": "Spaces/Home/Protocol/IP.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2023-12-27.md",
+                "file": "Spaces/Home/Protocol/IP.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,15 +188,16 @@
   },
   "active": "7613f4870d278e96",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/TCP,UDP.md",
+    "Spaces/Home/Protocol/Port/Port.md",
+    "Spaces/Home/Protocol/Protocol.md",
+    "Spaces/Home/DB/MySql.md",
     "daily note/2023-12-27.md",
     "Spaces/Home/Java/Java DB Connection.md",
-    "Spaces/Home/Protocol/TCP,UDP.md",
-    "Spaces/Home/Protocol/Protocol.md",
     "daily note/2023-12-26.md",
     "daily note/2023-12-22.md",
     "Spaces/Home/Java/Java DB 연결 방법.md",
     "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Data/Parsing.md",
     "Spaces/Home/Data/CSV.md",
@@ -216,7 +217,6 @@
     "Spaces/Home/API/API.md",
     "Images/Pasted image 20231226134220.png",
     "Spaces/Home/Protocol/Http/Http.md",
-    "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Images/Pasted image 20231226113008.png",
     "Images/Pasted image 20231226112653.png",
     "Images/Pasted image 20231226110942.png",
