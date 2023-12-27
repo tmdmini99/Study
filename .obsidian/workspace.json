@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/Parsing.md",
+                "file": "Spaces/Home/Java/Java DB Connection.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/Parsing.md",
+                "file": "Spaces/Home/Java/Java DB Connection.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/Parsing.md"
+                "file": "Spaces/Home/Java/Java DB Connection.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/Parsing.md",
+                "file": "Spaces/Home/Java/Java DB Connection.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,26 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Annotation.md",
+    "Spaces/Home/Java/Java DB Connection.md",
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/DB/Oracle.md",
+    "daily note/2023-12-27.md",
+    "Spaces/Home/Java/Generic/Collection/Hash.md",
+    "Spaces/Home/Java/Generic/Collection/Iterator.md",
+    "Spaces/Home/Java/Generic/Collection/Map.md",
+    "Spaces/Home/Java/Generic/Collection/List.md",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
+    "Spaces/Home/Java/JVM/Thread.md",
+    "Spaces/Home/Java/JVM/Process.md",
+    "Spaces/Home/Java/JVM/JVM.md",
+    "Images/AOP/AOP2.png",
+    "Spaces/Home/Data/Parsing.md",
+    "무제 파일.canvas",
     "Spaces/Home/Data/Data  형태.md",
     "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Data/XML.md",
-    "Spaces/Home/Data/Parsing.md",
     "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Data/CSV.md",
     "Images/LIST/단방향.png",
@@ -190,7 +206,6 @@
     "Images/PORT/TCPUDP4.jpg",
     "Images/PORT/TCPUDP1.png",
     "Images/PORT/TCPUDP3.jpg",
-    "Images/PORT/TCPUDP2.png",
     "Images/무제 폴더",
     "Images/String",
     "Images/Stack",
@@ -206,20 +221,6 @@
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
-    "Spaces/Home/Java/상속/this.md",
-    "Spaces/Home/Java/상속/super.md",
-    "Spaces/Home/Java/상속/오버라이딩.md",
-    "Spaces/Home/Java/상속/상속.md",
-    "Spaces/Home/Java/람다/Streams.md",
-    "Spaces/Home/Java/다형성/캐스팅.md",
-    "Spaces/Home/Java/다형성/오버로딩.md",
-    "Spaces/Home/Java/다형성/다형성.md",
-    "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/API/Rest API.md",
-    "Spaces/Home/API/Open API.md",
-    "무제 파일.canvas"
+    "Spaces/Home/Java/상속/this.md"
   ]
 }
