@@ -19,16 +19,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "5dee3da0ea292359",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/class.forName()/ClassForName1.jpg"
-              }
-            }
           }
         ]
       }
@@ -183,10 +173,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Spaces/Home/Java/Java DB/Class.forName(driver).md",
+    "Images/JDBC.png",
     "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
+    "Spaces/Home/Java/Java DB/Class.forName(driver).md",
     "Spaces/Home/Java/Java DB",
     "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Images/class.forName()",
@@ -219,7 +210,6 @@
     "Images/PORT/this main.png",
     "Images/PORT/TCPUDP5.png",
     "Images/PORT/TCPUDP4.jpg",
-    "Images/PORT/TCPUDP1.png",
     "Images/String",
     "Images/Stack",
     "Images/Process",
