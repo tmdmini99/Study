@@ -11,8 +11,40 @@
 
 • 웹/앱 환경에서 Rest API를 사용하여, 서버와 클라이언트 사이에 데이터를 주고 받을때 많이 사용
 
+```JSON
+{
+  "people": [
+    {
+      "name": "Gildong",
+      "lastName": "Hong"
+    },
+    {
+      "name": "Fox",
+      "lastName": "Im"
+    },
+    {
+      "name": "Yushine",
+      "lastName": "Kim"
+    } 
+  ]
+}
+```
 
 
+## Json과 XML의 공통점
+- 둘 다 데이터를 저장하고 전달하기 위해 고안되었습니다.
+- 둘 다 기계뿐만 아니라 사람도 쉽게 읽을 수 있습니다.
+- 둘 다 계층적인 데이터 구조를 가집니다.
+- 둘 다 다양한 프로그래밍 언어에 의해 파싱될 수 있습니다.
+
+## Json과 XML의 차이점
+- JSON은 종료 태그를 사용하지 않습니다.
+- JSON의 구문이 XML의 구문보다 더 짧습니다.
+- JSON 데이터가 XML 데이터보다 더 빨리 읽고 쓸 수 있습니다.
+- XML은 배열을 사용할 수 없지만, JSON은 배열을 사용할 수 있습니다.
+
+
+---
 
 # JsonObject/JsonArray
 •JSONObject란 JSON 형식의 String을 처리하도록 도와주는 Java 라이브러리이다.

@@ -7,6 +7,13 @@
 - 같은 데이터를 저장하면 JSON 데이터에 비해 절반 이하의 용량으로 저장할 수 있다.
 - 쉼표를 대신하여 다른 문자 ($,%,…)를 사용해 구분하도록 지정할 수 있다. (데이터 자체에 쉼표가 포함될 때)
 
+```csv
+연도,제조사,모델,설명,가격
+1997,Ford,E350,"ac, abs, moon",3000.00
+1999,Chevy,"Venture ""Extended Edition""","",4900.00
+1999,Chevy,"Venture ""Extended Edition, Very Large""",,5000.00
+1996,Jeep,Grand Cherokee,"MUST SELL!air, moon roof, loaded",4799.00
+```
 ![[CSV.png]]
 
 
