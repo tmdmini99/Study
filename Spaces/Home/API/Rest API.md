@@ -18,7 +18,7 @@ REST(Representational State Transfer)의 약자로 자원을 이름으로 구�
 > Delete : 데이터 삭제(DELETE)
 
 
-![[Pasted image 20231226112653.png]]
+![[Rest Api method.png]]
 
 
 ### **REST 구성 요소**
