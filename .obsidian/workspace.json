@@ -21,19 +21,6 @@
             }
           },
           {
-            "id": "e1b9fb4f1827d107",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "769389e5272a1fc4",
             "type": "leaf",
             "state": {
@@ -43,8 +30,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md",
+                "file": "Images/LIST/단방향.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md"
+                "file": "Images/LIST/단방향.png"
               }
             }
           },
@@ -156,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md",
+                "file": "Images/LIST/단방향.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -197,53 +183,54 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e1b9fb4f1827d107",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Images/AOP9.png",
-    "Spaces/Home/Spring/AOP/AOP.md",
-    "Images/AOP8.png",
-    "Images/AOP7.png",
-    "Images/AOP6.png",
-    "Images/AOP5.png",
-    "Images/AOP4.png",
-    "Images/AOP3.png",
-    "Images/AOP2.png",
-    "Images/AOP1.png",
-    "Spaces/Home/Protocol/TCP,UDP.md",
-    "Images/TCPUDP5.png",
-    "Spaces/Home/Protocol/Protocol.md",
-    "Spaces/Home/Protocol/IP.md",
-    "Spaces/Home/Protocol/Port/Port.md",
-    "Spaces/Home/Protocol/Layer/TCPIP.md",
-    "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
-    "Spaces/Home/Protocol/Http/Http.md",
-    "Spaces/Home/Mark/MarkUp/MarkUp.md",
-    "Spaces/Home/Mark/MarkDown/MarkDown.md",
-    "Spaces/Home/Java/Java DB Connection.md",
-    "Spaces/Home/Java/Annotation.md",
-    "Spaces/Home/Java/객체.md",
-    "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
-    "Spaces/Home/Java/String/String.md",
-    "Spaces/Home/Java/Stack&Queue/Stack.md",
-    "Spaces/Home/Java/Stack&Queue/Queue.md",
-    "Spaces/Home/Java/Pseudo Code/Pseudo Code.md",
-    "Spaces/Home/Java/JVM/Thread.md",
-    "Spaces/Home/Java/JVM/Process.md",
-    "Spaces/Home/Java/JVM/JVM.md",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
-    "Spaces/Home/Java/Generic/Generic.md",
-    "Spaces/Home/Java/Generic/Collection/Set.md",
-    "Spaces/Home/Java/Generic/Collection/Map.md",
+    "Images/API",
+    "Images/AOP/AOP11.png",
+    "Images/AOP/AOP10.png",
+    "Images/AOP/AOP9.png",
+    "Images/AOP/AOP8.png",
+    "Images/AOP/AOP7.png",
+    "Images/AOP/AOP14.png",
+    "Images/AOP/AOP13.png",
+    "Images/AOP/AOP12.png",
+    "Images/AOP/AOP6.png",
+    "Images/AOP/AOP5.png",
+    "Images/다형성",
+    "Spaces/Home/Java/캡슐화/제어자.md",
+    "Images/OOP",
+    "Images/AOP",
+    "Images/제어자",
+    "Spaces/Home/Java/캡슐화/캡슐화.md",
+    "Spaces/Home/Java/추상화/추상화.md",
+    "Spaces/Home/Java/추상화/추상클래스.md",
+    "Spaces/Home/Java/추상화/인터페이스.md",
+    "Spaces/Home/Java/상속/this.md",
+    "Spaces/Home/Java/상속/super.md",
+    "Spaces/Home/Java/상속/오버라이딩.md",
+    "Spaces/Home/Java/상속/상속.md",
+    "Spaces/Home/Java/람다/Streams.md",
+    "Spaces/Home/Java/다형성/캐스팅.md",
+    "Spaces/Home/Java/다형성/오버로딩.md",
+    "Spaces/Home/Java/다형성/다형성.md",
+    "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
+    "Spaces/Home/DB/Oracle.md",
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/Data/XML.md",
+    "Spaces/Home/Data/Parsing.md",
+    "Spaces/Home/Data/JSON.md",
+    "Spaces/Home/Data/HTML.md",
+    "Spaces/Home/Data/Data  형태.md",
+    "Spaces/Home/Data/CSV.md",
+    "Spaces/Home/API/Rest API.md",
+    "Spaces/Home/API/Open API.md",
     "Images/PORT",
     "Images/PROTOCOL",
     "Images/COLLECTION",
     "Images/MAP",
     "Images/LIST",
     "Images/HTML",
-    "Images/DATA",
-    "무제 파일.canvas",
-    "Spaces/Home/DB",
-    "Spaces/Home/Data",
-    "Spaces/Home/Protocol/Port"
+    "무제 파일.canvas"
   ]
 }

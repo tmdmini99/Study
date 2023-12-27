@@ -733,7 +733,7 @@ void args() {
 #### @target, @within
 
 ![[AOP9.png]]
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-6.PNG?raw=true)
+
 
 - @target
     - 자신의 클래스와 자신의 모든 부모클래스의 모든 메서드에 적용합니다.
@@ -838,7 +838,7 @@ target(hello.aop.member.MemberService)
 **둘의 가장 큰 차이는 프록시 생성 방식에 따른 AOP적용 여부입니다.**
 
 **JDK 동적 프록시**  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-7.PNG?raw=true)
+![[AOP10.png]]
 
 JDK 동적 프록시는 인터페이스 기반이므로 프록시를 생성합니다.
 
@@ -1007,7 +1007,7 @@ public class CallServiceV0 {
 위의 두 메서드에 모두 AOP가 Before로 들어갔다고 가정해봅시다.  
 그렇다면 빈 컨테이너에는 CallServiceV0의 프록시가 들어가 있을 것이고, external과 internal이 각각 호출된다면 프록시를 통해서 호출됩니다.  
 하지만, external 함수의 경우 내부에서 internal을 호출하고 있는데, external이 호출될 때는 AOP가 적용되지만 내부에서 internal을 호출할 때는 AOP가 적용되지 않고 바로 내부 internal을 호출합니다.  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-9.PNG?raw=true)
+![[AOP11.png]]
 
 #### 대안 - 구조 변경하기
 
@@ -1035,8 +1035,9 @@ public class CallServiceV3 {
 ```
 
 둘을 분리해서 만들고 internalService를 통해서 internal 함수를 호출하게 만듭니다.  
-internalService는 프록시로 빈에 등록되어 있기 때문에 결과적으로 프록시를 통해 호출하게 됩니다.  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-10.PNG?raw=true)
+internalService는 프록시로 빈에 등록되어 있기 때문에 결과적으로 프록시를 통해 호출하게 됩니다.
+![[AOP12.png]]
+
 
 ### CGLIB과 JDK 동적 프록시 중 Spring의 선택
 
@@ -1046,7 +1047,8 @@ JDK 동적 프록시는 인터페이스 기반, CGLIB은 구체 클래스 기반
 #### 타입 캐스팅
 
 **JDK 동적 프록시**  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-11.PNG?raw=true)  
+![[AOP13.png]]
+
 앞서 target과 this를 설명할 때도 언급했었는데, **JDK 동적 프록시는 구체 클래스로 타입 캐스팅이 불가능** 합니다.  
 MemberServiceImpl을 대상으로 프록시를 생성한다면 인터페이스인 MemberService를 기반으로 구현체(프록시)로 만들어 빈으로 등록합니다.  
 따라서 프록시는 MemberService로는 타입캐스팅이 가능하나, MemberServiceImpl로는 타입캐스팅이 불가능합니다.
@@ -1054,7 +1056,7 @@ MemberServiceImpl을 대상으로 프록시를 생성한다면 인터페이스�
   
 
 **CGLIB**  
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-12.PNG?raw=true)  
+![[AOP14.png]]
 **CGLIB은 구체 클래스로 타입 캐스팅이 가능** 합니다.  
 CGLIB은 구체 클래스를 상속받아 프록시를 생성합니다.  
 따라서 MemberServiceImpl을 프록시 대상으로 선택한다면, MemberServiceImpl을 상속받아서 프록시를 만들어 빈으로 등록하기 때문에 프록시는 당연히 MemberServiceImpl로 타입캐스팅이 가능합니다.

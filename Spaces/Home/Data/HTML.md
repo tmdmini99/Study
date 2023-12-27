@@ -26,7 +26,8 @@ HTML 은 Hyper Text Markup Language 약어로 ==HyperText(웹 페이지에서 �
 ## 시멘틱 태그(Semantic Tag)란??
 
 시멘틱 태그는 브라우저와 개발자 모두에게 태그의 의미를 명확하게 셜명해준다.  
-![](https://velog.velcdn.com/images%2Fstrivepdev%2Fpost%2Fd08b3c65-6773-4436-ae3b-ad23a28a4d5b%2Fsemantic.png)
+![[HTML1.png]]
+
 
 HTML5이전의 문서는 왼쪽의 이미지 처럼 div 태그안에 class or id 속성을 이용하여 구조를 표현했는데 HTML5 부터는 오른쪽의 이미지처럼 시맨틱 태그(Semantic Tag)를 이용하여 화면의 구조를 명확하게 정의하였다.
 
@@ -59,10 +60,11 @@ HTML 문서인 웹 페이지는 ==head 영역과 body 영역==으로 구성됩�
  콘텐츠(요소포함)를 감싸는 태그(tag)
  - open tag - 여는 태그
 - close tag - 닫는 태그    
-![](https://t1.daumcdn.net/cfile/tistory/99C713425C1B1CC714)
+![[HTML2.png]]
 
 
-![[Pasted image 20231226134220.png]]
+
+![[HTML3.png]]
 
 `<!DOCTYPE html>` : 현재 문서가 HTML5 언어로 작성된 웹 문서라는 의미
 
@@ -80,7 +82,8 @@ ex) `<meta charset="utf-8">`
 - 애트리뷰트(attribute) - 속성
 - 벨류(value) - 값  
 `<tagname attribute="value"> 콘텐츠 </tagname>`  
-![](https://t1.daumcdn.net/cfile/tistory/99A1A1495C1B1D2F18)
+![[HTML4.png]]
+
 
 ## HTML 문서 작성을 위한 DTD
 

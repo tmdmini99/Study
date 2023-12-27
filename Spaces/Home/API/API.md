@@ -16,7 +16,7 @@ API 범주의 핵심은 애플리케이션을 서로 연결하여 서로 통신 
 
 # API는 레스토랑의 '점원'이다.
 
-![](https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8kCc/image/KqPoc0TbVmKlZi1ldFCyfNR0Kao.jpg)
+![[API1.jpg]]
 
 레스토랑에서 손님에게 주문 가능한(선택 가능한) 메뉴를 보여주고 손님이 고른 음식을 주방에 전달 후, 음식이 나오면 고객에게 전달하는 '점원'이 API입니다.
 

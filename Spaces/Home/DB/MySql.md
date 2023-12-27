@@ -64,7 +64,8 @@ REVOKE ALL ON *.* FROM test@host;
 
 ### 계정 삭제
 
-![](https://blog.kakaocdn.net/dn/bkD58K/btrPHygFlZF/u43WuxsQpkV08H1atJWfu1/img.jpg)
+![[MySql1.jpg]]
+
 
 drop user
 
@@ -362,7 +363,8 @@ SELECT genre, AVG(price) AS "평균"
   	GROUP BY genre;
 ```
 
-![](https://blog.kakaocdn.net/dn/wzcym/btrZbrdR6ge/tiZ73CoQja3KH9UvCTzk71/img.jpg)
+![[MySql2.jpg]]
+
 
 GROUP BY(genre) 예시
 
@@ -426,7 +428,8 @@ SELECT SUM(amount*price) AS "총 금액"
 
 - Join은 두 개의 table들을 연결(join)해서 두 table의 레코드를 읽어 들이고 싶을 때 사용합니다.
 
-![](https://velog.velcdn.com/images%2Ftaeha7b%2Fpost%2F6c3d1714-c859-48ba-9714-941552206081%2FJoin.png)
+![[MySql3.png]]
+
 
 - INNER JOIN: 기준이 되는 테이블 (left table)과 join이 걸리는 테이블(right table) 양쪽 모두에 matching되는 row만 select가 됨.
     

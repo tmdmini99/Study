@@ -50,14 +50,16 @@
 
 **-데이터 탐색**
 
-![](https://blog.kakaocdn.net/dn/b7y7eq/btqSpHvu7aH/hwmwVJsZWSTkKmPhR3k8EK/img.gif)
+![[Data1.gif]]
+
 
 정형 데이터의 경우, 스키마 구조를 가지고 있기 때문에 데이터를 탐색하는 과정이 테이블 탐색, 컬럼 구조 탐색, 로우 탐색 순으로 정형화되어 있다.  
 예) SELECT COLUMN1, COLUMN2… FROM TABLE WHERE CONDITION
 
 **-형태**
 
-![](https://blog.kakaocdn.net/dn/OhOrr/btqSpHCaUYq/x4LnX2eu3xTaYIKlqoS8w1/img.gif)
+![[Data2.gif]]
+
 
 **-정형 데이터의 예**
 
@@ -79,7 +81,8 @@
 
 **-데이터 탐색**
 
-![](https://blog.kakaocdn.net/dn/cvTqUm/btqSATu2qq7/VMv8Lkk58bpssDIh3IBXNK/img.gif)
+![[Data3.gif]]
+
 
 데이터 내용에 대한 설명인 구조를 파악하는 파싱 과정이 필요하고, 보통 파일 형태로 저장
 
@@ -91,7 +94,8 @@
 
 **-형태**
 
-![](https://blog.kakaocdn.net/dn/cxK9oJ/btqSIZ12THw/wtjiE6dMkY4YsDOqk2DX3k/img.gif)
+![[Data4.gif]]
+
 
 **-반정형 데이터의 예**
 
@@ -112,7 +116,7 @@ URL 형태로 존재 - HTML
 비정형 데이터(Unstructured-Data)는 데이터 세트가 아닌 하나의 데이터가 수집 데이터로 객체화돼 있다. 언어 분석이 가능한 텍스트 데이터나 이미지, 동영상 같은 멀티미디어 데이터가 대표적인 비정형 데이터다. 웹에 존재하는 데이터의 경우 html 형태로 존재하여 반정형 데이터로 구분할 수도 있지만, 특정한 경우 텍스트 마이닝을 통해 데이터를 수집하는 경우도 존재하므로 명확한 구분은 어렵다.
 **-데이터 탐색**
 
-![[Pasted image 20231226110942.png]]
+![[Data5.png]]
 
 
 이진 파일 형태: 동영상, 이미지(BLOB)  
