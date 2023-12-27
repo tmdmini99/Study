@@ -34,7 +34,7 @@ JVM의 Heap영역은 처음 설계될 때 다음의 2가지를 전제(Weak Gener
 
 
 #### Perm 영역은 왜 사라졌을까?
-![[Pasted image 20231219164401.png]]
+![[GC1.png]]
 #### Metasapace 영역이란?
 
 - Perm 영역에서 저장하던 Class의 Meta 정보들이 이 영역에 저장된다.
@@ -50,10 +50,9 @@ JVM의 Heap영역은 처음 설계될 때 다음의 2가지를 전제(Weak Gener
 
 
 
-![[Pasted image 20231219100858.png]]
+![[GC2.png]]
 
-
-![](https://blog.kakaocdn.net/dn/va8qQ/btqUSpSocbS/kxTvtnmrdhf4bnVPXth0UK/img.png)
+![[GC3.png]]
 
 GC 영역 및 흐름
 
@@ -75,7 +74,7 @@ Old 영역이 Young 영역보다 크게 할당되는 이유는 Young 영역의 �
 또 다시 힙 영역은 더욱 효율적인 GC를 위해 **Young 영역**을 **3가지 영역(Eden, survivor 0, survivor 1)** 으로 나눈다.
 
 
-![[Pasted image 20231219101425.png]]
+![[GC4.png]]
 
 
 #### **Eden** 
@@ -96,8 +95,7 @@ Old 영역이 Young 영역보다 크게 할당되는 이유는 Young 영역의 �
 예외적인 상황으로 Old 영역에 있는 객체가 Young 영역의 객체를 참조하는 경우도 존재할 것이다. 이러한 경우를 대비하여 Old 영역에는 512 bytes의 덩어리(Chunk)로 되어 있는 카드 테이블(Card Table)이 존재한다.
 
 
-
-![](https://blog.kakaocdn.net/dn/FOLU3/btqUOBF35cJ/BMKuD1iqfq6R0lAqMlfkC0/img.png)
+![[GC5.png]]
 
 카드 테이블에는 Old 영역에 있는 객체가 Young 영역의 객체를 참조할 때 마다 그에 대한 정보가 표시된다. 카드 테이블이 도입된 이유는 간단한다. Young 영역에서 가비지 컬렉션(Minor GC)가 실행될 때 모든 Old 영역에 존재하는 객체를 검사하여 참조되지 않는 Young 영역의 객체를 식별하는 것이 비효율적이기 때문이다. 그렇기 때문에 Young 영역에서 가비지 컬렉션이 진행될 때 카드 테이블만 조회하여 GC의 대상인지 식별할 수 있도록 하고 있다.
 
@@ -126,13 +124,12 @@ Mark라는 단어의 뜻은 표시하다 라는 뜻이 있다.
 
 Sweep은 쓸어내리다, 소멸의 뜻이 있다고 한다.
 
-![[Pasted image 20231219163520.png]]
+![[GC6.png]]
 
 GC Root는 실행중인 스레드, 정적 변수, 로컬 변수, JNI 레퍼런스와 같은 것들이 될 수 있다.
 
 위에서 나왔던 root set과 동일한 용어이다.
-
-![](https://velog.velcdn.com/images/yarogono/post/fb954b1e-77d7-4d49-b45f-5d2a45b78220/image.png)
+![[GC7.png]]
 
 GC는 객체에 Mark를 하고 Mark가 되지 않은 객체의 메모리를 해제하게 된다.
 
@@ -153,51 +150,50 @@ Minor GC를 정확히 이해하기 위해서는 Young 영역의 구조에 대해
 객체가 새롭게 생성되면 Young 영역 중에서도 Eden 영역에 할당(Allocation)이 된다. 그리고 Eden 영역이 꽉 차면 Minor GC가 발생하게 되는데, 사용되지 않는 메모리는 해제되고 Eden 영역에 존재하는 객체는 (사용중인) Survivor 영역으로 옮겨지게 된다. Survivor 영역은 총 2개이지만 반드시 1개의 영역에만 데이터가 존재해야 하는데, Young 영역의 동작 순서를 자세히 살펴보도록 하자.
 
 **1.** 처음 생성된 객체는 Young Generation 영역의 일부인 Eden 영역에 위치
+![[GC8.png]]
+![[GC9.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/cXg3ZZ/btrITpQET0n/aJSAYDEziQIKlVCvxaSpg0/img.png)](https://blog.kakaocdn.net/dn/cXg3ZZ/btrITpQET0n/aJSAYDEziQIKlVCvxaSpg0/img.png)
-
-[![java-Minor GC](https://blog.kakaocdn.net/dn/dnDTuC/btrISOQKFwn/ullhkIEtDiPY7HUahMKvW1/img.png)](https://blog.kakaocdn.net/dn/dnDTuC/btrISOQKFwn/ullhkIEtDiPY7HUahMKvW1/img.png)
 
 **2.** 객체가 계속 생성되어 Eden 영역이 꽉차게 되고 Minor GC가 실행
+![[GC10.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/tySvx/btrITpwlB0D/JtcEmTbIYaPnHAAoNU8vB0/img.png)](https://blog.kakaocdn.net/dn/tySvx/btrITpwlB0D/JtcEmTbIYaPnHAAoNU8vB0/img.png)
 
 **3.** Mark 동작을 통해 reachable 객체를 탐색
+![[GC11.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/cJl67l/btrIXRd6Izv/ZwTbTqbKkuaH71Llqzog6k/img.png)](https://blog.kakaocdn.net/dn/cJl67l/btrIXRd6Izv/ZwTbTqbKkuaH71Llqzog6k/img.png)
 
 **4.** Eden 영역에서 살아남은 객체는 1개의 Survivor 영역으로 이동
+![[GC12.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/bxY6Md/btrIWNwtetB/4EpRJFGM5v7Fwk9dk0Wc9K/img.png)](https://blog.kakaocdn.net/dn/bxY6Md/btrIWNwtetB/4EpRJFGM5v7Fwk9dk0Wc9K/img.png)
 
 **5.** Eden 영역에서 사용되지 않는 객체(unreachable)의 메모리를 해제(sweep)
+![[GC13.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/ssSMf/btrIWMYFQlZ/KqHBu6rr18ANKo1ngOnMQk/img.png)](https://blog.kakaocdn.net/dn/ssSMf/btrIWMYFQlZ/KqHBu6rr18ANKo1ngOnMQk/img.png)
 
 **6.** 살아남은 모든 객체들은 age값이 1씩 증가
+![[GC14.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/Dno6M/btrIPYfc2VC/BLLkKAXLVRYKUAu3R6Vefk/img.png)](https://blog.kakaocdn.net/dn/Dno6M/btrIPYfc2VC/BLLkKAXLVRYKUAu3R6Vefk/img.png)
 **7.** 또다시 Eden 영역에 신규 객체들로 가득 차게 되면 다시한번 minor GC 발생하고 mark 한다
+![[GC15.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/cNoD2j/btrIT8gQrk9/vIqyTQJvZ16ByIGplen2D0/img.png)](https://blog.kakaocdn.net/dn/cNoD2j/btrIT8gQrk9/vIqyTQJvZ16ByIGplen2D0/img.png)
+![[GC16.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/8XX01/btrIPYsHxbi/FothJXlh95Tc6DSYSkZb10/img.png)](https://blog.kakaocdn.net/dn/8XX01/btrIPYsHxbi/FothJXlh95Tc6DSYSkZb10/img.png)
+![[GC17.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/cRhJ1g/btrIXPtPw5o/gN8t1V7BjNXaRqPjKueVX1/img.png)](https://blog.kakaocdn.net/dn/cRhJ1g/btrIXPtPw5o/gN8t1V7BjNXaRqPjKueVX1/img.png)
 
 **8.** marking 한 객체들을 비어있는 Survival 1으로 이동하고 sweep
+![[GC18.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/dsj6Og/btrIRHqHljJ/00JVcQ3KD1E8he6qejuLik/img.png)](https://blog.kakaocdn.net/dn/dsj6Og/btrIRHqHljJ/00JVcQ3KD1E8he6qejuLik/img.png)
+![[GC19.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/blilhe/btrISO4eRF3/sMVxubaUB19Sm1XsVJE90k/img.png)](https://blog.kakaocdn.net/dn/blilhe/btrISO4eRF3/sMVxubaUB19Sm1XsVJE90k/img.png)
 
 **10.** 다시 살아남은 모든 객체들은 age가 1씩 증가
+![[GC20.png]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/d8v4Vk/btrIXwVy4Uj/iGv5H94KNcZhQ0GufntWg0/img.png)](https://blog.kakaocdn.net/dn/d8v4Vk/btrIXwVy4Uj/iGv5H94KNcZhQ0GufntWg0/img.png)
 
 **11.** 이러한 과정을 반복
+![[GC21.gif]]
 
-[![java-Minor GC](https://blog.kakaocdn.net/dn/2WHEq/btrIUaeDqLG/qN0f490z0nGddd0Vl7ECdk/img.gif)](https://blog.kakaocdn.net/dn/2WHEq/btrIUaeDqLG/qN0f490z0nGddd0Vl7ECdk/img.gif)
 
 
 1. 새로 생성된 객체가 Eden 영역에 할당된다.
@@ -214,7 +210,7 @@ Minor GC를 정확히 이해하기 위해서는 Young 영역의 구조에 대해
 또한 Survivor 영역 중 1개는 반드시 사용이 되어야 한다. 만약 두 Survivor 영역에 모두 데이터가 존재하거나, 모두 사용량이 0이라면 현재 시스템이 정상적인 상황이 아님을 파악할 수 있다.
 
 이러한 진행 과정을 그림으로 살펴보면 다음과 같다.
-
+![[Pasted image 20231227163351.png]]
 ![](https://blog.kakaocdn.net/dn/Cyho2/btqURvZRql6/4a7u6mMGofkpuURKQz0RT1/img.png)
 
 HotSpot JVM에서는 Eden 영역에 객체를 빠르게 할당(Allocation)하기 위해 bump the pointer와 TLABs(Thread-Local Allocation Buffers)라는 기술을 사용하고 있다. bump the pointer란 Eden 영역에 마지막으로 할당된 객체의 주소를 캐싱해두는 것이다. bump the pointer를 통해 새로운 객체를 위해 유효한 메모리를 탐색할 필요 없이 마지막 주소의 다음 주소를 사용하게 함으로써 속도를 높이고 있다. 이를 통해 새로운 객체를 할당할 때 객체의 크기가 Eden 영역에 적합한지만 판별하면 되므로 빠르게 메모리 할당을 할 수 있다.

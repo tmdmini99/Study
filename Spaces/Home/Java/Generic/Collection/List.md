@@ -178,7 +178,7 @@ List<String> l2 = Collections.synchronizedList(new LinkedList<>());
 
 
 
-![[Pasted image 20231214154739.png]]
+![[Array vs Linked.png]]
 
 
 
@@ -857,8 +857,7 @@ Vector의 값을 삭제하는 방법입니다
     - 단방향 포인터 구조로 각 데이터에 대한 인덱스를 가지고 있어 조회 기능에 성능이 뛰어남  
 ArrayList란 Collection 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
 ArrayList는 자바에서 기본적으로 많이 사용되는 클래스입니다.
-
-![](https://blog.kakaocdn.net/dn/b10vWe/btq49R6wfJE/lnqP0STxU0wtvnSpXVC0U0/img.png)
+![[ArrayList1.png]]
 
 표준 배열보다는 느리지만 배열에서 많은 조작이 필요한 경우 유용하게 사용할 수 있습니다
 List 인터페이스에서 상속받아 사용이 됩니다

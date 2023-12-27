@@ -11,8 +11,8 @@ Set은 비선형 구조이기 때문에 '순서'의 개념과 '인덱스'가 존
 때문에 값을 추가 / 삭제 하는 경우 Set 내부에 해당 값을 검색하여 해당 기능을 수행해야 한다. 이로 인해 처리 속도가 List구조에 느리다는 것이 단점이다.
 
 
-![[Pasted image 20231211183405.png]]
- ![[Pasted image 20231211183416.png]]
+![[Set1.png]]
+ ![[Set2.png]]
 
 
 
@@ -317,7 +317,7 @@ TreeSet은 데이터를 저장할 시 이진탐색트리(BinarySearchTree)의 �
 
 ### 레드-블랙 트리(Red-Black Tree)
 
-![[Pasted image 20231211181537.png]]
+![[Red-Black tree.png]]
 
 
 TreeSet은 이진탐색트리 중에서도 성능을 향상시킨 레드-블랙 트리(Red-Black Tree)로 구현되어 있습니다. 
@@ -359,7 +359,7 @@ set.add(5);
 TreeSet에 값을 추가하려면 add(value) 메소드를 사용하면 됩니다. 
 입력되는 값이 TreeSet 내부에 존재하지 않는다면 그 값을 추가한 뒤 true를 반환하고 내부에 값이 존재한다면 false를 반환합니다.
 #### TreeSet에 값이 추가되는 과정
-![[Pasted image 20231211181812.png]]
+![[TreeSet1.png]]
 7,4,9,2,5를 차례대로 TreeSet에 저장한다면 위와같은 과정을 거치게 됩니다.
 
 

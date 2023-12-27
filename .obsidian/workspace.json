@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/List.md",
+                "file": "Spaces/Home/Java/JVM/Garbage Collection.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "5943b10adf81996f",
+            "id": "4b4fa27eab12c27a",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Pasted image 20231214154739.png"
+                "file": "Images/Pasted image 20231227163351.png"
               }
             }
           }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20231214154739.png",
+                "file": "Images/Pasted image 20231227163351.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20231214154739.png"
+                "file": "Images/Pasted image 20231227163351.png"
               }
             }
           },
@@ -156,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20231214154739.png",
+                "file": "Images/Pasted image 20231227163351.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -197,26 +197,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5943b10adf81996f",
+  "active": "4b4fa27eab12c27a",
   "lastOpenFiles": [
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
+    "Images/Pasted image 20231227163351.png",
+    "Images/GC21.gif",
+    "Images/GC20.png",
+    "Images/GC19.png",
+    "Images/GC18.png",
+    "Images/GC17.png",
+    "Images/GC16.png",
+    "Images/GC15.png",
+    "Images/GC14.png",
+    "Images/GC13.png",
+    "Spaces/Home/Java/Generic/Generic.md",
+    "Spaces/Home/Java/Generic/Collection/Set.md",
+    "Spaces/Home/Java/Generic/Collection/Map.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
-    "Images/LinkedList4.png",
-    "Images/LinkedList3.png",
-    "Images/LinkedList2.png",
-    "Images/LinkedList 순서 바꾸기.png",
-    "Images/단방향.png",
-    "Images/LinkedList.jpg",
-    "Images/arrayList.jpg",
-    "Images/자료구조.png",
     "Spaces/Home/Java/Generic/Collection/Iterator.md",
     "Spaces/Home/Java/Generic/Collection/Hash.md",
     "Spaces/Home/Java/Generic/Collection/Collection.md",
-    "Images/Collection.png",
     "Spaces/Home/Java/Class/Method.md",
     "Spaces/Home/Java/Class/Class.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/캡슐화/제어자.md",
-    "Images/modifier.png",
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
     "Spaces/Home/Java/추상화/인터페이스.md",
@@ -230,10 +234,6 @@
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
     "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/Data/Data  형태.md",
-    "Spaces/Home/API/Rest API.md",
-    "Spaces/Home/API/API.md",
-    "Spaces/Home/Data/CSV.md",
     "Images/PORT",
     "Images/PROTOCOL",
     "Images/COLLECTION",
