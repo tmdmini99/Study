@@ -210,17 +210,16 @@ Minor GC를 정확히 이해하기 위해서는 Young 영역의 구조에 대해
 또한 Survivor 영역 중 1개는 반드시 사용이 되어야 한다. 만약 두 Survivor 영역에 모두 데이터가 존재하거나, 모두 사용량이 0이라면 현재 시스템이 정상적인 상황이 아님을 파악할 수 있다.
 
 이러한 진행 과정을 그림으로 살펴보면 다음과 같다.
-![[Pasted image 20231227163351.png]]
-![](https://blog.kakaocdn.net/dn/Cyho2/btqURvZRql6/4a7u6mMGofkpuURKQz0RT1/img.png)
+![[GC21.png]]
 
-HotSpot JVM에서는 Eden 영역에 객체를 빠르게 할당(Allocation)하기 위해 bump the pointer와 TLABs(Thread-Local Allocation Buffers)라는 기술을 사용하고 있다. bump the pointer란 Eden 영역에 마지막으로 할당된 객체의 주소를 캐싱해두는 것이다. bump the pointer를 통해 새로운 객체를 위해 유효한 메모리를 탐색할 필요 없이 마지막 주소의 다음 주소를 사용하게 함으로써 속도를 높이고 있다. 이를 통해 새로운 객체를 할당할 때 객체의 크기가 Eden 영역에 적합한지만 판별하면 되므로 빠르게 메모리 할당을 할 수 있다.
+영역에 객체를 빠르게 할당(Allocation)하기 위해 bump the pointer와 TLABs(Thread-Local Allocation Buffers)라는 기술을 사용하고 있다. bump the pointer란 Eden 영역에 마지막으로 할당된 객체의 주소를 캐싱해두는 것이다. bump the pointer를 통해 새로운 객체를 위해 유효한 메모리를 탐색할 필요 없이 마지막 주소의 다음 주소를 사용하게 함으로써 속도를 높이고 있다. 이를 통해 새로운 객체를 할당할 때 객체의 크기가 Eden 영역에 적합한지만 판별하면 되므로 빠르게 메모리 할당을 할 수 있다.
 
 싱글 쓰레드 환경이라면 문제가 없겠지만 멀티쓰레드 환경이라면 객체를 Eden 영역에 할당할 때 락(Lock)을 걸어 동기화를 해주어야 한다. 멀티 쓰레드 환경에서의 성능 문제를 해결하기 위해 HotSpot JVM은 추가로 TLABs(Thread-Local Allocation Buffers)라는 기술을 도입하게 되었다. TLABs(Thread-Local Allocation Buffers)란 각각의 쓰레드마다 Eden 영역에 객체를 할당하기 위한 주소를 부여함으로써 동기화 작업 없이 빠르게 메모리를 할당하도록 하는 기술이다. 각각의 쓰레드는 자신이 갖는 주소에만 객체를 할당함으로써 동기화 없이 bump the poitner를 통해 빠르게 객체를 할당하도록 하고 있다.
 
 ### **[ Major GC의 동작 방식 ]**
 
 Young 영역에서 오래 살아남은 객체는 Old 영역으로 Promotion됨을 확인할 수 있었다. 그리고 Major GC는 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 발생하게 된다. Young 영역은 일반적으로 Old 영역보다 크키가 작기 때문에 GC가 보통 0.5초에서 1초 사이에 끝난다. 그렇기 때문에 Minor GC는 애플리케이션에 크게 영향을 주지 않는다. 하지만 Old 영역은 Young 영역보다 크며 Young 영역을 참조할 수도 있다. 그렇기 때문에 Major GC는 일반적으로 Minor GC보다 시간이 오래걸리며, 10배 이상의 시간을 사용한다. 참고로 Young 영역과 Old 영역을 동시하 처리하는 GC는 Full GC라고 한다.
-![[Pasted image 20231219103743.png]]
+![[GC22.png]]
 Old Generation은 길게 살아남는 메모리들이 존재하는 공간이다.
 
 Old Generation의 객체들은 거슬러 올라가면 처음에는 Young Generation에 의해 시작되었으나, GC 과정 중에 제거되지 않은 경우 age 임계값이 차게되어 이동된 녀석들이다.
@@ -230,22 +229,20 @@ Old Generation의 객체들은 거슬러 올라가면 처음에는 Young Generat
 > Major GC는 Full GC라고도 불리운다
 
 Minor GC와 Major GC 차이점을 표로 정리하면 다음과 같이 된다.
-
-[![java-Major GC](https://blog.kakaocdn.net/dn/bQinW1/btrIOSeHYMd/rd1iSnwNConXoRVWiDvDS0/img.png)](https://blog.kakaocdn.net/dn/bQinW1/btrIOSeHYMd/rd1iSnwNConXoRVWiDvDS0/img.png)
+![[GC23.png]]
 
 ---
 
 **1.** 객체의 age가 임계값(여기선 8로 설정)에 도달하게 되면,
-
-[![java-Major GC](https://blog.kakaocdn.net/dn/c3ZKIh/btrITnE39P2/cL0xncLtqvQxqOmxmyt8V0/img.png)](https://blog.kakaocdn.net/dn/c3ZKIh/btrITnE39P2/cL0xncLtqvQxqOmxmyt8V0/img.png)
+![[GC24.png]]
 
 **2.** 이 객체들은 Old Generation 으로 이동된다. 이를 promotion 이라 부른다.
+![[GC25.png]]
 
-[![java-Major GC](https://blog.kakaocdn.net/dn/GJGPb/btrIUmFRmQO/SZDmkA2vbBcqKcXrNiIhOk/img.png)](https://blog.kakaocdn.net/dn/GJGPb/btrIUmFRmQO/SZDmkA2vbBcqKcXrNiIhOk/img.png)
 
 **3.** 위의 과정이 반복되어 Old Generation 영역의 공간(메모리)가 부족하게 되면 Major GC가 발생되게 된다.
+![[GC26.gif]]
 
-[![java-Major GC](https://blog.kakaocdn.net/dn/mnBRi/btrIUm6WXIl/obIsxDpns6wEkkKfjdvLCK/img.gif)](https://blog.kakaocdn.net/dn/mnBRi/btrIUm6WXIl/obIsxDpns6wEkkKfjdvLCK/img.gif)
 
 **Major GC**는 Old 영역은 데이터가 가득 차면 GC를 실행하는 단순한 방식이다. 
 
@@ -273,7 +270,8 @@ Major GC가 일어나면 Thread가 멈추고 Mark and Sweep 작업을 해야 해
 
 ### **[ Garbage Collection(가비지 컬렉션) 내용 요약 ]**
 
-![](https://blog.kakaocdn.net/dn/dM4wqf/btqUWs2lW8H/GvRECmsUIfZ2jhDoKhSCD0/img.png)
+![[Pasted image 20231227163555.png]]
+
 
 
 
@@ -302,7 +300,7 @@ Serial GC는 서버의 CPU 코어가 1개일 때 사용하기 위해 개발되�
 - GC를 처리하는 쓰레드가 1개 (싱글 쓰레드) 이어서 가장 stop-the-world 시간이 길다
 - Minor GC 에는 Mark-Sweep을 사용하고, Major GC에는 Mark-Sweep-Compact를 사용한다.
 -  보통 실무에서 사용하는 경우는 없다 (디바이스 성능이 안좋아서 CPU 코어가 1개인 경우에만 사용) 
-![[Pasted image 20231219103939.png]]
+![[GC26.png]]
 
 
 
@@ -331,7 +329,7 @@ Parallel Old GC는 JDK5 update6부터 제공한 GC이며, 앞서 설명한 Paral
 - Serial GC와 기본적인 알고리즘은 같지만, Young 영역의 Minor GC를 멀티 쓰레드로 수행 (Old 영역은 여전히 싱글 쓰레드)
 - Serial GC에 비해 stop-the-world 시간 감소
 
-![[Pasted image 20231219104049.png]]
+![[GC27.png]]
 
 #### **Parallel GC 실행 명령어**
 
@@ -351,7 +349,7 @@ java -XX:+UseParallelGC -jar Application.java
 - 새로운 가비지 컬렉션 청소 방식인 Mark-Summary-Compact 방식을 이용 (Old 영역도 멀티 쓰레드로 처리)
 
 
-![[Pasted image 20231219104223.png]]
+![[GC28.png]]
 
 
 #### **Parallel Old GC 실행 명령어**
@@ -368,8 +366,7 @@ java -XX:+UseParallelOldGC -jar Application.java
 ### **[ CMS(Concurrent Mark Sweep) GC ]**
 
 CMS(Concurrent Mark Sweep) GC는 Parallel GC와 마찬가지로 여러 개의 쓰레드를 이용한다. 하지만 기존의 Serial GC나 Parallel GC와는 다르게 Mark Sweep 알고리즘을 Concurrent하게 수행하게 된다.
-
-![](https://blog.kakaocdn.net/dn/exiT4S/btqURuUWjwY/Wsh133bXvARXfGMunpvSh1/img.png)
+![[GC29.png]]
 
 이러한 CMS GC는 애플리케이션의 지연 시간을 최소화 하기 위해 고안되었으며, 애플리케이션이 구동중일 때 프로세서의 자원을 공유하여 이용가능해야 한다. CMS GC가 수행될 때에는 자원이 GC를 위해서도 사용되므로 응답이 느려질 순 있지만 응답이 멈추지는 않게 된다.
 
@@ -396,7 +393,7 @@ G1(Garbage First) GC는 장기적으로 많은 문제를 일으킬 수 있는 CM
 
 기존의 GC 알고리즘에서는 Heap 영역을 물리적으로 Young 영역(Eden 영역과 2개의 Survivor 영역)과 Old 영역으로 나누어 사용하였다. G1 GC는 Eden 영역에 할당하고, Survivor로 카피하는 등의 과정을 사용하지만 물리적으로 메모리 공간을 나누지 않는다. 대신 Region(지역)이라는 개념을 새로 도입하여 Heap을 균등하게 여러 개의 지역으로 나누고, 각 지역을 역할과 함께 논리적으로 구분하여(Eden 지역인지, Survivor 지역인지, Old 지역인지) 객체를 할당한다.
 
-![](https://blog.kakaocdn.net/dn/dHxPiT/btqU0xWGaDI/wriFcFKPHND5pTAsyn47X1/img.png)
+![[GC30.png]]
 
 G1 GC에서는 Eden, Survivor, Old 역할에 더해 Humonogous와 Availabe/Unused라는 2가지 역할을 추가하였다. Humonguous는 Region 크기의 50%를 초과하는 객체를 저장하는 Region을 의미하며, Availabe/Unused는 사용되지 않은 Region을 의미한다. 
 
@@ -435,7 +432,7 @@ java -XX:+UseG1GC -jar Application.java
 - Garbage로 가득찬 영역을 빠르게 회수하여 빈 공간을 확보하므로, 결국 GC 빈도가 줄어드는 효과를 얻게 되는 원리
 
 
-![[Pasted image 20231219104351.png]] ![[Pasted image 20231219104404.png]]
+![[GC31.png]] ![[Pasted image 20231219104404.png]]
 
 **[ G1 GC의 효율성 ]**  
 Java9+ 부터 기본 GC로 자리잡은 G1 GC에서는 이전의 GC들처럼 일일히 메모리를 탐색해 객체들을 제거하지 않는다.   
@@ -453,7 +450,8 @@ Java9+ 부터 기본 GC로 자리잡은 G1 GC에서는 이전의 GC들처럼 일
 - 기존 CMS가 가진 단편화, G1이 가진 pause의 이슈를 해결
 - 강력한 Concurrency와 가벼운 GC 로직으로 heap 사이즈에 영향을 받지 않고 일정한 pause 시간이 소요가 특징
 
-[![Shenandoah GC](https://blog.kakaocdn.net/dn/lHh4s/btrISNkkpMV/cuFxgmAT0DuafPhABn0L00/img.png)](https://blog.kakaocdn.net/dn/lHh4s/btrISNkkpMV/cuFxgmAT0DuafPhABn0L00/img.png)
+![[GC32.png]]
+
 
 #### **Shenandoah GC 실행 명령어**
 
@@ -472,7 +470,8 @@ java -XX:+UseShenandoahGC -jar Application.java
 - G1의 Region 처럼,  ZGC는 ZPage라는 영역을 사용하며, G1의 Region은 크기가 고정인데 비해, ZPage는 2mb 배수로 동적으로 운영됨. (큰 객체가 들어오면 2^ 로 영역을 구성해서 처리)
 - ZGC가 내세우는 최대 장점 중 하나는 힙 크기가 증가하더도 'stop-the-world'의 시간이 절대 10ms를 넘지 않는다는 것
 
-[![ZGC](https://blog.kakaocdn.net/dn/IKx8x/btrIT9f9qjM/f1g0NHSGJI7ce9rfxPZyuk/img.png)](https://blog.kakaocdn.net/dn/IKx8x/btrIT9f9qjM/f1g0NHSGJI7ce9rfxPZyuk/img.png)
+![[GC33.png]]
+
 
 #### **Z** **GC 실행 명령어**
 

@@ -28,10 +28,11 @@
 
 ## ▶ JVM 구조와 작동 원리
 
-![JVM 구조 - (출처는 맨 하단에 기재)](https://blog.kakaocdn.net/dn/cssiwB/btrDAQE2Zod/U7NTDqHKKGkKqpG3jOlBX0/img.png)
+![[JVM1.png]]
 
 
-![[Pasted image 20231218121117.png]]
+
+![[JVM2.png]]
 
 
 
@@ -45,10 +46,10 @@ JVM 구조 - (출처는 맨 하단에 기재)
 JVM내로 클래스파일(.class)를 로드하고, 링크를 통해 배치하는 작업을 수행하는 모듈이다. Runtime 시점에 클래스를 로딩하게 해 주며 클래스의 인스턴스를 생성하면 클래스 로더를 통해 메모리에 로드하게 된다.
 
 
-![[Pasted image 20231221135408.png]]
+![[JVM3.png]]
 클래스 파일의 로딩 순서는 다음과 같이 3단계로 구성된다. (Loading → Linking → Initialization)
 
-![[Pasted image 20231221135555.png]]
+![[JVM4.png]]
 
 - **Loading(로드)** : 클래스 파일을 가져와서 JVM의 메모리에 로드한다.
 - **Linking(링크)** : 클래스 파일을 사용하기 위해 검증하는 과정이다.
@@ -77,7 +78,7 @@ JVM내로 클래스파일(.class)를 로드하고, 링크를 통해 배치하는
 **네이티브 코드**란,JAVA에서 부모가 되는 C언어나, C++, 어셈블리어로 구성된 코드를 의미한다.
 
 
-![[Pasted image 20231221135630.png]]
+![[JVM5.png]]
 
 
 
@@ -93,7 +94,8 @@ JVM내로 클래스파일(.class)를 로드하고, 링크를 통해 배치하는
 
 Runtime Data Area에는 또다시 **Method Area, Heap, PC Registers, Java Stacks, Native Method Stacks**로 나누어진다.
 
-![Runtime Data Area - (출처는 맨 하단에 기재)](https://blog.kakaocdn.net/dn/XLtjO/btrDyGDpp0C/K8wEGphqloy5uKZTC08Y7k/img.png)
+![[JVM6.png]]
+
 
 Runtime Data Area 
 
@@ -104,7 +106,7 @@ Runtime Data Area
 - JVM은 스택 기반의 가상 머신으로, CPU에 직접 접근하지 않고 [[Stack]]에서 주소를 뽑아서 가져온다. 가져온 주소는  PC Register에 저장된다.
 - 따라서, 현재 어떤 명령을 실기록을 담당
 
-![[Pasted image 20231221140100.png]]행해야 할 지에 대한 
+![[JVM7.png]]행해야 할 지에 대한 
 
 만약에 스레드가 자바 메소드를 수행하고 있으면 JVM 명령(Instruction)의 주소를 PC Register에 저장한다.
 
@@ -116,7 +118,7 @@ Runtime Data Area
 - 프로그램 실행 시 임시로 할당되었다가 메서드를 빠져나가게 되면 소멸되는 특성의 데이터들이 저장되는 영역
 - 메서드 호출 시마다 스택에 각각의 스택 프레임이 생성되고, 수행이 끝나면 스택 포인트에서 해당 프레임을 제거
 
-![[Pasted image 20231221140205.png]]
+![[JVM8.png]]
 
 자료구조 Stack은 마지막에 들어온 값이 먼저 나가는 LIFO  구조로 push와 pop 기능 사용방식으로 동작한다.
 
@@ -131,7 +133,7 @@ Runtime Data Area
 - 참조타입 변수는 힙 영역이나 메소드 영역의 객체 주소를 가진다.
 - 
 
-![[Pasted image 20231221140257.png]]
+![[JVM9.png]]
 
 
 스택 영역은 각 스레드마다 하나씩 존재하며, 스레드가 시작될 때 할당된다.
@@ -143,7 +145,7 @@ Runtime Data Area
 쓰레드를 종료하면 런타임 스택도 사라진다.
 
 
-![[Pasted image 20231221140323.png]]
+![[JVM10.png]]
 
 
 #### **▷ Native Method Stacks**
@@ -152,7 +154,7 @@ Runtime Data Area
 - Kernel이 자체적으로 Stack을 잡아 독자적으로 프로그램을 실행시키는 영역
 - 사용되는 메모리 영역으로는 일반적인 C 스택을 사용한다.
 
-![[Pasted image 20231221140019.png]]
+![[JVM11.png]]
 #### **▷ Heap**
 
 - [[Garbage Collection|GC(가비지 컬렉션)]]의 대상이 되는 영역
@@ -164,16 +166,16 @@ Runtime Data Area
 
 당연히 Method Area 영역에 저장된 클래스만이 생성이 되어 적재된다
 
-![[Pasted image 20231221140411.png]]
+![[JVM12.png]]
 
 **※ 힙 영역의 사용기간 및 스레드 공유 범위**  
 - 객체가 더 이상 사용되지 않거나 명시적으로 null 선언 시   
 - GC(Garbage Collection) 대상
 
 
-![[Pasted image 20231221140443.png]]
+![[JVM13.png]]
 
-![[Pasted image 20231221140513.png]]
+![[JVM14.png]]
 
 
 
@@ -198,7 +200,7 @@ Runtime Data Area
 
 
 
-![[Pasted image 20231221135744.png]]
+![[JVM15.png]]
 
 
 ## **▶ JVM의 주요 장점**

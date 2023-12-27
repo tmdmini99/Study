@@ -124,7 +124,7 @@ str = str + " world";
 System.out.println(str); // hello world
 ```
 
-[![java-string](https://blog.kakaocdn.net/dn/OngYs/btrJNkniOBK/Kj8NYtK9neoy1JKqxs8Yh1/img.png)](https://blog.kakaocdn.net/dn/OngYs/btrJNkniOBK/Kj8NYtK9neoy1JKqxs8Yh1/img.png)
+![[StringBuffer&StringBuilder1.png]]
 
 이외에도 문자열을 다루는데 있어 가장 많이 사용하는 trim 이나toUpperCase 메소드 사용 형태를 보면, 문자열이 변경되는 것 처럼 생각 될 수도 있지만 해당 메소드 수행 시 또 다른 String 객체를 생성하여 리턴할 뿐이다.
 
@@ -158,7 +158,8 @@ String 객체는 한번 생성되면 불변적인 특징 때문에 값을 업데
 
 StringBuffer / StringBuilder 는 가변성 가지기 때문에 .append().delete() 등의 API를 이용하여 동일 객체내에서 문자열 크기를 변경하는 것이 가능하다.
 
-[![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/bs470d/btrJQ2zSLaW/vphjS7LM84BKxI5jnSy9B0/img.png)](https://blog.kakaocdn.net/dn/bs470d/btrJQ2zSLaW/vphjS7LM84BKxI5jnSy9B0/img.png)
+![[StringBuffer&StringBuilder2.png]]
+
 
 따라서 값이 변경될 때마다 새롭게 객체를 만드는 String 보다 훨씬 빠르기 때문에, 문자열의 추가, 수정, 삭제가 빈번하게 발생할 경우라면 String 클래스가 아닌 StringBuffer / StringBuilder를 사용하는 것이 이상적이라 말할 수 있다.
 
@@ -204,9 +205,11 @@ StringBuffer sb= new StringBuffer("*");
 sb.append("*********");
 ```
 
-  
 
-[![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/cF9aG4/btrJCoh7Ggl/ssXtC4Hk2uMj2Wk52MnwmK/img.png)](https://blog.kakaocdn.net/dn/cF9aG4/btrJCoh7Ggl/ssXtC4Hk2uMj2Wk52MnwmK/img.png)[![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/b5yFcL/btrJAqV28gw/TB6UBb7LZLxxoPbyZI83KK/img.png)](https://blog.kakaocdn.net/dn/b5yFcL/btrJAqV28gw/TB6UBb7LZLxxoPbyZI83KK/img.png)
+
+![[StringBuffer&StringBuilder3.png]]
+![[StringBuffer&StringBuilder4.png]]
+
 
 String 객체일 경우 매번 별 문자열이 업데이트 될때마다 계속해서 메모리 블럭이 추가되게 되고, 일회용으로 사용된 이 메모리들은 후에 Garbage Collector(GC)의 제거 대상이 되어 빈번하게 Minor GC를 일으켜 Full GC(Major Gc)를 일으킬수 있는 원인이 된다. 
 반면 StringBuffer는 위 사진 처럼 자체 메모리 블럭에서 늘이고 줄이고를 할수 있기 때문에 훨씬더 효율적으로 문자열 데이터를 다룰 수 있다는 것을 볼 수 있다.
@@ -269,6 +272,7 @@ System.out.println(sb_tmp.equals(sb2_tmp)); // true
 
 사실 자바는 문자열에 + 연산을 사용하면, 컴파일 전 내부적으로 StringBuilder 클래스를 만든 후 다시 문자열로 돌려준다고 한다.
 
+![[Pasted image 20231227164354.png]]
 [![java-StringBuffer-StringBuilder](https://blog.kakaocdn.net/dn/bYHqK3/btrJCoJdVdL/2b6a2stQ8xSE3KlU0UMfD1/img.png)](https://blog.kakaocdn.net/dn/bYHqK3/btrJCoJdVdL/2b6a2stQ8xSE3KlU0UMfD1/img.png)
 
 즉, "hello" + "world" 문자열 연산이 있다면 이는 new StringBuilder("hello").append("world").toString() 과 같다는 말이다.
