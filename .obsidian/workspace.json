@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "56d5a39097177f1e",
+        "id": "eb0a9323250d6783",
         "type": "tabs",
         "children": [
           {
-            "id": "00bddfdc80b9f46a",
+            "id": "ae4a611641adbd2e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2023-12-26.md",
+                "file": "Spaces/Home/Protocol/Port/Port.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,130 +21,17 @@
             }
           },
           {
-            "id": "7613f4870d278e96",
+            "id": "039d5c19f22b27bd",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Pasted image 20231222125207.jpg"
-              }
-            }
-          },
-          {
-            "id": "3863e994e3e6c303",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222125027.jpg"
-              }
-            }
-          },
-          {
-            "id": "3cf5438df959c4d1",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222124635.png"
-              }
-            }
-          },
-          {
-            "id": "679330828db71c69",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222124336.png"
-              }
-            }
-          },
-          {
-            "id": "33b83d0e67f57ba4",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222124336.png"
-              }
-            }
-          },
-          {
-            "id": "a0994f7e29ee35bb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222124332.png"
-              }
-            }
-          },
-          {
-            "id": "cafec3d1f52f2dca",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222124328.png"
-              }
-            }
-          },
-          {
-            "id": "17d99913a8385d74",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231222124314.png"
-              }
-            }
-          },
-          {
-            "id": "e476130897c0cb12",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231221142524.png"
-              }
-            }
-          },
-          {
-            "id": "3175645a6ecd8bbb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231221142512.png"
-              }
-            }
-          },
-          {
-            "id": "26174ff7abf4d884",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231221140513.png"
-              }
-            }
-          },
-          {
-            "id": "069da154db51c298",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Data/Data  형태.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "Images/port movement.png"
               }
             }
           }
         ],
-        "currentTab": 12
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -218,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md",
+                "file": "Images/port movement.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -246,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md"
+                "file": "Images/port movement.png"
               }
             }
           },
@@ -256,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/Data  형태.md",
+                "file": "Images/port movement.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -297,14 +184,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "069da154db51c298",
+  "active": "039d5c19f22b27bd",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Port/Port.md",
+    "Images/port.png",
+    "Images/PORT",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/DB/Oracle.md",
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/Data/HTML.md",
+    "Images/PROTOCOL",
+    "Images/COLLECTION",
+    "Images/MAP",
+    "Images/LIST",
+    "Images/HTML",
+    "Spaces/Home/Data/Data  형태.md",
+    "Images/Pasted image 20231211101644.png",
+    "Images/DATA/정형vs비정형.png",
+    "Images/Pasted image 20231227155002.png",
+    "Images/DATA",
+    "Images/DATA/정형,비정형,반정형.jpg",
+    "Images/27786B485715047219.gif",
+    "Images/0_w4ZmrsM9Z22HCL0s.webp",
+    "Images/1_EGRs3qcL6YDNGZdhxOXXEA.webp",
+    "Images/Pasted image 20231222125540.png",
+    "Images/Pasted image 20231221140513.png",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/Java/Generic/Collection/Iterator.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
-    "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Data/JSON.md",
-    "Spaces/Home/Data/Data  형태.md",
     "Spaces/Home/Data/CSV.md",
     "Spaces/Home/Protocol/Layer/TCPIP.md",
     "Spaces/Home/Protocol/Protocol.md",
@@ -314,37 +222,15 @@
     "Spaces/Home/API/API.md",
     "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/Protocol/IP.md",
-    "Spaces/Home/Protocol/Port/Port.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
-    "Images/W3E1x5BqrRingHUDAX2LW8fHs7DHHGeGgaTDQIw5wdZhcF1kP5P73zprvMhTijQ61XSyhUzIZIqG14pvzGXNeDO-Jje0CeIbgcM6GBqbjZxT4NZBVs_lEalwvMrpsCp23Qg-YeudLDVYzX8Xr2T40w.webp",
-    "Images/Pasted image 20231211101644.png",
-    "Images/0_w4ZmrsM9Z22HCL0s.webp",
-    "Images/1_EGRs3qcL6YDNGZdhxOXXEA.webp",
-    "Images/27786B485715047219.gif",
     "무제 파일.canvas",
-    "Images/Pasted image 20231213163142.png",
-    "Images/Pasted image 20231211183416.png",
-    "Images/Pasted image 20231211181812.png",
-    "Images/Pasted image 20231211181537.png",
-    "Images/Pasted image 20231221140100.png",
-    "Spaces/Home/DB/MySql.md",
     "daily note/2023-12-27.md",
     "Spaces/Home/Java/Java DB Connection.md",
     "daily note/2023-12-26.md",
     "daily note/2023-12-22.md",
-    "Spaces/Home/Java/Java DB 연결 방법.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB",
     "Spaces/Home/Data",
-    "Spaces/Home/Protocol/Port",
-    "Spaces/Home/Protocol/Layer",
-    "Spaces/Home/Data/Parsing",
-    "Spaces/Home/API",
-    "Spaces/Home/Protocol",
-    "Spaces/Home/Java/File",
-    "Spaces/Home/Spring",
-    "Spaces/Home/Spring/AOP"
+    "Spaces/Home/Protocol/Port"
   ]
 }

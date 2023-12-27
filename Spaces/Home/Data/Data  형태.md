@@ -35,7 +35,7 @@
 
 
 
-![[Pasted image 20231226105834.jpg]]
+![[정형,비정형,반정형.jpg]]
 
 
 
@@ -124,10 +124,9 @@ URL 형태로 존재 - HTML
 
 ## **정형 데이터와 비정형 데이터 비교**
 
-![](https://mblogthumb-phinf.pstatic.net/MjAyMjA3MDhfNTQg/MDAxNjU3MjYxNDIyMzQx.2yn_9gQu8_aEFJyxY6QjnP633ZsihAGNjNX8IqgVa8gg.amGbgmgqs4MDyfaSQzPsNZgOFDbjPeQbWZFOqQ56a3Mg.PNG.cocoscan/DryvIQ-Unstructured-VS-Structured-Data-Diagram-Light.png?type=w800)
 
-비정형 데이터와 정형 데이터 / dryviq.com
 
+![[정형vs비정형.png]]
 ​
 
 **1) 정의된 데이터와 정의되지 않은 데이터**
