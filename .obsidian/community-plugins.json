@@ -1,7 +1,5 @@
 [
   "obsidian-git",
-  "table-editor-obsidian",
-  "obsidian-table-generator",
   "make-md",
   "editing-toolbar",
   "calendar",
@@ -9,5 +7,7 @@
   "obsidian-excalidraw-plugin",
   "obsidian-contextual-typography",
   "obsidian-hider",
-  "dataview"
+  "dataview",
+  "table-editor-obsidian",
+  "obsidian-table-generator"
 ]
