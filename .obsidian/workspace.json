@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md",
+                "file": "daily note/2023-12-26.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md",
+                "file": "daily note/2023-12-26.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md"
+                "file": "daily note/2023-12-26.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md",
+                "file": "daily note/2023-12-26.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -174,11 +174,11 @@
   },
   "active": "00bddfdc80b9f46a",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Java DB Connection.md",
     "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/Protocol/Protocol.md",
     "daily note/2023-12-26.md",
     "daily note/2023-12-22.md",
-    "Spaces/Home/Java/Java DB Connection.md",
     "Spaces/Home/Java/Java DB 연결 방법.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/MySql.md",
