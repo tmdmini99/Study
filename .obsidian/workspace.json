@@ -13,20 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/API/Rest API.md",
+                "file": "Spaces/Home/Data/Data  형태.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "769389e5272a1fc4",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20231219104404.png"
               }
             }
           }
@@ -104,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/LIST/단방향.png",
+                "file": "Spaces/Home/Data/Data  형태.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/LIST/단방향.png"
+                "file": "Spaces/Home/Data/Data  형태.md"
               }
             }
           },
@@ -142,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/LIST/단방향.png",
+                "file": "Spaces/Home/Data/Data  형태.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -183,24 +173,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Images/API",
-    "Images/AOP/AOP11.png",
-    "Images/AOP/AOP10.png",
-    "Images/AOP/AOP9.png",
-    "Images/AOP/AOP8.png",
-    "Images/AOP/AOP7.png",
-    "Images/AOP/AOP14.png",
-    "Images/AOP/AOP13.png",
-    "Images/AOP/AOP12.png",
-    "Images/AOP/AOP6.png",
-    "Images/AOP/AOP5.png",
-    "Images/다형성",
+    "Images/LIST/단방향.png",
+    "Images/Set/TreeSet1.png",
+    "Images/다형성/this 사용법1.png",
+    "Images/다형성/this 실행결과.png",
+    "Images/PORT/this main.png",
+    "Images/PORT/TCPUDP5.png",
+    "Images/PORT/TCPUDP4.jpg",
+    "Images/PORT/TCPUDP1.png",
+    "Images/PORT/TCPUDP3.jpg",
+    "Images/PORT/TCPUDP2.png",
+    "Images/무제 폴더",
+    "Images/PROTOCOL/TCPIP3.gif",
+    "Images/String",
+    "Images/Stack",
+    "Images/Process",
+    "Images/Set",
+    "Images/Rest",
+    "Images/SQL",
+    "Images/JVM",
+    "Images/HTTP",
+    "Images/GC",
     "Spaces/Home/Java/캡슐화/제어자.md",
-    "Images/OOP",
-    "Images/AOP",
-    "Images/제어자",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/추상화/추상클래스.md",
@@ -225,12 +221,6 @@
     "Spaces/Home/Data/CSV.md",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/API/Open API.md",
-    "Images/PORT",
-    "Images/PROTOCOL",
-    "Images/COLLECTION",
-    "Images/MAP",
-    "Images/LIST",
-    "Images/HTML",
     "무제 파일.canvas"
   ]
 }
