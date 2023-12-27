@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/IP.md",
+                "file": "Spaces/Home/Protocol/Protocol.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/IP.md",
+                "file": "Spaces/Home/Protocol/Protocol.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/IP.md"
+                "file": "Spaces/Home/Protocol/Protocol.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/IP.md",
+                "file": "Spaces/Home/Protocol/Protocol.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,6 +188,9 @@
   },
   "active": "7613f4870d278e96",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Layer/TCPIP.md",
+    "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
+    "Spaces/Home/Protocol/IP.md",
     "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/Protocol/Port/Port.md",
     "Spaces/Home/Protocol/Protocol.md",
@@ -213,10 +216,7 @@
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Data/Data  형태.md",
-    "Spaces/Home/Data/XML.md",
-    "Spaces/Home/API/API.md",
     "Images/Pasted image 20231226134220.png",
-    "Spaces/Home/Protocol/Http/Http.md",
     "Images/Pasted image 20231226113008.png",
     "Images/Pasted image 20231226112653.png",
     "Images/Pasted image 20231226110942.png",
