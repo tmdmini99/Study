@@ -13,10 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md",
+                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "5dee3da0ea292359",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/class.forName()/ClassForName1.jpg"
               }
             }
           }
@@ -94,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md",
+                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md"
+                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md"
               }
             }
           },
@@ -132,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Java DB Connection.md",
+                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +183,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ae4a611641adbd2e",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Java DB/Class.forName(driver).md",
+    "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
+    "Spaces/Home/Java/Java DB",
+    "Spaces/Home/Java/Java DB/Java DB Connection.md",
+    "Images/class.forName()",
+    "Images/class.forName()/ClassForName1.jpg",
     "Spaces/Home/Java/Annotation.md",
-    "Spaces/Home/Java/Java DB Connection.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/Oracle.md",
@@ -205,8 +220,6 @@
     "Images/PORT/TCPUDP5.png",
     "Images/PORT/TCPUDP4.jpg",
     "Images/PORT/TCPUDP1.png",
-    "Images/PORT/TCPUDP3.jpg",
-    "Images/무제 폴더",
     "Images/String",
     "Images/Stack",
     "Images/Process",
@@ -215,12 +228,8 @@
     "Images/SQL",
     "Images/JVM",
     "Images/HTTP",
-    "Images/GC",
     "Spaces/Home/Java/캡슐화/제어자.md",
     "Spaces/Home/Java/캡슐화/캡슐화.md",
-    "Spaces/Home/Java/추상화/추상화.md",
-    "Spaces/Home/Java/추상화/추상클래스.md",
-    "Spaces/Home/Java/추상화/인터페이스.md",
-    "Spaces/Home/Java/상속/this.md"
+    "Spaces/Home/Java/추상화/추상화.md"
   ]
 }

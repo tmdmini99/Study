@@ -30,6 +30,7 @@
 2. driver를 메모리에 로딩
 	- 1번에서 driver를 생략 했으면 생략 가능
 	Class.forName(driver);
+	
 
 3. DB 연결
 	Connection con = DriverManger.getConnection(url, username, password)
@@ -100,7 +101,6 @@
 
 
 
-
 ---
 참조- https://itstudy402.tistory.com/79
 
@@ -109,12 +109,13 @@
 
 https://fora.tistory.com/71
 
-https://brilliantdevelop.tistory.com/54 - classforName
+
 
 
 https://smile-place.tistory.com/entry/JAVA-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-OPEN-API-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0
 
 
-
-
 https://programmingbeginner.tistory.com/124
+
+
+https://itstudy-mary.tistory.com/101
