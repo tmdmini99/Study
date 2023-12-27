@@ -285,3 +285,4 @@ OracleDriver 및 기타 DBDriver를 전부 로드해야합니다.
 
 ---
 참조 - https://brilliantdevelop.tistory.com/54 - classforName
+https://devyongsik.tistory.com/m/294
