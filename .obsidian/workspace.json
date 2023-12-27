@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
+                "file": "Spaces/Home/Java/Java DB/Class.forName(driver).md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
+                "file": "Spaces/Home/Java/Java DB/Class.forName(driver).md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md"
+                "file": "Spaces/Home/Java/Java DB/Class.forName(driver).md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
+                "file": "Spaces/Home/Java/Java DB/Class.forName(driver).md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,8 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Images/JDBC.png",
     "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
+    "Images/JDBC.png",
     "Spaces/Home/Java/Java DB/Class.forName(driver).md",
     "Spaces/Home/Java/Java DB",
     "Spaces/Home/Java/Java DB/Java DB Connection.md",

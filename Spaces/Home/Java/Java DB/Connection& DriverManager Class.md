@@ -106,9 +106,7 @@
 
 3. Statement 객체는 쿼리 실행시 작은 따옴표( ' )가 들어 있으면 작은 따옴표를 두개 ( '' )로 표시해야 한다.
 
- 그러나 PreparedStatement 객체는 작은 따옴표의 문제를 쿼리 실행시 자동으로 처리하므로 신경 쓸 필요가 
-
- 없다.
+	 그러나 PreparedStatement 객체는 작은 따옴표의 문제를 쿼리 실행시 자동으로 처리하므로 신경 쓸 필요가  없다.
 
 ### 5. CallableStatement 인터페이스
 
@@ -178,16 +176,8 @@ conn.prepareCall("{call query1}")
 |   |   |
 |---|---|
 |1<br><br>2<br><br>3<br><br>4|`while(rs.next()){`<br><br>        `String name = getString(``"해당 컬럼명"``);`<br><br>        `String id = getString(``"해당 컬럼명"``);`<br><br>`}`|
-
-  
-
 - ResultSet 객체에서 현재 행에서 필드명 혹은 레코드셋에서의 위치를 통해서 어떤 필드의 값을 가져올 수 있는데, 때 getXxxx() 메소드를 제공한다.
-
-  
-
 - 해당 필드의 데이터 타입이 문자열이면 getString()이 되고, 해당 필드의 데이터 타입이 int이면 getInt()가 된다.
-
-  
 
 |   |   |   |   |
 |---|---|---|---|
