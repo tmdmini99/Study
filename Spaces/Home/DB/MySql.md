@@ -42,6 +42,15 @@ ex) grant select, insert, update on board.* to 'testId1'@'loalhost';
 ```
 
 
+```mysql
+'GRANT USAGE ON *.* TO `test`@`localhost`'
+
+```
+
+`GRANT USAGE`는 사용자가 MySQL 서버에 접속할 수 있는 권한을 주는 동시에, 다른 권한(예: SELECT, INSERT 등)은 부여하지 않습니다. 따라서 사용자는 접속은 가능하지만, 특정 데이터베이스나 테이블에 대한 작업은 할 수 없습니다.
+`'GRANT USAGE ON *.* TO 'test'@'localhost'`는 `'test'@'localhost'` 사용자에게 MySQL 서버에 접속할 수 있는 권한을 부여하고, 다른 권한은 부여하지 않는 것을 의미합니다.
+
+
 ```
 //권한 적용
 FLUSH PRIVILEGES;
