@@ -175,6 +175,9 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Layer/TCPIP.md",
+    "Spaces/Home/Protocol/IP.md",
+    "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
     "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
@@ -218,9 +221,6 @@
     "Images/Rest",
     "Images/SQL",
     "Images/JVM",
-    "Images/HTTP",
-    "Spaces/Home/Java/캡슐화/제어자.md",
-    "Spaces/Home/Java/캡슐화/캡슐화.md",
-    "Spaces/Home/Java/추상화/추상화.md"
+    "Images/HTTP"
   ]
 }
