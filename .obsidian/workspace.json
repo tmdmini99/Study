@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md",
+                "file": "Spaces/Home/Java/캡슐화/제어자.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md",
+                "file": "Spaces/Home/Java/캡슐화/제어자.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md"
+                "file": "Spaces/Home/Java/캡슐화/제어자.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md",
+                "file": "Spaces/Home/Java/캡슐화/제어자.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,10 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/Java/객체.md",
+    "Spaces/Home/Spring/JPA.md",
     "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/DB/DataBase.md",
     "daily note/2023-12-29.md",
     "daily note/2023-12-28.md",
     "Spaces/Home/Protocol/Http/Http.md",
@@ -204,9 +206,7 @@
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/JVM/JVM.md",
     "Images/AOP/AOP2.png",
-    "Spaces/Home/Data/Parsing.md",
     "무제 파일.canvas",
-    "Spaces/Home/Data/Data  형태.md",
     "Images/LIST/단방향.png",
     "Images/Set/TreeSet1.png",
     "Images/다형성/this 사용법1.png",
