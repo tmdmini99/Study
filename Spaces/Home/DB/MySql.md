@@ -51,27 +51,7 @@
 |MEDIUMBLOB(n)|이진 데이터 타입 (최대 16777215byte)|
 |LONGBLOB(n)|이진 데이터 타입 (최대 4294967295byte)|
 
-
-
-
-
-
-| 형태 |  | 범위 | 크기 |
-| ---- | ---- | ---- | ---- |
-|  |  | -128 ~ 128 , 0 ~ 255 | 1 Byte |
-| SMALLINT | -32768 ~ 32767 , 0 ~ 65535 | 2 Byte |  |
-| MEDIUMINT | -8388608 ~ 8388607, 0 ~ 16777215 | 3 Byte |  |
-| INT, INTEGER | -2147483648 ~ 2147483647, 0 ~ 4294967295 | 4 Byte |  |
-| BIGINT | -9223372036854775808 ~ 9223372036854775807  <br>0 ~ 18446744073709551615 | 8 Byte |  |
-| FLOAT | -3.402823466E+38 ~ -1.175494351E-38  <br>1.175494351E-38 ~ 3.402823466E+38 | 4 Byte |  |
-| DOUBLE [PRECISION], REAL | 1.7976931348623157E+308 ~ -2.2250738585072014E-308  <br>0 ~ 2.2250738585072014E-308 | 8 Byte |  |
-| DECIMAL(M,D), NUMERIC(M,D) | 데이터 베이스 설정 및 시스템에 따라 다름 | 가변적 크기 |  |
-| 날자형 | DATE | '1000-01-01' ~ '9999-12-31' | 3 Byte |
-| TIME | '-838:59:59' ~ '838:59:59' | 3 Byte |  |
-| DATETIME | '1000-01-01 00:00:00' ~ '9999-12-31 23:59:59' | 8 Byte |  |
-| TIMESTAMP | '1970-01-01 00:00:01' ~ '2038-01-19 03:14:07' | 4 Byte |  |
-
-숫자 자동 증가
+### 숫자 자동 증가
 ```sql
 AUTO_INCREMENT PRIMARY KEY
 
@@ -81,10 +61,6 @@ CREATE TABLE 'test'(
 	'name' varchar(10) NOR NULL 
 );
 ```
-
-
-
-
 
 
 
@@ -600,3 +576,5 @@ SELECT IFNULL(name, '값이없습니다')
 https://rachel0115.tistory.com/entry/SQL-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC-SELECT-%EC%A0%88
 
 https://velog.io/@ejayjeon/MYSQL-1.-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1-%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC
+
+https://www.incodom.kr/DB_-_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%80%EC%9E%85/MYSQL#h_732744493db972e54a38219a89782ad6
