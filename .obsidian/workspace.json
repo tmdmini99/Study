@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Open API Insert.md",
+                "file": "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Open API Insert.md",
+                "file": "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Open API Insert.md"
+                "file": "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Open API Insert.md",
+                "file": "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,9 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Spaces/Home/Data/Data  형태.md",
     "Spaces/Home/Java/Java DB/Open API Insert.md",
+    "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
+    "Spaces/Home/Data/Data  형태.md",
     "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
     "Spaces/Home/Java/Java DB/Class.forName(driver).md",
@@ -204,7 +205,6 @@
     "Images/class.forName()/ClassForName1.jpg",
     "Spaces/Home/Java/Annotation.md",
     "Spaces/Home/Java/Generic/Collection/Hash.md",
-    "Spaces/Home/Java/Generic/Collection/Iterator.md",
     "Images/AOP/AOP2.png",
     "무제 파일.canvas",
     "Images/LIST/단방향.png",
