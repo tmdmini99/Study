@@ -2,6 +2,28 @@
 ### Data Type
 
 
+
+자동 번호 매기기
+```sql
+`ROW_NUMBER() OVER (ORDER BY SIGUN_NM ASC)`는 SQL에서 사용되는 윈도우 함수입니다. 이 함수는 결과 집합의 각 행에 순차적인 번호를 할당합니다.
+
+`ROW_NUMBER()` 함수는 `OVER` 절과 함께 사용되며, `OVER` 절 내부에 정렬 조건을 지정할 수 있습니다. 위의 쿼리에서는 `SIGUN_NM`을 오름차순으로 정렬하기 위해 `ORDER BY SIGUN_NM ASC`를 사용했습니다.
+
+따라서 `ROW_NUMBER() OVER (ORDER BY SIGUN_NM ASC)`는 `SIGUN_NM`을 기준으로 정렬한 후, 그 결과에 대해 각 행에 순차적인 번호를 할당하는 것을 의미합니다.
+
+이렇게 번호가 할당된 결과를 사용하면 각 행에 순차적인 식별자를 부여할 수 있습니다. 예를 들어, 결과 집합의 첫 번째 행은 `NUM` 값이 1이 되고, 두 번째 행은 2가 되는 식으로 번호가 할당됩니다.
+```
+
+
+```sql
+SELECT ROW_NUMBER() OVER (ORDER BY SIGUN_NM ASC) AS NUM, op.*
+```
+
+
+
+
+
+
 ## 문자형 데이터타입 
 
 |**데이터 유형**|**정의**|
@@ -578,3 +600,5 @@ https://rachel0115.tistory.com/entry/SQL-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%
 https://velog.io/@ejayjeon/MYSQL-1.-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1-%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC
 
 https://www.incodom.kr/DB_-_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%80%EC%9E%85/MYSQL#h_732744493db972e54a38219a89782ad6
+
+https://prostudy.tistory.com/2215 가상 컬
