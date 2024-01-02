@@ -3,6 +3,18 @@
 서버로 일정 주기 요청 송신
 
 
+
+![[Polling4.png]]
+
+일정한 주기로 서버에 요청(Request)을 보내는 방법.  
+`setTimeout`, `setInterval` 등으로 일정 주기마다 서버에 요청(Request)  
+불필요한 Request 와 Connection을 생성하여 서버에 부담
+요청 주기가 짧을 수록 부하가 커짐
+일정 주기마다' 요청을 보내는 것이기 때문에 실시간이라고 보기에 애매
+요청 주기가 짧으면 실시간 처럼 보이겠지만, 실제로 실시간은 x
+HTTP 통신을 하기 때문에 Request, Response 헤더가 불필요하게 크다.
+
+
 ![[Polling1.png]]
 
 
