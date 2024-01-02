@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Quartz/Quartz.md",
+                "file": "daily note/2024-01-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Quartz/Quartz.md",
+                "file": "daily note/2024-01-02.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Quartz/Quartz.md"
+                "file": "daily note/2024-01-02.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Quartz/Quartz.md",
+                "file": "daily note/2024-01-02.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,8 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Images/Quartz1.png",
     "Spaces/Home/Java/Quartz/Quartz.md",
+    "Images/Quartz1.png",
     "Spaces/Home/Java/Scheduler/Scheduler.md",
     "Spaces/Home/Java/Quartz",
     "Spaces/Home/Java/Random/Random.md",
