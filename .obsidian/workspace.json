@@ -13,25 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
-          },
-          {
-            "id": "7e8667f2628cd615",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20240102154104.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20240102154104.png",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20240102154104.png"
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
               }
             }
           },
@@ -143,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20240102154104.png",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,23 +173,26 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7e8667f2628cd615",
+  "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Images/Pasted image 20240102154104.png",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+    "Spaces/Home/Protocol/Http/Http.md",
+    "Spaces/Home/Protocol/Http/HTTP Polling.md",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
+    "Images/Polling3.png",
+    "Images/Polling2.png",
+    "Images/Polling1.png",
+    "Images/WebSocket1.png",
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Images/SSL3.png",
+    "Images/SSL2.png",
+    "Images/SSL1.png",
     "Spaces/Home/Protocol/Http/SSL",
     "Images/HTTPS7.png",
     "Images/HTTPS/HTTPS6.png",
     "Images/HTTPS/HTTPS4.png",
-    "Images/HTTPS/HTTPS5.png",
-    "Images/HTTPS/HTTPS3.png",
-    "Images/HTTPS/HTTPS2.png",
-    "Images/HTTPS/HTTPS1.jpg",
     "Images/HTTPS",
     "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/Protocol/Http/Http.md",
-    "Spaces/Home/Protocol/Http/HTTP위에서 실시간 통신하는 법.md",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/Java DB/Open API Insert.md",
     "Spaces/Home/Data/Data  형태.md",
@@ -220,11 +212,8 @@
     "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
     "Spaces/Home/Protocol/Port/Port.md",
     "Spaces/Home/API/Rest API.md",
-    "Spaces/Home/Protocol/IP.md",
-    "Images/SQL/JDBC.png",
     "Spaces/Home/Java/Java DB",
     "Images/class.forName()",
-    "Images/class.forName()/ClassForName1.jpg",
     "무제 파일.canvas",
     "Images/String",
     "Images/Stack",
