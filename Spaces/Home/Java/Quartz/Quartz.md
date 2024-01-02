@@ -26,6 +26,186 @@ Quartz 스케줄러를 시행하기 위해서는 적어도 아래와 같은 개�
 (3) Scheduler에 JobDetail과 Trigger를 이용해 Job을 스케줄링  
 (4) 정해진 시간마다 Scheduler가 Job을 호출하여 시행
 
+
+
+### [1. 클래스 및 인터페이스](https://adjh54.tistory.com/170#1.%20%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%B0%8F%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-1)
+
+---
+
+|   |   |
+|---|---|
+|**용어**|**설명**|
+|**Job**|실행할 작업에 대한 정보를 포함하는 클래스|
+|**JobDetail**|Job 클래스의 인스턴스와 Job 실행에 필요한 추가 정보를 포함하는 클래스|
+|**Trigger**|Job 실행을 스케줄링하기 위한 클래스|
+|**SimpleTrigger**|지정된 시간 간격으로 Job을 실행하기 위한 Trigger|
+|**CronTrigger**|Cron 표현식으로 Job을 스케줄링하기 위한 Trigger|
+|**Scheduler**|Job 실행과 Trigger 스케줄링을 관리하는 인터페이스|
+|**SchedulerFactory**|Scheduler 인스턴스를 생성하고 구성하기 위한 인터페이스|
+
+### 2. Job
+
+---
+
+> **💡 Job 이란?**  
+>   
+> **- Quarz에서 ‘실행할 작업을 정의’하는 인터페이스입니다.**  
+>   
+> - Job 인터페이스를 구현하여 자신이 실행하고자 하는 작업에 대해서 정의를 할 수 있으며 Quartz의 생명 주기에 따라 주기적으로 실행이 됩니다.
+
+### 3. Trigger
+
+---
+
+> **💡 Trigger 란?  
+> **  
+> **- ‘Job을 실행시키는 조건을 정의’하는 인터페이스입니다.**  
+>   
+> - 이를 통해 Job을 특정 시간에 실행하거나 주기적으로 실행하도록 설정할 수 있습니다.
+
+|   |   |
+|---|---|
+|**트리거**|**설명**|
+|**SimpleTrigger**|특정 시간 또는 주기적으로 한 번 실행되는 트리거입니다.|
+|**CronTrigger**|Cron 표현식을 사용하여 특정 시간에 실행되는 트리거입니다.|
+|**CalendarIntervalTrigger**|지정된 간격으로 주기적으로 실행되는 트리거입니다.|
+|**DailyTimeIntervalTrigger**|지정된 시간 범위 내에서 지정된 간격으로 주기적으로 실행되는 트리거입니다.|
+
+### 4. Scheduler
+
+---
+
+> **💡 Scheduler 란?**  
+>   
+> - Job과 Trigger를 ‘연결’하고 Job을 ‘실행 시’ 키는 역할을 수행하는 인터페이스입니다, 
+
+|   |   |
+|---|---|
+|**메서드**|**설명**|
+|**schedule(JobDetail jobDetail, Trigger trigger)**|JobDetail과 Trigger를 사용하여 Job을 스케줄링합니다.|
+|**scheduleJob(JobDetail jobDetail, Trigger trigger)**|schedule()과 같이 JobDetail과 Trigger를 사용하여 Job을 스케줄링합니다.|
+|**scheduleJob(Trigger trigger)**|JobDetail 없이 Trigger만 사용하여 Job을 스케줄링합니다.|
+|**rescheduleJob(TriggerKey triggerKey, Trigger newTrigger)**|지정된 Trigger의 스케줄을 업데이트합니다.|
+|**unscheduleJob(TriggerKey triggerKey)**|지정된 Trigger를 해제하여 Job 스케줄링을 취소합니다.|
+|**pauseTrigger(TriggerKey triggerKey)**|지정된 Trigger를 일시 중지합니다.|
+|**resumeTrigger(TriggerKey triggerKey)**|지정된 Trigger를 다시 시작합니다.|
+|**pauseJob(JobKey jobKey)**|지정된 Job을 일시 중지합니다.|
+|**resumeJob(JobKey jobKey)**|지정된 Job을 다시 시작합니다.|
+
+## 6 Trigger 상세
+
+---
+
+### [1. SimpleTrigger](https://adjh54.tistory.com/170#1.%20SimpleTrigger-1)
+
+---
+
+> **💡 SimpleTrigger란?**  
+>   
+> **- ‘특정 시간에 한 번 실행’하거나 ‘주기적으로 실행’할 수 있습니다.  
+> **  
+> - 예를 들어, "매일 9시에 실행" 또는 "10초마다 실행"과 같은 작업을 예약할 수 있습니다
+
+|   |   |
+|---|---|
+|**속성**|**설명**|
+|**repeatCount**|작업이 실행될 횟수를 지정합니다. 음이 아닌 정수 값이 될 수 있습니다. 0이 입력되면 작업이 무한히 실행됩니다.|
+|**repeatInterval**|작업이 실행되는 간격을 지정합니다. 밀리초 단위로 측정될 수 있는 어떤 정수 값이든 될 수 있습니다.|
+
+> **💡 사용 예시**  
+>   
+> - Job이 시작 시간(startTime)부터 10초 간격으로 5번 실행됩니다. repeatCount를 0으로 지정하면 무한히 실행됩니다.
+
+```java
+SimpleTrigger trigger = newTrigger()
+    .withIdentity("trigger1", "group1")
+    .startAt(startTime)
+    .withSchedule(simpleSchedule()
+        .withIntervalInSeconds(10)
+        .withRepeatCount(5))
+    .build();
+```
+
+### 2. CronTrigger
+
+---
+
+> **💡 CronTrigger란?**  
+> **  
+> - Cron 표현식을 사용하여 ‘지정된 시간에 작업을 예약’할 수 있습니다.  
+> **  
+> - Cron 표현식은 분, 시, 일, 월, 요일 등의 필드를 사용하여 작업을 예약할 수 있습니다.  
+> - 예를 들어, "월요일부터 금요일까지, 매일 오후 3시에 실행"과 같은 작업을 예약할 수 있습니다.
+
+|   |   |
+|---|---|
+|**속성명**|**설명**|
+|**cronExpression**|Cron 표현식을 나타내는 문자열입니다. 이 표현식은 CronTrigger가 실행될 시간을 정의합니다.|
+|**timeZone**|CronTrigger가 실행될 때 사용할 시간대를 나타내는 문자열입니다. 이 속성을 설정하지 않으면 기본값으로 서버의 시간대가 사용됩니다.|
+|**misfireInstruction**|CronTrigger가 실행되지 않은 경우 동작을 지정하는 데 사용되는 상수입니다. 예를 들어, misfireInstruction을 MISFIRE_INSTRUCTION_FIRE_ONCE_NOW로 설정하면 CronTrigger가 다음 실행 시간에 실행됩니다.|
+|**priority**|트리거의 우선 순위를 나타내는 숫자입니다. 높은 우선 순위 값을 가진 트리거는 낮은 우선 순위 값을 가진 트리거보다 먼저 실행됩니다.|
+
+> **💡 사용 예시**  
+> - 다음은 매주 월요일 오전 10시에 실행되는 CronTrigger의 예시입니다.
+
+```reasonml
+CronTrigger cronTrigger = TriggerBuilder.newTrigger()
+    .withIdentity("myTrigger", "group1")
+    .withSchedule(CronScheduleBuilder.cronSchedule("0 0 10 ? * MON"))
+    .build();
+```
+
+#### 2.1. Cron 표현식
+
+> 💡 Cron 표현식은 리눅스 시스템에서 주기적인 작업을 자동으로 수행하기 위해 사용되는 문법입니다.
+
+> **💡 cron 표현식 구성**  
+>   
+> **- 분, 시, 일, 월, 요일 순서로 입력됩니다.**
+
+```gherkin
+*    *    *    *    *
+-    -    -    -    -
+|    |    |    |    |
+|    |    |    |    +----- 요일 (0 - 6) (0이나 7이 일요일)
+|    |    |    +---------- 월 (1 - 12)
+|    |    +--------------- 일 (1 - 31)
+|    +-------------------- 시 (0 - 23)
++------------------------- 분 (0 - 59)
+
+```
+
+> **💡 cron 표현식 예시**
+
+|   |   |
+|---|---|
+|**Cron Expression**|**설명**|
+|* * * * *|매 분|
+|*/30 * * * *|30분마다|
+|30 5 * * *|매일 오전 5시 30분|
+|30 5 * * 1|매주 월요일 오전 5시 30분|
+|30 5 1 * *|매월 1일 오전 5시 30분|
+
+## 7 Quartz의 실행주기
+
+---
+
+> 💡 Quartz의 실행되는 단계입니다.
+
+|   |   |   |
+|---|---|---|
+|**단계**|**분류**|**설명**|
+|1|스케줄러 초기화|Quartz 스케줄러는 시작되면 먼저 스케줄러를 초기화합니다. 이 초기화 과정에서는 스케줄러에 대한 설정을 로드하고, 자바 애플리케이션 컨텍스트와 연결합니다.|
+|2|작업 스케줄링|Quartz 스케줄러는 작업 스케줄링을 수행합니다. 이 과정에서는 사용자가 등록한 작업을 실행할 시간을 계산하여 스케줄링 테이블에 등록합니다.|
+|3|작업 실행|스케줄링 된 작업이 실행됩니다. Quartz 스케줄러는 스케줄링 된 작업을 실행하기 위해 쓰레드 풀을 사용합니다.|
+|4|작업 완료|작업이 완료되면 Quartz 스케줄러는 작업이 완료되었다는 신호를 받습니다. 이 신호를 받으면 스케줄링 테이블에서 작업을 제거합니다.|
+|5|스케줄러 종료|Quartz 스케줄러는 애플리케이션 종료 시점에 스케줄러를 종료합니다. 이 과정에서는 스케줄링 된 작업을 모두 제거하고, 쓰레드 풀을 종료합니다.|
+
+
+
+
+
+
 ## Quartz 기본 구성 구현
 
 대략적인 구성을 알았으니 직접 코드로 구현해보겠습니다. Spring 없이 순수 Java 코드를 통해 구현한 예시입니다.
@@ -283,3 +463,5 @@ public class HelloJob implements Job {
 
 ---
  참조 - https://velog.io/@tjeong/Quartz-%EC%82%AC%EC%9A%A9%EB%B2%95-%EA%B3%B5%EC%9C%A0
+
+https://adjh54.tistory.com/170
