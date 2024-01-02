@@ -63,7 +63,7 @@ Plain text로 부터 JSON 데이터 및 XML과 같은 형태의 정보도 주고
 	클라이언트가 HTTP request를 서버에 보내면 서버는 HTTP response를 보내는 구조  
 	클라이언트와 서버의 모든 통신이 요청과 응답으로 이루어 진다.
 	
-	![[HTTP3.png]]
+	![[Images/HTTP/HTTP3.png]]
 
 
 
@@ -109,7 +109,7 @@ HTML 문서를 전송 받은 뒤 연결을 끊고 다시 연결하여 데이터�
 단순 동작(연결 수립, 동작, 연결 해제)이 반복되어 통신 부하 문제 발생  
 ex) 네이버 메인 페이지에 그림이 1개 있으면 연결,동작,해제가 10번 반복됨
 
-![[HTTP4.png]]
+![[Images/HTTP/HTTP4.png]]
 
 
 #### HTTP 1.1의 특징
@@ -125,7 +125,7 @@ HTTP 1.0과는 달리 Server가 갖는 하나의 IP Address와 다수의 Web Sit
 빠른 속도와 Internet Protocol 설계에 최적화될 수 있도록 Cache 사용  
 Data를 압축해서 전달이 가능하도록 하여 전달하는 Data 양이 감소
 
-![[HTTP6.png]]
+![[Images/HTTP/HTTP6.png]]
 
 
 # #Request (요청)

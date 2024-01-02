@@ -173,10 +173,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
-    "Spaces/Home/DB/MySql.md",
+    "Images/HTTP6.png",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+    "Images/HTTP5.png",
+    "Images/HTTP4.png",
+    "Images/HTTP3.png",
+    "Images/HTTPS2.png",
+    "Images/HTTPS1.jpg",
+    "Images/HTTPS",
+    "Spaces/Home/DB/MySql.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/HTTP위에서 실시간 통신하는 법.md",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
@@ -201,26 +208,18 @@
     "Spaces/Home/Protocol/IP.md",
     "Spaces/Home/Protocol/Layer/TCPIP.md",
     "Images/SQL/JDBC.png",
-    "daily note/2023-12-27.md",
     "Spaces/Home/Java/Java DB",
     "Images/class.forName()",
     "Images/class.forName()/ClassForName1.jpg",
     "Images/AOP/AOP2.png",
     "무제 파일.canvas",
     "Images/LIST/단방향.png",
-    "Images/Set/TreeSet1.png",
-    "Images/다형성/this 사용법1.png",
-    "Images/다형성/this 실행결과.png",
-    "Images/PORT/this main.png",
-    "Images/PORT/TCPUDP5.png",
-    "Images/PORT/TCPUDP4.jpg",
     "Images/String",
     "Images/Stack",
     "Images/Process",
     "Images/Set",
     "Images/Rest",
     "Images/SQL",
-    "Images/JVM",
-    "Images/HTTP"
+    "Images/JVM"
   ]
 }
