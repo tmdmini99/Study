@@ -66,6 +66,13 @@
 
 
 
+## 웹 소켓 프로토콜 특징
+
+- 최초 접속시에만 http프로토콜 위에서 handshaking을 하기 때문에 http header를 사용한다
+- 웹소켓을 위한 별도의 포트는 없고, 기존 포트를 사용한다
+- 프레임으로 구성된 메시지라는 논리적 단위로 송수신 한다
+- 메시지에 포함될 수 있는 교환 가능한 메시지는 텍스트와 바이너리 뿐이다
+
 
 
 
@@ -104,4 +111,5 @@ https://velog.io/@stbpiza/%EC%9B%B9%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%ED%86%A
 
 https://velog.io/@bnb8419/Socket.io%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EC%B1%84%ED%8C%85%EA%B5%AC%ED%98%84 
 
-http polling
+
+https://velog.io/@codingbotpark/Web-Socket-%EC%9D%B4%EB%9E%80
