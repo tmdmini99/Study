@@ -350,9 +350,80 @@ thread 종료
 ### interrupt()
 thread가 sleep(), wait(), join() 함수에 의해 non-runnable 상태일 때 interrupt()를 호출하면 다시 runnable 상태가 된다
 
-
+---
 
 sleep과 wait 차이
+
+![[Thread7.png]]
+
+
+ 먼저 저는 My_object 객체 a와 b를 생성했어요. 그리고, worker를 200개 생성했는데요. 이 클래스의 내부를 봅시다.
+
+![[Thread8.png]]
+
+ 이것은, Thread를 extend한 것인데요. 일단 My_object를 참조하는 레퍼런스 타입이 안에 들어있네요. 그리고, run 안에는 a.foo() 라는 친구를 수행하는데요. 그러면 My_object라는 클래스도 봐야 겠네요.
+
+![](https://blog.kakaocdn.net/dn/bh2AP9/btqw7bQVkaj/4XPrL6dljTtIMv8KUarfB0/img.png)
+
+ 이 안에는 그냥 x가 start 되었다는 것과 끝났다는 것을 출력해 주기만 합니다. 그런데 내부에 wait(1)이 있네요. 이건 대체 무엇을 의미하길래 그럴까요? 일단 동기화 메소드가 있습니다. 그렇다는 이야기는, a.foo()를 Thread 1이 호출하는 순간 Thread0이 lock을 획득한다는 소리가 됩니다. a에 대한.
+
+![](https://blog.kakaocdn.net/dn/bxrvKm/btqw7xfavjA/bKuCX2dgwi3bly9Q0zYHxK/img.png)
+
+ 대충 이런 상황이에요. 그러면 일단, Thread 0이 시작되었다는 것을 출력할 겁니다. 그리고 wait(1)이 호출이 되는데요.
+
+![](https://blog.kakaocdn.net/dn/lLKB4/btqw7bKbnx0/4k78Dyg0lPVXmkT1NiS5G0/img.png)
+
+ 만약에, Thread 0이 foo 함수가 끝날 때 까지 계속 lock을 놓지 않았다면, 0 start 다음에 0 end가 호출이 되었을 겁니다. 그런데, 0 start가 호출이 된 다음에 다시 2 start가 찍혔어요. **이것은, wait(1)이 호출되면서 0이 가지고 있던 객체 a에 대한 lock이 풀렸다는 겁니다.**
+
+![](https://blog.kakaocdn.net/dn/xPJhB/btqw5gyEqnX/QBigdLrkOKIka7toNHKYFK/img.png)
+
+ 그러면, a의 Lock을 얻기 위해 현재 queue에 있는 쓰레드들이 경쟁을 할 거에요. 스케쥴러는 이 중, thread_3을 선택했다고 칩시다.
+
+![](https://blog.kakaocdn.net/dn/KsawJ/btqw6oXhKlw/pJqN1BwpZl3f8nzjaAMywK/img.png)
+
+ 그러면 thread_3이 lock을 획득을 했습니다. 이런 식으로 계속 갈 겁니다. wait에 아무런 인자도 넘기지 않으면, notify()나 notifyAll()로 다른 누군가가 깨울 때 까지 waiting 상태가 됩니다. **그런데 wait(m);을 넘기면, m 밀리세컨드가 지나면, 자동적으로 깨어나서 큐에 올라갑니다.**
+
+![](https://blog.kakaocdn.net/dn/bDcUup/btqw8CfJ4bj/zCQgFh7ikKMwzwAjWSuis1/img.png)
+
+ 그러면 스케쥴러에 의해서 thread_1이 선택되면, a에 대한 lock을 획득하고, 계속 실행을 할 거에요. synchronized 블록이 끝날 때 까지 lock을 가지고 있다가, 끝나면 lock을 풀 거에요. 이 부분은 그리 어렵지는 않아요. 그런데 wait(0)을 넣으면 이야기가 달라지는데요.
+
+ 0을 넣는 경우, 숫자와 상관 없이 notify나 notifyAll로 통지가 될 때 까지 기다립니다. 이것도 간단하게 봅시다.
+
+![](https://blog.kakaocdn.net/dn/bbLudF/btqw8aqe1tF/hNzG0rPlbQl8CsfLHMpPe1/img.png)
+
+ wait(0); 을 넣었습니다. 그랬더니 실행 결과가 어떻게 나오나요?
+
+![](https://blog.kakaocdn.net/dn/puuTY/btqw7P0YArr/UR1jmhq7RXsw73l8wFbkR1/img.png)
+
+ ~ end라는 것이 출력이 되지 않습니다. 이 때에는 어떠한 thread가 notify나 notifyAll로 통지할 때 까지 기다리게 되는데, 그러한 호출 구문이 없어요. 게다가, Main 클래스 안에 worker들이 작업을 모두 끝낼 때 까지 대기하는 join()이 있는데요. worker들이 작업을 끝내지 못해요.
+
+ 그러니 worker들은 계속 대기하고 있을 겁니다. wait(0)이 0초동안 대기하는 거라 이전 포스트에서 간단히 설명했을 텐데요. 0초동안 대기하는 게 아니라, 시간과 관계 없이 통지가 될 때 까지 wait 하는 거에요. 이전 포스트에 0초동안 대기하는 거라 설명한 글은 정정하였습니다. 죄송합니다. 그러면 join 함수 안에는 wait(0)이 있는데, 이건 왜 정상적으로 동작할까요? main 쓰레드가 종료될 때 어떤 함수들이 호출되는지 뜯어보면서 이해해 보도록 합시다.
+
+---
+
+ 그러면, 상식적으로 **획득한 lock을 해제한다고 한다면, synchronized 블록 내에 wait가 있어야 할 겁니다.** 그렇지 않다면 어떻게 될까요?
+
+![](https://blog.kakaocdn.net/dn/ubHp2/btqw7w1Eo22/JmFfcmk6NzCGv9VvaiiBJ1/img.png)
+
+ foo 함수를 이렇게 바꿔보고 실행시켜 봅시다.
+
+![](https://blog.kakaocdn.net/dn/bc6bGe/btqw6n5c7uW/JMZNDSw9REnsVjPAGpJLpk/img.png)
+
+ 그러면, illegalMoniterState 예외가 뜰 거에요. 이는 동기화 블록 안에서 wait를 호출하지 않았기 때문입니다. 정리하면 Object의 wait 메소드는, 현재 이것을 부른 Thread의 lock을 release 시킨다는 겁니다. 그리고 다시 깨어나서 실행 상태로 들어갔을 때 release 된 lock을 획득할 거고요. Thread.sleep은 어떻게 동작할까요?
+
+![](https://blog.kakaocdn.net/dn/u6Ly1/btqw85B1IZF/vH8K4Ho8EpOGFpfeEliZq0/img.png)
+
+ 이런 식으로 바꾸고 실행을 시켜 봅시다.
+
+![](https://blog.kakaocdn.net/dn/dGsFKV/btqw8aw1jkE/RKbKzNIw5i2XPGXRNZDI80/img.png)
+
+ 그러면 1이 start되었다는 것이 출력된 다음에, 1이 end 되었다는 게 출력되는데요. 이는 sleep를 호출해도 lock이 풀리지 않았다는 이야기입니다.
+
+![](https://blog.kakaocdn.net/dn/wB8Xn/btqw8aDNo19/O8EV4ibWZ9L8jKdwoT1dEK/img.png)
+
+ 그러면 현재 sleeping 하고 있는 Thread이긴 하지만, lock을 가지고 있기 때문에, 다른 친구들이 a의 동기화 블록에 접근을 하지 못해요. 그렇기 때문에 xxx start가 출력이 되면, 그 다음에 xxx end가 출력이 될 거에요. **계속 LOCK을 hold 하고 있기 때문입니다.**
+
+출처: [https://codingdog.tistory.com/entry/java-wait-vs-sleep-어떤-차이가-있을까요](https://codingdog.tistory.com/entry/java-wait-vs-sleep-%EC%96%B4%EB%96%A4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94) [강아지의 코딩공부:티스토리]
 
 
 
@@ -361,3 +432,6 @@ sleep과 wait 차이
 
 
 https://khys.tistory.com/15
+
+
+https://codingdog.tistory.com/entry/java-wait-vs-sleep-%EC%96%B4%EB%96%A4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94
