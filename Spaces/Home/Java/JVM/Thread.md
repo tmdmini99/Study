@@ -396,9 +396,6 @@ public class PrintThread extends Thread {
  주목 할 점은 스레드가 실행 대기 또는 실행 상태에 있을 때 interrupt() 메소드가 실행되면 즉시 InterruptedException 예외가 발생하지 않고, 스레드가 미래에 일시 정지 상태가 되면 즉시 InterruptedException 예외가 발생한다는 것이다. 따라서 스레드가 일시 정지 상태가 되지 않는다면 interrupt() 메소드 호출은 아무런 의미가 없어지게 된다. 그래서 짧은 시간이나마 스레드를 일시정지 시키기 위해 Thread.sleep(1) 메소드를 호출한 것이다.
 
   
-
-  
-
  일시 정지 상태를 만들지 않고도 interrupt() 호출 여부를 알 수 있는 방법이 있다. 스레드의 interrupt() 메소드가 호출되면 스레드의 interrupted() 와 isInterrupted() 메소드는 true를 반환하도록 되어 있다. Interrupted() 는 static 메소드로 현재 스레드가 interrupted 되었는지 확인하고, isInterrupted() 는 인스턴스 메소드로 현재 스레드가 interrupted 되었는지 확인 할 때 사용한다.
 
   boolean status = Thread.interruptec();
@@ -435,7 +432,7 @@ public class PrintThread extends Thread {
 - **void wait() :** 현재 스레드를 다른 스레드가 이 객체에 대한 notify() 또는 notifyAll() 메소드를 호출할때까지 대기합니다. 
 
 
-이를 위해 현재 스레드는 개체의 [모니터](https://recordsoflife.tistory.com/cs/monitor) 를 소유해야 합니다 . [Javadocs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()) 에 따르면 이것은 다음과 같은 방식으로 발생할 수 있습니다.
+이를 위해 현재 스레드는 개체의 모니터 를 소유해야 합니다 . Javadocs에 따르면 이것은 다음과 같은 방식으로 발생할 수 있습니다.
 
 ### 3.1. _기다리다()_
 

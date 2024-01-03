@@ -113,7 +113,7 @@ t1, t2 스레드가 시작하면 잔액이 0이 될 때까지 두 스레
 
 결과화면
 
-![[ThreadLock`1.png]]
+![[ThreadLock1.png]]
 
 결과를 보면 분명 잔액이 0이 될때까지 출금을 하라고 햇는데 잔액이 마이너스가 됬습니다.
 
@@ -187,8 +187,8 @@ class Task implements Runnable{
 
 결과화면
 
-![](https://t1.daumcdn.net/cfile/tistory/253EC14D5972F33D2C)
 
+![[ThreadLock2.png]]
 synchronized 키워드를 사용함으로써 balance 공유데이터에 대한 thread-safe를 시켰기 때문에
 
 데이터나 메서드 점유하고 있는 스레드가 온전히 자신의 작업을 마칠 수 있습니다.  
@@ -219,11 +219,13 @@ synchronized 키워드는 다음 네 가지 유형의 블록에 쓰인다.
 
 다음은 동기화 처리된 인스턴스 메소드이다.
 
-public **synchronized** void add(int value){
+```java
+public synchronized void add(int value){
 
       this.count += value;
 
 }
+```
 
 메소드 선언문의 synchronized 키워드를 보자. 이 키워드의 존재가 이 메소드의 동기화를 의미한다.
 
@@ -235,11 +237,13 @@ public **synchronized** void add(int value){
 
 스태틱 메소드의 동기화는 인스턴스 메소드와 같은 방식으로 이루어진다.
 
-public **static synchronized** void add(int value){
+```java
+public static synchronized void add(int value){
 
       count += value;
 
 }
+```
 
 역시 선언문의 synchronized 키워드가 이 메소드의 동기화를 의미한다.
 
@@ -253,15 +257,17 @@ public **static synchronized** void add(int value){
 
 동기화가 반드시 메소드 전체에 대해 이루어져야 하는 것은 아니다. 종종 메소드의 특정 부분에 대해서만 동기화하는 편이 효율적인 경우가 있다. 이럴 때는 메소드 안에 동기화 블록을 만들 수 있다.
 
+```java
 public void add(int value){
 
-    **synchronized(this){**
+    synchronized(this){
 
        this.count += value;   
 
-    **}**
+    }
 
   }
+```
 
 이렇게 메소드 안에 동기화 블록을 따로 작성할 수 있다. 메소드 안에서도 이 블록 안의 코드만 동기화하지만, 이 예제에서는 메소드 안의 동기화 블록 밖에 어떤 다른 코드가 존재하지 않으므로, 동기화 블록은 메소드 선언부에 synchronized 를 사용한 것과 같은 기능을 한다.
 
@@ -271,9 +277,10 @@ public void add(int value){
 
 다음 예제의 동기화는 동일한 기능을 수행한다.
 
+```java
  public class MyClass {
 
-    public **synchronized** void log1(String msg1, String msg2){
+    public synchronized void log1(String msg1, String msg2){
 
        log.writeln(msg1);
 
@@ -283,7 +290,7 @@ public void add(int value){
 
     public void log2(String msg1, String msg2){
 
-       **synchronized(this){**
+       synchronized(this){
 
           log.writeln(msg1);
 
@@ -294,6 +301,7 @@ public void add(int value){
     }
 
   }
+```
 
 한 쓰레드는 한 시점에 두 동기화된 코드 중 하나만을 실행할 수 있다. 여기서 두 번째 동기화 블록의 괄호에 this 대신 다른 객체를 전달한다면, 쓰레드는 한 시점에 각 메소드를 실행할 수 있다. -동기화 기준이 달라지므로.
 
@@ -301,6 +309,7 @@ public void add(int value){
 
 다음 예제는 스태틱 메소드에 대한 것이다. 두 메소드는 각 메소드를 가지고 있는 클래스 객체를 동기화 기준으로 잡는다.
 
+```java
  public class MyClass {
 
     public static synchronized void log1(String msg1, String msg2){
@@ -324,27 +333,9 @@ public void add(int value){
     }
 
   }
+```
 
 같은 시점에 오직 한 쓰레드만 이 두 메소드 중 어느 쪽이든 실행 가능하다. 두 번째 동기화 블록의 괄호에 MyClass.class 가 아닌 다른 객체를 전달한다면, 쓰레드는 동시에 각 메소드를 실행할 수 있다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -475,7 +466,7 @@ public class MusicBox {
   
   
 
-## `특정 객체로 Lock 걸기`
+## 특정 객체로 Lock 걸기
 
 ``` java
 public class MusicBox {
