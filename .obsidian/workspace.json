@@ -19,26 +19,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "d8e59a02a9f517ca",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Smart Tomcat10.png"
-              }
-            }
-          },
-          {
-            "id": "d113d3376370ae7d",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Smart Tomcat1.png"
-              }
-            }
           }
         ]
       }
@@ -195,10 +175,10 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Images/Smart Tomcat12.png",
-    "Spaces/Home/Tomcat/Smart Tomcat.md",
-    "Images/Smart Tomcat11.png",
     "Images/Smart Tomcat10.png",
+    "Spaces/Home/Tomcat/Smart Tomcat.md",
+    "Images/Smart Tomcat12.png",
+    "Images/Smart Tomcat11.png",
     "Images/Smart Tomcat9.png",
     "Images/Smart Tomcat8.png",
     "Images/Smart Tomcat7.png",
