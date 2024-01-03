@@ -13,14 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Tomcat/Smart Tomcat.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "d113d3376370ae7d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Smart T.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Images/Smart T.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
+                "file": "Images/Smart T.png"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Images/Smart T.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +184,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ed2adfb14b7d9c37",
+  "active": "d113d3376370ae7d",
   "lastOpenFiles": [
+    "Spaces/Home/Tomcat/Smart Tomcat.md",
+    "Images/Smart T.png",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
+    "Spaces/Home/Tomcat",
     "Spaces/Home/Protocol/Http/Socekt.md",
     "Images/Socket/Socket1.png",
     "Images/Socket/Socket5.png",
@@ -187,8 +202,6 @@
     "Images/Socket1.png",
     "Images/Socket4.png",
     "Images/Socket3.png",
-    "Images/Socket2.png",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
@@ -202,7 +215,6 @@
     "Images/Quartz",
     "Images/ThreadLock",
     "Images/STOMP",
-    "Images/Polling",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
@@ -219,7 +231,6 @@
     "daily note/2024-01-03.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/Java DB/Class.forName(driver).md",
-    "Spaces/Home/Java/Quartz/Quartz.md",
     "무제 파일.canvas"
   ]
 }
