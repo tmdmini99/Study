@@ -70,8 +70,11 @@ Tomcat started on port(s): 8080  나오는데, 확인을 위해서 접속을 해
 ## 5. 확인
 
 아래와 같이 HelloController에 "/hello"로 요청이 들어오면 "hello world!"를 반환하게 해놨다.  
+
 ![[Smart Tomcat11.png]]
+
 그냥 `localhost:8080`으로 가니 아래와 같이 에러페이지가 떠서 당황했는데,  
+
 ![[Smart Tomcat12.png]]
 `localhost:8080/hello`로 들어가니 아래와 같이 잘 출력되는 걸 확인할 수 있었다.
 
