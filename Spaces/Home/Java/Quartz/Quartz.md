@@ -251,7 +251,8 @@ public class HelloJob implements Job {
 }
 ```
 
-- JobExecutionContext  
+
+- **JobExecutionContext**  
     execute 메서드의 파라미터로 넘어가는 인자이다. JobDetail 인스턴스가 Scheduler에 의해 실행될때 넘어오고, 실행이 완료된 뒤에는 Trigger로 넘어간다.
 
 ### JobDetail 생성
@@ -474,10 +475,32 @@ public class HelloJob implements Job {
 
 
 
+
+
+
+
+
+
+## ex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
  참조 - https://velog.io/@tjeong/Quartz-%EC%82%AC%EC%9A%A9%EB%B2%95-%EA%B3%B5%EC%9C%A0
 
 https://adjh54.tistory.com/170
 
+https://wouldyou.tistory.com/94
 
-https://byul91oh.tistory.com/275 실행 방
+https://byul91oh.tistory.com/275 실행 방법
