@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Sleep/Sleep.md",
+                "file": "Spaces/Home/Java/JVM/Thread.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Sleep/Sleep.md",
+                "file": "Spaces/Home/Java/JVM/Thread.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Sleep/Sleep.md"
+                "file": "Spaces/Home/Java/JVM/Thread.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Sleep/Sleep.md",
+                "file": "Spaces/Home/Java/JVM/Thread.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,13 @@
   },
   "active": "ae4a611641adbd2e",
   "lastOpenFiles": [
+    "Images/Thread5.png",
+    "Spaces/Home/Java/JVM/Thread.md",
+    "Images/Thread4.png",
+    "Images/Thread3.png",
+    "Images/Thread2.png",
+    "Images/Thread1.png",
+    "Spaces/Home/Java/Sleep/Sleep.md",
     "Spaces/Home/Java/Scheduler/Cron.md",
     "Spaces/Home/Java/Quartz/Quartz.md",
     "daily note/2024-01-03.md",
@@ -187,22 +194,17 @@
     "Spaces/Home/Java/Quartz",
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Java/Scheduler",
-    "Spaces/Home/Java/Sleep/Sleep.md",
     "Spaces/Home/Java/Random",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Java/Sleep",
     "Images/STOMP6.png",
     "Images/STOMP5.png",
     "Images/STOMP4.png",
-    "Images/STOMP3.png",
-    "Images/STOMP2.png",
-    "Images/STOMP1.jpg",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/SSE.md",
-    "Images/SSE1.png",
     "Spaces/Home/API/API.md",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/API/Open API.md",
@@ -212,11 +214,8 @@
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Spring/JPA.md",
-    "Images/WebSocket2.png",
     "Spaces/Home/Protocol/Http/SSL",
     "Images/HTTPS",
-    "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/Java DB",
     "Images/class.forName()",
     "무제 파일.canvas",
