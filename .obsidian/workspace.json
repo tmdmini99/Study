@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md"
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +175,10 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Images/HTTPS/HTTPS8.png",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+    "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Images/HTTPS/HTTPS8.png",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/SSE.md",
@@ -201,7 +202,6 @@
     "Images/Polling",
     "Images/새 폴더",
     "Images/Thread",
-    "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",

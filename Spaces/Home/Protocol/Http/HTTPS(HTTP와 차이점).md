@@ -74,13 +74,6 @@ Private Key의 소유자가 Private Key로 data를 암호화하고 Public Key와
 
 
 
-
-
-
-
-
-
-
  **CA(Certificate Authority)란?**
 
 certification authority (CA)는 공개키와 공개 DNS명(ex.`www.example.com`)의 연결을 보장하는 기관이다. 예를 들어 클라이언트가 `www.example.com`의 공개키가 이 공개키인지 어떻게 알 수 있는가? 같은 것이다. 일단 이를 알 방법은 없다. CA는 자신만의 암호화 키로 웹사이트의 공개키를 암호학적으로 사인하는 데 사용함으로써 특정 공개키가 특정 사이트의 공개키라는 것을 보장한다. 이 서명은 계산적으로 위조할 가능성이 없다. 브라우저(그 외 클라이언트)는 잘 알려진 CS가 소유한 공개키를 보관하는 신뢰할 수 있는 anchor 저장소(trust anchor stores)를 유지하고 CS 서명을 암호학적으로 확인하는데 이 공개키를 사용한다.
