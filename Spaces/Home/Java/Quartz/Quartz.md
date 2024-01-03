@@ -259,6 +259,16 @@ public class HelloJob implements Job {
 
 JobDetail을 생성하기 위해서는 JobBuilder 클래스를 이용해야하는데, 순수하게 JobBuilder를 반환하는 생성자는 private로 선언되어 있기 때문에 다른 메서드들을 이용하기 위해서는 static import가 필요하다.
 
+
+![[Quartz2.png]]
+
+
+
+
+
+
+
+
 ```java
 
 import static org.quartz.JobBuilder.*;
@@ -270,26 +280,26 @@ public class DetailMaker {
     JobDetail job = newJob(HelloJob.class)
             .withIdentity("HelloJob", "HelloGroup")
             .withDescription("simple hello job")
-            .usingJobData("num", 0)
+            .usingJobData("num", 0) //JobDataMap
             .build();
     return job;
     }
 }
 ```
 
-- newJob(Class \<? extends Job> jobClass)  
+- **newJob(Class \<? extends Job> jobClass)**
     JobBuilder내부에 선언된 JobBuilder를 반환하는 메서드이다.  
     위와 같이 Job 구현체의 class 지정해서 넘겨주는 방식과 공란으로 넘겨주는 방식이 있다.  
     만약 공란으로 넘겨준다면 내부에서 ofType 메서드를 호출해 Job의 class를 넘겨줘야한다.
     
-- withIdentiy(name, group)  
+- **withIdentiy(name, group)**
     Job의 이름과 gorup을 지정하는 메서드이다. group명은 중복될 수 없으며, name은 group안에서 유니크해야한다.
     
-- usingJobData(key, value)  
+- **usingJobData(key, value)**  
     Job에 넘겨줄 JobData 를 설정하는 메서드이다. key는 오직 String만 가능하며, value는  
     String, Integer, Long, Float, Double, Boolean 형태가 가능하다. 객체 자체를 넘겨줄순 없다.
     
-- build()  
+- **build()**  
     JobDetail을 반환하는 메서드이다. 이저까지 설정했던 identity, Job.class, JobData 정보들을 JobDetail 구현체에 설정한뒤 반환한다.
     
 
@@ -318,10 +328,10 @@ public class TriggerMaker {
 }
 ```
 
-- newTrigger()  
+- **newTrigger()**  
     TriggerBuilder를 반환하는 메서드이다. 이하에서는 모두 TriggerBuilder에 속성값을 추가하는 메서드들이고, 마지막 .build 메서드를 통해 Trigger를 반환하게 된다.
     
-- withSchedule()  
+- **withSchedule()**  
     Trigger가 어떤 스케줄을 따를지 정하는 메서드이다. simpleSchedule과 cronSchedule이 있다. startNow() 혹은 startAt() 메서드를 통해 언제부터 스케줄러가 돌아갈지 정할 수 있기 때문에 단순한 인터벌 스케줄러라면 simpleSchedule를, 특정 요일, 날짜에 따라 변화가 필요하다면 cronSchedule를 사용하는 것이 적합하다.  
     예제에서는 scheduler에 job이 등록된 순간부터 scheduler가 멈출때까지 5초 간격으로 시행하도록 설정하였다.
     
@@ -351,16 +361,16 @@ public class QuartzMain {
 }
 ```
 
-- SchedulerFactory  
+- **SchedulerFactory**  
     위에서 설명한대로 Scheduler 를 생성하는 역할을 한다. 다만 그 자체로는 인터페이스이기 때문에 구현체가 필요한데, 그 구현체로 사용되는 것이 StdSchedulerFactory 이다.
     
-- StdSchedulerFactory.getScheduler()  
+- **StdSchedulerFactory.getScheduler()**  
     SchedulerFactory의 구현체로서 quartz.properties 에 접근하여 설정한 'MyScheduler' 라는 이름으로 Scheduler 인스턴스를 생성하여 반환한다.
     
-- scheduler.scheduleJob(/_JobDetail, JobTrigger_/)  
+- **scheduler.scheduleJob(/_JobDetail, JobTrigger_/)**  
     JobDetail과 JobTrigger를 파라미터로 주면 Job을 스케줄에 등록할 수 있다.
     
-- scheduler.start() ~ scheduler.shutdown()  
+- **scheduler.start() ~ scheduler.shutdown()**  
     두 메서드를 이용해서 스케줄링을 시작하고 멈출수 있다.
     
 
@@ -468,3 +478,6 @@ public class HelloJob implements Job {
  참조 - https://velog.io/@tjeong/Quartz-%EC%82%AC%EC%9A%A9%EB%B2%95-%EA%B3%B5%EC%9C%A0
 
 https://adjh54.tistory.com/170
+
+
+https://byul91oh.tistory.com/275 실행 방
