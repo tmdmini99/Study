@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,23 +175,23 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+    "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Images/SSL/SSL3.png",
+    "Images/SSL/SSL1.png",
+    "Images/SSL/SSL2.png",
+    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Images/HTTPS/HTTPS8.png",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/SSE.md",
-    "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Images/Quartz/Quartz1.png",
     "Images/Quartz/Quartz2.png",
     "Images/Polling/Polling3.png",
     "Images/Polling/Polling2.png",
     "Images/Polling/Polling1.png",
     "Images/Polling/Polling4.png",
-    "Images/SSL/SSL1.png",
-    "Images/SSE/SSE1.png",
-    "Images/SSL/SSL2.png",
     "Images/WebSocket",
     "Images/Polling - 복사본",
     "Images/SSE",
