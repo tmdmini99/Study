@@ -477,6 +477,129 @@ public class HelloJob implements Job {
 
 
 
+## Listener
+
+Job이 실행될때, trigger가 실행될때 또는 멈출때 등 시점에따라 작업을 할 수 있다. JobListener, TriggerListener interface를 상속받아 Listener객체를 만들어서, 스케줄러에 달아준다.
+
+MyJobListener 객체를 만들어보자
+
+```java
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.quartz.JobListener;
+ 
+public class MyJobListener implements JobListener {
+ 
+    // JobListener의 이름
+    @Override
+    public String getName() {
+        return MyJobListener.class.getName();
+    }
+ 
+    /**
+     * Job이 수행되기 전 상태
+     *   - TriggerListener.vetoJobExecution == false
+     */
+    @Override
+    public void jobToBeExecuted(JobExecutionContext context) {
+        System.out.println(String.format("[%-18s][%s] 작업시작", "jobToBeExecuted", context.getJobDetail().getKey().toString()));
+    }
+ 
+    /**
+     * Job이 중단된 상태
+     *   - TriggerListener.vetoJobExecution == true
+     */
+    @Override
+    public void jobExecutionVetoed(JobExecutionContext context) {
+        System.out.println(String.format("[%-18s][%s] 작업중단", "jobExecutionVetoed", context.getJobDetail().getKey().toString()));
+    }
+ 
+    /**
+     * Job 수행이 완료된 상태
+     */
+    @Override
+    public void jobWasExecuted(JobExecutionContext context, JobExecutionException jobException) {
+        System.out.println(String.format("[%-18s][%s] 작업완료", "jobWasExecuted", context.getJobDetail().getKey().toString()));
+    }
+    
+}
+```
+
+Main클래스에서 JobDetail을 두개 만들고, DumbJob에 JobListener를 달아보자.
+
+```java
+import static org.quartz.JobBuilder.newJob;
+import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
+import static org.quartz.TriggerBuilder.newTrigger;
+ 
+@SpringBootApplication
+public class DjItsWsApplication {
+ 
+    public static void main(String[] args) throws SchedulerException {
+        SpringApplication.run(DjItsWsApplication.class, args);
+       
+        SchedulerFactory schedFact = new org.quartz.impl.StdSchedulerFactory();
+        Scheduler sched = schedFact.getScheduler();
+        sched.start();
+ 
+     
+        // 공식예제2
+        JobDetail job = newJob(DumbJob.class)
+                .withIdentity("myJob1") // name "myJob", group "group1"
+                .usingJobData("jobSays", "Hello World!")
+                .usingJobData("myFloatValue", 3.141f)
+                .build();
+ 
+        JobDetail job2 = newJob(DumbJob.class)
+        .withIdentity("myJob2") // name "myJob", group "group1"
+        .usingJobData("jobSays", "Hello World!2")
+        .usingJobData("myFloatValue", 0.0001f)
+        .build();
+ 
+        // // Trigger the job to run now, and then every 40 seconds
+        Trigger trigger = newTrigger()
+        .withIdentity("myTrigger1") //key를 안주면, 하나의 job에 여러 jobDetail의 데이터가 겹쳐서 null이 찍히기도 함
+        .startNow()
+        .withSchedule(simpleSchedule()
+            .withIntervalInSeconds(2)
+            .repeatForever())            
+        .build();
+ 
+        Trigger trigger2 = newTrigger()
+        .withIdentity("myTrigger2") 
+        .startNow()
+        .withSchedule(simpleSchedule()
+            .withIntervalInSeconds(2)
+            .repeatForever())            
+        .build();
+ 
+				//리스너 달기
+        sched.getListenerManager().addJobListener(new MyJobListener());
+ 
+        sched.scheduleJob(job, trigger);
+        sched.scheduleJob(job2, trigger2);
+    }
+ 
+}
+```
+
+JobDetail마다 하나의 스레드로 병렬실행되기 때문에 작업이 순서대로 진행되지 않고 한꺼번에 진행되는 것을 볼 수 있다. 순서대로 하고 싶다면, 어노테이션을 달아서 설정해줄 수 있다.
+
+adsdJobListener는 인자로 JobListener와 Matcher를 받는다.
+
+```java
+void org.quartz.ListenerManager	.addJobListener(JobListener jobListener, Matcher<JobKey> matcher)
+```
+
+Matcher는 interface이고 이를 구현한 KeyMatcher, GroupMatcher등이 있다.
+
+Main클래스에 아래와 같이 Matcher를 추가해보자.
+
+```java
+sched.getListenerManager().addJobListener(new MyJobListener(), KeyMatcher.keyEquals(job.getKey()));sched.getListenerManager().addTriggerListener(new MyTriggerListener(), KeyMatcher.keyEquals(trigger.getKey()));
+```
+
+실행해보면 이전과 달리 job1에만 Listener가 달린 것을 볼 수 있다.
 
 
 
@@ -484,12 +607,64 @@ public class HelloJob implements Job {
 ## ex
 
 
+```java
+JobDetail job = newJob(DumbJob.class)
+                .withIdentity("myJob", "group1") //Job의 식별자인 key를 달아줌
+                .usingJobData("jobSays", "Hello World!") //JobDataMap형식으로 데이터를 넣음
+                .usingJobData("myFloatValue", 3.141f)
+                .build();
+```
 
 
+```java
+public class DumbJob implements Job {
+ 
+    @Override
+    public void execute(JobExecutionContext context) throws JobExecutionException {
+        JobKey key = context.getJobDetail().getKey();
+ 
+        JobDataMap dataMap = context.getJobDetail().getJobDataMap();
+ 
+        String jobSays = dataMap.getString("jobSays");
+        float myFloatValue = dataMap.getFloat("myFloatValue");
+ 
+        System.err.println("Instance " + key + " of DumbJob says: " + jobSays + ", and val is: " + myFloatValue);
+    }
+}
+```
 
-
-
-
+```java
+public class DumbJob implements Job {
+ 
+    String jobSays;
+    float myFloatValue;
+    ArrayList state;
+ 
+    @Override
+    public void execute(JobExecutionContext context) throws JobExecutionException {
+        JobKey key = context.getJobDetail().getKey();
+        
+        JobDataMap dataMap = context.getJobDetail().getJobDataMap();
+        // String jobSays = dataMap.getString("jobSays");
+        // float myFloatValue = dataMap.getFloat("myFloatValue");
+ 
+        System.err.println("Instance " + key + " of DumbJob says: " + jobSays + ", and val is: " + myFloatValue);
+    }
+    
+    //코드는 길어보이지만 IDE에 generate기능이 있으면 더 편함
+    public void setJobSays(String jobSays) {
+        this.jobSays = jobSays;
+    }
+ 
+    public void setMyFloatValue(float myFloatValue) {
+        this.myFloatValue = myFloatValue;
+    }
+ 
+    public void setState(ArrayList state) {
+        this.state = state;
+    }
+}
+```
 
 
 
@@ -504,3 +679,5 @@ https://adjh54.tistory.com/170
 https://wouldyou.tistory.com/94
 
 https://byul91oh.tistory.com/275 실행 방법
+
+
