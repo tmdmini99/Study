@@ -79,9 +79,8 @@
 - setXxxx(num, var) 메소드는 두 개의 매개 변수를 가지고 있다. num은 파라미터 인덱스로서 위치홀더와 대응된다. 첫번째 위치홀더에 대응되면 1이고, 다음 위치홀더에 대응부터 1씩 값을 증가시키면 된다. var은 해당 필드에 저장할 데이터 값이다.
 - PreparedStatement 객체가 제공하는 setXxxx(num, var) 메소드
 
-|   |   |
-|---|---|
 |메소드 명|매개변수|
+|---|---|
 |setString|(int parameterIndex, String x)|
 |setInt|(int parameterIndex, int x)|
 |setLong|(int parameterIndex, Long x)|
@@ -138,12 +137,11 @@ CallableStatement 객체는 주로 스토어드 프로시저(Stored Procedure)�
 
 conn.prepareCall("{call query1}")
 
-|   |   |
-|---|---|
-|종류|설명|
-|{call procedure_name[(?, ?, ...)]}|단순히 호출만 한다.|
-|{ ? = call procedure_name[(?, ?, ...)]}|호출을 한 후 결과 값을 가지고 온다.|
-|{call procedure_name}|파라미터가 없는 stored procedure|
+| 종류 | 설명 |
+| ---- | ---- |
+| {call procedure_name[(?, ?, ...)]} | 단순히 호출만 한다. |
+| { ? = call procedure_name[(?, ?, ...)]} | 호출을 한 후 결과 값을 가지고 온다. |
+| {call procedure_name} | 파라미터가 없는 stored procedure |
 
   
   
@@ -161,15 +159,14 @@ conn.prepareCall("{call query1}")
 - ResultSet 은 SQL 질의에 의해 생성된 테이블을 담고 있다. 또한 ResultSet 객체는 '커서(cursor)' 라고 불리는 것을 가지고 있는데, 그것으로 ResultSet에서 특정 행에 대한 참조를 조작할 수있다.
 - 커서는 초기에 첫번째 행의 직전을 가리키도록 되어 있는데, ResultSet 객체의 next() 메소드를 사용하면 다음 위치로 커서를 옮길 수 있다.
 
-|   |   |
-|---|---|
-|메소드|설명|
-|first()|커서를 첫번째 행으로 옮긴다.|
-|last()|커서를 마지막 행으로 옮긴다.|
-|beforeFirst()|커서를 첫번째 행 이전으로 옮긴다.|
-|afterLast()|커서를 마지막 행 다음으로 옮긴다.|
-|next()|커서를 다음 행으로 옮긴다.|
-|previous()|커서를 이전 행으로 옮긴다.|
+| 메소드 | 설명 |
+| ---- | ---- |
+| first() | 커서를 첫번째 행으로 옮긴다. |
+| last() | 커서를 마지막 행으로 옮긴다. |
+| beforeFirst() | 커서를 첫번째 행 이전으로 옮긴다. |
+| afterLast() | 커서를 마지막 행 다음으로 옮긴다. |
+| next() | 커서를 다음 행으로 옮긴다. |
+| previous() | 커서를 이전 행으로 옮긴다. |
 - ResultSet에서 행을 처리하는데 반복문을 사용하며 next() 메소드가 유효한 행이 있으면 true, 없으면 false를 리턴하는 것을 이용하여 while 으로 제어할 수 있다.
 
 
@@ -179,11 +176,10 @@ conn.prepareCall("{call query1}")
 - ResultSet 객체에서 현재 행에서 필드명 혹은 레코드셋에서의 위치를 통해서 어떤 필드의 값을 가져올 수 있는데, 때 getXxxx() 메소드를 제공한다.
 - 해당 필드의 데이터 타입이 문자열이면 getString()이 되고, 해당 필드의 데이터 타입이 int이면 getInt()가 된다.
 
-|   |   |   |   |
-|---|---|---|---|
-|메소드|   |   |   |
-|getString("해당 컬럼명")|getDate("해당 컬럼명")|getBytes("해당 컬럼명")|getDouble("해당 컬럼명")|
-|getInt("해당 컬럼명")|getTimestamp("해당 컬럼명")|getObject("해당 컬럼명")|getLong("해당 컬럼명")|
+| 메소드 |  |  |  |
+| ---- | ---- | ---- | ---- |
+| getString("해당 컬럼명") | getDate("해당 컬럼명") | getBytes("해당 컬럼명") | getDouble("해당 컬럼명") |
+| getInt("해당 컬럼명") | getTimestamp("해당 컬럼명") | getObject("해당 컬럼명") | getLong("해당 컬럼명") |
 
 
 ---

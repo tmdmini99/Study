@@ -427,6 +427,15 @@ public class PrintThread extends Thread {
 }
 ```
 
+
+
+
+
+
+
+
+
+
 ## 3. _wait()_ 메소드
 
 - **void wait() :** 현재 스레드를 다른 스레드가 이 객체에 대한 notify() 또는 notifyAll() 메소드를 호출할때까지 대기합니다. 
@@ -556,6 +565,26 @@ sleep과 wait 차이
 ![[Thread21.png]]
 
  그러면 현재 sleeping 하고 있는 Thread이긴 하지만, lock을 가지고 있기 때문에, 다른 친구들이 a의 동기화 블록에 접근을 하지 못해요. 그렇기 때문에 xxx start가 출력이 되면, 그 다음에 xxx end가 출력이 될 거에요. **계속 LOCK을 hold 하고 있기 때문입니다.**
+
+
+
+
+wait vs sleep
+
+|비교의 근거|sleep |wait |
+|---|---|---|
+|기본|Sleep 메서드는 객체가 중단 될 때까지 객체에 대한 잠금을 해제하지 않습니다.|Wait 메서드는 객체에 대한 잠금을 해제하여 notify 또는 notifyAll 메서드가 호출 될 때까지 다른 객체가 실행되도록합니다.|
+|수업|Sleep 메서드는 Thread 클래스에 정의되어 있습니다.|Wait 메소드는 Object 클래스에서 정의됩니다.|
+|동기화 됨|슬립 메서드는 동기화 된 컨텍스트 내에서 호출 될 필요가 없습니다.|대기 메서드는 동기화 된 컨텍스트 내에서 호출되어야합니다.|
+|완성|슬립 메소드 실행은 쓰레드가 쓰레드를 인터럽트하거나 슬립 메소드의 시간이 만료되면 완료된다.|Notify () 또는 notifyAll () 메소드가 인터럽트 할 때 대기 메소드의 실행이 완료됩니다.|
+|공전|수면 방법은 정적 방법입니다.|대기 메서드는 정적이 아니기 때문에 호출하는 데 객체가 필요한 이유입니다.|
+|실행|sleep 메소드는 현재 스레드에서 실행됩니다.|wait 메소드는 객체에서 실행됩니다.|
+|예외|InterruptedException|IllegalArgumentException, IllegalMonitorStateException, InterruptedException|
+
+
+
+
+
 
 
 
