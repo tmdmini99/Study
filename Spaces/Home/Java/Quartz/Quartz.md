@@ -647,6 +647,80 @@ sched.getListenerManager().addJobListener(new MyJobListener(), KeyMatcher.keyEqu
 
 ## ex
 
+Quartz는 로그 출력에 log4j 라이브러리를 사용
+
+
+내가 만든 예제
+### Main
+```java
+import Week2.SchedulerCon;  
+import org.apache.log4j.Level;  
+import org.apache.log4j.Logger;  
+import org.quartz.*;  
+  
+import static org.quartz.CronScheduleBuilder.cronSchedule;  
+import static org.quartz.JobBuilder.newJob;  
+import static org.quartz.TriggerBuilder.newTrigger;  
+  
+import org.quartz.Trigger;  
+import org.quartz.impl.StdSchedulerFactory;  
+  
+public class TriggerMain {  
+    public static void main(String[] args) {  
+        // log4j의 경고 메시지를 무시  
+        Logger.getRootLogger().setLevel(Level.OFF);  
+        //보낼 데이터가 있다면 DataMap 사용  
+//        JobDataMap jobDataMap = new JobDataMap();  
+//        jobDataMap.put("jobName", "HELLO");  
+        JobDetail jobDetail = newJob(SchedulerCon.class)  
+                .build();  
+        Trigger trigger = newTrigger().withIdentity("tr","gr").withSchedule(cronSchedule("* /5 * ? * *")).build();  
+        Scheduler scheduler = null;  
+        try {  
+            scheduler = StdSchedulerFactory.getDefaultScheduler();  
+            scheduler.start();  
+            scheduler.scheduleJob(jobDetail, trigger);  
+        } catch (SchedulerException e) {  
+            throw new RuntimeException(e);  
+        }  
+    }  
+}
+```
+
+
+### SchedulerCon
+```java
+package Week2;  
+  
+import org.quartz.Job;  
+import org.quartz.JobExecutionContext;  
+import org.quartz.JobExecutionException;  
+  
+public class SchedulerCon implements Job{  
+  
+    @Override  
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {  
+        DataBaseInsert dataBaseInsert = new DataBaseInsert();  
+  
+        try {  
+            dataBaseInsert.main1();  
+        } catch (Exception e) {  
+            DataBaseDelete dataBaseDelete = new DataBaseDelete();  
+            dataBaseDelete.dataDelete();  
+            try {  
+                dataBaseInsert.main1();  
+            } catch (Exception ex) {  
+                throw new RuntimeException(ex);  
+            }  
+        }  
+        System.out.println("trigger 실행");  
+  
+    }  
+}
+```
+
+
+JobDataMap을 사용할 경우 밑의 코드 참조
 
 ```java
 JobDetail job = newJob(DumbJob.class)
