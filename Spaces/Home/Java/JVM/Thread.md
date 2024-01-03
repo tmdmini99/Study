@@ -350,6 +350,86 @@ thread 종료
 ### interrupt()
 thread가 sleep(), wait(), join() 함수에 의해 non-runnable 상태일 때 interrupt()를 호출하면 다시 runnable 상태가 된다
 
+Thread의 interrupt() 메소드
+
+  
+
+ Thread의 interrupt() 메소드는 스레드가 일시 정지 상태에 있을 때 InterruptedException 예외를 발생시키는 역할을 한다. 이것을 이용하면 Thread의 run() 메소드를 정상 종료시킬 수 있다. 
+
+
+  
+
+ 사용법은 아래와 같다. main 메소드에서 thread의 interrupt() 메소드를 실행하게 되면 thread가 sleep() 메소드로 일시 정지 상태가 될 때 thread 에서 InterruptedException이 발생하여 예외 처리(catch)블록으로 이동한다. 결국 thread는 while문을 빠져나와서 run() 메소드를 정상 종료하게 된다. 아래의 코드에서는 thread가 시작한 후 1초 뒤에 InterruptedException이 발생하여 thread를 멈추도록 interrupt() 메소드를 호출한다.
+
+
+```java
+public class InterruptExample { 
+  public static void main(String[] args) {
+    Thread thread = new PrintThread();
+    thread.start();
+
+    try { Thread.sleep(1000); } catch (InterruptedException e) {}
+
+    thread.interrupt();  //스레드를 종료시키기 위해 InterruptedException을 발생시킴
+  }
+}
+
+public class PrintThread extends Thread { 
+  @Override
+  public void run() {
+    try {
+      while(true) {
+        System.out.println("실행중");
+        Thread.sleep(1);
+      }
+    } catch(InterruptedException e) {
+    }
+
+    System.out.println("자원 정리");
+    System.out.println("실행 종료");
+    }
+  }
+}
+
+  ```
+
+ 주목 할 점은 스레드가 실행 대기 또는 실행 상태에 있을 때 interrupt() 메소드가 실행되면 즉시 InterruptedException 예외가 발생하지 않고, 스레드가 미래에 일시 정지 상태가 되면 즉시 InterruptedException 예외가 발생한다는 것이다. 따라서 스레드가 일시 정지 상태가 되지 않는다면 interrupt() 메소드 호출은 아무런 의미가 없어지게 된다. 그래서 짧은 시간이나마 스레드를 일시정지 시키기 위해 Thread.sleep(1) 메소드를 호출한 것이다.
+
+  
+
+  
+
+ 일시 정지 상태를 만들지 않고도 interrupt() 호출 여부를 알 수 있는 방법이 있다. 스레드의 interrupt() 메소드가 호출되면 스레드의 interrupted() 와 isInterrupted() 메소드는 true를 반환하도록 되어 있다. Interrupted() 는 static 메소드로 현재 스레드가 interrupted 되었는지 확인하고, isInterrupted() 는 인스턴스 메소드로 현재 스레드가 interrupted 되었는지 확인 할 때 사용한다.
+
+  boolean status = Thread.interruptec();
+  boolean status = objThread.isInterrupted();
+
+  
+
+  
+
+ 그렇다면,  아래와 같이 응용이 가능하다.
+
+  
+
+ 일시 정지 코드인 Thread.sleep(1)을 사용하지 않고, Thread.interrupted()를 사용해서 PrintTread의 interrupt()가 호출 되었는지 확인한 다음 while 문을 빠져나가도록 할 수 있다.
+```java
+public class PrintThread extends Thread { 
+  @Override
+  public void run() {
+    while(true) {
+      System.out.println("실행중");
+    }
+    if(Thread.interrupted()) {
+      break;
+    }
+
+    System.out.println("자원 정리");
+    System.out.println("실행 종료");
+  }
+}
+```
+
 ## 3. _wait()_ 메소드
 
 - **void wait() :** 현재 스레드를 다른 스레드가 이 객체에 대한 notify() 또는 notifyAll() 메소드를 호출할때까지 대기합니다. 
