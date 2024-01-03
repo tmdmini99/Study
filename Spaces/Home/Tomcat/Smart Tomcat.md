@@ -60,8 +60,7 @@ Gradle project에는 프로젝트 폴더를 선택해주고, Tasks에 bootRun을
 오른쪽 위의 망치 아이콘 오른쪽에 화살표를 클릭하면 아래처럼 목록이 나오는데, 여기서 아까 추가한 Tomcat server를 클릭한 뒤 `run`버튼을 누른다.  
 ![[Smart Tomcat8.png]]
 아래처럼 나오면 성공이다.  
-Tomcat started on port(s): 8080 ~~나오는데, 확인을 위해서 접속을 해보자.  
-!
+Tomcat started on port(s): 8080  나오는데, 확인을 위해서 접속을 해보자.  
 
 ![[Smart Tomcat9.png]]
 
