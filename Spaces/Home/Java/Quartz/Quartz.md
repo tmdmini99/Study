@@ -10,15 +10,7 @@ Quartz는 **오픈소스**로 Java 스케줄링 라이브러리입니다. Sprin
 
 Quartz 스케줄러를 시행하기 위해서는 적어도 아래와 같은 개념을 알아야합니다.
 
-- **Job** : 스케줄링할 실제 작업을 가지는 객체이다.
-- **JobDetail** : Job의 정보를 구성하는 객체이다.
-- **Trigger** : Job이 언제 시행될지를 구성하는 객체이다.
-- **JobData** : Job에서 사용할 데이터를 전달하는 역할을 하는 객체이다.
-- **Scheduler** : JobDetail과 Trigger 정보를 이용해서 Job을 시스템에 등록하고, Trigger가 동작하면 지정된 Job을 실행시키는 역할을 하는 객체이다.
-- **SchedulerFactory** : Scheduler 인스턴스를 생성하는 역할을 하는 객체이다.
 - **quartz.properties** : Quartz 스케줄러를 위한 configuration 을 담당하는 파일이다. src/resources/ 에 위치하며 세부적인 사항은 [Quartz Configuration Reference](http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/configuration.html) 문서를 참조하는 것을 추천한다.
-- **JobStore** : 스케줄러에 등록된 Job의 정보와 실행이력이 저장되는 공간이다. 기본적으로 RAM에 저장되어 JVM 메모리공간에서 관리되지만, 원한다면 다른 RDB에서 관리할 수 있다.
-
 이상의 구성만으로 대략적인 Quartz의 Flow를 추정해보자면 다음과 같을 것입니다.
 
 (1) quartz.properties 의 구성 사항을 적용  
@@ -28,20 +20,19 @@ Quartz 스케줄러를 시행하기 위해서는 적어도 아래와 같은 개�
 
 
 
-### [1. 클래스 및 인터페이스](https://adjh54.tistory.com/170#1.%20%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%B0%8F%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-1)
+### 1. 클래스 및 인터페이스
 
 ---
 
-|   |   |
-|---|---|
-|**용어**|**설명**|
-|**Job**|실행할 작업에 대한 정보를 포함하는 클래스|
-|**JobDetail**|Job 클래스의 인스턴스와 Job 실행에 필요한 추가 정보를 포함하는 클래스|
-|**Trigger**|Job 실행을 스케줄링하기 위한 클래스|
-|**SimpleTrigger**|지정된 시간 간격으로 Job을 실행하기 위한 Trigger|
-|**CronTrigger**|Cron 표현식으로 Job을 스케줄링하기 위한 Trigger|
-|**Scheduler**|Job 실행과 Trigger 스케줄링을 관리하는 인터페이스|
-|**SchedulerFactory**|Scheduler 인스턴스를 생성하고 구성하기 위한 인터페이스|
+| **용어** | **설명** |
+| ---- | ---- |
+| **Job** | 실행할 작업에 대한 정보를 포함하는 클래스 |
+| **JobDetail** | Job 클래스의 인스턴스와 Job 실행에 필요한 추가 정보를 포함하는 클래스 |
+| **Trigger** | Job 실행을 스케줄링하기 위한 클래스 |
+| **SimpleTrigger** | 지정된 시간 간격으로 Job을 실행하기 위한 Trigger |
+| **CronTrigger** | Cron 표현식으로 Job을 스케줄링하기 위한 Trigger |
+| **Scheduler** | Job 실행과 Trigger 스케줄링을 관리하는 인터페이스 |
+| **SchedulerFactory** | Scheduler 인스턴스를 생성하고 구성하기 위한 인터페이스 |
 
 ### 2. Job
 
@@ -50,26 +41,30 @@ Quartz 스케줄러를 시행하기 위해서는 적어도 아래와 같은 개�
 > **💡 Job 이란?**  
 >   
 > **- Quarz에서 ‘실행할 작업을 정의’하는 인터페이스입니다.**  
+> - 스케줄링할 실제 작업을 가지는 객체이다.
 >   
 > - Job 인터페이스를 구현하여 자신이 실행하고자 하는 작업에 대해서 정의를 할 수 있으며 Quartz의 생명 주기에 따라 주기적으로 실행이 됩니다.
+
+
+- **JobStore** : 스케줄러에 등록된 Job의 정보와 실행이력이 저장되는 공간이다. 기본적으로 RAM에 저장되어 JVM 메모리공간에서 관리되지만, 원한다면 다른 RDB에서 관리할 수 있다.
+
 
 ### 3. Trigger
 
 ---
 
-> **💡 Trigger 란?  
-> **  
-> **- ‘Job을 실행시키는 조건을 정의’하는 인터페이스입니다.**  
->   
+> 💡 Trigger 란?  
+>   - ‘Job을 실행시키는 조건을 정의’하는 인터페이스  
+> Job이 언제 시행될지를 구성하는 객체이다.
+> 
 > - 이를 통해 Job을 특정 시간에 실행하거나 주기적으로 실행하도록 설정할 수 있습니다.
 
-|   |   |
-|---|---|
-|**트리거**|**설명**|
-|**SimpleTrigger**|특정 시간 또는 주기적으로 한 번 실행되는 트리거입니다.|
-|**CronTrigger**|Cron 표현식을 사용하여 특정 시간에 실행되는 트리거입니다.|
-|**CalendarIntervalTrigger**|지정된 간격으로 주기적으로 실행되는 트리거입니다.|
-|**DailyTimeIntervalTrigger**|지정된 시간 범위 내에서 지정된 간격으로 주기적으로 실행되는 트리거입니다.|
+| **트리거** | **설명** |
+| ---- | ---- |
+| **SimpleTrigger** | 특정 시간 또는 주기적으로 한 번 실행되는 트리거입니다. |
+| **CronTrigger** | Cron 표현식을 사용하여 특정 시간에 실행되는 트리거입니다. |
+| **CalendarIntervalTrigger** | 지정된 간격으로 주기적으로 실행되는 트리거입니다. |
+| **DailyTimeIntervalTrigger** | 지정된 시간 범위 내에서 지정된 간격으로 주기적으로 실행되는 트리거입니다. |
 
 ### 4. Scheduler
 
@@ -78,6 +73,9 @@ Quartz 스케줄러를 시행하기 위해서는 적어도 아래와 같은 개�
 > **💡 Scheduler 란?**  
 >   
 > - Job과 Trigger를 ‘연결’하고 Job을 ‘실행 시’ 키는 역할을 수행하는 인터페이스입니다, 
+> - JobDetail과 Trigger 정보를 이용해서 Job을 시스템에 등록하고, Trigger가 동작하면 지정된 Job을 실행시키는 역할을 하는 객체이다.
+
+- **SchedulerFactory** : Scheduler 인스턴스를 생성하는 역할을 하는 객체이다.
 
 |   |   |
 |---|---|
@@ -96,7 +94,7 @@ Quartz 스케줄러를 시행하기 위해서는 적어도 아래와 같은 개�
 
 ---
 
-### [1. SimpleTrigger](https://adjh54.tistory.com/170#1.%20SimpleTrigger-1)
+### 1. SimpleTrigger
 
 ---
 
@@ -177,29 +175,26 @@ CronTrigger cronTrigger = TriggerBuilder.newTrigger()
 
 > **💡 cron 표현식 예시**
 
-|   |   |
-|---|---|
-|**Cron Expression**|**설명**|
-|* * * * *|매 분|
-|*/30 * * * *|30분마다|
-|30 5 * * *|매일 오전 5시 30분|
-|30 5 * * 1|매주 월요일 오전 5시 30분|
-|30 5 1 * *|매월 1일 오전 5시 30분|
+| **Cron Expression** | **설명** |
+| ---- | ---- |
+| * * * * * | 매 분 |
+| */30 * * * * | 30분마다 |
+| 30 5 * * * | 매일 오전 5시 30분 |
+| 30 5 * * 1 | 매주 월요일 오전 5시 30분 |
+| 30 5 1 * * | 매월 1일 오전 5시 30분 |
 
 ## 7 Quartz의 실행주기
 
----
 
 > 💡 Quartz의 실행되는 단계입니다.
 
-|   |   |   |
-|---|---|---|
-|**단계**|**분류**|**설명**|
-|1|스케줄러 초기화|Quartz 스케줄러는 시작되면 먼저 스케줄러를 초기화합니다. 이 초기화 과정에서는 스케줄러에 대한 설정을 로드하고, 자바 애플리케이션 컨텍스트와 연결합니다.|
-|2|작업 스케줄링|Quartz 스케줄러는 작업 스케줄링을 수행합니다. 이 과정에서는 사용자가 등록한 작업을 실행할 시간을 계산하여 스케줄링 테이블에 등록합니다.|
-|3|작업 실행|스케줄링 된 작업이 실행됩니다. Quartz 스케줄러는 스케줄링 된 작업을 실행하기 위해 쓰레드 풀을 사용합니다.|
-|4|작업 완료|작업이 완료되면 Quartz 스케줄러는 작업이 완료되었다는 신호를 받습니다. 이 신호를 받으면 스케줄링 테이블에서 작업을 제거합니다.|
-|5|스케줄러 종료|Quartz 스케줄러는 애플리케이션 종료 시점에 스케줄러를 종료합니다. 이 과정에서는 스케줄링 된 작업을 모두 제거하고, 쓰레드 풀을 종료합니다.|
+| **단계** | **분류** | **설명** |
+| ---- | ---- | ---- |
+| 1 | 스케줄러 초기화 | Quartz 스케줄러는 시작되면 먼저 스케줄러를 초기화합니다. 이 초기화 과정에서는 스케줄러에 대한 설정을 로드하고, 자바 애플리케이션 컨텍스트와 연결합니다. |
+| 2 | 작업 스케줄링 | Quartz 스케줄러는 작업 스케줄링을 수행합니다. 이 과정에서는 사용자가 등록한 작업을 실행할 시간을 계산하여 스케줄링 테이블에 등록합니다. |
+| 3 | 작업 실행 | 스케줄링 된 작업이 실행됩니다. Quartz 스케줄러는 스케줄링 된 작업을 실행하기 위해 쓰레드 풀을 사용합니다. |
+| 4 | 작업 완료 | 작업이 완료되면 Quartz 스케줄러는 작업이 완료되었다는 신호를 받습니다. 이 신호를 받으면 스케줄링 테이블에서 작업을 제거합니다. |
+| 5 | 스케줄러 종료 | Quartz 스케줄러는 애플리케이션 종료 시점에 스케줄러를 종료합니다. 이 과정에서는 스케줄링 된 작업을 모두 제거하고, 쓰레드 풀을 종료합니다. |
 
 
 
@@ -221,6 +216,9 @@ implementation group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.2'
 
 ### quartz.properties
 
+
+**quartz.properties** : Quartz 스케줄러를 위한 configuration 을 담당하는 파일이다. src/resources/ 에 위치하며 세부적인 사항은 [Quartz Configuration Reference](http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/configuration.html) 문서를 참조하는 것을 추천한다.
+
 quartz.properties 에서는 scheduler 인스턴스의 이름, Job을 실행한 스레드 풀의 스레드 수, 그리고 스케줄링된 JobStore을 지정하겠습니다.
 
 ```java
@@ -231,6 +229,8 @@ org.quartz.jobStore.class = org.quartz.simpl.RAMJobStore
 ```
 
 ### Job 구현체
+
+
 
 Job은 Job이라는 인터페이스의 구현체입니다. 오버라이드된 excute 메서드가 scheduler에 의해 Job이 호출될때 실행되는 부분입니다.
 
@@ -255,6 +255,7 @@ public class HelloJob implements Job {
     execute 메서드의 파라미터로 넘어가는 인자이다. JobDetail 인스턴스가 Scheduler에 의해 실행될때 넘어오고, 실행이 완료된 뒤에는 Trigger로 넘어간다.
 
 ### JobDetail 생성
+- **JobDetail** : Job의 정보를 구성하는 객체이다.
 
 JobDetail을 생성하기 위해서는 JobBuilder 클래스를 이용해야하는데, 순수하게 JobBuilder를 반환하는 생성자는 private로 선언되어 있기 때문에 다른 메서드들을 이용하기 위해서는 static import가 필요하다.
 
@@ -369,6 +370,8 @@ Thread.sleep(60000) 에서 의도한대로 1분동안 프로그램이 실행되�
 
 
 ## JobData 활용
+
+- **JobData** : Job에서 사용할 데이터를 전달하는 역할을 하는 객체이다.
 
 위의 예제에서는 JobDetail에 JobData를 넣었지만 사용하고 있지는 않습니다. 이번에는 Job에서 JobData를 사용하는 방법을 보여드리겠습니다.
 
