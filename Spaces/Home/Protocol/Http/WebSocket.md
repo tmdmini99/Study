@@ -1,3 +1,12 @@
+
+## **WebSocket이란** 
+
+Transport protocol의 일종으로 쉽게 이야기하면 웹버전의 TCP 또는 Socket이라고 이해하면 된다.
+
+WebSocket은 서버와 클라이언트 간에 Socket Connection을 유지해서 언제든 양방향 통신 또는 데이터 전송이 가능하도록 하는 기술이다.
+
+Real-time web application구현을 위해 널리 사용되어지고 있다. (SNS어플리케이션, LoL같은 멀티플레이어 게임, 구글 Doc, 증권거래, 화상채팅 등)
+
 # TCP/IP소켓과 웹소켓의 차이
 
 (TCP/IP) 소켓에 대한 내용은 [여기](https://velog.io/@rhdmstj17/%EC%86%8C%EC%BC%93%EA%B3%BC-%EC%9B%B9%EC%86%8C%EC%BC%93-%ED%95%9C-%EB%B2%88%EC%97%90-%EC%A0%95%EB%A6%AC-1)서 볼 수 있다. 이제 소켓은 대충 알겠고 .. 웹소켓은 뭘까?

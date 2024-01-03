@@ -13,14 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Protocol/Http/Socekt.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "3c16f6228782cd92",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240103163205.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Images/Pasted image 20240103163205.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md"
+                "file": "Images/Pasted image 20240103163205.png"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Images/Pasted image 20240103163205.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,17 +184,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ed2adfb14b7d9c37",
+  "active": "3c16f6228782cd92",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/Socekt.md",
+    "Images/Pasted image 20240103163205.png",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
+    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Images/SSL/SSL3.png",
     "Images/SSL/SSL1.png",
     "Images/SSL/SSL2.png",
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Images/HTTPS/HTTPS8.png",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/SSE.md",
     "Images/Quartz/Quartz1.png",
@@ -191,7 +204,6 @@
     "Images/Polling/Polling3.png",
     "Images/Polling/Polling2.png",
     "Images/Polling/Polling1.png",
-    "Images/Polling/Polling4.png",
     "Images/WebSocket",
     "Images/Polling - 복사본",
     "Images/SSE",
@@ -219,7 +231,6 @@
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/Java DB/Class.forName(driver).md",
     "Spaces/Home/Java/Quartz/Quartz.md",
-    "Spaces/Home/Java/Pseudo Code/Pseudo Code.md",
     "무제 파일.canvas"
   ]
 }
