@@ -1,3 +1,355 @@
+
+
+
+# java - synchronized 란? 사용법?
+
+  
+  
+
+멀티스레드를 잘 사용하면 프로그램적으로 좋은 성능을 낼 수 있지만,
+
+멀티스레드 환경에서 반드시 고려해야할 점인 스레드간 동기화라는 문제는 꼭 해결해야합니다.
+
+예를 들어 스레드간 서로 공유하고 수정할 수 있는 data가 있는데 스레드간 동기화가 되지 않은 상태에서 
+
+멀티스레드 프로그램을 돌리면, data의 안정성과 신뢰성을 보장할 수 없습니다.
+
+따라서 **data****의** **thread-safe** **를** **하기** **위해** **자바에서는** **synchronized** **키워드를** **제공해** **스레드간** **동기화를** **시켜** **data****의** **thread-safe****를** **가능케합니다****.**
+
+자바에서 지원하느 Synchronized 키워드는 여러개의 스레드가 한개의 자원을 사용하고자 할 때,
+
+**현재** **데이터를** **사용하고** **있는** **해당** **스레드를** **제외하고** **나머지** **스레드들은** **데이터에** **접근** **할** **수** **없도록** **막는** **개념**입니다.
+
+Synchronized 키워드는 변수와 함수에 사용해서 동기화 할 수 있습니다.
+
+하지만 **Synchronized** **키워드를** **너무** **남발하면** **오히려** **프로그램** **성능저하를** **일으킬** **수** **있습니다****.**
+
+그 이윤 Synchronized 키워드를 사용하면 자바 내부적으로 메서드나 변수에 동기화를 하기 위해 block과 unblock을 처리하게 되는데 
+
+이런 처리들이 만약 너무 많아지게 되면 오히려 프로그램 성능저하를 일으킬수 있는 것입니다. 
+
+(block 과 unblock도 프로그램 내부적으로 어느정도  공수가 들어가는 작업입니다.)
+
+따라서 적재적소에 Synchronized 키워드를 사용하는 것이 중요합니다!
+
+**// 1.** **메서드에서** **사용하는** **경우**
+
+**public synchronized void method(){//** **코드****}**
+
+**// 2.** **객체** **변수에** **사용하는** **경우****(block****문****)**
+
+**private Object obj = new Object();**
+
+**public void exampleMethod(){ synchronized(obj){//****코드** **}}**
+
+
+```java
+public class ThreadSynchronizedTest {
+ 
+    public static void main(String[] args) {
+    // TODO Auto-generated method stub
+        Task task = new Task();
+            Thread t1 = new Thread(task);
+            Thread t2 = new Thread(task);
+            </p><p>
+            t1.setName("t1-Thread");
+            t2.setName("t2-Thread");
+             
+            t1.start();
+            t2.start();
+    }
+ 
+}
+ 
+class Account{
+    int balance = 1000;
+      
+    public void withDraw(int money){
+     
+        if(balance >= money){
+            try{
+                Thread thread = Thread.currentThread();
+                System.out.println(thread.getName() + " 출금 금액 ->> "+money);
+                Thread.sleep(1000);
+                balance -= money;
+                System.out.println(thread.getName()+" balance:" + balance);
+                 
+            }catch (Exception e) {}
+       
+        }
+    }
+}
+  
+class Task implements Runnable{
+    Account acc = new Account();
+      
+    @Override
+    public void run() {
+        while(acc.balance > 0){
+            // 100, 200, 300 중의 한 값을 임의로 선택해서 출금(withDraw)한다.
+            int money = (int)(Math.random() * 3 + 1) * 100;
+            acc.withDraw(money);
+       
+        }
+    }
+}
+```
+
+위 예제에 대한 설명을 하면, 
+
+Account 라는 클래스에는 balance 잔액과 이 잔액을 삭감시키는 인출메서드가 있습니다.
+
+지난시간 스레드를 만들때 Runnable 인터페이스를 구현하여 Task를 만들고 이 Task를 Thread 생성시 생성자에 매개변수로 넣으면
+
+우리가 만든 스레드가 Task에 정의되어있는 대로 일을 실행한다고 했습니다.
+
+Runnable을 구현하여 만든 Task에 100,200,300 중 랜덤하게 값을 전달받아 moneny 변수에 할당하고 그 금액만큼 Account 인스턴스의 인출메서드를 호출해
+
+ balance (잔액)을 출금시키는 일을 구현해놨습니다.
+
+다음 main 메서드에서 스레드 t1, t2를 만들고 각각의 스레드 이름을 정의합니다.
+
+t1, t2 스레드가 시작하면 잔액이 0이 될 때까지 두 스레드가 경쟁하며 출금시킬 것입니다.
+
+결과화면
+
+![[ThreadLock`1.png]]
+
+결과를 보면 분명 잔액이 0이 될때까지 출금을 하라고 햇는데 잔액이 마이너스가 됬습니다.
+
+여기서 멀티스레드의 문제점이 발견됩니다. balance(잔액) thread-safe가 되지 않았기 때문에 t1 스레드가 잔액을 삭감하기 전에 
+
+t2가 balance(잔액)에 접근해 삭감을 해버리고 다시 t1이 slee()에서 깨어나 balance(잔액) 을 삭감해버리기 때문에
+
+잔액이 0 이하의 마이너스 값을 가지게 됩니다.
+
+해결하는 방법은 간단합니다. 
+
+공유데이터에 대한 접근과 수정이 이루어지는 메서드에 synchronized 키워드를 리턴타입 앞에 붙여주면 됩니다. 
+
+t1스레드가 먼저 공유데이터나 메서드에 점유하고 있는 상태인 경우 block으로 처리하기 때문에 t1 이외의 스레드의 접근을 막습니다. 
+
+t1스레드가 작업을 다 끝냈다면 .unblock으로 처리하여 t1 이외의 스레드의 접근을 허락합니다.
+
+### synchronized 키워드로 멀티스레드 동기화 처리
+
+```java
+public class ThreadSynchronizedTest {
+ 
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+           Task task = new Task();
+            Thread t1 = new Thread(task);
+            Thread t2 = new Thread(task);
+             
+            t1.setName("t1-Thread");
+            t2.setName("t2-Thread");
+             
+            t1.start();
+            t2.start();
+    }
+ 
+}
+ 
+class Account{
+    int balance = 1000;
+      
+    public synchronized void withDraw(int money){
+     
+        if(balance >= money){
+            try{
+                Thread thread = Thread.currentThread();
+                System.out.println(thread.getName() + " 출금 금액 ->> "+money);
+                Thread.sleep(1000);
+                balance -= money;
+                System.out.println(thread.getName()+" balance:" + balance);
+                 
+            }catch (Exception e) {}
+       
+        }
+    }
+}
+  
+class Task implements Runnable{
+    Account acc = new Account();
+      
+    @Override
+    public void run() {
+        while(acc.balance > 0){
+            // 100, 200, 300 중의 한 값을 임의로 선택해서 출금(withDraw)한다.
+            int money = (int)(Math.random() * 3 + 1) * 100;
+            acc.withDraw(money);
+       
+        }
+    }
+}
+```
+
+결과화면
+
+![](https://t1.daumcdn.net/cfile/tistory/253EC14D5972F33D2C)
+
+synchronized 키워드를 사용함으로써 balance 공유데이터에 대한 thread-safe를 시켰기 때문에
+
+데이터나 메서드 점유하고 있는 스레드가 온전히 자신의 작업을 마칠 수 있습니다.  
+  
+  
+다른 블로그에 좋은 글이 있어서 펌해봅니다  
+메소드 레벨의 동기화는 해당 인스턴스 자체로 락을 걸어버린다.  
+
+자바 동기화 블록은 메소드나 블록 코드에 동기화 영역을 표시하며 자바에서 경합 조건을 피하기 위한 방법으로 쓰인다.
+
+**자바 synchronized 키워드**
+
+ 자바 코드에서 동기화 영역은 synchronizred 키워드로 표시된다. 동기화는 객체에 대한 동기화로 이루어지는데(synchronized on some object), 같은 객체에 대한 모든 동기화 블록은 한 시점에 오직 한 쓰레드만이 블록 안으로 접근하도록 - 실행하도록 - 한다. 블록에 접근을 시도하는 다른 쓰레드들은 블록 안의 쓰레드가 실행을 마치고 블록을 벗어날 때까지 블록(blocked) 상태가 된다.
+
+synchronized 키워드는 다음 네 가지 유형의 블록에 쓰인다.
+
+인스턴스 메소드
+
+스태틱 메소드
+
+인스턴스 메소드 코드블록
+
+스태틱 메소드 코드블록
+
+어떤 동기화 블록이 필요한지는 구체적인 상황에 따라 달라진다.
+
+**인스턴스 메소드 동기화**
+
+다음은 동기화 처리된 인스턴스 메소드이다.
+
+public **synchronized** void add(int value){
+
+      this.count += value;
+
+}
+
+메소드 선언문의 synchronized 키워드를 보자. 이 키워드의 존재가 이 메소드의 동기화를 의미한다.
+
+인스턴스 메소드의 동기화는 이 메소드를 가진 인스턴스(객체)를 기준으로 이루어진다. 그러므로, 한 클래스가 동기화된 인스턴스 메소드를 가진다면, 여기서 동기화는 이 클래스의 **한 인스턴스**를 기준으로 이루어진다. 그리고 한 시점에 오직 하나의 쓰레드만이 동기화된 인스턴스 메소드를 실행할 수 있다. 결국, 만일 둘 이상의 인스턴스가 있다면, 한 시점에, 한 인스턴스에, 한 쓰레드만 이 메소드를 실행할 수 있다. 
+
+인스턴스 당 한 쓰레드이다. 
+
+**스태틱 메소드 동기화**
+
+스태틱 메소드의 동기화는 인스턴스 메소드와 같은 방식으로 이루어진다.
+
+public **static synchronized** void add(int value){
+
+      count += value;
+
+}
+
+역시 선언문의 synchronized 키워드가 이 메소드의 동기화를 의미한다.
+
+스태틱 메소드 동기화는 이 메소드를 가진 클래스의 클래스 객체를 기준으로 이루어진다. JVM 안에 클래스 객체는 클래스 당 하나만 존재할 수 있으므로, 같은 클래스에 대해서는 오직 한 쓰레드만 동기화된 스태틱 메소드를 실행할 수 있다.
+
+만일 동기화된 스태틱 메소드가 다른 클래스에 각각 존재한다면, 쓰레드는 각 클래스의 메소드를 실행할 수 있다.
+
+클래스 -쓰레드가 어떤 스태틱 메소드를 실행했든 상관없이- 당 한 쓰레드이다.
+
+**인스턴스 메소드 안의 동기화 블록**
+
+동기화가 반드시 메소드 전체에 대해 이루어져야 하는 것은 아니다. 종종 메소드의 특정 부분에 대해서만 동기화하는 편이 효율적인 경우가 있다. 이럴 때는 메소드 안에 동기화 블록을 만들 수 있다.
+
+public void add(int value){
+
+    **synchronized(this){**
+
+       this.count += value;   
+
+    **}**
+
+  }
+
+이렇게 메소드 안에 동기화 블록을 따로 작성할 수 있다. 메소드 안에서도 이 블록 안의 코드만 동기화하지만, 이 예제에서는 메소드 안의 동기화 블록 밖에 어떤 다른 코드가 존재하지 않으므로, 동기화 블록은 메소드 선언부에 synchronized 를 사용한 것과 같은 기능을 한다.
+
+동기화 블록이 괄호 안에 한 객체를 전달받고 있음에 주목하자. 예제에서는 'this' 가 사용되었다. 이는 이 add() 메소드가 호출된 객체를 의미한다. 이 동기화 블록 안에 전달된 객체를 **모니터** 객체(a monitor object) 라 한다. 이 코드는 이 모니터 객체를 기준으로 동기화가 이루어짐을 나타내고 있다. 동기화된 인스턴스 메소드는 자신(메소드)을 내부에 가지고 있는 객체를 모니터 객체로 사용한다.
+
+같은 모니터 객체를 기준으로 동기화된 블록 안의 코드를 오직 한 쓰레드만이 실행할 수 있다.
+
+다음 예제의 동기화는 동일한 기능을 수행한다.
+
+ public class MyClass {
+
+    public **synchronized** void log1(String msg1, String msg2){
+
+       log.writeln(msg1);
+
+       log.writeln(msg2);
+
+    }
+
+    public void log2(String msg1, String msg2){
+
+       **synchronized(this){**
+
+          log.writeln(msg1);
+
+          log.writeln(msg2);
+
+       **}**
+
+    }
+
+  }
+
+한 쓰레드는 한 시점에 두 동기화된 코드 중 하나만을 실행할 수 있다. 여기서 두 번째 동기화 블록의 괄호에 this 대신 다른 객체를 전달한다면, 쓰레드는 한 시점에 각 메소드를 실행할 수 있다. -동기화 기준이 달라지므로.
+
+**스태틱 메소드 안의 동기화 블록**
+
+다음 예제는 스태틱 메소드에 대한 것이다. 두 메소드는 각 메소드를 가지고 있는 클래스 객체를 동기화 기준으로 잡는다.
+
+ public class MyClass {
+
+    public static synchronized void log1(String msg1, String msg2){
+
+       log.writeln(msg1);
+
+       log.writeln(msg2);
+
+    }
+
+    public static void log2(String msg1, String msg2){
+
+       synchronized(MyClass.class){
+
+          log.writeln(msg1);
+
+          log.writeln(msg2);  
+
+       }
+
+    }
+
+  }
+
+같은 시점에 오직 한 쓰레드만 이 두 메소드 중 어느 쪽이든 실행 가능하다. 두 번째 동기화 블록의 괄호에 MyClass.class 가 아닌 다른 객체를 전달한다면, 쓰레드는 동시에 각 메소드를 실행할 수 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```java
 public class MusicExam {
     public static void main(String[] args) {
@@ -266,3 +618,12 @@ public class MusicBox {
 - 모니터가 조건변수의 역할을 수행, 멀티스레드간 공유데이터의 동시접근을 막을 뿐만이 아니라 접근 순서도 컨트롤 하는 것을 말한다.
 - 같은 목적을 가진 스레드간에 협력해서 효율적으로 작업을 할 수 있도록 하겠다 라는 의미이다. 생산자-소비자 스레드를 생각해보면 단순히 상호배제만을 해서는 부족하다. 즉 동시접근도 차단하고 생산자스레드가 생산을 했을 때 소비자 스레드에게 이를 알려서 작업을 할 수 있도록 해 주는 것이 필요하다. 이런 것이 바로 스레드간의 협업이다.
 - 동기화 대상 인스턴스의 wait() / notify() / notifyall()메소드를 이용하여 스레드간 접근 순서 컨트롤을 수행할 수 있다.
+
+
+
+---
+
+
+참조 - https://devlog-wjdrbs96.tistory.com/420
+
+https://coding-start.tistory.com/68 # synchronized

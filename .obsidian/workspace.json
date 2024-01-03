@@ -19,8 +19,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c017c0e7f6574afd",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/ThreadLock`1.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/ThreadLock.md",
+                "file": "Images/ThreadLock`1.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/ThreadLock.md"
+                "file": "Images/ThreadLock`1.png"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/ThreadLock.md",
+                "file": "Images/ThreadLock`1.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +184,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ae4a611641adbd2e",
+  "active": "c017c0e7f6574afd",
   "lastOpenFiles": [
-    "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
+    "Images/ThreadLock`1.png",
+    "Spaces/Home/Java/JVM/Thread.md",
     "Images/Thread21.png",
     "Images/Thread20.png",
     "Images/Thread19.png",
@@ -186,7 +198,6 @@
     "Images/Thread15.png",
     "Images/Thread14.png",
     "Images/Thread13.png",
-    "Images/Thread12.png",
     "Spaces/Home/Java/Sleep/Sleep.md",
     "Spaces/Home/Java/Scheduler/Cron.md",
     "Spaces/Home/Java/Quartz/Quartz.md",
@@ -214,7 +225,6 @@
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
     "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/Spring/JPA.md",
     "Spaces/Home/Protocol/Http/SSL",
     "Images/HTTPS",
     "Spaces/Home/Java/Java DB",
