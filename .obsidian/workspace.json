@@ -13,25 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/Socekt.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
-          },
-          {
-            "id": "3c16f6228782cd92",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20240103163205.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20240103163205.png",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20240103163205.png"
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
               }
             }
           },
@@ -143,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20240103163205.png",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,26 +173,28 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3c16f6228782cd92",
+  "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
     "Spaces/Home/Protocol/Http/Socekt.md",
-    "Images/Pasted image 20240103163205.png",
+    "Images/Socket/Socket1.png",
+    "Images/Socket/Socket5.png",
+    "Images/Socket/Socket4.png",
+    "Images/Socket/Socket3.png",
+    "Images/Socket/Socket2.png",
+    "Images/Socket",
+    "Images/새 폴더",
+    "Images/Socket5.png",
+    "Images/Socket1.png",
+    "Images/Socket4.png",
+    "Images/Socket3.png",
+    "Images/Socket2.png",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Images/SSL/SSL3.png",
-    "Images/SSL/SSL1.png",
-    "Images/SSL/SSL2.png",
-    "Images/HTTPS/HTTPS8.png",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/SSE.md",
-    "Images/Quartz/Quartz1.png",
-    "Images/Quartz/Quartz2.png",
-    "Images/Polling/Polling3.png",
-    "Images/Polling/Polling2.png",
-    "Images/Polling/Polling1.png",
     "Images/WebSocket",
     "Images/Polling - 복사본",
     "Images/SSE",
@@ -212,8 +203,6 @@
     "Images/ThreadLock",
     "Images/STOMP",
     "Images/Polling",
-    "Images/새 폴더",
-    "Images/Thread",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
