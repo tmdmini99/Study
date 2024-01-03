@@ -431,6 +431,9 @@ public class PrintThread extends Thread {
 
 - **void wait() :** 현재 스레드를 다른 스레드가 이 객체에 대한 notify() 또는 notifyAll() 메소드를 호출할때까지 대기합니다. 
 
+- **동기화의 효율을 높이기 위해 wait(), notify()를 사용**
+- **Object클래스에 정의되어 있으며, 동기화 블록 내에서만 사용할 수 있다.**
+
 
 이를 위해 현재 스레드는 개체의 모니터 를 소유해야 합니다 . Javadocs에 따르면 이것은 다음과 같은 방식으로 발생할 수 있습니다.
 
@@ -557,11 +560,129 @@ sleep과 wait 차이
 
 
 
+### 예제
+
+```java
+import java.util.ArrayList;
+
+class JavaLibrary {
+
+	public ArrayList<String> arrayList = new ArrayList<String>();
+
+	public JavaLibrary() {
+		arrayList.add("1번 자리");
+		arrayList.add("2번 자리");
+		arrayList.add("3번 자리");
+	}
+
+	public synchronized String study() throws InterruptedException {
+
+		Thread t = Thread.currentThread();
+
+		if (arrayList.size() == 0) {
+			System.out.println(t.getName() + " wait start");
+			wait();
+			System.out.println(t.getName() + " wait end");
+		}
+        
+		if (arrayList.size() > 0) {
+			String seat = arrayList.remove(0);
+			System.out.println(t.getName() + " : " + seat);
+			return seat;
+		} else
+			return null;
+	}
+
+	public synchronized void returnSeat(String seat) {
+
+		Thread t = Thread.currentThread();
+
+		arrayList.add(seat);
+		notify();
+		System.out.println(t.getName() + " : " + seat + " return");
+	}
+
+}
+
+class Student extends Thread {
+
+	public void run() {
+
+		try {
+			String seatNum = LibraryMain.library.study();
+			if (seatNum == null)
+				return;
+			sleep(5000);
+			LibraryMain.library.returnSeat(seatNum);
+
+		} catch (InterruptedException e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+public class LibraryMain {
+
+	public static JavaLibrary library = new JavaLibrary();
+
+	public static void main(String[] args) {
+
+		Student student1 = new Student();
+		Student student2 = new Student();
+		Student student3 = new Student();
+		Student student4 = new Student();
+		Student student5 = new Student();
+		Student student6 = new Student();
+
+		student1.start();
+		student2.start();
+		student3.start();
+		student4.start();
+		student5.start();
+		student6.start();
+	}
+
+}
+```
+
+결과
+```
+**[Console]  
+**Thread-0 : 1번 자리  
+Thread-4 : 2번 자리  
+Thread-5 : 3번 자리  
+Thread-3 wait start  
+Thread-2 wait start  
+Thread-1 wait start  
+Thread-0 : 1번 자리 return  
+Thread-3 wait end  
+Thread-3 : 1번 자리  
+Thread-4 : 2번 자리 return  
+Thread-5 : 3번 자리 return  
+Thread-1 wait end  
+Thread-1 : 2번 자리  
+Thread-2 wait end  
+Thread-2 : 3번 자리  
+Thread-2 : 3번 자리 return  
+Thread-1 : 2번 자리 return  
+Thread-3 : 1번 자리 return
+```
+
+
+
+
+
+
+
+
 ---
 참조 - https://kadosholy.tistory.com/121
 
 
 https://khys.tistory.com/15
 
+
+https://khys.tistory.com/20
 
 https://codingdog.tistory.com/entry/java-wait-vs-sleep-%EC%96%B4%EB%96%A4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94
