@@ -214,11 +214,145 @@ public class HelloWorld {
 지정된 시간(밀리초) 동안 현재 thread를 일시 중단한다
 
 ```java
-try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
+try{
+    Thread.sleep(1000);
+}catch(InterruptedException e){
+    e.printStackTrace();
+}
+```
+
+- wait() : 갖고 있던 고유 락을 해제하고 thread를 잠들게 한다.
+- notify() : 잠들어 있던 thread 중 임의로 하나를 골라 깨운다.
+- wait와 notify는 동기화된 블록 안에서 사용해야 한다. wait를 만나게 되면 해당 thread는 해당 객체의 모니터링 락에 대한 권한을 가지고 있다면 모니터링 락의 권한을 놓고 대기한다.
+
+
+### Thread를 상속받은 ThreadB 클래스를 사용하여 wait()을 호출하는 예제
+
+```java
+class ThreadB extends Thread {
+	// 해당 thread가 실행되면 자기 자신의 모니터링 락을 획득
+	// 5번 반복하면서 1초씩 쉬면서 total에 값을 누적
+	// 그후에 notify()메소드를 호출하여 wiat하고 있는 thread를 깨움
+	int total;
+
+	@Override
+	public void run() {
+		synchronized (this) {
+			for (int i = 0; i < 5; i++) {
+				System.out.println("ThreadB : " + i);
+				total += i;
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			notify();
+		}
+	} // run
+}
+
+public class ThreadWait {
+
+	public static void main(String[] args) {
+		// 해당 thread가 실행되면, 해당 thread는 run메서드 안에서 자신의 모니터링 락을 획득
+		ThreadB b = new ThreadB();
+		b.start();
+
+		// b에 대하여 동기화 블럭을 설정
+		// 만약 메인 thread가 아래의 블록을 위의 Thread보다 먼저 실행되었다면 wait를 하게 되면서 모니터링 락을 놓고 대기
+		synchronized (b) {
+			try {
+				// b.wait()메소드를 호출.
+				// 메인 thread는 정지
+				// ThreadB가 5번 값을 더한 후 notify를 호출하게 되면 wait에서 깨어남
+				System.out.println("b 종료까지 대기");
+				b.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			// 깨어난 후 결과를 출력
+			System.out.println("total : " + b.total);
+		}
+	}
+}​
+```
+
+결과
+```
+**[Console]**  
+b 종료까지 대기  
+ThreadB : 0  
+ThreadB : 1  
+ThreadB : 2  
+ThreadB : 3  
+ThreadB : 4  
+total : 10
+```
+
+### join() 
+다른 thread가 멈출 때까지 기다리게 한다
+
+![[Thread6.png]]
+
+#### 스레드를 실행하고 해당 스레드가 종료될 때까지 기다리고 내용을 출력하는 예제
+
+```java
+class MyThread2 extends Thread {
+	
+	public void run() {
+		for (int i = 0; i < 5; i++) {
+			System.out.println("MyThread2 : " + i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	} // run
+}
+
+public class ThreadJoin {
+	
+	public static void main(String[] args) {
+		
+		MyThread2 thread = new MyThread2();
+		// Thread 시작
+		thread.start();
+		System.out.println("thread 종료까지 대기");
+		try {
+			// 해당 스레드가 멈출 때까지 대기
+			thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("thread 종료");
+	}
+	
+}
 ```
 
 
+결
+```java
+**[Console]**  
+thread 종료까지 대기  
+MyThread2 : 0  
+MyThread2 : 1  
+MyThread2 : 2  
+MyThread2 : 3  
+MyThread2 : 4  
+thread 종료
+```
 
+
+### interrupt()
+thread가 sleep(), wait(), join() 함수에 의해 non-runnable 상태일 때 interrupt()를 호출하면 다시 runnable 상태가 된다
+
+
+
+sleep과 wait 차이
 
 
 
