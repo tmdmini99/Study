@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Protocol/Http/SSE.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Protocol/Http/SSE.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
+                "file": "Spaces/Home/Protocol/Http/SSE.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Protocol/Http/SSE.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,8 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/STOMP.md",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Images/Smart Tomcat/Smart Tomcat11.png",
     "Images/Smart Tomcat/Smart Tomcat10.png",
     "Images/Smart Tomcat/Smart Tomcat9.png",
@@ -185,20 +187,17 @@
     "Images/Smart Tomcat/Smart Tomcat3.png",
     "Images/Smart Tomcat/Smart Tomcat2.png",
     "Images/Smart Tomcat/Smart Tomcat1.png",
-    "Images/Smart Tomcat/Smart Tomcat8.png",
     "Images/Smart Tomcat",
     "Images/새 폴더",
     "Spaces/Home/Java/람다/람다표현식.md",
     "Spaces/Home/Java/람다/Streams.md",
     "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/Socekt.md",
     "Spaces/Home/Protocol/Http/SSE.md",
-    "Spaces/Home/Protocol/Http/STOMP.md",
     "daily note/2024-01-08.md",
     "daily note/2024-01-03.md",
     "Spaces/Home/Tomcat/Smart Tomcat.md",
