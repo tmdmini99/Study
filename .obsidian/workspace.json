@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-08.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-08.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-08.md"
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-08.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,13 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "daily note/2024-01-03.md",
+    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+    "Spaces/Home/Protocol/Http/Socekt.md",
+    "Spaces/Home/Protocol/Http/SSE.md",
+    "Spaces/Home/Protocol/Http/STOMP.md",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
     "daily note/2024-01-08.md",
+    "daily note/2024-01-03.md",
     "Spaces/Home/Tomcat/Smart Tomcat.md",
     "Images/Smart Tomcat10.png",
     "Images/Smart Tomcat12.png",
@@ -188,17 +193,12 @@
     "Images/Smart Tomcat5.png",
     "Images/Smart Tomcat4.png",
     "Images/Smart Tomcat3.png",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Tomcat",
-    "Spaces/Home/Protocol/Http/Socekt.md",
     "Images/Socket",
     "Images/새 폴더",
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/Protocol/Http/STOMP.md",
-    "Spaces/Home/Protocol/Http/SSE.md",
     "Images/WebSocket",
     "Images/Polling - 복사본",
     "Images/SSE",

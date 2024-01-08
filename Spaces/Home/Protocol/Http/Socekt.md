@@ -133,4 +133,5 @@ Client Socket과 Server Socket로 구분되는데
 
 
 ---
-참조 - [[소켓과 웹소켓] 한 번에 정리 (1) | 소켓이란?, 소켓 API의 실행 흐름, 클라이언트 소켓과 서버 소켓 (velog.io)](https://velog.io/@rhdmstj17/%EC%86%8C%EC%BC%93%EA%B3%BC-%EC%9B%B9%EC%86%8C%EC%BC%93-%ED%95%9C-%EB%B2%88%EC%97%90-%EC%A0%95%EB%A6%AC-1)
+참조 - https://velog.io/@rhdmstj17/%EC%86%8C%EC%BC%93%EA%B3%BC-%EC%9B%B9%EC%86%8C%EC%BC%93-%ED%95%9C-%EB%B2%88%EC%97%90-%EC%A0%95%EB%A6%AC-1
+
