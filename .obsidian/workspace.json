@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSE.md",
+                "file": "Spaces/Home/IntelliJ/Spring/Spring.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSE.md",
+                "file": "Spaces/Home/IntelliJ/Spring/Spring.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSE.md"
+                "file": "Spaces/Home/IntelliJ/Spring/Spring.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSE.md",
+                "file": "Spaces/Home/IntelliJ/Spring/Spring.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,11 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
+    "Spaces/Home/IntelliJ/Spring/Spring.md",
+    "Spaces/Home/IntelliJ/Spring",
+    "Spaces/Home/IntelliJ",
+    "Spaces/Home/Protocol/Http/SSE.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Images/Smart Tomcat/Smart Tomcat11.png",
@@ -197,19 +202,15 @@
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/Socekt.md",
-    "Spaces/Home/Protocol/Http/SSE.md",
     "daily note/2024-01-08.md",
     "daily note/2024-01-03.md",
-    "Spaces/Home/Tomcat/Smart Tomcat.md",
-    "Spaces/Home/Tomcat",
+    "Spaces/Home/IntelliJ/Tomcat",
     "Images/Socket",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Images/WebSocket",
     "Images/Polling - 복사본",
     "Images/SSE",
-    "Images/SSL",
-    "Images/Quartz",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
