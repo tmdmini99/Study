@@ -175,11 +175,13 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/HandShake/HandShake.md",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
+    "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/Socekt.md",
     "Spaces/Home/Protocol/Http/SSE.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "daily note/2024-01-08.md",
     "daily note/2024-01-03.md",
     "Spaces/Home/Tomcat/Smart Tomcat.md",
@@ -205,7 +207,6 @@
     "Images/SSL",
     "Images/Quartz",
     "Images/ThreadLock",
-    "Images/STOMP",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
@@ -220,7 +221,6 @@
     "Spaces/Home/Java/Java DB/Open API Insert.md",
     "Spaces/Home/Java/JVM/JVM.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
-    "Spaces/Home/Java/Java DB/Class.forName(driver).md",
     "무제 파일.canvas"
   ]
 }

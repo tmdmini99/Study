@@ -74,6 +74,86 @@ Real-time web application구현을 위해 널리 사용되어지고 있다. (SNS
 위 이미지의 보라 색 박스에 해당하는 **Closing Handshake**
 
 
+(1) [Opening Handshake](https://tools.ietf.org/html/rfc6455#section-4)
+
+웹소켓 클라이언트에서 핸드쉐이크 요청(HTTP Upgrade)을 전송하고 이에 대한 응답으로 핸드 셰이크 응답을 받는데, 이때 응답 코드는 101입니다. 101은 '프로토콜 전환'을 서버가 승인했음을 알리는 코드입니다.
+
+
+```bash
+// 연결 수립을 요청할 때의 HTTP 헤더
+GET /chat HTTP/1.1
+Host: server.com 
+Upgrade: websocket 
+Connection: Upgrade 
+Sec-WebSocket-Key: dGgnnsduwqka17gdsSB3j==  
+Origin: http://example.com  
+Sec-WebSocket-Protocol: chat, superchat 
+Sec-WebSocket-Version: 13 
+```
+
+- GET /chat HTTP/1.1
+    - 연결 수립 과정은 HTTP 프로토콜 사용
+    - HTTP 버전은 1.1 이상 사용
+    - 반드시 GET 메서드를 사용
+- Host
+    - 웹소켓 서버의 주소
+- Upgrade
+	- 프로토콜을 전환하기 위해 사용하는 헤더
+    - 현재 클라이언트, 서버, 전송 프로토콜 연결에서 다른 프로토콜로 업그레이드 또는 변경하기 위한 규칙
+- Connection
+	- 현재의 전송이 완료된 후 네트워크 접속을 유지할 것인가에 대한 정보
+	- Upgrade 헤더 필드가 명시되었을 경우, 송신자는 반드시 Upgrade 옵션을 지정한 Connection 헤더 필드로 전송
+- Sec-WebSocket-Key
+	- 유효한 요청인지 확인하기 위해 사용하는 키 값. 
+    - 길이가 16바이트인 임의로 선택된 숫자를 base64로 인코딩 한 값
+    - 클라이언트와 서버 간 서로의 신원을 인증하기 위한 키
+- Origin
+    - 클라이언트로 웹 브라우저를 사용하는 경우 필수항목, 클라이언트의 주소
+- Sec-WebSocket-Protocol
+    - 클라이언트가 요청하는 여러 `서브프로토콜`을 의미
+    - 공백문자로 구분하며 순서에 따라 우선권이 부여
+    - 서버에서 여러 프로토콜 혹은 프로토콜 버전을 나눠서 서비스할 경우 필요한 정보
+    - 사용하고자 하는 하나 이상의 웹 소켓 프로토콜 지정. 필요한 경우에만 사용
+
+```bash
+// HTTP 응답 헤더
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRb+jfgh=
+```
+
+- 101 Switching Protocols
+    - 101 Switching Protocols가 Response로 오면 웹소켓이 연결됐다는 의미
+- Sec-WebSocket-Accept
+    - 클라이언트로 받은 Sec-WebSocket-Key를 사용하여 계산된 값
+    - 클라이언트에서 계산한 값과 일치하지 않으면 연결 수립이 되지 않음.
+
+
+
+
+(2) [Data Transfer](https://tools.ietf.org/html/rfc6455#section-5)
+
+핸드쉐이크를 통해 웹소켓 연결이 수립되면, 데이터 전송 파트가 시작됩니다. 여기에서는 클라이언트와 서버가 '메시지'라는 개념으로 데이터를 주고받는데, 여기서 메시지는 한 개 이상의 '프레임'으로 구성되어 있습니다. (프레임은 텍스트(UTF-8) 데이터, 바이너리 데이터, 컨트롤 프레임(프로토콜 레벨의 신호) 등이 있습니다)
+
+핸드 셰이크가 끝난 시점부터 서버와 클라이언트는 서로가 살아 있는지 확인하기 위해 heartbeat 패킷을 보내며, 주기적으로 ping을 보내 체크합니다. 이는 서버와 클라이언트 양측에서 설정 가능합니다. 
+
+(3) [Close Handshake](https://tools.ietf.org/html/rfc6455#section-7)
+
+클라이언트와 서버 모두 커넥션을 종료하기 위한 컨트롤 프레임을 전송할 수 있습니다. 이 컨트롤 프레임은 Closing Handshake를 시작하라는 특정한 컨트롤 시퀀스를 포함한 데이터를 가지고 있습니다. 위 그림에서는 서버가 커넥션을 종료한다는 프레임을 보내고, 클라이언트가 이에 대한 응답으로 Close 프레임을 전송합니다. 그러면 웹소켓 연결이 종료됩니다. 연결 종료 이후에 수신되는 모든 추가적인 데이터는 버려집니다
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 웹 소켓 프로토콜 특징
 
@@ -87,13 +167,13 @@ Real-time web application구현을 위해 널리 사용되어지고 있다. (SNS
 
 ## 웹소켓 한계
 
-웹소켓은 html5이후에 나왔다. html5이전 기술로 구현된 서비스에서는 어떻게 해야할까?
+- 웹소켓은 HTML5 이후로 등장한 기술이므로, HTML5 이전의 기술로 구현된 서비스에서 사용할 수 없음.
 
 ### 1. Socket.io, SockJS
 
-Socker.io, SockerJS가 html5이전의 기술로 구현된 서비스에서 웹 소켓처럼 사용할 수 있도록 도와주는 기술임. 이걸로 실시간 통신을 도와준다.
-
-결국 브라우저와 웹서버의 종류와 버전을 파악하여 가장 적합한 기술을 선택해 웹소켓처럼 보여지게 기능을 만든다!
+- HTML5 이전의 기술로 구현된 서비스에서 웹 소컷처럼 사용 할 수 있도록 도와주는 기술
+- JavaScript를 이용하여 브라우저 종류에 상관없이 실시간 웹을 구현
+- 브라우저와 웹 서버의 종류와 버전을 파악하여 가장 적합한 기술을 선택하여 사용하는 방식
 
 ### 2. STOMP
 
@@ -122,3 +202,9 @@ https://velog.io/@bnb8419/Socket.io%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%8B%
 
 
 https://velog.io/@codingbotpark/Web-Socket-%EC%9D%B4%EB%9E%80
+
+
+https://kellis.tistory.com/65
+
+
+https://velog.io/@ctdlog/Web-Socket
