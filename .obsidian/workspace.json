@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/HandShake/HandShake.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/HandShake/HandShake.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/HandShake/HandShake.md"
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/HandShake/HandShake.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,25 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Images/Smart Tomcat/Smart Tomcat11.png",
+    "Images/Smart Tomcat/Smart Tomcat10.png",
+    "Images/Smart Tomcat/Smart Tomcat9.png",
+    "Images/Smart Tomcat/Smart Tomcat12.png",
+    "Images/Smart Tomcat/Smart Tomcat6.png",
+    "Images/Smart Tomcat/Smart Tomcat5.png",
+    "Images/Smart Tomcat/Smart Tomcat4.png",
+    "Images/Smart Tomcat/Smart Tomcat3.png",
+    "Images/Smart Tomcat/Smart Tomcat2.png",
+    "Images/Smart Tomcat/Smart Tomcat1.png",
+    "Images/Smart Tomcat/Smart Tomcat8.png",
+    "Images/Smart Tomcat",
+    "Images/새 폴더",
+    "Spaces/Home/Java/람다/람다표현식.md",
+    "Spaces/Home/Java/람다/Streams.md",
+    "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/TCP,UDP.md",
-    "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/Socekt.md",
@@ -187,19 +202,8 @@
     "daily note/2024-01-08.md",
     "daily note/2024-01-03.md",
     "Spaces/Home/Tomcat/Smart Tomcat.md",
-    "Images/Smart Tomcat10.png",
-    "Images/Smart Tomcat12.png",
-    "Images/Smart Tomcat11.png",
-    "Images/Smart Tomcat9.png",
-    "Images/Smart Tomcat8.png",
-    "Images/Smart Tomcat7.png",
-    "Images/Smart Tomcat6.png",
-    "Images/Smart Tomcat5.png",
-    "Images/Smart Tomcat4.png",
-    "Images/Smart Tomcat3.png",
     "Spaces/Home/Tomcat",
     "Images/Socket",
-    "Images/새 폴더",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Images/WebSocket",
@@ -207,7 +211,6 @@
     "Images/SSE",
     "Images/SSL",
     "Images/Quartz",
-    "Images/ThreadLock",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
@@ -218,9 +221,6 @@
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Java/Scheduler/Cron.md",
     "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
-    "Spaces/Home/Java/Java DB/Java DB Connection.md",
-    "Spaces/Home/Java/Java DB/Open API Insert.md",
-    "Spaces/Home/Java/JVM/JVM.md",
     "무제 파일.canvas"
   ]
 }
