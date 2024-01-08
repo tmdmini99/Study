@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Protocol/HandShake/HandShake.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Protocol/HandShake/HandShake.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
+                "file": "Spaces/Home/Protocol/HandShake/HandShake.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
+                "file": "Spaces/Home/Protocol/HandShake/HandShake.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,10 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/HandShake/HandShake.md",
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Protocol/Http/WebSocket.md",
+    "Spaces/Home/Protocol/TCP,UDP.md",
+    "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/Socekt.md",
@@ -200,7 +202,6 @@
     "Images/새 폴더",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Images/WebSocket",
     "Images/Polling - 복사본",
     "Images/SSE",
@@ -220,7 +221,6 @@
     "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Spaces/Home/Java/Java DB/Open API Insert.md",
     "Spaces/Home/Java/JVM/JVM.md",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "무제 파일.canvas"
   ]
 }
