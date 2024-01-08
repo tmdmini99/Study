@@ -260,3 +260,12 @@ public class DataBaseInsert2 {
   
 }
 ```
+
+
+
+
+---
+참조 - https://hy-ung.tistory.com/56 open api 값 가져오기
+
+
+https://m.blog.naver.com/myhouse34/222284326241
