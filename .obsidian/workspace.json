@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Java DB Connection.md",
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Java DB Connection.md",
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Java DB Connection.md"
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Java DB/Java DB Connection.md",
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,15 +176,16 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/JPA.md",
+    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
+    "Spaces/Home/IntelliJ/Spring/Spring.md",
+    "Spaces/Home/Spring/AOP/AOP.md",
+    "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Spaces/Home/Java/Java DB/Open API Insert.md",
     "Spaces/Home/Java/Java DB/Connection& DriverManager Class.md",
     "Spaces/Home/Java/Java DB/Class.forName(driver).md",
-    "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Spaces/Home/Java/Java DB/Statement & Prepared Statement.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
     "daily note/2024-01-08.md",
-    "Spaces/Home/IntelliJ/Spring/Spring.md",
-    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
     "Spaces/Home/IntelliJ/Spring",
     "Spaces/Home/IntelliJ",
     "Spaces/Home/Protocol/Http/SSE.md",
@@ -220,7 +222,6 @@
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/Process.md",
-    "Spaces/Home/Spring/JPA.md",
     "무제 파일.canvas"
   ]
 }
