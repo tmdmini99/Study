@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ed2adfb14b7d9c37",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/JPA.md",
     "Images/JPA58.png",
     "Images/JPA57.png",
@@ -186,7 +187,6 @@
     "Images/JPA51.png",
     "Images/Pasted image 20240109144553.png",
     "Images/JPA50.png",
-    "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
