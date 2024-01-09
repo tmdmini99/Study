@@ -85,6 +85,41 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 </persistence>
 ```
 
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<!-- 밑에 내용은 내가 생성한 패키지에서 가져오는 것-->
+	<persistence-unit name="jobcall">
+		<class>com.poozim.jobcall.model.Work</class>
+		<class>com.poozim.jobcall.model.WorkBoard</class>
+		<class>com.poozim.jobcall.model.WorkBoardFile</class>
+		<class>com.poozim.jobcall.model.WorkGroup</class>
+		<class>com.poozim.jobcall.model.Member</class>
+		<class>com.poozim.jobcall.model.Comment</class>
+		<class>com.poozim.jobcall.model.CommentFile</class>
+		<class>com.poozim.jobcall.model.FavoritLog</class>
+		<class>com.poozim.jobcall.model.StatusLog</class>
+		
+		<properties>
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->
+			
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.use_sql_comments" value="true"/>
+			<property name="hibernate.c3p0.min_size" value="5"/>
+			<property name="hibernate.c3p0.max_size" value="20"/>
+			<property name="hibernate.c3p0.timeout" value="500"/>
+			<property name="hibernate.c3p0.idle_test_period" value="2000"/>
+		</properties>
+	</persistence-unit>
+</persistence>
+```
+
 \<class>태그는 JPA의 Entity가 될 위에 언급된 model 패키지 안의 객체 클래스들을 선언하면된다. 나는 테스트를위해 일단 Work클래스에만 Entity를 지정했다.
 
 주석처리된 property가 있다.
@@ -341,3 +376,5 @@ public interface WorkRepository extends JpaRepository<Work, Integer>{
 참조 - https://glow153.tistory.com/25
 
 https://riverblue.tistory.com/47
+
+https://riverblue.tistory.com/49
