@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,7 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/Maven",
@@ -189,7 +190,6 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
     "Spaces/Home/Spring/JPA.md",
     "Images/JPA.png",
-    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/MyBatis",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",

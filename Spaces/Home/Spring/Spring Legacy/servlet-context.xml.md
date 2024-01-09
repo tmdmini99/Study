@@ -1,29 +1,46 @@
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"  
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-             xmlns:beans="http://www.springframework.org/schema/beans"  
-             xmlns:context="http://www.springframework.org/schema/context"  
-             xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd  
-       http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd       http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">  
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">  
   
-    <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->  
+    <filter>  
+        <filter-name>characterEncodingFilter</filter-name>  
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+        <init-param>  
+            <param-name>encoding</param-name>  
+            <param-value>UTF-8</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>forceEncoding</param-name>  
+            <param-value>true</param-value>  
+        </init-param>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>characterEncodingFilter</filter-name>  
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping>  
   
-    <!-- Enables the Spring MVC @Controller programming model -->    <annotation-driven />  
-  
-    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->  
-    <resources mapping="/**" location="/" />  
-  
-    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->  
-    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
-        <beans:property name="prefix" value="/WEB-INF/views/" />  
-        <beans:property name="suffix" value=".jsp" />  
-    </beans:bean>  
-  
-    <context:component-scan base-package="com.poozim.jobcall" />  
-  
-  
-  
-</beans:beans>
+    <context-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>/WEB-INF/spring/*-context.xml</param-value>  
+    </context-param>  
+    <listener>  
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener>  
+    <servlet>  
+        <servlet-name>appServlet</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+        <init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>  
+        </init-param>  
+        <load-on-startup>1</load-on-startup>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>appServlet</servlet-name>  
+        <url-pattern>/</url-pattern>  
+    </servlet-mapping>  
+</web-app>
 ```
