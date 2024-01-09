@@ -1215,19 +1215,38 @@ public class Member {
 
 }
 ```
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19|@Entity<br><br>@Getter<br><br>@ToString<br><br>@Setter<br><br>public class Member {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Column(name = "user_id")<br><br>    private String userId;<br><br>    private String password;<br><br>    @OneToMany(cascade = CascadeType.ALL)<br><br>    private List<Board> boards = new ArrayList<>();<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
 
 관계된 테이블에도 저장되게 하기 위해서 **cascade**를 사용했습니다.
 
 (**cascade** 대신 저장하는 **public void create(){...}** 메소드부분에 **@Transactional** 사용하셔 됩니다)
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Entity<br><br>@Setter<br><br>@Getter<br><br>@ToString<br><br>public class Board {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String title;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
 
-![](https://blog.kakaocdn.net/dn/zD0Lo/btqFOjewxBo/KbT5eGkCi8HCqfcNkLyDdK/img.gif)
+@Setter
+
+@Getter
+
+@ToString
+
+public class Board {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String title;
+
+}
+```
+
+
+![[JPA8.gif]]
+
+
 
 이미지 클릭
 
@@ -1239,11 +1258,11 @@ public class Member {
 
 **[mappedBy 속성]**
 
-![](https://blog.kakaocdn.net/dn/bqzXWz/btqFOLV7S6l/ZclZg6d92K2lhNXvyRh720/img.png)
+![[JPA35.png]]
 
 **나머지 속성들은 @OneToOne 에서 참고바랍니다**
 
-> **#8. @ManyToOne**
+#### > **#8. @ManyToOne**
 
 |   |   |   |
 |---|---|---|
@@ -1264,7 +1283,7 @@ public class Member {
 
 **나머지 속성들은 @OneToOne 에서 참고바랍니다**
 
-> **#9. @OrderBy - Hibernate 패키지**
+#### > **#9. @OrderBy - Hibernate 패키지**
 
 |   |   |   |
 |---|---|---|
@@ -1275,22 +1294,133 @@ public class Member {
 |**[참고]** 관계가 설정된 테이블을 정렬 할 때 사용하고, **@OneToMany** 필드에 사용한다   <br>           사용법은 아래 코드를 확인바랍니다|   |   |
 
 **[코드]**
+```java
+@RestController
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19<br><br>20<br><br>21<br><br>22<br><br>23<br><br>24<br><br>25<br><br>26<br><br>27<br><br>28<br><br>29<br><br>30|@RestController<br><br>@Slf4j<br><br>public class api {<br><br>    @Autowired<br><br>    private MemberRepository memberRepository;<br><br>    @Autowired<br><br>    private BoardRepository boardRepository;<br><br>    @GetMapping("/members/{memberId}")<br><br>    public Member memberDetail(@PathVariable("memberId") Long memberId) {<br><br>        return memberRepository.findById(memberId).get();<br><br>    }<br><br>    @PostMapping("/boards/{userId}")<br><br>    public void boardCreate(@RequestBody Board board, @PathVariable("userId") Long userId) {<br><br>        Member member = memberRepository.findById(userId).get();<br><br>        member.add(board);<br><br>        boardRepository.save(board);<br><br>    }<br><br>    @GetMapping("/members")<br><br>    public List<Member> memberList() {<br><br>        return memberRepository.findAll();<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Slf4j
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19<br><br>20<br><br>21<br><br>22<br><br>23<br><br>24<br><br>25<br><br>26|@Entity<br><br>@Getter<br><br>@ToString<br><br>@Setter<br><br>public class Member {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Column(name = "user_id")<br><br>    private String userId;<br><br>    private String password;<br><br>    @JsonManagedReference<br><br>    @OneToMany<br><br>    @OrderBy(value = "title desc")<br><br>    List<Board> boards = new ArrayList<>();<br><br>    public void add(Board board) {<br><br>        board.setMember(this);<br><br>        boards.add(board);<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+public class api {
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18|@Entity<br><br>@Setter<br><br>@Getter<br><br>@ToString<br><br>public class Board {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String title;<br><br>    @JsonBackReference<br><br>    @ManyToOne<br><br>    private Member member;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+    @Autowired
+
+    private MemberRepository memberRepository;
+
+    @Autowired
+
+    private BoardRepository boardRepository;
+
+    @GetMapping("/members/{memberId}")
+
+    public Member memberDetail(@PathVariable("memberId") Long memberId) {
+
+        return memberRepository.findById(memberId).get();
+
+    }
+
+    @PostMapping("/boards/{userId}")
+
+    public void boardCreate(@RequestBody Board board, @PathVariable("userId") Long userId) {
+
+        Member member = memberRepository.findById(userId).get();
+
+        member.add(board);
+
+        boardRepository.save(board);
+
+    }
+
+    @GetMapping("/members")
+
+    public List<Member> memberList() {
+
+        return memberRepository.findAll();
+
+    }
+
+}
+```
+
+
+```java
+@Entity
+
+@Getter
+
+@ToString
+
+@Setter
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Column(name = "user_id")
+
+    private String userId;
+
+    private String password;
+
+    @JsonManagedReference
+
+    @OneToMany
+
+    @OrderBy(value = "title desc")
+
+    List<Board> boards = new ArrayList<>();
+
+    public void add(Board board) {
+
+        board.setMember(this);
+
+        boards.add(board);
+
+    }
+
+}
+```
+
+
+
+```java
+@Entity
+
+@Setter
+
+@Getter
+
+@ToString
+
+public class Board {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String title;
+
+    @JsonBackReference
+
+    @ManyToOne
+
+    private Member member;
+
+}
+```
+
+
+
+
+
 
 **[SQL]**
 
-![](https://blog.kakaocdn.net/dn/rpSvE/btqFOhA90Gy/Cs1QHfNBIa9fhNLAsQVl0k/img.png)
+![[JPA36.png]]
 
 > ~~**#10. @ManyToMany**~~
 
@@ -1306,7 +1436,7 @@ public class Member {
 |**속성**|**기능**|**기본값**|
 |**없음**|   |   |
 
-![](https://blog.kakaocdn.net/dn/Uh0d7/btqFOMAW769/dSe4AX4HTiOOVRFmPZHcSK/img.png)
+![[JPA37.png]]
 
 Primary Key = id
 
@@ -1329,27 +1459,61 @@ Primary Key = id
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Seat {<br><br>    @EmbeddedId<br><br>    private SeatId seatId;<br><br>    private String type;<br><br>}|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9|@Embeddable<br><br>@Getter<br><br>public class SeatId implements Serializable {<br><br>    private Long x;<br><br>    private Long y;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Getter
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5|import org.springframework.data.jpa.repository.JpaRepository;<br><br>public interface SeatRepository extends JpaRepository<Seat, SeatId> {<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Setter
+
+@ToString
+
+public class Seat {
+
+    @EmbeddedId
+
+    private SeatId seatId;
+
+    private String type;
+
+}
+```
+
+
+```java
+@Embeddable
+
+@Getter
+
+public class SeatId implements Serializable {
+
+    private Long x;
+
+    private Long y;
+
+}
+```
+
+
+```java
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SeatRepository extends JpaRepository<Seat, SeatId> {
+
+}
+```
+
 
 id 타입이 바뀌어 Long 아닌 SeatId 로 바꿔주어여 한다.
 
 **[SQL]**
 
-![](https://blog.kakaocdn.net/dn/dGQ0Hp/btqFNEcN7lN/K8PQ1iQBe7mnTKRkjMNLkK/img.png)
+
+![[JPA38.png]]
 
 **[테이블]**
 
-![](https://blog.kakaocdn.net/dn/D8wa7/btqFOYHWes2/tVXWwIHIcHKdekPoKXvcE0/img.png)
+![[JPA39.png]]
 
 **[기타 참고]**
 
@@ -1367,34 +1531,76 @@ woowabros.github.io](https://woowabros.github.io/experience/2019/01/04/composit-
 |**없음**|   |   |
 
 **[코드]**
+```java
+@Entity
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>@IdClass(value = SeatId.class)<br><br>public class Seat {<br><br>    @Id<br><br>    private Long x;<br><br>    @Id<br><br>    private Long y;<br><br>    private String type;<br><br>}|[cs](http://colorscripter.com/info#e)|
+@Getter
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13|@EqualsAndHashCode(onlyExplicitlyIncluded = true)<br><br>@Getter<br><br>@NoArgsConstructor<br><br>@AllArgsConstructor<br><br>public class SeatId implements Serializable {<br><br>    @EqualsAndHashCode.Include<br><br>    private Long x;<br><br>    @EqualsAndHashCode.Include<br><br>    private Long y;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Setter
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5|import org.springframework.data.jpa.repository.JpaRepository;<br><br>public interface SeatRepository extends JpaRepository<Seat, SeatId> {<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@ToString
+
+@IdClass(value = SeatId.class)
+
+public class Seat {
+
+    @Id
+
+    private Long x;
+
+    @Id
+
+    private Long y;
+
+    private String type;
+
+}
+```
+
+
+```java
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+
+@Getter
+
+@NoArgsConstructor
+
+@AllArgsConstructor
+
+public class SeatId implements Serializable {
+
+    @EqualsAndHashCode.Include
+
+    private Long x;
+
+    @EqualsAndHashCode.Include
+
+    private Long y;
+
+}
+```
+
+
+```java
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SeatRepository extends JpaRepository<Seat, SeatId> {
+
+}
+```
+
 
 **[SQL]**
 
-![](https://blog.kakaocdn.net/dn/dGQ0Hp/btqFNEcN7lN/K8PQ1iQBe7mnTKRkjMNLkK/img.png)
+![[JPA40.png]]
 
 **[테이블]**
 
-![](https://blog.kakaocdn.net/dn/nzbbO/btqFOXoJCFq/DDhnV1eOQVgn00TdcJLBH0/img.png)
+![[JPA41.png]]
 
 **[기타 참고]**
 
- [Legacy DB의 JPA Entity Mapping (복합키 매핑 편) - 우아한형제들 기술 블로그
-
-안녕하세요. 우아한형제들에서 배달의민족 서비스의 광고시스템을 개발하고 있습니다. 시스템을 점진적으로 Spring Boot / JPA 기반으로 이관하면서 경험했던 내용을 공유하고자 합니다.
-
-woowabros.github.io](https://woowabros.github.io/experience/2019/01/04/composit-key-jpa.html)
+ [Legacy DB의 JPA Entity Mapping (복합키 매핑 편) - 우아한형제들 기술 블로그](https://woowabros.github.io/experience/2019/01/04/composit-key-jpa.html)
 
 > **#14. @GeneratedValue**
 
@@ -1417,13 +1623,45 @@ woowabros.github.io](https://woowabros.github.io/experience/2019/01/04/composit-
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Delivery {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Embedded<br><br>    private Address address;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10|@Embeddable<br><br>public class Address {<br><br>    private String zoneCode;<br><br>    private String address;<br><br>    private String buildingName;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Getter
+
+@Setter
+
+@ToString
+
+public class Delivery {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Embedded
+
+    private Address address;
+
+}
+```
+
+
+```java
+@Embeddable
+
+public class Address {
+
+    private String zoneCode;
+
+    private String address;
+
+    private String buildingName;
+
+}
+```
+
 
 **[설명]**
 
@@ -1437,7 +1675,7 @@ woowabros.github.io](https://woowabros.github.io/experience/2019/01/04/composit-
 
 **[테이블]**
 
-![](https://blog.kakaocdn.net/dn/c5Y5Lt/btqFOYgTThH/LBEiDzxWGJ8BnEXviNY0v0/img.png)
+![[JPA42.png]]
 
 Delivery 테이블
 
@@ -1462,25 +1700,53 @@ Delivery 테이블
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Message {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String message;<br><br>    @Enumerated(value = EnumType.STRING)<br><br>    private MessageType type;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4|public enum  MessageType {<br><br>    EMAIL, SMS, KAKAO;<br><br>}|[cs](http://colorscripter.com/info#e)|
+@Getter
+
+@Setter
+
+@ToString
+
+public class Message {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String message;
+
+    @Enumerated(value = EnumType.STRING)
+
+    private MessageType type;
+
+}
+```
+
+
+```java
+public enum  MessageType {
+
+    EMAIL, SMS, KAKAO;
+
+}
+```
+
 
 **[value 속성]**
 
 **- EnumType.ORDINAL**
 
-![](https://blog.kakaocdn.net/dn/daXI3v/btqFPr4eYjP/RWOvQQxiGfdLAatSikFlUk/img.png)
+![[JPA43.png]]
 
 EnumType.ORDINAL
 
 **- EnumType.STRING**
 
-![](https://blog.kakaocdn.net/dn/bhQpHj/btqFNQxkCxx/wRWTLFS05gcYe4ozpvtWSK/img.png)
+![[JPA44.png]]
 
 EnumType.STRING
 
@@ -1497,7 +1763,7 @@ EnumType.STRING
 
 관계된 테이블에서도 json 으로 볼 수 있게끔 사용하기도 한다.
 
-**@Transient List<?> list = new ArrayList<>();**
+**@Transient List\<?> list = new ArrayList<>();**
 
 > **#19.@AttributeOverride**
 
@@ -1509,13 +1775,55 @@ EnumType.STRING
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Delivery {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Embedded<br><br>    @AttributeOverride(name = "zoneCode", column = @Column(name = "first_address"))<br><br>    private Address address;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Embeddable<br><br>@ToString<br><br>@Setter<br><br>@Getter<br><br>public class Address {<br><br>    private String zoneCode;<br><br>    private String address;<br><br>    private String buildingName;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Getter
+
+@Setter
+
+@ToString
+
+public class Delivery {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Embedded
+
+    @AttributeOverride(name = "zoneCode", column = @Column(name = "first_address"))
+
+    private Address address;
+
+}
+```
+
+
+
+```java
+@Embeddable
+
+@ToString
+
+@Setter
+
+@Getter
+
+public class Address {
+
+    private String zoneCode;
+
+    private String address;
+
+    private String buildingName;
+
+}
+```
+
+
 
 **[설명]**
 
@@ -1547,13 +1855,28 @@ EnumType.STRING
 
 **@Setter** 가 없는 경우 값이 **null** 로 들어갑니다
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9|// JSON Request<br><br>{<br><br>  "address": {<br><br>    "zoneCode": "06120",<br><br>    "address": "서울 강남구 강남대로 480",<br><br>    "buildingName": "올리브영"<br><br>  }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```json
+// JSON Request
+
+{
+
+  "address": {
+
+    "zoneCode": "06120",
+
+    "address": "서울 강남구 강남대로 480",
+
+    "buildingName": "올리브영"
+
+  }
+
+}
+```
 
 **[테이블]**
 
-![](https://blog.kakaocdn.net/dn/EQgPk/btqFONmnCP4/nin7KA6LKRffJt4MPUAo8k/img.png)
+
+![[JPA45.png]]
 
 **zone_code** 에서 **first_address** 로 재정의 된 모습
 
@@ -1566,17 +1889,61 @@ EnumType.STRING
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19|@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Delivery {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Embedded<br><br>    @AttributeOverrides(value = {<br><br>            @AttributeOverride(name = "zoneCode", column = @Column(name = "address1")),<br><br>            @AttributeOverride(name = "address", column = @Column(name = "address2")),<br><br>            @AttributeOverride(name = "buildingName", column = @Column(name = "address3"))<br><br>    })<br><br>    private Address address;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Getter
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Embeddable<br><br>@ToString<br><br>@Setter<br><br>@Getter<br><br>public class Address {<br><br>    private String zoneCode;<br><br>    private String address;<br><br>    private String buildingName;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Setter
+
+@ToString
+
+public class Delivery {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Embedded
+
+    @AttributeOverrides(value = {
+
+            @AttributeOverride(name = "zoneCode", column = @Column(name = "address1")),
+
+            @AttributeOverride(name = "address", column = @Column(name = "address2")),
+
+            @AttributeOverride(name = "buildingName", column = @Column(name = "address3"))
+
+    })
+
+    private Address address;
+
+}
+```
+
+```java
+@Embeddable
+
+@ToString
+
+@Setter
+
+@Getter
+
+public class Address {
+
+    private String zoneCode;
+
+    private String address;
+
+    private String buildingName;
+
+}
+```
 
 **[테이블]**
 
-![](https://blog.kakaocdn.net/dn/eevBOT/btqFNPr3sG5/mNRmJ2LevPc1djlec1XWKk/img.png)
+![[JPA46.png]]
 
 **[설명]**
 
