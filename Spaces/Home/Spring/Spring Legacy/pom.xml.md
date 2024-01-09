@@ -17,7 +17,8 @@ Spring Lecay pom.xml
         <maven.compiler.target>8</maven.compiler.target>  
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
         <org.springframework-version>5.2.11.RELEASE</org.springframework-version>  
-        <org.slf4j-version>1.7.5</org.slf4j-version>  
+        <org.slf4j-version>1.7.5</org.slf4j-version>
+        <org.aspectj-version>1.6.10</org.aspectj-version>  
     </properties>  
     <dependencies>  
         <!-- Spring -->  
@@ -156,6 +157,26 @@ Spring Lecay pom.xml
             <artifactId>gson</artifactId>  
             <version>2.8.5</version>  
         </dependency>  
+
+
+		<!-- AspectJ -->  
+		<dependency>  
+		    <groupId>org.aspectj</groupId>  
+		    <artifactId>aspectjrt</artifactId>  
+		    <version>${org.aspectj-version}</version>  
+		</dependency>
+
+        <dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-web</artifactId>  
+    <version>5.3.26</version>  
+</dependency>  
+  
+<dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-webmvc</artifactId>  
+    <version>5.3.26</version>  
+</dependency>
   
   
     </dependencies>  
