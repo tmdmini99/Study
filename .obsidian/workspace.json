@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md"
+                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,17 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/porm.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/Spring/JPA.md",
+    "Spaces/Home/Spring/MyBatis",
+    "Spaces/Home/Spring/Spring Legacy/무제 파일.md",
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Spring/Spring Legacy",
-    "Spaces/Home/Spring/JPA.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
     "Spaces/Home/Spring/AOP/AOP.md",
     "Spaces/Home/Java/Java DB/Java DB Connection.md",
@@ -212,15 +218,9 @@
     "Spaces/Home/Protocol/TCP,UDP.md",
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "Spaces/Home/Protocol/Http/Socekt.md",
-    "daily note/2024-01-03.md",
     "Spaces/Home/IntelliJ/Tomcat",
     "Images/Socket",
-    "Spaces/Home/Protocol/Http/HTTP Polling.md",
-    "Spaces/Home/Protocol/Http/Http.md",
     "Images/WebSocket",
-    "Images/Polling - 복사본",
-    "Spaces/Home/Java/JVM/ThreadLock.md",
     "무제 파일.canvas"
   ]
 }
