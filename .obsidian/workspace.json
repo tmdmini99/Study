@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Maven/Maven.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Maven/Maven.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md"
+                "file": "Spaces/Home/Spring/Maven/Maven.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Maven/Maven.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,10 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Images/JPA6.png",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+    "Spaces/Home/Spring/Maven/Maven.md",
+    "Spaces/Home/Spring/Maven",
+    "Images/JPA6.png",
     "Images/JPA5.png",
     "Images/JPA4.png",
     "Images/JPA3.png",
@@ -219,7 +221,6 @@
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/IntelliJ/Tomcat",
     "Images/Socket",
-    "Images/WebSocket",
     "무제 파일.canvas"
   ]
 }
