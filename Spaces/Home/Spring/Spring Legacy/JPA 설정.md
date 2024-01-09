@@ -378,3 +378,5 @@ public interface WorkRepository extends JpaRepository<Work, Integer>{
 https://riverblue.tistory.com/47
 
 https://riverblue.tistory.com/49
+
+https://change-words.tistory.com/entry/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%A0%88%EA%B1%B0%EC%8B%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-JPA-%EC%83%9D%EC%84%B1-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-%ED%95%98%EC%9D%B4%EB%B2%84%EB%84%A4%EC%9D%B4%ED%8A%B8-%EC%98%A4%EB%9D%BC%ED%81%B4
