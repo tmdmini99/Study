@@ -692,20 +692,1513 @@ public class Block {
 ![[JPA26.png]]
 
 
+![[JPA27.png]]
 
 
 
+![[JPA4.gif]]
 
 
 
+![[JPA28.png]]
+
+
+![[JPA29.png]]
+
+
+[fetch 속성 설명]
+
+**Api.java (@RestController)**
+```java
+@GetMapping("/boards/{boardId}")
+
+public Board boardDetail(@PathVariable("boardId") Long boardId) {
+
+    Board board = boardRepository.findById(boardId).get();
+
+    log.info("board Title ->{}", board.getTitle());
+
+    log.info("board Id ->{}", board.getId());
+
+    log.info("board Writer ->{}", board.getWriter());
+
+    return board;
+
+}
+```
+
+**- FetchType.EAGER (즉시로딩)**
 
 
 
+![[JPA30.png]]
+
+****- FetchType.LAZY(지연로딩)****
+
+![[JPA31.png]]
+
+**차이점**은
+
+**EAGER (즉시로딩)**은 Join 을 이용하여 **1개의 SQL문**으로 처리하였고,
+
+**LAZY (지연로딩)**은 **2개의 SQL문**으로 처리하였다.
+
+네트워크 연결이 필요한 작업은 최소하 하는 것이 가장 바람직한 코드이다.
+
+DB에서 1번에 가져올 것을 100번이나 요청에서 가져오는 방법은 효율적이지 못한 방법이다.
+
+이렇게 따지고보면 **EAGER**는 속도에 효율적인 방법이라고 봐야하는게 맞는가?
+
+아니다, **EAGER**를 써야할 때와 **LAZY** 를 써야할 때가 있기 때문에 상황마다 다르다
+
+보통은 **LAZY** 사용하고 **EAGER**를 사용하는 경우는 드믈다.
+
+**[LAZY를 사용하는 이유]**
+
+1. 연관된 테이블의 정보가 필요없는 경우
+
+![[JPA32.png]]
+
+설명을 위해 양방향 매핑으로 예시를 들었습니다
+
+**EAGER**를 사용하여 릴레이션(관계) 된 카테고리 테이블의 정보까지 굳이 조회할 필요는 없다.
+
+게시글 상세내용보기를 눌렀을 때 주는 것이 바람직하다.
+
+SQL 문이 1번만 실행되었다고 하였지만 오히려 필요없는 많은 데이터양을 조회하는 것에 효율적이지 못하다.
+
+하지만 **LAZY** 방식의 코드 그림을 보면
+
+**board.getTitle(); board.getId();** GET 메소드를 사용할 때가 아닌
+
+**board.getWriter();** GET 메소드를 사용할 때
+
+**DB에서 조회 후** **GET 메소드가 실행**되는 것을 볼 수 있다.
+
+즉, 필요할 때 만 사용한다.
+
+(**toString** 도 똑같이으로 해당 필드 호출 시에 DB 조회 합니다)
+
+**2. 연관된 테이블이 서버에서 작업처리 도중 변경된 경우**
+
+![[JPA33.png]]
+
+게시판은 큰 문제 될 것 없지만, 결제나, 주문 같은 경우 문제가 된다
+
+B 사용자가 사용하는 Board 객체에는 Member 객체까지 세팅이 되어있다.
+
+그런데 해당 객체를 이용하여 서버에서 작업하는 도중에
+
+DB Member 테이블의 A 사용자의 이름이 root 에서 benny 로 바뀌었다고 해보자
+
+그러면 B 사용자에 출력되는 게시판에 A 사용자가 작성한 게시글의 이름은
+
+benny 가 아닌 root 가 된다.
+
+물론 다시 새로고침하면 문제가 될 것은 없지만,
+
+만약 주문이나 결제와 같은 경우 주문취소와 관련된 경우는 큰 문제가 될 수 있다.
+
+---
+
+**[**orphanRemoval** 속성 설명]**
+
+**orphanRemoval** 은 고아객체를 의미하면
+
+**false**는 부모가 없는 고아객체 존재할 수 있게하고
+
+**true**는 고아객체가 존재할 수 없게한다.
+
+즉, 고아객체란
+
+관계된 테이블에서 부모테이블에서는 값이 사라져있는데 자식테이블에는 값이 존재하는 경우이다.
+
+```java
+@RestController
+
+@Slf4j
+
+public class api {
+
+    @Autowired
+
+    private MemberRepository memberRepository;
+
+    @PostMapping("/memberBlock/{userId}")
+
+    public void boardCreate(@PathVariable("userId") Long id) {
+
+        log.info("userId -> {}", id);
+
+        Member member =  memberRepository.findById(id).get();
+
+        Block block = new Block(member.getUserId());
+
+        member.setBlock(block);
+
+        memberRepository.save(member);
+
+    }
+
+    @PostMapping("/orphanRemoval/{userId}")
+
+    public void orphanRemoval(@PathVariable("userId") Long userId) {
+
+        log.info("userId -> {}", userId);
+
+        Member member =  memberRepository.findById(userId).get();
+
+        member.setBlock(null); // orphanRemoval
+
+        memberRepository.save(member);
+
+    }
+
+}
+```
 
 
+```java
+@Entity
+
+@Getter
+
+@ToString
+
+@Setter
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Column(name = "user_id")
+
+    private String userId;
+
+    private String password;
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+
+    private Block block;
+
+}
+```
 
 
+**cascade 는 저장될 때 관계된 Block 에 INSERT 와 UPDATE 작업이 되기 위해 작성하였습니다**
 
+```java
+@Entity
+
+@Setter
+
+@Getter
+
+@NoArgsConstructor
+
+public class Block {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String name;
+
+    public Block(String name) {
+
+        this.name = name;
+
+    }
+
+}
+```
+
+
+![[JPA5.gif]]
+
+orphanRemoval=true [이미지 클릭]
+
+![[JPA6.gif]]
+
+orphanRemoval=false [이미지 클릭]
+
+**member.setBlock(null); 이 부분에서 Member와 Block 간의 관계가 끊기는 것인데**
+
+**true 인 경우 관계가 끊어진 경우는 삭제하고,**
+
+**false 인 경우는 관계만 끊어지고 Block 의 데이터는 남아있는 모습을 볼 수 있습니다**
+
+---
+
+**[cascade 속성]**
+
+**CascadeType.PERSIST**
+
+[**INSERT**] **save()** 시 관계된 테이블도 [**INSERT**] **save()** 됩니다.
+
+**CascadeType.MERGE**
+
+[**UPDATE**] **save()** 시 관계된 테이블도 [**UPDATE**] **save()** 됩니다.
+
+**CascadeType.REMOVE**
+
+[**DELETE**] **delete()** 시 관계된 테이블도 [**DELETE**] **delete()** 됩니다.
+
+---
+
+**[mappedBy 속성]**
+```java
+@RestController
+
+@Slf4j
+
+public class api {
+
+    @Autowired
+
+    private MemberRepository memberRepository;
+
+    @Autowired
+
+    private BlockRepository blockRepository;
+
+    @PostMapping("/member")
+
+    public void boardCreate(@RequestBody Member member) {
+
+        memberRepository.save(member);
+
+    }
+
+    @PostMapping("/block/{userId}")
+
+    public void blockCreate(@PathVariable("userId") Long userId) {
+
+        Member member = memberRepository.findById(userId).get();
+
+        Block block = new Block();
+
+        block.setName(member.getUserId());
+
+        block.setMember(member);
+
+        blockRepository.save(block);
+
+    }
+
+    @GetMapping("/block/{blockId}")
+
+    public Block blockDetail(@PathVariable("blockId") Long blockId) {
+
+        return blockRepository.findById(blockId).get();
+
+    }
+
+    @GetMapping("/members/{memberId}")
+
+    public Member memberDetail(@PathVariable("memberId") Long memberId) {
+
+        return memberRepository.findById(memberId).get();
+
+    }
+
+}
+```
+
+
+```java
+@Entity
+
+@Getter
+
+@ToString
+
+@Setter
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Column(name = "user_id")
+
+    private String userId;
+
+    private String password;
+
+    @JsonManagedReference
+
+    @OneToOne(mappedBy = "member")
+
+    private Block block;
+
+}
+```
+
+
+```java
+@Entity
+
+@Setter
+
+@Getter
+
+public class Block {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String name;
+
+    @JsonBackReference
+
+    @OneToOne
+
+    private Member member;
+
+}
+```
+
+
+**mappedBy**는 두 테이블이 **서로 관계**가 맺어진 경우
+
+누가 **주인**인지 알려주기위해 사용된다. 
+
+**(mappedBy 속성을 가진 테이블이 가짜주인입니다)**
+
+위의 코드를 보면 **Member** 는 **Block** 테이블을 
+
+**Block**은 **Member** 를 **관계**로 맺고있다.
+
+이러한 관계를 JPA에서는 **양방향관계**라고 보는데
+
+실질적으로 **2개의 단방향**일 뿐이지만 쉽게 부르기 위해 양방향관계라고 말한다.
+
+**member**는 **board_id** **외래키**가 없는 **가짜주인**이고,
+
+**board**는 **member_id** 를 가지고 있는 **진짜주인**이다.
+
+![[JPA34.png]]
+
+
+![[JPA7.gif]]
+
+
+이미지 클릭
+
+**가짜주인**은 **조회만** 가능하며, 등록, 수정, 삭제가 불가능하다.
+
+**주인**은 **조회**, **등록**, **수정**, **삭제** 모두 가능하다.
+
+보통 **양방향관계를** 사용하는 이유는
+
+**member** 객체에서도 **조회**가 가능하고
+
+**board** 객체에서도 **조회**가 가능하게 하려할 때 사용한다.
+
+#### > **#7. @OneToMany**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**orphanRemoval**|**true**|false|
+|**false**|
+|true 인 경우  <br>  해당 필드를 UPDATE 쿼리문으로 null 로 설정할 경우  <br>  관계된 테이블 레코드들은 모두 삭제된다.|
+|DELETE 쿼리문과 다른 점은  <br>  DELETE는 해당 레코드를 삭제하면 관계된 테이블의  <br>  레코드들을 모두 삭제하는 반면,  <br>  orphanRemoval 은 해당 테이블의 해당 열이 Null 값 으로   <br>  UPDATE 한 경우, 관계된 테이블의 레코드들을 모두 삭제  <br>  한다.|
+|**fetch**|**FetchType.EAGER**   <br>  <br>  관계된 테이블의 정보를 미리 읽어온다  <br>  <br>  join 을 이용한 1개의 SELECT 쿼리문만 실행된다  <br>  <br>  optional 로 out join과 inner join 설정 가능 (기본 out join)|FetchType.LAZY  <br>  (@ManyToOne 는 EAGER)|
+|**FetchType.LAZY**  <br>    <br>  실제로 요청하는 순간에만 읽어온다.  <br>  <br>  2개의 SELECT 쿼리문이 실행된다|
+|**cascade**|**영속성 전이 기능을 사용한다.**||
+|**CascadeType.ALL**  <br>  <br>  CascadeType 5개 전부 사용|
+|**CascadeType.PERSIST**  <br>  <br>  INSERT 시 연결된 테이블도 save()|
+|**CascadeType.MERGE**  <br>  <br>  UPDATE 시 연결된 테이블도 save()|
+|**CascadeType.REMOVE**  <br>  <br>  DELETE 시 연결된 테이블도 delete()|
+|**CascadeType.DETACH**|
+|**CascadeType.REFRESH**|
+|**targetEntity**|**관계를 맺을 Entity Class를 정의한다.**|void.class|
+|**mappedBy**|**양방향 관계 설정시 관계의 주체가 되는 쪽에서 정의합니다.**|""|
+|**mappedBy="[관계된 테이블의 필드명]"**|
+|**mappedBy 를 쓰는 경우는 관계의 주인이 아니기 때문에  <br>  SELECT 역할만 한다.**|
+|****주인 테이블은 @ManyToOne 과 @JoinColumn 사용하며  <br>  SELECT, INSERT, UPDATE, DELETE 역할을 한다.****|
+|[https://gmlwjd9405.github.io/2019/08/14/bidirectional-association.html](https://gmlwjd9405.github.io/2019/08/14/bidirectional-association.html)|
+
+**[설명]**
+
+**1:N 관계**에서 **1**일 때의 관계를 설정 할 때 사용합니다
+
+List\<Board> boards = new ArrayList\<>();
+
+Set\<Board> boards = new HashMap\<>();
+
+**Member**와 **Board** 에서 예시를 든다면,
+
+**Member**는 여러개의 **Board** 를 작성을 할 수 있기에
+
+**Member** 테이블에 **@OneToMany** 를 사용합니다.
+
+**[코드]**
+```java
+@RestController
+
+@Slf4j
+
+public class api {
+
+    @Autowired
+
+    private MemberRepository memberRepository;
+
+    @GetMapping("/members/{memberId}")
+
+    public Member memberDetail(@PathVariable("memberId") Long memberId) {
+
+        return memberRepository.findById(memberId).get();
+
+    }
+
+    @PostMapping("/memberBoardWrite/{userId}")
+
+    public void create(@RequestBody Board board, @PathVariable("userId") Long id) {
+
+        log.info("board -> {}", board);
+
+        log.info("userId -> {}", id);
+
+        Member member =  memberRepository.findById(id).get();
+
+        member.getBoards().add(board);
+
+        memberRepository.save(member);
+
+    }
+
+}
+```
+
+```java
+@Entity
+
+@Getter
+
+@ToString
+
+@Setter
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Column(name = "user_id")
+
+    private String userId;
+
+    private String password;
+
+    @OneToMany(cascade = CascadeType.ALL)
+
+    private List<Board> boards = new ArrayList<>();
+
+}
+```
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19|@Entity<br><br>@Getter<br><br>@ToString<br><br>@Setter<br><br>public class Member {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Column(name = "user_id")<br><br>    private String userId;<br><br>    private String password;<br><br>    @OneToMany(cascade = CascadeType.ALL)<br><br>    private List<Board> boards = new ArrayList<>();<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+관계된 테이블에도 저장되게 하기 위해서 **cascade**를 사용했습니다.
+
+(**cascade** 대신 저장하는 **public void create(){...}** 메소드부분에 **@Transactional** 사용하셔 됩니다)
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Entity<br><br>@Setter<br><br>@Getter<br><br>@ToString<br><br>public class Board {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String title;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+![](https://blog.kakaocdn.net/dn/zD0Lo/btqFOjewxBo/KbT5eGkCi8HCqfcNkLyDdK/img.gif)
+
+이미지 클릭
+
+단방향 매핑에서는 **MEMBER_BOARDS** 테이블이
+
+새로 생성되고 **Meber 키**와 **Board** **키**들이 저장됩니다.
+
+(**MEMBER_BOARDS** 테이블에서 키를 관리하게 됨)
+
+**[mappedBy 속성]**
+
+![](https://blog.kakaocdn.net/dn/bqzXWz/btqFOLV7S6l/ZclZg6d92K2lhNXvyRh720/img.png)
+
+**나머지 속성들은 @OneToOne 에서 참고바랍니다**
+
+> **#8. @ManyToOne**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**optional**|**false로 설정하면 연관된 엔티티가 항상 있어야 한다.**|true|
+|true 는 left outer join 을 사용한다|
+|false 는 inner join 을 사용한다|
+|**fetch**|**FetchType.EAGER**   <br>  <br>  관계된 테이블의 정보를 미리 읽어온다  <br>  <br>  join 을 이용한 1개의 SELECT 쿼리문만 실행된다  <br>  <br>  optional 로 out join과 inner join 설정 가능 (기본 out join)|FetchType.EAGER  <br>  (@OneToMany 는 LAZY)|
+|**FetchType.LAZY**  <br>    <br>  실제로 요청하는 순간에만 읽어온다.  <br>  <br>  2개의 SELECT 쿼리문이 실행된다|
+|**cascade**|**영속성 전이 기능을 사용한다.**||
+|**CascadeType.ALL**  <br>  <br>  CascadeType 5개 전부 사용|
+|**CascadeType.PERSIST**  <br>  <br>  INSERT 시 연결된 테이블도 save()|
+|**CascadeType.MERGE**  <br>  <br>  UPDATE 시 연결된 테이블도 save()|
+|**CascadeType.REMOVE**  <br>  <br>  DELETE 시 연결된 테이블도 delete()|
+|**CascadeType.DETACH**|
+|**CascadeType.REFRESH**|
+|**targetEntity**|**관계를 맺을 Entity Class를 정의한다.**|void.class|
+
+**나머지 속성들은 @OneToOne 에서 참고바랍니다**
+
+> **#9. @OrderBy - Hibernate 패키지**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|해당 필드명으로 **오름차순**으로 정렬  <br>  <br>  **"[필드명] asc"**|"id asc"|
+|해당 필드명으로 **내림 차순** 정렬  <br>  <br>  **"[필드명] desc"**|
+|**[참고]** 2개이상의 필드명을 정렬 할 때에는 **@OrderBy(value = "title desc, id asc")**|   |   |
+|**[참고]** 관계가 설정된 테이블을 정렬 할 때 사용하고, **@OneToMany** 필드에 사용한다   <br>           사용법은 아래 코드를 확인바랍니다|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19<br><br>20<br><br>21<br><br>22<br><br>23<br><br>24<br><br>25<br><br>26<br><br>27<br><br>28<br><br>29<br><br>30|@RestController<br><br>@Slf4j<br><br>public class api {<br><br>    @Autowired<br><br>    private MemberRepository memberRepository;<br><br>    @Autowired<br><br>    private BoardRepository boardRepository;<br><br>    @GetMapping("/members/{memberId}")<br><br>    public Member memberDetail(@PathVariable("memberId") Long memberId) {<br><br>        return memberRepository.findById(memberId).get();<br><br>    }<br><br>    @PostMapping("/boards/{userId}")<br><br>    public void boardCreate(@RequestBody Board board, @PathVariable("userId") Long userId) {<br><br>        Member member = memberRepository.findById(userId).get();<br><br>        member.add(board);<br><br>        boardRepository.save(board);<br><br>    }<br><br>    @GetMapping("/members")<br><br>    public List<Member> memberList() {<br><br>        return memberRepository.findAll();<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19<br><br>20<br><br>21<br><br>22<br><br>23<br><br>24<br><br>25<br><br>26|@Entity<br><br>@Getter<br><br>@ToString<br><br>@Setter<br><br>public class Member {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Column(name = "user_id")<br><br>    private String userId;<br><br>    private String password;<br><br>    @JsonManagedReference<br><br>    @OneToMany<br><br>    @OrderBy(value = "title desc")<br><br>    List<Board> boards = new ArrayList<>();<br><br>    public void add(Board board) {<br><br>        board.setMember(this);<br><br>        boards.add(board);<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18|@Entity<br><br>@Setter<br><br>@Getter<br><br>@ToString<br><br>public class Board {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String title;<br><br>    @JsonBackReference<br><br>    @ManyToOne<br><br>    private Member member;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[SQL]**
+
+![](https://blog.kakaocdn.net/dn/rpSvE/btqFOhA90Gy/Cs1QHfNBIa9fhNLAsQVl0k/img.png)
+
+> ~~**#10. @ManyToMany**~~
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+||||
+
+> **#11. @Id (단일 기본키)**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+![](https://blog.kakaocdn.net/dn/Uh0d7/btqFOMAW769/dSe4AX4HTiOOVRFmPZHcSK/img.png)
+
+Primary Key = id
+
+**[설명]**
+
+**해당 테이블**에서 **해당 필드명**을 **기본키**로 설정합니다.
+
+**[참고]**
+
+**@Id 어노테이션**을 여러 필드에 사용한다고 해서 **복합키**로 설정은 되지 않습니다.
+
+아래의 **@EmbeddedId** 와 **@IdClass** 를 이용하여 **복합키**를 설정합니다
+
+> **#12. @EmbeddedId (복합 기본키)**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|기본값|
+|**없음**|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Seat {<br><br>    @EmbeddedId<br><br>    private SeatId seatId;<br><br>    private String type;<br><br>}|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9|@Embeddable<br><br>@Getter<br><br>public class SeatId implements Serializable {<br><br>    private Long x;<br><br>    private Long y;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5|import org.springframework.data.jpa.repository.JpaRepository;<br><br>public interface SeatRepository extends JpaRepository<Seat, SeatId> {<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+id 타입이 바뀌어 Long 아닌 SeatId 로 바꿔주어여 한다.
+
+**[SQL]**
+
+![](https://blog.kakaocdn.net/dn/dGQ0Hp/btqFNEcN7lN/K8PQ1iQBe7mnTKRkjMNLkK/img.png)
+
+**[테이블]**
+
+![](https://blog.kakaocdn.net/dn/D8wa7/btqFOYHWes2/tVXWwIHIcHKdekPoKXvcE0/img.png)
+
+**[기타 참고]**
+
+ [Legacy DB의 JPA Entity Mapping (복합키 매핑 편) - 우아한형제들 기술 블로그
+
+안녕하세요. 우아한형제들에서 배달의민족 서비스의 광고시스템을 개발하고 있습니다. 시스템을 점진적으로 Spring Boot / JPA 기반으로 이관하면서 경험했던 내용을 공유하고자 합니다.
+
+woowabros.github.io](https://woowabros.github.io/experience/2019/01/04/composit-key-jpa.html)
+
+> **#13. @IdClass (복합 기본키)**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>@IdClass(value = SeatId.class)<br><br>public class Seat {<br><br>    @Id<br><br>    private Long x;<br><br>    @Id<br><br>    private Long y;<br><br>    private String type;<br><br>}|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13|@EqualsAndHashCode(onlyExplicitlyIncluded = true)<br><br>@Getter<br><br>@NoArgsConstructor<br><br>@AllArgsConstructor<br><br>public class SeatId implements Serializable {<br><br>    @EqualsAndHashCode.Include<br><br>    private Long x;<br><br>    @EqualsAndHashCode.Include<br><br>    private Long y;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5|import org.springframework.data.jpa.repository.JpaRepository;<br><br>public interface SeatRepository extends JpaRepository<Seat, SeatId> {<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[SQL]**
+
+![](https://blog.kakaocdn.net/dn/dGQ0Hp/btqFNEcN7lN/K8PQ1iQBe7mnTKRkjMNLkK/img.png)
+
+**[테이블]**
+
+![](https://blog.kakaocdn.net/dn/nzbbO/btqFOXoJCFq/DDhnV1eOQVgn00TdcJLBH0/img.png)
+
+**[기타 참고]**
+
+ [Legacy DB의 JPA Entity Mapping (복합키 매핑 편) - 우아한형제들 기술 블로그
+
+안녕하세요. 우아한형제들에서 배달의민족 서비스의 광고시스템을 개발하고 있습니다. 시스템을 점진적으로 Spring Boot / JPA 기반으로 이관하면서 경험했던 내용을 공유하고자 합니다.
+
+woowabros.github.io](https://woowabros.github.io/experience/2019/01/04/composit-key-jpa.html)
+
+> **#14. @GeneratedValue**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**strategy**|**GenerationType.AUTO**  특정 DB에 맞게 자동 선택|**GenerationType.AUTO**|
+|**GenerationType.IDENTITY**  DB의 identity 컬럼을 이용|
+|**GenerationType.SEQUENCE**  DB의 시퀀스 컬럼을 이용|
+|**GenerationType.TABLE**  유일성이 보장된 데이터베이스 테이블을 이용|
+|**generator**|Oracle 데이터베이스의 시퀀스 이름을 참조할 때 사용||
+|**@SequenceGenerator**(  <br>        name="S_MY_SEQ",  <br>        sequenceName="SEQ_NO"  <br>   )  <br>  **@GeneratedValue**(  <br>         strategy=GenerationType.SEQUENCE,  <br>         **generator**="S_MY_SEQ"  <br>   )|""|
+
+> **#15. @Embedded**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Delivery {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Embedded<br><br>    private Address address;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10|@Embeddable<br><br>public class Address {<br><br>    private String zoneCode;<br><br>    private String address;<br><br>    private String buildingName;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[설명]**
+
+**@****Embedded** 와 **@Embeddable** 은 항상 같이 사용되어야 한다.
+
+**@****Embedded** 를 사용하는 이유는 **객체지향적 설계**를 하기위해 필요하기 때문이다
+
+객체의 필드가 많아질 수록 **가독성**이 떨어지기 때문에
+
+같이 묶을 수 있는 것들을 객체로 만들어 **객체지향적**으로 **설계**하기 위함이다.
+
+**[테이블]**
+
+![](https://blog.kakaocdn.net/dn/c5Y5Lt/btqFOYgTThH/LBEiDzxWGJ8BnEXviNY0v0/img.png)
+
+Delivery 테이블
+
+> **#16. @Embeddable**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**@Embedded 참고 바람**
+
+**@EmbeddedId, @Embedded 와 같이 사용된다.**
+
+> **#17. @Enumerated**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|EnumType.ORDINAL : enum 순서를 값으로 DB에 저장|EnumType.ORDINAL|
+|EnumType.STRING : enum 이름을 값으로 DB에 저장|
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Message {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String message;<br><br>    @Enumerated(value = EnumType.STRING)<br><br>    private MessageType type;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4|public enum  MessageType {<br><br>    EMAIL, SMS, KAKAO;<br><br>}|[cs](http://colorscripter.com/info#e)|
+
+**[value 속성]**
+
+**- EnumType.ORDINAL**
+
+![](https://blog.kakaocdn.net/dn/daXI3v/btqFPr4eYjP/RWOvQQxiGfdLAatSikFlUk/img.png)
+
+EnumType.ORDINAL
+
+**- EnumType.STRING**
+
+![](https://blog.kakaocdn.net/dn/bhQpHj/btqFNQxkCxx/wRWTLFS05gcYe4ozpvtWSK/img.png)
+
+EnumType.STRING
+
+> **#18. @Transient**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**DB**에 반영이 안되는 값을 **임시**로 **저장** 할 수 있는 **필드**이다
+
+단방향 매핑관계에서 양방향 관계처럼
+
+관계된 테이블에서도 json 으로 볼 수 있게끔 사용하기도 한다.
+
+**@Transient List<?> list = new ArrayList<>();**
+
+> **#19.@AttributeOverride**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**name**|name= "@Embedded 의 필드명"||
+|**column**|column= @Column 재정의||
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15|@Entity<br><br>@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Delivery {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Embedded<br><br>    @AttributeOverride(name = "zoneCode", column = @Column(name = "first_address"))<br><br>    private Address address;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Embeddable<br><br>@ToString<br><br>@Setter<br><br>@Getter<br><br>public class Address {<br><br>    private String zoneCode;<br><br>    private String address;<br><br>    private String buildingName;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[설명]**
+
+**@Embeddable** 클래스의 1개의 **@Column** 을 재정의 할 때 사용한다.
+
+**name** 은 **@Embeddable** 클래스의 재정의 할 **필드명(멤버변수)**
+
+**Column** 은 **@Column** 이다
+
+**[참고 1]**
+
+**zoneCode** 는 **Address 클래스**의 **필드명** 중 하나이고,
+
+**first_address** 는 재정의될 **테이블 컬럼명**이다.
+
+**@Embedded** 는 
+
+ * @see Embeddable   
+ * @see AttributeOverride   
+ * @see AttributeOverrides   
+ * @see AssociationOverride   
+ * @see AssociationOverrides
+
+구성 되어있기 때문에 생략해도 DB에 저장은 된다.
+
+**[참고 2]**
+
+**@Embeddable** 클래스에
+
+**@Setter** 가 없는 경우 값이 **null** 로 들어갑니다
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9|// JSON Request<br><br>{<br><br>  "address": {<br><br>    "zoneCode": "06120",<br><br>    "address": "서울 강남구 강남대로 480",<br><br>    "buildingName": "올리브영"<br><br>  }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[테이블]**
+
+![](https://blog.kakaocdn.net/dn/EQgPk/btqFONmnCP4/nin7KA6LKRffJt4MPUAo8k/img.png)
+
+**zone_code** 에서 **first_address** 로 재정의 된 모습
+
+> **#20. @AttributeOverrides**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|여러개의 @AttributeOverride 사용  <br>   <br>  {  <br>    @AttributeOverride,  <br>    @AttributeOverride  }|[]|
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17<br><br>18<br><br>19|@Getter<br><br>@Setter<br><br>@ToString<br><br>public class Delivery {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    @Embedded<br><br>    @AttributeOverrides(value = {<br><br>            @AttributeOverride(name = "zoneCode", column = @Column(name = "address1")),<br><br>            @AttributeOverride(name = "address", column = @Column(name = "address2")),<br><br>            @AttributeOverride(name = "buildingName", column = @Column(name = "address3"))<br><br>    })<br><br>    private Address address;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@Embeddable<br><br>@ToString<br><br>@Setter<br><br>@Getter<br><br>public class Address {<br><br>    private String zoneCode;<br><br>    private String address;<br><br>    private String buildingName;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[테이블]**
+
+![](https://blog.kakaocdn.net/dn/eevBOT/btqFNPr3sG5/mNRmJ2LevPc1djlec1XWKk/img.png)
+
+**[설명]**
+
+****@Embeddable****클래스의 **여러개**의 **@Column**을 **재정의** 할 때 사용한다.
+
+**@AttributeOverride** 속성은 위에서 참고 바람
+
+**[참고]**
+
+**@Embeddable** 클래스에
+
+**@Setter** 가 없는 경우 값이 **null** 로 들어갑니다
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9|// JSON Request<br><br>{<br><br>  "address": {<br><br>    "zoneCode": "06120",<br><br>    "address": "서울 강남구 강남대로 480",<br><br>    "buildingName": "올리브영"<br><br>  }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+> **#21. @Temporal**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|TemporalType.DATE : 날짜. 데이터베이스 date 타입과 맵핑|필수|
+|TemporalType.TIME : 시간. 데이터베이스 time 타입과 맵핑|
+|TemporalType.TIMESTAMP : 날짜와 시간. 데이터베이  <br>  timestamp 타입과 맵핑|
+
+> **#22. @CreationTimestamp**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@ToString<br><br>@Getter<br><br>public class LoginLog {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String userId;<br><br>    @CreationTimestamp<br><br>    private LocalDate createAt;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[설명]**
+
+**생성일**, **작성날짜**를 위해 사용된다.
+
+따로 값을 보내주지 않아도 **INSERT** 시 자동으로 값을 넣어준다
+
+**[참고]**
+
+**@RequestBody** 어노테이션에 **@Entity** 클래스를 사용하는 경우 적절하지 않다.
+
+다른 값도 바뀔 수 있는 염려가 있기에 **LoginLogDto** 클래스를 하나 더 만들어서
+
+바꿀 필드만 적는 것이 좋다
+
+![](https://blog.kakaocdn.net/dn/1noAs/btqFOXpqPF2/wct7fxoTYRDXnwOoGC2qG1/img.png)
+
+위 그림과 같이 할 시 문제점은 아래 gif 참고 바람
+
+![](https://blog.kakaocdn.net/dn/c8QOSr/btqFPrRlZeZ/1Hp09pUKTW1tVORrhdP021/img.gif)
+
+이미지 클릭
+
+처음에 **INSERT** 될 시에는 아무런 문제가 없지만
+
+2번째 **UPDATE** 될 시, **createAt** 값이 **null** 로 변했다.
+
+이유는 **사용자**가 **요청**시(request) **createAt** 값을 보내지 않았기 때문에
+
+**null** 로 업데이트 된 것이다.
+
+**@CreationTimestamp** 은 **INSERT** 시 값을 저장해준다.
+
+**@UpdateTimestamp** 는 **INSERT** 와 **UPDATE** 시 값을 저장해준다.
+
+때문에 **@UpdateTimestamp** 는 **null** 값으로 들어와도 문제가 없다
+
+> **#23. @UpdateTimestamp**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@ToString<br><br>@Getter<br><br>public class LoginLog {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String userId;<br><br>    @UpdateTimestamp<br><br>    private LocalDate updateAt;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[설명]**
+
+**변경일**, **수정일**에 사용된다
+
+따로 값을 보내주지 않아도 **INSERT, UPDATE** 시 자동으로 값을 넣어준다
+
+> **#24. @Lob**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**없음**|   |   |
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17|@Entity<br><br>@Setter<br><br>@Getter<br><br>@ToString<br><br>public class Board {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String title;<br><br>    @Lob<br><br>    private String content;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[SQL]**
+
+![](https://blog.kakaocdn.net/dn/eaKoAU/btqFOXpwdcy/wTxZWi5yOTTCULBGx27VDK/img.png)
+
+**[설명]**
+
+**JPA** 에서 **String** 은 DB에서는 **기본 varchar(255)** 으로 테이블이 만들어진다.
+
+**varchar**의 최대 사이즈는 **32,672 byte** (약 20,000 글자)
+
+**clob** 의 최대 사이즈는 **2 Gb** 입니다. (byte 와 61,214배 차이)
+
+많은 내용을 저장하기 위해서는 **@Lob** 을 사용한다.
+
+또는 **@Column** 에서 타입지정
+
+![](https://blog.kakaocdn.net/dn/cgcNr0/btqFOYvaaZe/7FhabAkhinjMMYt1Fkw7UK/img.png)
+
+대용량 텍스트
+
+> **#25. @Query**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|JPQL 쿼리문 작성|""|
+|**countQuery**|모름..|""|
+|**countProjection**|모름..|""|
+|**nativeQuery**|true = DB 쿼리문으로 작성|false|
+|false = JPQL 쿼리문으로 작성|
+|**name**|모름..|""|
+|**countName**|모름..|""|
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@RestController<br><br>@Slf4j<br><br>public class api {<br><br>    @Autowired<br><br>    private MemberRepository memberRepository;<br><br>    @GetMapping("/member")<br><br>    public Member memberDetail(String userId) {<br><br>        return memberRepository.selectUserId(userId);<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15|@Entity<br><br>@Getter<br><br>@ToString<br><br>@Setter<br><br>public class Member {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String userId;<br><br>    private String password;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17|public interface MemberRepository extends JpaRepository<Member, Long> {<br><br>    // JPQL argument 방식<br><br>    @Query(value = "select mem from Member mem where mem.userId= ?1")<br><br>    Member selectUserId(String userId);<br><br>    // JPQL @Param 방식<br><br>    @Query(value = "select mem from Member mem where mem.userId= :userName")<br><br>    Member selectUserId2(@Param("userName") String userId);<br><br>    // Native Query @Param 방식<br><br>    @Query(value = "select * from member where user_id =:userName", nativeQuery = true)<br><br>    Member selectUserId3(@Param("userName") String userId);<br><br>    // 위 3개 모두 똑같은 쿼리문입니다.<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[설명]**
+
+**JPQL 쿼리문**을 작성할 때 사용합니다.
+
+**[참고]**
+
+![](https://blog.kakaocdn.net/dn/dtC6xh/btqFOiudFF0/Nlnr2ksKL6J1WBJjKr6Fq1/img.png)
+
+정상
+
+> **#26. @Modifying**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**flushAutomatically**|모름..|false|
+|**clearAutomatically**|모름..|false|
+
+**[설명]**
+
+DD이 Annotation은 @Query Annotation으로 작성 된 변경, 삭제 쿼리 메서드를 사용할 때 필요합니다.
+
+ 즉, 조회 쿼리를 제외하고, 데이터에 변경이 일어나는 INSERT, UPDATE, DELETE, DDL 에서 사용합니다.
+
+ 주로 벌크 연산 시에 사용됩니다.
+
+**[참고]**
+
+ [Spring Data JPA @Modifying (1) - clearAutomatically
+
+이 글을 작성하게 된 계기는 Spring Data JPA의 @Modifying에 있는 flushAutomatically에 대해 의문점이 생겼고, 그에 대한 학습 테스트를 해보면서 였습니다. 하지만 @Modifying의 Attribute가 clearAutomaticall..
+
+devhyogeon.tistory.com](https://devhyogeon.tistory.com/4)
+
+> **#27. @ColumnDefault**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+||||
+
+> **#28. @Where**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+||||
+
+> **#29. @DynamicUpdate**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|모름..|true|
+
+**[코드]**
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17|@RestController<br><br>@Slf4j<br><br>public class api {<br><br>    @Autowired<br><br>    private GoodRepository goodRepository;<br><br>    @PostMapping("/good")<br><br>    public void goodCreate(@RequestBody Good good) {<br><br>        log.info("good -> {}", good);<br><br>        goodRepository.save(good);<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+|   |   |   |
+|---|---|---|
+|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15|@Entity<br><br>@ToString<br><br>@Getter<br><br>@DynamicUpdate<br><br>public class Good {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String name;<br><br>    private Long price;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+**[요약]**
+
+|   |   |   |
+|---|---|---|
+|**@DynamicUpdate 미적용**|price를 3000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/d2tUzt/btqFPrRGSEL/pOUzPfoMjD4CKE3VHFH5CK/img.png)|
+|name을 book 으로  <br>price 를 5000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/YkvK4/btqFOXXC7Tq/kavhfAGOgiXtMpdSku9Ti0/img.png)|
+|**@DynamicUpdate 적용**|price를 3000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/m6Eoj/btqFOiVs7Px/8Ygpz0KbWRaTgk5LI07KDK/img.png)|
+|name을 book 으로  <br>price 를 5000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/c5euqo/btqFOMPwGWY/pdhY0p36eaTywIe0NyIBc0/img.png)|
+
+**[설명]**
+
+**@DynamicUpdate** 는 **SELECT** 로 **조회** 후
+
+**조회 한 객체**와 **save() 하려는 객체**와 **비교**해서
+
+**변경된 필드만**을 **쿼리문의 인자**로 **생성**한다.
+
+**[참고]**
+
+![](https://blog.kakaocdn.net/dn/bQgxwS/btqFOXwzYsi/S6M1Bcw09gNSTeVU58xXH1/img.png)
+
+[출처 - Baeldung] https://www.baeldung.com/spring-data-jpa-dynamicupdate
+
+> **#30. @DynamicInsert**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+||||
+
+> **#31. @SequenceGenerator**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**name**|식별자 생성기 이름|필수|
+|**sequenceName**|DB에 등록되어 있는 시퀀스 이름|hibernate_sequence|
+|**initialValue**|DDL 생성 시에만 사용 됨. 시퀀스 DDL을 생성할 때 처음 시작하는 수|1|
+|**allocationSize**|시퀀스 한 번 호출에 증가하는 수|50|
+|**catalog, schema**|DB catalog, schema 이름||
+
+> **#32. @TableGenerator**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**name**|식별자 생성기 이름|필수|
+|**table**|키생성 테이블명|hibernate_sequence|
+|**pkColumnName**|시퀀스 컬럼명|squence_name|
+|**valueColumnName**|시퀀스 값 컬럼명|next_val|
+|**pkColumnValue**|키로 사용할 값 이름|엔티티 이름 (=클래스명)|
+|**initialValue**|초기 값. 마지막으로 생성된 값이 기준|0|
+|**allocationSize**|시퀀스 한 번 호출에 증가하는 수|50|
+|**uniqueContraints**|유니크 제약 조건을 지정||
+|**catalog, schema**|DB catalog, schema 이름||
+
+> **#33. @EntityListeners(AuditingEntityListener.class)**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**value**|중복 필드 처리하는 상위 클래스|[]|
+
+**[코드]**
+
+```
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public abstract class AbstractEntity extends AbstractEntityId {
+
+    @CreationTimestamp
+    @Column(name = "createdAt", nullable = false, updatable = false)
+    private Date createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updatedAt", nullable = false)
+    private Date updatedAt;
+}
+
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+abstract class AbstractEntityId implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+}
+```
+
+**[설명]**
+
+id 만 상속하고자 한다면, AbstractEntityId 를 상속시키면 되고,
+
+createdAt, 과 updatedAt 도 상속시키고자 한다면 AbstractEntityId 를 상속받은 AbstractEntity 를 상속시키면 된다.
+
+(하나의 클래스에 id, creadtedAt, updatedAt 을 사용할 수 있지만,
+
+createdAt 과 updatedAt 을 사용하지 않는 경우도 있기에 분리하여 사용한다)
+
+**이 방법 이외에도 리스너 클래스를 생성하여 유동적으로 엔티티를 관리할 수 있다. (아래 사이트 참고)**
+
+ [데이터 변경 알림 - @EntityListeners
+
+spring 의 data-jpa 사용시 데이터 변경시 알림을 받는 방법이 있다. EntityListener 클래스를 만들고 public class DataDtoListener { @PostLoad public void postLoad(DataDto dto) { log.info("post load: {}",..
+
+erim1005.tistory.com](https://erim1005.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EA%B2%BD-%EC%95%8C%EB%A6%BC-EntityListeners)
+
+> **# 쿼리 메소드 (queryMethod)**
+
+|   |   |
+|---|---|
+|**기본 제공**|   |
+|**save()**|레코드 저장(insert, update)|
+|**findAll()**|전체 레코드 불러오기 - 정렬(sort), 페이징(pageable) 가능|
+|**count()**|레코드 갯수|
+|**delete()**|레코드 삭제|
+
+|   |   |
+|---|---|
+|**메소드**|**쿼리문**|
+|**findById(Long id);**|SELECT * FROM [테이블명] WHERE id= ?|
+
+Member findBy();  
+List<Member> findAllBy();  
+Member findFirstBy();  
+Member findDistinctFirstBy();  
+Member findTopBy();  
+Member findDistinctTopBy();  
+Member findDistinctBy();  
+Member findMemberBy();  
+Member findMembersBy();  
+  
+Member deleteBy();  
+List<Member> deleteAllBy();  
+Member deleteDistinctBy();  
+Member deleteMemberBy();  
+Member deleteMembersBy();  
+  
+Member countBy();  
+List<Member> countAllBy();  
+Member countDistinctBy();  
+Member countMemberBy();  
+Member countMembersBy();  
+  
+boolean existsBy();  
+boolean existsAllBy();  
+boolean existsDistinctBy();  
+boolean existsMemberBy();  
+boolean existsMembersBy();  
+  
+Member getBy();  
+List<Member> getAllBy();  
+Member getTopBy();  
+Member getDistinctTopBy();  
+Member getFirstBy();  
+Member getDistinctFirstBy();  
+Member getDistinctBy();  
+Member getMemberBy();  
+Member getMembersBy();  
+  
+Member queryBy();  
+List<Member> queryAllBy();  
+Member queryTopBy();  
+Member queryDistinctTopBy();  
+Member queryFirstBy();  
+Member queryDistinctFirstBy();  
+Member queryDistinctBy();  
+Member queryMemberBy();  
+Member queryMembersBy();  
+  
+Member readBy();  
+List<Member> readAllBy();  
+Member readTopBy();  
+Member readDistinctTopBy();  
+Member readFirstBy();  
+Member readDistinctFirstBy();  
+Member readDistinctBy();  
+Member readMemberBy();  
+Member readMembersBy();  
+  
+Member removeBy();  
+Member removeAllBy();  
+Member removeDistinctBy();  
+Member removeMemberBy();  
+Member removeMembersBy();  
+  
+Member streamBy();  
+List<Member> streamAllBy();  
+Member streamTopBy();  
+Member streamDistinctTopBy();  
+Member streamFirstBy();  
+Member streamDistinctFirstBy();  
+Member streamDistinctBy();  
+Member streamMemberBy();  
+Member streamMembersBy();
+
+> **# 오류**
+
+**[오류]**
+
+**org.hibernate.InstantiationException: No default constructor for entity:**
+
+**[코드]**
+
+**[Entity 클래스]**.repository.findById(**[Long id]**).orElse(null);
+
+**[원인]**
+
+해당 @Entity 클래스에 기본생성자(default Constructor) 가 없기 때문
+
+**[해결]**
+
+**기본생성자**를 작성하거나, **@NoArgsConstructor** 작성하면 된다
+
+---
+
+**[오류]**
+
+**org.springframework.beans.factory.BeanCreationException: Error creating bean with name ... defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration:**
+
+****[코드]****
+
+(OneToMany 클래스에서)
+
+**[Entity 클래스]**.findBy**[필드명]**(String **[필드명]**);
+
+**[원인]**
+
+repository 인터페이스가 존재 하지 않음
+
+**[해결]**
+
+JpaRespository 클래스가 extend 된 해당 **[Entity]**Repository 클래스 생성
+
+---
+
+**[오류]**
+
+**Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'personRepository': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.example.demo.chapter_2.repository.PersonRepository.findByMonthOfBirthDay(int)!**
+
+**[원인]**
+
+![](https://blog.kakaocdn.net/dn/ybAef/btqFBfjgXbd/G93g71ZL93GMMKI8gCUqPK/img.png)
+
+**JPQL (nativeQuery=false) 엔티티 쿼리문에서는 SELECT * 이 안되기 때문에**
+
+**PERSON 클래스를 Alias 한 값을 써야한다.**
+
+**SELECT person FROM Person person WHERE person.birthday.month = ?1**
+
+**[해결]**
+
+![](https://blog.kakaocdn.net/dn/ceCd7Q/btqFBMgQxR5/18PFxWBX562SZTLpt4uiqK/img.png)
+
+---
+
+**[오류]**
+
+```
+2020-09-20 06:13:49.399 ERROR 17300 --- [nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]
+: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+[Request processing failed; nested exception is org.springframework.http.converter
+.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate
+.proxy.pojo.bytebuddy.ByteBuddyInterceptor]; nested exception is com.fasterxml.jackson.databind
+.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo
+.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer 
+(to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference
+chain: java.util.HashMap["teams"]->java.util.ArrayList[0]->com.vuebook.taskagile.domain.model
+.team.Team["user"]->com.vuebook.taskagile.domain.model.user.User$HibernateProxy$skNn6Vvs
+["hibernateLazyInitializer"])] with root cause
+```
+
+```
+[] 경로의 컨텍스트에서 [dispatcherServlet] 서블릿에 대한 Servlet.service ()에서 예외가 발생했습니다.
+[요청 처리에 실패했습니다. 중첩 된 예외는 org.springframework.http.converter.HttpMessageConversion
+Exception : 유형 정의 오류 : [단순 유형, 클래스 org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterce
+ptor]; 중첩 된 예외는 com.fasterxml.jackson.databind.exc.InvalidDefinitionException : org.hiberna
+te.proxy.pojo.bytebuddy.ByteBuddyInterceptor 클래스에 대한 serializer가 없으며 BeanSerializer를 
+생성하는 속성이 없습니다 (예외를 방지하려면 SerializationFeature.FAIL_ON_EMPTY_BEANS를 비활성화) 참조
+체인 : java.util.HashMap [ "teams"]-> java.util.ArrayList [0]-> com.vuebook.taskagile.domain.
+model.team.Team [ "user"]-> com.vuebook.taskagile .domain.model.user.User $ HibernateProxy 
+$ skNn6Vvs [ "hibernateLazyInitializer"])] 근본 원인 포함
+```
+
+**[원인]**
+
+**Lazy 로딩으로 인한 오류**
+
+```
+@Entity
+@Getter
+@ToString
+@NoArgsConstructor
+@EqualsAndHashCode(of = {"id"})
+public class User implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String username;
+
+    private String emailAddress;
+
+    private String password;
+
+    private String firstName;
+
+    private String lastName;
+
+    @CreationTimestamp
+    private Date createAt;
+
+    @Builder
+    private User(String username, String emailAddress, String password, String firstName, String lastName) {
+        this.username = username;
+        this.emailAddress = emailAddress;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+}
+```
+
+```
+@Entity
+@Getter
+@ToString
+@NoArgsConstructor
+@EqualsAndHashCode(of = {"id"})
+public class Team implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    private boolean archived;
+
+    @CreationTimestamp
+    private Date createAt;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private User user;
+
+    @Builder
+    private Team(String name, User user) {
+        this.name = name;
+        this.user = user;
+    }
+}
+```
+
+```
+@Slf4j
+@RestController
+@RequiredArgsConstructor
+@RequestMapping(value = "/api/me")
+public class MeApiController {
+
+    private final TeamService teamService;
+    private final BoardService boardService;
+
+
+    @GetMapping
+    public Map<String, List<?>> getMyData(Long userId) {
+
+        log.info("userId -> {}", userId);
+
+        List<Team> teams = teamService.findTeamsByUserId(userId);
+        List<Board> boards = boardService.findBoardsByMembership(userId);
+
+        Map<String, List<?>> maps = new HashMap<>();
+        maps.put("teams", teams);
+        maps.put("boards", boards);
+
+        return maps;
+    }
+}
+```
+
+**[해결]**
+
+![](https://blog.kakaocdn.net/dn/QCJx7/btqI27pVPHP/ZdWf0IiisEL2e6sqlOzSk0/img.png)
+
+> **# 양방향 매핑 참고**
+
+DB에는 참조키(foreign key)가 있기 때문에 양방향관계인 반면,
+
+객체에서는 A->B 단방향과 B->A 단뱡향을 
+
+쉽게 부르기 위해 양방향관계라고 말할 뿐 그냥 단방향관계이다. 
+
+**(객체에서는 양방향관계라는 표현이 없다)**
+
+JPA 를 처음에 설계를 할 때는 단방향으로 설계 한 뒤
+
+양방향 관계가 필요 할 때 추가해주는 것이 설계하기 편한다.
+
+(양방향 까지 다 설계하면 어디서 오류나는지 찾기가 힘들기 때문)
 
 
 ---

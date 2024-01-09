@@ -19,19 +19,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "25348e8dff8ccf8e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20240109142108.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20240109142108.png",
+                "file": "Spaces/Home/Spring/JPA.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20240109142108.png"
+                "file": "Spaces/Home/Spring/JPA.md"
               }
             }
           },
@@ -143,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20240109142108.png",
+                "file": "Spaces/Home/Spring/JPA.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,19 +173,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "25348e8dff8ccf8e",
+  "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Images/JPA7.gif",
     "Spaces/Home/Spring/JPA.md",
-    "Images/Pasted image 20240109142108.png",
-    "Images/JPA3.gif",
-    "Images/JPA25.png",
-    "Images/JPA24.png",
-    "Images/JPA23.png",
-    "Images/JPA22.png",
-    "Images/JPA21.png",
-    "Images/JPA20.png",
-    "Images/JPA19.png",
-    "Images/JPA18.png",
+    "Images/JPA34.png",
+    "Images/JPA6.gif",
+    "Images/JPA5.gif",
+    "Images/JPA33.png",
+    "Images/JPA32.png",
+    "Images/JPA31.png",
+    "Images/JPA30.png",
+    "Images/JPA29.png",
+    "Images/JPA28.png",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
