@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ed2adfb14b7d9c37",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
@@ -192,8 +194,6 @@
     "Images/JPA.png",
     "Spaces/Home/Spring/MyBatis",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Spring/Spring Legacy",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",

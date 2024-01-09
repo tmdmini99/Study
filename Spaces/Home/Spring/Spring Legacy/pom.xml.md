@@ -17,7 +17,7 @@ Spring Lecay pom.xml
         <maven.compiler.target>8</maven.compiler.target>  
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
         <org.springframework-version>5.2.11.RELEASE</org.springframework-version>  
-        <org.slf4j-version>1.7.5</org.slf4j-version>
+        <org.slf4j-version>1.7.5</org.slf4j-version>  
         <org.aspectj-version>1.6.10</org.aspectj-version>  
     </properties>  
     <dependencies>  
@@ -35,12 +35,6 @@ Spring Lecay pom.xml
             </exclusions>  
         </dependency>  
   
-        <dependency>  
-            <groupId>javax.servlet</groupId>  
-            <artifactId>servlet-api</artifactId>  
-            <version>2.5</version>  
-            <scope>provided</scope>  
-        </dependency>  
   
   
         <!-- Servlet -->  
@@ -71,18 +65,26 @@ Spring Lecay pom.xml
         </dependency>  
   
   
-        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->  
-        <dependency>  
-            <groupId>org.mybatis</groupId>  
-            <artifactId>mybatis</artifactId>  
-            <version>3.5.10</version>  
+ <!--       &lt;!&ndash; https://mvnrepository.com/artifact/org.mybatis/mybatis &ndash;&gt;        <dependency>            <groupId>org.mybatis</groupId>            <artifactId>mybatis</artifactId>            <version>3.5.10</version>        </dependency>        &lt;!&ndash; https://mvnrepository.com/artifact/org.mybatis/mybatis-spring &ndash;&gt;        <dependency>            <groupId>org.mybatis</groupId>            <artifactId>mybatis-spring</artifactId>            <version>2.0.7</version>        </dependency>-->  
+        <!-- JPA -->        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-orm</artifactId>  
+            <version>${org.springframework-version}</version>  
         </dependency>  
-        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->  
+  
         <dependency>  
-            <groupId>org.mybatis</groupId>  
-            <artifactId>mybatis-spring</artifactId>  
-            <version>2.0.7</version>  
+            <groupId>org.springframework.data</groupId>  
+            <artifactId>spring-data-jpa</artifactId>  
+            <version>2.2.1.RELEASE</version>  
         </dependency>  
+  
+  
+        <dependency>  
+            <groupId>org.hibernate</groupId>  
+            <artifactId>hibernate-entitymanager</artifactId>  
+            <version>5.1.11.Final</version>  
+        </dependency>  
+        <!-- -->  
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
@@ -93,7 +95,7 @@ Spring Lecay pom.xml
         <dependency>  
             <groupId>com.mysql</groupId>  
             <artifactId>mysql-connector-j</artifactId>  
-            <version>8.0.33</version>  
+            <version>8.2.0</version>  
         </dependency>  
   
         <!-- Logging -->  
@@ -157,45 +159,33 @@ Spring Lecay pom.xml
             <artifactId>gson</artifactId>  
             <version>2.8.5</version>  
         </dependency>  
-
-
-		<!-- AspectJ -->  
-		<dependency>  
-		    <groupId>org.aspectj</groupId>  
-		    <artifactId>aspectjrt</artifactId>  
-		    <version>${org.aspectj-version}</version>  
-		</dependency>
-
-        <dependency>  
-    <groupId>org.springframework</groupId>  
-    <artifactId>spring-web</artifactId>  
-    <version>5.3.26</version>  
-</dependency>  
   
-<dependency>  
-    <groupId>org.springframework</groupId>  
-    <artifactId>spring-webmvc</artifactId>  
-    <version>5.3.26</version>  
-</dependency>
+  
+  
+        <!-- AspectJ -->  
+        <dependency>  
+            <groupId>org.aspectj</groupId>  
+            <artifactId>aspectjrt</artifactId>  
+            <version>${org.aspectj-version}</version>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+            <version>${org.springframework-version}</version>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-webmvc</artifactId>  
+            <version>${org.springframework-version}</version>  
+        </dependency>  
   
   
     </dependencies>  
     <build>  
         <plugins>  
-            <plugin>  
-                <artifactId>maven-eclipse-plugin</artifactId>  
-                <version>2.9</version>  
-                <configuration>  
-                    <additionalProjectnatures>  
-                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>  
-                    </additionalProjectnatures>  
-                    <additionalBuildcommands>  
-                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>  
-                    </additionalBuildcommands>  
-                    <downloadSources>true</downloadSources>  
-                    <downloadJavadocs>true</downloadJavadocs>  
-                </configuration>  
-            </plugin>  
+  
             <plugin>  
                 <groupId>org.apache.maven.plugins</groupId>  
                 <artifactId>maven-compiler-plugin</artifactId>  
