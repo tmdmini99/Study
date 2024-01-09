@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/JPA.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/JPA.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md"
+                "file": "Spaces/Home/Spring/JPA.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+                "file": "Spaces/Home/Spring/JPA.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +175,15 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Images/JPA2.gif",
     "Spaces/Home/Spring/JPA.md",
+    "Images/JPA1.gif",
+    "Images/JPA12.png",
+    "Images/JPA11.png",
+    "Images/JPA10.png",
+    "Images/JPA9.png",
+    "Images/JPA8.png",
+    "Images/JPA7.png",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
@@ -184,14 +192,9 @@
     "Spaces/Home/Spring/Maven",
     "Images/JPA6.png",
     "Images/JPA5.png",
-    "Images/JPA4.png",
-    "Images/JPA3.png",
-    "Images/JPA2.png",
-    "Images/JPA1.png",
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
-    "Images/JPA.png",
     "Spaces/Home/Spring/MyBatis",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
@@ -209,15 +212,11 @@
     "Spaces/Home/Protocol/Http/SSE.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/WebSocket.md",
-    "Images/Smart Tomcat/Smart Tomcat11.png",
-    "Images/Smart Tomcat/Smart Tomcat10.png",
-    "Images/Smart Tomcat/Smart Tomcat9.png",
     "Images/Smart Tomcat",
     "Images/새 폴더",
     "Spaces/Home/Java/람다/람다표현식.md",
     "Spaces/Home/Java/람다/Streams.md",
     "Spaces/Home/Protocol/HandShake/HandShake.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Protocol/HandShake",
     "Spaces/Home/IntelliJ/Tomcat",
     "Images/Socket",
