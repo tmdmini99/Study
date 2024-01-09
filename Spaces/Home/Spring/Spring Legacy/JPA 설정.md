@@ -28,8 +28,15 @@ pom.xml
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.1.11.Final</version>
 		</dependency>
-	</dependencies>
+		<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+		<dependency>
+		    <groupId>javax.persistence</groupId>
+		    <artifactId>javax.persistence-api</artifactId>
+		    <version>2.2</version>
+		</dependency>
+			
 ```
+
 
 
 
