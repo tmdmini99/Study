@@ -1957,11 +1957,25 @@ public class Address {
 
 **@Setter** 가 없는 경우 값이 **null** 로 들어갑니다
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9|// JSON Request<br><br>{<br><br>  "address": {<br><br>    "zoneCode": "06120",<br><br>    "address": "서울 강남구 강남대로 480",<br><br>    "buildingName": "올리브영"<br><br>  }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```json
+// JSON Request
 
-> **#21. @Temporal**
+{
+
+  "address": {
+
+    "zoneCode": "06120",
+
+    "address": "서울 강남구 강남대로 480",
+
+    "buildingName": "올리브영"
+
+  }
+
+}
+```
+
+#### > **#21. @Temporal**
 
 |   |   |   |
 |---|---|---|
@@ -1970,7 +1984,7 @@ public class Address {
 |TemporalType.TIME : 시간. 데이터베이스 time 타입과 맵핑|
 |TemporalType.TIMESTAMP : 날짜와 시간. 데이터베이  <br>  timestamp 타입과 맵핑|
 
-> **#22. @CreationTimestamp**
+#### > **#22. @CreationTimestamp**
 
 |   |   |   |
 |---|---|---|
@@ -1979,9 +1993,29 @@ public class Address {
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@ToString<br><br>@Getter<br><br>public class LoginLog {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String userId;<br><br>    @CreationTimestamp<br><br>    private LocalDate createAt;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
+
+@ToString
+
+@Getter
+
+public class LoginLog {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String userId;
+
+    @CreationTimestamp
+
+    private LocalDate createAt;
+
+}
+```
 
 **[설명]**
 
@@ -1997,11 +2031,11 @@ public class Address {
 
 바꿀 필드만 적는 것이 좋다
 
-![](https://blog.kakaocdn.net/dn/1noAs/btqFOXpqPF2/wct7fxoTYRDXnwOoGC2qG1/img.png)
+![[JPA47.png]]
 
 위 그림과 같이 할 시 문제점은 아래 gif 참고 바람
 
-![](https://blog.kakaocdn.net/dn/c8QOSr/btqFPrRlZeZ/1Hp09pUKTW1tVORrhdP021/img.gif)
+![[JPA9.gif]]
 
 이미지 클릭
 
@@ -2028,9 +2062,30 @@ public class Address {
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16|@Entity<br><br>@ToString<br><br>@Getter<br><br>public class LoginLog {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String userId;<br><br>    @UpdateTimestamp<br><br>    private LocalDate updateAt;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+
+```java
+@Entity
+
+@ToString
+
+@Getter
+
+public class LoginLog {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String userId;
+
+    @UpdateTimestamp
+
+    private LocalDate updateAt;
+
+}
+```
 
 **[설명]**
 
@@ -2038,7 +2093,7 @@ public class Address {
 
 따로 값을 보내주지 않아도 **INSERT, UPDATE** 시 자동으로 값을 넣어준다
 
-> **#24. @Lob**
+#### > **#24. @Lob**
 
 |   |   |   |
 |---|---|---|
@@ -2047,14 +2102,36 @@ public class Address {
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17|@Entity<br><br>@Setter<br><br>@Getter<br><br>@ToString<br><br>public class Board {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String title;<br><br>    @Lob<br><br>    private String content;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@Entity
+
+@Setter
+
+@Getter
+
+@ToString
+
+public class Board {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String title;
+
+    @Lob
+
+    private String content;
+
+}
+```
 
 **[SQL]**
 
-![](https://blog.kakaocdn.net/dn/eaKoAU/btqFOXpwdcy/wTxZWi5yOTTCULBGx27VDK/img.png)
 
+![[JPA48.png]]
 **[설명]**
 
 **JPA** 에서 **String** 은 DB에서는 **기본 varchar(255)** 으로 테이블이 만들어진다.
@@ -2067,7 +2144,7 @@ public class Address {
 
 또는 **@Column** 에서 타입지정
 
-![](https://blog.kakaocdn.net/dn/cgcNr0/btqFOYvaaZe/7FhabAkhinjMMYt1Fkw7UK/img.png)
+![[JPA49.png]]
 
 대용량 텍스트
 
@@ -2086,17 +2163,78 @@ public class Address {
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14|@RestController<br><br>@Slf4j<br><br>public class api {<br><br>    @Autowired<br><br>    private MemberRepository memberRepository;<br><br>    @GetMapping("/member")<br><br>    public Member memberDetail(String userId) {<br><br>        return memberRepository.selectUserId(userId);<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@RestController
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15|@Entity<br><br>@Getter<br><br>@ToString<br><br>@Setter<br><br>public class Member {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String userId;<br><br>    private String password;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Slf4j
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17|public interface MemberRepository extends JpaRepository<Member, Long> {<br><br>    // JPQL argument 방식<br><br>    @Query(value = "select mem from Member mem where mem.userId= ?1")<br><br>    Member selectUserId(String userId);<br><br>    // JPQL @Param 방식<br><br>    @Query(value = "select mem from Member mem where mem.userId= :userName")<br><br>    Member selectUserId2(@Param("userName") String userId);<br><br>    // Native Query @Param 방식<br><br>    @Query(value = "select * from member where user_id =:userName", nativeQuery = true)<br><br>    Member selectUserId3(@Param("userName") String userId);<br><br>    // 위 3개 모두 똑같은 쿼리문입니다.<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+public class api {
+
+    @Autowired
+
+    private MemberRepository memberRepository;
+
+    @GetMapping("/member")
+
+    public Member memberDetail(String userId) {
+
+        return memberRepository.selectUserId(userId);
+
+    }
+
+}
+```
+
+
+```java
+@Entity
+
+@Getter
+
+@ToString
+
+@Setter
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String userId;
+
+    private String password;
+
+}
+```
+
+```java
+public interface MemberRepository extends JpaRepository<Member, Long> {
+
+    // JPQL argument 방식
+
+    @Query(value = "select mem from Member mem where mem.userId= ?1")
+
+    Member selectUserId(String userId);
+
+    // JPQL @Param 방식
+
+    @Query(value = "select mem from Member mem where mem.userId= :userName")
+
+    Member selectUserId2(@Param("userName") String userId);
+
+    // Native Query @Param 방식
+
+    @Query(value = "select * from member where user_id =:userName", nativeQuery = true)
+
+    Member selectUserId3(@Param("userName") String userId);
+
+    // 위 3개 모두 똑같은 쿼리문입니다.
+
+}
+```
 
 **[설명]**
 
@@ -2104,7 +2242,7 @@ public class Address {
 
 **[참고]**
 
-![](https://blog.kakaocdn.net/dn/dtC6xh/btqFOiudFF0/Nlnr2ksKL6J1WBJjKr6Fq1/img.png)
+![[JPA50.png]]
 
 정상
 
@@ -2155,22 +2293,75 @@ devhyogeon.tistory.com](https://devhyogeon.tistory.com/4)
 
 **[코드]**
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15<br><br>16<br><br>17|@RestController<br><br>@Slf4j<br><br>public class api {<br><br>    @Autowired<br><br>    private GoodRepository goodRepository;<br><br>    @PostMapping("/good")<br><br>    public void goodCreate(@RequestBody Good good) {<br><br>        log.info("good -> {}", good);<br><br>        goodRepository.save(good);<br><br>    }<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+```java
+@RestController
 
-|   |   |   |
-|---|---|---|
-|1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11<br><br>12<br><br>13<br><br>14<br><br>15|@Entity<br><br>@ToString<br><br>@Getter<br><br>@DynamicUpdate<br><br>public class Good {<br><br>    @Id<br><br>    @GeneratedValue(strategy = GenerationType.IDENTITY)<br><br>    private Long id;<br><br>    private String name;<br><br>    private Long price;<br><br>}<br><br>[Colored by Color Scripter](http://colorscripter.com/info#e)|[cs](http://colorscripter.com/info#e)|
+@Slf4j
+
+public class api {
+
+    @Autowired
+
+    private GoodRepository goodRepository;
+
+    @PostMapping("/good")
+
+    public void goodCreate(@RequestBody Good good) {
+
+        log.info("good -> {}", good);
+
+        goodRepository.save(good);
+
+    }
+
+}
+```
+
+
+```java
+@Entity
+
+@ToString
+
+@Getter
+
+@DynamicUpdate
+
+public class Good {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String name;
+
+    private Long price;
+
+}
+```
+
+
+
+
+
+
+
+
+
 
 **[요약]**
 
-|   |   |   |
-|---|---|---|
-|**@DynamicUpdate 미적용**|price를 3000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/d2tUzt/btqFPrRGSEL/pOUzPfoMjD4CKE3VHFH5CK/img.png)|
-|name을 book 으로  <br>price 를 5000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/YkvK4/btqFOXXC7Tq/kavhfAGOgiXtMpdSku9Ti0/img.png)|
-|**@DynamicUpdate 적용**|price를 3000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/m6Eoj/btqFOiVs7Px/8Ygpz0KbWRaTgk5LI07KDK/img.png)|
-|name을 book 으로  <br>price 를 5000 으로 수정한 경우|![](https://blog.kakaocdn.net/dn/c5euqo/btqFOMPwGWY/pdhY0p36eaTywIe0NyIBc0/img.png)|
+
+
+
+|  |  |  |
+| ---- | ---- | ---- |
+| **@DynamicUpdate 미적용** | price를 3000 으로 수정한 경우 | ![[JPA51.png]] |
+| name을 book 으로  <br>price 를 5000 으로 수정한 경우 | ![[JPA52.png]] |  |
+| **@DynamicUpdate 적용** | price를 3000 으로 수정한 경우 | ![[JPA53.png]] |
+| name을 book 으로  <br>price 를 5000 으로 수정한 경우 | ![[JPA54.png]] |  |
 
 **[설명]**
 
@@ -2182,7 +2373,7 @@ devhyogeon.tistory.com](https://devhyogeon.tistory.com/4)
 
 **[참고]**
 
-![](https://blog.kakaocdn.net/dn/bQgxwS/btqFOXwzYsi/S6M1Bcw09gNSTeVU58xXH1/img.png)
+![[JPA55.png]]
 
 [출처 - Baeldung] https://www.baeldung.com/spring-data-jpa-dynamicupdate
 
@@ -2228,7 +2419,7 @@ devhyogeon.tistory.com](https://devhyogeon.tistory.com/4)
 
 **[코드]**
 
-```
+```java
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class AbstractEntity extends AbstractEntityId {
@@ -2287,7 +2478,7 @@ erim1005.tistory.com](https://erim1005.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%8
 |**findById(Long id);**|SELECT * FROM [테이블명] WHERE id= ?|
 
 Member findBy();  
-List<Member> findAllBy();  
+List\<Member> findAllBy();  
 Member findFirstBy();  
 Member findDistinctFirstBy();  
 Member findTopBy();  
@@ -2297,13 +2488,13 @@ Member findMemberBy();
 Member findMembersBy();  
   
 Member deleteBy();  
-List<Member> deleteAllBy();  
+List\<Member> deleteAllBy();  
 Member deleteDistinctBy();  
 Member deleteMemberBy();  
 Member deleteMembersBy();  
   
 Member countBy();  
-List<Member> countAllBy();  
+List\<Member> countAllBy();  
 Member countDistinctBy();  
 Member countMemberBy();  
 Member countMembersBy();  
@@ -2315,7 +2506,7 @@ boolean existsMemberBy();
 boolean existsMembersBy();  
   
 Member getBy();  
-List<Member> getAllBy();  
+List\<Member> getAllBy();  
 Member getTopBy();  
 Member getDistinctTopBy();  
 Member getFirstBy();  
@@ -2325,7 +2516,7 @@ Member getMemberBy();
 Member getMembersBy();  
   
 Member queryBy();  
-List<Member> queryAllBy();  
+List\<Member> queryAllBy();  
 Member queryTopBy();  
 Member queryDistinctTopBy();  
 Member queryFirstBy();  
@@ -2335,7 +2526,7 @@ Member queryMemberBy();
 Member queryMembersBy();  
   
 Member readBy();  
-List<Member> readAllBy();  
+List\<Member> readAllBy();  
 Member readTopBy();  
 Member readDistinctTopBy();  
 Member readFirstBy();  
@@ -2351,7 +2542,7 @@ Member removeMemberBy();
 Member removeMembersBy();  
   
 Member streamBy();  
-List<Member> streamAllBy();  
+List\<Member> streamAllBy();  
 Member streamTopBy();  
 Member streamDistinctTopBy();  
 Member streamFirstBy();  
@@ -2406,7 +2597,7 @@ JpaRespository 클래스가 extend 된 해당 **[Entity]**Repository 클래스 
 
 **[원인]**
 
-![](https://blog.kakaocdn.net/dn/ybAef/btqFBfjgXbd/G93g71ZL93GMMKI8gCUqPK/img.png)
+![[JPA56.png]]
 
 **JPQL (nativeQuery=false) 엔티티 쿼리문에서는 SELECT * 이 안되기 때문에**
 
@@ -2416,7 +2607,7 @@ JpaRespository 클래스가 extend 된 해당 **[Entity]**Repository 클래스 
 
 **[해결]**
 
-![](https://blog.kakaocdn.net/dn/ceCd7Q/btqFBMgQxR5/18PFxWBX562SZTLpt4uiqK/img.png)
+![[JPA57.png]]
 
 ---
 
@@ -2452,7 +2643,7 @@ $ skNn6Vvs [ "hibernateLazyInitializer"])] 근본 원인 포함
 
 **Lazy 로딩으로 인한 오류**
 
-```
+```java
 @Entity
 @Getter
 @ToString
@@ -2489,7 +2680,7 @@ public class User implements Serializable {
 }
 ```
 
-```
+```java
 @Entity
 @Getter
 @ToString
@@ -2519,7 +2710,7 @@ public class Team implements Serializable {
 }
 ```
 
-```
+```java
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -2549,7 +2740,7 @@ public class MeApiController {
 
 **[해결]**
 
-![](https://blog.kakaocdn.net/dn/QCJx7/btqI27pVPHP/ZdWf0IiisEL2e6sqlOzSk0/img.png)
+![[JPA58.png]]
 
 > **# 양방향 매핑 참고**
 
