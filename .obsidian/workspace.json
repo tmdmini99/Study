@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/web.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,9 +175,12 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/porm.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/IntelliJ/Spring/Spring.md",
+    "Spaces/Home/Spring/Spring Legacy",
     "Spaces/Home/Spring/JPA.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
-    "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Spring/AOP/AOP.md",
     "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Spaces/Home/Java/Java DB/Open API Insert.md",
@@ -218,10 +220,7 @@
     "Spaces/Home/Protocol/Http/Http.md",
     "Images/WebSocket",
     "Images/Polling - 복사본",
-    "Images/SSE",
     "Spaces/Home/Java/JVM/ThreadLock.md",
-    "Spaces/Home/Java/JVM/Thread.md",
-    "Spaces/Home/Java/JVM/Process.md",
     "무제 파일.canvas"
   ]
 }
