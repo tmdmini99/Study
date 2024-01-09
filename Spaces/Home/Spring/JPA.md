@@ -56,7 +56,7 @@ Java Persistence Api 이름처럼 **자바 영속성에 관한 api**로 orm에 
 |**@EntityListeners(AuditingEntityListener.class)**|Entity 를 감시할 때 사용 한다  <br>  @PostLoad(불러올 때), @PrePersist(저장 하기 전),  <br>  @PostPersist(저장 후), @PreUpdate(업데이트 하기 전),  <br>  @PostUpdate(업데이트 후), @PreRemove(삭제 하기 전),  <br>  @PostRemove(삭제 후)|
 ### 주요 메서드
 
-> **#1. @Entity**
+#### > **#1. @Entity**
 
 |   |   |   |
 |---|---|---|
@@ -146,7 +146,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 ```
 
 
-> **#2. @Table**
+#### > **#2. @Table**
 
 |   |   |   |
 |---|---|---|
@@ -254,7 +254,7 @@ public class Member {
 |**x2,x1**|**X**|**O**|
 |**x2,x2**|**O**|**O**|
 
-> **#3. @Column**
+#### > **#3. @Column**
 
 
 |   |   |   |
@@ -298,7 +298,407 @@ public class Member {
 
 **[SQL]**
 
-![[Pasted image 20240109141117.png]]
+![[JPA13.png]]
+
+**[기본]**
+
+![[JPA14.png]]
+
+**[**percision 속성** 설명]**
+
+간혹가다 long 보다 큰 숫자를 써야하는 경우가 있다.
+
+대표적으로는 돈 인데,
+
+워렌버핏과 같은 사람의 돈은 long 타입의 숫자를 넘어선다
+
+이럴 때 BigDecimal 타입을 사용하고 **percision 속성**으로 자릿수를 설정할 수 있다.
+
+_**@Column(**__**precision="") BigDecimal타입**_과 _**Long 타입**_ 예시는 밑에 참고 바람
+
+**[참고]**
+
+**Long**
+
+```java
+@Entity(name = "user")
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String userId;
+
+    private String name;
+
+    private String password;
+
+    private Long money;
+
+}
+```
+
+
+
+
+![[JPA15.png]]
+
+
+![[JPA16.png]]
+
+
+**BigDecimal**
+
+
+```java
+@Entity(name = "user")
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String userId;
+
+    private String name;
+
+    private String password;
+
+    @Column(precision = 20)
+
+    private BigDecimal money;
+
+}
+```
+
+
+
+
+![[JPA17.png]]
+
+
+
+![[JPA18.png]]
+
+
+#### > **#4. @JoinColumn**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**name**|맵핑할 foreign key 이름|필드명 + _ + 컬럼명|
+|**referencedColumnName**|foreign key가 참조하는 대상 테이블의 컬럼명|참조하는 테이블의  <br>  기본 키 컬럼명|
+|**foreignKey**|foreigh key 제약조건을 직접 지정할 수 있다.  <br>  이 속성은 테이블을 생성할 때만 사용된다.||
+|**기타**|@Column에서 사용하는 속성들도 같이 이용할 수 있다. ex) nullable||
+
+**[코드]**
+
+```java
+import javax.persistence.Entity;
+
+import javax.persistence.GeneratedValue;
+
+import javax.persistence.GenerationType;
+
+import javax.persistence.Id;
+
+@Entity
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String userId;
+
+    private String password;
+
+}
+```
+
+```java
+import javax.persistence.*;
+
+@Entity
+
+public class Board {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @ManyToOne
+
+    @JoinColumn(name = "member_id")
+
+    private Member writer;
+
+    private String title;
+
+    private String content;
+
+}
+```
+
+
+**[SQL]**
+
+![[JPA19.png]]
+
+
+
+**[기본]**
+
+![[JPA20.png]]
+
+
+**[기본 설명]**
+
+**참조키(foreign Key) 일 때 사용한다.**
+
+**@Column** 어노테이션을 포함한다. (즉, 참조키 필드는 **@Column** 대신 **@JoinColumn** 을 사용)
+
+**@JoinColumn** 혼자 쓰면 오류가 발생하기에
+
+**1:1(@OneToOne)**, **1:N(@OneToMany)**, **N:1(@ManyToOne)**, **N:N(@ManyToMany)** 인지 관계를 설정해야한다.
+
+**한 명(One)**의 **유저(Member)**가 **여러개(Many)**의 **게시글(Board)**를 작성할 수 있음으로 
+
+**Board**는 N:1 관계 인 **@ManyToOne 릴레이션(관계) 어노테이션**을 써야한다.
+
+그런데, **릴레이션 어노테이션**은 **@JoinColumn** 없이 혼자 사용할 수 있다 (아래 참고)
+
+
+![[JPA21.png]]
+
+
+wirter_id 보다는 member_id 로 정의하여 어디에 참조되어있는지 알기 쉽게하는 것이 좋다
+
+**[referencedColumnName 속성 설명]**
+
+**referencedColumnName** **기본값**은 관계된 테이블의 **PK @Column name** 이기 때문에
+
+**referencedColumnName** **=** "**id**" 가 된다
+
+만약 관계된 테이블에서 **@Column(name="memId")** 로 정의 한다면,
+
+**DB에 컬럼명**은 **mem_id** 이지만,
+
+**referencedColumnName** **="memId"** 로 사용해야한다.
+
+**name**을 재정의 한다면, **referencedColumnName** 도 같이 써주어야 한다
+
+**자세한 이유는 #5. @JoinColumns 링크 필수로 참고 바람**
+
+**[**foreignKey** 속성 설명]**
+
+**foreignKey** 를 지정하지 않을 경우 기본값으로
+
+![[JPA22.png]]
+
+처럼 알 수 없는 문자로 이름이 지어진다
+
+이름을 재정의하기 위해서 **foreignKey** 를 사용한다
+
+
+![[JPA23.png]]
+
+
+**[기타 속성 설명]**
+
+**@Column** 의 속성들을 사용할 수 있다.
+
+**nullable**
+
+**updatable**
+
+**insertable**
+
+**unique**
+
+**columnDefinition**
+
+#### > **#5. @JoinColumns**
+
+
+![[JPA24.png]]
+
+**[설명]**
+
+**@JoinColumn** 을 여러개 사용할 때 사용한다
+
+**referencedColumnName** 은 관계된 테이블의 **id 필드명**이다
+
+**private Long first_id;**
+
+**[필수 참고]**
+
+ [JPA JoinColumns 사용시 주의 사항](https://medium.com/@SlackBeck/jpa-joincolumns-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98-%EC%82%AC%ED%95%AD-7bc22b98ed9b)
+
+ [공유된 FK(Foreign Key) JPA 연관 관계 매핑 하기](https://medium.com/@SlackBeck/%EC%A4%91%EC%B2%A9%EB%90%9C-fk-foreign-key-%EB%A5%BC-jpa%EB%A1%9C-%EC%97%B0%EA%B4%80-%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%ED%95%98%EA%B8%B0-216ba5f2b8ed)
+
+#### > **#6. @OneToOne**
+
+|   |   |   |
+|---|---|---|
+|**속성**|**기능**|**기본값**|
+|**optional**|**false로 설정하면 연관된 엔티티가 항상 있어야 한다.**|true|
+|true 는 left outer join 을 사용한다|
+|false 는 inner join 을 사용한다|
+|**orphanRemoval**|**true**|false|
+|**false**||
+|true 인 경우  <br>  해당 필드를 UPDATE 쿼리문으로 null 로 설정할 경우  <br>  관계된 테이블 레코드들은 모두 삭제된다.||
+|DELETE 쿼리문과 다른 점은  <br>  DELETE는 해당 레코드를 삭제하면 관계된 테이블의  <br>  레코드들을 모두 삭제하는 반면,  <br>  orphanRemoval 은 해당 테이블의 해당 열이 Null 값 으로   <br>  UPDATE 한 경우, 관계된 테이블의 레코드들을 모두 삭제  <br>  한다.||
+|**fetch**|**FetchType.EAGER**   <br>  <br>  관계된 테이블의 정보를 미리 읽어온다  <br>  <br>  join 을 이용한 1개의 SELECT 쿼리문만 실행된다  <br>  <br>  optional 로 out join과 inner join 설정 가능 (기본 out join)|FetchType.EAGER|
+|**FetchType.LAZY**  <br>    <br>  실제로 요청하는 순간에만 읽어온다.  <br>  <br>  2개의 SELECT 쿼리문이 실행된다|
+|**cascade**|**영속성 전이 기능을 사용한다.**||
+|**CascadeType.ALL**  <br>  <br>  CascadeType 5개 전부 사용|
+|**CascadeType.PERSIST**  <br>  <br>  INSERT 시 연결된 테이블도 save()|
+|**CascadeType.MERGE**  <br>  <br>  UPDATE 시 연결된 테이블도 save()|
+|**CascadeType.REMOVE**  <br>  <br>  DELETE 시 연결된 테이블도 delete()|
+|**CascadeType.DETACH**|
+|**CascadeType.REFRESH**|
+|**targetEntity**|**관계를 맺을 Entity Class를 정의한다.**|void.class|
+|**mappedBy**|**양방향 관계 설정시 관계의 주체가 되는 쪽에서 정의합니다.**|""|
+|**mappedBy="[관계된 테이블의 필드명]"**|
+|**mappedBy 를 쓰는 경우는 관계의 주인이 아니기 때문에  <br>  SELECT 역할만 한다.**|
+|****주인 테이블은 @ManyToOne 과 @JoinColumn 사용하며  <br>  SELECT, INSERT, UPDATE, DELETE 역할을 한다.****|
+|[https://gmlwjd9405.github.io/2019/08/14/bidirectional-association.html](https://gmlwjd9405.github.io/2019/08/14/bidirectional-association.html)|
+
+**[단방향 & 양방향 간단 정리]**
+
+
+![[JPA25.png]]
+
+
+**[optional **속성** 설명]**
+
+**optional = false** 일 경우에는 관계된 테이블의 데이터가 반드시 있어야 합니다.
+
+**@Column** 의 **nullable=false** + **inner join**
+
+```java
+@RestController
+
+@Slf4j
+
+public class api {
+
+    @Autowired
+
+    private MemberRepository memberRepository;
+
+    @Autowired
+
+    private BlockRepository blockRepository;
+
+    @PostMapping("/member")
+
+    public void boardCreate(@RequestBody Member member) {
+
+        memberRepository.save(member);
+
+    }
+
+    @PostMapping("/block/{userId}")
+
+    public void blockCreate(@PathVariable("userId") Long userId) {
+
+        Member member = memberRepository.findById(userId).get();
+
+        Block block = new Block();
+
+        block.setName(member.getUserId());
+
+        block.setMember(member);
+
+        blockRepository.save(block);
+
+    }
+
+}
+```
+
+
+```java
+@Entity
+
+@Getter
+
+@ToString
+
+@Setter
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    @Column(name = "user_id")
+
+    private String userId;
+
+    private String password;
+
+}
+```
+
+```java
+@Entity
+
+@Setter
+
+@Getter
+
+public class Block {
+
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    private String name;
+
+    @OneToOne(fetch = FetchType.EAGER, optional = true)
+
+    private Member member;
+
+}
+```
+
+
+
+
+![[JPA3.gif]]
+
+
+
+![[JPA26.png]]
+
+
+
+
+
+
+
+
+
 
 
 
