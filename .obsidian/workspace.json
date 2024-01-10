@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/Java/Annotation.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/Java/Annotation.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md"
+                "file": "Spaces/Home/Java/Annotation.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/Java/Annotation.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,16 +175,21 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
+    "Spaces/Home/Data/JSON.md",
     "daily note/2024-01-10.md",
     "Spaces/Home/Data/JSTL.md",
     "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
-    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/AOP/AOP.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/JPA.md",
     "Images/JPA58.png",
     "Images/JPA57.png",
@@ -196,13 +201,9 @@
     "Images/JPA51.png",
     "Images/Pasted image 20240109144553.png",
     "Images/JPA50.png",
-    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/Maven",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Spring/MyBatis",
-    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Spring/Spring Legacy",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
@@ -215,7 +216,6 @@
     "Spaces/Home/IntelliJ/Spring",
     "Spaces/Home/IntelliJ",
     "Spaces/Home/Protocol/Http/SSE.md",
-    "Spaces/Home/Protocol/Http/STOMP.md",
     "Images/Smart Tomcat",
     "Images/새 폴더",
     "Spaces/Home/Protocol/HandShake",
