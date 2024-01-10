@@ -1,4 +1,9 @@
 
+> **ORM(**Object-Relational Mapping)****
+
+**우리가 일반 적으로 알고 있는 애플리케이션 Class와 RDB(Relational DataBase)의 테이블을** **매핑(연결)한다는 뜻이며, 기술적으로는 어플리케이션의 객체를 RDB 테이블에 자동으로 영속화 해주는 것이라고 보면된다.**
+
+
 ###  **JPA**
 
 Java Persistence Api 이름처럼 **자바 영속성에 관한 api**로 orm에 대한 인터페이스라고 생각하면된다. 사실 JPA는 **표준 명세**를 말하는것이며 RDS데이터를 매핑시킬 객체를 Entity라고 하는데, JPA의 핵심은 이 Enity를 관리하는 **EntityManager**라고 한다. 그러므로 실제로 **JPA를 사용하기위해선 Hibernate와 같이 JPA의 EntityManager를 구현한(Hibernate, DataNucleus, EclipseLink 등) 구현체**를 사용해야한다
@@ -6,6 +11,69 @@ Java Persistence Api 이름처럼 **자바 영속성에 관한 api**로 orm에 
 ![[JPA.png]]
 
 
+- 현재 자바 진영의 ORM 기술 표준, 인터페이스의 모음이다.  
+- 즉 실제로 동작 X  
+- JPA 인터페이스를 구현한 대표적인 오픈소스가 Hibernate라고 할 수 있음
+
+- JPA 표준 명세를 구현한 3가지 구현체: Hibernate, EclipseLink, DataNucleus
+- 위에 설명한 3가지의 구현체 중 하나를 사용해서 개발을 진행하면 된다.
+- 만약 3가지의 구현체가 모두 마음에 들지 않는다면 개발자가 직접 JPA 구현체를 만들어 사용할 수도 있다.
+
+**JPA는 라이브러리가 아닌 ORM을 사용하기 위한 인터페이스의 모음이다.**
+
+이러한 JPA는 인터페이스의 모음, 단순한 명세이기 때문에 구현이 없다. 자바 애플리케이션에서 관계형 데이터베이스를 어떻게 사용할지 정의하는 하나의 방법일 뿐이다.
+
+따라서 이러한 JPA의 구현체 있어야 JPA를 사용할 수 있다.
+
+
+
+## Hibernate란?
+
+
+![[Hibernate1.png]]
+
+**Hibernate는 JPA를 구현한 구현체이다.** 개발된 지 10년이 넘었으며 대중적으로 많이 이용되는 JPA 구현체 중 하나이다.
+
+JPA의 핵심들인 EntityManagerFactory, EntityManager, EntityTransaction 등을 상속받아 구현한다. 
+
+JPA를 구현하는 다른 구현체들로는 EclipseLink나 DataNucleus 등이 있다.
+
+만약 JPA를 구현하는 구현체들이 마음에 들지 않는다면 개발자가 직접 JPA 구현체를 만들어 사용할 수도 있다. 
+
+Hibernate는 내부적으로 JDBC를 이용해 관계형 데이터베이스와 커넥션을 맺고 상호작용한다.
+
+
+## Spring Data JPA란?
+**Spring Data JPA는 JPA를 사용하기 편하도록 만들어놓은 모듈이다.** 
+
+Spring Data JPA는 JPA를 한 단계 더 추상화시킨 Repository 인터페이스를 제공한다. 
+
+이러한 Spring Data JPA는 Hibernate와 같은 JPA구현체를 사용해서 JPA를 사용하게 된다. 
+
+Spring Data JPA를 사용하면 사용자는 더욱 간단하게 데이터 접근이 가능해진다. 
+
+Spring Data JPA를 사용하는 방법이나, 더 자세한 내용은 다음에 다뤄보도록 하겠다.
+
+
+
+![[JPA59.png]]
+
+
+
+#### 장점
+
+- SQL문이 아닌 Method를 통해 DB를 조작할 수 있어, 개발자는 객체 모델을 이용하여 비즈니스 로직을 구성하는데만 집중할 수 있음.  
+    (내부적으로는 쿼리를 생성하여 DB를 조작함. 하지만 개발자가 이를 신경 쓰지 않아도됨)
+- Query와 같이 필요한 선언문, 할당 등의 부수적인 코드가 줄어들어, 각종 객체에 대한 코드를 별도로 작성하여 코드의 가독성을 높임
+- 객체지향적인 코드 작성이 가능하다. 오직 객체지향적 접근만 고려하면 되기때문에 생산성 증가
+- 매핑하는 정보가 Class로 명시 되었기 때문에 ERD를 보는 의존도를 낮출 수 있고 유지보수 및 리팩토링에 유리
+- 예를들어 기존 방식에서 MySQL 데이터베이스를 사용하다가 PostgreSQL로 변환한다고 가정해보면, 새로 쿼리를 짜야하는 경우가 생김. 이런 경우에 ORM을 사용한다면 쿼리를 수정할 필요가 없음
+
+#### 단점
+
+- 프로젝트의 규모가 크고 복잡하여 설계가 잘못된 경우, 속도 저하 및 일관성을 무너뜨리는 문제점이 생길 수 있음
+- 복잡하고 무거운 Query는 속도를 위해 별도의 튜닝이 필요하기 때문에 결국 SQL문을 써야할 수도 있음
+- 학습비용이 비쌈
 
 
 
@@ -2767,3 +2835,5 @@ https://riverblue.tistory.com/47
 
 https://theheydaze.tistory.com/196
 
+
+https://code-lab1.tistory.com/288
