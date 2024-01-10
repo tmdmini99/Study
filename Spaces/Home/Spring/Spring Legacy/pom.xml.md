@@ -9,7 +9,7 @@ Spring Lecay pom.xml
     <modelVersion>4.0.0</modelVersion>  
   
     <groupId>org.example</groupId>  
-    <artifactId>OpenApiMap</artifactId>  
+    <artifactId>OpenApiMyBatis</artifactId>  
     <version>1.0-SNAPSHOT</version>  
   
     <properties>  
@@ -33,6 +33,13 @@ Spring Lecay pom.xml
                     <artifactId>commons-logging</artifactId>  
                 </exclusion>  
             </exclusions>  
+        </dependency>  
+  
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-beans</artifactId>  
+            <version>${org.springframework-version}</version>  
         </dependency>  
   
   
@@ -65,27 +72,38 @@ Spring Lecay pom.xml
         </dependency>  
   
   
- <!--       &lt;!&ndash; https://mvnrepository.com/artifact/org.mybatis/mybatis &ndash;&gt;        <dependency>            <groupId>org.mybatis</groupId>            <artifactId>mybatis</artifactId>            <version>3.5.10</version>        </dependency>        &lt;!&ndash; https://mvnrepository.com/artifact/org.mybatis/mybatis-spring &ndash;&gt;        <dependency>            <groupId>org.mybatis</groupId>            <artifactId>mybatis-spring</artifactId>            <version>2.0.7</version>        </dependency>-->  
-        <!-- JPA -->        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-orm</artifactId>  
-            <version>${org.springframework-version}</version>  
+        <!--       &lt;!&ndash; https://mvnrepository.com/artifact/org.mybatis/mybatis &ndash;&gt;   -->        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis</artifactId>  
+            <version>3.5.10</version>  
         </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework.data</groupId>  
-            <artifactId>spring-data-jpa</artifactId>  
-            <version>2.2.1.RELEASE</version>  
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring &ndash;&gt;       -->        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis-spring</artifactId>  
+            <version>2.0.7</version>  
         </dependency>  
   
   
-        <dependency>  
-            <groupId>org.hibernate</groupId>  
-            <artifactId>hibernate-entitymanager</artifactId>  
-            <version>5.1.11.Final</version>  
-        </dependency>  
-        <!-- -->  
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->  
+  
+<!--        &lt;!&ndash; JPA &ndash;&gt;        <dependency>-->  
+<!--        <groupId>org.springframework</groupId>-->  
+<!--        <artifactId>spring-orm</artifactId>-->  
+<!--        <version>${org.springframework-version}</version>-->  
+<!--    </dependency>-->  
+  
+<!--        <dependency>-->  
+<!--            <groupId>org.springframework.data</groupId>-->  
+<!--            <artifactId>spring-data-jpa</artifactId>-->  
+<!--            <version>2.2.1.RELEASE</version>-->  
+<!--        </dependency>-->  
+  
+  
+<!--        <dependency>-->  
+<!--            <groupId>org.hibernate</groupId>-->  
+<!--            <artifactId>hibernate-entitymanager</artifactId>-->  
+<!--            <version>5.1.11.Final</version>-->  
+<!--        </dependency>-->  
+        <!-- -->        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-jdbc</artifactId>  
@@ -104,42 +122,19 @@ Spring Lecay pom.xml
             <artifactId>slf4j-api</artifactId>  
             <version>${org.slf4j-version}</version>  
         </dependency>  
-        <dependency>  
-            <groupId>org.slf4j</groupId>  
-            <artifactId>jcl-over-slf4j</artifactId>  
-            <version>${org.slf4j-version}</version>  
-            <scope>runtime</scope>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.slf4j</groupId>  
-            <artifactId>slf4j-log4j12</artifactId>  
-            <version>${org.slf4j-version}</version>  
-            <scope>runtime</scope>  
-        </dependency>  
+  
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->  
         <dependency>  
             <groupId>log4j</groupId>  
             <artifactId>log4j</artifactId>  
-            <version>1.2.15</version>  
-            <exclusions>  
-                <exclusion>  
-                    <groupId>javax.mail</groupId>  
-                    <artifactId>mail</artifactId>  
-                </exclusion>  
-                <exclusion>  
-                    <groupId>javax.jms</groupId>  
-                    <artifactId>jms</artifactId>  
-                </exclusion>  
-                <exclusion>  
-                    <groupId>com.sun.jdmk</groupId>  
-                    <artifactId>jmxtools</artifactId>  
-                </exclusion>  
-                <exclusion>  
-                    <groupId>com.sun.jmx</groupId>  
-                    <artifactId>jmxri</artifactId>  
-                </exclusion>  
-            </exclusions>  
-            <scope>runtime</scope>  
+            <version>1.2.17</version>  
         </dependency>  
+        <dependency>  
+            <groupId>ch.qos.logback</groupId>  
+            <artifactId>logback-classic</artifactId>  
+            <version>1.2.3</version>  
+        </dependency>  
+  
   
         <!-- @Inject   -->  
         <dependency>  
@@ -209,6 +204,8 @@ Spring Lecay pom.xml
         </plugins>  
     </build>  
   
+  
+</project>
   
 </project>
 ```
