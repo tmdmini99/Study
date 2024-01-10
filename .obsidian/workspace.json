@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/JSTL.md",
+                "file": "Spaces/Home/Data/JSON.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/JSTL.md",
+                "file": "Spaces/Home/Data/JSON.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/JSTL.md"
+                "file": "Spaces/Home/Data/JSON.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/JSTL.md",
+                "file": "Spaces/Home/Data/JSON.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,9 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Spaces/Home/Data/HTML.md",
+    "daily note/2024-01-10.md",
     "Spaces/Home/Data/JSTL.md",
+    "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
@@ -215,7 +216,6 @@
     "Spaces/Home/IntelliJ",
     "Spaces/Home/Protocol/Http/SSE.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Images/Smart Tomcat",
     "Images/새 폴더",
     "Spaces/Home/Protocol/HandShake",

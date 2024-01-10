@@ -58,6 +58,28 @@
 
 
 ---
+# GeoJson
+
+형식
+```geojson
+{
+    "type": "Polygon",
+    "coordinates": [
+        [[30, 10], [40, 40], [20, 40], [10, 20], [30, 10]]
+    ]
+}
+```
+
+
+위도 경도  반대로 되어있음
+
+
+
+
+
+
+
+---
 
 https://amor-dev.tistory.com/13
 
