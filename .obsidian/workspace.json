@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Data/HTML/JSTL & EL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Data/HTML/JSTL & EL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md"
+                "file": "Spaces/Home/Data/HTML/JSTL & EL.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Data/HTML/JSTL & EL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,12 @@
   },
   "active": "28285f84aaa49557",
   "lastOpenFiles": [
+    "Images/EL1.jpg",
+    "Spaces/Home/Data/HTML/JSTL & EL.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
+    "Spaces/Home/Data/HTML/HTML.md",
+    "Spaces/Home/Data/HTML",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
@@ -184,7 +190,6 @@
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
     "Spaces/Home/Java/JDBC/JDBC.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Spring/MVC/MVC.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/JPA/JPA.md",
@@ -199,7 +204,6 @@
     "Spaces/Home/Java/Anntoation",
     "Spaces/Home/Spring/Dependency Injection",
     "Spaces/Web & WAS/WAS.md",
-    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/Spring/Spring Framework.md",
@@ -211,16 +215,11 @@
     "Images/Web&WAS",
     "Images/WAS",
     "Images/새 폴더",
-    "Images/MyBatis/MyBatis4.png",
     "Images/JDBC",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Java/POJO.md",
     "Spaces/Home/Java/JDBC",
     "Spaces/Home/Spring/JPA",
-    "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
-    "Spaces/Home/Spring/Spring Boot",
-    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
-    "Spaces/Web & WAS/Web.md",
     "무제 파일.canvas"
   ]
 }
