@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md"
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,51 +175,52 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
-    "Spaces/Home/Spring/JPA.md",
-    "Images/JPA59.png",
-    "Images/Hibernate1.png",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
+    "Images/JPA/JPA54.png",
+    "Images/JPA/JPA53.png",
+    "Images/JPA/JPA27.png",
+    "Images/JPA/JPA26.png",
+    "Images/JPA/JPA25.png",
+    "Images/JPA/JPA11.png",
+    "Images/JPA/JPA10.png",
+    "Images/JPA/JPA9.png",
+    "Images/JPA/JPA46.png",
+    "Images/JPA/JPA45.png",
+    "Images/MyBatis",
+    "Images/JPA - 복사본",
+    "Images/JPA",
+    "Images/새 폴더",
+    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
+    "Spaces/Home/Spring/AOP/AOP.md",
+    "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
+    "Spaces/Home/Spring/JPA.md",
+    "Spaces/Home/Protocol/Protocol.md",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Layer/TCPIP.md",
     "Spaces/Home/Protocol/Layer/OSI 7 Layer.md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "Images/MyBatis3.jpg",
-    "Images/MyBatis2.jpg",
-    "Images/MyBatis1.jpg",
-    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Java/Annotation.md",
-    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/Data/JSON.md",
     "daily note/2024-01-10.md",
     "Spaces/Home/Data/JSTL.md",
     "Spaces/Home/Data/HTML.md",
     "Spaces/Home/Mark/MarkDown/MarkDown.md",
     "Spaces/Home/Mark/MarkUp/MarkUp.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
-    "Images/JPA58.png",
-    "Images/JPA57.png",
-    "Images/JPA56.png",
-    "Images/JPA55.png",
-    "Images/JPA54.png",
-    "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/Maven",
     "Spaces/Home/Spring/MyBatis",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Spring/Spring Legacy",
-    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
-    "Spaces/Home/Java/Java DB/Java DB Connection.md",
     "Spaces/Home/IntelliJ/Spring",
     "Spaces/Home/IntelliJ",
     "Images/Smart Tomcat",
-    "Images/새 폴더",
-    "Spaces/Home/Protocol/HandShake",
-    "Spaces/Home/IntelliJ/Tomcat",
-    "Images/Socket",
     "무제 파일.canvas"
   ]
 }
