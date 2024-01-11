@@ -4,16 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "d3293f863b3d5e60",
+        "id": "a1638692c88e2905",
         "type": "tabs",
         "children": [
           {
-            "id": "ed2adfb14b7d9c37",
+            "id": "28285f84aaa49557",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Spaces/Home/Spring/Dependency Injection"
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -71,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +121,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md"
+              }
             }
           },
           {
@@ -127,6 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -167,16 +173,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f3e163b26c384178",
+  "active": "28285f84aaa49557",
   "lastOpenFiles": [
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
+    "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
+    "Images/Beans.png",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
+    "Spaces/Home/Java/Anntoation/Annotation.md",
     "Images/DI1.jpg",
     "Spaces/Home/Java/JVM/Thread.md",
     "Images/Thread2.gif",
     "Images/Thread1.gif",
-    "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Java/Anntoation",
     "Spaces/Home/Spring/Dependency Injection",
     "Spaces/Web & WAS/WAS.md",
@@ -198,7 +206,6 @@
     "Images/MyBatis/MyBatis4.png",
     "Images/JPA/JPA60.png",
     "Images/JDBC/JDBC3.png",
-    "Images/JDBC/JDBC2.png",
     "Images/JDBC",
     "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
@@ -213,7 +220,6 @@
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/Scheduler/Cron.md",
     "Spaces/Home/Java/Random/Random.md",
-    "Spaces/Home/Java/Quartz/Quartz.md",
     "무제 파일.canvas"
   ]
 }
