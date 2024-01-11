@@ -501,15 +501,73 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 ```
 
 
-
+Entity.java
 
 ```java
-
+package org.example.entity;  
+  
+import lombok.Data;  
+  
+import javax.persistence.Entity;  
+import javax.persistence.Id;  
+import javax.persistence.Table;  
+  
+@Data  
+@Entity    //  
+@Table(name="op")   // 테이블 명과 클래스 명이 다른 경우 사용  Entity == vo
+public class OpenApiJpaEntity {  
+  
+    private String SIGUN_NM; // 시군명  
+//    private String SIGUN_CD; // 시군코드  
+    private int ACDNT_YY; // 사고년도  
+    private String ACDNT_DIV_NM; // 사고유형 구분  
+    @Id //id를 무조건 지정  P.K값에 ID 지정정 
+    private String MULTI_KNOWLG_DIV_NO; // 다발지식별자  
+    private String MULTI_KNOWLG_DIV_GROUP_NO; // 다발지역그룹식별자  
+    private String LEGALDONG_CD_NO; // 법정동코드  
+    private String SPOT_NO; // 위치코드  
+    private String JURISD_POLCSTTN_NM; // 시도시군구명  
+    private String LOC_INFO; // 사고지역위치명  
+    private int OCCUR_CNT; // 발생건수  
+    private int CASLT_CNT; // 사상자수  
+    private int DPRS_CNT; // 사망자수  
+    private int SERINJRY_INDVDL_CNT; // 중상자수  
+    private int SLTINJRY_INDVDL_CNT; // 경상자수  
+    private int INJURY_APLCNT_CNT; // 부상자수  
+    private double LAT; // 위도  
+    private double LOGT; // 경도  
+    private String MULTI_REGION_INFO; // 사고다발지역폴리곤정보  
+}
 ```
 
+Reopository.java
 
 ```java
-
+package org.example.repository;  
+  
+import org.example.entity.OpenApiJpaEntity;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.data.jpa.repository.JpaRepository;  
+import org.springframework.stereotype.Repository;  
+  
+import javax.persistence.EntityManager;  
+import javax.persistence.PersistenceContext;  
+import java.util.List;  
+//Repository == dao
+@Repository  
+public class OpenApiJpaRepository{  
+  
+    @Autowired  
+    private EntityManager em;  
+  
+    public List<OpenApiJpaEntity> selectAll(){  
+        return em.createQuery("select op from OpenApiJpaEntity op", OpenApiJpaEntity.class).getResultList();  
+    }  
+  
+  
+  
+  
+}
 ```
 
 
