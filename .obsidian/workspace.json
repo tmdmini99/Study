@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Thread.md",
+                "file": "Spaces/Home/Spring/Dependency Injection/DI.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Thread.md",
+                "file": "Spaces/Home/Spring/Dependency Injection/DI.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Thread.md"
+                "file": "Spaces/Home/Spring/Dependency Injection/DI.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JVM/Thread.md",
+                "file": "Spaces/Home/Spring/Dependency Injection/DI.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,11 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Images/Thread2.gif",
-    "Spaces/Home/Java/JVM/Thread.md",
-    "Images/Thread1.gif",
+    "Images/DI1.jpg",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
+    "Spaces/Home/Java/JVM/Thread.md",
+    "Images/Thread2.gif",
+    "Images/Thread1.gif",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
@@ -204,7 +205,6 @@
     "Images/JPA/JPA60.png",
     "Images/JDBC/JDBC3.png",
     "Images/JDBC/JDBC2.png",
-    "Images/JDBC/JDBC1.png",
     "Images/JDBC",
     "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",

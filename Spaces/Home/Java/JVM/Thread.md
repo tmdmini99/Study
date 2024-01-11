@@ -29,7 +29,7 @@ QWER을 순서대로 눌러주었는데
 
 스킬의 완료 여부와 상관없이 다른 스킬을 계속 수행하는 것이 보인다
 
-
+**즉 스레드를 사용하면 한번에 여러 동작을 수행할 수 있다는 것!**
 
 
 
@@ -746,3 +746,6 @@ https://khys.tistory.com/15
 https://khys.tistory.com/20
 
 https://codingdog.tistory.com/entry/java-wait-vs-sleep-%EC%96%B4%EB%96%A4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94
+
+
+https://wakestand.tistory.com/93
