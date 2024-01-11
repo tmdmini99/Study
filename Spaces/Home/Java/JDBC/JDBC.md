@@ -51,11 +51,6 @@ Persistence Layer에서 JDBC 프로그래밍의 복잡함 없이 간단하게 DB
 
 
 
-
-
-
-
-
 ### **JDBC란?**
 
 JDBC(Java Database Connectivity)는 Java 기반 애플리케이션의 데이터를 데이터베이스에 저장 및 업데이트하거나, 데이터베이스에 저장된 데이터를 Java에서 사용할 수 있도록 하는 자바 API이다.
