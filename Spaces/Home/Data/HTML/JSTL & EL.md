@@ -1,4 +1,4 @@
-**JSTL****이란?**
+## **JSTL****이란?**
 
 - JSP 표준 태그 라이브러리(여러 프로그램이 공통으로 사용하는 코드를 모아놓은 코드의 집합)의 약어
 
@@ -8,7 +8,10 @@
 
 
 
-**EL (Expression Language)**
+
+
+
+## **EL (Expression Language)**
 
 **<%= %> , out.println()과 같은 자바코드를** 
 
@@ -49,19 +52,19 @@ invalidate( ) → 값을 전부 지운다.
 
 **▼ 내장객체**
 
-**1) pageScope → 페이지Scope에 접근**
+1) pageScope → 페이지Scope에 접근
 
-**2) request Scope** **→ 리퀘스트Scope에 접근**
+2) request Scope → 리퀘스트Scope에 접근
 
-**3) sessionScope** **→ 세션Scope에 접근**
+3) sessionScope → 세션Scope에 접근
 
-**4) applicationScope** **→ 어플리케이션Scope에 접근**
+4) applicationScope → 어플리케이션Scope에 접근
 
-**5) param** **→ 파라미터값 얻어올때 ( 1개의 Key에 1개의 Value )**
+5) param → 파라미터값 얻어올때 ( 1개의 Key에 1개의 Value )
 
-**6) paramValues** **→ 파라미터값 배열로 얻어올때( 1개의 Key에 여러개의 Value)** 
+6) paramValues → 파라미터값 배열로 얻어올때( 1개의 Key에 여러개의 Value)
 
-**7) header** **→ 헤더값 얻어올때** **( 1개의 Key에 1개의 Value )** 
+7) header → 헤더값 얻어올때 ( 1개의 Key에 1개의 Value )
 
 8) headerValues → 헤더값 배열로 얻어올때 ( 1개의 Key에 여러개의 Value )
 
@@ -80,6 +83,10 @@ invalidate( ) → 값을 전부 지운다.
 Values 옆에 점을 찍는 방법과 대괄호로 묶어 사용하는 2가지 방법이 있습니다.
 
 대신 ①번에서는 인덱스가 0부터 시작하고 ②번에서는 인덱스가 1부터 시작하네요
+
+
+
+
 
 
 
