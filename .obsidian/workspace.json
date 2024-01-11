@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/Annotation.md",
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/Annotation.md",
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/Annotation.md"
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md"
               }
             }
           },
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/Annotation.md",
+                "file": "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,6 +176,7 @@
   },
   "active": "28285f84aaa49557",
   "lastOpenFiles": [
+    "Images/Spring Bean1.png",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
@@ -212,7 +213,6 @@
     "MyBatis.png.md",
     "Images/Web&WAS/Web1.png",
     "Images/Web&WAS/WAS2.png",
-    "Images/Web&WAS/Was1.png",
     "Images/Web&WAS",
     "Images/WAS",
     "Images/새 폴더",

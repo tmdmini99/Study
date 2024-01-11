@@ -7,6 +7,12 @@
 
 우리가 알던 기존의 Java Programming 에서는 Class를 생성하고 new를 입력하여 원하는 객체를 직접 생성한 후에 사용했었습니다. 하지만 Spring에서는 직접 new를 이용하여 생성한 객체가 아니라, Spring에 의하여 관리당하는 자바 객체를 사용합니다. 이렇게 **Spring에 의하여 생성되고 관리되는 자바 객체를 Bean**이라고 합니다. Spring Framework 에서는 Spring Bean 을 얻기 위하여 ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.
 
+
+![[Spring Bean1.png]]
+
+
+
+
 ## . Spring Bean을 Spring IoC Container에 등록하는 방법
 
 
@@ -130,3 +136,6 @@ Spring Beans의 주요 속성입니다.
 https://letitkang.tistory.com/127
 
 https://melonicedlatte.com/2021/07/11/232800.html
+
+
+https://ittrue.tistory.com/220
