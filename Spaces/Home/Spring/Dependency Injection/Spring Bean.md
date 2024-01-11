@@ -15,7 +15,7 @@ JAVA에서 `Annotation` 이라는 기능이 있습니다. 사전상으로는 �
 
 Java에서는 @Override, @Deprecated 와 같은 기본적인 Annotation을 제공합니다. 아래의 상속 예제에서는 @Override 를 이용하여 상속임을 명시해줍니다.
 
-```
+```java
 public class Parent { 
     public void doSomething() { 
         System.out.println("This is Parent"); 
@@ -34,7 +34,7 @@ Spring에서는 여러 가지 Annotation을 사용하지만, Bean을 등록하�
 
 실제로 사용되는 예시를 볼까요? 실제 Spring 프로젝트에서 Controller를 등록할 때에는 아래와 같은 **Annotation**을 사용합니다. 아래의 예시에서 Controller 임을 Spring 에게 알려주기 위하여 **@Controller Annotation**을 사용했습니다.
 
-```
+```java
 // HelloController.java
 @Controller
 public class HelloController {
@@ -49,7 +49,7 @@ public class HelloController {
 
 @Controller Annotation을 intelliJ에서 Ctrl 을 눌러서 이동해보면 아래와 같은 소스를 확인할 수 있습니다. @Controller Annotation에는 @Component Annotation이 있는 것을 확인할 수 있습니다. @Component Annotation 으로 인하여 Spring은 해당 Controller를 Bean 으로 등록합니다.
 
-```
+```java
 // Controller.java
 
 // -- 일부 생략 --
@@ -74,7 +74,7 @@ public @interface Controller {
 
 @Configuration과 @Bean Annotation 을 이용하여 Bean을 등록할 수 있습니다. 아래의 예제와 같이 @Configuration을 이용하면 Spring Project 에서의 Configuration 역할을 하는 Class를 지정할 수 있습니다. 해당 File 하위에 Bean 으로 등록하고자 하는 Class에 @Bean Annotation을 사용해주면 간단하게 Bean을 등록할 수 있습니다.
 
-```
+```java
 // Hello.java
 @Configuration
 public class HelloConfiguration {
@@ -119,3 +119,5 @@ Spring Beans의 주요 속성입니다.
 ---
 참조
 https://letitkang.tistory.com/127
+
+https://melonicedlatte.com/2021/07/11/232800.html
