@@ -1,10 +1,86 @@
 
 
+### 영속성(persistence)이란?
+
+- 사리지지 않는 데이터의 특성
+- 영속성을 갖는 데이터: DB, 파일 등에 데이터를 영구적으로 저장하여 사리지지 않음
+- 영속성을 갖지 않는 데이터: 메모리에만 데이터 존재, 프로그램 종료 시 데이터 사라짐
+
+
+
+![[JDBC6.png]]
+
+
+- Presentation, Business, Persistence, Database로 4계층으로 나뉘어져 있으며 각 계층마다 맡은 역할이 다름
+- 호출 방향: Presentation -> Business -> Persistence -> Database
+- **Presenteation Layer**
+    - 클라이언트의 요청을 받고 응답하는 계층
+    - 클라이언트의 요청에 어떻게 응답할지에 관심있는 계층
+    - 요청에 대한 처리는 Business Layer에 전달
+    - +) spring의 Controller 부분
+- **Business Layer**
+    - 비즈니스 로직 담당
+    - 클라이언트의 요청을 실제 처리하는 부분
+    - 클라이언트가 웹인지 앱인지, DB가 어떤 종류인지 관심 없음
+    - 데이터 접근은 Persistence Layer에 위임
+    - +) spring의 Service 부분
+- **Persistence Layer**
+    - DB 접근 계층
+    - Business 요청에 따라 DB 저장, 조회, 삭제, 수정 등 로직 수행
+    - 데이터에 영속성을 부여해주는 계층
+    - JDBC를 이용하여 직접 구현할 수 있지만 Persistence frameworkd를 이용한 개발이 주
+    - +) spring의 Repository 부분
+- **Database Layer**
+    - DB 역할
+
+
+###  Persistence Framework
+
+Persistence Layer에서 JDBC 프로그래밍의 복잡함 없이 간단하게 DB 연동되는 시스템 개발 및 안정적인 구동 보장하는 프레임워크이다. 종류는 SQL Mapper, ORM으로 두 가지이다.
+
+- **SQL Mapper**
+    - SQL과 필드를 매핑
+    - SQL 문장으로 직접 DB 다룸
+    - ex. MyBatis, JdbcTemplates
+- **ORM**: 객체를 통해 DB
+    - DB 데이터와 객체 매핑
+    - 객체를 통해 DB 데이터 다룸
+    - 메서드 통해 간단한 SQL 자동 생성 가능
+    - ex. JPA, Hibernate
+
+
+
+
+
+
+
+
+
 ### **JDBC란?**
 
 JDBC(Java Database Connectivity)는 Java 기반 애플리케이션의 데이터를 데이터베이스에 저장 및 업데이트하거나, 데이터베이스에 저장된 데이터를 Java에서 사용할 수 있도록 하는 자바 API이다.
 
 JDBC는 Java 애플리케이션에서 데이터베이스에 접근하기 위해 JDBC API를 사용하여 데이터베이스에 연동할 수 있으며, 데이터베이스에서 자료를 쿼리(Query)하거나 업데이트하는 방법을 제공한다.
+
+
+
+![[JDBC7.png]]
+
+
+- Java Database Connectivity
+- DB 접근, SQL 날리게 할 수 있는 자바 표준 API
+- 자바의 DB 접근 기술의 근간
+    - 모든 Persistence Framework는 내부적으로 JDBC API 사용
+- JDBC API는 Driver Manage를 사용하여 각 DB에 맞는 드라이버를 로딩, 해제
+- 개발자는 JDBC API를 사용하여 DB 연결
+- DB 연결을 위한 connection 할당, 종료같은 부수적인 코드 증가
+    - 이러한 복잡성을 줄이기 위해 persistence framework 등장(MyBatis, JPA, Hibernate.. 등)
+
+
+
+
+
+
 
 **JDBC 표준 인터페이스**
 
@@ -111,5 +187,20 @@ HikariCP는 미리 정해놓은 크기만큼의 Connection을 Connection Pool에
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ---
 참조 - https://ittrue.tistory.com/250
+
+
+https://velog.io/@suk13574/JDBC-vs-myBatis-vs-JPA-%EC%B0%A8%EC%9D%B4%EC%A0%90-%EC%95%8C%EA%B8%B0
+

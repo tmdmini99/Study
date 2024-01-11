@@ -4,6 +4,17 @@
 **우리가 일반 적으로 알고 있는 애플리케이션 Class와 RDB(Relational DataBase)의 테이블을** **매핑(연결)한다는 뜻이며, 기술적으로는 어플리케이션의 객체를 RDB 테이블에 자동으로 영속화 해주는 것이라고 보면된다.**
 
 
+
+![[JPA60.png]]
+
+- ORM(Object-Relatoinal Mapping) - 객체와 DB 데이터 매핑
+- JPA - 자바 표준 ORM API, ORM을 사용하기 위한 표준 인터페이스 모음
+- 객체를 통해 간접적으로 DB 데이터 다룸
+- ORM framwork - JPA 구현체
+    - Hibernate
+    - EclipseLink
+
+
 ###  **JPA**
 
 Java Persistence Api 이름처럼 **자바 영속성에 관한 api**로 orm에 대한 인터페이스라고 생각하면된다. 사실 JPA는 **표준 명세**를 말하는것이며 RDS데이터를 매핑시킬 객체를 Entity라고 하는데, JPA의 핵심은 이 Enity를 관리하는 **EntityManager**라고 한다. 그러므로 실제로 **JPA를 사용하기위해선 Hibernate와 같이 JPA의 EntityManager를 구현한(Hibernate, DataNucleus, EclipseLink 등) 구현체**를 사용해야한다
@@ -41,6 +52,17 @@ JPA를 구현하는 다른 구현체들로는 EclipseLink나 DataNucleus 등이 
 만약 JPA를 구현하는 구현체들이 마음에 들지 않는다면 개발자가 직접 JPA 구현체를 만들어 사용할 수도 있다. 
 
 Hibernate는 내부적으로 JDBC를 이용해 관계형 데이터베이스와 커넥션을 맺고 상호작용한다.
+
+
+- JPA의 대표 구현체
+- 내부에 JDBC 사용
+- 간단한 CRUD 쿼리 메서드 제공 -> 메서드로 데이터 조작 가능
+- 복잡한 쿼리는 결국 SQL을 짜야함
+    - native SQL이 아닌 객체 중심 SQL을 위한 JPQL, querydsl 기술도 있음
+- HQL이라 불리는 쿼리 언어 포함
+    - HQL은 SQL과 비슷하면서 객체 지향 강점 누릴 수 있음(상속, 다형성 등)
+    - 쿼리 결과로 객체를 반환
+    - 클래스, 프로퍼티 이름 제외하고 대소문자 구분
 
 
 ## Spring Data JPA란?
