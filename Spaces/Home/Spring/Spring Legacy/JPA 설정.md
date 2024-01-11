@@ -1,4 +1,4 @@
-# 포기 다시 ㄱ
+# 포기 다시 ㄱ 성공
 
 
 #### **1. Project Facets JPA 추가**
@@ -171,13 +171,13 @@ hibernate.dialect 경우 사용하는 DB 종류를 지정하는 속성이다. �
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.11.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 			    <value>classpath:/datasource.properties</value>
 			</list>
 		</property>
-	</bean>
+	</bean> -->
 	
 	<bean id="jobcallDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -381,6 +381,138 @@ T는 Entity의 타입클래스이고 ID는 P.K 값의 Type이다.
 결과
 
 ![[JPA6.png]]
+
+
+
+
+## 내가 만든 코드
+
+pom.xml -> 원래 쓰던 dependency에 밑에 추가
+```xml
+  
+<!-- JPA -->  
+<dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-orm</artifactId>  
+    <version>${org.springframework-version}</version>  
+</dependency>  
+  
+<dependency>  
+    <groupId>org.springframework.data</groupId>  
+    <artifactId>spring-data-jpa</artifactId>  
+    <version>2.2.1.RELEASE</version>  
+</dependency>  
+  
+<dependency>  
+    <groupId>org.hibernate</groupId>  
+    <artifactId>hibernate-entitymanager</artifactId>  
+    <version>5.1.11.Final</version>  
+</dependency>  
+<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->  
+<dependency>  
+    <groupId>javax.persistence</groupId>  
+    <artifactId>javax.persistence-api</artifactId>  
+    <version>2.2</version>  
+</dependency>  
+  
+<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->  
+<dependency>  
+    <groupId>commons-dbcp</groupId>  
+    <artifactId>commons-dbcp</artifactId>  
+    <version>1.4</version>  
+</dependency>  
+  
+  
+<!-- -->
+```
+
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:aop="http://www.springframework.org/schema/aop"  
+       xmlns:tx="http://www.springframework.org/schema/tx"  
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+       xmlns:context="http://www.springframework.org/schema/context"  
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"  
+       xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd  
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd       http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.11.xsd       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">  
+  
+  
+  <!--밑에 username password url driveClassName 설정 -->
+    <bean id="jobcallDataSource" class="org.apache.commons.dbcp.BasicDataSource">  
+        <property name="username" value="test"/>  
+        <property name="password" value="1234"/>  
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>  
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />  
+        <property name="maxActive" value="10" />  
+        <property name="maxIdle" value="5" />  
+        <property name="maxWait" value="10000" />  
+        <property name="validationQuery" value="SELECT 1" />  
+        <property name="testOnBorrow" value="true" />  
+        <property name="testWhileIdle" value="true" />  
+        <property name="timeBetweenEvictionRunsMillis" value="7200000" />  
+        <property name="removeAbandoned" value="true" />  
+        <property name="removeAbandonedTimeout" value="60" />  
+        <property name="logAbandoned" value="true" />  
+    </bean>  
+  
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">  
+    </bean>  
+  
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">  
+        <property name="dataSource" ref="jobcallDataSource"></property>  
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter"></property>  
+    </bean>  
+  <!-- 내 패키지명으로 변경-->
+    <jpa:repositories base-package="org.example.repository" />  
+  
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">  
+        <property name="entityManagerFactory" ref="entityManagerFactory" />  
+    </bean>  
+</beans>
+```
+
+
+persistence.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"  
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence  
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">  
+    <persistence-unit name="jobcall">  
+        <class>com.poozim.jobcall.model.Work</class>  
+  
+        <properties>  
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->  
+  
+            <property name="hibernate.show_sql" value="true"/>  
+            <property name="hibernate.c3p0.min_size" value="5"/>  
+            <property name="hibernate.c3p0.max_size" value="20"/>  
+            <property name="hibernate.c3p0.timeout" value="500"/>  
+            <property name="hibernate.c3p0.idle_test_period" value="2000"/>  
+        </properties>  
+    </persistence-unit>  
+</persistence>
+```
+
+
+
+
+```java
+
+```
+
+
+```java
+
+```
+
+
 
 
 
