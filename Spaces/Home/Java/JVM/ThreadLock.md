@@ -463,8 +463,9 @@ public class MusicBox {
 
 제가 생각한 결론은 `this`라고 해도 그냥 `객체 단위의 Lock을 거는 것`이라고 생각했습니다. 즉, MusicBox 객체의 단위의 Lock을 거는 것입니다. 그래서 위의 코드를 실행해보면 역시나 playMusicA, playMusicB가 차례대로 출력이 되는 것을 볼 수 있습니다. (이유는 위의 synchronized 메소드와 같습니다.)
 
-  
-  
+> Thread Lock이란?
+>	  -  일반적으로 상호 배제 정책을 통해, 하나의 스레드가 특정 자원에 접근중인 경우에는 다른 스레드가 접근하지 못하도록 제한한다. 락이 없다면 두 개 이상의 스레드가 동시에 자원에 접근할 수 있으므로, 데이터의 무결성이 보장되지 않는다. 락의 개념은 멀티스레드를 사용하는 환경이라면 어디든 사용될 수 있다.
+		  lock은 기본적으로 lock을 획득한 thread만 critical section을 실행하며, 사용하고 난 뒤에 lock을 반환한다 따라서 다른 thread가 lock을 갖고 있지 않을 때 lock을 획득하는 **lock()** 함수와  critical section을 모두 수행한 뒤에 lock을 반환하는 **unlock()** 함수가 사용된다.
 
 ## 특정 객체로 Lock 걸기
 
