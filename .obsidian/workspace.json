@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Web & WAS/Web & WAS.md",
+                "file": "Spaces/Home/Spring/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Web & WAS/Web & WAS.md",
+                "file": "Spaces/Home/Spring/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Web & WAS/Web & WAS.md"
+                "file": "Spaces/Home/Spring/무제 파일.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Web & WAS/Web & WAS.md",
+                "file": "Spaces/Home/Spring/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,17 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Boot.md",
+    "Spaces/Home/Spring/무제 파일.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Web & WAS/WAS.md",
+    "Images/WAS2.png",
+    "Spaces/Home/Spring/MVC/MVC.md",
+    "Spaces/Home/Spring/MVC",
     "Images/Was1.png",
-    "Spaces/Web & WAS/Web & WAS.md",
     "Spaces/Web & WAS/Web.md",
     "Images/Web1.png",
     "Spaces/Home/Spring/JPA.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Java/JVM/ThreadLock.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/Scheduler/Cron.md",
@@ -201,7 +206,6 @@
     "Images/JPA/JPA25.png",
     "Images/JPA/JPA11.png",
     "Images/JPA/JPA10.png",
-    "Images/JPA/JPA9.png",
     "Images/MyBatis",
     "Images/JPA - 복사본",
     "Images/JPA",
@@ -213,13 +217,10 @@
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis 설정.md",
     "Spaces/Home/Spring/Maven",
     "Spaces/Home/Spring/MyBatis",
     "Spaces/Home/Spring/Spring Legacy",
     "Spaces/Home/IntelliJ/Spring",
-    "Spaces/Home/IntelliJ",
     "무제 파일.canvas"
   ]
 }
