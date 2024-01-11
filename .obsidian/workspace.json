@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Spring/Spring Framework.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Spring/Spring Framework.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md"
+                "file": "Spaces/Home/Spring/Spring Framework.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Spring/Spring Framework.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,28 +175,34 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
+    "Spaces/Home/Data/XML.md",
+    "Spaces/Home/Spring/Spring Framework.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "MyBatis.png.md",
+    "Images/Web&WAS/Web1.png",
+    "Images/Web&WAS/WAS2.png",
+    "Images/Web&WAS/Was1.png",
+    "Images/Web&WAS",
+    "Images/WAS",
+    "Images/새 폴더",
+    "Images/MyBatis/MyBatis4.png",
+    "Images/JPA/JPA60.png",
+    "Images/JDBC/JDBC3.png",
+    "Images/JDBC/JDBC2.png",
+    "Images/JDBC/JDBC1.png",
+    "Images/JDBC/JDBC7.png",
+    "Images/JDBC/JDBC6.png",
+    "Images/JDBC",
     "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Spring/JPA/JPA.md",
-    "Images/JPA60.png",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Images/MyBatis4.png",
-    "MyBatis.png.md",
-    "Images/JDBC7.png",
-    "Images/JDBC6.png",
     "Spaces/Home/Java/POJO.md",
-    "Images/JDBC5.png",
-    "Images/JDBC4.png",
-    "Images/JDBC3.png",
-    "Images/JDBC2.png",
-    "Images/JDBC1.png",
     "Spaces/Home/Java/JDBC",
     "Spaces/Home/Spring/JPA",
     "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
     "Spaces/Home/Spring/Spring Boot",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Web & WAS/WAS.md",
-    "Images/WAS2.png",
     "Spaces/Home/Spring/MVC/MVC.md",
     "Spaces/Home/Spring/MVC",
     "Spaces/Web & WAS/Web.md",
@@ -214,13 +220,7 @@
     "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Images/MyBatis",
-    "Images/JPA - 복사본",
-    "Images/JPA",
-    "Images/새 폴더",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
-    "Spaces/Home/Spring/Maven",
     "무제 파일.canvas"
   ]
 }
