@@ -486,7 +486,7 @@ _notify()_ 는 단일 임의 스레드를 깨우기 때문에 스레드가 유
 
 
 - **void wait(long timeout) :** 현재 스레드를 다른 스레드가 이 객체에 대한 notify() 또는 notifyAll() 메소드를 호출하거나 timeout 시간동안 대기합니다. 
-- **void notify() :** 이 객체에 대해 대기중인 스레드 하나를 깨웁니다. 
+- **void notify() :** 이 객체에 대해 대기중인 스레드를 랜덤으로  하나를 깨웁니다. 
 - **void notifyAll() :** 이 객체에 대해 대기중인 모든 스레드를 깨웁니다. 
 
 
