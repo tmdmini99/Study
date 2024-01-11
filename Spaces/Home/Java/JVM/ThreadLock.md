@@ -3,7 +3,9 @@
 
 # java - synchronized 란? 사용법?
 
-  
+  `Synchronized`란 한글로 번역하면 `동기화`라는 의미를 갖는 단어이다.
+
+`Synchronized (동기화)`라는 뜻의 사전적 정의는 시스템을 동시에 작동시키기 위해 여러 사건들을 조화시키는 것을 의미한다. 라고 나와있다.
   
 
 멀티스레드를 잘 사용하면 프로그램적으로 좋은 성능을 낼 수 있지만,
@@ -28,7 +30,7 @@ java에서 동기화 방식은 **메서드 앞에 `synchronized`를 선언**�
 
 Synchronized 키워드는 변수와 함수에 사용해서 동기화 할 수 있습니다.
 
-하지만 **Synchronized** **키워드를** **너무** **남발하면** **오히려** **프로그램** **성능저하를** **일으킬** **수** **있습니다****.**
+하지만 **Synchronized**  키워드를 너무 남발하면오히려 프로그램 **성능저하를** 일으킬 수 있습니다.
 
 그 이윤 Synchronized 키워드를 사용하면 자바 내부적으로 메서드나 변수에 동기화를 하기 위해 block과 unblock을 처리하게 되는데 
 
@@ -38,15 +40,15 @@ Synchronized 키워드는 변수와 함수에 사용해서 동기화 할 
 
 따라서 적재적소에 Synchronized 키워드를 사용하는 것이 중요합니다!
 
-**// 1.** **메서드에서** **사용하는** **경우**
+// 1. **메서드에서** 사용하는 경우
 
-**public synchronized void method(){//** **코드****}**
+public synchronized void method(){// 코드}
 
-**// 2.** **객체** **변수에** **사용하는** **경우****(block****문****)**
+// 2. **객체 변수에** 사용하는 경우(block문)
 
-**private Object obj = new Object();**
+private Object obj = new Object();
 
-**public void exampleMethod(){ synchronized(obj){//****코드** **}}**
+public void exampleMethod(){ synchronized(obj){//코드}}
 
 
 ```java
