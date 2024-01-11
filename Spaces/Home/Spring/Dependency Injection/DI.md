@@ -68,6 +68,9 @@ public class Injection {
 
 여기서 롬복(Lombok) 라이브러리를 사용하면 생성자 또한 어노테이션으로 생략할 수 있다.
 
+생성자가 1개만 있을 경우에 @Autowired를 생략해도 주입이 가능
+
+
 
 ```java
 @RequiredArgsConstructor
@@ -83,6 +86,84 @@ public class Injection {
 해당 어노테이션은 final 키워드가 붙은 주입에만 생성자를 만들어준다. 만약 final 키워드를 사용하지 않으면 @AllArgsConstructor 어노테이션을 사용하면 된다.
 
 
+
+#### **(2) Field Injection(필드 주입)**
+
+- 어찌 보면 3가지 방법 중 가장 간단한 방법으로 Bean으로 등록된 객체를 사용하고자 하는 클래스에 Field로 선언한 뒤 @Autowired를 붙여주면 자동으로 의존 관계가 주입된다.
+- Spring에서 @Autowired 어노테이션을 사용해서 객체 내 필드에 선언해서 주입하는 방법
+- 간편하게 의존 관계 주입이 가능하지만 참조 관계를 눈으로 확인하기 어렵고, 순환 참조를 막을 수 없습니다.
+    
+    - 예를 들어 A가 B를 가지고 있고, B가 A를 가지고 있어(순환 참조) 실행 전까지 Error를 잡을 수 없다.
+    
+- 생성자 주입을 뺀 나머지(필드 주입, Setter 주입)은 모두 생성자 이후에 호출되므로, 필드에 final 키워드를 사용할 수 없다.
+
+```java
+public class Injection {
+	@Autowired
+    private InjectionService injectionService;
+}
+```
+
+[ 필드 주입의 장점 ]
+
+- 코드가 간결해진다.
+
+[ 필드 주입의 단점 ]
+
+- Solid 원칙 중에 단일 책임 원칙(SRP)을 위반한다.
+- Unit Test가 어렵다.
+- final 키워드를 사용할 수 없다.
+    
+    - 불변성이 보장되지 않는다. 따라서 객체가 변할 수 있다.
+
+
+#### **(3) Setter Injection(Setter 주입)**
+
+- Spring에서 @Autowired 어노테이션을 사용해서 Setter 메서드를 통해 주입하는 방법
+    
+    - @Autowired는 Field, Setter Method, Constructor에 사용 가능하다.
+    
+- Spring 3.x 버전까지는 DI 권장 방식이였지만, 현재는 아니다.
+- NPE(Null Pointer Exception) 발생할 수 있다.
+- 생성자 주입을 뺀 나머지(필드 주입, Setter 주입)은 모두 생성자 이후에 호출되므로, 필드에 final 키워드를 사용할 수 없다.
+
+```java
+public class Injection {
+	
+    private InjectionService injectionService;
+    
+    @Autowired
+    public void setInjectionService( InjectionService injectionService) {
+    	this.injectionService = injectionService;
+    }
+}
+```
+
+---
+
+## **3. 생성자 주입을 지향하자.**
+
+위에서 언급 했지만 과거 Spring 3.x 버전까지는 권장하는 DI 방식이 Setter 주입, 혹은 과거 레거시 코드를 보면 필드 주입을 사용하였다.
+
+하지만 스프링 공식 문서에서도 언급하듯이 Spring 4.3부터는 생성자 주입 방식을 사용하는 것이 좋다.
+
+생성자 주입( Constructor Injection)의 장점은 여러 가지가 있지만, 프레임워크에 의존하지 않고, 순수 Java 언어의 특징을 잘 살리는 방법이기도 하다.
+
+
+- Spring 개발에서 항상 생성자 주입을 사용하자.
+- 가끔 옵션이 필요한 경우 Setter 주입(수정자 주입)을 사용하고, 절대 필드 주입을 사용하지 않는 것이 좋다.
+
+대부분의 의존 관계 주입은 한번 일어나면 애플리케이션 종료 시점까지 의존 관계를 변경할 일이 없다. 오히려 대부분의 의존 관계는
+
+애플리케이션이 종료되기 전까지 절대 변하면 안된다. (불변해야 한다.)
+
+만약 Setter 주입(수정자 주입)을 사용하면 setter 메서드를 public으로 열어둬야 한다.
+
+public으로 열어둔다면 누군가 개발을 하다가 변경할 수 있고, 변경하면 안 되는 메서드를 열어두는 것은 좋은 설계 방법이 아니다.
+
+결론은 생성자 주입을 사용하면 객체를 생성할 때 딱 1번만 호출되므로 이후에 호출될 일이 없기에 변경되지 않는다.
+
+즉, 불변성이 유지되도록 설계할 수 있다.
 
 
 

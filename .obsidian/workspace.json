@@ -11,12 +11,9 @@
             "id": "ed2adfb14b7d9c37",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/DI.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "path": "Spaces/Home/Spring/Dependency Injection"
               }
             }
           }
@@ -74,7 +71,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/DI.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/DI.md"
-              }
+              "state": {}
             }
           },
           {
@@ -132,7 +127,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Dependency Injection/DI.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,15 +167,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ed2adfb14b7d9c37",
+  "active": "f3e163b26c384178",
   "lastOpenFiles": [
-    "Images/DI1.jpg",
+    "Spaces/Home/Spring/Dependency Injection/Bean.md",
+    "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
+    "Images/DI1.jpg",
     "Spaces/Home/Java/JVM/Thread.md",
     "Images/Thread2.gif",
     "Images/Thread1.gif",
-    "Spaces/Home/Spring/Dependency Injection/Annotation.md",
-    "Spaces/Home/Spring/Dependency Injection/Bean.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Java/Anntoation",
     "Spaces/Home/Spring/Dependency Injection",
