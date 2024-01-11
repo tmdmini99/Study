@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Framework.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Framework.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Framework.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Framework.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,11 @@
   },
   "active": "ed2adfb14b7d9c37",
   "lastOpenFiles": [
-    "Spaces/Home/Data/XML.md",
+    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Framework.md",
+    "Spaces/Home/Data/XML.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "MyBatis.png.md",
     "Images/Web&WAS/Web1.png",
@@ -217,10 +220,7 @@
     "Spaces/Home/Java/Sleep/Sleep.md",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/Socekt.md",
-    "Spaces/Home/Protocol/HandShake/HandShake.md",
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Images/MyBatis",
-    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "무제 파일.canvas"
   ]
 }
