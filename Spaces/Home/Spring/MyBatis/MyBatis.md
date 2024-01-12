@@ -47,6 +47,16 @@ resultType, resultClass등 Vo를 사용하지 않고 조회결과를 사용자 �
 
 ![[MyBatis1.jpg]]
 
+
+
+
+
+
+
+
+
+
+
 **MyBatis3의 컴포넌트 구조**
 
 **MyBatis3 주요 구성 요소**
