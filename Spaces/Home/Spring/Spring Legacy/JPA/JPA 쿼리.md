@@ -95,29 +95,51 @@ compile 누르고 실행 버튼 클릭
 
 
 
+Repository
+```java
+package org.example.repository;  
+  
+import com.querydsl.jpa.impl.JPAQueryFactory;  
+import lombok.extern.slf4j.Slf4j;  
+import org.example.entity.OpenApiJpaEntity;  
+import org.example.entity.QOpenApiJpaEntity;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.data.jpa.repository.JpaRepository;  
+import org.springframework.stereotype.Repository;  
+import org.springframework.transaction.annotation.Transactional;  
+  
+import javax.persistence.EntityManager;  
+import javax.persistence.PersistenceContext;  
+import java.util.List;  
+@Slf4j  
+@Repository  
+public class OpenApiJpaRepository{  
+  
+    @PersistenceContext  
+    private EntityManager em;  
+  
+    public List<OpenApiJpaEntity> selectAll(){  
+        return em.createQuery("select op from OpenApiJpaEntity op", OpenApiJpaEntity.class).getResultList();  
+    }  
+  
+  //querydsl 방식식
+    public void t(){  
+        OpenApiJpaEntity openApiJpaEntity = new OpenApiJpaEntity();  
+//        em.persist(openApiJpaEntity);  
+        JPAQueryFactory jpaQueryFactory = new JPAQueryFactory(em);  
+        QOpenApiJpaEntity qOpenApiJpaEntity = new QOpenApiJpaEntity("op");  
+        List<Double> ar = jpaQueryFactory.select(qOpenApiJpaEntity.LAT).from(qOpenApiJpaEntity).fetch();  
+        log.error(String.valueOf(ar.size()));  
+        System.out.println(ar.size());  
+//        System.out.println(jpaQueryFactory.selectDistinct(qOpenApiJpaEntity.LAT).from(qOpenApiJpaEntity).fetch());  
+  
+    }  
+  
+  
+  
+  
+}
 ```
-`em.persist(hello)`는 JPA(Java Persistence API)에서 엔티티를 영속성 컨텍스트에 저장하는 메소드입니다.
-
-JPA는 Java 언어를 사용하여 객체와 관계형 데이터베이스 간의 매핑을 처리하는 기술입니다. 엔티티는 자바 객체로서 데이터베이스의 테이블과 매핑되는 개념입니다. 엔티티 매니저(Entity Manager)는 JPA에서 엔티티를 관리하고 데이터베이스와의 상호작용을 담당합니다.
-
-`em.persist(hello)`는 엔티티 매니저를 통해 `hello`라는 엔티티를 영속성 컨텍스트에 저장하는 역할을 합니다. 영속성 컨텍스트는 엔티티의 상태를 관리하며, 데이터베이스와의 실제 저장은 트랜잭션을 커밋할 때 이루어집니다.
-
-간단하게 말하면 `em.persist(hello)`는 엔티티를 데이터베이스에 저장하기 위해 JPA의 영속성 컨텍스트에 등록하는 작업을 수행합니다.
-```
-
-
-
-
-
-1. Querydsl Q 클래스 생성: Querydsl은 엔티티 클래스를 기반으로 Q 클래스를 생성해야 합니다. 이 Q 클래스는 엔티티의 속성을 정적 필드로 가지고 있어 쿼리 작성 시 사용됩니다.
-    
-2. Querydsl 쿼리 작성: Q 클래스를 사용하여 Querydsl 쿼리를 작성합니다. Querydsl은 fluent API를 제공하여 간결하고 가독성 있는 코드를 작성할 수 있습니다.
-    
-3. 쿼리 실행: 작성된 Querydsl 쿼리를 JPA의 `createQuery()` 메서드를 통해 실행할 수 있습니다. 실행 결과로는 `JPQLQuery` 객체가 반환됩니다.
-    
-4. 결과 처리: `JPQLQuery` 객체를 사용하여 결과를 가져올 수 있습니다. `fetch()` 메서드를 사용하면 결과를 리스트 형태로 반환받을 수 있고, `fetchOne()` 메서드를 사용하면 단일 결과를 반환받을 수 있습니다.
-
-
 
 
 ```java
@@ -148,6 +170,25 @@ QueryDSL은 다양한 조건을 표현하기 위한 다양한 메서드를 제�
 Predicate condition = user.name.eq(name)
             .and(user.age.gt(age)); 이 의미가 뭐야
 ``` 
+
+
+
+
+
+
+
+
+
+1. Querydsl Q 클래스 생성: Querydsl은 엔티티 클래스를 기반으로 Q 클래스를 생성해야 합니다. 이 Q 클래스는 엔티티의 속성을 정적 필드로 가지고 있어 쿼리 작성 시 사용됩니다.
+    
+2. Querydsl 쿼리 작성: Q 클래스를 사용하여 Querydsl 쿼리를 작성합니다. Querydsl은 fluent API를 제공하여 간결하고 가독성 있는 코드를 작성할 수 있습니다.
+    
+3. 쿼리 실행: 작성된 Querydsl 쿼리를 JPA의 `createQuery()` 메서드를 통해 실행할 수 있습니다. 실행 결과로는 `JPQLQuery` 객체가 반환됩니다.
+    
+4. 결과 처리: `JPQLQuery` 객체를 사용하여 결과를 가져올 수 있습니다. `fetch()` 메서드를 사용하면 결과를 리스트 형태로 반환받을 수 있고, `fetchOne()` 메서드를 사용하면 단일 결과를 반환받을 수 있습니다.
+
+
+
 
 
 
