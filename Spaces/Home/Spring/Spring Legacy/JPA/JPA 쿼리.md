@@ -32,9 +32,20 @@ em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
 ```java
 QOpenApiJpaEntity op = QOpenApiJpaEntity.openApiJpaEntity;
 List<OpenApiJpaEntity> resultList = new JPAQueryFactory(em)
-        .select(op)  //select
-        .from(op)
+        .select(op)  //select op는 table객체를 의미 *을 사용할수 없으므로 op사용
+        .from(op) // from
         .fetch();
+
+
+QOpenApiJpaEntity op = QOpenApiJpaEntity.openApiJpaEntity;
+List<Tuple> result = new JPAQuery<>(entityManager)
+    .select(op.LAT, op.LOGT)
+    .from(qEntity)
+    .fetch();
+    
+```
+
+
 
 ```
 

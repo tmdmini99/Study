@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +173,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "28285f84aaa49557",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+    "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
