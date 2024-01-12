@@ -57,6 +57,13 @@ List<Tuple> result = new JPAQuery<>(entityManager)
 QueryDSL은 다양한 조건을 표현하기 위한 다양한 메서드를 제공하며, `gt` 외에도 `eq` (equal), `lt` (less than), `gte` (greater than or equal to), `lte` (less than or equal to) 등의 메서드를 사용할 수 있습니다. 이를 조합하여 복잡한 쿼리를 작성할 수 있습니다.
 ```
 
+```javascript
+.and는  AND 연산을 의미
+
+Predicate condition = user.name.eq(name)
+            .and(user.age.gt(age)); 이 의미가 뭐야
+``` 
+
 
 
 
