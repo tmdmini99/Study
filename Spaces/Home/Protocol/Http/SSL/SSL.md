@@ -134,7 +134,137 @@ genrsa \[암호화 알고리즘] -out \[파일이름].pem 2048
  다음 내용들도 알아서 맞게 변경
 
 
-![[Pasted image 20240112175545.png]]
+![[SSL7.png]]
+
+실행하면 비밀번호를 입력하라고 한다. 자신이 기억할 수 있는 비밀번호를 사용하자 계속해서 물어볼거다.
+
+
+
+![[SSL8.png]]
+
+
+
+정상적으로 실행된 화면이다. 
+
+하지만 이렇게 개인키만 만들면 이 비밀번호를 절대 까먹지 말아야하고 ssl을 적용시켜주는 곳마다 적용시켜줘야한다. 그게 귀찮으니 비밀번호가 없는 키를 하나 더 만들자
+
+
+**genrsa -out private.key 2048**
+
+genrsa -out \[키파일 이름].key 2048
+
+명령어를 실행시키고
+
+
+![[SSL9.png]]
+
+이렇게 나와야 정상이다. 여기서 +++대신에 다른 말이 있다거나 error가 뜬다면 관리자 권한으로 실행시켰는지 꼭 확인하자!
+
+**rsa -in private.key -pubout -out public.key**
+
+rsa -in \[key파일] -pubout -out \[공개키 이름].key
+
+![[SSL10.png]]
+
+### **2. CSR 만들기 (인증요청서)**
+
+CSR이란
+
+SSL 인증의 정보(도메인을 사용하는 개인/기업에 대한 정보)를 암호화하여 인증기관에 보내 인증된 인증서를 발급받게 하는 신청서
+
+req -new -key private.key -out private.csr
+
+req -new -key \[key파일] -out \[csr파일이름].csr
+
+명령어를 입력하면
+
+![[SSL11.png]]
+
+
+
+오류가 뜬다... 큰일이지만 사실 큰일이 아니다 내용을 읽어보면 C드라이브/OpenSSL/openssl.cnf의 파일을 읽으려고 하니 파일이 없다는거다! 이 파일은 bin 안에 들어있기때문이다... 기본경로가 이상하다. 우리는 이 파일을 저 경로에 맞게 변경하거나 자신이 C드라이브에 설치하지 않고 다른 드라이브나 경로가 다르다면 아래 명령어로 수정해서 입력하자
+
+**req -new -key private.key -out private.csr -config C:/OpenSSL/bin/openssl.cnf**
+
+req -new -key \[key파일] -out \[csr파일이름].csr -config \[openssl.cnf 파일 경로]
+
+
+
+
+![[SSL12.png]]
+
+여기서는 개인정보를 물어보는건데 어차피 테스트용이니 아무내용
+
+![[SSL13.png]]
+
+고민하지 말고 아무거나
+밑에 2가지 내용은 빈칸으로 넣어도 된다
+이렇게 모두 종료되면 csr파일이 생성되었다!
+
+
+### **3. CRT 만들기 (인증서)**
+
+CRT는 따로 그냥 만들수 있다고 하지만 난 방법을 모른다. 그래서 아는 방법인 인증서에 서명까지 해줄 사설 CA를 만들어보겠다.
+
+> rootCA.key 생성 (rootCA의 이름이 아닌 다른 이름을 사용해도 무방하다.)
+
+**genrsa -aes256 -out rootCA.key 2048**
+
+genrsa [암호화 알고리즘] -out [키이름].key 2048
+
+
+
+
+![[SSL14.png]]
+
+key파일을 생성하고 이 키를 이용해서 10년 짜리 rootCA.pem을 만든다.
+
+req -x509 -new -nodes -key rootCA.key -days 3650 -out rootCA.pem
+
+를 입력해주면 우리가 보던 잘 알거같은 오류가 난다. 똑같이 수정해준다.
+
+**req -x509 -new -nodes -key rootCA.key -days 3650 -out rootCA.pem -config C:/OpenSSL/bin/openssl.cnf**
+
+
+![[SSL15.png]]
+
+
+이제 CRT를 만들어줄건데 위에서 만들었던 나의 csr을 rootCA의 인증을 받아 crt를 생성하자
+
+**x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out private.crt -days 3650**
+
+
+![[SSL16.png]]
+
+비밀번호를 물어보는데 이것도 우리가 안다. 입력
+
+
+### **4. tomcat에 적용할 .keystore 파일 생성**
+
+**pkcs12 -export -in private.crt -inkey private.key -out .keystore -name tomcat**
+
+
+![[SSL17.png]]
+
+tomcat에 적용할 파일을 만드는데 비밀번호를 또 입력하라고 한다
+
+
+
+
+## SSL 환경변수 등록
+
+
+![[SSL18.png]]
+
+
+
+
+![[SSL19.png]]
+
+
+
+
+
 
 
 
@@ -149,3 +279,5 @@ https://namjackson.tistory.com/24
 https://ililil9482.tistory.com/114
 
 https://ililil9482.tistory.com/115
+
+https://iotmaker.kr/2023/03/14/install-openssl-make-cert-windows/
