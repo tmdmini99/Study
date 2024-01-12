@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Spring/MVC/MVC.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Spring/MVC/MVC.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md"
+                "file": "Spaces/Home/Spring/MVC/MVC.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis.md",
+                "file": "Spaces/Home/Spring/MVC/MVC.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,8 @@
   },
   "active": "28285f84aaa49557",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
@@ -183,7 +185,6 @@
     "Spaces/Home/Spring/JPA/JPA.md",
     "Spaces/Home/Spring/Spring Legacy/JPA",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "daily note/2024-01-12.md",
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
@@ -214,7 +215,6 @@
     "Spaces/Web & WAS/WAS.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
-    "Spaces/Home/Data/XML.md",
     "Images/Web&WAS/Web1.png",
     "Images/Web&WAS/WAS2.png",
     "Images/Web&WAS",
