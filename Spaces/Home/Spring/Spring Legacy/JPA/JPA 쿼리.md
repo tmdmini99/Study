@@ -1,5 +1,7 @@
 ## JPQL
 
+JPQL 을 사용하려면 interface로 만들어야함
+
 
 1. JPQL 쿼리 문자열 작성: JPQL 쿼리는 엔티티와 엔티티의 속성을 기반으로 작성됩니다. SELECT, FROM, WHERE 등의 키워드를 사용하여 원하는 데이터를 조회하거나 조건을 설정할 수 있습니다.
     
@@ -30,7 +32,7 @@ em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
 
 
 
-pom.xml qClass 만드는 dependency
+pom.xml qClass 만드는 dependency 밑에 플러그인도 설치
 ```java
 <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
         <dependency>
@@ -53,11 +55,55 @@ pom.xml qClass 만드는 dependency
             <version>5.0.0</version>
         </dependency>
 
+
+<project>
+  <build>
+  <plugins>
+    ...
+    <plugin>
+      <groupId>com.mysema.maven</groupId>
+      <artifactId>apt-maven-plugin</artifactId>
+      <version>1.1.3</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>process</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>target/generated-sources/java</outputDirectory>
+            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+    ...
+  </plugins>
+  </build>
+</project>
+
+
 ```
 
 라이브러리 생성후 오른쪽의 
 ![[JPA61.png]]
 
+
+![[JPA62.png]]
+
+
+compile 누르고 실행 버튼 클릭
+
+
+
+```
+`em.persist(hello)`는 JPA(Java Persistence API)에서 엔티티를 영속성 컨텍스트에 저장하는 메소드입니다.
+
+JPA는 Java 언어를 사용하여 객체와 관계형 데이터베이스 간의 매핑을 처리하는 기술입니다. 엔티티는 자바 객체로서 데이터베이스의 테이블과 매핑되는 개념입니다. 엔티티 매니저(Entity Manager)는 JPA에서 엔티티를 관리하고 데이터베이스와의 상호작용을 담당합니다.
+
+`em.persist(hello)`는 엔티티 매니저를 통해 `hello`라는 엔티티를 영속성 컨텍스트에 저장하는 역할을 합니다. 영속성 컨텍스트는 엔티티의 상태를 관리하며, 데이터베이스와의 실제 저장은 트랜잭션을 커밋할 때 이루어집니다.
+
+간단하게 말하면 `em.persist(hello)`는 엔티티를 데이터베이스에 저장하기 위해 JPA의 영속성 컨텍스트에 등록하는 작업을 수행합니다.
+```
 
 
 
