@@ -335,7 +335,7 @@ TABLE 
 
 @Transient는 테이블의 컬럼과 매핑되지 않는, 영속성에서 제외시킬 필드를 지정한다.
 
-#### **6. Repository**
+#### **6. Repository**  여기에 하나 interface WorkRepository extends JpaRepository<Work, Integer>{로 만들었지만 난 안만들었다 굳이 안만들어도 상관 x
 
 위에 프로젝트 구조에서 봤듯이 일단 WorkRepository 하나만 만들었다.
 
