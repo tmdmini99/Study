@@ -133,3 +133,6 @@ resultType, resultClass등 Vo를 사용하지 않고 조회결과를 사용자 �
 
 ---
 참조 - https://khj93.tistory.com/entry/MyBatis-MyBatis%EB%9E%80-%EA%B0%9C%EB%85%90-%EB%B0%8F-%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC
+
+
+https://velog.io/@kjenotn/Spring-MyBatis-%EA%B0%9C%EB%85%90-%ED%8A%B9%EC%A7%95
