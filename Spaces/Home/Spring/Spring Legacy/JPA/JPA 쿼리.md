@@ -10,10 +10,16 @@
 
 ```java
 //List 형태로 반환
-em.createQuery(jpql, OpenApiJpaEntity.class).getResultList();
+em.createQuery(jpql, OpenApiJpaEntity.class).getResultList(); 
 
 // 단일 형태로 반환
 em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
+
+```
+
+### JPQL 간단하게 사용
+
+```java
 
 ```
 
@@ -34,7 +40,7 @@ QOpenApiJpaEntity op = QOpenApiJpaEntity.openApiJpaEntity;
 List<OpenApiJpaEntity> resultList = new JPAQueryFactory(em)
         .select(op)  //select op는 table객체를 의미 *을 사용할수 없으므로 op사용
         .from(op) // from
-        .fetch();
+        .fetch();  // 쿼리를 실행하고 결과를 가져옴
 
 
 QOpenApiJpaEntity op = QOpenApiJpaEntity.openApiJpaEntity;
@@ -46,8 +52,13 @@ List<Tuple> result = new JPAQuery<>(entityManager)
 ```
 
 
-
+```java
+.gt  // `gt`는 QueryDSL에서 제공하는 메서드 중 하나로, "greater than"을 의미합니다. 이 메서드는 주어진 값보다 큰 값을 비교하는 조건을 생성
+QueryDSL은 다양한 조건을 표현하기 위한 다양한 메서드를 제공하며, `gt` 외에도 `eq` (equal), `lt` (less than), `gte` (greater than or equal to), `lte` (less than or equal to) 등의 메서드를 사용할 수 있습니다. 이를 조합하여 복잡한 쿼리를 작성할 수 있습니다.
 ```
+
+
+
 
 
 
