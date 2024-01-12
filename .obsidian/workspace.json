@@ -19,8 +19,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "409d11b7750a1578",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240112175545.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Images/Pasted image 20240112175545.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Images/Pasted image 20240112175545.png"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Images/Pasted image 20240112175545.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,22 +184,26 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "96b7c24708928ecf",
+  "active": "409d11b7750a1578",
   "lastOpenFiles": [
-    "Images/SSL4.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Images/Pasted image 20240112175545.png",
+    "Images/SSL6.png",
+    "Spaces/Home/IntelliJ/SSL/SSL적용.md",
+    "Images/SSL적용4.png",
+    "Images/SSL적용3.png",
+    "Images/SSL적용2.png",
+    "Images/SSL적용1.png",
+    "Spaces/Home/IntelliJ/SSL",
+    "Images/SSL5.jpg",
+    "Images/SSL4.png",
     "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
     "Images/Spring Bean1.png",
     "Images/Thread2.gif",
-    "Images/Thread1.gif",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Images/MyBatis5.png",
     "Spaces/Home/Java/JDBC/JDBC.md",
-    "Images/JDBC8.gif",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
-    "Images/JPA62.png",
-    "Images/JPA61.png",
     "Spaces/Home/Spring/MVC/MVC.md",
     "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
@@ -204,22 +219,18 @@
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Data/HTML/JSTL & EL.md",
-    "Images/EL1.jpg",
     "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Data/HTML/HTML.md",
     "Spaces/Home/Data/HTML",
-    "Images/Annotation2.png",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
-    "Spaces/Home/Spring/패턴/싱글톤 패턴.md",
     "Spaces/Home/Spring/패턴",
     "Spaces/Home/Java/Anntoation",
     "Spaces/Home/Spring/Dependency Injection",
     "Images/Web&WAS",
     "Images/WAS",
     "Images/새 폴더",
-    "Images/JDBC",
     "무제 파일.canvas"
   ]
 }
