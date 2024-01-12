@@ -78,7 +78,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 		<properties>
 			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->
 			
-			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.show_sql" value="true"/><!--SQL 쿼리문을 출력한다.-->
 			<property name="hibernate.c3p0.min_size" value="5"/>
 			<property name="hibernate.c3p0.max_size" value="20"/>
 			<property name="hibernate.c3p0.timeout" value="500"/>
@@ -111,9 +111,9 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 		<properties>
 			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->
 			
-			<property name="hibernate.show_sql" value="true"/>
-			<property name="hibernate.format_sql" value="true"/>
-			<property name="hibernate.use_sql_comments" value="true"/>
+			<property name="hibernate.show_sql" value="true"/><!--SQL 쿼리문을 출력한다.-->
+			<property name="hibernate.format_sql" value="true"/><!--쿼리문을 포맷팅하여 보여준다.-->
+			<property name="hibernate.use_sql_comments" value="true"/><!--쿼리문 관련 정보를 주석으로 보여준다.-->
 			<property name="hibernate.c3p0.min_size" value="5"/>
 			<property name="hibernate.c3p0.max_size" value="20"/>
 			<property name="hibernate.c3p0.timeout" value="500"/>

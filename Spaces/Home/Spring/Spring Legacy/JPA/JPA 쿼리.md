@@ -32,7 +32,7 @@ em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
 
 
 
-pom.xml qClass 만드는 dependency 밑에 플러그인도 설치
+pom.xml qClass 만드는 dependency 밑에 플러그인도 설치  무조건 qclass 생성성
 ```java
 <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
         <dependency>
@@ -92,6 +92,88 @@ pom.xml qClass 만드는 dependency 밑에 플러그인도 설치
 
 
 compile 누르고 실행 버튼 클릭
+
+
+### qClass 생성후
+
+```java
+public static QOpenApiJpaEntity openApiEntity; 써주기
+```
+
+ex)
+```java
+package org.example.entity;  
+  
+import static com.querydsl.core.types.PathMetadataFactory.*;  
+  
+import com.querydsl.core.types.dsl.*;  
+  
+import com.querydsl.core.types.PathMetadata;  
+import javax.annotation.Generated;  
+import com.querydsl.core.types.Path;  
+  
+  
+/**  
+ * QOpenApiJpaEntity is a Querydsl query type for OpenApiJpaEntity */@Generated("com.querydsl.codegen.DefaultEntitySerializer")  
+public class QOpenApiJpaEntity extends EntityPathBase<OpenApiJpaEntity> {  
+  
+    private static final long serialVersionUID = -47515317L;  
+  
+    public static final QOpenApiJpaEntity openApiJpaEntity = new QOpenApiJpaEntity("openApiJpaEntity");  
+    public static QOpenApiJpaEntity openApiEntity;   //여기에 중간에 쓰면 됨 사실 위치는 상관 x
+  
+    public final StringPath ACDNT_DIV_NM = createString("ACDNT_DIV_NM");  
+  
+    public final NumberPath<Integer> ACDNT_YY = createNumber("ACDNT_YY", Integer.class);  
+  
+    public final NumberPath<Integer> CASLT_CNT = createNumber("CASLT_CNT", Integer.class);  
+  
+    public final NumberPath<Integer> DPRS_CNT = createNumber("DPRS_CNT", Integer.class);  
+  
+    public final NumberPath<Integer> INJURY_APLCNT_CNT = createNumber("INJURY_APLCNT_CNT", Integer.class);  
+  
+    public final StringPath JURISD_POLCSTTN_NM = createString("JURISD_POLCSTTN_NM");  
+  
+    public final NumberPath<Double> LAT = createNumber("LAT", Double.class);  
+  
+    public final StringPath LEGALDONG_CD_NO = createString("LEGALDONG_CD_NO");  
+  
+    public final StringPath LOC_INFO = createString("LOC_INFO");  
+  
+    public final NumberPath<Double> LOGT = createNumber("LOGT", Double.class);  
+  
+    public final StringPath MULTI_KNOWLG_DIV_GROUP_NO = createString("MULTI_KNOWLG_DIV_GROUP_NO");  
+  
+    public final StringPath MULTI_KNOWLG_DIV_NO = createString("MULTI_KNOWLG_DIV_NO");  
+  
+    public final StringPath MULTI_REGION_INFO = createString("MULTI_REGION_INFO");  
+  
+    public final NumberPath<Integer> OCCUR_CNT = createNumber("OCCUR_CNT", Integer.class);  
+  
+    public final NumberPath<Integer> SERINJRY_INDVDL_CNT = createNumber("SERINJRY_INDVDL_CNT", Integer.class);  
+  
+    public final StringPath SIGUN_NM = createString("SIGUN_NM");  
+  
+    public final NumberPath<Integer> SLTINJRY_INDVDL_CNT = createNumber("SLTINJRY_INDVDL_CNT", Integer.class);  
+  
+    public final StringPath SPOT_NO = createString("SPOT_NO");  
+  
+    public QOpenApiJpaEntity(String variable) {  
+        super(OpenApiJpaEntity.class, forVariable(variable));  
+    }  
+  
+    public QOpenApiJpaEntity(Path<? extends OpenApiJpaEntity> path) {  
+        super(path.getType(), path.getMetadata());  
+    }  
+  
+    public QOpenApiJpaEntity(PathMetadata metadata) {  
+        super(OpenApiJpaEntity.class, metadata);  
+    }  
+  
+}
+```
+
+
 
 
 
