@@ -2463,7 +2463,7 @@ public class Good {
 
 **[참고]**
 
-![[JPA55.png]]
+![[Images/JPA/JPA55.png]]
 
 [출처 - Baeldung] https://www.baeldung.com/spring-data-jpa-dynamicupdate
 

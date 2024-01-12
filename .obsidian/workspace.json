@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a1638692c88e2905",
+        "id": "d5538a87dd168a26",
         "type": "tabs",
         "children": [
           {
-            "id": "28285f84aaa49557",
+            "id": "96b7c24708928ecf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/MVC/MVC.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/MVC/MVC.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/MVC/MVC.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/MVC/MVC.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,11 +173,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "28285f84aaa49557",
+  "active": "96b7c24708928ecf",
   "lastOpenFiles": [
+    "Images/JPA61.png",
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+    "Spaces/Home/Spring/MVC/MVC.md",
     "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
@@ -201,7 +203,6 @@
     "Images/Annotation2.png",
     "Images/Annotation1.png",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
-    "Spaces/Home/Spring/MVC/MVC.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/패턴/싱글톤 패턴.md",
@@ -214,9 +215,7 @@
     "Spaces/Home/Spring/Dependency Injection",
     "Spaces/Web & WAS/WAS.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Images/Web&WAS/Web1.png",
-    "Images/Web&WAS/WAS2.png",
     "Images/Web&WAS",
     "Images/WAS",
     "Images/새 폴더",
