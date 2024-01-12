@@ -263,6 +263,48 @@ tomcat에 적용할 파일을 만드는데 비밀번호를 또 입력하라고 �
 
 
 
+JDK 내부에서 keytool 을 제공한다. JDK 디렉토리로 이동하여 아래 명령어를 입력해 keystore 를 생성하자.
+
+```applescript
+keytool -genkey -alias tomcat -keyalg RSA -keystore d:\tomcat.keystore
+```
+
+```
+keytool -genkey -alias tomcat -keyalg RSA -keystore d:\tomcat.keystore -storepass 비밀번호
+```
+비밀번호도 입력력
+
+
+window
+```
+del d:\tomcat.keystore
+
+```
+
+linux or macos
+
+```
+rm d:\tomcat.keystore
+```
+
+위의 명령어에서 `d:\tomcat.keystore`는 삭제하려는 키스토어 파일의 경로와 파일명을 나타냅니다. 정확한 경로와 파일명을 지정하여 해당 명령어를 실행하면 키스토어 파일이 삭제됩니다.
+하지만, 키스토어 파일을 삭제하기 전에 해당 파일이 애플리케이션 또는 서버에서 사용 중인지 확인하고, 필요한 경우 백업을 수행하는 것이 좋습니다. 또한, 삭제 작업은 되돌릴 수 없으므로 신중하게 진행해야 합니다.
+
+
+## Tomcat 에서 `server.xml` 파일 수정하기
+
+```abnf
+<Connector port="443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+    maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+    clientAuth="false" sslProtocol="TLS"
+    keystoreFile="D:\tools\apache-tomcat-9.0.62\conf\tomcat.keystore" keystorePass="123456" />
+```
+
+위는 톰캣 9.xxx 버전 기준이다. 설정을 한 이후 서버 켜고 `https://localhost` 접속해보면 된다.
+
+
+
+
 
 
 
