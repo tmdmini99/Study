@@ -281,3 +281,9 @@ https://ililil9482.tistory.com/114
 https://ililil9482.tistory.com/115
 
 https://iotmaker.kr/2023/03/14/install-openssl-make-cert-windows/
+
+
+https://qor3326.tistory.com/17
+
+
+https://jake-seo-dev.tistory.com/85+
