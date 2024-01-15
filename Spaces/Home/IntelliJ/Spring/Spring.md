@@ -1,3 +1,7 @@
+WEB-INF/lib 아래에 사진과같이 jar파일이 추가되어있는지 확인 - OK 클릭
+
+![[Spring1.png]]
+
 
 
 
