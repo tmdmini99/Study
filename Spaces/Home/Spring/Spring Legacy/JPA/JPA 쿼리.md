@@ -319,8 +319,6 @@ for (Object[] row : resultList) {
 
 ---
 
-  
-
 - SELECT 다음 NEW 명령어 사용 시 반환받을 클래스 지정 가능,
 
   이 클래스의 생성자에 JPQL 조회 결과를 넘겨줄 수 있음
@@ -729,10 +727,331 @@ join t.members m
 ---
 * [NOT] EXISTS (subquery)
 
+```java
+-- 팀 A소속 회원
+
+select m
+
+from Member m
+
+where exists (select t
+
+              from m.team t
+
+              where t.name = '팀A')
+
 ```
+[All | ANY | SOME] (subquery)
+```java
+-- 전체 상품 각각의 재고보다 주문량이 많은 주문들
+
+select o
+
+from Order o
+
+where o.orderAmount > ALL (select p.stockAmount
+
+                           from Product p)
+
+```
+[NOT] IN (subquery)
+```java
+-- 20세 이상을 보유한 팀
+
+select t
+
+from Team t
+
+where t IN (select t2
+
+            from Team t2 JOIN t2.members m2
+
+            where m2.age >= 20)
 ```
 
+### 조건식
+
+---
+
+  
+
+**ㅇ 타입 표현**
+
+[] 문자 : 'hello'
+
+[] 숫자 : 10L (Long)
+
+    10D (Double)
+
+   10F (Float)
+
+[] 날짜 : {d '2020-12-22'} (Date)
+
+   {t '13-39-55'} (Time)
+
+{ts '2020-12-22 13-39-55.123'} (DateTime)
+
+[] Boolean : true, false
+
+[] Enum : test.MemberType.Enum (패키지 명을 포함한 전체 이름)
+
+[] 엔티티 타입 : TYPE(m) = Member
+
+  
+
+**ㅇ 연산자 우선 순위**
+
+**ㅇ 논리 연산과 비교식**
+
+**ㅇ Between, IN, Like, NULL**
+
+- Between
+
 ```java
+-- 나이가 10~20인 회원
+
+select m
+
+from Member m
+
+where m.age between 10 and 20
+
+```
+
+- [NOT] IN
+```java
+-- 이름이 회원1이나 회원2인 회원
+
+select m
+
+from Member m
+
+where m.username in ('회원1', '회원2')
+
+```
+
+- Like
+
+- IS [NOT] NULL
+
+**컬렉션 식**
+
+- 빈 컬렉션 비교 : IS [NOT] EMPTY
+
+```java
+-- 주문이 하나라도 있는 회원
+
+select m
+
+from Member m
+
+where m.orders if not empty
+
+```
+
+
+**스칼라 식**
+
+- 문자 함수 : CONCAT, SUBSTRING, TRIM, LOWER, UPPER, LENGTH, LOCATE
+
+- 수학 함수 : ABS, SQRT, MOD, SIZE, INDEX
+
+- 날짜 함수 : CURRENT_DATE(현재 날짜), CURRENT_TIME(현재 시간), CURRENT_TIMESTAMP(현재 날짜 시간)
+
+  
+
+**CASE 식**
+
+- CASE, COALESCE, NULLIF
+
+### 다형성 쿼리
+
+---
+**ㅇ TYPE**
+
+- 엔티티의 상속 구조에서 조회 대상을 특정 자식 타입으로 한정할 때 주로 사용
+
+```java
+-- Item 중 Book, Movie를 조회
+
+select i
+
+from Item i
+
+where type(i) IN (Book, Movie)
+
+```
+
+
+```java
+select i
+
+from Item i
+
+where treat(i as Book).author = 'kim'
+
+```
+
+### 엔티티 직접 사용
+
+---
+- 기본 키 값
+- JPQL에서 엔티티 객체(Member)를 직접 사용하면 SQL에서는 해당 엔티티의 기본 키 값(Member.id)을 사용
+
+### Named 쿼리: 정적 쿼리
+
+---
+- 동적 쿼리
+	- JPQL을 문자로 완성해서 직접 넘기는 것
+
+- 정적(Named) 쿼리
+	- 미리 정의한 쿼리에 이름을 부여해서 필요할 때 사용
+	- 한 번 정의하면 변경할 수 없는 정적인 쿼리
+
+
+
+#### Named 쿼리
+
+---
+- 애플리케이션 로딩 시점에 JPQL 문법을 체크하고 미리 파싱 -> 오류를 빨리 발견
+
+- 사용 시점에 파싱된 결과를 재사용 -> 성능상 이점
+
+- 정적 SQL 생성 -> DB 죄회 성능 최적화 
+
+- @NamedQuery Annotation으로 자바 코드에 작성하거나 XML 문서에 작성할 수 있음
+
+  
+
+##### @NamedQuery Annotation
+
+1. @NamedQuery.name에 쿼리 이름 부여
+
+   @NamedQuery.query에 사용할 쿼리 입력
+
+```java
+@Entity
+
+@NamedQuery (
+
+    name = "Member.findByUsername",
+
+    query="select m from Member m where m.username = :username")
+
+public class Member {
+
+    // ...
+
+}
+
+```
+
++. 하나의 엔티티에 2개 이상의 Named Query를 정의할 경우 @NamedQueries
+
+```java
+@Entity
+
+@NamedQueries ({
+
+    @NamedQuery (
+
+        name = "Member.findByUsername",
+
+        query="select m from Member m where m.username = :username"),
+
+    @NamedQuery (
+
+        name = "Member.count",
+
+        query="select count(m) from Member m")
+
+})
+
+public class Member {
+
+    // ...
+
+}
+```
+
+2. em.createNamedQuery() 메소드에 쿼리 이름을 입력하여 쿼리 사용
+
+```java
+List<Member> resultList = em.createNamedQuery("Member.findByUsername", Mamber.class)
+
+                            .setParameter("username", "회원1")
+
+                            .getResultList();
+
+```
+
+
+##### Named 쿼리를 XML에 정의
+
+  
+
+Named 쿼리 작성 시 XML을 사용하는 것이 편리
+
+  
+
+1. XML 작성
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings
+
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+
+        version="2.1">
+
+    <named-query name="Member.findByUsername">
+
+        <query><![CDATA[
+
+             select m
+
+             from Member m
+
+             where m.username = :username
+
+        ]]></query>
+
+    </named-query>
+
+    <named-query name="Member.count">
+
+        <query>
+
+            select count(m)
+
+            from Member m
+
+        </query>
+
+    </named-query>
+
+</entity-mappings>
+
+```
+
+2. 정의한 xml 파일을 인식할 수 있도록 persistence.xml 에 아래 코드 추가
+
+- XML이 Annotation보다 우선권
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="test">
+
+        <mapping-file> META-INF/Member.xml </mapping-file>
+
+    </persistence-unit>
+
+</persistence>
+
 ```
 
 ### JPQL 
@@ -813,6 +1132,10 @@ public class OpenApiJpaEntity {
 
 
 ## Querydsl
+
+
+
+
 
 
 
