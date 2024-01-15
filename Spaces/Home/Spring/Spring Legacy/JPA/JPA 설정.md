@@ -371,10 +371,46 @@ IDENTITY 
 SEQUENCE 
 
 TABLE 
+@GeneratedValue(strategy = GenerationType.SEQUENCE)  주로 Oracle, PostgreSQL, DB2와 같은 데이터베이스에서 지원
+@GeneratedValue(strategy = GenerationType.IDENTITY)  MySQL
+
 
 하지만 아직 잘 몰라서 추후에 알아보고 글을 수정하기로 한다.
 
 @Transient는 테이블의 컬럼과 매핑되지 않는, 영속성에서 제외시킬 필드를 지정한다.
+
+
+@Column
+**JPA에서 DB Table의 Column을 Mapping 할 때 `@Column` Annotation을 사용**한다.
+DB Table의 Column과 Entity명이 다를 때  사용
+
+|속성|설명|기본값|
+|---|---|---|
+|name|Mapping할 Column의 이름을 지정.|객체 Field 이름|
+|insertable|Entity 저장 시 해당 Field도 저장,  <br>false로 읽기 전용 설정 가능.|true|
+|updatable|Entity 수정 시 해당 Field도 수정,  <br>false로 읽기 전용 설정 가능.|true|
+|table|하나의 Entity설정에서 두 개이상 Table에 매핑할 때 사용|현재 Class가 매핑된 Table|
+|nullable(DDL)|true/false로 null 허용 여부 설정|true|
+|unique(DDL)|true/false로 Unique 제약 조건 설정||
+|length(DDL)|Column 속성 길이 설정|255|
+|columnDefinition(DDL)|DB Column 정보를 직접 설정|Java Type과 설정 DB 방언으로,  <br>적절한 Column Type 생성|
+|precision, scale(DDL)|BigDecimal, BigInteger Type에서 사용,  <br>precision은 소수점 포함 전체 자릿수,  <br>scale은 소수 자릿수,  <br>double, float Type에는 적용되지 않음.  <br>아주 큰 숫자나 정밀한 소수를 다룰때 사용.|precision=19, scale=2|
+
+여기서 **`name`, `insertable`, `updatable`, `table`을 제외한 나머지 속성들은 DDL 생성 기능을 사용할 때만 사용되는 속성**들로,
+
+**JPA 실행 로직에는 영향을 끼치지 않는 속성들**이다.
+
+**직접 DDL을 설정하여 DB Table을 구성할 경우 사용할 이유가 없다.**  
+_**Entity만으로 개발자가 DB Table 구조 파악이 가능하다는 장점**_
+
+위 속성 중 **`nullable`의 경우 Java의 기본 타입(int, long, ...)은 null 값 입력이 불가능** 하므로,
+
+**`false`를 통해 DB Column에 `Not Null` 제약 조건을 지정해 두는것이 안전**하다.  
+_혹은 직접 DB Column에 Not Null 제약 조건 추가_
+
+
+
+
 
 #### **6. Repository**  여기에 하나 interface WorkRepository extends JpaRepository<Work, Integer>{로 만들었지만 난 안만들었다 굳이 안만들어도 상관 x
 
@@ -613,6 +649,7 @@ public class OpenApiJpaEntity {
     private int ACDNT_YY; // 사고년도  
     private String ACDNT_DIV_NM; // 사고유형 구분  
     @Id //id를 무조건 지정  P.K값에 ID 지정정 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String MULTI_KNOWLG_DIV_NO; // 다발지식별자  
     private String MULTI_KNOWLG_DIV_GROUP_NO; // 다발지역그룹식별자  
     private String LEGALDONG_CD_NO; // 법정동코드  
