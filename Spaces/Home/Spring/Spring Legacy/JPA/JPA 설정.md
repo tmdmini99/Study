@@ -57,6 +57,47 @@ pom.xml
 		    <artifactId>javax.persistence-api</artifactId>
 		    <version>2.2</version>
 		</dependency>
+		 <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-apt -->
+                <dependency>
+                    <groupId>com.querydsl</groupId>
+                    <artifactId>querydsl-apt</artifactId>
+                    <version>5.0.0</version>
+                </dependency>
+        <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
+                <dependency>
+                    <groupId>com.querydsl</groupId>
+                    <artifactId>querydsl-jpa</artifactId>
+                    <version>5.0.0</version>
+                </dependency>
+        <plugins>
+    ...
+    <plugin>
+      <groupId>com.mysema.maven</groupId>
+      <artifactId>apt-maven-plugin</artifactId>
+      <version>1.1.3</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>process</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>target/generated-sources/java</outputDirectory>
+            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+    ...
+  </plugins>
+
+        <!-- -->
 			
 ```
 dependencies에 기존에 있던 mybatis는 삭제하고 jpa를 위한 라이브러리 3개를 추가해주었다.

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 302.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,9 +175,14 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/JPA/JPA.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+    "Spaces/Home/Spring/JPA/JPA.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Crawler/JSOUP.md",
     "Spaces/Home/Spring/패턴/싱글톤 패턴.md",
@@ -189,10 +194,8 @@
     "Images/WAS4.png",
     "Images/WAS3.png",
     "Images/Web2.svg",
-    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Images/Spring1.png",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Images/SSL17.png",
@@ -202,16 +205,13 @@
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/DataBase.md",
     "daily note/2024-01-15.md",
-    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
-    "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
     "Spaces/Home/Spring/Spring Legacy/JPA",
