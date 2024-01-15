@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Crawler/JSOUP.md",
+                "file": "Spaces/Home/Web & WAS/WAS.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Crawler/JSOUP.md",
+                "file": "Spaces/Home/Web & WAS/WAS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Crawler/JSOUP.md"
+                "file": "Spaces/Home/Web & WAS/WAS.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Crawler/JSOUP.md",
+                "file": "Spaces/Home/Web & WAS/WAS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,11 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "Spaces/Home/Crawler/Crawler.md",
-    "Spaces/Home/Crawler/JSOUP.md",
-    "Spaces/Home/Web & WAS/WAS.md",
     "Spaces/Home/Web & WAS/Web.md",
+    "Spaces/Home/Web & WAS/WAS.md",
+    "Images/Web2.svg",
+    "Spaces/Home/Crawler/JSOUP.md",
+    "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Images/Spring1.png",
@@ -196,7 +197,6 @@
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Images/SQL Injection5.png",
-    "Images/SQL Injection4.png",
     "Spaces/Home/DB/DataBase.md",
     "daily note/2024-01-15.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
