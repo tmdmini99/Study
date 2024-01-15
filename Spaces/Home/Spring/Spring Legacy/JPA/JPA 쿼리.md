@@ -368,9 +368,372 @@ List<UserDTO> resultList = query.getResultList();
 - setMaxResults (int maxResult) : 조회할 데이터 수
 - 데이터 방언(Dialect) 덕분에 DB마다 다른 페이징 처리를 같은 API로 처리
 
+```java
+TypeQuery<Member> query = 
+
+    em.createQuery("SELECT m FROM Member m ORDER BY m.username DESC",
+
+                    Member.class);
+
+// 11~30번 데이터 조회
+
+query.setFirstResult(10);    // 조회 시작 위치
+
+query.setMaxResults(20);    // 조회할 데이터 수
+
+query.getResultList();
+```
+
+
+### 집합과 정렬
+
+---
+
+  
+
+#### 집합 함수
+
+---
+
+  
+
+ COUNT
+
+ MAX, MIN
+
+ AVG
+
+ SUM
+
+  
+
+ > 참고 사항
+
+- null 값은 무시
+
+- 값이 없는데 집합 함수 사용 시 null. 단, count는 0
+
+- DISTINCT를 COUNT에서 사용 시 임베디드 타입은 지원 X
+
+  
+
+#### GROUP BY, HAVING
+
+---
+
+  
+
+- 통계 데이터를 구할 때 특정 그룹끼리 묶어줌.
+
+- 보통 전체 데이터를 기준으로 처리하므로 실시간으로 사용하기에 부담
+
+- 결과가 아주 많을 경우 통계 결과만 저장하는 테이블을 별도로 만들어 두고 사용자가 적은 새벽에 통계 쿼리를 실행
+
+  
+
+#### 정렬(ORDER BY)
+
+---
+
+
+- 결과 정렬 시 사용
+
+  
+### JPQL 조인
+
+---
+
+#### 내부 조인
+
+---
+- INNER JOIN 사용
+
+- INNER는 생략 가능
+
+```java
+String teamName = "teamA";
+
+String query = "SELECT m FROM Member m INNER JOIN m.team t"
+
+                + "WHERE t.name = :teamName";
+
+List<Member> members = em.createQuery(query, Member.class)
+
+    .setParameter("teamName", teamName)
+
+    .getResultList();
+
+
+```
+
+- 서로 다른 타입의 두 엔티티 조회 시
+
+```java
+List<Object[]> result = em.createQuery("SELECT m, t FROM Member m JOIN m.team t")
+
+                          .getResultList();
+
+for (Object[] row : result) {
+
+    Member member = (Member) row[0];
+
+    Team team = (Team) row[1];
+
+}
+```
+
+
+#### 외부 조인
+```java
+SELECT m 
+
+FROM Member m LEFT [OUTER] JOIN m.team t
+```
+
+
+#### 컬렉션 조인
+- 일대다 관계나 다대다 관계처럼 컬렉션을 사용하는 곳에 조인하는 것.
+
+* 다대일 조인 : 단일 값 연관 필드(m.team)
+
+* 일대다 조인 : 컬렉션 값 연관 필드(m.members)
+
+```java
+SELECT t, m
+
+FROM Team t LEFT JOIN t.members m
+
+```
+
+
+#### 세타 조인
+
+---
+
+- WHERE 절을 사용한 세타 조인 (내부 조인만 지원)
+
+- 전혀 관계없는 엔티티도 조인 가능
+
+```java
+SELECT count(m) 
+
+FROM Member m, Team t
+
+WHERE m.username = t.name
+```
+
+#### JOIN ON
+
+---
+- 조인 대상 필터링 (내부조인의 ON 절은 WHERE 절 대체 가능 -> 외부 조인에서만 사용)
+
+### fetch Join
+
+- JPQL에서 _성능 최적화_를 위해 제공하는 기능
+
+- 연관된 엔티티나 컬렉션을 _한 번에 같이 조회_ (JPQL은 결과를 반환할 때 연관관계까지 고려하지 않음 -> fetch join)
+
+  ㄴ SQL 호출 횟수를 줄여 성능 최적화
+
+  ㄴ 쿼리 시점에 조회하므로 지연 로딩이 발생하지 않음
+
+  ㄴ 준영속 상태에서도 객체 그래프를 탐색
+
+- 글로벌 로딩 전략보다 우선
+
+  
+
+> fetch join의 한계
+
+- 페치 조인 대상에는 별칭을 줄 수 없음
+
+- 둘 이상의 컬렉션을 페치할 수 없음 (카타시안 곱 발생)
+
+- 컬렉션을 페치 조인하면 페이징 API를 사용할 수 없음 (단일 값 연관 필드(일대일, 다대일)는 가능)
+
+  
+
+#### 엔티티 fetch join
+
+---
+
+- join fetch 라고 기입하면 연관된 엔티티나 컬렉션을 함께 조회
+
+- fetch join 은 별칭을 사용할 수 없음
+
+* 아래 결과는 회원 엔티티만 선택했는데 회원과 연관된 팀도 함께 조회
+
+
+- SQL Query
+
+```java
+select m
+
+from Member m join fetch m.team
+```
+
+
+```java
+String jpql = "select m from Member m join fetch m.team"
+
+List<Member> members = em.createQuery(jpql, Member.class)
+
+                         .getResultList();
+
+for (Member member : members ) {
+
+    // 페치 조인으로 회원과 팀을 함께 조회해서 자연 로딩 발생 안 함
+
+    System.out.println(member.getUsername());
+
+    System.out.println(member.getTeam().name());
+
+}
+```
 
 
 
+
+#### 컬렉션 페치 조인
+
+---
+
+- 일대다 컬렉션 패치 조인
+
+* 아래 결과는 TEAM 테이블에서 '팀A'는 하나지만 MEMBER 테이블과 조인하면서 결과가 증가
+
+  - 데이터가 아닌 객체 관점이므로 A팀에 2명의 회원이 있다면, 총 4개의 데이터가 조회되는 현상이 발생
+
+    (distinct 추가)
+
+```java
+String jpql = "select distinct t
+
+               from TEAM t join fetch t.members
+
+               where t.name = '팀A'"
+
+List<Team> teams = em.createQuery(jpql, Team.class)
+
+                     .getResultList();
+
+for (Team team : teams) {
+
+    System.out.println(team.getName() + ", " + team);
+
+    for (Member member : team.getMambers()) {
+
+        // fetch join으로 팀과 회원을 함께 조회해서 지연 로딩 발생 안 함
+
+        System.out.println(member.getUsername() + ", " + member);
+
+    }
+
+}
+```
+
+
+
+### 경로 표현식
+
+---
+
+* 상태 필드 (state field) : 단순히 값을 저장하기 위한 필드(필드 or 프로펄티)
+
+* 연관 필드 (association field) : 연관관계를 위한 필드, 임베디드 타입 포함(필드 or 프로펄티)
+
+- 단일 값 연관 필드 : @ManyToOne, @OneToOne, 대상이 엔티티
+
+- 컬렉션 값 연관 필드 : @OneToMany, @ManyToMany, 대상이 컬렉션
+
+  
+
+* 경로 탐색을 사용한 묵시적 조인 시
+
+- 항상 내부 조인
+
+- 컬렉션에서 경로 탐색을 할 경우 명시적으로 조인해서 별칭을 얻어야 함
+
+```java
+@Entity
+
+public class Member {
+
+    @Id
+
+    @GeneratedValue
+
+    private Long id;
+
+    @Column(name = "name")
+
+    private String username;    // 상태 필드
+
+    private Integer age;        // 상태 필드
+
+    @ManyToOne(..)
+
+    private Team team;            // 연관 필드 (단일 값 연관 필드)
+
+    @OneToMany(..)
+
+    private List<Order> orders;    // 연관 필드 (컬렉션 값 연관 필드)
+
+}
+
+```
+
+
+**상태 필드 경로** : 경로 탐색의 끝 (더 이상 탐색 불가)
+
+```java
+select m.username, m.age
+
+from Member m
+
+```
+
+**단일 값 연관 경로** : 묵시적으로 내부 조인 발생 (계속 탐색 가능)
+```java
+select o.member
+
+from Order o
+```
+
+ **컬렉션 값 연관 경로** : 묵시적으로 내부 조인 발생 (더 이상 탐색 불가)
+
+  단, _경로 탐색을 할 경우 FROM절에서 조인을 통해 별칭 획득 필요_
+
+   컬렉션 크기를 구할 수 있는 size 기능 존재 (select t.members.size from Team t)
+
+```java
+select t.member
+
+from Team t
+
+-- 컬렉션에서 경로 탐색을 할 경우
+
+select m.username
+
+from Team t
+
+join t.members m
+```
+
+### 서브 쿼리
+
+---
+* SQL과 다르게 WHERE, HAVING 절에서만 사용 가능
+#### 서브 쿼리 함수
+
+---
+* [NOT] EXISTS (subquery)
+
+```
+```
+
+```java
+```
 
 ### JPQL 
 
