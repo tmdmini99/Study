@@ -101,6 +101,54 @@ SQL Injection 에서 사용되는 기법과 키워드는 엄청나게 많습니
 
  Prepared Statement 구문을 사용하게 되면, 사용자의 입력 값이 데이터베이스의 파라미터로 들어가기 전에DBMS가 미리 컴파일 하여 실행하지 않고 대기합니다. 그 후 사용자의 입력 값을 문자열로 인식하게 하여 공격쿼리가 들어간다고 하더라도, 사용자의 입력은 이미 의미 없는 단순 문자열 이기 때문에 전체 쿼리문도 공격자의 의도대로 작동하지 않습니다.
 
+#### 예시
+- ⌨️ 취약한 코드
+
+
+    ```java
+    try{
+      String uId = props.getProperty(“jdbc.uId”);
+     
+      String query = “SELECT * FROM tb_user WHERE uId=” + uId;
+      stmt = conn.prepareStatement(query);
+      ResultSet rs = stmt.executeQuery();
+      while(rs.next()){
+        .. …
+      }
+    }catch(SQLException se){
+      .. …
+    }finally{
+      .. …
+    }
+    ```
+동적으로 값을 저장하게 되면 뒤에 OR 1=1 --   이렇게 적으면 uId = 'OR 1=1 --'이 아닌
+uId = '값' OR 1=1 -- 이렇게 바뀌게 된다
+
+- ⌨️ 안전한 코드
+
+
+    ```java
+    try{
+      String uId = props.getProperty(“jdbc.uId”);
+     
+      String query = “SELECT * FROM tb_user WHERE uId = ?”
+      stmt = conn.prepareStatement(query);
+      stmt.setString(1, uId);
+    
+      ResultSet rs = stmt.executeQuery();
+      while(rs.next()){
+        .. …
+      }
+    }catch(SQLException se){
+      .. …
+    }finally{
+      .. …
+    }
+    ```
+
+setString을 사용할시   uId = 'OR 1=1 --' 이렇게 되므로 안전하
+
+
 ### Error Message 노출 금지
 
 공격자가 SQL Injection을 수행하기 위해서는 데이터베이스의 정보(테이블명, 컬럼명 등)가 필요합니다. 데이터베이스 에러 발생 시 따로 처리를 해주지 않았다면, 에러가 발생한 쿼리문과 함께 에러에 관한 내용을 반환헤 줍니다. 여기서 테이블명 및 컬럼명 그리고 쿼리문이 노출이 될 수 있기 때문에, 데이터 베이스에 대한 오류발생 시 사용자에게 보여줄 수 있는 페이지를 제작 혹은 메시지박스를 띄우도록 하여야 합니다.  
@@ -110,11 +158,50 @@ SQL Injection 에서 사용되는 기법과 키워드는 엄청나게 많습니
 
 웹 공격 방어에 특화되어있는 웹 방화벽을 사용하는 것도 하나의 방법입니다. 웹 방화벽은 소프트웨어 형, 하드웨어 형, 프록시 형 이렇게 세가지 종류로 나눌 수 있는데 소프트웨어 형은 서버 내에 직접 설치하는 방법이고, 하드웨어 형은 네트워크 상에서 서버 앞 단에 직접 하드웨어 장비로 구성하는 것이며 마지막으로 프록시 형은 DNS 서버 주소를 웹 방화벽으로 바꾸고 서버로 가는 트래픽이 웹 방화벽을 먼저 거치도록 하는 방법입니다.
 
-### ### 저장 프로시저 사용
+### 저장 프로시저 사용
 
 동적 SQL 쿼리를 생성하지 않는 것이 SQL 인젝션을 막기 위한 가장 효과적인 방법일 것입니다. 저장 프로시저를 사용하여 지정된 형식의 데이터가 아니면 쿼리가 실행되지 않도록 합니다.
 
 
+## JPA에서 SQL injection
+
+Spring Data JPA에서 기본적으로 제공하는 API는 내부적으로 이미 Parameter Binding을 이용하고 있어서 SQL injection에 대응한다. 하지만 쿼리 스트링을 직접 짜서 사용하는 경우에는 주의를 해야한다.
+
+아래의 코드는 직접 입력값을 이용하기 때문에 안전하지 않다.
+
+```java
+public List<AccountDTO> unsafeJpaFindAccountsByCustomerId(String customerId) {    
+    String jql = "from Account where customerId = '" + customerId + "'";        
+    TypedQuery<Account> q = em.createQuery(jql, Account.class);        
+    return q.getResultList()
+      .stream()
+      .map(this::toAccountDTO)
+      .collect(Collectors.toList());        
+}
+```
+
+`@Query()`를 사용 또는 쿼리에 `:parameter`가 들어간다면 Parameter binding을 하게된다.
+
+```java
+String jql = "from Account where customerId = :customerId";
+TypedQuery<Account> q = em.createQuery(jql, Account.class)
+  .setParameter("customerId", customerId);
+// Execute query and return mapped results (omitted)
+```
+
+```java
+@Query(value="SELECT mdate FROM tablexyz WHERE instanceName =:instanceName",nativeQuery=true)
+List<String> findAllByInstanceName(@Param("instanceName") String instanceName);
+```
+
+### 질문
+- SQL injection이란?
+    
+    웹애플리케이션에서 DB Query에 사용될 사용자 입력값을 유효성 검증을 하지 않아, 개발자가 의도하지 않은 동적 쿼리 (Dynamic Query)를 생성하여 DB 정보를 열람하거나 조작할 수 있는 공격 방법이다.
+    
+    - JPA에서 SQL injection 방어는?
+        
+        JPA는 기본 메서드에서 PreparedStatement를 사용하여 SQL injection을 방어한다. 하지만 JPA query를 만들어서 사용할 때도 입력값을 바로 쿼리에 넣게되면 SQL injection에 취약하게 되므로, 이때도 파라미터 바인딩를 사용하도록 한다.
 
 
 
@@ -123,3 +210,5 @@ SQL Injection 에서 사용되는 기법과 키워드는 엄청나게 많습니
 
 ---
 참조 - https://noirstar.tistory.com/264
+
+https://velog.io/@coastby/DB-SQL-injection

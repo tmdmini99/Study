@@ -19,6 +19,50 @@ em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
 
 ```
 
+###  SELECT 문
+---
+
+
+**> 대소문자 구분**
+
+- 엔티티와 속성은 대소문자 구분
+
+- JPQL 키워드는 구분하지 않음
+
+**> 엔티티 이름**
+
+- 테이블 명 대신 엔티티 명을 사용, @Entity(name=" ") 으로 설정 가능
+
+- 지정하지 않을 시 클래스 명을 기본값으로 사용(기본값을 추천)
+
+**> 별칭은 필수**
+
+- JPQL은 별칭을 필수
+
+- AS는 생략 가능
+
+
+
+### TypeQuery, Query
+
+---
+
+  
+
+JPQL 실행 시 쿼리 객체 생성이 필요
+
+  
+
+ㅇ TypeQuery : 반환할 타입을 명확하게 지정할 수 있을 경우
+
+```java
+
+
+```
+
+
+
+
 ### JPQL 
 
 Repository.java
