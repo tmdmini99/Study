@@ -1134,10 +1134,1001 @@ public class OpenApiJpaEntity {
 ## Querydsl
 
 
+> **Q-Type**
+
+ Q-Type 인스턴스를 사용하는 방법은 다음 2가지 방법이 있다.
+
+```java
+QMember qMember = new QMember("m"); //별칭 직접 지정
+QMember qMember = QMember.member; //기본 인스턴스 사용
+```
+
+ 직접 별칭을 넣어서 사용해도 되지만 보통 기본 인스턴스에서 생성된 별칭을 사용하는 것을 권장한다. (별칭을 직접 지정하는 방법은 같은 테이블을 조인하는 경우에 쓰인다)
+
+```java
+@Generated("com.querydsl.codegen.DefaultEntitySerializer")
+public class QMember extends EntityPathBase<Member> {
+
+    ...
+
+    public static final QMember member = new QMember("member1"); // 별칭 member가 자동으로 생성된다.
+
+    ...
+
+}
+```
+
+위에서 작성한 테스트 코드를 static import를 이용해 기본 인스턴스 별칭을 사용하면 다음과 같다.
+
+```java
+@Test
+public void search() {
+    JPAQueryFactory queryFactory = new JPAQueryFactory(em);
+    Member result = queryFactory
+            .selectFrom(member)
+            .where(member.username.eq("member1")
+            .fetchOne();
+    assertThat(findMember.getUsername()).isEqualTo("member1");
+}
+```
+
+Querydsl으로 실행되는 JPQL은 다음 설정을 추가하여 볼 수 있다.
+
+```java
+spring.jpa.properties.hibernate.use_sql_comments: true
+```
+
+```java
+    /* select
+        m 
+    from
+        Member m 
+    where
+        m.username = ?1 */ select
+            member0_.member_id as member_id1_1_,
+            member0_.age as age2_1_,
+            member0_.team_id as team_id4_1_,
+            member0_.username as username3_1_ 
+        from
+            member member0_ 
+        where
+            member0_.username=?
+```
+
+---
+
+> **검색 조건 쿼리**
+
+- JPQL이 제공하는 검색 조건을 거의 대부분 제공한다.
+- SimpleExpression에서 제공하는 검색 조건 메서드 확인 가능
+
+**검색 조건 예시**
+
+```java
+member.username.eq("member1")		// username = 'member1'
+member.username.ne("member1")		//username != 'member1'
+member.username.eq("member1").not()	// username != 'member1'
+
+member.username.isNotNull()	//이름이 is not null
+member.age.in(10, 20)		// age in (10,20)
+member.age.notIn(10, 20)	// age not in (10, 20)
+member.age.between(10,30)	//between 10, 30
+
+member.age.goe(30)	// age >= 30
+member.age.gt(30)	// age > 30
+member.age.loe(30)	// age <= 30
+member.age.lt(30)	// age < 30
+
+member.username.like("member%")		//like 검색
+member.username.contains("member")	// like ‘%member%’ 검색
+member.username.startsWith("member")	//like ‘member%’ 검색
+...
+```
+
+WHERE 문에서 AND 조건을 파라미터로 처리가 가능하다
+
+- where()에 파라미터로 검색조건을 추가하면 AND 조건으로 추가된다.
+- **파라미터로 처리 시 null 값이 들어오면 무시한다**  
+    (메서드 추출을 활용하여 동적 쿼리를 깔끔하게 처리할 수 있다.)
+
+```java
+@Test
+public void searchAndParam() {
+    List<Member> result1 = queryFactory
+            .selectFrom(member)
+//          .where(member.username.eq("member1")
+//              .and(member.age.eq(10)))
+            .where(member.username.eq("member1"),
+                    member.age.eq(10))
+            .fetch();
+    assertThat(result1.size()).isEqualTo(1);
+}
+```
+
+---
+
+> **결과 조회**
+
+- fetch() : 리스트 조회, 데이터 없으면 빈 리스트 반환(null 아니다)
+- fetchOne() : 단 건 조회  
+                    결과가 없으면 null  
+                    결과가 둘 이상이면 NonUniqueResultException 예외 발생
+- fetchFirst() : limit(1).fetchOne() 과 같다.
+- fetchResults() : 페이징 정보 포함, total count 쿼리 추가 실행 **(Deprecated, 향후 미지원)**
+- fetchCount() :  count 쿼리로 변경하여 count 수 조회 **(Deprecated, 향후 미지원)**
+
+**결과 조회 예시**
+
+```java
+//List
+List<Member> fetch = queryFactory
+        .selectFrom(member)
+        .fetch();
+ 
+//단 건
+Member findMember1 = queryFactory
+        .selectFrom(member)
+        .fetchOne();
+        
+//처음 한 건 조회
+Member findMember2 = queryFactory
+        .selectFrom(member)
+        .fetchFirst();
+        
+//페이징에서 사용(Deprecated)
+QueryResults<Member> results = queryFactory
+        .selectFrom(member)
+        .fetchResults();
+        
+//count 쿼리로 변경(Deprecated)
+long count = queryFactory
+        .selectFrom(member)
+        .fetchCount();
+```
+
+---
+
+> **정렬**
+
+- desc() : 내림차순
+- asc() : 올림차순
+- nullsLast() : null 데이터 순서 부여(마지막)
+- nullsFirst() : null 데이터 순서 부여(처음)
+
+**정렬 예시**
+
+```java
+@Test
+public void sort() {
+    em.persist(new Member(null, 100));
+    em.persist(new Member("member5", 100));
+    em.persist(new Member("member6", 100));
+    
+    List<Member> result = queryFactory
+            .selectFrom(member)
+            .where(member.age.eq(100))
+            .orderBy(member.age.desc(), member.username.asc().nullsLast())
+            .fetch();
+            
+    for (Member member : result) {
+        System.out.println("member = " + member);
+    }
+}
+```
+
+```java
+member = Member(id=8, username=member5, age=100)
+member = Member(id=9, username=member6, age=100)
+member = Member(id=7, username=null, age=100)
+```
+
+---
+
+> **페이징**
+
+- offset(long offset) : 쿼리 결과에 대한 오프셋을 정의, 0부터 시작
+- limit(long limit) : 쿼리 결과에 대한 제한/최대 결과를 정의
+
+**1. 페이징 - 조회 건수 제한**
+
+```java
+@Test
+public void paging1() {
+    List<Member> result = queryFactory
+            .selectFrom(member)
+            .orderBy(member.username.desc())
+            .offset(0)
+            .limit(2)
+            .fetch();
+
+    for (Member member : result) {
+        System.out.println("member = " + member);
+    }
+    assertThat(result.size()).isEqualTo(2);
+}
+```
+
+```java
+member = Member(id=6, username=member4, age=40)
+member = Member(id=5, username=member3, age=30)
+```
+
+**2. 페이징 - count**
+
+```java
+@Test
+public void paging2() {
+    Long result = queryFactory
+            .select(member.count())
+            .from(member)
+            .fetchOne();
+    System.out.println("result = " + result);
+}
+```
+
+```java
+result = 4
+```
+
+ 실무에서 페이징 쿼리를 작성할 때, 데이터를 조회하는 쿼리는 여러 테이블을 조인해야 하지만, count 쿼리는 조인이 필요 없는 경우가 많다. 그런데 자동화된 count 쿼리를 사용하는 fetchResults()는 모두 조인을 하여 count 쿼리를 해버리기 때문에 성능이 안 나온다. 결국 fetchResults()는 Deprecated가 됐으며, 따라서 count 전용 쿼리를 따로 작성하는 것이 좋다.
+
+---
+
+> **집합**
+
+**1. 집합 함수**
+
+JPQL이 제공하는 모든 집합 함수를 제공한다.
+
+- count() : 카운트
+- sum()   : 합
+- avg()    : 평균
+- max()   : 최대
+- min()    : 최소
+
+```java
+@Test
+@DisplayName("집합 함수")
+public void aggregation() {
+    List<Tuple> result = queryFactory
+            .select(member.count(),
+                    member.age.sum(),
+                    member.age.avg(),
+                    member.age.max(),
+                    member.age.min())
+            .from(member)
+            .fetch();
+
+    for (Tuple tuple : result) {
+        System.out.println("tuple = " + tuple);
+        assertThat(tuple.get(member.count())).isEqualTo(4);
+        assertThat(tuple.get(member.age.sum())).isEqualTo(100);
+        assertThat(tuple.get(member.age.avg())).isEqualTo(25);
+        assertThat(tuple.get(member.age.max())).isEqualTo(40);
+        assertThat(tuple.get(member.age.min())).isEqualTo(10);
+    }
+}
+```
+
+**2. 그룹화/집계**
+
+- groupby() : 그룹화/집계
+- having() : 그룹화/집계용 필터
+
+```java
+@Test
+@DisplayName("그룹화/집계")
+public void group() {
+    List<Tuple> result = queryFactory
+            .select(team.name, member.age.avg())
+            .from(member)
+            .join(member.team, team)
+            .groupBy(team.name)
+            .fetch();
+
+    for (Tuple tuple : result) {
+        System.out.println("tuple = " + tuple);
+    }
+
+    Tuple teamA = result.get(0);
+    Tuple teamB = result.get(1);
+
+    assertThat(teamA.get(team.name)).isEqualTo("teamA");
+    assertThat(teamA.get(member.age.avg())).isEqualTo(15);
+    assertThat(teamB.get(team.name)).isEqualTo("teamB");
+    assertThat(teamB.get(member.age.avg())).isEqualTo(35);
+}
+```
+
+```java
+tuple = [teamA, 15.0]
+tuple = [teamB, 35.0]
+```
+
+ 마찬가지로 having 또한 사용할 수 있다.
+
+---
+
+> **조인 - 기본 조인**
+
+- join(), innerJoin()  : 내부 조인(inner join)
+- leftJoin()            : left 외부 조인(left outer join)
+- rightJOin()          : right 외부 조인(right outer join)
+- JPQL의 on과 성능 최적화를 위한 fetch 조인 제공
+- 기본 문법 : join(조인 대상, 별칭으로 사용할 Q 타입)
+
+**1. 기본 조인 join - inner join**
+
+```java
+@Test
+public void join() throws Exception {
+    QMember member = QMember.member;
+    QTeam team = QTeam.team;
+    List<Member> result = queryFactory
+            .selectFrom(member)
+            .join(member.team, team)
+            .where(team.name.eq("teamA"))
+            .fetch();
+    
+    assertThat(result).extracting("username").containsExactly("member1", "member2");
+}
+```
+
+```java
+/* select
+        member1 
+    from
+        Member member1   
+    inner join
+        member1.team as team 
+    where
+        team.name = ?1 */ select
+            member0_.member_id as member_id1_1_,
+            member0_.age as age2_1_,
+            member0_.team_id as team_id4_1_,
+            member0_.username as username3_1_ 
+        from
+            member member0_ 
+        inner join
+            team team1_ 
+                on member0_.team_id=team1_.team_id 
+        where
+            team1_.name=?
+```
+
+---
+
+> **세타 조인**
+
+- 연관관계가 없는 필드로 조인
+- cross join
+- 잘 사용하지 않으므로 참고만 하자.
+
+**세타 조인 예시**
+
+```java
+@Test
+public void theta_join() throws Exception {
+    em.persist(new Member("teamA"));
+    em.persist(new Member("teamB"));
+    List<Member> result = queryFactory
+            .select(member)
+            .from(member, team)
+            .where(member.username.eq(team.name))
+            .fetch();
+            
+    assertThat(result).extracting("username").containsExactly("teamA", "teamB");
+}
+```
+
+```java
+    /* select
+        member1 
+    from
+        Member member1,
+        Team team 
+    where
+        member1.username = team.name */ select
+            member0_.member_id as member_id1_1_,
+            member0_.age as age2_1_,
+            member0_.team_id as team_id4_1_,
+            member0_.username as username3_1_ 
+        from
+            member member0_ cross 
+        join
+            team team1_ 
+        where
+            member0_.username=team1_.name
+```
+
+```java
+m = Member(id=7, username=teamA, age=0)
+m = Member(id=8, username=teamB, age=0)
+```
+
+---
+
+> **조인 - on절**
+
+**1. 조인 대상 필터링**
+
+```java
+/**
+ * 예) 회원과 팀을 조인하면서, 팀 이름이 teamA인 팀만 조인, 회원은 모두 조회
+ * JPQL: SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'teamA'
+ * SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and t.name='teamA'
+ */
+@Test
+public void join_on_filtering() throws Exception {
+    List<Tuple> result = queryFactory
+            .select(member, team)
+            .from(member)
+            .leftJoin(member.team, team).on(team.name.eq("teamA"))
+            .fetch();
+            
+    for (Tuple tuple : result) {
+        System.out.println("tuple = " + tuple);
+    }
+}
+```
+
+```java
+    /* select
+        member1,
+        team 
+    from
+        Member member1   
+    left join
+        member1.team as team with team.name = ?1 */ select
+            member0_.member_id as member_id1_1_0_,
+            team1_.team_id as team_id1_2_1_,
+            member0_.age as age2_1_0_,
+            member0_.team_id as team_id4_1_0_,
+            member0_.username as username3_1_0_,
+            team1_.name as name2_2_1_ 
+        from
+            member member0_ 
+        left outer join
+            team team1_ 
+                on member0_.team_id=team1_.team_id 
+                and (
+                    team1_.name=?
+                )
+```
+
+```java
+tuple=[Member(id=3, username=member1, age=10), Team(id=1, name=teamA)]
+tuple=[Member(id=4, username=member2, age=20), Team(id=1, name=teamA)]
+tuple=[Member(id=5, username=member3, age=30), null]
+tuple=[Member(id=6, username=member4, age=40), null]
+```
+
+ on 절을 활용해 조인 대상을 필터링할 때, 외부 조인이 아니라 내부 조인(inner join)을 사용하면, where 절에서 필터링하는 것과 기능이 동일하다. 따라서 on 절을 활용한 조인 대상 필터링을 사용할 때, 내부 조인이면 익숙한 where 절로 해결하고, 정말 외부 조인이 필요한 경우에만 이 기능을 사용하자.
+
+**2. 연관관계가 없는 엔티티 외부 조인**
+
+```java
+/**
+ * 2. 연관관계 없는 엔티티 외부 조인
+ * 예) 회원의 이름과 팀의 이름이 같은 대상 외부 조인
+ * JPQL: SELECT m, t FROM Member m LEFT JOIN Team t on m.username = t.name
+ * SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.username = t.name
+ */
+@Test
+public void join_on_no_relation() throws Exception {
+    em.persist(new Member("teamA"));
+    em.persist(new Member("teamB"));
+    List<Tuple> result = queryFactory
+            .select(member, team)
+            .from(member)
+            .leftJoin(team).on(member.username.eq(team.name))
+            .fetch();
+            
+    for (Tuple tuple : result) {
+        System.out.println("t=" + tuple);
+    }
+}
+```
+
+```java
+    /* select
+        member1,
+        team 
+    from
+        Member member1   
+    left join
+        Team team with member1.username = team.name */ select
+            member0_.member_id as member_id1_1_0_,
+            team1_.team_id as team_id1_2_1_,
+            member0_.age as age2_1_0_,
+            member0_.team_id as team_id4_1_0_,
+            member0_.username as username3_1_0_,
+            team1_.name as name2_2_1_ 
+        from
+            member member0_ 
+        left outer join
+            team team1_ 
+                on (
+                    member0_.username=team1_.name
+                )
+```
+
+```java
+t=[Member(id=5, username=member3, age=30), null]
+t=[Member(id=6, username=member4, age=40), null]
+t=[Member(id=3, username=member1, age=10), null]
+t=[Member(id=4, username=member2, age=20), null]
+```
+
+ 하이버네이트 5.1부터 ON을 사용하여 서로 관계가 없는 필드를 외부 조인하는 기능이 추가되었다. 주의할 점은 leftJoin()의 전달 인자가 달라진다.
+
+- 일반 조인 : leftJoin(member.team, tema)
+- on조인 : from(member).leftJoin(team).on(xxx)
+
+---
+
+> **조인 - 페치 조인**
+
+- SQL조인을 활용해서 연관된 엔티티를 SQL 한 번에 조회하는 기능
+- 주로 성능 최적화에 사용한다.
+- join(), leftJoin() 등 조인 기능 뒤에 fetchJoin()이라고 추가하면 된다.
+
+```java
+@PersistenceUnit
+EntityManagerFactory emf;
+
+@Test
+public void fetchJoinUse() throws Exception {
+    em.flush();
+    em.clear();
+    Member findMember = queryFactory
+            .selectFrom(member)
+            .join(member.team, team).fetchJoin()
+            .where(member.username.eq("member1"))
+            .fetchOne();
+    boolean loaded = emf.getPersistenceUnitUtil().isLoaded(findMember.getTeam());
+    assertThat(loaded).as("페치 조인 적용").isTrue();
+}
+```
+
+```java
+    /* select
+        member1 
+    from
+        Member member1   
+    inner join
+        fetch member1.team as team 
+    where
+        member1.username = ?1 */ select
+            member0_.member_id as member_id1_1_0_,
+            team1_.team_id as team_id1_2_1_,
+            member0_.age as age2_1_0_,
+            member0_.team_id as team_id4_1_0_,
+            member0_.username as username3_1_0_,
+            team1_.name as name2_2_1_ 
+        from
+            member member0_ 
+        inner join
+            team team1_ 
+                on member0_.team_id=team1_.team_id 
+        where
+            member0_.username=?
+```
+
+---
+
+> **서브 쿼리**
+
+- com.querydsl.jpa.JPAExpressions 사용
+
+**1. 서브 쿼리**
+
+```java
+/**
+ * 나이가 가장 많은 회원 조회
+ */
+@Test
+public void subQuery() throws Exception {
+
+    QMember memberSub = new QMember("memberSub");
+
+    List<Member> result = queryFactory
+            .selectFrom(member)
+            .where(member.age.eq(
+                JPAExpressions
+                    .select(memberSub.age.max())
+                    .from(memberSub)
+            ))
+            .fetch();
+    assertThat(result).extracting("age").containsExactly(40);
+}
+```
+
+```java
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.age = (
+            select
+                max(memberSub.age) 
+            from
+                Member memberSub
+        ) */ select
+            member0_.member_id as member_id1_1_,
+            member0_.age as age2_1_,
+            member0_.team_id as team_id4_1_,
+            member0_.username as username3_1_ 
+        from
+            member member0_ 
+        where
+            member0_.age=(
+                select
+                    max(member1_.age) 
+                from
+                    member member1_
+            )
+```
+
+**2. 서브 쿼리 - in 사용**
+
+```java
+/**
+ * 서브쿼리 여러 건 처리, in 사용
+ */
+@Test
+public void subQueryIn() throws Exception {
+    QMember memberSub = new QMember("memberSub");
+    List<Member> result = queryFactory
+            .selectFrom(member)
+            .where(member.age.in(
+                JPAExpressions
+                    .select(memberSub.age)
+                    .from(memberSub)
+                    .where(memberSub.age.gt(10))
+            ))
+        	.fetch();
+    assertThat(result).extracting("age").containsExactly(20, 30, 40);
+}
+```
+
+```java
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.age in (
+            select
+                memberSub.age 
+            from
+                Member memberSub 
+            where
+                memberSub.age > ?1
+        ) */ select
+            member0_.member_id as member_id1_1_,
+            member0_.age as age2_1_,
+            member0_.team_id as team_id4_1_,
+            member0_.username as username3_1_ 
+        from
+            member member0_ 
+        where
+            member0_.age in (
+                select
+                    member1_.age 
+                from
+                    member member1_ 
+                where
+                    member1_.age>?
+            )
+```
+
+**3. 서브 쿼리 - select 절에서 사용**
+
+```java
+@Test
+@DisplayName("서브 쿼리 select 절에서 사용")
+public void subQuerySelect() {
+    QMember memberSub = new QMember("memberSub");
+    List<Tuple> fetch = queryFactory
+            .select(member.username,
+                    JPAExpressions
+                            .select(memberSub.age.avg())
+                            .from(memberSub)
+            ).from(member)
+            .fetch();
+
+    for (Tuple tuple : fetch) {
+        System.out.println("username = " + tuple.get(member.username));
+        System.out.println("age = " +
+                tuple.get(JPAExpressions.select(memberSub.age.avg())
+                        .from(memberSub)));
+    }
+}
+```
+
+```java
+    /* select
+        member1.username,
+        (select
+            avg(memberSub.age) 
+        from
+            Member memberSub) 
+    from
+        Member member1 */ select
+            member0_.username as col_0_0_,
+            (select
+                avg(member1_.age) 
+            from
+                member member1_) as col_1_0_ 
+        from
+            member member0_
+```
+
+```java
+username = member1
+age = 25.0
+username = member2
+age = 25.0
+username = member3
+age = 25.0
+username = member4
+age = 25.0
+```
+
+**3. static import 사용**
+
+```java
+import static com.querydsl.jpa.JPAExpressions.select;
+
+
+List<Member> result = queryFactory
+        .selectFrom(member)
+        .where(member.age.eq(
+                select(memberSub.age.max())
+                    .from(memberSub)	
+        ))
+        .fetch();
+```
+
+**form 절의 서브쿼리 한계**
+
+ JPA JPQL 서브쿼리의 한계로 **from 절의 서브쿼리(인라인 뷰)는 지원하지 않는다.** 당연히 Querydsl 도 지원하지 않는다. JPA에서는 select 절의 서브쿼리도 지원하지 않지만 하이버네이트 구현체를 사용하면 select 절의 서브쿼리는 지원하기 때문에 Querydsl도 하이버네이트 구현체를 사용하여 select 절의 서브쿼리를 지원한다.
+
+**from 절의 서브쿼리 해결방안**
+
+- 서브쿼리를 join으로 변경한다. (가능한 상황도 있고, 불가능한 상황도 있다.)
+- 애플리케이션에서 쿼리를 2번 분리해서 실행한다.
+- nativeSQL을 사용한다.
+
+---
+
+> **Case 문**
+
+**1. 단순한 조건**
+
+```java
+@Test
+@DisplayName("case 테스트")
+public void basicCase() {
+    List<String> result = queryFactory
+            .select(member.age
+                    .when(10).then("열살")
+                    .when(20).then("스물살")
+                    .otherwise("기타"))
+            .from(member)
+            .fetch();
+
+    for (String s : result) {
+        System.out.println("s = " + s);
+    }
+}
+```
+
+```java
+    /* select
+        case 
+            when member1.age = ?1 then ?2 
+            when member1.age = ?3 then ?4 
+            else '기타' 
+        end 
+    from
+        Member member1 */ select
+            case 
+                when member0_.age=? then ? 
+                when member0_.age=? then ? 
+                else '기타' 
+            end as col_0_0_ 
+        from
+            member member0_
+```
+
+```java
+s = 열살
+s = 스물살
+s = 기타
+s = 기타
+```
+
+**2. 복잡한 조건**
+
+```java
+@Test
+@DisplayName("case 테스트 2")
+public void complexCase() {
+    List<String> result = queryFactory
+            .select(new CaseBuilder()
+                    .when(member.age.between(0, 20)).then("0~20살")
+                    .when(member.age.between(21, 30)).then("21~30살")
+                    .otherwise("기타"))
+            .from(member)
+            .fetch();
+
+    for (String s : result) {
+        System.out.println("s = " + s);
+    }
+}
+```
+
+```java
+    /* select
+        case 
+            when (member1.age between ?1 and ?2) then ?3 
+            when (member1.age between ?4 and ?5) then ?6 
+            else '기타' 
+        end 
+    from
+        Member member1 */ select
+            case 
+                when member0_.age between ? and ? then ? 
+                when member0_.age between ? and ? then ? 
+                else '기타' 
+            end as col_0_0_ 
+        from
+            member member0_
+```
+
+```java
+s = 0~20살
+s = 0~20살
+s = 21~30살
+s = 기타
+```
+
+**3. orderBy에서 Case 문 함께 사용**
+
+```java
+@Test
+@DisplayName("orderBy에서 case 문 함께 사용")
+public void orderByWithCase() {
+
+    NumberExpression<Integer> rankPath = new CaseBuilder()
+            .when(member.age.between(0, 20)).then(2)
+            .when(member.age.between(21, 30)).then(1)
+            .otherwise(3);
+
+    List<Tuple> result = queryFactory
+            .select(member.username, member.age, rankPath)
+            .from(member)
+            .orderBy(rankPath.desc())
+            .fetch();
+
+    for (Tuple tuple : result) {
+        String username = tuple.get(member.username);
+        Integer age = tuple.get(member.age);
+        Integer rank = tuple.get(rankPath);
+        System.out.println("username = " + username + " age = " + age + " rank = "
+                + rank);
+    }
+}
+```
+
+```java
+    /* select
+        member1.username,
+        member1.age,
+        case 
+            when (member1.age between ?1 and ?2) then ?3 
+            when (member1.age between ?4 and ?5) then ?6 
+            else 3 
+        end 
+    from
+        Member member1 
+    order by
+        case 
+            when (member1.age between ?7 and ?8) then ?9 
+            when (member1.age between ?10 and ?11) then ?12 
+            else 3 
+        end desc */ select
+            member0_.username as col_0_0_,
+            member0_.age as col_1_0_,
+            case 
+                when member0_.age between ? and ? then ? 
+                when member0_.age between ? and ? then ? 
+                else 3 
+            end as col_2_0_ 
+        from
+            member member0_ 
+        order by
+            case 
+                when member0_.age between ? and ? then ? 
+                when member0_.age between ? and ? then ? 
+                else 3 
+            end desc
+```
+
+```java
+username = member4 age = 40 rank = 3
+username = member1 age = 10 rank = 2
+username = member2 age = 20 rank = 2
+username = member3 age = 30 rank = 1
+```
+
+---
+
+> **상수, 문자 더하기**
+
+**1. 상수 더하기 - Expressions.constant(xxx)**
+
+※ 참고 : 최적화를 위해 가능하면 SQL에 contstant 값을 넘기지 않고 해결하는 것이 좋다.
+
+```java
+Tuple result = queryFactory
+        .select(member.username, Expressions.constant("A"))
+        .from(member)
+        .fetchFirst();
+```
+
+```java
+    /* select
+        member1.username 
+    from
+        Member member1 */ select
+            member0_.username as col_0_0_ 
+        from
+            member member0_ fetch first ? rows only
+
+// 결과
+result = [member1, A]
+```
+
+**2. 문자 더하기 - concat**
+
+```java
+String result = queryFactory
+        .select(member.username.concat("_").concat(member.age.stringValue()))
+        .from(member)
+        .where(member.username.eq("member1"))
+        .fetchOne();
+```
+
+```java
+    /* select
+        concat(concat(member1.username,
+        ?1),
+        str(member1.age)) 
+    from
+        Member member1 
+    where
+        member1.username = ?2 */ select
+            member0_.username||?||to_char(member0_.age) as col_0_0_ 
+        from
+            member member0_ 
+        where
+            member0_.username=?
+
+// 결과
+result = member1_10
+```
+
+ member.age.stringValue() 부분이 중요한데, 문자가 아닌 다른 타입들은 stringValue()로 문자로 변환할 수 있다. 이 방법은 ENUM을 처리할 때도 자주 사용한다
 
 
 
 
+### 내가 만든 
+---
 
 
 pom.xml qClass 만드는 dependency 밑에 플러그인도 설치  무조건 qclass 생성성
@@ -1423,4 +2414,7 @@ public class OpenApiJpaEntity {
 
 
 
+--- 
+참조 - https://jddng.tistory.com/334
 
+https://data-make.tistory.com/614

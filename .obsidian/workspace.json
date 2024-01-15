@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+                "file": "Spaces/Home/Crawler/Crawler.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+                "file": "Spaces/Home/Crawler/Crawler.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md"
+                "file": "Spaces/Home/Crawler/Crawler.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+                "file": "Spaces/Home/Crawler/Crawler.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,13 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
+    "Images/Crawler1.png",
+    "Spaces/Home/Crawler/Crawler.md",
+    "Images/Pasted image 20240115112540.png",
+    "Spaces/Home/Web & WAS/Web.md",
+    "Spaces/Home/Crawler",
+    "Spaces/Home/Web & WAS/WAS.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Images/SQL Injection5.png",
     "Images/SQL Injection4.png",
@@ -191,7 +198,6 @@
     "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
@@ -204,13 +210,8 @@
     "Images/SSL19.png",
     "Images/SSL18.png",
     "Images/Pasted image 20240112180357.png",
-    "Images/SSL17.png",
-    "Images/Pasted image 20240112180021.png",
     "Spaces/Home/IntelliJ/SSL/SSL적용.md",
     "Spaces/Home/IntelliJ/SSL",
-    "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
     "Spaces/Home/Spring/Spring Legacy/JPA",
     "Spaces/Home/Data/HTML",
@@ -219,7 +220,6 @@
     "Spaces/Home/Spring/Dependency Injection",
     "Images/Web&WAS",
     "Images/WAS",
-    "Images/새 폴더",
     "무제 파일.canvas"
   ]
 }
