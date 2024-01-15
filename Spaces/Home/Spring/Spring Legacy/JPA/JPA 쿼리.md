@@ -19,7 +19,8 @@ em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
 
 ```
 
-###  SELECT 문
+### 기본 문법
+####  SELECT 문
 ---
 
 
@@ -43,7 +44,7 @@ em.createQuery(jpql, OpenApiJpaEntity.class).getSingleResult();
 
 
 
-### TypeQuery, Query
+#### TypeQuery, Query
 
 ---
 
@@ -56,9 +57,317 @@ JPQL 실행 시 쿼리 객체 생성이 필요
 ㅇ TypeQuery : 반환할 타입을 명확하게 지정할 수 있을 경우
 
 ```java
+TypedQuery<Member> query = 
+
+    em.createQuery("SELECT m FROM Member m", Member.class);
+
+                                            // 반환이 명확
+
+List<Member> resultList = query.getResultList();
+
+for (Member member : resultList) {
+
+    System.out.println("member = " + member);
+
+}
+```
+
+ㅇ Query : 반환 타입을 명확하게 지정할 수 없을 경우
+
+,여러 엔티티나 컬럼을 선택할 경우(반환 타입이 명확하지 않을 경우) 사용
+
+```java
+Query query = 
+
+    em.createQuery("SELECT m.username, m.age FROM Member m");
+
+List resultList = query.getResultList();
+
+for (Object o : resultList) {
+
+    Object[] result = (Object[]) o; // 결과가 둘 이상일 경우 Object[]
+
+    System.out.println("username = " + result[0]);
+
+    System.out.println("age = " + result[1]);
+
+}
+```
+
+
+#### 결과 조회
+---
+ㅇ query.getResultList() : 결과를 예제로 반환
+
+- 결과가 없을 경우 빈 컬렉션 반환
+
+ㅇ query.getSingleResult() : 결과가 정확히 하나일 때 사용
+
+- 결과가 없으면 javax.persistence.NoResultException 예외 발생
+
+- 결과가 1보다 많으면 javax.persistence.NonUniqueResultException 예외 발생
+
+### 파라미터 바인딩
+
+---
+
+ㅇ 이름 기준 파라미터(Named parameters)
+
+- 파라미터를 이름으로 구분
+
+- : 사용
+
+- 더 명확한 방식
+
+```java
+String usernameParam = "User1";
+
+TypedQuery<Member> query = 
+
+    em.createQuery("SELECT m FROM Member m where m.username = :username", Member.class);
+
+                                                            // 파라미터 정의
+
+query.setParameter("username", usernameParam); // 파라미터 바인딩
+
+List<Member> resultList = query.getResultList();
+
+// 아래와 같이 작성 가능(메소드 체인)
+
+List<Member> members = 
+
+    em.createQuery("SELECT m FROM Member m where m.username = :username", Member.class)
+
+    .setParameter("username", usernameParam)
+
+    .getResultList();
+
+```
+
+
+ㅇ 위치 기준 파라미터(Positional parameters)
+
+- ? 다음에 위치 값을 지정
+
+
+
+```java
+List<Member> member =
+
+    em.createQuery("SELECT m FROM Member m where m.username = ?1", Member.class)
+
+    .setParameter(1, usernameParam)
+
+    .getResultList();
+
+```
+
+
+
+
+### 프로젝션(projection)
+
+---
+
+- SELECT 절에 조회할 대상을 지정하는 것.
+
+.엔티티
+
+.엠비디드 타입
+
+.스칼라 타입(숫자, 문자 등 기본 타입)
+
+  
+
+#### 엔티티 프로젝션
+
+---
+- 원하는 객체를 바로 조회
+
+- 엔티티 프로젝션으로 조회한 엔티티는 영속성 컨텍스트에서 관리
+
+```java
+SELECT m FROM Member m        // 회원
+
+SELECT m.team FROM Member m // 팀
+```
+
+#### 임베디드 타입 프로젝션
+
+---
+
+
+- 엔티티와 거의 비슷하게 사용
+
+- 조회의 시작점이 될 수 없음
+
+- 엔티티 타입이 아닌 값 타입. 직접 조회한 임베디드 타입은 영속성 컨텍스트에서 관리되지 않음
+
+
+```java
+String query = "SELECT o.address FROM Order o";
+
+List<Address> addresses = em.createQuery(query, Address.class)
+
+                            .getResultList();
+```
+
+
+```java
+select
+
+    order.city,
+
+    order.street,
+
+    order.zipcode
+
+from
+
+    Orders order
+```
+
+
+#### 스칼라 타입 프로젝션
+
+---
+
+- 숫자, 문자, 날짜와 같은 기본 데이터 타입
+
+```java
+List<String> username = 
+
+    em.createQuery("SELECT username FROM Member m", String.class)
+
+      .getResultList();
+
+```
+
+#### 여러 값 조회
+
+---
+
+여러 값 선택 시 Query 사용
+
+
+- 여러 프로젝션
+
+```java
+Query query = 
+
+    em.createQuery("SELECT m.username, m.age, FROM Member m");
+
+List resultList = query.getResultList();
+
+Iterator iterator = resultList.iterator();
+
+while (iterator.hasNext()) {
+
+    Object[] row = (Object[]) iterator.next();
+
+    String username = (String) row[0];
+
+    Integer age = (Integer) row[1];
+
+}
+```
+
+
+
+- 여러 프로젝션 Object[] 조회
+```java
+List<Object[]> resultList = 
+
+    em.createQuery("SELECT m.username, m.age FROM Member m")
+
+      .getResultList();
+
+for (Object[] row : resultList) {
+
+    String username = (String) row[0];
+
+    Integer age = (Integer) row[1];
+
+}
 
 
 ```
+
+- 여러 프로젝션 엔티티 타입 조회
+
+```java
+List<Object[]> resultList = 
+
+    em.createQuery("SELECT o.member, o.product, o.orderAmount FROM Order o")
+
+      .getResultList();
+
+for (Object[] row : resultList) {
+
+    Member member = (Member) row[0];    // 엔티티
+
+    Product product = (Product) row[1];    // 엔티티
+
+    int orderAmount = (Integer) row[2];    // 스칼라
+
+}
+
+```
+
+
+#### New 명령어
+
+---
+
+  
+
+- SELECT 다음 NEW 명령어 사용 시 반환받을 클래스 지정 가능,
+
+  이 클래스의 생성자에 JPQL 조회 결과를 넘겨줄 수 있음
+
+- New 명령어를 사용한 클래스로 TypeQuery 사용이 가능하여 객체 변환 작업에 효율적
+
+> 명령어 사용 시 주의사항
+
+1. 패지키 명을 포함한 전체 클래스 명 기입
+
+2. 순서와 타입이 일치하는 생성자 필요
+
+```java
+public class UserDTO {
+
+    private String username;
+
+    private int age;
+
+    public UserDTO(String username, int age) {
+
+        this.username = username;
+
+        this.age = age;
+
+    }
+
+    //...
+
+}
+
+TypeQuery<UserDTO> query =
+
+    em.createQuery("SELECT new test.jpql.UserDTO(m.username, m.age)    
+
+                    FROM Member m", UserDTO.class);
+
+List<UserDTO> resultList = query.getResultList();
+
+```
+
+### 페이징 API
+
+- setFirstResult (int startPosition) : 조회 시작 위치(zero base)
+- setMaxResults (int maxResult) : 조회할 데이터 수
+- 데이터 방언(Dialect) 덕분에 DB마다 다른 페이징 처리를 같은 API로 처리
+
 
 
 
