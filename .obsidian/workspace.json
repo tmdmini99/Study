@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-15.md",
+                "file": "daily note/2024-01-16.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-15.md",
+                "file": "daily note/2024-01-16.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-15.md"
+                "file": "daily note/2024-01-16.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-15.md",
+                "file": "daily note/2024-01-16.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,13 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
+    "daily note/2024-01-15.md",
+    "daily note/2024-01-16.md",
     "daily note/2024-01-12.md",
     "daily note/2024-01-10.md",
     "daily note/2024-01-08.md",
     "daily note/2024-01-03.md",
     "daily note/2024-01-02.md",
-    "daily note/2024-01-15.md",
     "Spaces/Home/Crawler/JSOUP.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
@@ -211,7 +212,6 @@
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Spring/Spring Framework.md",
-    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
     "Spaces/Home/Spring/Spring Legacy/JPA",
