@@ -81,11 +81,11 @@ Document doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
 
 **2.1. 먼저 필요한 요소를 찾습니다.**
 
-*** getElementById(String id)** : Element 객체를 반환합니다. 하나를 반환합니다. 없으면 null 을 반환합니다.
+* **getElementById(String id)** : Element 객체를 반환합니다. 하나를 반환합니다. 없으면 null 을 반환합니다.
 
-*** getElementsByTag(String tag)** : Elements 객체를 반환합니다. 없으면 size() 가 0 입니다.
+* **getElementsByTag(String tag)** : Elements 객체를 반환합니다. 없으면 size() 가 0 입니다.
 
-*** getElementsByClass(String className)** : Elements 객체를 반환합니다. 없으면 size() 가 0 입니다.
+* **getElementsByClass(String className)** : Elements 객체를 반환합니다. 없으면 size() 가 0 입니다.
 
 이 이외에도 많은 메소드들이 있습니다. API를 참조 하세요.
 
@@ -97,9 +97,9 @@ Elements 객체로 반환하는 것은 선택이 되었는지 확인하기 위�
 
 * **id(), className()** 은 id와 class속성의 값을 가져옵니다. class는 여러개 지정되면 하나의 문자열로 반환됩니다.  예로 요소가 **\<div class="center red">** 라면 **className()** 은 **"center red"** 를 반환합니다. 하나씩 구하기 위해서는 **classNames()** 메소드를 사용합니다. **Set\<String>** 타입으로 반환합니다.
 
-* **text()**로 순수 텍스트만 구합니다. **text(String value)**로 요소의 텍스트를 설정할 수 있습니다.
+* **text()** 로 순수 텍스트만 구합니다. **text(String value)** 로 요소의 텍스트를 설정할 수 있습니다.
 
-* **html()**로 html 문자열을 구합니다. **html(String value)** 메소드로 **inner HTML** 을 설정합니다.
+* **html()** 로 html 문자열을 구합니다.  **html(String value)**  메소드로 **inner HTML** 을 설정합니다.
 
 * **outerHtml()** 요소의 outer html을 반환합니다.
 
