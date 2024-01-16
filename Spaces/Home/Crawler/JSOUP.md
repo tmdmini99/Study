@@ -150,15 +150,15 @@ for(Element table : tables) {
 
 jsoup은 CSS 스타일의 선택 기능을 제공합니다. 이 기능을 Document, Elements, Element가 가지고 있는 **select**메소드를 수행합니다.
 
-*** doc.select("a")** : \<a> 요소를 모두 선택합니다.
+*  **doc.select("a")** : \<a> 요소를 모두 선택합니다.
 
-*** doc.select("#logo")** : id="logo" 인 요소를 선택합니다.
+* **doc.select("#logo")** : id="logo" 인 요소를 선택합니다.
 
-*** doc.select(".head")** : class="head"인 요소들을 선택합니다.
+* **doc.select(".head")** : class="head"인 요소들을 선택합니다.
 
-*** doc.select("[href]")** : href 속성을 가진 요소들을 선택합니다.
+* **doc.select("[href]")** : href 속성을 가진 요소들을 선택합니다.
 
-*** doc.select("[width=500]")** : width 속성의 값이 500인 모든 요소들을 선택합니다.
+* **doc.select("[width=500]")** : width 속성의 값이 500인 모든 요소들을 선택합니다.
 
 다음 처럼도 사용할 수 있습니다.
 
