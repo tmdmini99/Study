@@ -2421,3 +2421,12 @@ public class OpenApiJpaEntity {
 참조 - https://jddng.tistory.com/334
 
 https://data-make.tistory.com/614
+
+
+https://velog.io/@youngerjesus/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%98%95%EC%A0%9C%EB%93%A4%EC%9D%98-Querydsl-%ED%99%9C%EC%9A%A9%EB%B2%95
+
+
+https://jjunn93.com/entry/JPA-entity-DTO-%EB%B3%80%ED%99%98
+
+
+https://congsong.tistory.com/51
