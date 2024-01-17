@@ -2414,6 +2414,9 @@ public class OpenApiJpaEntity {
 
 
 
+
+
+
 --- 
 참조 - https://jddng.tistory.com/334
 
