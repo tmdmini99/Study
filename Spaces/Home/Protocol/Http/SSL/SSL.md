@@ -44,6 +44,14 @@ SSL 인증서는 클라이언트와 서버간의 통신을 제3자가 보증해�
 ![[SSL4.png]]
 
 
+
+
+![[SSL20.png]]
+
+
+
+
+
 **SSL과 SSL 디지털 인증서를 이용했을 때의 이점은 아래와 같습니다.**
 
  - 통신 내용이 공격자에게 노출되는 것을 막을 수 있습니다.
@@ -329,3 +337,4 @@ https://qor3326.tistory.com/17
 
 
 https://jake-seo-dev.tistory.com/85
+https://hudi.blog/https/
