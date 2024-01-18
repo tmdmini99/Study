@@ -261,7 +261,7 @@ Content-Type: text/html;
 
 
 ---
-![[HTTP9.png]]
+![[Images/HTTP/HTTP9.png]]
 
 
 HTTP 메시지의 요청과 응답은 유사한 구조를 가진다.
