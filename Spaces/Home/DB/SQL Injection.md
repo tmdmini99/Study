@@ -146,7 +146,7 @@ uId = '값' OR 1=1 -- 이렇게 바뀌게 된다
     }
     ```
 
-setString을 사용할시   uId = 'OR 1=1 --' 이렇게 되므로 안전하
+setString을 사용할시   uId = 'OR 1=1 --' 이렇게 되므로 안전함
 
 
 ### Error Message 노출 금지

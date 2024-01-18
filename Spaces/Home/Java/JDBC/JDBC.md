@@ -128,6 +128,10 @@ JDBC API의 구성 요소들의 동작 흐름은 다음과 같다.
 
 ### **커넥션 풀(Connection Pool)**
 
+웹 컨테이너(WAS)가 실행되면서 `DB와 미리 connection(연결)`을 해놓은 객체들을 `pool`에 저장해두었다가,
+
+클라이언트 요청이 오면 connection을 빌려주고, 처리가 끝나면 `실행된 상태로` 다시 connection을 반납받아 pool에 저장하는 방식을 말한다.
+
 JDBC API를 사용하여 데이터베이스와 연결하기 위해 Connection 객체를 생성하는 작업은 비용이 많이 드는 작업 중 하나이다.
 
 # 3. 커넥션 풀(DBCP) 특징
