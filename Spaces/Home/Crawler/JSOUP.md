@@ -16,7 +16,7 @@ Java html parser 로 html 형식의 string 을 java 에 넘겨주면 java에서 
 
 **1.1. 문서전체를 가지고 있는 문자열로부터 파싱하는 예입니다.**
 
-```
+```java
 import org.jsoup.Jsoup; import org.jsoup.nodes.Document;
 ... 
 String html = "<title>First parse</title>"
@@ -28,7 +28,7 @@ Document doc = Jsoup.parse(html);
 
 **1.2. 문서의 body 일부분을 가지고 있는 문자열로부터 파싱합니다.**
 
-```
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -48,14 +48,14 @@ Element body = doc.body();
 
 **1.3.  URL로부터 문서를 파싱하는 방법 입니다. GET 방식의 호출을 합니다.**
 
-```
+```java
 Document doc = Jsoup.connect("http://example.com/").get();
 String title = doc.title();
 ```
 
 POST 방식으로 사용할  수도 있습니다.
 
-```
+```java
 Document doc = Jsoup.connect("http://example.com")
                     .data("query", "Java")
                     .userAgent("Mozilla")
@@ -68,7 +68,7 @@ Document doc = Jsoup.connect("http://example.com")
 
 **1.4. 파일로부터 파싱하는 방법 입니다.**
 
-```
+```java
 File input = new File("/tmp/input.html");
 Document doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
 ```
@@ -107,7 +107,7 @@ Elements 객체로 반환하는 것은 선택이 되었는지 확인하기 위�
 
 **※ 문서내의 모든 <img> 태그들중 첫 번째  img 요소의 src 속성 값을 구하려면 다음과 같이 할 수 있습니다 .**
 
-```
+```java
 Elements imgs = doc.getElementByTag("img");
 if(imgs.size() > 0) {
     String src = imgs.get(0).attr("src');
@@ -118,7 +118,7 @@ Elements 객체는 ArrayList를 상속해서 만들어졌습니다. 그러므로
 
 다음 처럼 사용할 수도 있습니다.
 
-```
+```java
 Element img = doc.getElementByTag("img").first();
 if(img != null) {
     String src = img.attr("src");
@@ -139,7 +139,7 @@ if(img != null) {
 
 - 모든 \<table> 요소를 삭제하는 예제
 
-```
+```java
 Elements tables = doc.select("table");
 for(Element table : tables) {
     table.remove(); 
