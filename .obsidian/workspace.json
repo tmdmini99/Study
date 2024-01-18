@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +189,17 @@
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
     "Images/SSL20.png",
+    "Images/HTTP9.png",
+    "Images/EL1.jpg",
+    "Images/DI1.jpg",
+    "Images/Crawler3.png",
+    "Images/Crawler2.png",
+    "Images/Annotation1.png",
+    "Images/Annotation2.png",
+    "Images/Beans.png",
+    "Images/Web&WAS/Web1.png",
+    "Images/SSL적용1.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Images/SSL4.png",
     "daily note/2024-01-18.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Crawler/Crawler.md",
@@ -207,7 +216,6 @@
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
-    "Images/HTTP9.png",
     "Spaces/Home/Protocol/Http/Http.md",
     "daily note/2024-01-17.md",
     "Spaces/Home/Java/Exception/Exception.md",
@@ -216,13 +224,6 @@
     "daily note/2024-01-12.md",
     "daily note/2024-01-10.md",
     "daily note/2024-01-08.md",
-    "Images/WAS1.webp",
-    "Images/Pasted image 20240115150359.png",
-    "Images/WAS5.png",
-    "Images/WAS4.png",
-    "Images/WAS3.png",
-    "Images/Web2.svg",
-    "Images/Spring1.png",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",

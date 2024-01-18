@@ -148,3 +148,5 @@ https://www.ascentkorea.com/difference-between-http-and-https/
 https://rachel-kwak.github.io/2021/03/08/HTTPS.html
 
 https://blog.naver.com/chodahi/221406287669
+
+https://hudi.blog/https/
