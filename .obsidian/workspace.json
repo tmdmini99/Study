@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Web & WAS/WAS.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Web & WAS/WAS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md"
+                "file": "Spaces/Home/Web & WAS/WAS.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+                "file": "Spaces/Home/Web & WAS/WAS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,6 +188,9 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
+    "Spaces/Home/Web & WAS/Web.md",
+    "Spaces/Home/Web & WAS/WAS.md",
+    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Images/SSL20.png",
     "Images/HTTP9.png",
     "Images/EL1.jpg",
@@ -198,10 +201,8 @@
     "Images/Annotation2.png",
     "Images/Beans.png",
     "Images/Web&WAS/Web1.png",
-    "Images/SSL적용1.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "daily note/2024-01-18.md",
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Crawler/JSOUP.md",
     "Spaces/Home/Java/JDBC/JDBC.md",
@@ -223,7 +224,6 @@
     "daily note/2024-01-15.md",
     "daily note/2024-01-12.md",
     "daily note/2024-01-10.md",
-    "daily note/2024-01-08.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
