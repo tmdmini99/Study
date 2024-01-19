@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md",
+                "file": "daily note/2024-01-19.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md",
+                "file": "daily note/2024-01-19.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md"
+                "file": "daily note/2024-01-19.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md",
+                "file": "daily note/2024-01-19.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,6 +188,9 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
+    "daily note/2024-01-18.md",
+    "daily note/2024-01-19.md",
+    "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/Web & WAS/WAS.md",
     "Spaces/Home/Web & WAS/Web.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
@@ -202,11 +205,9 @@
     "Images/Beans.png",
     "Images/Web&WAS/Web1.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "daily note/2024-01-18.md",
     "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Crawler/JSOUP.md",
     "Spaces/Home/Java/JDBC/JDBC.md",
-    "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/MVC/MVC.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
@@ -223,7 +224,6 @@
     "daily note/2024-01-16.md",
     "daily note/2024-01-15.md",
     "daily note/2024-01-12.md",
-    "daily note/2024-01-10.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
