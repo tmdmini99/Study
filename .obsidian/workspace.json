@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-19.md",
+                "file": "daily note/2024-01-22.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-19.md",
+                "file": "daily note/2024-01-22.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-19.md"
+                "file": "daily note/2024-01-22.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-19.md",
+                "file": "daily note/2024-01-22.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,8 +188,9 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "daily note/2024-01-18.md",
     "daily note/2024-01-19.md",
+    "daily note/2024-01-22.md",
+    "daily note/2024-01-18.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/Web & WAS/WAS.md",
     "Spaces/Home/Web & WAS/Web.md",
@@ -223,7 +224,6 @@
     "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2024-01-16.md",
     "daily note/2024-01-15.md",
-    "daily note/2024-01-12.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
