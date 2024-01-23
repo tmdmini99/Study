@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose.md",
+                "file": "daily note/2024-01-23.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose.md",
+                "file": "daily note/2024-01-23.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose.md"
+                "file": "daily note/2024-01-23.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose.md",
+                "file": "daily note/2024-01-23.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,8 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose.md",
+    "Spaces/Home/Docker/Docker.md",
     "Images/Docker10.png",
     "Images/Docker9.png",
     "Images/Docker8.png",
