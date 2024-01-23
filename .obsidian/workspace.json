@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker.md"
+                "file": "Spaces/Home/DB/정규화&반정규화.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,21 +175,21 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "Images/Docker1.png",
-    "Spaces/Home/Docker.md",
+    "Spaces/Home/DB/분산 데이터베이스.md",
+    "Spaces/Home/DB/이상현상(Anomaly).md",
     "Spaces/Home/DB/정규화&반정규화.md",
     "Spaces/Home/DB/파티셔닝.md",
+    "Spaces/Home/Docker.md",
+    "Images/Docker3.png",
+    "Images/Docker2.png",
+    "Images/Docker1.png",
     "Images/파티셔닝3.jpg",
     "Images/img1.daumcdn.webp",
     "Images/파티셔닝2.jpg",
     "Images/파티셔닝1.jpg",
-    "Spaces/Home/DB/분산 데이터베이스.md",
     "Images/분산데이터베이스18.png",
     "Images/분산데이터베이스17.png",
     "Images/분산데이터베이스16.png",
-    "Images/분산데이터베이스15.png",
-    "Images/분산데이터베이스14.png",
-    "Spaces/Home/DB/이상현상(Anomaly).md",
     "Images/정규화&반정규화",
     "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2024-01-23.md",
