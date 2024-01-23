@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-22.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-22.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-22.md"
+                "file": "Spaces/Home/DB/정규화&반정규화.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-22.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,8 +188,15 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "daily note/2024-01-19.md",
+    "Images/슈퍼타입 및 서브 타입 변환방법.png",
+    "Spaces/Home/DB/정규화&반정규화.md",
+    "Images/반정규화.png",
+    "Images/정규화.png",
+    "Images/정규화&반정규화",
+    "Spaces/Home/Java/Exception/Exception.md",
+    "daily note/2024-01-23.md",
     "daily note/2024-01-22.md",
+    "daily note/2024-01-19.md",
     "daily note/2024-01-18.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/Web & WAS/WAS.md",
@@ -202,9 +209,6 @@
     "Images/Crawler3.png",
     "Images/Crawler2.png",
     "Images/Annotation1.png",
-    "Images/Annotation2.png",
-    "Images/Beans.png",
-    "Images/Web&WAS/Web1.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Crawler/JSOUP.md",
@@ -220,10 +224,6 @@
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Protocol/Http/Http.md",
-    "daily note/2024-01-17.md",
-    "Spaces/Home/Java/Exception/Exception.md",
-    "daily note/2024-01-16.md",
-    "daily note/2024-01-15.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
@@ -233,7 +233,6 @@
     "Spaces/Home/Java/Anntoation",
     "Spaces/Home/Spring/Dependency Injection",
     "Images/Web&WAS",
-    "Images/WAS",
     "무제 파일.canvas"
   ]
 }
