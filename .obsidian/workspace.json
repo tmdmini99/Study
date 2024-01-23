@@ -13,14 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md",
+                "file": "Spaces/Home/DB/파티셔닝.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "1ca066d978e2b883",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/img1.daumcdn.webp"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md",
+                "file": "Images/img1.daumcdn.webp",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md"
+                "file": "Images/img1.daumcdn.webp"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md",
+                "file": "Images/img1.daumcdn.webp",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +184,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "96b7c24708928ecf",
+  "active": "1ca066d978e2b883",
   "lastOpenFiles": [
+    "Spaces/Home/DB/파티셔닝.md",
+    "Images/img1.daumcdn.webp",
+    "Spaces/Home/DB/정규화&반정규화.md",
     "Spaces/Home/DB/분산 데이터베이스.md",
     "Images/분산데이터베이스18.png",
     "Images/분산데이터베이스17.png",
@@ -185,8 +199,6 @@
     "Images/분산데이터베이스12.png",
     "Images/분산데이터베이스11.png",
     "Images/분산데이터베이스10.png",
-    "Images/분산데이터베이스9.png",
-    "Spaces/Home/DB/정규화&반정규화.md",
     "Spaces/Home/DB/이상현상(Anomaly).md",
     "Images/정규화&반정규화",
     "Spaces/Home/Java/Exception/Exception.md",
@@ -210,7 +222,6 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
