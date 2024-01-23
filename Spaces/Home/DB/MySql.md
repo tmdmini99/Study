@@ -41,7 +41,7 @@ hash 코드 사용해서 값 랜덤으로 넣을수 있음
 
 ```
 
-
+https://namkisec.tistory.com/entry/mysql-Hash-%EC%82%AC%EC%9A%A9%EA%B8%B0sha
 
 
 ## 문자형 데이터타입 
