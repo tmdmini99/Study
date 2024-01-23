@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md",
+                "file": "Spaces/Home/DB/이상현상(Anomaly).md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md",
+                "file": "Spaces/Home/DB/이상현상(Anomaly).md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md"
+                "file": "Spaces/Home/DB/이상현상(Anomaly).md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/정규화&반정규화.md",
+                "file": "Spaces/Home/DB/이상현상(Anomaly).md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,17 +175,18 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "Images/제2정규화4.png",
+    "Images/삽입이상.png",
+    "Spaces/Home/DB/이상현상(Anomaly).md",
+    "Images/이상현상1.png",
     "Spaces/Home/DB/정규화&반정규화.md",
+    "Images/BCNF정규화2.png",
+    "Images/BCNF정규화1.png",
+    "Images/제3정규화4.png",
+    "Images/제3정규화3.png",
+    "Images/제3정규화2.png",
+    "Images/제3정규화1.png",
+    "Images/제2정규화4.png",
     "Images/제2정규화3.png",
-    "Images/제2정규화2.png",
-    "Images/제2정규화1.png",
-    "Images/제1정규화4.png",
-    "Images/제1정규화3.png",
-    "Images/정규화1.png",
-    "Images/정규화2.png",
-    "Images/제1정규화2.png",
-    "Images/제1정규화1.png",
     "Images/정규화&반정규화",
     "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2024-01-23.md",
@@ -210,7 +211,6 @@
     "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
-    "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
