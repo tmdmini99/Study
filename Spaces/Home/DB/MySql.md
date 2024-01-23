@@ -36,6 +36,11 @@ VALUES (VALUE1, VALUE2, ...)
 INSERT INTO 구문에 IGNORE을 추가해주면 된다.
 
 
+hash 코드 사용해서 값 랜덤으로 넣을수 있음
+```
+
+```
+
 
 
 
