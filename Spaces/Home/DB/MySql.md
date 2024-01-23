@@ -20,6 +20,21 @@ SELECT ROW_NUMBER() OVER (ORDER BY SIGUN_NM ASC) AS NUM, op.*
 ```
 
 
+```SQL
+INSERT IGNORE INTO [TABLE] (COLUMN1, COLUMN2, ...)  
+VALUES (VALUE1, VALUE2, ...)
+
+```
+이터가 이미 있으면 따로 후속처리없이
+
+  
+
+그냥 아무행위도 안하고 나머지 데이터들만 INSERT를 진행하고자할 때
+
+  
+
+INSERT INTO 구문에 IGNORE을 추가해주면 된다.
+
 
 
 
