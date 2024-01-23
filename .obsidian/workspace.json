@@ -19,19 +19,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "09f1d55123647528",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily note/2024-01-18.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
           }
         ]
       }
@@ -188,10 +175,17 @@
   },
   "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "Images/슈퍼타입 및 서브 타입 변환방법.png",
+    "Images/제2정규화4.png",
     "Spaces/Home/DB/정규화&반정규화.md",
-    "Images/반정규화.png",
-    "Images/정규화.png",
+    "Images/제2정규화3.png",
+    "Images/제2정규화2.png",
+    "Images/제2정규화1.png",
+    "Images/제1정규화4.png",
+    "Images/제1정규화3.png",
+    "Images/정규화1.png",
+    "Images/정규화2.png",
+    "Images/제1정규화2.png",
+    "Images/제1정규화1.png",
     "Images/정규화&반정규화",
     "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2024-01-23.md",
@@ -202,13 +196,6 @@
     "Spaces/Home/Web & WAS/WAS.md",
     "Spaces/Home/Web & WAS/Web.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "Images/SSL20.png",
-    "Images/HTTP9.png",
-    "Images/EL1.jpg",
-    "Images/DI1.jpg",
-    "Images/Crawler3.png",
-    "Images/Crawler2.png",
-    "Images/Annotation1.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Crawler/JSOUP.md",
