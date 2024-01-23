@@ -350,7 +350,7 @@ LXC는 **리눅스에 특화되어 있는데**, Docker가 Multi-Platform을 목
 - windows container가 windows에서 생성되는 과정이나, docker 자체 기술이나, 현재 진행형으로 새로 개발되는 것들이 있는 것 같다.
 
 
-### [도커 동작원리](https://csj000714.tistory.com/641#---%--%EB%-F%--%EC%BB%A-%--%EB%-F%--%EC%-E%--%EC%-B%--%EB%A-%AC)
+### 도커 동작원리
 
 도커 컨테이너는 호스트 OS 의 커널을 공유한다. 각 컨테이너에 리눅스 커널을 할당하여 프로세스를 실행시키고 각 컨테이너 간의 격리를 구현한다. 이때 리눅스 커널의 Cgroup 과 네임스페이스 기능을 이용하여 독립된 공간을 구현하도록 한다. 이를 통해서 서로 다른 프로세스, 컨테이너 사이에 벽을 만든다.  
   
@@ -358,7 +358,7 @@ LXC는 **리눅스에 특화되어 있는데**, Docker가 Multi-Platform을 목
   
 도커는 도커 엔진을 통해서 실행되고 관리된다. 도커는 리눅스 커널을 사용하기 때문에 호스트 시스템이 리눅스거나 리눅스 커널을 사용할 수 있는 OS 여야 한다. 도커 엔진은 또 하나의 VM 으로 리눅스를 게스트 OS 로 가지고 있다. 이 게스트 OS 인 리눅스의 커널을 컨테이너에 할당하여서 컨테이너가 실행되고, 이 커널을 통해서 각 컨테이너들이 격리된다. 그렇기 떄문에 호스트 OS 가 리눅스가 아니어도 도커를 사용할 수 있다.
 
-### [3.2 도커 엔진(Docker Engine)](https://csj000714.tistory.com/641#---%--%EB%-F%--%EC%BB%A-%--%EC%--%--%EC%A-%---Docker%--Engine-)
+### 3.2 도커 엔진(Docker Engine)
 
 이제 도커 컨테이너를 구축하고 실행하는 핵심 SW인 도커 엔진에 대해 이해해보도록 하겠습니다.
 
@@ -366,7 +366,69 @@ LXC는 **리눅스에 특화되어 있는데**, Docker가 Multi-Platform을 목
 ![[Docker10.png]]
 
 
+Docker Engine은 Docker Daemon, REST API, API를 통해 도커 데몬과 통신하는 CLI로 모듈식으로 구성되어 있습니다. 개발자들이 Docker라고 할 때, 주로 Docker engine을 의미합니다.
 
+위 그림을 통해 구조를 살펴봅시다. 컨테이너를 빌드, 실행, 배포하는 등의 무거운 작업은 Docker Daemon이 하며, Docker Client는 이러한 로컬 혹은 원격의 Docker Daemon과 통신합니다. 통신을 할 때에는 UNIX socket(/var/run/docker.sock) 또는 네트워크 인터페이스를 통한 REST API를 사용합니다.
+
+#### docker client (= Docker CLI): docker cli 명령을 dockerd에 요청
+
+**docker cli 등에 입력한 명령어(e.g. docker run)를 적절한** **REST API payload로 변환해서 dockerd에 post 요청(e.g. POST /containers/create HTTP/1.1)**하게 됩니다. 또한 Docker Client는 다수의 데몬과 통신할 수도 있습니다.
+
+이 때 **/var/run/docker.sock에 있는 유닉스 소켓을 통해 도커 데몬의 API를 호출**하게 되는데, 이 도커 데몬과 통신하기 위한 소켓에 연결할 수 없을 경우 'Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?'과 같은 에러가 발생하곤 합니다.
+
+- Linux에서 socket은 /var/run/docker.sock 이고, Windows에서는 \pipe\docker_engine 입니다.
+
+#### dockerd (docker deamon): 도커 서비스 관리
+도커 데몬은 **Docker API 요청을 수신**하고, **다른 데몬과 통신하여 도커 서비스를 관리**할 수도 있습니다. dockerd의 역할로는 **도커 이미지의 관리, 이미지 빌드, REST API, 인증, 보안, 코어 네트워킹, 오케스트레이션 등 다양한 작업을 수행**합니다. 
+
+또한 logging drivers, volume 및 volume drivers, network를 설정하는 등 컨테이너에 필요한 대부분의 설정을 지정합니다.
+
+추가로 도커 프로젝트가 커지면서 이 dockerd는 더이상 직접 컨테이너를 실행시키지 않으며, **컨테이너의 실행과 런타임 코드를 모듈화하여 분리(containerd)**하였습니다. 대신에 만약 dockerd가 client로부터 ‘새로운 container를 생성하라’는 명령을 수신하면 containerd를 호출합니다. 이때, **dockerd는 CRUD 스타일 API를 통해 gRPC로 containerd와 통신**합니다.
+
+#### containerd
+
+현재는 docker에서 분리되어 오픈소스로 운영되고 있는 컨테이너 런타임 코드입니다. containerd는 실제로 containers를 생성하지 못하고 runc를 통해 생성하지만, Docker 이미지를 가져와서 컨테이너 구성을 적용하여 runc가 실행할 수 있는 OCI 번들로 변환합니다. containerd가 실질적으로 컨테이너를 관장하게 되는데, 쿠버네티스에서 만든 Container Runtime Interface(CRI)를 구현합니다. 여기서 컨테이너의 생명 주기를 관장하는데, 이 때 runC를 사용합니다.
+
+원래 containerd는 작고 가벼운 Container lifecycle operations으로 설계되었는데, 시간이 지나면서 image pulls, volumes and networks와 같은 기능들이 확장되었습니다.
+
+- [github] containerd: [https://github.com/containerd](https://github.com/containerd)
+
+#### # High-Level Runtime
+
+containerd는 High-Level Runtime이며, High-Level Runtime은 보통 이미지 관리, gRPC/Web API와 같이 컨테이너를 관리하는 것 이상의 높은 수준의 기능을 지원하는 런타임을 의미합니다. "high-level container tools", "high-level container runtimes" 으로 부르거나, 가끔은 그냥 "container runtimes”이라고도 부릅니다. 대조적으로, Low-Level Runtime에는 다음으로 볼 runC가 있습니다. 
+
+Docker Client로부터 Container 관련 요청은 dockerd를 거쳐 gRPC 통신을 통해 containerd 로 전달됩니다. 그리고 나서, containerd는 컨테이너의 관리를 위해 runc를 사용하는데요. 그럼, runc가 무엇인지 알아볼게요. 
+
+#### runC: Container 생성
+
+**runC는 *libcontainer용 CLI Wrapper로, 독립된 container runtime입니다. Docker에서 runc는 목적은 단 하나인데요, 바로 Container 생성입니다.  
+*** libcontainer : Docker사가 multi-platform 서비스를 만들기 위해 go 언어로 작성된 패키지.
+
+docker에서 컨테이너 기술을 개발하게 되면서 **리눅스의 namespace, control group들과 같은 기술들을 많이 사용**하게 되었는데, OS 커널에 접속해서 컨테이너를 만드는 데 필요한 구성 요소(네임스페이스, cgroup 등)을 **하나의 low-level component**로 묶고 **runC**라고 이름붙였다고 합니다. 따라서 **이는** **실제로 컨테이너를 만드는 기술들의 집합으로 runc로 새로운 container를 생성합니다.**
+
+현재는 오픈소스로 기부되어 하나의 standalone 프로젝트로서 **플랫폼에 관계 없이 container를 구현하는 기술**들을 가지고 있습니다.
+
+- [github] opencontainers/runC: [https://github.com/opencontainers/runc](https://github.com/opencontainers/runc)
+
+#### # OCI(Open Container Initiative)
+
+runC는 OCI container-runtime-spec의 구현체입니다. OCI는 kernel의 container 관련 기술을 다루는 interface를 표준화시킨 기준입니다. 그래서 runc가 동작하는 계층을 OCI Layer라고 부르기도 합니다.
+
+#### # Low-Level Runtimes
+
+Low-Level Runtimes는 보통 컨테이너를 운영하는 것에 초점을 맞춘 실제 컨테이너 런타임을 의미합니다.
+
+runC는 독립된 컨테이너 런타임이기 때문에 바이너리로 다운받고 빌드할 수 있습니다. runC(OCI) container를 빌드하고 실행시키는데 모든 것을 갖출 수 있다는 의미입니다.
+
+하지만 이것은 골격(bare bones)일 뿐이며 매우 낮은 레벨(low-level)입니다.즉, 완전한 Docker 엔진의 특성(full-blown)을 가질 수는 없습니다. 
+
+#### 3.2.5 containerd-shim: 생성된 컨테이너의 생명주기 관여
+컨테이너 프로세스는 runc의 하위 프로세스로 시작되는데(생성되는 모든 container 당 runc의 새로운 인스턴스를 fork ), 컨테이너 프로세스가 실행하자마자 runc가 종료(exit)됩니다. 이 시점부터 **containered-shim이 컨테이너의 새로운 부모 프로세스가 되어 생성된 컨테이너의 생명주기에 관여**하게 됩니다. 이는 containerd에게 컨테이너의 ***file descriptor(e.g. stdin/out)**와 **종료 상태를 관리**하는 데 필요한 최소한의 코드를 메모리에 남깁니다.
+
+* **file descriptor**
+
+- 프로세스에서 열린 파일의 목록을 관리하는 파일 테이블의 인덱스입니다. 프로그램이 프로세스로 메모리에서 실행될 때, 기본적으로 할당되는 파일디스크립터는 표준입력(Standard Input), 표준 출력(Standard Output), 표준에러(Standard Error)이며 이들에게 각각 0, 1, 2라는 정수(file table의 인덱스)가 할당됩니다.
+- daemon이 재시작될 때, 파이프가 닫히는 등의 이유 때문에 container가 종료되지 않도록 **STDIN과 STDOUT 스트림을 열린 상태로 유지**합니다
 
 
 
