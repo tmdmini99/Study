@@ -13,25 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/파티셔닝.md",
+                "file": "Spaces/Home/Docker.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
-          },
-          {
-            "id": "1ca066d978e2b883",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/img1.daumcdn.webp"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/img1.daumcdn.webp",
+                "file": "Spaces/Home/Docker.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/img1.daumcdn.webp"
+                "file": "Spaces/Home/Docker.md"
               }
             }
           },
@@ -143,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/img1.daumcdn.webp",
+                "file": "Spaces/Home/Docker.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,21 +173,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ca066d978e2b883",
+  "active": "96b7c24708928ecf",
   "lastOpenFiles": [
-    "Spaces/Home/DB/파티셔닝.md",
-    "Images/img1.daumcdn.webp",
+    "Images/Docker1.png",
+    "Spaces/Home/Docker.md",
     "Spaces/Home/DB/정규화&반정규화.md",
+    "Spaces/Home/DB/파티셔닝.md",
+    "Images/파티셔닝3.jpg",
+    "Images/img1.daumcdn.webp",
+    "Images/파티셔닝2.jpg",
+    "Images/파티셔닝1.jpg",
     "Spaces/Home/DB/분산 데이터베이스.md",
     "Images/분산데이터베이스18.png",
     "Images/분산데이터베이스17.png",
     "Images/분산데이터베이스16.png",
     "Images/분산데이터베이스15.png",
     "Images/분산데이터베이스14.png",
-    "Images/분산데이터베이스13.png",
-    "Images/분산데이터베이스12.png",
-    "Images/분산데이터베이스11.png",
-    "Images/분산데이터베이스10.png",
     "Spaces/Home/DB/이상현상(Anomaly).md",
     "Images/정규화&반정규화",
     "Spaces/Home/Java/Exception/Exception.md",
@@ -221,7 +211,6 @@
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
-    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
