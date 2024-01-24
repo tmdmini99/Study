@@ -251,7 +251,7 @@ docker-compose의 volume을 사용하면, 여러 개의 컨테이너에 같은 �
 - external
     - external 옵션을 사용하면 이미 생성된 Volume을 참조할 수 있습니다. 이 옵션을 사용하면 docker-compose up 명령을 실행할 때 Volume을 새로 생성하지 않고 기존 Volume을 사용합니다.
 
-```
+```yml
 version: '3.9'
 services:
   web:
@@ -279,7 +279,7 @@ volumes:
 환경 변수는 컨테이너 내부에서 실행되는 애플리케이션에서 사용할 수 있는 변수로, 컨테이너의 동작을 조정하는 데 중요한 역할
 
 
-```
+```yml
 version: '3'
 services:
   web:
@@ -299,11 +299,109 @@ services:
       - MYSQL_PASSWORD=password
 ```
 
+### Configuration
+
+ "configuration" 옵션은 Docker 스웜을 사용할 때 스웜 서비스에 대한 구성을 지정하는 데 사용됩니다.
+
+"configuration" 옵션을 사용하면 Docker Compose 파일 내에서 서비스와 관련된 설정을 중앙 집중적으로 관리할 수 있습니다.
+
+음 많이 쓰는 것은 나는 아직까지는 못 봤다.
+
+### Deployments 
+
+애플리케이션 모델의 배포를 지원하는 Compose 구현에는 Compose 애플리케이션 모델이 서비스당 실제 인프라 요구 사항 또는 수명 주기 제약 조건을 반영하기에는 너무 추상적이기 때문에 일부 추가 메타데이터가 필요할 수 있습니다(MAY).
+
+Compose 사양 배포를 통해 사용자는 서비스에 대한 추가 메타데이터를 선언할 수 있으므로 Compose 구현은 관련 데이터를 가져와 플랫폼에 적절한 리소스를 할당하고 사용자의 요구에 맞게 구성할 수 있습니다.
+
+- replicas: 서비스 인스턴스의 수를 지정합니다.
+- placement: 서비스 인스턴스를 배치할 노드를 선택하는 규칙을 지정합니다.
+- update_config: 서비스 업데이트를 제어하는 옵션을 지정합니다.
+- resources: 서비스 인스턴스가 사용할 CPU 및 메모리 등의 자원을 지정합니다.
+- networks: 서비스가 연결할 네트워크를 지정합니다.
+
+```yml
+version: '3.7'
+
+services:
+  web:
+    image: nginx:latest
+    deploy:
+      replicas: 3
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        parallelism: 2
+        delay: 10s
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+      networks:
+        - frontend
+        - backend
+
+networks:
+  frontend:
+  backend:
+```
+
+위의 예시는 다음과 같다고 한다.
+
+위의 예시에서는 "web" 서비스를 배포할 때, "deploy" 옵션을 사용하여 다양한 설정을 지정하고 있습니다. 
+
+예를 들어, "replicas" 옵션을 사용하여 3개의 서비스 인스턴스를 생성하고, "placement" 옵션을 사용하여 매니저 노드에서만 서비스 인스턴스를 배치하도록 지정하고 있습니다.
+
+또한 "update_config" 옵션을 사용하여 서비스 업데이트를 제어하고, "resources" 옵션을 사용하여 서비스 인스턴스가 사용할 자원을 제한하고 있습니다. 마지막으로 "networks" 옵션을 사용하여 서비스가 연결할 네트워크를 지정하고 있습니다.
 
 
 
+```yml
+version: '3.9'
+services:
+  web:
+    build: ./presentation
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
+  app:
+    build: ./application
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=myapp
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=myapp
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root_password
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
+```
 
 
+위의 구성 파일은 3개의 서비스를 정의합니다.  
+  
+web: Nginx를 사용하여 Presentation Layer를 구성하는 서비스입니다../presentation 디렉터리에서 Dockerfile을 빌드하며, 호스트의 8080 포트를 컨테이너의 80 포트로 매핑합니다.  
+
+app: Flask를 사용하여 Application Layer를 구성하는 서비스입니다. ./application 디렉터리에서 Dockerfile을 빌드하며, 호스트의 5000 포트를 컨테이너의 5000 포트로 매핑합니다. db 서비스에 대한 의존성을 가지며, MySQL 데이터베이스 연결 정보를 환경 변수로 설정합니다.  
+
+db: MySQL을 사용하여 Data Layer를 구성하는 서비스입니다. mysql:5.7 이미지를 사용하며, 호스트의 3306 포트를 컨테이너의 3306 포트로 매핑합니다. MySQL 데이터베이스 및 사용자 정보를 환경 변수로 설정하며, 데이터베이스 파일을 볼륨으로 저장합니다.
+
+  
+이렇게 Docker Compose를 사용하여 3-Tier 아키텍처를 구성하면, 각각의 레이어를 독립적으로 구성할 수 있으며, 서로 다른 서버에서 실행될 때 발생할 수 있는 호환성 문제를 최소화할 수 있습니다. 또한, Docker Compose를 사용하여 레이어 간의 의존성 및 관계를 쉽게 관리할 수 있으며, 스케일링과 관리도 용이합니다.
 
 
 
