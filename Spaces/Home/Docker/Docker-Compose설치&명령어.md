@@ -4,12 +4,6 @@
 
 
 
-### ubuntu  설치
-
-microsoft store 접속후 ubuntu  검색 -> Ubuntu 설치
-![[Docker-Compose설치1.png]]
-
-
 
 PowerShell 관리자 권한으로 실행
 ![[Docker-Compose 설치2.png]]
@@ -35,6 +29,8 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nore
 [https://learn.microsoft.com/ko-kr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package](https://learn.microsoft.com/ko-kr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package) 
 
 접속 후 설치
+
+https://firework-ham.tistory.com/62
 
 
 
