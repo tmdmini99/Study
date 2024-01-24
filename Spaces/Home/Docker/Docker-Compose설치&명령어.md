@@ -34,6 +34,26 @@ https://firework-ham.tistory.com/62
 
 
 
+명령 프롬프트에서 
+
+
+1. Image 검색
+
+a. Web의 DockerHub에서 원하는 이미지 검색
+
+[https://www.docker.com/products/docker-hub/](https://www.docker.com/products/docker-hub/)
+
+
+b. CMD에서 명령어로 이미지 검색
+
+\# Docker search 검색어
+
+docker search mariadb
+![[Docker-Compose설치명령어3.png]]
+
+
+
+
 
 
 

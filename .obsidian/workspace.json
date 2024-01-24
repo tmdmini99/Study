@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -175,9 +176,10 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Images/Docker-Compose설치1.png",
-    "Images/Docker-Compose설치1.png",
+    "Images/Docker-Compose설치명령어3.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Images/Docker-Compose설치1.png",
+    "Images/Docker-Compose설치1.png",
     "Images/Docker-Compose 설치2.png",
     "Spaces/Home/DB/정규화&반정규화.md",
     "Images/파티셔닝/파티셔닝3.jpg",
@@ -186,7 +188,6 @@
     "Images/쿠버네티스/쿠버네티스4.png",
     "Images/쿠버네티스/쿠버네티스3.jpg",
     "Images/쿠버네티스/쿠버네티스2.png",
-    "Images/쿠버네티스/쿠버네티스1.png",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Images/EL",
