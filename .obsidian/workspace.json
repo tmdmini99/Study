@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/File/FIle.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/File/FIle.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/File/FIle.md"
+                "file": "Spaces/Home/DB/정규화&반정규화.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/File/FIle.md",
+                "file": "Spaces/Home/DB/정규화&반정규화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,7 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
+    "Spaces/Home/Java/File/FIle.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/DB/정규화&반정규화.md",
     "Spaces/Home/DB/파티셔닝.md",
