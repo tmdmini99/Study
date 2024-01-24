@@ -19,8 +19,32 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7d0a7f782790e234",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4a6c99927a5695d6",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Docker-Compose 설치.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -94,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Images/Docker-Compose 설치.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Images/Docker-Compose 설치.png"
               }
             }
           },
@@ -132,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Images/Docker-Compose 설치.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +197,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fb40450a24d4146d",
+  "active": "4a6c99927a5695d6",
   "lastOpenFiles": [
-    "Images/Docker-Compose설치1.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Images/Docker-Compose 설치.png",
+    "Images/Docker-Compose설치1.png",
     "Spaces/Home/DB/정규화&반정규화.md",
     "Images/파티셔닝/파티셔닝3.jpg",
     "Images/파티셔닝/파티셔닝2.jpg",
@@ -186,7 +211,6 @@
     "Images/쿠버네티스/쿠버네티스2.png",
     "Images/쿠버네티스/쿠버네티스1.png",
     "Images/정규화&반정규화/제3정규화4.png",
-    "Images/정규화&반정규화/제2정규화1.png",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Images/EL",

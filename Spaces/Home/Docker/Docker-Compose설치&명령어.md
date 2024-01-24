@@ -15,8 +15,24 @@ microsoft store 접속후 ubuntu  검색 -> Ubuntu 설치
 
 
 
+PowerShell 관리자 권한으로 실행
+![[Docker-Compose 설치.png]]
+
+그후 
+```PowerShell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+
+입력
 
 
+
+WSL2를 사용하고 싶으면
+
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+입력
 
 
 
