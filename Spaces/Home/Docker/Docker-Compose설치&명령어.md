@@ -36,6 +36,12 @@ https://firework-ham.tistory.com/62
 
 명령 프롬프트에서 
 
+버전 확인
+```
+docker -v
+```
+
+
 
 1. Image 검색
 
@@ -50,6 +56,7 @@ b. CMD에서 명령어로 이미지 검색
 
 docker search mariadb
 ![[Docker-Compose설치명령어3.png]]
+
 
 
 
