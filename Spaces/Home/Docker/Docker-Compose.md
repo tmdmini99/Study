@@ -173,7 +173,7 @@ services에는 자기가 원하는 여러 도커 컨테이너의 서비스들을
 
 web이라는 서비스를 만들 때의 예시는 다음과 같습니다.
 
-```
+```yml
 services:
   web:
     image: nginx:latest
@@ -217,7 +217,7 @@ Docker Compose YAML 파일에서 networks는 애플리케이션의 컨테�
   
 networks는 여러 개의 네트워크를 정의할 수 있습니다. 각각의 서비스는 networks 구성 요소를 사용하여 하나 이상의 네트워크에 참여할 수 있습니다.
 
-```
+```yml
 networks:
   my-network:
     driver: bridge
