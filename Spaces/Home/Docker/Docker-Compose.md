@@ -1,6 +1,44 @@
 ## 도커 컴포즈란?
 
 `도커 컴포즈`는 단일 서버에서 여러개의 컨테이너를 하나의 서비스로 정의해 컨테이너의 묶음으로 관리할 수 있는 작업 환경을 제공하는 관리 도구입니다.
+Docker Compose란 여러 컨테이너를 가지는 애플리케이션을 통합적으로 만들고, 각각의 컨테이너를 시작 및 중지하는 작업을 더 쉽게 수행할 수 있도록 도와주는 도구입니다.
+
+![[Docker-Compose1.png]]
+
+
+![[Docker_Compose2.png]]
+
+
+### **계층 구조(3 Tier- Architecture) 란?**
+
+어떠한 플랫폼을 3 계층으로 나누어 별도의 논리적/물리적인 장치에 구축 및 운영하는 형태
+
+
+![[Docker-Compose3.png]]
+
+보통 서버 한대에 여러 기능을 구축하는 것이 아니라 계층으로 나눠서 관리하게 된다고 합니다.
+
+여기서는 데이터 계층, 로직 계층, 클라이 언 계층으로 나누고, 각각의 기능으로 별도의 논리적/물리적인 장치로 운영하는 방식을 사용한다고 합니다.
+
+
+
+
+
+
+
+
+
+이러한 구조가 2층도 있고 4층도 있고 다층 구조라고 부릅니다.(Multi-tier Architecture)
+
+이런 것을 각각 docker container를 개별로 띄울 수 있지만, 이러면 서로 연결관계를 다 고려해 줘서 해줘야 하지만,
+
+docker-compose를 구성하면 하나의 network에서 쉽게 관리할 수 있게 합니다.
+
+Docker Compose를 구성하기 위해서는 YAML 파일을 사용하여 구성할 수 있습니다.
+
+
+
+
 
 ## 도커 컴포즈를 사용하는 이유
 
@@ -42,3 +80,6 @@ $ docker-compose -v
 
 ---
 참조 - https://seosh817.tistory.com/387
+https://www.stevenjlee.net/2020/05/08/%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-3%EA%B3%84%EC%B8%B5-%EA%B5%AC%EC%A1%B0-3-tier-architecture/
+
+https://data-newbie.tistory.com/930
