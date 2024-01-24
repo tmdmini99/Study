@@ -39,14 +39,12 @@ docekr desktop 설치
 
 
 
-명령 프롬프트에서 
+### 명령 프롬프트에서 
 
 버전 확인
 ```
 docker -v
 ```
-
-
 
 
 
@@ -64,13 +62,28 @@ b. CMD에서 명령어로 이미지 검색
 
 docker search mariadb
 
+![[Docker-Compose설치4.png]]
 
-이미지 다운
 
-![[Docker-Compose설치명령어3.png]]
+
+### 이미지 다운
+
+![[Docker-Compose설치3.png]]
 
 
 Docker Desktop에는 윈도우나 맥에서 개발 환경으로 많이 사용되는데, Docker Compose를 기본적으로 포함하고 있습니다.
+
+### docker 이미지 보기
+```
+docker images
+```
+
+
+
+### 컨테이너 파일로 생성
+```
+ docker create -it --name ubuntu_server ubuntu
+```
 
 
 
