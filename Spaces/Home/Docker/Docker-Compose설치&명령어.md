@@ -1,3 +1,30 @@
+
+## 설치
+
+### WSL 설치
+
+[https://learn.microsoft.com/ko-kr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package](https://learn.microsoft.com/ko-kr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package) 
+
+접속 후 설치
+
+
+### ubuntu  설치
+
+microsoft store 접속후 ubuntu  검색 -> Ubuntu 설치
+![[Docker-Compose설치1.png]]
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 구조
 
 - **정의 파일(compose file)** : 컨테이너나 볼륨을 어떠한 설정으로 만들지에 대한 항목뿐만 아니라 시스템에 대한 모든 정보가 기재됨. 작성 내용은 도커 명령어와 비슷하지만 다름.
