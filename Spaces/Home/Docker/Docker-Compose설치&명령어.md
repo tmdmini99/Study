@@ -33,6 +33,11 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nore
 https://firework-ham.tistory.com/62
 
 
+docekr desktop 설치
+
+
+
+
 
 명령 프롬프트에서 
 
@@ -40,6 +45,9 @@ https://firework-ham.tistory.com/62
 ```
 docker -v
 ```
+
+
+
 
 
 
@@ -55,11 +63,14 @@ b. CMD에서 명령어로 이미지 검색
 \# Docker search 검색어
 
 docker search mariadb
+
+
+이미지 다운
+
 ![[Docker-Compose설치명령어3.png]]
 
 
-
-
+Docker Desktop에는 윈도우나 맥에서 개발 환경으로 많이 사용되는데, Docker Compose를 기본적으로 포함하고 있습니다.
 
 
 
@@ -308,3 +319,6 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED      STATUS    
 ---
 참조 -  https://devzzi.tistory.com/76
 
+
+
+https://hermeslog.tistory.com/498
