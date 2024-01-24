@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-23.md",
+                "file": "daily note/2024-01-24.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-23.md",
+                "file": "daily note/2024-01-24.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-23.md"
+                "file": "daily note/2024-01-24.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-23.md",
+                "file": "daily note/2024-01-24.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,8 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
+    "daily note/2024-01-23.md",
+    "daily note/2024-01-24.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/Docker.md",
     "Images/Docker10.png",
@@ -202,7 +204,6 @@
     "Spaces/Home/Docker",
     "Images/정규화&반정규화",
     "Spaces/Home/Java/Exception/Exception.md",
-    "daily note/2024-01-23.md",
     "daily note/2024-01-22.md",
     "daily note/2024-01-19.md",
     "daily note/2024-01-18.md",
@@ -213,7 +214,6 @@
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Crawler/JSOUP.md",
-    "Spaces/Home/Java/JDBC/JDBC.md",
     "Spaces/Home/Crawler",
     "Spaces/Home/IntelliJ/SSL",
     "Spaces/Home/Spring/Spring Legacy/MyBatis",
