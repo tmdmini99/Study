@@ -6,7 +6,7 @@ Docker Compose란 여러 컨테이너를 가지는 애플리케이션을 통합�
 ![[Docker-Compose1.png]]
 
 
-![[Docker_Compose2.png]]
+![[Docker-Compose2.png]]
 
 
 ### **계층 구조(3 Tier- Architecture) 란?**
