@@ -173,11 +173,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Spaces/Home/Container",
-    "daily note/2024-01-25.md",
+    "Spaces/Home/Docker/Docker-Compose.md",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Spaces/Home/가상화/VM& Container.md",
+    "Spaces/Home/가상화/가상화.md",
+    "Spaces/Home/가상화/Image.md",
     "Spaces/Home/Docker/Docker.md",
+    "Spaces/Home/Docker/쿠버네티스.md",
+    "Spaces/Home/가상화",
+    "daily note/2024-01-25.md",
     "Spaces/Home/DB/정규화&반정규화.md",
     "Spaces/Home/DB/파티셔닝.md",
     "Spaces/Home/DB/이상현상(Anomaly).md",
@@ -189,9 +195,6 @@
     "Images/Docker-Compose설치3 - 복사본.png",
     "Images/Docker-Compose설치1 - 복사본.png",
     "Images/Docker-Compose 설치2 - 복사본.png",
-    "Spaces/Home/Docker/Docker-Compose.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "Spaces/Home/Docker/쿠버네티스.md",
     "Spaces/Home/Java/File/FIle.md",
     "Spaces/Home/DB/분산 데이터베이스.md",
     "daily note/2024-01-23.md",
@@ -208,7 +211,6 @@
     "Images/Spring",
     "Images/Sprng",
     "Images/SQL Injection",
-    "Images/이상현상",
     "daily note/2024-01-24.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
@@ -219,8 +221,6 @@
     "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2024-01-18.md",
     "Spaces/Home/DB/SQL Injection.md",
-    "Spaces/Home/Web & WAS/WAS.md",
-    "Spaces/Home/Web & WAS/Web.md",
     "무제 파일.canvas"
   ]
 }
