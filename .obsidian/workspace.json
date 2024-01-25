@@ -173,8 +173,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fb40450a24d4146d",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Container",
     "daily note/2024-01-25.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/DB/정규화&반정규화.md",
@@ -220,7 +221,6 @@
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/Web & WAS/WAS.md",
     "Spaces/Home/Web & WAS/Web.md",
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "무제 파일.canvas"
   ]
 }
