@@ -235,7 +235,7 @@ networks:
 
 
 
-### Volume
+### Volumes
 ![[Docker-Compose7.png]]
 
 도커 컨테이너를 사용하여 서비스를 배포하다 보면 데이터를 저장해야 할 필요성이 있습니다. 이때 도커에서 제공하는 Volume을 사용하면 호스트 파일시스템과 컨테이너의 파일시스템을 마운트 하여 데이터를 관리합니다.
@@ -415,4 +415,5 @@ https://www.stevenjlee.net/2020/05/08/%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-3%EA%
 https://jaws-coding.tistory.com/9
 
 
-https://seosh817.tistory.com/387
+
+https://data-newbie.tistory.com/930
