@@ -440,6 +440,24 @@ dbeaver 연결 실패시
 마찬가지로 allowPublicKeyRetrieval true로 변경 -- false로 설정되어있음
 
 
+## docker로만 container 만들시
+
+도커 실행  컨테이너 이름은 tomcat-test로 하고 
+-p는 포트 지정 8080:8080은 8080에서 8080으로
+뒤에 tomcat:9.0.84는 버전을 의미
+```
+docker run -d --name="tomcat-test" -p 8080:8080 tomcat:9.0.84
+```
+
+
+war파일을 복사
+
+```
+docker cp C:\Project\CrawlerTest\target/CrawlerTest-1.0-SNAPSHOT.war tomcat-test:/usr/local/tomcat/webapps/ROOT.war
+```
+
+
+
 ---
 참조 -  https://devzzi.tistory.com/76
 

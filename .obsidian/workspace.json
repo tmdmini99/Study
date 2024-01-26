@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-26.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-26.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-26.md"
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-26.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,11 +173,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "fb40450a24d4146d",
   "lastOpenFiles": [
+    "Spaces/Home/Web & WAS/Web.md",
+    "Spaces/Home/Web & WAS/WAS.md",
+    "daily note/2024-01-26.md",
     "PDF",
     "Spaces/Home/Linux/Linux명령어.md",
-    "daily note/2024-01-26.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/Home/Linux/Linux.md",
     "Spaces/Obsidian/Obsidian플러그인.md",
@@ -216,11 +218,9 @@
     "Images/새 폴더",
     "Images/파티셔닝",
     "Images/DI",
-    "Images/Spring - 복사본",
     "daily note/2024-01-24.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/Java/Generic/Collection/Collection.md",
     "무제 파일.canvas"
   ]
 }
