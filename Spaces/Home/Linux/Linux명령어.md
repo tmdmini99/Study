@@ -170,6 +170,7 @@ Plaintext
 
 list segments의 약자로 현재 디렉터리의 파일과 디렉터리를 보여줍니다. 보통 단독으로 잘 사용하지 않고 a, l 등의 옵션을 함께 사용합니다.
 
+- ls : 디렉토리 목록 확인
 - ls -l : 파일들의 상세 정보를 보여줌
 - ls -a : 숨김 파일 표시
 - ls -t : 최신 파일부터 표시
@@ -199,7 +200,7 @@ make directory의 약자로 디렉터리를 만들 때 사용합니다.
 $ mkdir <이름>
 ```
 
-Plaintext
+
 
 # -p 옵션으로 하위 디렉터리까지 한 번에 생성할 수 있습니다.  
 $ mkdir -p <디렉터리명>/<하위 디렉터리명>
@@ -219,7 +220,7 @@ $ cp -f source target
 $ cp -R sourceDir targetDir
 ```
 
-Plaintext
+
 
 ### **06 mv**
 
@@ -236,7 +237,7 @@ $ mv afile ../
 $ mv afile /opt/
 ```
 
-Plaintext
+
 
 ### **07 rm**
 
@@ -256,7 +257,7 @@ $ rm -rf adir
 $ rm -i *.txt
 ```
 
-Plaintext
+
 
 ### **08 cat**
 
@@ -267,7 +268,6 @@ catenate (잇다 연결하다)의 약자입니다. 파일의 내용을 확인할
 $ cat test.txt
 ```
 
-Plaintext
 
 ### **09 touch**
 
@@ -284,7 +284,7 @@ $ touch -c afile
 $ touch -r afile bfile
 ```
 
-Plaintext
+
 
 ### **10 echo**
 
@@ -313,7 +313,7 @@ $ echo hello redirection > hello.txt
 $ echo hello2 >> hello.txt
 ```
 
-Plaintext
+
 
 ### **11 ip addr / ifconfig**
 
@@ -333,7 +333,7 @@ inet 10.201.1.10/16 brd 10.202.255.255 scope global eth0
 valid_lft forever preferred_lft forever
 ```
 
-Plaintext
+
 
 ip addr이 설치되어 있지 않은 경우에는 ifconfig를 사용하면 됩니다.
 
@@ -358,7 +358,7 @@ collisions:0 txqueuelen:1
 RX bytes:349206971 (349.2 MB) TX bytes:349206971 (349.2 MB)
 ```
 
-Plaintext
+
 
 ### **12 ss**
 
@@ -380,7 +380,7 @@ LISTEN 0 1 127.0.0.1:8006 *:*
 LISTEN 0 511 *:80 *:*
 ```
 
-Plaintext
+
 
 ### **13 nc**
 
@@ -397,7 +397,7 @@ $ nc -v IP주소 포트
 $ nc -l 포트
 ```
 
-Plaintext
+
 
 ### **14 which, whereis, locate**
 
@@ -426,7 +426,7 @@ ssh: /usr/bin/ssh /usr/share/man/man1/ssh.1
 $ locate *.java
 ```
 
-Plaintext
+
 
 ### **15 tail**
 
@@ -450,7 +450,7 @@ $ tail -f {파일경로} :
 $ tail -n {숫자} -s {초} -f {파일경로}
 ```
 
-Plaintext
+
 
 ### **16 find**
 
@@ -477,9 +477,13 @@ $ find {디렉터리} -daystart -mtime -7 -delete
 
 # 0바이트인 파일을 찾고 삭제하기
 $ find {디렉터리} -type f -empty -delete
+
+# 확장자가 .txt인 파일만 찾아내고, txt 파일 안에 있는 ‘hi’ 라는 문자열을 ‘hello’로 바꾸기기
+$ find ./ -name "*.txt" -exec sed -i 's/hi/hello/g' {} \;
+
 ```
 
-Plaintext
+
 
 ### **17 ps**
 
@@ -499,7 +503,7 @@ $ ps aus | grep {패턴}
 $ ps --sort size
 ```
 
-Plaintext
+
 
 ### **18 grep**
 
@@ -519,7 +523,7 @@ $ grep --invert-match "패턴"
 $ cat 파일경로 | grep "패턴"
 ```
 
-Plaintext
+
 
 ### **19 kill**
 
@@ -539,7 +543,7 @@ $ kill {잡ID}
 $ kill -9 | KILL 프로세스ID
 ```
 
-Plaintext
+
 
 ### **20 alias**
 
@@ -564,7 +568,7 @@ $ alias ......=../../../../..
 $ unalias 단어
 ```
 
-Plaintext
+
 
 ### **21 vi / vim**
 
@@ -576,7 +580,7 @@ vi {파일명 혹은 디렉터리명}을 사용해 진입할 수 있습니다.
 $ vi test.txt
 ```
 
-Plaintext
+
 
 test.txt 파일이 있다면 text.txt 파일을 읽어서 화면에 보여주고 없다면 다음과 같이 빈 화면을 보여줍니다.
 
@@ -611,3 +615,5 @@ test.txt 파일이 있다면 text.txt 파일을 읽어서 화면에 보여주고
 
 ---
 참조 - https://www.mireene.com/webimg/linux_tip1.htm
+
+https://www.codestates.com/blog/content/%EB%A6%AC%EB%88%85%EC%8A%A4-%EA%B8%B0%EB%B3%B8-%EB%AA%85%EB%A0%B9%EC%96%B4
