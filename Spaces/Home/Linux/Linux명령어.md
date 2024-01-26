@@ -19,7 +19,7 @@
 |du|하드사용량 체크(chkdsk)<br><br>자신의 하드공간을 알려면  <br># du  <br>특정 디렉토리의 사용량을 알려면  <br># du -s diretory_name|
 |ls|파일 리스트 보기(dir)<br><br>F : 파일 유형을 나타내는 기호를 파일명 끝에 표시  <br>    (디렉토리는 '/', 실행파일은 '*', 심볼릭 링크는 '@'가 나타남).  <br>l  : 파일에 관한 상세 정보를 나타냅니다.  <br>a : dot 파일(.access 등)을 포함한 모든 파일 표시.  <br>t  : 파일이 생성된 시간별로 표시  <br>C : 도스의 dir/w명령과 같 이 한줄에 여러개의 정보를 표시  <br>R : 도스의 dir/s 명령과 같이 서브디렉토리 내용까지.<br><br>(예)  <br># ls -al    <br># ls -aC  <br># ls -R|
 |cd|디렉토리를 변경<br><br># cd cgi-bin     : 하부 디렉토리인 cgi-bin으로 들어감.  <br># cd  ..             : 상위디렉토리로 이동  <br># cd 또는 cd ~  : 어느곳에서든지 자기 홈디렉토리로 바로 이동  <br># cd /webker     : 현재 작업중인 디렉토리의 하위나 상위 디렉토리가  <br>                          아닌 다른 디렉토리(webker)로 이동하려면 /로  <br>                          시작해서 경로이름을 입력하면 된다.|
-|cp|화일 복사(copy)<br><br># cp index.html index.old  <br>     : index.html 화일을 index.old 란 이름으로 복사.  <br>  <br># cp /home/test/*.*  .  <br>     : test 디렉토리내의 모든 화일을 현 디렉토리로 복사.|
+|cp|일 복사(copy)<br><br># cp index.html index.old  <br>     : index.html 화일을 index.old 란 이름으로 복사.  <br>  <br># cp /home/test/*.*  .  <br>     : test 디렉토리내의 모든 화일을 현 디렉토리로 복사. |
 |mv|파일이름(rename) / 위치(move)변경<br><br># mv index.htm index.html  <br>     : index.htm 화일을 index.html 로 이름 변경<br><br>$ mv file  ../main/new_file  <br>     : 파일의 위치변경|
 |mkdir|디렉토리 생성<br><br># mkdir download  : download 디렉토리 생성|
 |rm|화일삭제<br><br># rm test.html : test.html 화일 삭제  <br># rm -r <디렉토리> : 디렉토리 전체를 삭제  <br># rm -i a.*  <br>     : a로 시작하는 모든 파일을 일일이 삭제할 것인지 확인하면서 삭제|
@@ -150,6 +150,463 @@ echo "$cmd";
 echo "퍼미션 변경되었습니다.";
 
 ?>
+
+
+
+
+
+### **01 pwd**
+
+pwd는 print work directory의 약자로 작업 중인 디렉터리를 보여줍니다.
+
+```plaintext
+$ pwd
+/Users/gyus
+```
+
+Plaintext
+
+### **02 ls**
+
+list segments의 약자로 현재 디렉터리의 파일과 디렉터리를 보여줍니다. 보통 단독으로 잘 사용하지 않고 a, l 등의 옵션을 함께 사용합니다.
+
+- ls -l : 파일들의 상세 정보를 보여줌
+- ls -a : 숨김 파일 표시
+- ls -t : 최신 파일부터 표시
+- ls -rt : 오래된 파일부터 표시
+- ls -F : 파일을 표시할 때 파일의 타입을 나타내는 문자열을 표시( / 디렉터리, * 실행 파일, @ 심볼릭 링크)
+- ls -R : 하위 디렉터리의 내용까지 표시
+
+보통은 위 옵션들을 조합해 ls -al, ls -alt, ls -altF 등으로 사용합니다.
+
+* 심볼릭 링크(symbolic link): 원본 파일을 가리키도록 링크만 연결시켜둔 겁니다. 윈도우의 바로가 기 링크와 같은 개념입니다.
+
+### **03 cd**
+
+change directory의 약자로 말 그대로 디렉터리 이동 시 사용하는 명령입니다.
+
+- cd ~ : 홈디렉터리로 이동
+- cd .. : 상위 디렉터리로 이동. cd ../../ 같은 식으로 여러 단계를 한 번에 이동 가능
+- cd /dir : 절대 경로를 지정해 이동 가능
+- cd – : 바로 전의 디렉터리로 이동
+
+### **04 mkdir**
+
+make directory의 약자로 디렉터리를 만들 때 사용합니다.
+
+```plaintext
+# <이름>의 디렉터리를 현재 디렉터리에 만듭니다.
+$ mkdir <이름>
+```
+
+Plaintext
+
+# -p 옵션으로 하위 디렉터리까지 한 번에 생성할 수 있습니다.  
+$ mkdir -p <디렉터리명>/<하위 디렉터리명>
+
+### **05 cp**
+
+copy의 약자입니다. 파일 또는 디렉터리를 복사할 때 사용합니다.
+
+```plaintext
+# source를 target으로 복사하기
+$ cp source target
+
+# target 파일이 이미 있는 경우 덮어쓰기
+$ cp -f source target
+
+# 디렉터리를 복사할 때 사용. 하위 디렉터리도 모두 복사하기
+$ cp -R sourceDir targetDir
+```
+
+Plaintext
+
+### **06 mv**
+
+move의 약자입니다. 파일 또는 디렉터리의 위치를 옮길 때 사용합니다. 혹은 이름을 변경할 때도 사용합니다.
+
+```plaintext
+# afile 이름을 bfile로 변경
+$ mv afile bfile
+
+# afile을 상위 디렉터리로 옮김
+$ mv afile ../
+
+# afile을 /opt 이하 디렉터리로 옮김
+$ mv afile /opt/
+```
+
+Plaintext
+
+### **07 rm**
+
+remove의 약자입니다. 파일 또는 디렉터리를 삭제할 때 사용합니다.
+
+```plaintext
+# afile을 삭제
+$ rm afile
+
+# 디렉터리 adir을 삭제. 삭제 시 확인을 함
+$ rm -r adir
+
+# 디렉터리 adir을 삭제. 삭제 시 확인 안 함
+$ rm -rf adir
+
+# txt로 끝나는 모든 파일을 삭제할지 물어보면서 삭제
+$ rm -i *.txt
+```
+
+Plaintext
+
+### **08 cat**
+
+catenate (잇다 연결하다)의 약자입니다. 파일의 내용을 확인할 때 사용합니다.
+
+```plaintext
+# test.txt 파일의 내용을 확인
+$ cat test.txt
+```
+
+Plaintext
+
+### **09 touch**
+
+touch는 빈 파일을 생성합니다. 혹은 파일의 날짜와 시간을 수정할 때 사용합니다.
+
+```plaintext
+# afile을 생성
+$ touch afile
+
+# afile의 시간을 현재 시간으로 갱신
+$ touch -c afile
+
+# bfile의 날짜 정보를 afile의 정보와 동일하게 변경
+$ touch -r afile bfile
+```
+
+Plaintext
+
+### **10 echo**
+
+echo는 어떤 문자열을 화면에 보여줄 때 사용합니다. echo와 리다이렉션을 사용해 파일을 생성, 추가하는 작업을 많이 합니다.
+
+```plaintext
+# helloworld 출력
+$ echo 'helloworld'
+
+# 패스로 지정된 문자열을 출력
+$ echo $PATH
+
+# 이스케이프 문자열을 해석
+$ echo -e 문자열
+
+# 개행을 표시할 수 있음
+$ echo -e "안녕하세요\n이렇게 하면\n새 줄이생겨요"
+
+# ls와 유사하게 현재 디렉터리의 파일과 폴더를 출력
+$ echo *
+
+# 리다이렉션 '>'을 사용해 hello.txt 파일 생성. 파일 내용에는 echo로 표시되는 내용이 들어감
+$ echo hello redirection > hello.txt
+
+# 추가 연산자 >>를 사용해 기존 파일에 문자열 추가
+$ echo hello2 >> hello.txt
+```
+
+Plaintext
+
+### **11 ip addr / ifconfig**
+
+접속한 리눅스의 IP 정보를 알아낼 때 사용합니다.
+
+```plaintext
+$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
+qlen 1000
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP
+group default qlen 50000
+link/ether fa:16:3e:5d:0b:d7 brd ff:ff:ff:ff:ff:ff
+inet 10.201.1.10/16 brd 10.202.255.255 scope global eth0
+valid_lft forever preferred_lft forever
+```
+
+Plaintext
+
+ip addr이 설치되어 있지 않은 경우에는 ifconfig를 사용하면 됩니다.
+
+```plaintext
+$ ifconfig
+eth0 Link encap:Ethernet HWaddr 06:4d:de:ae:a8:50
+inet addr:172.31.27.212 Bcast:172.31.31.255 Mask:255.255.240.0
+inet6 addr: fe80::44d:deff:feae:a850/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST MTU:9001 Metric:1
+RX packets:68903966 errors:0 dropped:0 overruns:0 frame:0
+TX packets:75295223 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:15691124260 (15.6 GB) TX bytes:42265387295 (42.2 GB)
+
+lo Link encap:Local Loopback
+inet addr:127.0.0.1 Mask:255.0.0.0
+inet6 addr: ::1/128 Scope:Host
+UP LOOPBACK RUNNING MTU:65536 Metric:1
+RX packets:6623596 errors:0 dropped:0 overruns:0 frame:0
+TX packets:6623596 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1
+RX bytes:349206971 (349.2 MB) TX bytes:349206971 (349.2 MB)
+```
+
+Plaintext
+
+### **12 ss**
+
+socket statistics의 약자입니다. 네트워크 상태를 확인하는 데 사용합니다. 원래는 netstat를 사용했는데, 최근에는 ss를 주로 사용합니다. 옵션으로 a, t, u, l, p, n 등이 있습니다.
+
+- ss -a : 모든 포트 확인
+- ss -t : TCP 포트 확인
+- ss -u : UDP 포트 확인
+- ss -l : LISTEN 상태 포트 확인
+- ss -p : 프로세스 표시
+- ss -n : 호스트, 포트, 사용자명을 숫자로 표시
+
+TCP 포트 중 LISTEN 상태인 포트의 번호를 알고 싶을 때 다음과 같이 합니다.
+
+```plaintext
+$ ss -tln
+LISTEN 0 511 *:443 *:*
+LISTEN 0 1 127.0.0.1:8006 *:*
+LISTEN 0 511 *:80 *:*
+```
+
+Plaintext
+
+### **13 nc**
+
+netcat의 약자입니다. 예전에는 포트가 열렸는지 확인하는 데 telnet 명령어를 사용했지만 요즘은 주로 nc를 사용합니다.
+
+```plaintext
+# 포트가 오픈됐는지 확인
+$ nc IP주소 포트
+
+# 더 자세한 정보가 남음
+$ nc -v IP주소 포트
+
+# 현재 서버의 포트를 오픈(방화벽에 해당 포트 번호가 설정 함)
+$ nc -l 포트
+```
+
+Plaintext
+
+### **14 which, whereis, locate**
+
+which는 특정 명령어의 위치를 찾아줍니다.
+
+```plaintext
+$ which git
+/usr/local/bin/git
+
+# which -a : 검색 가능한 모든 경로에서 명령어를 찾아줍니다.
+$ which -a git
+/usr/local/bin/git
+/usr/bin/git
+
+# where : which -a와 같습니다.
+$ where git
+/usr/local/bin/git
+/usr/bin/git
+
+# whereis는 실행 파일, 소스, man 페이지의 파일을 찾아줍니다.
+$ whereis ssh
+ssh: /usr/bin/ssh /usr/share/man/man1/ssh.1
+
+# locate는 파일명을 패턴으로 빠르게 찾아줍니다.
+# 아래 예제는 .java 파일을 찾아주는 명령입니다.
+$ locate *.java
+```
+
+Plaintext
+
+### **15 tail**
+
+tail은 꼬리라는 의미처럼 파일의 마지막 부분을 보여줍니다. tail이 있으면 당연히 head도 있는데 사용법은 같습니다. 필자는 tail -f {파일}을 가장 많이 쓰는 편입니다. 서버의 로그를 실시간으로 보고 싶을 때 사용합니다.
+
+```plaintext
+# 파일의 마지막 라인부터 숫자만큼의 파일의 라인 수를 보여주기
+$ tail -n {숫자} {파일경로}
+
+# 숫자로 지정한 라인부터 보여주기
+$ tail -n +{숫자} {파일경로}
+
+# 파일의 마지막 라인부터 숫자로 지정한 바이트 수 만큼 보여주기
+$ tail -c {숫자} {파일경로}
+
+# Ctrl + C로 중단하기 전까지 지정한 파일의 마지막에 라인이 추가되면 계속 출력하기
+$ tail -f {파일경로} :
+
+# 파일의 마지막 라인부터 지정한 숫자만큼을
+# {초}로 지정한 시간이 지날 때마다 리프레시해서 보여주기
+$ tail -n {숫자} -s {초} -f {파일경로}
+```
+
+Plaintext
+
+### **16 find**
+
+find는 명령어의 뜻 그대로 파일이나 디렉터리를 찾는 데 사용하는 명령어입니다. 굉장히 많은 옵션이 있으나 그중에 자주 사용되는 것만 소개합니다.
+
+```plaintext
+# 확장자 명으로 찾기
+$ find {디렉터리} -name '*.bak'
+
+# 디렉터리를 지정해 찾기
+$ find {디렉터리} -path '**/검색 시 사용하는 디렉터리명/**.*.js'
+
+# 파일명을 패턴으로 찾기
+$ find {디렉터리} -name '*패턴*'
+
+# 파일명을 패턴으로 찾되 특정 경로는 제외하기
+$ find {디렉터리} -name '*.py' -not -path '*/site-packates/*'
+
+# 파일을 찾은 다음 명령어 실행하기
+$ find {디렉터리} -name '*.ext' -exec wc -l {} \;
+
+# 최근 7일간 수정된 파일을 찾고 삭제하기
+$ find {디렉터리} -daystart -mtime -7 -delete
+
+# 0바이트인 파일을 찾고 삭제하기
+$ find {디렉터리} -type f -empty -delete
+```
+
+Plaintext
+
+### **17 ps**
+
+현재 실행 중인 프로세스 목록과 상태를 보여줍니다.
+
+```plaintext
+# 실행 중인 모든 프로세스를 보여주기
+$ ps aux
+
+# 실행 중인 모든 프로세스를 전체 커맨드를 포함해 보여주기
+$ ps auxww
+
+# 특정 문자열과 매칭되는 프로세스 찾기(grep은 바로 다음에 나옵니다)
+$ ps aus | grep {패턴}
+
+# 메모리 사용량에 따라 정렬하기
+$ ps --sort size
+```
+
+Plaintext
+
+### **18 grep**
+
+grep은 입력에서 패턴에 매칭되는 내용을 찾는 명령어입니다. grep이라는 이름은 ed의 명령어인 g/re/p(내용 전체를 정규식으로 찾은 다음 프린트하라: globally search for a regular expression and print matching lines)에서 왔습니다. 보통 find, ps 등과 조합해 사용합니다.
+
+```plaintext
+# 파일에서 특정 패턴을 만족하는 부분 찾기
+$ grep "패턴" 파일경로
+
+# 파일명과 라인을 함께 표시하기
+$ grep --with-filename --line-number "패턴" 파일경로
+
+# 매칭하지 않는 부분 표시하기
+$ grep --invert-match "패턴"
+
+# cat과 함께 사용하기
+$ cat 파일경로 | grep "패턴"
+```
+
+Plaintext
+
+### **19 kill**
+
+프로세스를 죽이는 명령어입니다. 프로세스를 죽인다고는 하지만 원리는 프로세스에 중지하라는 시그널을 보내는 겁니다. SIGKILL, SIGSTOP은 강제 종료이며 나머지는 정상적으로 종료시킵니다. 프로세스 아이디는 ps 명령어로 알아낼 수 있습니다 .
+
+```plaintext
+# kill에서 사용할 수 있는 시그널 표시하기
+$ kill -l
+
+# 프로세스 죽이기 SIGTERM(terminate)
+$ kill 프로세스ID
+
+# 백그라운드 잡 종료시키기
+$ kill {잡ID}
+
+# 프로세스 강제 종료
+$ kill -9 | KILL 프로세스ID
+```
+
+Plaintext
+
+### **20 alias**
+
+자주 사용하는 명령어가 길면 타이핑하려면 귀찮습니다. 이때 alias를 사용하면 줄여서 사용할 수 있습니다.
+
+```plaintext
+# 모든 alias 표시하기
+$ alias
+
+# alias 만들기
+# 예) alias ll="ls -al"
+$ alias 단어="명령"
+
+# cd ../..을 cd …으로 줄여 쓰기
+# cd ../../../은 cd ….으로 가능
+$ alias ...=../..
+$ alias ....=../../..
+$ alias .....=../../../..
+$ alias ......=../../../../..
+
+# alias 삭제하기
+$ unalias 단어
+```
+
+Plaintext
+
+### **21 vi / vim**
+
+vi 혹은 vim은 대부분의 리눅스에 기본적으로 설치되어 있는 텍스트 에디터입니다. 백엔드 개발 환경에서는 적지 않게 사용할 기회를 만나게 됩니다. 최소한의 vim 사용법을 알려드리겠습니다.
+
+vi {파일명 혹은 디렉터리명}을 사용해 진입할 수 있습니다.
+
+```plaintext
+$ vi test.txt
+```
+
+Plaintext
+
+test.txt 파일이 있다면 text.txt 파일을 읽어서 화면에 보여주고 없다면 다음과 같이 빈 화면을 보여줍니다.
+
+![[Linux24.png]]
+
+여기서 i, 혹은 a를 눌러서 편집 모드로 들어갈 수 있습니다.
+
+![[Linux25.png]]
+
+편집 모드에서 “hello vim”을 적고 esc를 누르면 편집 모드가 종료되고 명령 모드로 변경됩니다.
+
+
+![[Linux26.png]]
+명령모드에서 :wq 또는 :x를 입력하고 enter를 누르면 저장하고 vim을 빠져나오게 됩니다.
+
+![[Linux27.png]]
+
+명령 모드에서 커서 이동은 h (왼쪽), j (아래), k (위), l (오른쪽) 키로 합니다. vim은 여기서 소개한 것보다 더 강력한 편집 도구입니다. 공들여 공부할 가치가 있으니 추가로 공부해두기 바랍니다.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---
