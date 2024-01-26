@@ -43,7 +43,6 @@ Linux는 1991년 Linus Torvals가 개발한 운영체제이다. Linux는 Unix �
 
 예를 들어 유저 프로그램이 I/O 요청을 하면,  trap이 발동되면서 모드비트가 1에서 0으로 변경되고, 커널에 전달됩니다. 커널은 해당 서비스를 수행하고, 다시 trap을 통해 모드비트를 0에서 1로 변경하여 사용자모드로 전달해 줍니다.
 
-
 ### Linux 구조
 
 #### 부트로더
@@ -171,15 +170,55 @@ Linux는 1991년 Linus Torvals가 개발한 운영체제이다. Linux는 Unix �
 - cat /etc/shells 명령어를 통해 /etc/shells 파일을 보면 현재 운영체제 환경에서 사용할 수 있는 쉘의 종류를 확인할 수 있다. bash, zsh, ksh 등 다양한 쉘의 종류가 있다.
 
 
-|   |   |   |
-|---|---|---|
-|쉘 이름|위치|특징|
-|sh (Bourne Shell)|/bin/sh|최초의 유닉스 쉘로 스크립트를 지원하며 sh로 표기한다. 본쉘은 논리 및 산술 연산을 처리하는 내장 기능이 없어 이전에 사용한 명령을 기억할 수 없다. (history 기능 제공하지 않음)|
-|ksh (Korn Shell)|/bin/ksh|본 쉘을 개선한 상위집합으로 history, alias 등의 작업기능이 추가되었다. (csh, sh 보다 빠름)|
-|csh (C Shell)|/bin/csh|ksh 처럼 본쉘의 개선버전으로 history, alias, ~ (홈디렉토리) 기능 추가, 명령어 편집 기능 제공 X|
-|tcsh|/bin/tcsh|csh 개선 버전으로 명령어 편집기능 제공, 자동완성, where 명령어 제공|
-|bash (Bourne Again Shell)|/bin/bash|본쉘의 확장버전으로 만든 Unix 쉘로 Linux, Mac의 기본 쉘로 사용된다.  <br>mv, cp, rm, touch, ls, mkdir, cd, rmdir 등의 명령어 들이 추가되었다.|
-|zsh|/bin/zsh|bash, ksh, tcsh의 기능을 결합하여 맞춤법 검사, 로그인 감시, 자동 생성, 플러그인 및 테마가 지원되며, oh my zsh 등의 사용자 정의 테마를 지원한다.|
+- Bourne Shell (sh)
+    - 유닉스 7버전의 기본 쉘. (본쉘)
+- C Shell (csh)
+    - C언어 기반으로 개발되어 프로그램 작성 기능이 좋음.
+    - History, alias 등 여러 유용한 기능이 있음.
+    - 명령행 편집 기능이 없음.
+- TC Shell (tcsh)
+    - C 쉘과 통합해서 탄생된 쉘. TC쉘이라고 불림.
+    - C 쉘에 없는 명령어 자동완성, 편집기능을 지원.
+- Korn Shell (ksh)
+    - 본쉘을 확장해서 만들어진 쉘. C 쉘의 여러 기능이 추가됨.
+    - History, vi, 명령행 편집 등 여러 기능을 제공.
+- Bourne Again Shell (bash)
+    - 본쉘을 기반으로 만들어진 쉘.
+    - 현재 리눅스의 표준쉘.
+    - GNU 프로젝트를 위해 개발되었으며 맥 OS 등 여러 운영체제에서 사용됨.
+    - sh와 호환되는 문법과 history, 명령행 편집 등 다양한 기능을 가지고 있음.
+- Z shell (zsh)
+    - 본쉘의 확장된 버전.
+    - 다양한 기능, 플러그인, 테마가 존재.
+        - 맞춤법 검사.
+        - 로그인 / 로그아웃 감시 기능.
+        - 바이트 코드와 같은 내장 프로그래밍 기능.
+        - 구문의 과학적 표기적 지원.
+        - 부동 소수점 산술 및 기타 기능.
+
+## Bash 쉘의 기본 기능들( 일부 zsh와 비교 )
+
+---
+
+### 명령행 자동완성 기능
+
+- 리눅스에서 가장 많이 사용되는 기능 중 하나
+
+- 특정 파일이나 디렉토리명이 너무 길어서 불편한 경우  글자 몇 개만 입력한 뒤 Tab을 누르면 자동완성 기능이 동작.  
+    만약 해당 글자들이 포함되는 파일이 여러개 있다면 Tab을 두 번 눌러 목록을 확인할 수 있음.
+
+예시
+
+- bash에서 Tab을 두 번 눌러 목록을 확인한 후 한 번 눌러 자동 완성하기.
+
+![[Linux11.gif]]
+
+
+
+
+
+
+
 다양한 쉘의 종류가 있으며, 대부분 bash, zsh을 많이 사용한다. zsh은 bash와 동일한 쉘을 기반으로 추가 기능을 제공한다
 
 ```linux
@@ -384,3 +423,6 @@ https://hstory0208.tistory.com/entry/kernel-%EC%9D%B4%EB%9E%80-%EC%89%BD%EA%B2%8
 
 
 https://sasca37.tistory.com/286
+
+
+https://soopeach.tistory.com/244
