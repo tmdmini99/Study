@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Obsidian/Obsidian플러그인.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Obsidian/Obsidian플러그인.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Obsidian/Obsidian플러그인.md"
+                "file": "Spaces/Home/Linux/Linux.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Obsidian/Obsidian플러그인.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,8 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Images/Obsidian플러그인7.png",
     "Spaces/Obsidian/Obsidian플러그인.md",
+    "Images/Obsidian플러그인7.png",
     "Images/Obsidian플러그인6.png",
     "Images/Obsidian플러그인5.png",
     "Images/Obsidian플러그인4.png",
