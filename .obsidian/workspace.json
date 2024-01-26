@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "daily note/2024-01-26.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "daily note/2024-01-26.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md"
+                "file": "daily note/2024-01-26.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "daily note/2024-01-26.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fb40450a24d4146d",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "PDF",
+    "Spaces/Home/Linux/Linux명령어.md",
+    "daily note/2024-01-26.md",
+    "PDF/리눅스 명령어.pdf",
+    "Spaces/Home/Linux/Linux.md",
     "Spaces/Obsidian/Obsidian플러그인.md",
     "Images/Obsidian플러그인7.png",
     "Images/Obsidian플러그인6.png",
@@ -183,7 +188,6 @@
     "Images/Obsidian플러그인3.png",
     "Images/Obsidian플러그인2.png",
     "Images/Obsidian플러그인1.png",
-    "Spaces/Home/Linux/Linux명령어.md",
     "Spaces/Obsidian/Obsidian",
     "Spaces/Obsidian",
     "Images/Linux35.png",
@@ -191,7 +195,6 @@
     "Images/Linux33.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
-    "Spaces/Home/Linux/Linux.md",
     "Spaces/Home/Linux",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Docker/쿠버네티스.md",
@@ -214,12 +217,10 @@
     "Images/파티셔닝",
     "Images/DI",
     "Images/Spring - 복사본",
-    "Images/Crawler",
     "daily note/2024-01-24.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Java/Generic/Collection/Collection.md",
-    "Spaces/Home/Java/JVM/Thread.md",
     "무제 파일.canvas"
   ]
 }
