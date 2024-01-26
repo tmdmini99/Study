@@ -466,6 +466,24 @@ docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3307:3
 ```
 
 
+mysql
+```
+docker run --network=mynetwork --name likesql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3307:3306 mysql:latest
+```
+
+
+tomcat
+```
+docker run --network=mynetwork --name tomcat-test -d -p 8080:8080 tomcat:9.0.84
+```
+
+network
+```
+docker network create mynetwork
+```
+
+
+컨테이너 각자 생성시 네트워크를 묶어줘야지만 사용 가능
 
 
 ---
