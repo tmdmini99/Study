@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Spaces/Home/Linux/Linux.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,11 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Images/Docker-Compose설정2.png",
+    "Images/Linux1.gif",
+    "Spaces/Home/Linux/Linux.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Spaces/Home/Linux",
+    "Images/Docker-Compose설정2.png",
     "Images/Docker-Compose설정1.png",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Docker/쿠버네티스.md",
@@ -197,7 +200,6 @@
     "Images/Docker-Compose설치4 - 복사본.png",
     "Images/Docker-Compose설치3 - 복사본.png",
     "Images/Docker-Compose설치1 - 복사본.png",
-    "Images/Docker-Compose 설치2 - 복사본.png",
     "Spaces/Home/Java/File/FIle.md",
     "Spaces/Home/DB/분산 데이터베이스.md",
     "daily note/2024-01-23.md",
@@ -211,7 +213,6 @@
     "Images/Crawler",
     "Images/Spring",
     "Images/Sprng",
-    "Images/SQL Injection",
     "daily note/2024-01-24.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
@@ -219,7 +220,6 @@
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/Process.md",
     "Spaces/Home/Java/Exception/Exception.md",
-    "daily note/2024-01-18.md",
     "무제 파일.canvas"
   ]
 }
