@@ -406,6 +406,12 @@ docker-compose down // 도커 컴포즈 remove
 ```
 
 
+war 파일 내보내기
+인텔리제이 터미널에서
+```
+mvn clean package
+```
+
 
 ---
 참조 -  https://devzzi.tistory.com/76
