@@ -416,6 +416,15 @@ mvn clean package
 ```
 
 
+dockerfile 만들었을 시
+```
+FROM tomcat:8.5-jdk8-openjdk
+
+# WAR 파일을 ROOT.war로 이름 변경하여 Tomcat의 webapps 디렉토리에 배포
+ADD target/CrawlingPractice-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war 
+```
+
+
 ---
 참조 -  https://devzzi.tistory.com/76
 
