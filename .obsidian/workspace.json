@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "Spaces/Home/Linux/Linux명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "Spaces/Home/Linux/Linux명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md"
+                "file": "Spaces/Home/Linux/Linux명령어.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "Spaces/Home/Linux/Linux명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,17 +175,18 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Images/Linux11.gif",
     "Spaces/Home/Linux/Linux.md",
-    "Images/Linux10.png",
-    "Images/Linux9.png",
-    "Images/Linux3.png",
-    "Images/Linux2.jpg",
-    "Images/Linux8.png",
-    "Images/Linux7.png",
-    "Images/Linux6.png",
-    "Images/Linux5.png",
-    "Images/Linux4.png",
+    "Images/Linux23.png",
+    "Images/Linux22.png",
+    "Images/Linux21.png",
+    "Images/Linux20.png",
+    "Images/Linux19.png",
+    "Images/Linux18.png",
+    "Spaces/Home/Linux/Linux명령어.md",
+    "Images/Linux17.png",
+    "Images/Linux16.png",
+    "Images/Linux15.png",
+    "Images/Linux14.gif",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Linux",
     "Spaces/Home/Java/Generic/Generic.md",
@@ -219,7 +220,6 @@
     "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/JVM/Thread.md",
     "Spaces/Home/Java/JVM/Process.md",
-    "Spaces/Home/Java/Exception/Exception.md",
     "무제 파일.canvas"
   ]
 }
