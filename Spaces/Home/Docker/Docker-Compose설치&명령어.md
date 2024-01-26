@@ -331,6 +331,7 @@ version: '3'
 services:
   tomcat:
     image: tomcat:9.0.84
+    container_name: myTomcat //컨테이너 명 지정
     ports:
       - 8080:8080
     volumes:
@@ -339,6 +340,8 @@ services:
   mysql: //여기에 있는 이름으로 database-context.xml에서 url 이름 수정
   //<property name="jdbcUrl" value="jdbc:mysql://mysql:3306/test"></property> 여기서 localhost대신
     image: mysql:latest
+    container_name: mySqls // 컨테이너 명 바뀌면
+    //<property name="jdbcUrl" value="jdbc:mysql://mySqls:3306/test"></property> 여기 있는 mysql:3306에서 내가 지정한 컨테이너명으로 변경
     ports:
       - 3306:3306
     environment:
