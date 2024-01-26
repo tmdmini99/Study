@@ -461,7 +461,7 @@ mysql 설치
 \<password> 부분에 내가 원하는 값 입력
 \--name에 컨테이너 이름 입력 mysql-container로 설정 해놈
 ```
-docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3306:3306 mysql:latest
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3307:3306 mysql:latest
 ```
 
 
