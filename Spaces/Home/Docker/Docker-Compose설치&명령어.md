@@ -398,7 +398,12 @@ database-context.xml 수정
 
 ```
 
-
+docker 실행 명령어
+```
+docker-compose up //도커 컴포즈 실행
+docker-compose up -d //백그라운드 실행
+docker-compose down // 도커 컴포즈 remove
+```
 
 
 
