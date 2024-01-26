@@ -326,7 +326,7 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED      STATUS    
 
 ## 내가 만든 .yml
 
-```
+```yml
 version: '3'
 services:
   tomcat:
@@ -337,6 +337,8 @@ services:
     volumes:
       - ./CrawlerTest-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
       - ./chromedriver-win64:/usr/local/tomcat/chromedriver-win64
+    environment:
+	  - JAVA_OPTS=-Djava.version=8 //내가 원하는 자바 버전 설정하고 싶을때
   mysql: //여기에 있는 이름으로 database-context.xml에서 url 이름 수정
   //<property name="jdbcUrl" value="jdbc:mysql://mysql:3306/test"></property> 여기서 localhost대신
     image: mysql:latest
@@ -419,12 +421,23 @@ mvn clean package
 
 
 dockerfile 만들었을 시
-```
+```file
 FROM tomcat:8.5-jdk8-openjdk
 
 # WAR 파일을 ROOT.war로 이름 변경하여 Tomcat의 webapps 디렉토리에 배포
 ADD target/CrawlingPractice-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war 
 ```
+
+dbeaver 연결 실패시
+![[Docker-Compose설정1.png]]
+
+연결 가서 Driver properties 들어가서 useSSL False로 변경  --원래 true 로 설정되어있음
+
+
+
+![[Docker-Compose설정2.png]]
+
+마찬가지로 allowPublicKeyRetrieval true로 변경 -- false로 설정되어있음
 
 
 ---
