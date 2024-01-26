@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Linux/Linux명령어.md",
+                "file": "Spaces/Obsidian/Obsidian플러그인.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Linux/Linux명령어.md",
+                "file": "Spaces/Obsidian/Obsidian플러그인.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Linux/Linux명령어.md"
+                "file": "Spaces/Obsidian/Obsidian플러그인.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Linux/Linux명령어.md",
+                "file": "Spaces/Obsidian/Obsidian플러그인.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,12 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Images/Linux35.png",
+    "Images/Obsidian플러그인1.png",
+    "Spaces/Obsidian/Obsidian플러그인.md",
     "Spaces/Home/Linux/Linux명령어.md",
+    "Spaces/Obsidian/Obsidian",
+    "Spaces/Obsidian",
+    "Images/Linux35.png",
     "Images/Linux34.png",
     "Images/Linux33.png",
     "Images/Linux32.png",
@@ -187,7 +191,6 @@
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Images/Linux27.png",
-    "Images/Linux26.png",
     "Spaces/Home/Linux/Linux.md",
     "Spaces/Home/Linux",
     "Spaces/Home/Java/Generic/Generic.md",
@@ -212,14 +215,11 @@
     "Images/DI",
     "Images/Spring - 복사본",
     "Images/Crawler",
-    "Images/Spring",
-    "Images/Sprng",
     "daily note/2024-01-24.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Java/Generic/Collection/Collection.md",
     "Spaces/Home/Java/JVM/Thread.md",
-    "Spaces/Home/Java/JVM/Process.md",
     "무제 파일.canvas"
   ]
 }
