@@ -281,7 +281,7 @@ keytool -genkey -alias tomcat -keyalg RSA -keystore d:\tomcat.keystore
 ```
 keytool -genkey -alias tomcat -keyalg RSA -keystore d:\tomcat.keystore -storepass 비밀번호
 ```
-비밀번호도 입력력
+비밀번호도 입력
 
 
 window
