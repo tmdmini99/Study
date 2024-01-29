@@ -46,7 +46,7 @@ services:
       - 80:80
     volumes:
       - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./apache/htdocs:/usr/local/apache2/htdocs
+      - ./apache/htdocs:/usr/local/apache2/htdocs # war파일을 톰캣에 배포한 경우 필요 x
       - ./apache/workers.properties:/usr/local/apache2/conf/workers.properties
     depends_on:
       - tomcat
@@ -58,8 +58,39 @@ services:
 
 
 
+### httpd.conf
+
+```
+ServerRoot "/usr/local/apache2"
+Listen 80
+
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
 
 
+ProxyPass "/tomcat" "http://tomcat:8080/" # localhost로 접속시 localhost:8080으로 매핑
+ProxyPassReverse "/tomcat" "http://tomcat:8080/"
+
+
+```
+
+### workers.properties
+
+```
+worker.list=worker1
+
+worker.worker1.type=ajp13
+worker.worker1.host=tomcat #yml에서 설정한 컨테이너 이름
+worker.worker1.port=8080 # 포트는 똑같이
+
+```
+
+
+
+
+
+
+---
 
 
 httpd.conf 안에 추가를 안해도 되는데 혹시 몰라서 저장
