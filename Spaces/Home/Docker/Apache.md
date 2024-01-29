@@ -126,4 +126,7 @@ worker.worker2.port=8009
 
 
 ---
-참조 - https://know-one-by-one.tistory.com/108 멀티 톰캣 아파치 설
+참조 - https://know-one-by-one.tistory.com/108 멀티 톰캣 아파치 설치
+
+
+https://mvje.tistory.com/165
