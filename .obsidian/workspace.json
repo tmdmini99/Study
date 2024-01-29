@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/WSL.md",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/WSL.md",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/WSL.md"
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/WSL.md",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,15 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Images/Docker명령어3.png",
     "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Images/Docker명령어2.png",
+    "Images/Docker명령어1.png",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Spaces/Home/Docker/WSL.md",
+    "Images/WSL1.png",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose.md",
-    "Spaces/Home/Docker/WSL.md",
     "Images/Docker11.png",
     "daily note/2024-01-29.md",
     "daily note/2024-01-26.md",
@@ -195,12 +199,8 @@
     "Images/Obsidian플러그인5.png",
     "Images/Obsidian플러그인4.png",
     "Images/Obsidian플러그인3.png",
-    "Images/Obsidian플러그인2.png",
-    "Images/Obsidian플러그인1.png",
     "Spaces/Obsidian/Obsidian",
     "Spaces/Obsidian",
-    "Images/Linux35.png",
-    "Images/Linux34.png",
     "Spaces/Home/Linux",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/Docker/쿠버네티스.md",
@@ -216,7 +216,6 @@
     "Spaces/Home/DB/분산 데이터베이스.md",
     "daily note/2024-01-23.md",
     "daily note/2024-01-22.md",
-    "daily note/2024-01-19.md",
     "Images/EL",
     "Images/새 폴더",
     "Images/파티셔닝",
