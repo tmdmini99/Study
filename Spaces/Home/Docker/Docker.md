@@ -27,9 +27,10 @@ Go언어로 작성된 리눅스 컨테이너 기반으로 하는 오픈소스 �
 > 도커
 > docker는 기본적으로 linux 위에서만 돌아간다.
 Winodws와 MacOS 용 docker를 설치하면 경량화된 linux 머신이 가상화되어 구동되고, 그 위에서 docker가 구동되는 것이다.
+Kernel은 Host OS를 그대로 사용하되, Host OS와 Container의 OS의 다른 부분만 Container 내에 같이 Packing된다
 
 
-
+![[Docker11.png]]
 
 
 
