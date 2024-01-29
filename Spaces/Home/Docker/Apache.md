@@ -72,6 +72,7 @@ ProxyPass "/tomcat" "http://tomcat:8080/" # localhost로 접속시 localhost:808
 ProxyPassReverse "/tomcat" "http://tomcat:8080/"
 
 
+ServerName localhost
 ```
 
 ### workers.properties
