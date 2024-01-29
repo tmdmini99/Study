@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "daily note/2024-01-29.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "daily note/2024-01-29.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "daily note/2024-01-29.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "daily note/2024-01-29.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,7 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
@@ -216,7 +217,6 @@
     "Spaces/Home/Java/File/FIle.md",
     "Spaces/Home/DB/분산 데이터베이스.md",
     "daily note/2024-01-23.md",
-    "daily note/2024-01-22.md",
     "Images/EL",
     "Images/새 폴더",
     "Images/파티셔닝",
