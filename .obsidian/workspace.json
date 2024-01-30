@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Docker/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Docker/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Spaces/Home/Docker/SSL.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/Docker/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,10 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Spaces/Home/Docker/SSL.md",
+    "Images/Pasted image 20240130161728.png",
+    "Images/Pasted image 20240130161405.png",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
@@ -195,8 +197,6 @@
     "Images/Docker명령어2.png",
     "Images/Docker명령어1.png",
     "Spaces/Home/Docker/WSL.md",
-    "Images/WSL1.png",
-    "Images/Docker11.png",
     "daily note/2024-01-26.md",
     "Spaces/Home/Web & WAS/Web.md",
     "Spaces/Home/Web & WAS/WAS.md",
@@ -216,7 +216,6 @@
     "Spaces/Home/DB/정규화&반정규화.md",
     "Spaces/Home/DB/파티셔닝.md",
     "Spaces/Home/DB/이상현상(Anomaly).md",
-    "Spaces/Home/Java/File/FIle.md",
     "Images/EL",
     "Images/새 폴더",
     "Images/파티셔닝",
