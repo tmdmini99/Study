@@ -202,7 +202,7 @@ docker run -d --name="tomcat-test" -p 8080:8080 tomcat:9.0.84
 ```
 
 
-war파일을 복사
+war파일을 복사 내가 저장해둔 위치를 지정
 
 ```
 docker cp C:\Project\CrawlerTest\target/CrawlerTest-1.0-SNAPSHOT.war tomcat-test:/usr/local/tomcat/webapps/ROOT.war
@@ -235,8 +235,16 @@ docker network create mynetwork
 ```
 
 
-컨테이너 각자 생성시 네트워크를 묶어줘야지만 사용 가능
 
+컨테이너 각자 생성시 네트워크를 묶어줘야지만 사용 가능
+만약 이미 컨테이너를 만들었을 경우
+```
+docker network connect my-mynetwork tomcat
+docker network connect my-mynetwork likesql
+
+```
+
+이런식으로 네트워크 설정 가능
 
 
 
