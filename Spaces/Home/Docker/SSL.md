@@ -90,6 +90,9 @@ services:
 ## httpd.conf 
 
 
+Common Name(CN)과 Servername을 일치 시켜줘야함
+CN을 localhost로 잡아서 ServerName도 localhost로 잡아줌
+
 ```
 #
 # This is the main Apache HTTP server configuration file.  It contains the
