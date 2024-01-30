@@ -815,6 +815,41 @@ docker run --network=mynetwork --name apaches -d -p 80:80 httpd:latest
 
 
 
+docker file 작성시
+```
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y httpd tomcat8
+
+RUN echo "ProxyPass /tomcat http://localhost:8080/" >> /etc/apache2/sites-available/000-default.conf
+RUN echo "ProxyPassReverse /tomcat http://tomcat:8080/" >> /etc/apache2/sites-available/000-default.conf
+
+CMD apachectl -DFOREGROUND
+
+```
+
+이미지 빌드
+```
+docker build -t apache-tomcat .
+
+```
+
+컨테이너 실행
+```
+docker run -d -p 80:80 apache-tomcat
+```
+
+
+
+
+---
+도커 파일 작성 하지 않고 내부로 들어가서 설정
+
+```
+docker exec -it apaches /bin/bash >>설정 파일 진입
+```
+
+
 
 
 
