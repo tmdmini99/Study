@@ -676,7 +676,7 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 도커 컨테이너 재생성
 ```
-docker run -d --network=mynetwork --name apaches -p 80:80 -p 443:443 -v C:\Project\CrawlerTest\httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf -v C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/private.crt:/usr/local/apache2/conf/server.crt -v C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/private.key:/usr/local/apache2/conf/server.key httpd:latest
+docker run -d --network=mynetwork --name apaches -p 80:80 -p 8443:8443 -v C:\Project\CrawlerTest\httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf -v C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/private.crt:/usr/local/apache2/conf/server.crt -v C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/private.key:/usr/local/apache2/conf/server.key httpd:latest
 ```
 
 여기서 httpd.conf 파일을 재생성해서 넣어야함 내가 컨테이너 이름을 다르게 할경우
