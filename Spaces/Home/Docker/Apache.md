@@ -815,8 +815,10 @@ docker run --network=mynetwork --name apaches -d -p 80:80 httpd:latest
 
 
 
-
-docker file 작성시
+Dockerfile은 파일에서 확장자 켜기해서 뒤에 확장자 지우기
+Dockerfile 작성시 
+만약 여러개의 도커 파일 사용시 파일명/Dockerfile  이렇게 작성
+만약 도커 파일 안에서 경로 잡아 줄 때 docker-compose.yml 기준으로 잡아야함
 ```
 FROM ubuntu:latest
 
@@ -828,6 +830,8 @@ RUN echo "ProxyPassReverse /tomcat http://tomcat:8080/" >> /etc/apache2/sites-av
 CMD apachectl -DFOREGROUND
 
 ```
+
+
 
 이미지 빌드
 ```
