@@ -11,3 +11,13 @@ x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out 
 ```
 x509 -req -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt
 ```
+
+
+openssl.exe에서 모듈이 동일한지 확인 하는 코드 동일해야 사용가능
+```
+openssl x509 -noout -modulus -in C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\private.crt > crt.modulus
+
+openssl rsa -noout -modulus -in C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\private.key > key.modulus
+
+
+```
