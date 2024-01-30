@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-29.md",
+                "file": "daily note/2024-01-30.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-29.md",
+                "file": "daily note/2024-01-30.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-29.md"
+                "file": "daily note/2024-01-30.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-29.md",
+                "file": "daily note/2024-01-30.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,8 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
+    "daily note/2024-01-29.md",
+    "daily note/2024-01-30.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
@@ -193,7 +195,6 @@
     "Images/WSL1.png",
     "Spaces/Home/Docker/Docker.md",
     "Images/Docker11.png",
-    "daily note/2024-01-29.md",
     "daily note/2024-01-26.md",
     "Spaces/Home/Web & WAS/Web.md",
     "Spaces/Home/Web & WAS/WAS.md",
@@ -216,7 +217,6 @@
     "Spaces/Home/DB/이상현상(Anomaly).md",
     "Spaces/Home/Java/File/FIle.md",
     "Spaces/Home/DB/분산 데이터베이스.md",
-    "daily note/2024-01-23.md",
     "Images/EL",
     "Images/새 폴더",
     "Images/파티셔닝",
