@@ -115,13 +115,14 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 <VirtualHost *:80>
     ServerName localhost
-    ProxyPass / http://tomcat:8080/
+    ProxyPass / http://tomcat:8080/ retry=1 acquire=3000 timeout=600
     ProxyPassReverse / http://tomcat:8080/
 </VirtualHost>
 ```
 
 
 localhost의 기본 home도 설정하고 싶을 때 DocumentRoot /usr/local/apache2/htdocs 추가
+retry=1 acquire=3000 timeout=600 넣는 이유 : 연결 시간이 초과되면 프록시 에러가 뜸 프록시 에러를 잡기 위해
 
 
 ```
@@ -178,7 +179,7 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 <VirtualHost *:80>
     DocumentRoot /usr/local/apache2/htdocs
-    ProxyPass / http://tomcat:8080/
+    ProxyPass / http://tomcat:8080/ retry=1 acquire=3000 timeout=600
     ProxyPassReverse / http://tomcat:8080/
 </VirtualHost>
 ```
@@ -743,7 +744,7 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 <VirtualHost *:80>
     ServerName localhost
-    ProxyPass / http://tomcat:8080/
+    ProxyPass / http://tomcat:8080/ retry=1 acquire=3000 timeout=600
     ProxyPassReverse / http://tomcat:8080/
 </VirtualHost>
 
@@ -821,7 +822,7 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y httpd tomcat8
 
-RUN echo "ProxyPass /tomcat http://localhost:8080/" >> /etc/apache2/sites-available/000-default.conf
+RUN echo "ProxyPass /tomcat http://localhost:8080/ retry=1 acquire=3000 timeout=600" >> /etc/apache2/sites-available/000-default.conf
 RUN echo "ProxyPassReverse /tomcat http://tomcat:8080/" >> /etc/apache2/sites-available/000-default.conf
 
 CMD apachectl -DFOREGROUND
@@ -869,7 +870,7 @@ vim conf/httpd.conf
 
 들어가서 밑에 내용 추가 뒤에 tomcat-test는 내 컨테이너 이름으로 변경
 ```
-ProxyPass / http://tomcat-test:8080/
+ProxyPass / http://tomcat-test:8080/ retry=1 acquire=3000 timeout=600
 ProxyPassReverse / http://tomcat-test:8080/
 ```
 
