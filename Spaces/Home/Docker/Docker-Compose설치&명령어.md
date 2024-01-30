@@ -255,9 +255,9 @@ services:
       - 8080:8080
     volumes:
       - ./CrawlerTest-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
-      - ./chromedriver-win64:/usr/local/tomcat/chromedriver-win64
     environment:
 	  - JAVA_OPTS=-Djava.version=8 //내가 원하는 자바 버전 설정하고 싶을때
+	  - CATALINA_CONNECTOR_CONNECTIONTIMEOUT=300000 // 프록시 설정 응답 시간 늘림
   mysql: //여기에 있는 이름으로 database-context.xml에서 url 이름 수정
   //<property name="jdbcUrl" value="jdbc:mysql://mysql:3306/test"></property> 여기서 localhost대신
     image: mysql:latest
