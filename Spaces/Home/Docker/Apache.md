@@ -121,6 +121,69 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 ```
 
 
+localhost의 기본 home도 설정하고 싶을 때 DocumentRoot /usr/local/apache2/htdocs 추가
+
+
+```
+
+
+
+ServerRoot "/usr/local/apache2"
+Listen 80
+
+LoadModule mpm_event_module modules/mod_mpm_event.so
+LoadModule authn_file_module modules/mod_authn_file.so
+LoadModule authn_core_module modules/mod_authn_core.so
+LoadModule authz_host_module modules/mod_authz_host.so
+LoadModule authz_groupfile_module modules/mod_authz_groupfile.so
+LoadModule authz_user_module modules/mod_authz_user.so
+LoadModule authz_core_module modules/mod_authz_core.so
+LoadModule access_compat_module modules/mod_access_compat.so
+LoadModule auth_basic_module modules/mod_auth_basic.so
+LoadModule reqtimeout_module modules/mod_reqtimeout.so
+LoadModule filter_module modules/mod_filter.so
+LoadModule mime_module modules/mod_mime.so
+LoadModule env_module modules/mod_env.so
+LoadModule headers_module modules/mod_headers.so
+LoadModule setenvif_module modules/mod_setenvif.so
+LoadModule version_module modules/mod_version.so
+LoadModule unixd_module modules/mod_unixd.so
+LoadModule status_module modules/mod_status.so
+LoadModule autoindex_module modules/mod_autoindex.so
+
+
+<Files ".ht*">
+    Require all denied
+</Files>
+
+
+<Directory "/usr/local/apache2/cgi-bin">
+    AllowOverride None
+    Options None
+    Require all granted
+</Directory>
+
+
+<IfModule proxy_html_module>
+Include conf/extra/proxy-html.conf
+</IfModule>
+
+<IfModule ssl_module>
+SSLRandomSeed startup builtin
+SSLRandomSeed connect builtin
+</IfModule>
+
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_http_module modules/mod_proxy_http.so
+
+<VirtualHost *:80>
+    DocumentRoot /usr/local/apache2/htdocs
+    ProxyPass / http://tomcat:8080/
+    ProxyPassReverse / http://tomcat:8080/
+</VirtualHost>
+```
+
+
 ### 전체 httpd.conf 코드
 
 ```
