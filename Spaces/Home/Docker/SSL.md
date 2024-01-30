@@ -1,5 +1,25 @@
 
 
+실제로 openssl 인증서 받을 때 쓴 명령어
+```
+
+genrsa -out private.key 2048 >> private.key는 다른걸로 설정 가능 ex) pp.key
+
+rsa -in private.key -pubout -out public.key >> public.key도 설정 가능 pb.key
+req -new -key private.key -out private.csr -config C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/openssl.cnf >>private.csr도 다른걸로 설정 가능 pp.csr
+
+genrsa -aes256 -out rootCA.key 2048
+>>rootCA.key도 원하는 이름으로 가능
+
+req -x509 -new -nodes -key rootCA.key -days 3650 -out rootCA.pem -config C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/openssl.cnf
+>>rootCA.pen도 원하는 이름으로 가능 
+
+x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out private.crt -days 3650
+>>private.crt도 설정 가능 ex) pp.crt
+```
+
+
+
 
 ```
 x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out private.crt -days 3650
@@ -7,7 +27,7 @@ x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out 
 이 명령은 `private.csr`인 Certificate Signing Request (CSR) 파일을 `rootCA.pem`인 CA(Certificate Authority) 인증서와 `rootCA.key`인 CA 개인 키를 사용하여 서명합니다. 결과적으로, `private.crt`라는 이름의 CA에 의해 서명된 인증서가 생성됩니다. 이 인증서는 3650일 동안 유효합니다.
 
  Common Name : 지정 해줘야함
-![[Pasted image 20240130161405.png]]
+![[DockerSSL1.png]]
 
 
 
