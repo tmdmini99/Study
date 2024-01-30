@@ -849,7 +849,23 @@ docker run -d -p 80:80 apache-tomcat
 docker exec -it apaches /bin/bash >>설정 파일 진입
 ```
 
+설정 파일 위치 
+```
+httpd -V | grep SERVER_CONFIG_FILE
 
+```
+
+
+vim 편집기 사용 위치가 여기에 있음
+```
+vim conf/httpd.conf
+```
+
+들어가서 밑에 내용 추가
+```
+ProxyPass / http://tomcat:8080/
+ProxyPassReverse / http://tomcat:8080/
+```
 
 
 
