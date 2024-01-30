@@ -322,6 +322,8 @@ database-context.xml 수정
 
 ```
 
+
+컨테이너 이름 지정시
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <beans xmlns="http://www.springframework.org/schema/beans"  
