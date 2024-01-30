@@ -741,6 +741,19 @@ worker.worker2.port=8009
 
 
 
+---
+도커 컨테이너만 적용 시킬 때
+
+network랑 같이 잡아줘서 컨테이너 생성
+```
+docker run --network=mynetwork --name apaches -d -p 80:80 httpd:latest
+```
+
+
+
+
+
+
 
 ---
 참조 - https://know-one-by-one.tistory.com/108 멀티 톰캣 아파치 설치
