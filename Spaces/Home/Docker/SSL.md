@@ -1,4 +1,6 @@
 
+
+
 ```
 x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out private.crt -days 3650
 ```
@@ -6,6 +8,8 @@ x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out 
 
  Common Name : 지정 해줘야함
 ![[Pasted image 20240130161405.png]]
+
+
 
 
 
@@ -28,7 +32,9 @@ openssl rsa -noout -modulus -in C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86
 
 확인 후 
 
-docker-compose.yml
+## docker-compose.yml
+
+volumes와 command 추가
 ```
 version: '3'
 services:
@@ -79,7 +85,8 @@ services:
 
 ```
 
-
+\- C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/private.crt:/usr/local/apache2/conf/server.crt  실제 저장된 위치에서 자신이 만든 키를 가져와야함
+ \- C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/private.key:/usr/local/apache2/conf/server.key 자신이 만든 키와 crt를 가져와야함
 ## httpd.conf 
 
 
@@ -658,3 +665,16 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 
 ```
+
+
+
+
+
+
+
+# docker Container 단독으로 할시
+
+
+
+
+
