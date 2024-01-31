@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "무제 파일.md"
+                "file": "Spaces/Home/Linux/Linux.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,11 +213,11 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "무제 파일.md",
     "Spaces/Home/Linux/Linux.md",
     "Images/Docker-Compose명령어10.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
-    "무제 파일.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/Apache.md",
