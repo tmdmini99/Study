@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-01-30.md",
+                "file": "daily note/2024-01-31.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-01-30.md",
+                "file": "daily note/2024-01-31.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-01-30.md"
+                "file": "daily note/2024-01-31.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-01-30.md",
+                "file": "daily note/2024-01-31.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,9 @@
   },
   "active": "fb40450a24d4146d",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
+    "daily note/2024-01-31.md",
+    "daily note/2024-01-30.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Docker/SSL.md",
@@ -187,7 +190,6 @@
     "Images/Pasted image 20240130161728.png",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Linux/Linux명령어.md",
-    "daily note/2024-01-30.md",
     "daily note/2024-01-29.md",
     "Spaces/Home/Docker/쿠버네티스.md",
     "Images/Docker명령어8.png",
@@ -215,8 +217,6 @@
     "Spaces/Home/가상화/Image.md",
     "Spaces/Home/가상화",
     "daily note/2024-01-25.md",
-    "Spaces/Home/DB/정규화&반정규화.md",
-    "Spaces/Home/DB/파티셔닝.md",
     "Images/EL",
     "Images/새 폴더",
     "Images/파티셔닝",
