@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Security.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,8 +213,12 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
-    "Spaces/Home/Linux/Linux명령어.md",
+    "Images/Security3.png",
+    "Spaces/Home/Spring/Spring Legacy/Security.md",
+    "Images/Security2.png",
+    "Images/Security1.png",
     "Spaces/Home/Linux/Linux.md",
+    "Spaces/Home/Linux/Linux명령어.md",
     "Images/정규화&반정규화/반정규화11.png",
     "Images/정규화&반정규화/반정규화10.png",
     "Images/정규화&반정규화/반정규화9.png",
@@ -224,9 +228,6 @@
     "Images/Obsidian/Obsidian플러그인7.png",
     "Images/Obsidian/Obsidian플러그인6.png",
     "Images/Obsidian/Obsidian플러그인5.png",
-    "Images/Obsidian/Obsidian플러그인4.png",
-    "Images/Obsidian/Obsidian플러그인3.png",
-    "Images/Obsidian/Obsidian플러그인2.png",
     "Images/Obsidian",
     "Images/Linux",
     "무제 파일.md",
@@ -243,7 +244,6 @@
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "daily note/2024-01-30.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "Spaces/Home/Spring/Spring Legacy/Security.md",
     "daily note/2024-01-29.md",
     "Spaces/Home/Docker/쿠버네티스.md",
     "daily note/2024-01-26.md",
