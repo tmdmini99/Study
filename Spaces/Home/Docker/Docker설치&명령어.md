@@ -223,6 +223,11 @@ mysql
 docker run --network=mynetwork --name likesql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3307:3306 mysql:latest
 ```
 
+user와 database 등록하면서 생성
+```
+docker run -d  --name my-mysql  -e MYSQL_ROOT_PASSWORD=my-secret-pw  -e MYSQL_USER=myuser   -e MYSQL_PASSWORD=mypassword   -e MYSQL_DATABASE=mydatabase   mysql:latest
+```
+
 
 tomcat
 ```
