@@ -73,6 +73,9 @@ services:
 
 이 외에도 `httpd.conf` 파일을 통해 로깅 설정, MIME 타입 지정, 리디렉션 설정 등 다양한 웹 서버의 동작을 제어하는 옵션들을 설정할 수 있습니다. 따라서 `httpd.conf` 파일은 아파치 웹 서버의 동작을 세부적으로 구성하기 위해 필요한 중요한 파일입니다.
 
+
+
+
 ```
 <VirtualHost *:80>
     ServerName www.example1.com

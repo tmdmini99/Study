@@ -112,6 +112,9 @@ services:
 
 Common Name(CN)과 Servername을 일치 시켜줘야함
 CN을 localhost로 잡아서 ServerName도 localhost로 잡아줌
+- `SSLEngine on`: SSL 엔진을 활성화합니다. 이 설정은 HTTPS 연결을 사용하도록 Apache에 알려줍니다.
+- `SSLCertificateFile /usr/local/apache2/conf/server.crt`: SSL 인증서 파일의 경로를 지정합니다. `server.crt` 파일은 해당 경로에 위치해야 합니다. 이 인증서는 Apache 서버에서 클라이언트와의 안전한 통신을 위해 사용됩니다.
+- `SSLCertificateKeyFile /usr/local/apache2/conf/server.key`: SSL 인증서의 개인 키 파일의 경로를 지정합니다. `server.key` 파일은 해당 경로에 위치해야 합니다. 이 개인 키는 SSL 인증서와 일치해야 하며, 클라이언트와의 통신에서 암호화와 복호화에 사용됩니다.
 
 ```
 #
