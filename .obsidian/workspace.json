@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md"
+                "file": "무제 파일.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Linux/Linux.md",
+                "file": "무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,6 +213,7 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Linux/Linux.md",
     "Images/Docker-Compose명령어10.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
@@ -246,7 +247,6 @@
     "Spaces/Home/Web & WAS/WAS.md",
     "PDF",
     "PDF/리눅스 명령어.pdf",
-    "Spaces/Home/Linux/Linux.md",
     "Spaces/Obsidian/Obsidian플러그인.md",
     "Spaces/Obsidian/Obsidian",
     "Spaces/Obsidian",
