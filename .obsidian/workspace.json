@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md"
+                "file": "무제 파일.md"
               }
             }
           },
@@ -156,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -197,10 +197,49 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "39f709b5394b9cdb",
+  "floating": {
+    "id": "cca1cdd2a7d7efd3",
+    "type": "floating",
+    "children": [
+      {
+        "id": "d4ca8d55d33a3b5b",
+        "type": "window",
+        "children": [
+          {
+            "id": "3aafefa48acdda52",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "50ad55477fe18617",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "무제 파일.md",
+                    "mode": "source",
+                    "backlinks": true,
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 448,
+        "y": 116,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "50ad55477fe18617",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
     "무제 파일.md",
+    "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Images/Docker-Compose명령어13.png",
     "Images/Docker-Compose명령어12.png",
@@ -211,7 +250,6 @@
     "Images/Docker-Compose명령어8.png",
     "Images/Docker-Compose명령어9.png",
     "Images/Pasted image 20240131101535.png",
-    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/DB/정규화&반정규화.md",
