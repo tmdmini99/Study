@@ -252,6 +252,8 @@ docker-compose의 volume을 사용하면, 여러 개의 컨테이너에 같은 �
     - 기본적으로 도커는 무작위로 이름을 생성하지만, name 옵션을 사용하여 이름을 지정할 수 있습니다.
 - external
     - external 옵션을 사용하면 이미 생성된 Volume을 참조할 수 있습니다. 이 옵션을 사용하면 docker-compose up 명령을 실행할 때 Volume을 새로 생성하지 않고 기존 Volume을 사용합니다.
+- volumes_from
+	- 
 
 ```yml
 version: '3.9'
