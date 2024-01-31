@@ -246,7 +246,9 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED      STATUS    
 ## 내가 만든 .yml
 
 docker-compse.yml이 있는 디렉토리로 이동
-![[Pasted image 20240131102147.png]]
+이거 같은 경우에는 docker-compose.yml 파일이 저 위치에 있기 때문에 저기로 이동 
+다른곳에 있으면 다른 곳으로 이동해야함
+![[Docker-Compose명령어11.png]]
 ![[Docker-Compose명령어6.png]]
 
 
@@ -256,16 +258,24 @@ docker-compose up 실행(이미 만들어 놓은 yml파일이 있을경우)
 
 로그와 함께 실행
 이때 나오고 싶을 경우 ctrl + c 입력
-![[Docker_Compose명령어8.png]]
+![[Docker-Compose명령어8.png]]
 
 도커 지우고 싶을 때
 docker-compose down
 
-![[Docker_Compose명령어9.png]]
+![[Docker-Compose명령어9.png]]
 
 docker-compose up -d  도커 컴포즈 백그라운드 실행
 
 ![[Docker-Compose명령어10.png]]
+
+
+결과
+도커 컴포즈 안에 3개의 컨테이너 생성
+![[Docker-Compose명령어12.png]]
+
+![[Docker-Compose명령어13.png]]
+
 
 
 

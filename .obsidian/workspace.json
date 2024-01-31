@@ -4,40 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "f865b9895a25e9e7",
+        "id": "5b6ddba0c518c9aa",
         "type": "tabs",
         "children": [
           {
-            "id": "e23f4c4955ce0bb9",
+            "id": "f977b8ea07469c46",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/Docker_Compose명령어8.png"
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           },
           {
-            "id": "cc17995f20526346",
+            "id": "39f709b5394b9cdb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/Docker-Compose명령어6.png"
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           },
           {
-            "id": "e5e3de5828753f4f",
+            "id": "30d93af37791e91c",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Docker-Compose명령어7.png"
+                "file": "Images/Docker-Compose명령어10.png"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -111,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Docker_Compose명령어8.png",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Docker_Compose명령어8.png"
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md"
               }
             }
           },
@@ -149,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Docker_Compose명령어8.png",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -190,24 +197,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e23f4c4955ce0bb9",
+  "active": "39f709b5394b9cdb",
   "lastOpenFiles": [
-    "Images/Docker-Compose명령어10.png",
-    "Images/Docker-Compose명령어6.png",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "Images/Docker-Compose명령어7.png",
-    "Images/Pasted image 20240131102147.png",
-    "Images/Docker_Compose명령어9.png",
-    "Images/Docker_Compose명령어8.png",
-    "무제 파일.md",
-    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker.md",
-    "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
+    "무제 파일.md",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Images/Docker-Compose명령어13.png",
+    "Images/Docker-Compose명령어12.png",
+    "Images/Docker-Compose명령어10.png",
+    "Images/Docker-Compose명령어11.png",
+    "Images/Docker-Compose명령어6.png",
+    "Images/Docker-Compose명령어7.png",
+    "Images/Docker-Compose명령어8.png",
+    "Images/Docker-Compose명령어9.png",
     "Images/Pasted image 20240131101535.png",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/DB/정규화&반정규화.md",
-    "Images/반정규화10.png",
-    "Images/반정규화9.png",
     "daily note/2024-01-31.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "daily note/2024-01-30.md",
