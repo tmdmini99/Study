@@ -4,19 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "ea38453d180957e0",
+        "id": "f865b9895a25e9e7",
         "type": "tabs",
         "children": [
           {
-            "id": "fb40450a24d4146d",
+            "id": "e23f4c4955ce0bb9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "Images/Docker_Compose명령어8.png"
+              }
+            }
+          },
+          {
+            "id": "cc17995f20526346",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Docker-Compose명령어6.png"
+              }
+            }
+          },
+          {
+            "id": "e5e3de5828753f4f",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Docker-Compose명령어7.png"
               }
             }
           }
@@ -94,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Images/Docker_Compose명령어8.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Images/Docker_Compose명령어8.png"
               }
             }
           },
@@ -132,7 +149,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Images/Docker_Compose명령어8.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,14 +190,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fb40450a24d4146d",
+  "active": "e23f4c4955ce0bb9",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker-Compose.md",
+    "Images/Docker-Compose명령어10.png",
+    "Images/Docker-Compose명령어6.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Images/Docker-Compose명령어7.png",
+    "Images/Pasted image 20240131102147.png",
+    "Images/Docker_Compose명령어9.png",
+    "Images/Docker_Compose명령어8.png",
+    "무제 파일.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Spaces/Home/Docker/Docker.md",
+    "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
+    "Images/Pasted image 20240131101535.png",
+    "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/DB/정규화&반정규화.md",
     "Images/반정규화10.png",
     "Images/반정규화9.png",
-    "Images/반정규화11.png",
     "daily note/2024-01-31.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "daily note/2024-01-30.md",
@@ -188,18 +215,10 @@
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Docker/Apache.md",
-    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
-    "Images/DockerSSL1.png",
-    "Spaces/Home/Docker/Docker.md",
-    "Images/Pasted image 20240130161728.png",
     "Spaces/Home/Linux/Linux명령어.md",
     "daily note/2024-01-29.md",
     "Spaces/Home/Docker/쿠버네티스.md",
-    "Images/Docker명령어8.png",
-    "Images/Docker명령어7.png",
-    "Images/Docker명령어6.png",
-    "Images/Docker명령어5.png",
     "Spaces/Home/Docker/WSL.md",
     "daily note/2024-01-26.md",
     "Spaces/Home/Web & WAS/Web.md",
@@ -213,7 +232,6 @@
     "Spaces/Home/Linux",
     "Spaces/Home/Java/Generic/Generic.md",
     "Spaces/Home/가상화/VM& Container.md",
-    "Spaces/Home/가상화/가상화.md",
     "Spaces/Home/가상화",
     "Images/EL",
     "Images/새 폴더",
