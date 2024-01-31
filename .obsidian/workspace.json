@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Apache.md",
+                "file": "Spaces/Home/Docker/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Apache.md",
+                "file": "Spaces/Home/Docker/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Apache.md"
+                "file": "Spaces/Home/Docker/SSL.md"
               }
             }
           },
@@ -156,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Apache.md",
+                "file": "Spaces/Home/Docker/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -230,17 +230,18 @@
         "y": 116,
         "width": 1024,
         "height": 800,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       }
     ]
   },
   "active": "39f709b5394b9cdb",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker.md",
-    "Spaces/Home/Docker/Apache.md",
-    "Spaces/Home/Docker/SSL.md",
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "무제 파일.md",
+    "Spaces/Home/Docker/SSL.md",
+    "Spaces/Home/Docker/Apache.md",
+    "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Images/Docker-Compose명령어13.png",
@@ -259,7 +260,6 @@
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "daily note/2024-01-30.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Linux/Linux명령어.md",
     "daily note/2024-01-29.md",
