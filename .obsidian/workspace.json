@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Network/Server&Client.md",
+                "file": "무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Network/Server&Client.md",
+                "file": "무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Network/Server&Client.md"
+                "file": "무제 파일.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Network/Server&Client.md",
+                "file": "무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,11 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
-    "Images/Server&Client3.png",
     "Spaces/Home/Network/Server&Client.md",
+    "Images/Server&Client4.png",
     "Images/Server&Client2.png",
+    "Images/Server&Client3.png",
     "Images/Server&Client1.png",
-    "Images/Pasted image 20240201125335.png",
     "Spaces/Home/Network/Client.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Network",
