@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md",
+                "file": "daily note/2024-02-01.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md",
+                "file": "daily note/2024-02-01.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md"
+                "file": "daily note/2024-02-01.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md",
+                "file": "daily note/2024-02-01.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,8 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Security.md",
+    "daily note/2024-02-01.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
     "Images/Security/Security7.png",
@@ -185,7 +187,6 @@
     "Images/Security/Security8.png",
     "Images/Server&Client/Server&Client4.png",
     "Images/Server&Client/Server&Client3.png",
-    "Images/Server&Client/Server&Client2.png",
     "Images/Filter",
     "Images/새 폴더",
     "Images/Server&Client",
@@ -200,7 +201,6 @@
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/HandShake/HandShake.md",
-    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Linux/Linux.md",
     "Spaces/Home/Linux/Linux명령어.md",
