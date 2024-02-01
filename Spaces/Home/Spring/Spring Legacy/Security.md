@@ -30,8 +30,8 @@ _인증과 인가란 무엇일까? 보통 인증 절차를 거친 후 인가 절
 
 이중 Spring Security는 credential 기반의 인증을 취합니다.
 
-- principal: 아이디 (username) 보호받는 Resource에 접근하는 대상
-- credential: 비밀번호 (password) Resource에 접근하는 대상의 비밀번호
+- principal: 아이디 (username)  보호받는 Resource에 접근하는 대상
+- credential: 비밀번호 (password)  Resource에 접근하는 대상의 비밀번호
 
 특정 자원에 대한 접근을 제어하기 위해서는 **권한**을 가지게 된다.
 
@@ -45,6 +45,16 @@ _인증과 인가란 무엇일까? 보통 인증 절차를 거친 후 인가 절
     - Spring MVC와 분리되어 관리하고 동작할 수 있다.
 - Bean으로 설정할 수 있다.
     - Spring Security 3.2부터는 XML설정을 하지 않아도 된다.
+
+### SecurityFilterChain
+
+![[Security7.png]]
+
+스프링 시큐리티를 이용하면 개발시에 필요한 사용자의 인증, 권한, 보안 처리를 간단하지만 강력하게 구현 할 수 있다. 일반적인 웹 환경에서 브라우저가 서버에게 요청을 보내게 되면, DispatcherServlet(FrontController)가 요청을 받기 이전에 많은 ServletFilter(서블릿 필터)거치게 된다. Security와 관련한 서블릿 필터도 실제로는 연결된 여러 필터들로 구성 되어 있다. 이러한 모습때문에 Chain(체인)이라는 표현을 쓴다.
+
+
+
+
 
 ### Spring Security Architecture(구조)
 
@@ -323,19 +333,26 @@ UserDetails 인터페이스의 경우 직접 개발한 UserVO 모델에 UserDeta
 
 ```java
 public interface UserDetails extends Serializable {
- 
+
+    //계정의 권한 목록을 리턴
 	Collection<? extends GrantedAuthority> getAuthorities();
- 
+
+	//계정의 비밀번호 리턴
 	String getPassword();
- 
+	
+	//계정의 고유한 값 리턴
 	String getUsername();
- 
+	
+	//계정의 만료 여부 리턴
 	boolean isAccountNonExpired();
- 
+	
+	//계정의 만료 여부 리턴
 	boolean isAccountNonLocked();
- 
+	
+	//isCredentialsNonExpired()
 	boolean isCredentialsNonExpired();
- 
+	
+	//계정의 활성화 여부 리턴
 	boolean isEnabled();
  
 }
@@ -344,6 +361,11 @@ public interface UserDetails extends Serializable {
 **8) SecurityContextHolder**
 
 SecurityContextHolder는 보안 주체의 세부 정보를 포함하여 응용 프로그램의 현재 보안 컨텍스트에 대한 세부 정보가 저장됩니다.
+![[Security5.png]]
+
+- SecurityContext 를 현재 스레드와 연결 시켜주는 역할
+- 스프링 시큐리티는 같은 스레드 의 어플리케이션 내 어디서든 SecurityContextHolder 의 인증 정보를 확인 가능하도록 구현되어 있는데 이 개념을 `ThreadLocal` 이라고 함.
+
 
 **9) SecurityContext**
 
@@ -351,16 +373,45 @@ Authentication을 보관하는 역할을 하며, SecurityContext를 통해 Authe
 
 SecurityContextHolder.getContext().set or get Authentication(authenticationObject);
 
+
+![[Security6.png]]
+
+- Authentication 의 정보를 가지고 있는 interface
+- `SecurityContextHolder.getContext()` 를 통해 얻을 수 있음
+
+
 **10) GrantedAuthority**
 
 GrantedAuthority는 현재 사용자(Pricipal)가 가지고 있는 권한을 의미하며 ROLE_ADMIN, ROLE_USER와 같이 ROLE_* 형태로 사용합니다. GrantedAuthority객체는 UserDetailsService에 의해 불러올 수 있고, 특정 자원에 대한 권한이 있는지 없는지를 검사해 접근 허용 여부를 결정합니다.
 
+**11) Password Encoding**
 
+AuthenticationManagerBuilder.userDetailsService().passwordEncoder() 를 통해 패스워드 암호화에 사용될 PasswordEncoder 구현체를 지정할 수 있다.
 
+```java
+@Override
+protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	// TODO Auto-generated method stub
+	auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+}
+
+@Bean
+public PasswordEncoder passwordEncoder(){
+	return new BCryptPasswordEncoder();
+}
+```
 
 
 ---
 참조 - https://velog.io/@hope0206/Spring-Security-%EA%B5%AC%EC%A1%B0-%ED%9D%90%EB%A6%84-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%97%AD%ED%95%A0-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0
 
 
+https://velog.io/@soyeon207/SpringBoot-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0%EB%9E%80
+
 https://mangkyu.tistory.com/76
+https://mangkyu.tistory.com/77
+
+https://velog.io/@eunhye_/Spring-Security
+
+
+https://workshop-6349.tistory.com/entry/Spring-Security-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0%EB%9E%80
