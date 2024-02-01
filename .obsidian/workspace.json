@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Spring/Security.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Spring/Security.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "무제 파일.md"
+                "file": "Spaces/Home/Spring/Security.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Spring/Security.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,24 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Images/Security/Security2.png",
+    "Images/Security/Security1.png",
+    "Images/Security/Security7.png",
+    "Images/Security/Security6.png",
+    "Images/Security/Security5.png",
+    "Images/Security/Security4.png",
+    "Images/Security/Security3.png",
+    "Images/Security/Security8.png",
+    "Images/Server&Client/Server&Client4.png",
+    "Images/Server&Client/Server&Client3.png",
+    "Images/Server&Client/Server&Client2.png",
+    "Images/Filter",
+    "Images/새 폴더",
+    "Images/Server&Client",
+    "Images/Security",
+    "Spaces/Home/Spring/Spring Legacy/Security.md",
+    "무제 파일.md",
     "Spaces/Home/Network/Server&Client.md",
-    "Images/Server&Client4.png",
-    "Images/Server&Client2.png",
-    "Images/Server&Client3.png",
-    "Images/Server&Client1.png",
     "Spaces/Home/Network/Client.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Network",
@@ -187,20 +200,11 @@
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/HandShake/HandShake.md",
-    "무제 파일.md",
     "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Spring/Filter.md",
-    "Images/Security8.png",
-    "Images/Filter1.jpg",
-    "Images/Security7.png",
-    "Images/Security6.png",
-    "Images/Security5.png",
-    "Images/Security4.png",
     "Spaces/Home/Linux/Linux.md",
     "Spaces/Home/Linux/Linux명령어.md",
     "Images/WSL",
-    "Images/새 폴더",
     "Images/Obsidian",
     "Images/Linux",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
@@ -217,9 +221,6 @@
     "daily note/2024-01-30.md",
     "PDF",
     "PDF/리눅스 명령어.pdf",
-    "Spaces/Obsidian/Obsidian",
-    "Spaces/Obsidian",
-    "Spaces/Home/Linux",
     "무제 파일.canvas"
   ]
 }
