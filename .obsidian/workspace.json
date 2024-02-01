@@ -13,14 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Spaces/Home/Network/Server&Client.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "fc19c65849d3f3fe",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Server&Client2.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Images/Server&Client2.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "무제 파일.md"
+                "file": "Images/Server&Client2.png"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "무제 파일.md",
+                "file": "Images/Server&Client2.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +184,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2e6492016d0503b8",
+  "active": "fc19c65849d3f3fe",
   "lastOpenFiles": [
+    "Spaces/Home/Network/Server&Client.md",
+    "Images/Server&Client1.png",
+    "Images/Pasted image 20240201125340.png",
+    "Images/Pasted image 20240201125335.png",
+    "Images/Server&Client2.png",
+    "Spaces/Home/Network/Client.md",
+    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+    "Spaces/Home/Network",
+    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
+    "Spaces/Home/Protocol/Http/HTTP Polling.md",
+    "Spaces/Home/Protocol/Http/Http.md",
+    "Spaces/Home/Protocol/HandShake/HandShake.md",
+    "무제 파일.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Spring/Filter.md",
@@ -184,17 +208,12 @@
     "Images/Security6.png",
     "Images/Security5.png",
     "Images/Security4.png",
-    "Images/Security3.png",
-    "Images/Security2.png",
-    "Images/Security1.png",
     "Spaces/Home/Linux/Linux.md",
     "Spaces/Home/Linux/Linux명령어.md",
-    "Images/정규화&반정규화/반정규화11.png",
     "Images/WSL",
     "Images/새 폴더",
     "Images/Obsidian",
     "Images/Linux",
-    "무제 파일.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker.md",
@@ -207,20 +226,11 @@
     "daily note/2024-01-31.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "daily note/2024-01-30.md",
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "daily note/2024-01-29.md",
-    "Spaces/Home/Docker/쿠버네티스.md",
-    "daily note/2024-01-26.md",
-    "Spaces/Home/Web & WAS/Web.md",
-    "Spaces/Home/Web & WAS/WAS.md",
     "PDF",
     "PDF/리눅스 명령어.pdf",
-    "Spaces/Obsidian/Obsidian플러그인.md",
     "Spaces/Obsidian/Obsidian",
     "Spaces/Obsidian",
     "Spaces/Home/Linux",
-    "Spaces/Home/Java/Generic/Generic.md",
-    "Spaces/Home/가상화",
     "무제 파일.canvas"
   ]
 }
