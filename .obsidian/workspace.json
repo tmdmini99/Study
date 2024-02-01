@@ -19,19 +19,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "fc19c65849d3f3fe",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Server&Client2.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Server&Client2.png",
+                "file": "Spaces/Home/Network/Server&Client.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Server&Client2.png"
+                "file": "Spaces/Home/Network/Server&Client.md"
               }
             }
           },
@@ -143,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Server&Client2.png",
+                "file": "Spaces/Home/Network/Server&Client.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,13 +173,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fc19c65849d3f3fe",
+  "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Images/Server&Client3.png",
     "Spaces/Home/Network/Server&Client.md",
-    "Images/Server&Client1.png",
-    "Images/Pasted image 20240201125340.png",
-    "Images/Pasted image 20240201125335.png",
     "Images/Server&Client2.png",
+    "Images/Server&Client1.png",
+    "Images/Pasted image 20240201125335.png",
     "Spaces/Home/Network/Client.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Network",
