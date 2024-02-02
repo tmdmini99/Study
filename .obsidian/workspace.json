@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "Spaces/Home/Spring/Security.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "Spaces/Home/Spring/Security.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md"
+                "file": "Spaces/Home/Spring/Security.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "Spaces/Home/Spring/Security.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Kafka",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
@@ -191,7 +192,6 @@
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Docker/WSL.md",
     "Spaces/Home/Spring/Filter.md",
-    "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Docker/SSL.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
@@ -220,7 +220,6 @@
     "Images/Obsidian",
     "Images/Linux",
     "PDF",
-    "PDF/리눅스 명령어.pdf",
     "무제 파일.canvas"
   ]
 }
