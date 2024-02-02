@@ -15,7 +15,14 @@ https://velog.io/@jimin3263/Spring-security%EC%9D%98-Filter
 https://codecrafting.tistory.com/9?category=958287
 
 
+https://shxrecord.tistory.com/161?category=662711 - security-context.xml 에러 x 버전이 낮다
+
+https://dev-splin.github.io/spring/Spring-Security/
+
+
 https://github.com/lleellee0/kakaopage-webtoon-downloader/releases/tag/v1.0.0 - 웹툰 다운?
 
 
-https://velog.io/@leon/posts
+https://velog.io/@leon/posts  jpa
+
+https://github.com/bmm522/quiz-studio/blob/main/spring-module/quizstudio/quiz-batch/src/main/java/com/quizbatch/domain/category/CategoryQueryRepositoryImpl.java  jpa
