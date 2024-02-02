@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-02-01.md",
+                "file": "daily note/2024-02-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-02-01.md",
+                "file": "daily note/2024-02-02.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-02-01.md"
+                "file": "daily note/2024-02-02.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-02-01.md",
+                "file": "daily note/2024-02-02.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,8 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "daily note/2024-02-01.md",
+    "daily note/2024-02-02.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Docker/WSL.md",
@@ -182,7 +184,6 @@
     "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "daily note/2024-02-01.md",
     "Spaces/Home/Spring/Security.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
@@ -218,7 +219,6 @@
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/DB/정규화&반정규화.md",
     "daily note/2024-01-31.md",
-    "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "PDF",
     "PDF/리눅스 명령어.pdf",
     "무제 파일.canvas"
