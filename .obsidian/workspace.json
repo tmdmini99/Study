@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+    "Spaces/Home/Spring/JPA/JPA.md",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/쿠버네티스.md",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
@@ -188,7 +192,6 @@
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Docker/SSL.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
     "Images/Security/Security7.png",
@@ -216,9 +219,6 @@
     "Images/WSL",
     "Images/Obsidian",
     "Images/Linux",
-    "Spaces/Home/Docker/Docker-Compose.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/DB/정규화&반정규화.md",
     "PDF",
     "PDF/리눅스 명령어.pdf",
     "무제 파일.canvas"
