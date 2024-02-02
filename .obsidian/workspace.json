@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-02-02.md",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-02-02.md",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-02-02.md"
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-02-02.md",
+                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,10 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
-    "daily note/2024-02-01.md",
+    "Spaces/Home/Docker/Docker.md",
+    "Spaces/Home/Spring/Security.md",
     "daily note/2024-02-02.md",
+    "daily note/2024-02-01.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Docker/WSL.md",
@@ -184,7 +186,6 @@
     "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "Spaces/Home/Spring/Security.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
     "Images/Security/Security7.png",
@@ -213,7 +214,6 @@
     "Images/Obsidian",
     "Images/Linux",
     "Spaces/Home/Docker/Docker설치&명령어.md",
-    "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
