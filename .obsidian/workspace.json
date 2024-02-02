@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+                "file": "daily note/2024-02-01.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+                "file": "daily note/2024-02-01.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md"
+                "file": "daily note/2024-02-01.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+                "file": "daily note/2024-02-01.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,7 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Docker/WSL.md",
     "Spaces/Home/Spring/Filter.md",
@@ -200,7 +201,6 @@
     "무제 파일.md",
     "Spaces/Home/Network/Server&Client.md",
     "Spaces/Home/Network/Client.md",
-    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Network",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
