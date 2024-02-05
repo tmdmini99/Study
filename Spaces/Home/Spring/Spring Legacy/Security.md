@@ -65,12 +65,15 @@ public class MemberService implements UserDetailsService {
   
     @Override  
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {  
-        MemberDto memberDto = memberDao.getAll();  // 이 메서드가 있어야지 나중에 로그인할
+        MemberDto memberDto = memberDao.getAll();  // 이 메서드가 있어야지 나중에 로그인할수 있음
         return null;  
     }  
 }
 ```
 
+```java
+
+```
 
 
 
