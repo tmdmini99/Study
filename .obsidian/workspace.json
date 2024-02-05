@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "daily note/2024-02-05.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "daily note/2024-02-05.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md"
+                "file": "daily note/2024-02-05.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "daily note/2024-02-05.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +189,9 @@
   },
   "active": "a9c7bad32d9051fc",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
+    "daily note/2024-02-05.md",
+    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Kafka",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
