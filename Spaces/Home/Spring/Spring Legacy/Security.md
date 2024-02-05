@@ -1,5 +1,76 @@
 
 
+security-context.xml
+```xml
+<beans:beans xmlns="http://www.springframework.org/schema/security"  
+xmlns:beans="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans.xsd  
+http://www.springframework.org/schema/security  
+http://www.springframework.org/schema/security/spring-security.xsd">  
+  
+<http>  
+    <intercept-url pattern="/member/login" access="permitAll" />  
+    <intercept-url pattern="/**" access="isAuthenticated()" />  
+<!-- <form-login login-page="/member/login" default-target-url="/home" />-->  
+    <form-login  default-target-url="/home" />  
+    <logout logout-success-url="/login?logout" />  
+</http>  
+  
+<beans:bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">  
+    <beans:constructor-arg>  
+        <beans:list>  
+            <beans:bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">  
+                <beans:property name="userDetailsService" ref="userDetailsService"/>  
+                <beans:property name="passwordEncoder" ref="passwordEncoder"/>  
+            </beans:bean>  
+        </beans:list>  
+    </beans:constructor-arg>  
+</beans:bean>  
+  
+  
+<beans:bean id="userDetailsService" class="org.example.service.MemberService">  
+    <beans:constructor-arg ref="userDao"/>  
+</beans:bean>  
+  
+<beans:bean id="userDao" class="org.example.dao.MemberDao"/>  
+<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>  
+</beans:beans>
+
+```
+
+
+MemberService
+```java
+package org.example.service;  
+  
+import org.example.dao.MemberDao;  
+import org.example.dto.MemberDto;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.security.core.userdetails.UserDetails;  
+import org.springframework.security.core.userdetails.UserDetailsService;  
+import org.springframework.security.core.userdetails.UsernameNotFoundException;  
+import org.springframework.stereotype.Service;  
+  
+@Service  
+public class MemberService implements UserDetailsService {  
+  
+    private  MemberDao memberDao;  
+  
+    @Autowired  
+    public MemberService(MemberDao memberDao) {  
+        this.memberDao = memberDao;  
+    }  
+  
+    @Override  
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {  
+        MemberDto memberDto = memberDao.getAll();  
+        return null;  
+    }  
+}
+```
+
 
 
 
