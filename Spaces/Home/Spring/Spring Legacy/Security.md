@@ -74,7 +74,10 @@ public class MemberService implements UserDetailsService {
 
 
 security-context.ml 
-만약 
+만약  Attribute success-handler is not allowed here 이게 뜬다면
+`http://www.springframework.org/schema/security/spring-security-5.4.xsd` 여기 버전 확인
+ctrl + 마우스 가져다 대면 바로 확인 가능 자신의 시큐리티 라이브러리 버전과 일치시켜야함
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <beans:beans xmlns="http://www.springframework.org/schema/security"  
