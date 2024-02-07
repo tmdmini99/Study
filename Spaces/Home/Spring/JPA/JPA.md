@@ -120,7 +120,7 @@ Spring Data JPA를 사용하는 방법이나, 더 자세한 내용은 다음에 
 |*@ManyToMany* |테이블 연관관계를 맵핑할 때 다중성을 나타내는  <br>  설정값으로 이용되며 다:다(N:N)의 관계를 맵핑할 때  <br>  설정한다.|
 |**@OrderBy -** Hibernate 패키지|해당 열 기준으로 오름차순 내림차순 정렬할 때 사용  <br>  JPA 쿼리문 뒤에 OrderBy 절이 붙게 됨|
 |**@Id**|테이블에서 Identity 키로 사용할 필드를 지정|
-|****@EmbeddedId****|복합키를 사용할 때 사용 (2개이상의 PK키)|
+|**@EmbeddedId** |복합키를 사용할 때 사용 (2개이상의 PK키)|
 |**@IdClass**|복합키를 사용할 때 사용 (2개이상의 PK키)|
 |**@GeneratedValue**|id 필드의 값을 자동으로 올려주는 역할  <br>  <br>  - 속성 중 strategy = GenerationType.IDENTITY  <br>  사용함으로 DB에 존재하는 실제 id 숫자와의 충돌을 막아줌  <br>  (MySql 과 Oracle 방식이 다름)|
 |**@Embedded**|**@Embeddable** 클래스를 타입으로 매핑하는 역할|
@@ -146,7 +146,7 @@ Spring Data JPA를 사용하는 방법이나, 더 자세한 내용은 다음에 
 |**@EntityListeners(AuditingEntityListener.class)**|Entity 를 감시할 때 사용 한다  <br>  @PostLoad(불러올 때), @PrePersist(저장 하기 전),  <br>  @PostPersist(저장 후), @PreUpdate(업데이트 하기 전),  <br>  @PostUpdate(업데이트 후), @PreRemove(삭제 하기 전),  <br>  @PostRemove(삭제 후)|
 ### 주요 메서드
 
-#### > **#1. @Entity**
+#### > 1. @Entity
 
 |   |   |   |
 |---|---|---|
@@ -236,7 +236,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 ```
 
 
-#### > **#2. @Table**
+#### > 2. @Table
 
 |   |   |   |
 |---|---|---|
@@ -344,7 +344,7 @@ public class Member {
 |**x2,x1**|**X**|**O**|
 |**x2,x2**|**O**|**O**|
 
-#### > **#3. @Column**
+#### > 3. @Column
 
 
 |   |   |   |
@@ -478,7 +478,7 @@ public class Member {
 ![[JPA18.png]]
 
 
-#### > **#4. @JoinColumn**
+#### > 4. @JoinColumn
 
 |   |   |   |
 |---|---|---|
@@ -620,7 +620,7 @@ wirter_id 보다는 member_id 로 정의하여 어디에 참조되어있는지 �
 
 **columnDefinition**
 
-#### > **#5. @JoinColumns**
+#### > 5. @JoinColumns
 
 
 ![[JPA24.png]]
@@ -2546,9 +2546,11 @@ createdAt 과 updatedAt 을 사용하지 않는 경우도 있기에 분리하여
 
 **이 방법 이외에도 리스너 클래스를 생성하여 유동적으로 엔티티를 관리할 수 있다. (아래 사이트 참고)**
 
- [데이터 변경 알림 - @EntityListeners
+ 데이터 변경 알림 - @EntityListeners
 
-spring 의 data-jpa 사용시 데이터 변경시 알림을 받는 방법이 있다. EntityListener 클래스를 만들고 public class DataDtoListener { @PostLoad public void postLoad(DataDto dto) { log.info("post load: {}",..
+spring 의 data-jpa 사용시 데이터 변경시 알림을 받는 방법이 있다. EntityListener 클래스를 만들고 
+
+
 
 erim1005.tistory.com](https://erim1005.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EA%B2%BD-%EC%95%8C%EB%A6%BC-EntityListeners)
 
