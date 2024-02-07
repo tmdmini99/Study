@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md",
+                "file": "Spaces/Home/Java/Math/Math.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md",
+                "file": "Spaces/Home/Java/Math/Math.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md"
+                "file": "Spaces/Home/Java/Math/Math.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/MySql.md",
+                "file": "Spaces/Home/Java/Math/Math.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,12 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/Java/Math/Math.md",
+    "Spaces/Home/Java/Math",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/DB/MySql.md",
     "daily note/2024-02-07.md",
     "daily note/2024-02-06.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
@@ -201,7 +203,6 @@
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Docker/WSL.md",
     "Spaces/Home/Spring/Filter.md",
-    "Spaces/Home/Docker/SSL.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
     "Images/Security/Security7.png",
@@ -220,7 +221,6 @@
     "Images/WSL",
     "Images/Obsidian",
     "Images/Linux",
-    "PDF",
     "무제 파일.canvas"
   ]
 }

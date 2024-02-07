@@ -612,6 +612,8 @@ SELECT IFNULL(name, '값이없습니다')
 
 
 
+
+
 ---
 참조 - https://velog.io/@taeha7b/mysql-in-a-nutshell
 
