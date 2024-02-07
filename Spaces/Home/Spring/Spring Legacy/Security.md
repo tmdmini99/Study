@@ -71,8 +71,66 @@ public class MemberService implements UserDetailsService {
 }
 ```
 
-```java
 
+
+security-context.ml 
+만약 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans:beans xmlns="http://www.springframework.org/schema/security"  
+    xmlns:beans="http://www.springframework.org/schema/beans"  
+             xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans.xsd    http://www.springframework.org/schema/security    http://www.springframework.org/schema/security/spring-security-5.4.xsd">  
+  
+<http auto-config="true">  
+    <intercept-url pattern="/member/login" access="permitAll" />  
+    <intercept-url pattern="/member/add" access="permitAll" />  
+    <intercept-url pattern="/member/test" access="permitAll" />  
+    <intercept-url pattern="/**" access="isAuthenticated()" />  
+    <form-login login-page="/member/login"  
+                username-parameter="id"  
+                password-parameter="pw"  
+                default-target-url="/"  
+                authentication-failure-url="/member/login"  
+                authentication-success-handler-ref="SuccesHandler"  
+    />  
+  
+  
+<!--    <form-login  default-target-url="/home" />-->  
+    <logout logout-success-url="/login?logout" />  
+</http>  
+  
+<beans:bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">  
+    <beans:constructor-arg>  
+        <beans:list>  
+            <beans:bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">  
+                <beans:property name="userDetailsService" ref="userDetailsService"/>  
+                <beans:property name="passwordEncoder" ref="passwordEncoder"/>  
+            </beans:bean>  
+        </beans:list>  
+    </beans:constructor-arg>  
+</beans:bean>  
+  
+    <beans:bean id="SuccesHandler" class="org.example.handler.SuccessHandler"/>  
+  
+    <beans:bean id="userDetailsService" class="org.example.service.MemberService">  
+        <beans:constructor-arg index="0" ref="userDao"/>  
+        <beans:constructor-arg index="1" ref="passwordEncoder"/>  
+    </beans:bean>  
+  
+<beans:bean id="userDao" class="org.example.dao.MemberDao"/>  
+<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>  
+  
+<authentication-manager>  
+    <authentication-provider user-service-ref="userDetailsService">  
+        <password-encoder ref="passwordEncoder"/>  
+    </authentication-provider>  
+</authentication-manager>  
+  
+  
+</beans:beans>
 ```
 
 
