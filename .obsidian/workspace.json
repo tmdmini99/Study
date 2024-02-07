@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md"
+                "file": "Spaces/Home/Java/Anntoation/Annotation.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security.md",
+                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,9 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
+    "Spaces/Home/Spring/Spring Legacy/Security.md",
+    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/JPA/JPA.md",
     "Spaces/Home/Java/Anntoation/JPA Annotation.md",
@@ -190,7 +191,6 @@
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/DataBase.md",
     "daily note/2024-02-06.md",
-    "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Spring/Dependency Injection/DI.md",
     "Spaces/Home/Java/객체.md",
     "daily note/2024-02-05.md",

@@ -455,6 +455,138 @@ public class SomeService {
 
 
 
+  
+
+### [@RequestParam](https://github.com/RequestParam)
+
+`@RequestParam` 어노테이션은 사용자가 요청시 전달하는 값을 `Handler(Controller)`의 매개변수로 1:1 맵핑할때 사용되는 어노테이션입니다.
+
+```java
+@Controller
+public class TestController {
+    @GetMapping("/")
+    public String getTestPage(@RequestParam("name") String name) {
+        System.out.println("이름 : " + name);
+        return "test";
+    }
+}
+```
+
+예를 들어 사용자가 `/?name=test` 로  요청한다면, 위 핸들러의 매개변수인  `name` 에 "test"가 매핑됩니다.
+
+  
+
+### [@ModelAttribute](https://github.com/ModelAttribute)
+
+우선 [@ModelAttribute](https://github.com/ModelAttribute)는 메소드레벨, 메소드의 파라미터 두군데에 적용이 가능합니다. 하지만 이번 포스팅에서는, 메소드의 파라미터에 사용되는 경우에 대해서 다루도록 하겠습니다.
+
+`@ModelAttribute`는 사용자가 요청시 전달하는 값을 오브젝트 형태로 매핑해주는 어노테이션입니다.
+
+```java
+@Getter
+@Setter
+public class TestModel {
+    private String name;
+    private int age;
+}
+
+@RestController
+public class TestController {
+    @GetMapping("/")
+    public String getTestPage(@ModelAttribute TestModel testModel) {
+        System.out.println("이름 : " + testModel.getName());
+        System.out.println("나이 : " + testModel.getAge());
+        return "test";
+    }
+}
+```
+
+예를들어, `name, age`를 인스턴스 변수로 가지는 `TestModel`객체가 존재하고 이를 매개변수로 받기 위해서는 위와 같이 컨트롤러를 생성하고, `/?name=JJY&age=10`로 요청을 하면 각각의 값이 핸들러의 testModel 객체로 바인딩됩니다. (Setter가 존재해야 합니다.)
+
+  
+
+  
+
+## 2. [@ModelAttribute](https://github.com/ModelAttribute) 사용시 장점
+
+`@RequestParam`과 `@ModelAttribute`의 눈에 띄는 차이점은, 1:1 매핑이냐, 객체 매핑이냐 인것으로 보입니다.
+
+그렇다면 [@RequestParam](https://github.com/RequestParam)으로 모두 전달받으면 되는데 `@ModelAttribute`로 사용자의 요청을 매핑을 해야하는 이유가 무엇일까요?
+
+**사용자를 찾기위해, 검색조건을 요청에 담아 전달하는 경우를 예로 들어보겠습니다.**
+
+### [@ModelAttribute](https://github.com/ModelAttribute)를 사용하지 않는 경우
+
+```java
+@RestController
+public class TestController {
+    @GetMapping("/")
+    public String getTestPage(@RequestParam int id,
+                              @RequestParam String name,
+                              @RequestParam String email,
+                              @RequestParam String phone,
+                              Model model) {
+        List<User> userList = userService.search(id, name, email, phone);
+        model.addAttribute("userList", userList);
+        return "test";
+    }
+}
+```
+
+예를들어 위와 같이 `@RequestParam`을 이용해 일일이 사용자의 요청을 맵핑하는 경우를 먼저 살펴보겠습니다. 
+
+이때, 사용자를 찾기 위한 검색 조건이 늘어나거나 줄어드는 변경이 발생되었을때의 문제점은 아래와 같습니다.
+
+  
+
+#### **1. 다수의 변경점**
+
+변경점은 3군데입니다. 
+
+1. handler의 매개변수
+2. userService.search() 호출시 넘겨주는 매개변수
+3. UserService 클래스의 search() 메소드의 시그니쳐
+
+이들을 모두 일일이 변경하는것은 매우 번거로운 작업입니다.
+
+  
+
+#### 2. 매개변수의 순서
+
+매개변수가 많아지는 경우, 다른 타입의 매개변수라면 컴파일러가 에러를 잡아줄테지만, 매개변수의 타입이 같은 경우, 순서가 바뀐다면 이는 매우 위험한 에러입니다.
+
+  
+
+  
+
+### [@ModelAttribute를 사용하는 경우
+
+```java
+@Getter
+@Setter
+public class UserSearchForm {
+    private int id;
+    private String name;
+    private String email;
+    private String phone;
+}
+
+@RestController
+public class TestController {
+    @GetMapping("/")
+    public String getTestPage(@ModelAttribute UserSearchForm userSearchForm,
+                              Model model) {
+        List<User> userList = userService.search(userSearchForm);
+        model.addAttribute("userList", userList);
+        return "test";
+    }
+}
+```
+
+이렇게 `@ModelAttribute`를 사용하는 경우의 장점은 앞서 살펴본 단점을 해결해준다고 생각하면 됩니다.
+
+만약 검색 조건이 추가되는 경우, UserSearchForm의 필드를 추가해주면, 핸들러를 수정할 필요도 없으며, UserService의 search() 메소드의 시그니처 역시 수정할 필요가 없습니다.
+
 
 
 
@@ -469,3 +601,5 @@ https://velog.io/@jkijki12/annotation
 
 
 https://velog.io/@sungmo738/Resource-Autowired-Inject-%EC%B0%A8%EC%9D%B4
+
+https://galid1.tistory.com/769
