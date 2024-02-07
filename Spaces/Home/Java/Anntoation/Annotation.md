@@ -457,7 +457,7 @@ public class SomeService {
 
   
 
-### [@RequestParam](https://github.com/RequestParam)
+### @RequestParam
 
 `@RequestParam` 어노테이션은 사용자가 요청시 전달하는 값을 `Handler(Controller)`의 매개변수로 1:1 맵핑할때 사용되는 어노테이션입니다.
 
@@ -476,9 +476,9 @@ public class TestController {
 
   
 
-### [@ModelAttribute](https://github.com/ModelAttribute)
+### @ModelAttribute
 
-우선 [@ModelAttribute](https://github.com/ModelAttribute)는 메소드레벨, 메소드의 파라미터 두군데에 적용이 가능합니다. 하지만 이번 포스팅에서는, 메소드의 파라미터에 사용되는 경우에 대해서 다루도록 하겠습니다.
+우선 @ModelAttribute는 메소드레벨, 메소드의 파라미터 두군데에 적용이 가능합니다. 하지만 이번 포스팅에서는, 메소드의 파라미터에 사용되는 경우에 대해서 다루도록 하겠습니다.
 
 `@ModelAttribute`는 사용자가 요청시 전달하는 값을 오브젝트 형태로 매핑해주는 어노테이션입니다.
 
@@ -507,7 +507,7 @@ public class TestController {
 
   
 
-## 2. [@ModelAttribute](https://github.com/ModelAttribute) 사용시 장점
+## 2. @ModelAttribute 사용시 장점
 
 `@RequestParam`과 `@ModelAttribute`의 눈에 띄는 차이점은, 1:1 매핑이냐, 객체 매핑이냐 인것으로 보입니다.
 
@@ -515,7 +515,7 @@ public class TestController {
 
 **사용자를 찾기위해, 검색조건을 요청에 담아 전달하는 경우를 예로 들어보겠습니다.**
 
-### [@ModelAttribute](https://github.com/ModelAttribute)를 사용하지 않는 경우
+### @ModelAttribute를 사용하지 않는 경우
 
 ```java
 @RestController
@@ -559,7 +559,7 @@ public class TestController {
 
   
 
-### [@ModelAttribute를 사용하는 경우
+### @ModelAttribute를 사용하는 경우
 
 ```java
 @Getter
