@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md"
+                "file": "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,13 +175,20 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Images/error2.png",
+    "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
+    "Images/error1.png",
+    "Images/Pasted image 20240207163216.png",
+    "Spaces/Home/Error 모음집/.md",
+    "무제 파일.md",
+    "Spaces/Home/Error 모음집",
+    "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Spring Legacy/Security.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/JPA/JPA.md",
     "Spaces/Home/Java/Anntoation/JPA Annotation.md",
-    "Spaces/Home/Java/Anntoation/Annotation.md",
     "Images/Annotation3.png",
     "daily note/2024-02-07.md",
     "Spaces/Home/Java/Math/Math.md",
@@ -200,19 +207,12 @@
     "Spaces/Home/Docker/쿠버네티스.md",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
-    "Spaces/Home/Docker/Docker.md",
-    "daily note/2024-02-02.md",
-    "daily note/2024-02-01.md",
-    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
     "Images/Security/Security7.png",
     "Images/Security/Security6.png",
     "Images/Security/Security5.png",
     "Images/Security/Security4.png",
-    "Images/Security/Security3.png",
-    "Images/Security/Security8.png",
-    "Images/Server&Client/Server&Client4.png",
     "Images/Filter",
     "Images/새 폴더",
     "Images/Server&Client",
@@ -220,7 +220,6 @@
     "Spaces/Home/Network",
     "Images/WSL",
     "Images/Obsidian",
-    "Images/Linux",
     "무제 파일.canvas"
   ]
 }
