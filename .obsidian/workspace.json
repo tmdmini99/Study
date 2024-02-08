@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md",
+                "file": "daily note/2024-02-08.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md",
+                "file": "daily note/2024-02-08.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md"
+                "file": "daily note/2024-02-08.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Security.md",
+                "file": "daily note/2024-02-08.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,11 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Security.md",
+    "daily note/2024-02-08.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/Spring Legacy/Security",
-    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/XML/XML.md",
     "Spaces/Home/XML/Bean.md",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
@@ -209,7 +210,6 @@
     "Spaces/Home/Java/객체.md",
     "daily note/2024-02-05.md",
     "Spaces/Home/Kafka",
-    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 설정.md",
     "Images/Security/Security2.png",
     "Images/Security/Security1.png",
     "Images/Security/Security7.png",
