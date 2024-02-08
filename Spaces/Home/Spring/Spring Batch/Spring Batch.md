@@ -213,6 +213,7 @@ public class ExampleJobConfig {
 }
 ```
 
+위 코드에서는 JobBuilderFactory와 StepBuilderFactory를 사용하여 Job과 Step을 생성합니다. exampleJob이라는 Job은 단일 step만을 포함하며, 이 step에서는 tasklet을 통해 특정한 동작을 수행합니다. 그리고 RepeatStatus.FINISHED를 반환하여 작업이 성공적으로 완료되었음을 나타냅니다.
 
 
 ### **Job Example 2 - 다중 Step 구성하기**
@@ -286,6 +287,125 @@ public class ExampleJobConfig {
 }
 ```
 
+
+![[Spring Batch6.png]]
+
+
+exampleJob이라는 Job은 startStep, nextStep, lastStep의 세 개의 Step을 순차적으로 수행합니다. start() 메서드로 최초 실행될 Step을 설정하고, next() 메서드로 그다음에 수행될 Step을 연결합니다.
+
+
+### **Flow를 통한 Step 구성하기**
+
+![[Spring Batch7.png]]
+
+위 이미지처럼 이전 Step의 성공 여부에 따라 분기처리를 할 수 있습니다.
+
+```java
+@Slf4j
+@Configuration
+@EnableBatchProcessing
+public class FlowJobConfig {
+
+    private final JobBuilderFactory jobBuilderFactory;
+    private final StepBuilderFactory stepBuilderFactory;
+
+    @Autowired
+    public FlowJobConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory) {
+        this.jobBuilderFactory = jobBuilderFactory;
+        this.stepBuilderFactory = stepBuilderFactory;
+    }
+
+    @Bean
+    public Job exampleJob() {
+        // Job 생성
+        return jobBuilderFactory.get("exampleJob")
+            .start(startStep())
+                .on(ExitStatus.FAILED.getExitCode()) // startStep의 ExitStatus가 FAILED일 경우
+                .to(failOverStep()) // failOver Step을 실행 시킨다.
+                .on("*") // failOver Step의 결과와 상관없이
+                .to(writeStep()) // write Step을 실행 시킨다.
+                .end() // Flow를 종료시킨다.
+            .from(startStep()) // startStep이 FAILED가 아니고 COMPLETED일 경우
+                .on(ExitStatus.COMPLETED.getExitCode())
+                .to(processStep()) // process Step을 실행 시킨다
+                .on("*") // process Step의 결과와 상관없이
+                .to(writeStep()) // write Step을 실행 시킨다.
+                .end() // Flow를 종료 시킨다.
+            .from(startStep()) // startStep의 결과가 FAILED, COMPLETED가 아닌 모든 경우
+                .on("*")
+                .to(writeStep()) // write Step을 실행시킨다.
+                .on("*") // write Step의 결과와 상관없이
+                .end() // Flow를 종료시킨다.
+            .end()
+            .build();
+    }
+
+    @Bean
+    public Step startStep() {
+        // 첫번째 Step 생성
+        return stepBuilderFactory.get("startStep")
+            .tasklet((contribution, chunkContext) -> {
+                log.info("Start Step!");
+
+                String result = "COMPLETED";
+                // String result = "FAIL";
+                // String result = "UNKNOWN";
+
+                // Flow에서 on은 RepeatStatus가 아닌 ExitStatus를 바라본다.
+                if ("COMPLETED".equals(result)) 
+                    contribution.setExitStatus(ExitStatus.COMPLETED);
+                else if ("FAIL".equals(result))  
+                    contribution.setExitStatus(ExitStatus.FAILED);
+                else if ("UNKNOWN".equals(result))  
+                    contribution.setExitStatus(ExitStatus.UNKNOWN);
+
+                return RepeatStatus.FINISHED;
+            })
+            .build();
+    }
+
+    @Bean
+    public Step failOverStep() {
+        // 실패 시 수행할 Step 생성
+        return stepBuilderFactory.get("failOverStep")
+            .tasklet((contribution, chunkContext) -> {
+                log.info("FailOver Step!");
+                return RepeatStatus.FINISHED;
+            })
+            .build();
+    }
+
+    @Bean
+    public Step processStep() {
+        // 처리를 위한 Step 생성
+        return stepBuilderFactory.get("processStep")
+            .tasklet((contribution, chunkContext) -> {
+                log.info("Process Step!");
+                return RepeatStatus.FINISHED;
+            })
+            .build();
+    }
+
+    @Bean
+    public Step writeStep() {
+        // 결과를 기록하기 위한 Step 생성
+        return stepBuilderFactory.get("writeStep")
+            .tasklet((contribution, chunkContext) -> {
+                log.info("Write Step!");
+                return RepeatStatus.FINISHED;
+            })
+            .build();
+    }
+}
+```
+
+
+- startStep(): 시작 Step을 정의하고 있습니다. ExitStatus를 COMPLETED, FAILED, UNKNOWN 중 하나로 설정하여 다음 Step의 수행을 제어합니다.
+- failOverStep(): startStep()의 ExitStatus가 FAILED일 경우 수행될 Step입니다.
+- processStep(): startStep()의 ExitStatus가 COMPLETED일 경우 수행될 Step입니다.
+- writeStep(): 위의 모든 상황 후에 수행될 Step입니다.
+
+각 Step은 Tasklet을 통해 실제 수행될 로직을 정의하고 있으며, on() 메서드를 통해 ExitStatus에 따라 수행될 Step을 지정하고 end()를 통해 Flow를 종료합니다.
 
 # **다양한 Step 설정**
 
@@ -373,12 +493,27 @@ public class ExampleJobConfig {
 
 # **STEP을 구성하는 Tasklet과 Chunk 지향 처리**
 
+
+
+
+![[Spring Batch8.jpg]]
+
+
+
+
 ## **Tasklet**
 
 Tasklet은 하나의 메서드로 구성 되어있는 간단한 인터페이스입니다. 이 메서드 는 실패를 알리기 위해 예외를 반환 하거나 throw할 때까지 execute를 반복적으로 호출하게 됩니다 .
+**Tasklet은 기본적으로 하나의 작업을 수행하는 방식입니다. 대체로 단순하거나 복잡하지 않은 작업을 수행하는 데 적합하며, 전체 데이터를 처리하는 것이 아니라 일부 데이터나 단일 작업을 처리하는 데 주로 사용됩니다.**
 
 
 ![[Spring Batch2.png]]
+
+- Tasklet 인터페이스의 execute() 메서드를 구현하여 사용한다. 이 메서드는 하나의 트랜잭션 범위에서 실행된다.
+- execute() 메서드는 RepeatStatus를 반환하는데 이는 Tasklet의 실행 상태를 나타낸다.
+- RepeatStatus.FINISHED를 반환하면, 해당 Tasklet의 처리가 완료된 것을 의미한다.
+- RepeatStatus.CONTINUABLE를 반환하면, Tasklet이 계속 실행되어야 함을 의미한다.
+
 
 ### **Tasklet Example 1 - Job Class 안에 Tasklet 구현하기(Lambda)**
 
@@ -626,10 +761,26 @@ Chunk 지향 처리에서는 다음과 같은 3가지 시나리오로 실행 됩
 ![[Spring Batch4.png]]
 
 
+**Chunk 방식은 대용량 데이터를 효과적으로 처리하기 위해 사용합니다. 큰 데이터를 일련의 작은 데이터 묶음(Chunk)으로 나누고, 각 Chunk를 개별적인 트랜잭션 범위 내에서 처리하는 방식을 취합니다.**  
+**Chunk방식의 작업 흐름은 아래와 같습니다.**
+
+![[Spring Batch10.png]]
+
+
+
+
+
+
 하기 그림은 Chunk 지향 처리에서 배치가 수행되는 그림입니다.
 
 
 ![[Spring Batch5.png]]
+
+- 각 Chunk 처리는 Reader, Processor, Writer 세 단계로 구성된다.
+- Reader는 데이터 소스로부터 데이터를 읽어와서 Chunk를 생성한다. 이 데이터는 일반적으로 데이터베이스나, 파일, 또는 메시지 큐 등이 될 수 있다.
+- Processor는 읽어온 데이터에 대해 필요한 처리를 수행한다. 이 처리는 데이터 검증, 필터링, 변환 등 다양한 형태를 가질 수 있다.
+- Writer는 처리된 데이터를 최종적으로 저장한다.
+
 
 
 
@@ -1281,7 +1432,7 @@ Spring Batch에는 6개의 Meta Table과 3개의 Sequence Table이 존재합니�
 (하지만 Spirng Batch에서 해당 Table이 없이 실행되지 않게 했다는 건 그만큼 중요한 정보들이 저장 된다는 것이겠죠?)
 
 
-![[Spring  Batch6.png]]
+![[Spring  Batch9.png]]
 
 
 # **SEQUENCE**
