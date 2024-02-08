@@ -812,17 +812,31 @@ itemWriter.write(processedItems);
 
 Spring Batch에는 다양한 ItemReader와 ItemWriter가 존재합니다. 대용량 배치 처리를 하게 되면 Item을 읽어 올 때 Paging 처리를 하는게 효과적입니다. Spring Batch Reader에서는 이러한 Paging 처리를 지원하고 있습니다. 또한 적절한 Paging처리와 Chunk Size(한번에 처리 될 트랜잭션)를 설정하여 더욱 효과적인 배치 처리를 할 수 있습니다.
 
+
+## **Paging Size와 Chunk Size 란?**
+
+Spring Batch는 대용량 데이터를 효과적으로 처리하기 위해 ItemReader와 ItemWriter를 제공하는데 이 중 Paging 처리는 대용량 데이터를 효율적으로 읽어오는 방법 중 하나입니다.
+
+- Paging은 데이터를 일정한 크기의 페이지로 분할하여 처리하는 것을 의미하는데, 예를 들어 만약 데이터가 1000개가 있고 페이지 크기를 100으로 설정한다면, 총 10페이지로 데이터를 나누어 처리하게 됩니다.
+- Chunk는 Spring Batch에서 트랜잭션 범위를 설정하는 방법 중 하나입니다. Chunk size는 한 번에 처리(커밋)될 데이터 항목의 수를 의미하며, 만약 Chunk size를 10으로 설정한다면, 각 트랜잭션은 10개의 데이터 항목을 처리하게 됩니다.
+
+
+
+
+
 ## **적절한 Paging Size와 Chunk Size에 관하여..**
 
 Paging Size와 Chunk Size의 관계는 다음과 같이 이루어 집니다.
 
-Paging Size가 5이며 Chunk Size가 10일 경우 2번의 Read가 이루어진 후에 1번의 Transaction이 수행됩니다. 이는 한번의 Transaction을 위해 2번의 쿼리 수행이 발생하게 됩니다.
+Paging Size가 5이며 Chunk Size가 10일 경우 2번의 Read가 이루어진 후에 1번의 Transaction이 수행됩니다. 이는 한번의 Transaction을 위해 2번의 쿼리 수행이 발생하게 됩니다. 이러한 상황은 효율적이지 않습니다
 
 이에 따른 적절한 Paging Size와 Chunk Size에 대해 Spring Batch에는 다음과 같이 적혀 있습니다.
 
 > **Setting a fairly large page size and using a commit interval that matches the page size should provide better performance.**
 > 
 > **페이지 크기를 상당히 크게 설정하고 페이지 크기와 일치하는 커밋 간격을 사용하면 성능이 향상됩니다.**
+ 
+ 효과적인 성능 향상을 위해선 Spring Batch에서 권장하는 것처럼 페이지 크기를 상당히 크게 설정하고 페이지 크기와 일치하는 커밋 간격(Chunk Size)을 사용하는 것이 좋습니다
 
 이와 같이 한번의 Read 쿼리 수행시 1번의 Transaction을 위해 두 설정의 값을 일치를 시키는게 가장 좋은 성능 향상 방법이며 특별한 이유가 없는 한 Paging Size 와 Chunk Size를 동일하게 설정하는 것을 추천합니다.
 
