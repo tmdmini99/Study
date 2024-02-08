@@ -12,6 +12,28 @@ Spring Batch에서 배치가 실패하여 작업 재시작을 하게 된다면 �
 
 Spring Batch는 Batch Job을 관리하지만 Job을 구동하거나 실행시키는 기능은 지원하고 있지 않습니다. Spring에서 Batch Job을 실행시키기 위해서는 Quartz, Scheduler, Jenkins등 전용 Scheduler를 사용하여야 합니다.
 
+배치(Batch)는 논리적 또는 물리적으로 관련된 일련의 데이터를 그룹화하여 일괄 처리하는 방법을 의미합니다. 반면에 스케줄러(Scheduler)는 주어진 작업을 미리 정의된 시간에 실행할 수 있게 해주는 도구나 소프트웨어를 의미합니다.  
+여기서 주의할 점은 배치는 **대량의 데이터를 일괄적으로 처리**할 뿐, 특정 주기마다 자동으로 돌아가는 **스케줄링과는 관련이 없다는 것입니다**. Spring Batch는 스케줄러와 함께 사용할 수 있도록 설계되어 있을 뿐이지 스케줄러 자체를 대체하는 것은 아닙니다.
+
+
+## **Batch 사용 사례**
+
+**일매출 집계**
+
+커머스 사이트에서는 하루에 거래건이 50만에서 100만 건까지 이루어질 수 있습니다. 이런 경우 관련된 데이터는 최소 100만에서 200만 행 이상이 될 수 있는데, 한 달 동안은 이런 데이터가 5000만에서 1억까지 쌓일 수 있습니다. 이런 데이터를 실시간으로 집계하는 쿼리를 실행하면 조회 시간이 길어지고 서버에 많은 부담이 가게 됩니다. 그래서 매일 새벽에 전날의 매출 집계 데이터를 미리 생성해 두어, 외부에서 요청이 오면 전날에 집계한 데이터를 제공하는 방법으로 해결합니다.
+
+
+![[Spring Batch3.png]]
+
+
+
+**구독 서비스** 
+
+정해진 시간에 구독자들에게 메일을 일괄 전송하는 경우, 배치 처리를 활용하면 서비스 구현이 간단해집니다. 전송할 데이터 내역과 구독자 정보를 활용하여 구독을 신청한 회원들에게 규칙적으로 메일을 보낼 수 있습니다.
+
+**데이터 백업**
+
+대규모 데이터베이스를 운영하게 되면, 데이터의 일관성을 보장하기 위해 주기적인 데이터 백업이 필수적입니다. 그러나 이런 백업 작업은 시스템에 상당한 부담을 줄 수 있기에 일반적으로 사용자 트래픽이 상대적으로 적은 시간대에 배치 처리 방식을 통해 백업 작업을 실행합니다.
 
 
 # **Spring Batch 용어**
@@ -20,9 +42,15 @@ Spring Batch는 Batch Job을 관리하지만 Job을 구동하거나 실행시키
 
 Job은 배치처리 과정을 하나의 단위로 만들어 놓은 객체입니다. 또한 배치처리 과정에 있어 전체 계층 최상단에 위치하고 있습니다.
 
+- Job은 전체 배치 처리 과정을 추상화한 개념으로, 하나 또는 그 이상의 Step을 포함하며, 스프링 배치 계층에서 가장 상위에 위치합니다.
+- 각 Job은 고유한 이름을 가지며, 이 이름은 실행에 필요한 파라미터와 함께 JobInstance를 구별하는 데 사용됩니다.
+
 ## **JobInstance**
 
 JobInstance는 Job의 실행의 단위를 나타냅니다. Job을 실행시키게 되면 하나의 JobInstance가 생성되게 됩니다. 예를들어 1월 1일 실행, 1월 2일 실행을 하게 되면 각각의 JobInstance가 생성되며 1월 1일 실행한 JobInstance가 실패하여 다시 실행을 시키더라도 이 JobInstance는 1월 1일에 대한 데이터만 처리하게 됩니다.
+
+- JobInstance는 특정 Job의 실제 실행 인스턴스를 의미합니다. 예를 들어, "매일 아침 8시에 데이터를 처리"하는 Job을 구성한다고 가정하면, 1월 1일, 1월 2일 등 매일 실행될 때마다 새로운 JobInstance가 생성됩니다.
+- 한번 생성된 JobInstance는 해당 날짜의 데이터를 처리하는 데 사용되며, 실패했을 경우 같은 JobInstance를 다시 실행하여 작업을 완료할 수 있습니다.
 
 ## **JobParameters**
 
@@ -30,41 +58,101 @@ JobInstance는 Job의 실행 단위라고 했습니다. 그렇다면 JonInstance
 
 또한 JobParameters는 String, Double, Long, Date 4가지 형식만을 지원하고 있습니다.
 
+- JobParameters는 JobInstance를 생성하고 구별하는 데 사용되는 파라미터입니다.
+- Job이 실행될 때 필요한 파라미터를 공하며, JobInstance를 구별하는 역할도 합니다.
+- 스프링 배치는 String, Double, Long, Date 이렇게 4가지 타입의 파라미터를 지원합니다.
+
 ## **JobExecution**
 
 JobExecution은 JobInstance에 대한 실행 시도에 대한 객체입니다. 1월 1일에 실행한 JobInstacne가 실패하여 재실행을 하여도 동일한 JobInstance를 실행시키지만 이 2번에 실행에 대한 JobExecution은 개별로 생기게 됩니다. JobExecution는 이러한 JobInstance 실행에 대한 상태,시작시간, 종료시간, 생성시간 등의 정보를 담고 있습니다.
+
+
+- JobExecution은 JobInstance의 한 번의 시행 시도를 나타냅니다.
+- 예를 들어, 1월 1일에 실행된 JobInstance가 실패했을 때 재시도하면, 같은 JobInstance에 대한 새로운 JobExcecution이 생성됩니다.
+- JobExecution은 실행 상태, 시작시간, 종료시간, 생성시간 등 JobInstance의 실행에 대한 세부 정보를 담고 있습니다.
 
 ## **Step**
 
 Step은 Job의 배치처리를 정의하고 순차적인 단계를 캡슐화 합니다. Job은 최소한 1개 이상의 Step을 가져야 하며 Job의 실제 일괄 처리를 제어하는 모든 정보가 들어있습니다.
 
+
+- Step은 Job의 하위 단계로서 실제 배치 처리 작업이 이루어지는 단위입니다.
+- 한 개 이상의 Step으로 Job이 구성되며, 각 Step은 순차적으로 처리됩니다.
+- 각 Step 내부에서는 ItemReader, ItemProcessor, ItemWriter를 사용하는 chunk 방식 또는 Tasklet 하나를 가질 수 있습니다.
+
 ## **StepExecution**
 
 StepExecution은 JobExecution과 동일하게 Step 실행 시도에 대한 객체를 나타냅니다. 하지만 Job이 여러개의 Step으로 구성되어 있을 경우 이전 단계의 Step이 실패하게 되면 다음 단계가 실행되지 않음으로 실패 이후 StepExecution은 생성되지 않습니다. StepExecution 또한 JobExecution과 동일하게 실제 시작이 될 때만 생성됩니다. StepExecution에는 JobExecution에 저장되는 정보 외에 read 수, write 수, commit 수, skip 수 등의 정보들도 저장이 됩니다.
+
+- StepExecution은 Step의 한 번의 실행을 나타내며, Step의 실행 상태, 실행 시간 등의 정보를 포함합니다.
+- JobExecution과 유사하게, 각 Step의 실행 시도마다 새로운 StepExecution이 생성됩니다.
+- 또한, 읽은 아이템의 수, 쓴 아이템의 수, 커밋 횟수, 스킵한 아이템의 수 등의 Step 실행에 대한 상세 정보도 포합 합니다.
+
 
 ## **ExecutionContext**
 
 ExecutionContext란 Job에서 데이터를 공유 할 수 있는 데이터 저장소입니다. Spring Batch에서 제공하느 ExecutionContext는 JobExecutionContext, StepExecutionContext 2가지 종류가 있으나 이 두가지는 지정되는 범위가 다릅니다. JobExecutionContext의 경우 Commit 시점에 저장되는 반면 StepExecutionContext는 실행 사이에 저장이 되게 됩니다. ExecutionContext를 통해 Step간 Data 공유가 가능하며 Job 실패시 ExecutionContext를 통한 마지막 실행 값을 재구성 할 수 있습니다.
 
+- ExecutionContext는 Step 간 또는 Job 실행 도중 데이터를 공유하는 데 사용되는 저장소입니다.
+- JobExecutionContext와 StepExecutionContext 두 종류가 있으며, 범위와 저장 시점에 따라 적절하게 사용됩니다.
+- Job이나 Step이 실패했을 경우, ExecutionContext를 통해 마지막 실행 상태를 재구성하여 재시도 또는 복구 작업을 수행할 수 있습니다.
+
 ## **JobRepository**
 
 JobRepository는 위에서 말한 모든 배치 처리 정보를 담고있는 매커니즘입니다. Job이 실행되게 되면 JobRepository에 JobExecution과 StepExecution을 생성하게 되며 JobRepository에서 Execution 정보들을 저장하고 조회하며 사용하게 됩니다.
+
+- JobRepository는 배치 작업에 관련된 모든 정보를 저장하고 관리하는 메커니즘입니다.
+- Job 실행정보(JobExecution), Step 실행정보(StepExecution), Job 파라미터(JobParameters)등을 저장하고 관리합니다.
+- Job이 실행될 때, JobRepository는 새로운 JobExecution과 StepExecution을 생성하고, 이를 통해 실행 상태를 추적합니다.
+
 
 ## **JobLauncher**
 
 JobLauncher는 Job과 JobParameters를 사용하여 Job을 실행하는 객체입니다.
 
+- JobLauncher는 Job과 JobParameters를 받아 Job을 실행하는 역할을 합니다.
+- 이는 전반적인 Job의 생명 주기를 관리하며, JobRepository를 통해 실행 상태를 유지합니다.
+
+
 ## **ItemReader**
 
 ItemReader는 Step에서 Item을 읽어오는 인터페이스입니다. ItemReader에 대한 다양한 인터페이스가 존재하며 다양한 방법으로 Item을 읽어 올 수 있습니다.
+
+
+- ItemReader는 배치 작업에서 처리할 아이템을 읽어오는 역할을 합니다.
+- 여러 형식의 데이터 소스(예: 데이터베이스, 파일, 메시지 큐 등)로 부터 데이터를 읽어오는 다양한 ItemReader 구현체가 제공됩니다.
 
 ## **ItemWriter**
 
 ItemWriter는 처리 된 Data를 Writer 할 때 사용한다. Writer는 처리 결과물에 따라 Insert가 될 수도 Update가 될 수도 Queue를 사용한다면 Send가 될 수도 있다. Writer 또한 Read와 동일하게 다양한 인터페이스가 존재한다. Writer는 기본적으로 Item을 Chunk로 묶어 처리하고 있습니다.
 
+- ItemWriter는 ItemProcessor에서 처리된 데이터를 최종적으로 기록하는 역할을 합니다.
+- ItemWriter 역시 다양한 형태의 구현체를 통해 데이터베이스에 기록하거나, 파일을 생성하거나 메시지를 발행하는 등 다양한 방식으로 데이터를 쓸 수 있습니다.
+
 ## **ItemProcessor**
 
 Item Processor는 Reader에서 읽어온 Item을 데이터를 처리하는 역할을 하고 있다. Processor는 배치를 처리하는데 필수 요소는 아니며 Reader, Writer, Processor 처리를 분리하여 각각의 역할을 명확하게 구분하고 있습니다.
+
+- ItemProcessor는 ItemReader로부터 읽어온 아이템을 처리하는 역할을 합니다.
+- 이는 선택적인 부분으로서, 필요에 따라 사용할 수 있으며, 데이터 필터링, 변환 등의 작업을 수행할 수 있습니다.
+
+## **Tasklet**
+
+- Tasklet은 간단한 단일 작업, 예를 들어 리소스의 정리 또는 시스템 상태의 체크 등을 수행할 때 사용됩니다.
+- 이는 스프링 배치의 Step 내에서 단일 작업을 수행하기 위한 인터페이스로, 일반적으로 ItemReader, ItemProcessor, ItemWriter의 묶음을 가지는 Chunk 기반 처리 방식과는 다릅니다.
+- Tasklet의 execute 메서드는 Step의 모든 처리가 끝날 때까지 계속 호출됩니다.
+
+
+##  **JobOperator**
+
+- JobOperator는 외부 인터페이스로, Job의 실행과 중지, 재시작 등의 배치 작업 흐름제어를 담당합니다.
+- 이 인터페이스를 통해 JobLauncher와 JobRepository에 대한 직접적인 접근 없이도 배치 작업을 수행하고 상태를 조회할 수 있습니다.
+
+
+##  **JobExplorer**
+ - JobExplorer는 Job의 실행 이력을 조회하는 데 사용됩니다.
+ -  JobRepository에서 제공하는 정보와 유사하지만, JobRepository는 주로 Job의 실행 도중인 상태에 대해 업데이트하고 관리하는 반면, JobExplorer는 주로 읽기 전용 접근에 초점을 맞추고 있습니다.
+
 
 
 
@@ -535,13 +623,13 @@ Chunk 지향 처리에서는 다음과 같은 3가지 시나리오로 실행 됩
 - 쓰기(Write) — 가공,처리한 데이터를 Database에 저장한다.
 
 
-![[Pasted image 20240208095323.png]]
+![[Spring Batch4.png]]
 
 
 하기 그림은 Chunk 지향 처리에서 배치가 수행되는 그림입니다.
 
 
-![[Pasted image 20240208095329.png]]
+![[Spring Batch5.png]]
 
 
 
@@ -1233,9 +1321,15 @@ JOB_KEY VARCHAR(2500)
 );
 ```
 
+- JOB_INSTANCE_ID: 실행된 JobInstance의 ID
+- VERSION: 배치 테이블의 낙관적 락 전략을 위해 사용되는 값
+- JOB_NAME: 실행된 Job의 이름으로, null이 아니 여야함
+- JOB_KEY: JobParameter로 생성된 JobInstance의 키(Job 중복 수행 체크를 위한 고유키)
+
 # **BATCH_JOB_EXECUTION_PARAMS**
 
 BATCH_JOB_EXECUTION_PARAMS 테이블에는 Job을 실행 시킬 때 사용했던 JobParameters에 대한 정보를 저장하고 있습니다.
+BATCH_JOB_EXECUTION_PARAMS 테이블은 JobParameters와 관련된 모든 정보가 들어있습니다.
 
 ```sql
 CREATE TABLE BATCH_JOB_EXECUTION_PARAMS (
@@ -1252,6 +1346,15 @@ references BATCH_JOB_EXECUTION(JOB_EXECUTION_ID)
 );
 ```
 
+
+- JOB_EXECUTION_ID: 실행된 JobExecution의 ID(BATCH_JOB_EXECUTION 테이블의 외래 키)
+- TYPE_CD: JobPameter의 타입 코드(string, date, long, double)
+- KEY_NAME: JobPameter의 이름
+- STRING_VAL: JobPameter의 String값(TYPE_CD가 String일 때 값이 존재)
+- DATETIME: JobPameter의 Date값(TYPE_CD가 Date 일 때 값이 존재)
+- LONG_VAL: JobPameter의 Long값. (TYPE_CD가 Long일 때 값이 존재)
+- DOUBLE_VAL: JobPameter의 Double값. (TYPE_CD가 Double일 때 값이 존재)
+- IDENTIFYING: JobInstance의 키의 생성에 포함되었는지 여부
 
 # **BATCH_JOB_EXECUTION**
 
@@ -1275,9 +1378,22 @@ references BATCH_JOB_INSTANCE(JOB_INSTANCE_ID)
 );
 ```
 
+- JOB_EXECUTION_ID: 실행된 JobExecution의 ID
+- VERSION: 배치 테이블의 낙관적 락 전략을 위해 사용되는 값
+- JOB_INSTANCE_ID: BATCH_JOB_INSTANCE 테이블의 외래 키
+- CREATE_TIME: JobExecution이 생성된 시간
+- START_TIME: JobExecution이 실행된 시간
+- END_TIME: JobExecution이 종료된 시간(성공과 실패 여부에 상관없이 실행이 완료된 시간을 의미)
+- STATUS: JobExecution의 상태(BatchStatus의 Enum 타입)
+- EXIT_CODE: JobExecution의 종료 코드
+- EXIT_MESSAGE: JobExecution의 종료 메시지. 에러가 발생한 경우 에러메시지
+- LAST_UPDATED: JobExcution이 수정된 시간
+
 # **BATCH_STEP_EXECUTION**
 
-BATCH_JOB_EXECUTION테이블에는 StepExecution에 대한 정보를 저장하고 있습니다. BATCH_JOB_EXECUTION 테이블과 여러 면에서 유사하며 STEP을 EXECUTION 정보인 읽은 수, 커밋 수, 스킵 수 등 다양한 정보를 추가로 담고 있습니다.
+BATCH_JOB_EXECUTION테이블에는 StepExecution에 대한 정보를 저장하고 있습니다.
+생성된 각 JobExecution에 대해 항상 단계당 하나 이상의 항목이 존재합니다.
+BATCH_JOB_EXECUTION 테이블과 여러 면에서 유사하며 STEP을 EXECUTION 정보인 읽은 수, 커밋 수, 스킵 수 등 다양한 정보를 추가로 담고 있습니다.
 
 
 
@@ -1306,11 +1422,32 @@ references BATCH_JOB_EXECUTION(JOB_EXECUTION_ID)
 );
 ```
 
+- STEP_EXECUTION_ID: 실행된 StepExecution의 ID
+- VERSION: 배치 테이블의 낙관적 락 전략을 위해 사용되는 값
+- STEP_NAME: 실행된 StepExecution의 Step 이름
+- JOB_EXECUTION_ID: 실행된 JobExecution의 ID
+- START_TIME: StepExecution이 시작된 시간
+- END_TIME: StepExecution이 종료된 시간(성공과 실패 여부에 상관없이 실행이 완료된 시간을 의미)
+- STATUS: StepExecution의 상태(BatchStatus의 Enum 타입)
+- COMMIT_COUNT: StepExecution 실행 중, 커밋한 횟수
+- READ_COUNT: StepExecution 실행 중, 읽은 데이터 수
+- FILTER_COUNT: StepExecution 실행 중, 필터링된 데이터 수
+- WRITE_COUNT: StepExecution 실행 중, 작성 및 커밋된 데이터 수
+- READ_SKIP_COUNT: StepExecution 실행 중, 읽기를 스킵한 데이터 수
+- WRITE_SKIP_COUNT: StepExecution 실행 중, 작성을 스킵한 데이터 수
+- PROCESS_SKIP_COUNT: StepExecution 실행 중, 처리를 스킵한 데이터 수
+- EXIT_CODE: StepExecution의 종료 코드
+- ROLLBACK_COUNT: StepExecution 실행 중, 롤백 횟수
+- EXIT_MESSAGE: StepExecution의 종료 메시지. 에러가 발생한 경우 에러메시지
+- LAST_UPDATED: StepExecution이 수정된 시간
+
 
 
 # **BATCH_JOB_EXECUTION_CONTEXT**
 
-BATCH_JOB_EXECUTION_CONTEXT테이블에는 JobExecution의ExecutionContext 정보가 들어있습니다.이 ExecutionContext 데이터는 일반적으로 JobInstance가 실패 시 중단된 위치에서 다시 시작할 수 있는 정보를 저장하고 있습니다.
+BATCH_JOB_EXECUTION_CONTEXT테이블에는 JobExecution의ExecutionContext 정보가 들어있습니다.
+각 JobExecution마다 정확히 하나의 JobExecutionContext가 있습니다.
+이 ExecutionContext 데이터는 일반적으로 JobInstance가 실패 시 중단된 위치에서 다시 시작할 수 있는 정보를 저장하고 있습니다.
 
 ```sql
 CREATE TABLE BATCH_JOB_EXECUTION_CONTEXT (
@@ -1322,10 +1459,14 @@ references BATCH_JOB_EXECUTION(JOB_EXECUTION_ID)
 );
 ```
 
-
+- JOB_EXECUTION_ID: 실행된 JobExecution의 ID
+- SHORT_CONTEXT: 문자열로 저장된 JobExecutionContext 정보
+- SERIALIZED_CONTEXT: 직렬화하여 저장된 JobExecutionContext 정보
 # **BATCH_STEP_EXECUTION_CONTEXT**
 
-BATCH_STEP_EXECUTION_CONTEXT테이블에는 StepExecution의 ExecutionContext 정보가 들어있습니다. 이 ExecutionContext 데이터는 일반적으로 JobInstance가 실패 시 중단된 위치에서 다시 시작할 수 있는 정보를 저장하고 있습니다.
+BATCH_STEP_EXECUTION_CONTEXT테이블에는 StepExecution의 ExecutionContext 정보가 들어있습니다.
+스텝 실행당 정확히 하나의 ExecutionContext가 있으며, 특정 스텝 실행을 위해 유지되어야 하는 모든 데이터가 포함되어 있습니다.
+이 ExecutionContext 데이터는 일반적으로 JobInstance가 실패 시 중단된 위치에서 다시 시작할 수 있는 정보를 저장하고 있습니다.
 
 
 ```sql
@@ -1338,7 +1479,9 @@ references BATCH_STEP_EXECUTION(STEP_EXECUTION_ID)
 );
 ```
 
-
+- STEP_EXECUTION_ID: 실행된 StepExecution의 ID
+- SHORT_CONTEXT: 문자열로 저장된 StepExecutionContext 정보
+- SERIALIZED_CONTEXT: 직렬화하여 저장된 StepExecutionContext 정보
 
 
 
@@ -1349,3 +1492,4 @@ references BATCH_STEP_EXECUTION(STEP_EXECUTION_ID)
 ---
 출처-  https://khj93.tistory.com/entry/Spring-Batch%EB%9E%80-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 
+https://dkswnkk.tistory.com/707
