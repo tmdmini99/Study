@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024-02-13.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024-02-13.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
+                "file": "daily note/2024-02-13.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024-02-13.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +175,10 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "daily note/2024-02-13.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/XML/conponent-scan.md",
     "Spaces/Home/XML/XML.md",
     "Spaces/Home/Spring/Security.md",
@@ -214,7 +215,6 @@
     "Spaces/Home/Spring/JPA/JPA.md",
     "Spaces/Home/Java/Anntoation/JPA Annotation.md",
     "daily note/2024-02-07.md",
-    "Spaces/Home/Java/Math/Math.md",
     "Spaces/Home/Java/Math",
     "Spaces/Home/Kafka",
     "Images/Filter",
