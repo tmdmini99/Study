@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024-02-13.md",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024-02-13.md",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024-02-13.md"
+                "file": "Spaces/정보처리기사/트리 순회.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024-02-13.md",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +175,15 @@
   },
   "active": "2e6492016d0503b8",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "Images/병행제어1.png",
+    "Spaces/정보처리기사/트리 순회.md",
+    "Images/릴레이션1.png",
+    "Images/트리순회1.png",
+    "Spaces/Obsidian/Obsidian플러그인.md",
+    "Spaces/정보처리기사/무제 폴더",
+    "Spaces/정보처리기사",
     "daily note/2024-02-13.md",
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/XML/conponent-scan.md",
@@ -194,9 +200,6 @@
     "Images/Spring Batch6.png",
     "Images/Spring Batch5.png",
     "Images/Spring Batch4.png",
-    "Images/Spring Batch3.png",
-    "Images/Spring Batch2.png",
-    "Images/Spring Batch1.png",
     "daily note/2024-02-08.md",
     "Spaces/Home/Spring/Spring Batch",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
@@ -213,15 +216,10 @@
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
-    "Spaces/Home/Spring/JPA/JPA.md",
-    "Spaces/Home/Java/Anntoation/JPA Annotation.md",
-    "daily note/2024-02-07.md",
     "Spaces/Home/Java/Math",
     "Spaces/Home/Kafka",
     "Images/Filter",
     "Images/새 폴더",
-    "Images/Server&Client",
-    "Images/Security",
     "무제 파일.canvas"
   ]
 }
