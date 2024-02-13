@@ -19,19 +19,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "fd5b6ada13f5f173",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/16진수2.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/16진수2.png",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/16진수2.png"
+                "file": "Spaces/정보처리기사/트리 순회.md"
               }
             }
           },
@@ -143,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/16진수2.png",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,20 +173,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fd5b6ada13f5f173",
+  "active": "2e6492016d0503b8",
   "lastOpenFiles": [
+    "Images/프로그램1.png",
     "Spaces/정보처리기사/트리 순회.md",
-    "Images/Pasted image 20240213225000.png",
-    "Images/16진수2.png",
-    "Images/주소명령어2.png",
-    "Images/주소명령어3.png",
-    "Images/주소명령어1.png",
-    "Images/16진수1.png",
-    "Images/동기고정식마이크로오퍼레이션1.png",
-    "Images/인터럽트 벡터.png",
+    "Images/프로그래밍기법2.png",
+    "Images/프로그래밍기법1.png",
+    "Images/부동소수점1.png",
+    "Images/오퍼레이션1.png",
+    "Images/구조1.png",
+    "Images/대역폭1.png",
+    "Images/대역폭2.png",
+    "Images/메모리IC1.png",
+    "Images/메모리IC2.png",
     "Spaces/Obsidian/Obsidian플러그인.md",
-    "Images/트리차수1.png",
-    "Images/정규화1.png",
     "Spaces/정보처리기사/무제 폴더",
     "Spaces/정보처리기사",
     "daily note/2024-02-13.md",
