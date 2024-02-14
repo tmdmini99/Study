@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "743853e3a18366ad",
+        "id": "b9166954cc3cb894",
         "type": "tabs",
         "children": [
           {
-            "id": "2e6492016d0503b8",
+            "id": "9329e29e5d1cf9e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "daily note/2024-02-14.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "daily note/2024-02-14.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md"
+                "file": "daily note/2024-02-14.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "daily note/2024-02-14.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +173,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2e6492016d0503b8",
+  "active": "9329e29e5d1cf9e1",
   "lastOpenFiles": [
-    "Images/FTR1.png",
+    "daily note/2024-02-14.md",
     "Spaces/정보처리기사/트리 순회.md",
+    "Images/FTR1.png",
     "Images/객체지향2.png",
     "Images/객체지향1.png",
     "Images/OMA1.png",
