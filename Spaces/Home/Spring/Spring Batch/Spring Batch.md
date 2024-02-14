@@ -6,6 +6,16 @@ Spring Batch에서 배치가 실패하여 작업 재시작을 하게 된다면 �
 
 또한 중복 실행을 막기 위해 성공한 이력이 있는 Batch는 동일한 Parameters로 실행 시 Exception이 발생하게 됩니다.
 
+
+ex)
+**_JOB: "매일 아침 6시마다 집 앞 공원에서 트랙을 3바퀴 돌고 온다."_**  
+이렇게 Job 을 선언하고 해당 Job을 수행하기 위한 Step 을 정의 한다  
+**_Step 1: "아침에 6시에 모닝콜이 울린다. 모닝콜을 끈다."_**  
+**_Step 2: "물을 한 잔 먹고 화장실을 간다. "_**  
+**_Step 3: "간단하게 세수를 한다."_**  
+**_Step 4: "신발끈을 묶는다."_**
+
+
 ## **Spring Batch vs Quartz? Scheduler?**
 
 > **Spring Batch는 Scheduler가 아니기에 비교 대상이 아닙니다.**
@@ -161,6 +171,28 @@ Item Processor는 Reader에서 읽어온 Item을 데이터를 처리하는 역�
 Spring Batch에서의 Job은 여러가지 Step의 모음으로 구성되어 있으며 Job은 순차적인 Step을 수행하며 Batch를 수행하게 됩니다. Step은 Tasklet 처리 방식과 Chunk 지향 처리 방식을 지원하고 있습니다.
 
 ![[Spring Batch1.png]]
+
+
+
+### pom.xml
+```xml
+
+<org.springframework.batch-version>3.0.10.RELEASE</org.springframework.batch-version>
+
+<dependency>  
+    <groupId>org.springframework.batch</groupId>  
+    <artifactId>spring-batch-core</artifactId>  
+    <version>${org.springframework.batch-version}</version>  
+</dependency>  
+<dependency>  
+    <groupId>org.springframework.batch</groupId>  
+    <artifactId>spring-batch-infrastructure</artifactId>  
+    <version>${org.springframework.batch-version}</version>  
+</dependency>
+```
+
+
+
 
 
 ### **Job Example 1 - 단일 Step 구성하기**
