@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c30f8265481c299d",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
+    "Spaces/Home/Spring/Spring Legacy/Query",
     "daily note/2024/2/2024-02-14.md",
     "daily note/2024/1/2024-01-02.md",
     "daily note/2024/2",
@@ -198,9 +201,7 @@
     "Spaces/정보처리기사/트리 순회.md",
     "Images/정보처리기사",
     "Spaces/Obsidian/Obsidian플러그인.md",
-    "Spaces/정보처리기사/무제 폴더",
     "daily note/2024/2/2024-02-13.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/XML/conponent-scan.md",
@@ -220,7 +221,6 @@
     "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/Error 모음집/.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
-    "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "무제 파일.canvas"
   ]
 }
