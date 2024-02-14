@@ -239,14 +239,27 @@ batch-context.xml
 		<property name="url" value="${url}"></property>
 		<property name="driverClassName" value="${driver}"></property>
 	</bean>
-
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:database/config/MybatisConfig.xml"></property>
+		<property name="mapperLocations" value="classpath:database/mappers/*Mapper.xml"></property>
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<!-- 매개변수 --><constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
+	</bean>
+	
+<!-- 트랜잭션 설정 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
+<!--SimpleAsyncTaskExecutor`는 스프링 프레임워크에서 제공하는 간단한 비동기 작업 실행자 -->
+<bean id="taskExecuter" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
 
     <!-- 배치 작업 실행을 위한 JobLauncher 설정 -->
     <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
         <property name="jobRepository" ref="jobRepository" />
+        <property name="taskExecutor" ref="taskExecuter"/>
     </bean>
 
     <!-- JobRepository 설정 -->
@@ -267,6 +280,11 @@ batch-context.xml
     <bean class="org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor">
         <property name="jobRegistry" ref="jobRegistry" />
     </bean>
+
+<!-- mapper  설정 이거 해놓으면 굳이 namespace 쓸 필요 없음 -->
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.example.mapper" />
+</bean>
 
 
 
