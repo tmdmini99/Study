@@ -34,3 +34,11 @@
 
 </beans>
 ```
+
+
+이거 추가시 dao에서 굳이 namespace로 지정해줄 필요없음 자동으로 매핑
+```xml
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.example.mapper" />
+</bean>
+```
