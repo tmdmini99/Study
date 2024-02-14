@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/XML/log4j.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/XML/log4j.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/XML/log4j.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/XML/log4j.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +173,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
     "Spaces/Home/XML/log4j.md",
+    "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Spring Legacy/Query",
     "daily note/2024/2/2024-02-14.md",

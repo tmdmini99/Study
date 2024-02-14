@@ -28,7 +28,7 @@ log4j.xml에 ConsoleAppender하나 더 추가
 
 ```
 
-log4j.xml
+log4j.xml : log4j의 라이브러리 규약 이름을 이렇게 지정
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
