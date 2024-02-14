@@ -6,7 +6,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+<!-- db안에 프로퍼티를 주입할때 사용-->
 	<!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="propertyPlaceholderConfigurer">
 		<property name="location" value="classpath:database/info/dbInfo.properties"></property>
 	</bean>-->

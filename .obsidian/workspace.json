@@ -175,9 +175,10 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Spring Legacy/Query/쿼리 출력 하기위한 준비.md",
     "Spaces/Home/XML/log4j.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Spring Legacy/Query",
     "daily note/2024/2/2024-02-14.md",
     "daily note/2024/1/2024-01-02.md",
@@ -220,7 +221,6 @@
     "무제 파일.md",
     "Spaces/Home/Spring/Dependency Injection/Spring Bean.md",
     "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
-    "Spaces/Home/Error 모음집/.md",
     "무제 파일.canvas"
   ]
 }

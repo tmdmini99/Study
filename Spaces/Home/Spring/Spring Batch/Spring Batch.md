@@ -192,6 +192,90 @@ Spring Batch에서의 Job은 여러가지 Step의 모음으로 구성되어 있�
 ```
 
 
+batch-context.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 배치 잡 빈 정의 -->
+    <batch:job id="sampleJob" xmlns="http://www.springframework.org/schema/batch">
+        <batch:step id="sampleStep" next="nextStep">
+            <batch:tasklet>
+                <batch:chunk reader="itemReader" processor="itemProcessor" writer="itemWriter" commit-interval="10"/>
+            </batch:tasklet>
+        </batch:step>
+        <batch:step id="nextStep">
+            <!-- 다음 스텝에 대한 설정 -->
+        </batch:step>
+    </batch:job>
+
+    <!-- ItemReader 빈 정의 -->
+    <bean id="itemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+        <!-- ItemReader 설정 -->
+    </bean>
+
+    <!-- ItemProcessor 빈 정의 -->
+    <bean id="itemProcessor" class="your.item.processor.class">
+        <!-- ItemProcessor 설정 -->
+    </bean>
+
+    <!-- ItemWriter 빈 정의 -->
+    <bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
+        <!-- ItemWriter 설정 -->
+    </bean>
+
+    <!-- DataSource 및 트랜잭션 관리자 설정 -->
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property name="username" value="${username}"></property>
+		<property name="password" value="${password}"></property>
+		<property name="url" value="${url}"></property>
+		<property name="driverClassName" value="${driver}"></property>
+	</bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 배치 작업 실행을 위한 JobLauncher 설정 -->
+    <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+        <property name="jobRepository" ref="jobRepository" />
+    </bean>
+
+    <!-- JobRepository 설정 -->
+    <bean id="jobRepository" class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="databaseType" value="your.database.type" />
+    </bean>
+
+    <!-- 배치 스텝 실행을 위한 StepScope 설정 -->
+    <bean class="org.springframework.batch.core.scope.StepScope">
+        <property name="autoProxy" value="true" />
+    </bean>
+
+    <!-- 배치 잡 실행을 위한 JobRegistry 설정 -->
+    <bean id="jobRegistry" class="org.springframework.batch.core.configuration.support.MapJobRegistry" />
+
+    <bean class="org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor">
+        <property name="jobRegistry" ref="jobRegistry" />
+    </bean>
+
+
+
+
+</beans>
+
+```
+
+
 
 
 
