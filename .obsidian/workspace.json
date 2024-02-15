@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024/2/2024-02-15.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024/2/2024-02-15.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
+                "file": "daily note/2024/2/2024-02-15.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024/2/2024-02-15.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +176,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "daily note/2024/2/2024-02-15.md",
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
@@ -220,7 +222,6 @@
     "daily note/2024/2/2024-02-08.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
-    "Spaces/Home/XML/Bean.md",
     "무제 파일.canvas"
   ]
 }
