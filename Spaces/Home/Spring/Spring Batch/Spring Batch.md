@@ -363,6 +363,86 @@ public class ExampleJobConfig {
 위 코드에서는 JobBuilderFactory와 StepBuilderFactory를 사용하여 Job과 Step을 생성합니다. exampleJob이라는 Job은 단일 step만을 포함하며, 이 step에서는 tasklet을 통해 특정한 동작을 수행합니다. 그리고 RepeatStatus.FINISHED를 반환하여 작업이 성공적으로 완료되었음을 나타냅니다.
 
 
+#### JPA로 구현
+
+```java
+package com.tmax.meeting.document.config;
+
+import com.tmax.meeting.document.model.Document;
+import com.tmax.meeting.document.repository.DocumentRepository;
+import com.tmax.meeting.document.service.DocService;
+import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.repeat.RepeatStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import java.time.LocalDateTime;
+
+@Slf4j
+@Configuration
+@EnableBatchProcessing
+public class BatchConfig {
+
+  @Autowired
+  public JobBuilderFactory jobBuilderFactory;
+
+  @Autowired
+  public StepBuilderFactory stepBuilderFactory;
+
+  @Autowired
+  private DocumentRepository documentRepository;
+
+  @Autowired
+  private DocService docService;
+
+  @Bean
+  public Job job() {
+
+    Job job = jobBuilderFactory.get("job")
+        .start(step())
+        .build();
+
+    return job;
+  }
+
+  @Bean
+  public Step step() {
+    return stepBuilderFactory.get("step")
+        .tasklet((contribution, chunkContext) -> {
+          log.info("Step!");
+          // 업데이트 시각이 일주일 이전인 문서 목록을 가져옴
+          // 1. 네이티브 쿼리 사용
+          List<Document> limitedDocuments = documentRepository.selectLimitedDocument();
+          // 2. JPQL 사용
+          // LocalDateTime now = LocalDateTime.now();
+          // LocalDateTime aWeekAgo = now.minusDays(7);
+          // List<Document> limitedDocuments = documentRepository.findByUpdateAtLessThan(aWeekAgo)
+
+          if (limitedDocuments.size() > 0 && limitedDocuments != null) {
+            for (Document document : limitedDocuments) {
+              // deleteDocument는 document_id를 받아 서버와 db에서 문서 삭제를 구현하는 서비스
+              docService.deleteDocument(document.getDocumentId());
+            }
+          }
+          return RepeatStatus.FINISHED;
+        })
+        .build();
+  }
+}
+```
+
+
+
+
+
+
+
 ### **Job Example 2 - 다중 Step 구성하기**
 
 
@@ -660,6 +740,21 @@ Tasklet은 하나의 메서드로 구성 되어있는 간단한 인터페이스�
 - execute() 메서드는 RepeatStatus를 반환하는데 이는 Tasklet의 실행 상태를 나타낸다.
 - RepeatStatus.FINISHED를 반환하면, 해당 Tasklet의 처리가 완료된 것을 의미한다.
 - RepeatStatus.CONTINUABLE를 반환하면, Tasklet이 계속 실행되어야 함을 의미한다.
+
+### xml 구현 Tasklet
+
+
+
+```xml
+<job id="btchCnlkNtisHoffOrg">
+        <step id="btchCnlkNtisHoffOrgStep">
+            <tasklet transaction-manager="transactionManager" ref="btchCnlkNtisHoffOrgTasklet" />
+        </step>
+        <listeners>
+            <listener ref="batchJobExecutionListener" />
+        </listeners>
+    </job>
+```
 
 
 ### **Tasklet Example 1 - Job Class 안에 Tasklet 구현하기(Lambda)**
@@ -990,6 +1085,21 @@ Paging Size가 5이며 Chunk Size가 10일 경우 2번의 Read가 이루어진 �
 ## **PagingReader 사용 시 주의사항**
 
 페이징 처리 시 각 쿼리에 Offset 과 , Limit를 지정해 주어야 하는데 이는 PageSize를 지정하면 Batch에서 Offset과 Limit를 지정해줍니다. 하지만 페이징 처리를 할 때 마다 새로운 쿼리를 실행하기 때문에 데이터 순서가 보장 될 수 있도록 반드시 Order By를 사용하여야 합니다.
+
+
+### xml 구현 Chunk
+
+```xml
+<job id="delegatingJob" xmlns="http://www.springframework.org/schema/batch">
+		<step id="delegateJob.delegateStep1">
+			<tasklet>
+				<chunk reader="delegateJob.reader" writer="delegateJob.writer" commit-interval="3"/>
+			</tasklet>
+		</step>
+	</job>
+	
+```
+
 
 ### **Chunk Example 1 - Jdbc 기반의 Batch Job 구현하기**
 
