@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
+                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
+                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md"
+                "file": "Spaces/Home/Java/캡슐화/캡슐화.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
+                "file": "Spaces/Home/Java/캡슐화/캡슐화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,19 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "Spaces/Home/Java/캡슐화/제어자.md",
+    "Spaces/Home/DB/SQL Injection.md",
+    "Spaces/Home/DB/Oracle.md",
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/Data/CSV.md",
+    "Spaces/Home/Data/Data  형태.md",
+    "Spaces/Home/Data/XML.md",
+    "Spaces/Home/Data/Parsing.md",
+    "Spaces/Home/Data/JSTL.md",
+    "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Images/Transactional6.png",
     "Images/Transactional5.png",
@@ -194,20 +205,9 @@
     "Spaces/Home/XML/XML.md",
     "Spaces/Home/XML/conponent-scan.md",
     "Spaces/Home/XML/Bean.md",
-    "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
     "Spaces/Home/DB/DB 개념",
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
-    "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
-    "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
-    "Spaces/Home/DB/DB 개념/파티셔닝.md",
-    "Spaces/Home/Spring/Dependency Injection/Annotation.md",
-    "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
-    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Query",
     "daily note/2024/2",
     "daily note/2024/1",
