@@ -200,6 +200,7 @@ batch-context.xml
        xmlns:batch="http://www.springframework.org/schema/batch"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="
             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
@@ -285,7 +286,7 @@ batch-context.xml
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     <property name="basePackage" value="com.example.mapper" />
 </bean>
-<!-- mapper  설정 이거 해놓으면 굳이 namespace 쓸 필요 없음 -->
+<!--템플릿 설정 -->
 <bean id="jdbcTemplate"  
       class="org.springframework.jdbc.core.JdbcTemplate">  
     <property name="dataSource" ref="dataSource" />  

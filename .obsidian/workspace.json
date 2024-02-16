@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/database-context.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,16 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/root-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "daily note/2024/2/2024-02-16.md",
     "daily note/2024/2/2024-02-15.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
-    "Spaces/Home/Spring/Spring Legacy/database-context.xml.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Spring/Dependency Injection/Bean.md",
@@ -215,12 +221,6 @@
     "Spaces/Home/XML/conponent-scan.md",
     "Spaces/Home/XML/XML.md",
     "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/DB/서브 쿼리.md",
-    "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/DataBase.md",
-    "daily note/2024/2/2024-02-08.md",
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "무제 파일.canvas"
   ]
 }
