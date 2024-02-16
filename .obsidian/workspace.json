@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md"
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,13 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Anntoation/Annotation.md",
+    "Images/Transactional6.png",
+    "Images/Transactional5.png",
+    "Images/Transactional4.png",
+    "Images/Transactional3.png",
+    "Images/Transactional2.png",
+    "Images/Transactional1.png",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Framework.md",
@@ -197,11 +204,9 @@
     "Spaces/Home/DB/DB 개념/파티셔닝.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Dependency Injection/Annotation.md",
-    "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Error 모음집/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/Spring/Spring Legacy/pom.xml.md",
     "Spaces/Home/Spring/Spring Legacy/web.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Query",
     "daily note/2024/2",
     "daily note/2024/1",
@@ -214,12 +219,6 @@
     "Images/Error",
     "Images/새 폴더",
     "Images/Spring Batch/Spring Batch10.png",
-    "Images/Spring Batch/Spring Batch8.jpg",
-    "Images/Spring Batch/Spring Batch7.png",
-    "Images/Spring Batch/Spring Batch6.png",
-    "Images/Spring Batch/Spring Batch5.png",
-    "Images/Spring Batch/Spring Batch4.png",
-    "Images/Spring Batch/Spring Batch3.png",
     "Images/Spring Batch",
     "무제 파일.canvas"
   ]
