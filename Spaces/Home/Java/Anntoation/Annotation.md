@@ -588,6 +588,10 @@ public class TestController {
 만약 검색 조건이 추가되는 경우, UserSearchForm의 필드를 추가해주면, 핸들러를 수정할 필요도 없으며, UserService의 search() 메소드의 시그니처 역시 수정할 필요가 없습니다.
 
 
+## @Transactional
+
+
+
 
 
 

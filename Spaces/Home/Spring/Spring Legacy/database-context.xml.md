@@ -42,3 +42,13 @@
     <property name="basePackage" value="com.example.mapper" />
 </bean>
 ```
+
+
+트랜잭션 관리
+
+```xml
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     <property name="dataSource" ref="dataSource"/>
+</bean>
+<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+```
