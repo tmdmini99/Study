@@ -9,7 +9,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd  
 http://www.springframework.org/schema/security  
 http://www.springframework.org/schema/security/spring-security.xsd">  
-  
+
+<!-- -->
+<context:component-scan base-package="org.exaple"/>
+
 <http>  
     <intercept-url pattern="/member/login" access="permitAll" />  
     <intercept-url pattern="/**" access="isAuthenticated()" />  
@@ -139,6 +142,9 @@ ctrl + 마우스 가져다 대면 바로 확인 가능 자신의 시큐리티 �
 
 
 
+
+
+
 ---
 참조 - https://huimang2.github.io/java/spring-legacy-security
 
@@ -162,3 +168,6 @@ https://github.com/lleellee0/kakaopage-webtoon-downloader/releases/tag/v1.0.0 - 
 https://velog.io/@leon/posts  jpa
 
 https://github.com/bmm522/quiz-studio/blob/main/spring-module/quizstudio/quiz-batch/src/main/java/com/quizbatch/domain/category/CategoryQueryRepositoryImpl.java  jpa
+
+
+

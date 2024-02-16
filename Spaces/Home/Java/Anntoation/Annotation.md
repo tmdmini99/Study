@@ -591,10 +591,47 @@ public class TestController {
 ## @Transactional
 
 
+xml 설정
+```xml
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     <property name="dataSource" ref="dataSource"/>
+</bean>
+<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+```
 
 
 
+- 어노테이션을 이용한 설정
+    
 
+@Transactional을 클래스 단위 혹은 메서드 단위에 선언해주면 된다.
+
+클래스에 선언하게 되면, 해당 클래스에 속하는 메서드에 공통적으로 적용된다. (test(), test2() 메서드에 적용)
+
+메서드에 선언하게 되면, 해당 메서드에만 적용된다. (test() 메소드에 적용)
+
+
+```java
+//클래스 단위 설정
+@Service
+@Transactional
+public class TestService {
+
+	public void test() {
+
+	}
+	
+	public void test2() {
+		
+	}
+
+}
+```
+
+
+```java
+
+```
 
 
 ---
@@ -607,3 +644,6 @@ https://velog.io/@jkijki12/annotation
 https://velog.io/@sungmo738/Resource-Autowired-Inject-%EC%B0%A8%EC%9D%B4
 
 https://galid1.tistory.com/769
+
+
+https://imiyoungman.tistory.com/9 - @Transactional
