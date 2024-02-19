@@ -191,3 +191,11 @@ DELETE 테이블명 WHERE 조건식 : 특정한 ROW 삭제
 - DELETE FROM 테이블명 WHERE 조건식
 ```
 
+
+
+#### Merge into
+
+
+
+---
+참조 - https://blog.naver.com/wiseyoun07/221146431131
