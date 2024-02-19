@@ -1,3 +1,14 @@
+
+
+```xml
+<import resource="classpath:/batch/batch-context.xml"/>
+```
+
+java의 import처럼 사용할수 있다.
+
+
+
+
 Beans는 설정 메타 데이터(xml)에 의해 생성이됩니다.
 
 
