@@ -134,8 +134,33 @@ JdbcTemplate은 JDBC 코어 패키지의 중앙 클래스로 JDBC의 사용을 �
 > - 예외 발생 시 스프링 예외 변환기 실행
 
 
-```
 
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:batch="http://www.springframework.org/schema/batch"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xsi:schemaLocation="http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd  
+                           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">  
+	<!-- import 내가 설정해놓은 위치에-->
+    <import resource="classpath:/test/batch-common-context.xml"/>  
+    <!-- tasklet 설정-->
+    <bean id="testBatchTasklet"  
+          class="com.busfine.home.system.batch.GBFS1060BatchTasklet"  
+          scope="step">  
+    </bean>  
+    <bean id="testDao" class="com.example.dao.TestDao"/>  
+  
+    <job id="testJob" xmlns="http://www.springframework.org/schema/batch">  
+        <description>  
+            Example
+        </description>  
+        <step id="step1">  
+            <tasklet ref="testBatchTasklet"/>  
+        </step>  
+    </job>  
+</beans>
 ```
 
 
@@ -153,3 +178,5 @@ Spring Batch에서 DAO를 Bean으로 등록하는 이유는 Spring Framework의 
 따라서, DAO를 Bean으로 등록하면, Spring Batch Job은 이를 필요로 하는 어느 곳에서든 주입받아 사용할 수 있게 됩니다. 이렇게 함으로써, Spring Batch Job은 데이터 액세스 로직에 집중하기보다는 실제로 수행해야 하는 작업에 집중할 수 있게 됩니다. 이는 Spring Batch의 주요 원칙 중 하나인 '비즈니스 로직과 인프라스트럭처 코드를 분리하라'를 따르는 것입니다.
 
 그러므로, DAO를 Bean으로 등록하는 것은 Spring Batch를 사용하는 데 있어서 중요한 부분입니다.
+
+
