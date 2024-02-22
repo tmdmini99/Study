@@ -138,3 +138,18 @@ JdbcTemplate은 JDBC 코어 패키지의 중앙 클래스로 JDBC의 사용을 �
 
 ```
 
+
+batch.xml에 dao를 bean으로 등록하는 이유 
+
+아, 이해했습니다. Spring Batch에서 DAO를 Bean으로 등록하는 이유에 대해 말씀드리겠습니다.
+
+Spring Batch에서 DAO를 Bean으로 등록하는 이유는 Spring Framework의 IoC(Inversion of Control)와 DI(Dependency Injection) 원칙을 따르기 위함입니다.
+
+1. **Dependency Injection(DI)**: 의존성 주입을 통해, Spring Batch Job은 필요한 DAO를 직접 생성하거나 관리할 필요 없이 사용할 수 있습니다. 이는 코드의 결합도를 낮추고 유연성을 높여줍니다. 또한, 테스트하기도 더 쉬워집니다.
+    
+2. **Inversion of Control(IoC)**: 객체의 생성과 생명 주기 관리를 Spring Container에 위임함으로써, 개발자는 비즈니스 로직에 집중할 수 있습니다. 이는 코드의 가독성을 높이고 유지 관리를 용이하게 합니다.
+    
+
+따라서, DAO를 Bean으로 등록하면, Spring Batch Job은 이를 필요로 하는 어느 곳에서든 주입받아 사용할 수 있게 됩니다. 이렇게 함으로써, Spring Batch Job은 데이터 액세스 로직에 집중하기보다는 실제로 수행해야 하는 작업에 집중할 수 있게 됩니다. 이는 Spring Batch의 주요 원칙 중 하나인 '비즈니스 로직과 인프라스트럭처 코드를 분리하라'를 따르는 것입니다.
+
+그러므로, DAO를 Bean으로 등록하는 것은 Spring Batch를 사용하는 데 있어서 중요한 부분입니다.
