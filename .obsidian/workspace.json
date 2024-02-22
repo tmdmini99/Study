@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/2/2024-02-21.md",
+                "file": "daily note/2024/2/2024-02-22.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/2/2024-02-21.md",
+                "file": "daily note/2024/2/2024-02-22.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/2/2024-02-21.md"
+                "file": "daily note/2024/2/2024-02-22.md"
               }
             }
           },
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/2/2024-02-21.md",
+                "file": "daily note/2024/2/2024-02-22.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +176,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/XML/tile.md",
     "daily note/2024/2/2024-02-21.md",
+    "daily note/2024/2/2024-02-22.md",
+    "Spaces/Home/XML/tile.md",
     "Spaces/Home/XML/Bean.md",
     "Spaces/Home/XML/conponent-scan.md",
     "Spaces/Home/XML/log4j.md",
@@ -201,7 +202,6 @@
     "Spaces/Home/Data/XML.md",
     "Spaces/Home/Data/Parsing.md",
     "Spaces/Home/Data/JSTL.md",
-    "Spaces/Home/Data/JSON.md",
     "Images/Transactional6.png",
     "Images/Transactional5.png",
     "Images/Transactional4.png",
