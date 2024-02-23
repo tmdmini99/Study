@@ -180,3 +180,8 @@ Spring Batch에서 DAO를 Bean으로 등록하는 이유는 Spring Framework의 
 그러므로, DAO를 Bean으로 등록하는 것은 Spring Batch를 사용하는 데 있어서 중요한 부분입니다.
 
 
+java code
+
+
+
+
