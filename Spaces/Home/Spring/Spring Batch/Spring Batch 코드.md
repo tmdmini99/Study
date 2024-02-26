@@ -119,6 +119,16 @@ batch-context.xml
 </bean>
 
 
+
+
+<jdbc:initialize-database
+        data-source="dataSource">
+        <jdbc:script
+            location="org/springframework/batch/core/schema-drop-h2.sql" />
+        <jdbc:script
+            location="org/springframework/batch/core/schema-h2.sql" />
+    </jdbc:initialize-database>
+
 </beans>
 
 ```
@@ -132,6 +142,20 @@ JdbcTemplate은 JDBC 코어 패키지의 중앙 클래스로 JDBC의 사용을 �
 > - 커넥션 종료, statement 및 resultset 종료
 > - 트랜잭션을 다루기 위한 커넥션 동기화
 > - 예외 발생 시 스프링 예외 변환기 실행
+
+지정해 놓은 쿼리문을 실행 시킨다
+
+```xml
+<jdbc:initialize-database
+        data-source="dataSource">
+        <jdbc:script
+            location="org/springframework/batch/core/schema-drop-h2.sql" />
+        <jdbc:script
+            location="org/springframework/batch/core/schema-h2.sql" />
+    </jdbc:initialize-database>
+
+</beans>
+```
 
 
 
@@ -183,5 +207,10 @@ Spring Batch에서 DAO를 Bean으로 등록하는 이유는 Spring Framework의 
 java code
 
 
+
+
+---
+
+https://www.fwantastic.com/2019/12/spring-batch-3-jobexecutioncontext.html
 
 
