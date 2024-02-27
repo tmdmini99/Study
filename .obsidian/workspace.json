@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/JPA/JPA.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/JPA/JPA.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/JPA/JPA.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/JPA/JPA.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,6 +185,12 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
+    "Spaces/Home/Spring/JPA/JPA.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Images/Maven4.png",
     "Images/Maven3.jpg",
@@ -220,16 +226,11 @@
     "Spaces/Home/XML/tile.md",
     "daily note/2024/2/2024-02-21.md",
     "daily note/2024/2/2024-02-20.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Spaces/Home/XML/XML.md",
-    "daily note/2024/2/2024-02-19.md",
     "Images/Transactional6.png",
     "Images/Transactional5.png",
     "Images/Transactional4.png",
     "Spaces/Home/DB/DB 개념",
     "Spaces/Home/Spring/Spring Legacy/Query",
-    "daily note/2024/2",
-    "daily note/2024/1",
     "무제 파일.canvas"
   ]
 }
