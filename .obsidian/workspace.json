@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -186,13 +186,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Git",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "daily note/2024/2/2024-02-27.md",
     "daily note/2024/2/2024-02-26.md",
     "daily note/2024/2/2024-02-23.md",
@@ -233,7 +233,6 @@
     "Images/Error",
     "Images/새 폴더",
     "Images/Spring Batch/Spring Batch10.png",
-    "Images/Spring Batch",
     "무제 파일.canvas"
   ]
 }
