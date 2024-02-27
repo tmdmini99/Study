@@ -21,16 +21,6 @@
             }
           },
           {
-            "id": "0041218e3170fea1",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20240227152245.png"
-              }
-            }
-          },
-          {
             "id": "b2a3e4ddacc10f7e",
             "type": "leaf",
             "state": {
@@ -40,8 +30,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -115,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20240227152245.png",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20240227152245.png"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md"
               }
             }
           },
@@ -153,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20240227152245.png",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -194,10 +183,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0041218e3170fea1",
+  "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Images/Gradle JPA3.png",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
-    "Images/Pasted image 20240227152245.png",
+    "Images/Gradle JPA2.png",
+    "Images/Gradle JPA1.png",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
@@ -237,8 +228,6 @@
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/XML/tile.md",
     "daily note/2024/2/2024-02-21.md",
-    "Images/Transactional6.png",
-    "Images/Transactional5.png",
     "Spaces/Home/DB/DB 개념",
     "Spaces/Home/Spring/Spring Legacy/Query",
     "무제 파일.canvas"

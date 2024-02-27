@@ -84,7 +84,244 @@ test {
 
 
 
-![[Pasted image 20240227152245.png]]
+![[Gradle JPA1.png]]
+
+
+- 설정 및 빌드를 마친 이후, 다음과 같이 Java 파일을 컴파일합니다.
+
+![[Gradle JPA2.png]]
+
+- `$projectDir/build/generated` 디렉토리 하위에 Entity로 등록한 클래스들이 Q라는 접두사가 붙은 형태로 생성되었습니다.
+- 이러한 클래스들을 Q 클래스 혹은 Q(쿼리) 타입이라고 합니다.
+    - QueryDSL로 쿼리를 작성할 때, Q 클래스를 사용함으로써 쿼리를 Type-Safe하게 작성할 수 있습니다.
+- Gradle 설정을 통해 `$projectDir/src/main/java`의 프로덕션 코드에서 Q 클래스를 import해 사용할 수 있습니다.
+
+  
+
+## 3. QueryDSL 간단 예제
+
+hi라는 내용을 포함하며 댓글이 1개 이상인 Post를 ID 내림차순으로 조회하는 로직이 존재한다고 가정해봅시다. 정적 쿼리가 아닌 EntityManager를 통해 JPQL을 작성하는 경우 코드는 다음과 같습니다.
+
+> PostRepositoryTest.java
+
+
+```java
+@DisplayName("hi 내용을 포함하며 댓글이 1개 이상인 Post를 조회한다.")
+@Test
+void jpa_findPostsByMyCriteria_Three() {
+    EntityManager entityManager = testEntityManager.getEntityManager();
+
+    List<Post> posts = entityManager.createQuery("select p from Post p where p.content like '%hi%' and p.comments.size > 0 order by p.id desc", Post.class)
+        .getResultList();
+
+    assertThat(posts).hasSize(3);
+}
+```
+
+- 정적 쿼리가 아닌 관계로 문법 오류가 발생하면 어플리케이션 로딩 시점에서 감지하지 못하고, 런타임 에러가 발생합니다.
+- `Post.class` 지네릭 타입을 메서드 파라미터로 제공하지 않으면, 로 타입의 리스트가 반환됩니다.
+
+> PostRepositoryTest.java
+
+```java
+@DisplayName("hi 내용을 포함하며 댓글이 1개 이상인 Post를 ID 내림차순으로 조회한다.")
+@Test
+void queryDsl_findPostsByMyCriteria_Three() {
+    EntityManager entityManager = testEntityManager.getEntityManager();
+
+    JPAQuery<Post> query = new JPAQuery<>(entityManager);
+    QPost qPost = new QPost("p");
+
+    List<Post> posts = query.from(qPost)
+        .where(qPost.content.contains("hi")
+            .and(qPost.comments.size().gt(0))
+        ).orderBy(qPost.id.desc())
+        .fetch();
+
+    assertThat(posts).hasSize(3);
+}
+```
+
+- 반면 QueryDSL은 각종 풍부한 체이닝 메서드와 유틸리티 메서드 및 정적 타입(Q 클래스)을 기반으로 직관적으로 쿼리를 작성합니다.
+- JPQL을 사용해본 독자님이라면 코드가 상당히 직관적임을 느끼실 겁니다.
+
+> PostRepositoryTest.java
+
+```java
+@DisplayName("QueryDsl을 통해 Post 조회시 Comment를 Fetch Join한다.")
+@Test
+void queryDsl_FetchJoinComments_Success() {
+    EntityManager entityManager = testEntityManager.getEntityManager();
+
+    JPAQuery<Post> query = new JPAQuery<>(entityManager);
+    QPost qPost = new QPost("p");
+    QComment qComment = new QComment("c");
+
+    List<Post> posts = query.distinct()
+        .from(qPost)
+        .leftJoin(qPost.comments, qComment).fetchJoin()
+        .fetch();
+
+    assertThat(posts).hasSize(3);
+}
+```
+
+- 또한 `fetchJoin()` 등 직관적인 체이닝 메서드를 통해 간단하게 Fetch Join을 적용할 수 있습니다.
+
+  
+
+## 4. Repository에서 QueryDSL 사용하기
+
+> PostRepository.java
+
+```java
+public interface PostRepository extends JpaRepository<Post, Long> {
+
+    @Query("select p from Post p join fetch p.comments")
+    List<Post> findAllInnerFetchJoin();
+
+    @Query("select distinct p from Post p join fetch p.comments")
+    List<Post> findAllInnerFetchJoinWithDistinct();
+
+    //...
+}
+```
+
+현재 PostRepository가 사용 중인 정적 쿼리(JPQL)들을 QueryDSL로 교체해봅시다. Spring Data JPA는 JpaRepository를 상속한 Repository 클래스(예, PostRepository)에서 Custom Repository 기능을 사용할 수 있도록 하는 기능을 제공합니다.
+
+> QueryDslConfig.java
+
+```java
+@Configuration
+public class QueryDslConfig {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Bean
+    public JPAQueryFactory jpaQueryFactory() {
+        return new JPAQueryFactory(entityManager);
+    }
+}
+```
+
+- 먼저, JPAQueryFactory를 Bean으로 등록하여 프로젝트 전역에서 QueryDSL을 작성할 수 있도록 합니다.
+
+> PostCustomRepository.java
+
+```java
+public interface PostCustomRepository {
+
+    List<Post> findAllInnerFetchJoin();
+
+    List<Post> findAllInnerFetchJoinWithDistinct();
+}
+```
+
+- 기존의 PostRepository 인터페이스의 `findAllInnerFetchJoin()` 및 `findAllInnerFetchJoinWithDistinct()` 메서드를 삭제하고, 동일한 메서드 시그니처를 새로운 커스텀 인터페이스에 정의합니다.
+
+> PostCustomRepositoryImpl.java
+
+```java
+import static com.learning.jpa.domain.post.QPost.post;
+
+@Repository
+public class PostCustomRepositoryImpl implements PostCustomRepository {
+
+    private final JPAQueryFactory jpaQueryFactory;
+
+    public PostCustomRepositoryImpl(JPAQueryFactory jpaQueryFactory) {
+        this.jpaQueryFactory = jpaQueryFactory;
+    }
+
+    @Override
+    public List<Post> findAllInnerFetchJoin() {
+        return jpaQueryFactory.selectFrom(post)
+            .innerJoin(post.comments)
+            .fetchJoin()
+            .fetch();
+    }
+
+    @Override
+    public List<Post> findAllInnerFetchJoinWithDistinct() {
+        return jpaQueryFactory.selectFrom(post)
+            .distinct()
+            .innerJoin(post.comments)
+            .fetchJoin()
+            .fetch();    
+    }
+}
+```
+
+- 커스텀 인터페이스를 구현하는 클래스에 QueryDSL 쿼리를 작성합니다.
+    - 이 때, 해당 구현 클래스 이름은 반드시 `Impl`로 끝나야 합니다.
+- 이전 테스트 코드에서는 QPost와 같은 Q 타입 인스턴스를 직접 생성해서 사용했습니다.
+    - 이번에는 QPost를 static import함으로써, QPost에 미리 정의된 Q 타입 인스턴스 상수를 사용합니다.
+
+![[Gradle JPA3.png]]
+
+- 실제 QPost 클래스 내부에는 Q 타입의 인스턴스 상수가 미리 정의되어 있음을 확인할 수 있습니다.
+
+> PostRepository.java
+
+```java
+public interface PostRepository extends JpaRepository<Post, Long>, PostCustomRepository {
+
+    /*
+    삭제된 JPQL 정적 쿼리 메서드
+    @Query("select p from Post p join fetch p.comments")
+    List<Post> findAllInnerFetchJoin();
+
+    @Query("select distinct p from Post p join fetch p.comments")
+    List<Post> findAllInnerFetchJoinWithDistinct();    
+     */
+
+    //...
+}
+```
+
+- JpaRepository를 상속하는 PostRepository가 PostCustomRepository 인터페이스를 상속하도록 합니다.
+    - PostCustomRepositoryImpl에 작성된 QueryDSL 코드를 PostRepository가 자동으로 사용할 수 있게 됩니다.
+
+  
+
+## 5. 기타
+
+> QueryRepository.java
+
+```java
+@Repository
+public class QueryRepository {
+
+    private final JPAQueryFactory jpaQueryFactory;
+
+    public QueryRepository(JPAQueryFactory jpaQueryFactory) {
+        this.jpaQueryFactory = jpaQueryFactory;
+    }
+
+    public List<Post> findAllPostsInnerFetchJoin() {
+        return jpaQueryFactory.selectFrom(post)
+            .innerJoin(post.comments)
+            .fetchJoin()
+            .fetch();
+    }
+
+    public List<Orphan> findALlOrphans() {
+        return jpaQueryFactory.selectFrom(orphan)
+            .distinct()
+            .leftJoin(orphan.parent).fetchJoin()
+            .where(orphan.name.contains("abc"))
+            .fetch();
+    }
+}
+```
+
+- 원한다면 특정 엔티티 타입에 구애받지 않는 자신만의 QueryDSL 관련 Repository를 정의해 사용할 수도 있습니다.
+
+
+
+
+
 
 
 
