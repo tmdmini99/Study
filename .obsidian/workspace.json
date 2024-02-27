@@ -19,16 +19,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "b2a3e4ddacc10f7e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Gradle2.png"
-              }
-            }
           }
         ]
       }
@@ -185,8 +175,10 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Images/수치코드2.png",
+    "Images/그레이코드1.png",
+    "Images/Gradle2.png",
     "Spaces/정보처리기사/트리 순회.md",
+    "Images/수치코드2.png",
     "Images/수치코드1.png",
     "Images/카티션 프로덕트2.png",
     "Images/정보처리기카티션프로덕트1.png",
@@ -203,7 +195,6 @@
     "Spaces/Home/Spring/Maven/Maven.md",
     "Images/Maven4.png",
     "Images/Maven3.jpg",
-    "Images/Maven2.png",
     "Spaces/Home/Spring/Maven.md",
     "Spaces/Home/Spring/Gradle",
     "Spaces/Home/Spring/Gradle/Gradle.md",
