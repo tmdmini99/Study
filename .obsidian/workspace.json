@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/2/2024-02-27.md",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -84,8 +84,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -105,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/2/2024-02-27.md",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/2/2024-02-27.md"
+                "file": "Spaces/정보처리기사/트리 순회.md"
               }
             }
           },
@@ -143,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/2/2024-02-27.md",
+                "file": "Spaces/정보처리기사/트리 순회.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -186,6 +185,7 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "daily note/2024/2/2024-02-27.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Images/Gradle JPA3.png",
     "Images/Gradle JPA2.png",
@@ -218,7 +218,6 @@
     "Spaces/Home/Git",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
-    "daily note/2024/2/2024-02-27.md",
     "daily note/2024/2/2024-02-23.md",
     "daily note/2024/2/2024-02-22.md",
     "Spaces/Home/XML/log4j.md",
