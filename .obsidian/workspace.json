@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
+                "file": "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
+                "file": "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md"
+                "file": "Spaces/Home/DB/DB 개념/정규화&반정규화.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
+                "file": "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,8 +185,8 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Images/Gradle JPA3.png",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
+    "Images/Gradle JPA3.png",
     "Images/Gradle JPA2.png",
     "Images/Gradle JPA1.png",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
