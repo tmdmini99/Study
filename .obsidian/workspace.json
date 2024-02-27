@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Maven/Maven.md",
+                "file": "Spaces/Home/Spring/JPA/JPA.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Maven/Maven.md",
+                "file": "Spaces/Home/Spring/JPA/JPA.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Maven/Maven.md"
+                "file": "Spaces/Home/Spring/JPA/JPA.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Maven/Maven.md",
+                "file": "Spaces/Home/Spring/JPA/JPA.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,8 +185,8 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Images/Maven4.png",
     "Spaces/Home/Spring/Maven/Maven.md",
+    "Images/Maven4.png",
     "Images/Maven3.jpg",
     "Images/Maven2.png",
     "Images/Maven1.png",
