@@ -49,5 +49,17 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 ```
 
 
+```java
+passwordEncoder.matches(password, user.getPassword()
+```
+
+
+`BCryptPasswordEncoder`는 Spring Security에서 제공하는 클래스로, 비밀번호를 안전하게 암호화하는 데 사용됩니다. 이 클래스는 원본 비밀번호를 암호화하고, 저장된 암호화된 비밀번호와 비교하는 기능을 제공합니다.
+
+`matches()` 메서드는 두 개의 파라미터를 받습니다: 사용자가 입력한 원본 비밀번호와 데이터베이스에 저장된 암호화된 비밀번호 입니다. 이 메서드는 입력된 원본 비밀번호를 같은 방법으로 암호화한 후, 결과를 데이터베이스에 저장된 암호화된 비밀번호와 비교합니다. 만약 두 비밀번호가 일치한다면 `true`를, 그렇지 않다면 `false`를 반환합니다.
+
+
+
+
 ---
 출처 - https://to-dy.tistory.com/87

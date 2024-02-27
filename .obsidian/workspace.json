@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+                "file": "Spaces/Home/Spring/Maven/Maven.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,15 +21,12 @@
             }
           },
           {
-            "id": "df8b51d7ad4477a3",
+            "id": "b2a3e4ddacc10f7e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "daily note/2024/2/2024-02-26.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "Images/Gradle2.png"
               }
             }
           }
@@ -107,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+                "file": "Spaces/Home/Spring/Maven/Maven.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md"
+                "file": "Spaces/Home/Spring/Maven/Maven.md"
               }
             }
           },
@@ -145,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+                "file": "Spaces/Home/Spring/Maven/Maven.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,13 +185,27 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
-    "Spaces/Home/Git",
+    "Images/Maven1.png",
+    "Spaces/Home/Spring/Maven/Maven.md",
+    "Spaces/Home/Spring/Maven.md",
+    "Spaces/Home/Spring/Gradle",
+    "Spaces/Home/Spring/Gradle/Gradle.md",
+    "Images/Gradle3.png",
+    "Images/Gradle2.png",
+    "daily note/2024/2/2024-02-26.md",
+    "Images/Gradle1.png",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+    "Spaces/Home/Spring/무제 폴더",
+    "Spaces/Home/Spring/Gradle",
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+    "Spaces/Home/Spring/Security.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/Gradle",
+    "Spaces/Home/Spring/Spring Legacy/Maven",
+    "Spaces/Home/Git",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
     "daily note/2024/2/2024-02-27.md",
-    "daily note/2024/2/2024-02-26.md",
     "daily note/2024/2/2024-02-23.md",
     "daily note/2024/2/2024-02-22.md",
     "Spaces/Home/XML/log4j.md",
@@ -206,14 +217,9 @@
     "Spaces/Home/XML/tile.md",
     "daily note/2024/2/2024-02-21.md",
     "daily note/2024/2/2024-02-20.md",
-    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/XML/XML.md",
     "daily note/2024/2/2024-02-19.md",
-    "Spaces/Home/Java/캡슐화/캡슐화.md",
-    "Spaces/Home/Java/캡슐화/제어자.md",
-    "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/DataBase.md",
     "Images/Transactional6.png",
     "Images/Transactional5.png",
     "Images/Transactional4.png",
@@ -224,15 +230,6 @@
     "Spaces/Home/Spring/Spring Legacy/Query",
     "daily note/2024/2",
     "daily note/2024/1",
-    "daily note/2023/12",
-    "daily note/2024",
-    "daily note/2023",
-    "Images/Annotation/Annotation3.png",
-    "Images/Error/error2.png",
-    "Images/Error/error1.png",
-    "Images/Error",
-    "Images/새 폴더",
-    "Images/Spring Batch/Spring Batch10.png",
     "무제 파일.canvas"
   ]
 }
