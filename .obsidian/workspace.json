@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "daily note/2024/2/2024-02-28.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "daily note/2024/2/2024-02-28.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md"
+                "file": "daily note/2024/2/2024-02-28.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "daily note/2024/2/2024-02-28.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +176,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Images/주소공간2.png",
     "Spaces/정보처리기사/트리 순회.md",
+    "daily note/2024/2/2024-02-28.md",
+    "Images/주소공간2.png",
     "Images/주소공간1.png",
     "Images/분기명령어2.png",
     "Images/분기명령어1.png",
