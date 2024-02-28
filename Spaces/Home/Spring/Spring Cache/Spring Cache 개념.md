@@ -4,9 +4,9 @@ Cache는 자주 액세스하는 데이터를 메모리에 저장하여 애플리
 
 Spring Local Cache는 개발자가 애플리케이션의 메모리 내에서 응답 시간을 개선하고 백엔드 시스템의 부하를 줄이기 위해 데이터를 Local (일반적으로 JVM Heap)에 저장하는 메모리 내 캐시입니다.
 
-![](https://blog.kakaocdn.net/dn/DV1DA/btsk82EJ7HS/dV8FDFLFfdeDiTZQgAFe80/img.png)
 
-https://jane096.github.io/project/redis-caching/
+![[Spring Cache1.png]]
+
 
 #### **장점**
 
@@ -22,9 +22,8 @@ https://jane096.github.io/project/redis-caching/
 
 JVM Heap 메모리에서 캐싱을 수행하지 않고, Redis와 같이 하나의 외부 저장소를 두고 여러 인스턴스끼리 공유하는 방법입니다.
 
-![](https://blog.kakaocdn.net/dn/b1BPpH/btsk82xXsCN/w7eKoWCbWpyYr48kKH1k9K/img.png)
 
-https://jane096.github.io/project/redis-caching/
+![[Spring Cache2.png]]
 
 #### **장점**
 
