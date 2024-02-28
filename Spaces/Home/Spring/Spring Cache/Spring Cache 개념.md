@@ -1,0 +1,59 @@
+#### **Spring Local Cache란?**
+
+Cache는 자주 액세스하는 데이터를 메모리에 저장하여 애플리케이션의 성능을 향상하는 데 사용되는 강력한 기술입니다.
+
+Spring Local Cache는 개발자가 애플리케이션의 메모리 내에서 응답 시간을 개선하고 백엔드 시스템의 부하를 줄이기 위해 데이터를 Local (일반적으로 JVM Heap)에 저장하는 메모리 내 캐시입니다.
+
+![](https://blog.kakaocdn.net/dn/DV1DA/btsk82EJ7HS/dV8FDFLFfdeDiTZQgAFe80/img.png)
+
+https://jane096.github.io/project/redis-caching/
+
+#### **장점**
+
+- WAS의 인스턴스 메모리에 데이터를 저장하기 때문에 네트워크 지연 없이 매우 접근속도가 매우 빠릅니다.
+- AWS/GCP Cloud의 Redis 등의 별도의 외부 종속성이 필요없습니다.
+
+#### **단점**
+
+- 메모리에 데이터를 저장하므로 캐시 크기는 사용 가능한 Heap 공간에 영향을 받습니다. 캐시가 너무 커지면 OOM이 발생할 수 있으며 적절한 캐시 크기와 제거 정책을 구현해야 합니다.
+- 인스턴스가 여러 개인 경우 A 인스턴스에서는 캐시가 업데이트되었지만, B 인스턴스에는 요청이 들어오지 않아 캐시가 업데이트되지 않으면, 데이터 일관성 문제가 발생할 수 있습니다. (ttl을 짧게 하여 최대한 동기화가 될 수 있도록 하는 대안이 있습니다.)
+
+#### **Global Cache란?**
+
+JVM Heap 메모리에서 캐싱을 수행하지 않고, Redis와 같이 하나의 외부 저장소를 두고 여러 인스턴스끼리 공유하는 방법입니다.
+
+![](https://blog.kakaocdn.net/dn/b1BPpH/btsk82xXsCN/w7eKoWCbWpyYr48kKH1k9K/img.png)
+
+https://jane096.github.io/project/redis-caching/
+
+#### **장점**
+
+- 여러 인스턴스테어 일관된 데이터를 유지할 수 있습니다. 하나의 인스턴스에서 발생한 변경 사항을 다른 인스턴스로 전파하여 모든 인스턴스가 최신 데이터에 액세스 할 수 있습니다.
+- 샤딩, 복제등으로 내결함성을 증가시킬 수 있습니다.
+
+#### **단점**
+
+- 외부 의존성이 필요하다.
+- 네트워크 비용이 발생하기 때문에 상대적으로 Local Cache보다 느리다.
+
+#### **언제 Local Cache를 적용하면 좋을까?**
+
+- 변화의 주기가 매우 길거나, 한번 지정하면 변화가 없는 고정 값
+- 동일한 데이터를 매우 빈번하게 조회하는 경우
+
+#### **어떤 Local Cache를 사용해야 할까?**
+
+- Ehcache
+- Caffeine Cache
+
+다양한 캐시들이 존재하지만 대표적으로 많이 사용되는 2가지 Cache를 비교해 보겠습니다.
+
+Ehcache는 Off Heap에 저장, 분산 캐시, cache listener 등 더 많은 기능을 제공합니다.
+
+단순하게 memory cache만 사용하고 고성능이 요구되면 Caffeine Cache가 더 좋은 선택사항입니다.
+
+Caffeine 캐시는 Window TinyLfu eviction policy를 사용하여 최적에 가까운 적중률을 제공합니다.
+
+읽기, 쓰기에서 모두 Caffeine Cache가 좋은 성능을 보여줍니다.
+
+Ehcache의 특별한 기능을 사용하지 않는 경우라면 Caffeine Cache가 좋은 선택지로 보입니다.
