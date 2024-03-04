@@ -175,6 +175,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Spaces/Home/Docker/DockerError.md",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "daily note/2024/3/2024-03-04.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
@@ -190,7 +193,6 @@
     "Images/Spring Cache2.png",
     "Images/Spring Cache1.png",
     "Spaces/Home/Spring/Spring Cache",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Images/주소공간2.png",
     "Images/주소공간1.png",
@@ -219,8 +221,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven",
     "Spaces/Home/Git",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
-    "daily note/2024/2/2024-02-22.md",
     "무제 파일.canvas"
   ]
 }
