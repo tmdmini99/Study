@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-03-07.md",
+                "file": "daily note/2024/3/2024-03-08.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-03-07.md",
+                "file": "daily note/2024/3/2024-03-08.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-03-07.md"
+                "file": "daily note/2024/3/2024-03-08.md"
               }
             }
           },
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-03-07.md",
+                "file": "daily note/2024/3/2024-03-08.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +176,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/3/2024-03-06.md",
     "daily note/2024/3/2024-03-07.md",
+    "daily note/2024/3/2024-03-08.md",
+    "daily note/2024/3/2024-03-06.md",
     "daily note/2024/3/2024-03-05.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
@@ -218,7 +219,6 @@
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/무제 폴더",
     "Spaces/Home/Spring/Gradle",
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Gradle",
     "Spaces/Home/Spring/Spring Legacy/Maven",
     "Spaces/Home/Git",
