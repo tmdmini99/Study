@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-03-11.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-03-11.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-03-11.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Handler.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-03-11.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +175,12 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/3/2024-03-08.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+    "daily note/2024/3/2024-03-12.md",
     "daily note/2024/3/2024-03-11.md",
+    "daily note/2024/3/2024-03-08.md",
     "daily note/2024/3/2024-03-07.md",
     "daily note/2024/3/2024-03-06.md",
     "daily note/2024/3/2024-03-05.md",
@@ -212,11 +215,7 @@
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
-    "Spaces/Home/Spring/JPA/JPA.md",
-    "Spaces/Home/Spring/Maven/Maven.md",
-    "Spaces/Home/Spring/Maven.md",
     "Spaces/Home/Spring/Gradle",
-    "Spaces/Home/Spring/Gradle/Gradle.md",
     "Spaces/Home/Spring/무제 폴더",
     "Spaces/Home/Spring/Gradle",
     "Spaces/Home/Spring/Spring Legacy/Gradle",
