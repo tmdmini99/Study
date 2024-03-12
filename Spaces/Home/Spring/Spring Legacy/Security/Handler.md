@@ -83,3 +83,29 @@ public class MyAuthenticationFailureHandler
 }
 
 ```
+
+
+로그인 성공시 
+
+```java
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
+public class MyAuthenticationSuccessHandler 
+  implements AuthenticationSuccessHandler {
+    
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, 
+      HttpServletResponse response, Authentication authentication) 
+      throws IOException, ServletException {
+        
+        // 로그인 성공 후 처리 로직
+        // 예: 홈페이지로 리디렉션
+        
+		// 세션의 최대 미활동 시간을 TIME(초 단위)로 설정
+        request.getSession().setMaxInactiveInterval(TIME);  
+
+		
+		super.onAuthenticationSuccess(request, response, auth);
+    }
+}
+```
