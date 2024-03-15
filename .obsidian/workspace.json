@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-03-14.md",
+                "file": "daily note/2024/3/2024-03-15.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-03-14.md",
+                "file": "daily note/2024/3/2024-03-15.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-03-14.md"
+                "file": "daily note/2024/3/2024-03-15.md"
               }
             }
           },
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-03-14.md",
+                "file": "daily note/2024/3/2024-03-15.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +176,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "daily note/2024/3/2024-03-14.md",
+    "daily note/2024/3/2024-03-15.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "daily note/2024/3/2024-03-12.md",
@@ -213,7 +214,6 @@
     "Images/그레이코드1.png",
     "Images/Gradle2.png",
     "Images/수치코드2.png",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
     "Spaces/Home/Spring/Gradle",
