@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-03-18.md",
+                "file": "Spaces/Home/Spring/Gradle/Gradle.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-03-18.md",
+                "file": "Spaces/Home/Spring/Gradle/Gradle.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-03-18.md"
+                "file": "Spaces/Home/Spring/Gradle/Gradle.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-03-18.md",
+                "file": "Spaces/Home/Spring/Gradle/Gradle.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +175,10 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "daily note/2024/3/2024-03-18.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "daily note/2024/3/2024-03-15.md",
@@ -200,9 +201,7 @@
     "daily note/2024/2/2024-02-27.md",
     "daily note/2024/2/2024-02-26.md",
     "daily note/2024/2/2024-02-23.md",
-    "daily note/2024/2/2024-02-29.md",
     "daily note/2024/3",
-    "Spaces/정보처리기사/트리 순회.md",
     "Images/Spring Cache2.png",
     "Images/Spring Cache1.png",
     "Spaces/Home/Spring/Spring Cache",
