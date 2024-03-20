@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md",
+                "file": "daily note/2024/3/2024-03-20.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md",
+                "file": "daily note/2024/3/2024-03-20.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md"
+                "file": "daily note/2024/3/2024-03-20.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md",
+                "file": "daily note/2024/3/2024-03-20.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +176,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Images/CSRF2.jpg",
     "Spaces/Home/CSRF/CSRF.md",
+    "daily note/2024/3/2024-03-20.md",
+    "Images/CSRF2.jpg",
     "Images/CSRF1.png",
     "daily note/2024/3/2024-03-19.md",
     "Spaces/Home/CSRF",
