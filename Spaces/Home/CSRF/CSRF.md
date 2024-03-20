@@ -78,6 +78,29 @@ CSRF에 대응하는 방법은 크게 3가지가 있습니다.
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 ```
 
+먼저 스프링 시큐리티에서는 CSRF 보호 기능이 기본적으로 활성화되어 있다는 점을 기억해야 합니다. 따라서 별도로 `<security:csrf/>` 태그를 추가하지 않아도, 스프링 시큐리티는 CSRF 토큰을 생성하고 검증하는 역할을 수행합니다 [[3]](https://assu10.github.io/dev/2023/12/17/springsecurity-csrf/). 이는 `<security:http>` 태그 내에 `auto-config="true"`가 설정되어 있으며, 이로 인해 `securityNamespaceHandler`에 의해 자동으로 필요한 보안 설정들이 적용된다는 것을 의미할 수 있습니다.
+
+
+
+
+
+
+
+java를 통해서 하는방법
+```java
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .csrf().disable() // CSRF 보호 활성화
+            .authorizeRequests()
+            .anyRequest().authenticated();
+    }
+}
+```
+
 
 
 ---
