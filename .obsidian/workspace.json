@@ -19,49 +19,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "f059cd3a070a48dc",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/reCAPTCH4.jpg"
-              }
-            }
-          },
-          {
-            "id": "63cd1bced00826b9",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/reCAPTCH3.png"
-              }
-            }
-          },
-          {
-            "id": "a34139918a5318c8",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/reCAPTCH2.png"
-              }
-            }
-          },
-          {
-            "id": "9ab79f62b2858510",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/reCAPTCH1.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -135,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/reCAPTCH4.jpg",
+                "file": "Spaces/Home/CSRF/reCAPTCH.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/reCAPTCH4.jpg"
+                "file": "Spaces/Home/CSRF/reCAPTCH.md"
               }
             }
           },
@@ -173,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/reCAPTCH4.jpg",
+                "file": "Spaces/Home/CSRF/reCAPTCH.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -214,12 +173,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f059cd3a070a48dc",
+  "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "Spaces/Home/CSRF/reCAPTCH.md",
-    "Images/reCAPTCH3.png",
-    "Images/reCAPTCH2.png",
     "Images/reCAPTCH4.jpg",
+    "Images/reCAPTCH3.png",
+    "Spaces/Home/CSRF/reCAPTCH.md",
+    "Images/reCAPTCH2.png",
     "Images/reCAPTCH1.png",
     "Spaces/Home/CSRF/CSRF.md",
     "daily note/2024/3/2024-03-20.md",
