@@ -74,7 +74,9 @@ CSRF에 대응하는 방법은 크게 3가지가 있습니다.
 그리고 **요청이 들어올 때 마다 백엔드에서 세션에 저장된 값과 요청으로 전송된 값이 일치하는지 검증하여 방어**하는 방법입니다. referrer 검증법과 같이 XSS를 통한 CSRF 공격에 취약하다는 특징이 있습니다.
 
 
-
+```html
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+```
 
 
 
