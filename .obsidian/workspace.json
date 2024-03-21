@@ -13,14 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md",
+                "file": "Spaces/Home/CSRF/XSS.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "0361ec916cb251c8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md",
+                "file": "Spaces/Home/CSRF/XSS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md"
+                "file": "Spaces/Home/CSRF/XSS.md"
               }
             }
           },
@@ -132,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/CSRF/CSRF.md",
+                "file": "Spaces/Home/CSRF/XSS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,14 +184,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "0361ec916cb251c8",
   "lastOpenFiles": [
+    "Spaces/Home/CSRF/CSRF.md",
+    "Spaces/Home/CSRF/XSS.md",
     "Spaces/Home/CSRF/reCAPTCH.md",
     "Images/reCAPTCH4.jpg",
     "Images/reCAPTCH3.png",
     "Images/reCAPTCH2.png",
     "Images/reCAPTCH1.png",
-    "Spaces/Home/CSRF/CSRF.md",
     "daily note/2024/3/2024-03-20.md",
     "Images/CSRF2.jpg",
     "Images/CSRF1.png",
@@ -214,12 +226,4 @@
     "Images/주소공간2.png",
     "Images/주소공간1.png",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
-    "Spaces/Home/Spring/Gradle",
-    "Spaces/Home/Spring/무제 폴더",
-    "Spaces/Home/Spring/Gradle",
-    "Spaces/Home/Spring/Spring Legacy/Gradle",
-    "Spaces/Home/Spring/Spring Legacy/Maven",
-    "무제 파일.canvas"
-  ]
-}
+    "Spac
