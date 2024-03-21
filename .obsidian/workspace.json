@@ -24,9 +24,12 @@
             "id": "0361ec916cb251c8",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.5.11"
+                "file": "daily note/2024/3/2024-03-21.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -85,7 +88,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -105,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/CSRF/XSS.md",
+                "file": "daily note/2024/3/2024-03-21.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/CSRF/XSS.md"
+                "file": "daily note/2024/3/2024-03-21.md"
               }
             }
           },
@@ -143,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/CSRF/XSS.md",
+                "file": "daily note/2024/3/2024-03-21.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -186,6 +190,7 @@
   },
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
+    "daily note/2024/3/2024-03-21.md",
     "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/CSRF/XSS.md",
     "Spaces/Home/CSRF/reCAPTCH.md",
@@ -218,7 +223,6 @@
     "Spaces/Home/Docker/DockerError.md",
     "daily note/2024/3/2024-03-04.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
-    "Spaces/Home/Spring/Spring Framework.md",
     "daily note/2024/3",
     "Images/Spring Cache2.png",
     "Images/Spring Cache1.png",
@@ -226,4 +230,12 @@
     "Images/주소공간2.png",
     "Images/주소공간1.png",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
-    "Spac
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
+    "Spaces/Home/Spring/Gradle",
+    "Spaces/Home/Spring/무제 폴더",
+    "Spaces/Home/Spring/Gradle",
+    "Spaces/Home/Spring/Spring Legacy/Gradle",
+    "Spaces/Home/Spring/Spring Legacy/Maven",
+    "무제 파일.canvas"
+  ]
+}
