@@ -13,7 +13,16 @@ ex)
 **_Step 1: "아침에 6시에 모닝콜이 울린다. 모닝콜을 끈다."_**  
 **_Step 2: "물을 한 잔 먹고 화장실을 간다. "_**  
 **_Step 3: "간단하게 세수를 한다."_**  
-**_Step 4: "신발끈을 묶는다."_**
+**_Step 4: "신발끈을 묶는다."
+
+
+### 특징 _✓이 조건들을 만족해야 ‘배치’인 것이다!_
+
+1. 대용량 데이터 - 대량의 데이터를 가져오고, 전달하고, 계산하는 등의 처리 가능
+2. 견고성 - 잘못된 데이터를 충돌/중단 없이 처리
+3. 성능 - 지정한 시간 내에 처리 완료 및 동시에 실행되는 다른 프로그램에 방해 X
+4. 자동화 - 사용자의 개입 없이 실행
+5. 신뢰성 - 잘못된 부분의 추적 가능 (로깅, 알림 등)_**
 
 
 ## **Spring Batch vs Quartz? Scheduler?**
@@ -24,6 +33,46 @@ Spring Batch는 Batch Job을 관리하지만 Job을 구동하거나 실행시키
 
 배치(Batch)는 논리적 또는 물리적으로 관련된 일련의 데이터를 그룹화하여 일괄 처리하는 방법을 의미합니다. 반면에 스케줄러(Scheduler)는 주어진 작업을 미리 정의된 시간에 실행할 수 있게 해주는 도구나 소프트웨어를 의미합니다.  
 여기서 주의할 점은 배치는 **대량의 데이터를 일괄적으로 처리**할 뿐, 특정 주기마다 자동으로 돌아가는 **스케줄링과는 관련이 없다는 것입니다**. Spring Batch는 스케줄러와 함께 사용할 수 있도록 설계되어 있을 뿐이지 스케줄러 자체를 대체하는 것은 아닙니다.
+
+#### **1) 배치(Batch)란?**
+
+> **배치(Batch) : 일괄처리**  
+> 사용자와 상호작용 없이 **여러 개의 작업**을 미리 정해진 순서에 따라 **중단 없이 처리**하는 것
+
+#### **2) 스케쥴러(Scheduler)란?**
+
+> **특정한 시간**에 등록한 작업을 **자동으로 실행**시키는 것  
+> → Spring Scheduler, Quartz 등
+
+
+#### **- Batch와 Scheduler 용어 정의**
+
+
+![[Pasted image 20240321112826.png]]
+
+Batch와 Scheduler 용어 정의
+
+
+
+![[Pasted image 20240321112834.png]]
+배치(Batch)의 5가지 특징
+
+### **2. 스프링 스케쥴러(Spring Scheduler)**
+
+> Spring Framework에서 기본적으로 제공하는 Scheduler
+
+
+
+![[Pasted image 20240321112845.png]]
+
+Spring Scheduler 특징
+
+
+
+
+**Spring Batch는 스케줄러가 아니므로, 고려 대상이 아니었다!**
+
+배치 작업을 관리하지만, 이 작업(Job)을 구동하거나 실행시키는 기능은 지원하지 않는다. 스프링에서 배치 작업을 실행시키려면 Quartz, Scheduler, Jenkins 등 전용 스케줄러를 사용해야 한다.
 
 
 ## **Batch 사용 사례**
@@ -1783,3 +1832,9 @@ references BATCH_STEP_EXECUTION(STEP_EXECUTION_ID)
 https://dkswnkk.tistory.com/707
 
 https://devfunny.tistory.com/769
+
+
+https://yermi.tistory.com/entry/Spring-Batch%EC%99%80-Scheduler%EC%9D%98-%EC%B0%A8%EC%9D%B4-Spring-Scheduler-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95
+
+
+https://velog.io/@dev_tmb/%EB%B0%B0%EC%B9%98%EC%99%80-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC%EC%9D%98-%EC%B0%A8%EC%9D%B4
