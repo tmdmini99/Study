@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-03-21.md",
+                "file": "Spaces/Home/Git/GitHub.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -88,8 +88,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -109,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-03-21.md",
+                "file": "Spaces/Home/Git/GitHub.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-03-21.md"
+                "file": "Spaces/Home/Git/GitHub.md"
               }
             }
           },
@@ -147,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-03-21.md",
+                "file": "Spaces/Home/Git/GitHub.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -191,6 +190,8 @@
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
     "daily note/2024/3/2024-03-21.md",
+    "Spaces/Home/Git/GitHub.md",
+    "Spaces/Home/무제 폴더",
     "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/CSRF/XSS.md",
     "Spaces/Home/CSRF/reCAPTCH.md",
@@ -222,7 +223,6 @@
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/DockerError.md",
     "daily note/2024/3/2024-03-04.md",
-    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "daily note/2024/3",
     "Images/Spring Cache2.png",
     "Images/Spring Cache1.png",
@@ -235,7 +235,6 @@
     "Spaces/Home/Spring/무제 폴더",
     "Spaces/Home/Spring/Gradle",
     "Spaces/Home/Spring/Spring Legacy/Gradle",
-    "Spaces/Home/Spring/Spring Legacy/Maven",
     "무제 파일.canvas"
   ]
 }
