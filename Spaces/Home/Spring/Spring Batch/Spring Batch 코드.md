@@ -256,7 +256,47 @@ public class CounterIncrementerTasklet implements Tasklet {
 
 
 
+java 코드
 
+```java
+@Slf4j
+@Configuration
+public class SimpleJobConfiguration {
+
+    /*
+    Spring Batch에서 Job은 하나의 배치 작업 단위를 말합니다.
+    Job 안에서는 이처럼 여러 Step이 존재하고,
+    Step 안에는 Tasklet 혹은 Reader & Processor & Writer 묶음이 존재합니다.
+     */
+
+  @Bean
+  public Job testSimpleJob(JobRepository jobRepository, Step testStep, Step testStep2){
+    return new JobBuilder("testSimpleJob", jobRepository)
+      .start(testStep)
+      .next(testStep2)
+      .build();
+  }
+
+  @Bean
+  public Step testStep(JobRepository jobRepository, Tasklet testTasklet, PlatformTransactionManager platformTransactionManager){
+    return new StepBuilder("testStep", jobRepository)
+      .tasklet(testTasklet, platformTransactionManager).build();
+  }
+  @Bean
+  public Step testStep2(JobRepository jobRepository, Tasklet testTasklet, PlatformTransactionManager platformTransactionManager){
+    return new StepBuilder("testStep2", jobRepository)
+      .tasklet(testTasklet, platformTransactionManager).build();
+  }
+
+  @Bean
+  public Tasklet testTasklet(){
+    return ((contribution, chunkContext) -> {
+      System.out.println("테스트1");
+      return RepeatStatus.FINISHED;
+    });
+  }
+}
+```
 
 
 ---

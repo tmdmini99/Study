@@ -18,11 +18,16 @@ ex)
 
 ### 특징 _✓이 조건들을 만족해야 ‘배치’인 것이다!_
 
-1. 대용량 데이터 - 대량의 데이터를 가져오고, 전달하고, 계산하는 등의 처리 가능
-2. 견고성 - 잘못된 데이터를 충돌/중단 없이 처리
-3. 성능 - 지정한 시간 내에 처리 완료 및 동시에 실행되는 다른 프로그램에 방해 X
-4. 자동화 - 사용자의 개입 없이 실행
-5. 신뢰성 - 잘못된 부분의 추적 가능 (로깅, 알림 등)_**
+
+
+|     | 조건      | 설명                                                     | 파일 만료시간 정보 삭제 기능                                   |
+| --- | ------- | ------------------------------------------------------ | -------------------------------------------------- |
+| 1   | 대용량 데이터 | 대량의 데이터를 가져오거나, 전달하거나, 계산하는 등의 처리를 할 수 있어야 한다.         | 대량의 데이터를 삭제한다.                                     |
+| 2   | 자동화     | 심각한 문제 해결을 제외하고 사용자 개입 없이 실행되어야 한다.                    | Scheduler를 이용하여 일정 시간마다 자동으로 실행하도록 한다.             |
+| 3   | 견고성     | 잘못된 데이터를 충돌 및 중단 없이 처리할 수 있어야 한다.                      | 현재 날짜보다 이전인 데이터만 지워주면 되기 때문에 ‘잘못된 데이터’ 가 존재할 수 없다. |
+| 4   | 신뢰성     | 로깅 및 추적을 통해 무엇이 잘못되었는 지를 추적할 수 있어야 한다.                 | —                                                  |
+| 5   | 성능      | 지정한 시간 안에 처리를 완료하거나 동시에 실행되는 다른 어플을 방해하지 않도록 수행되어야 한다. | —                                                  |
+
 
 
 ## **Spring Batch vs Quartz? Scheduler?**
@@ -136,17 +141,20 @@ Step은 Job의 배치처리를 정의하고 순차적인 단계를 캡슐화 합
 
 
 - Step은 Job의 하위 단계로서 실제 배치 처리 작업이 이루어지는 단위입니다.
-- 한 개 이상의 Step으로 Job이 구성되며, 각 Step은 순차적으로 처리됩니다.
+- 한 개 이상의 Step으로 Job이 구성되며, 각 Step은 순차적으로 캡슐화하여 처리됩니다 .
 - 각 Step 내부에서는 ItemReader, ItemProcessor, ItemWriter를 사용하는 chunk 방식 또는 Tasklet 하나를 가질 수 있습니다.
 
 ## **StepExecution**
 
 StepExecution은 JobExecution과 동일하게 Step 실행 시도에 대한 객체를 나타냅니다. 하지만 Job이 여러개의 Step으로 구성되어 있을 경우 이전 단계의 Step이 실패하게 되면 다음 단계가 실행되지 않음으로 실패 이후 StepExecution은 생성되지 않습니다. StepExecution 또한 JobExecution과 동일하게 실제 시작이 될 때만 생성됩니다. StepExecution에는 JobExecution에 저장되는 정보 외에 read 수, write 수, commit 수, skip 수 등의 정보들도 저장이 됩니다.
 
+- Step 실행 시도에 대한 정보를 저장하는 객체
+- Step 실행에 대한 상태, 시작시간, 종료시간, 생성시간, read 수, commit 수, skip 수 등의 정보들이 저장
 - StepExecution은 Step의 한 번의 실행을 나타내며, Step의 실행 상태, 실행 시간 등의 정보를 포함합니다.
 - JobExecution과 유사하게, 각 Step의 실행 시도마다 새로운 StepExecution이 생성됩니다.
 - 또한, 읽은 아이템의 수, 쓴 아이템의 수, 커밋 횟수, 스킵한 아이템의 수 등의 Step 실행에 대한 상세 정보도 포합 합니다.
-
+- Job이 여러 개 Step으로 구성되어 있을 경우, 이전 단계의 Step이 실패하게 되면 다음 단계가 실행되지 않음으로, 이후 Step에 대한 StepExecution은 생성되지 않음
+- JobExecution과 동일하게 실제 Step이 시작이 될 때만 생성
 
 ## **ExecutionContext**
 
@@ -155,7 +163,11 @@ ExecutionContext란 Job에서 데이터를 공유 할 수 있는 데이터 저�
 - ExecutionContext는 Step 간 또는 Job 실행 도중 데이터를 공유하는 데 사용되는 저장소입니다.
 - JobExecutionContext와 StepExecutionContext 두 종류가 있으며, 범위와 저장 시점에 따라 적절하게 사용됩니다.
 - Job이나 Step이 실패했을 경우, ExecutionContext를 통해 마지막 실행 상태를 재구성하여 재시도 또는 복구 작업을 수행할 수 있습니다.
-
+- 종류
+    - JobExecutionContext
+        - commit 시점에 저장
+    - StepExecutionContext
+        - 실행 사이에 저장
 ## **JobRepository**
 
 JobRepository는 위에서 말한 모든 배치 처리 정보를 담고있는 매커니즘입니다. Job이 실행되게 되면 JobRepository에 JobExecution과 StepExecution을 생성하게 되며 JobRepository에서 Execution 정보들을 저장하고 조회하며 사용하게 됩니다.
@@ -187,14 +199,14 @@ ItemWriter는 처리 된 Data를 Writer 할 때 사용한다. Writer는 처리 �
 
 - ItemWriter는 ItemProcessor에서 처리된 데이터를 최종적으로 기록하는 역할을 합니다.
 - ItemWriter 역시 다양한 형태의 구현체를 통해 데이터베이스에 기록하거나, 파일을 생성하거나 메시지를 발행하는 등 다양한 방식으로 데이터를 쓸 수 있습니다.
-
+- Item을 chunk로 묶어서 처리
 ## **ItemProcessor**
 
 Item Processor는 Reader에서 읽어온 Item을 데이터를 처리하는 역할을 하고 있다. Processor는 배치를 처리하는데 필수 요소는 아니며 Reader, Writer, Processor 처리를 분리하여 각각의 역할을 명확하게 구분하고 있습니다.
 
 - ItemProcessor는 ItemReader로부터 읽어온 아이템을 처리하는 역할을 합니다.
 - 이는 선택적인 부분으로서, 필요에 따라 사용할 수 있으며, 데이터 필터링, 변환 등의 작업을 수행할 수 있습니다.
-
+- 배치 처리의 필수 요소는 아니며, Reader, Writer, Processor 처리를 분리하여 각각의 역할을 명확히 구분하고 있음
 ## **Tasklet**
 
 - Tasklet은 간단한 단일 작업, 예를 들어 리소스의 정리 또는 시스템 상태의 체크 등을 수행할 때 사용됩니다.
@@ -1838,3 +1850,5 @@ https://yermi.tistory.com/entry/Spring-Batch%EC%99%80-Scheduler%EC%9D%98-%EC%B0%
 
 
 https://velog.io/@dev_tmb/%EB%B0%B0%EC%B9%98%EC%99%80-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
+https://velog.io/@smallcherry/%EB%B0%B0%EC%B9%98%EC%99%80-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC

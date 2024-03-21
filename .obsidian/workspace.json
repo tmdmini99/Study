@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,6 +189,7 @@
   },
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
     "Images/Pasted image 20240321112826.png",
@@ -201,7 +202,6 @@
     "Spaces/Home/Git/Git.md",
     "Images/https___s3-us-west-2 2.webp",
     "Images/https___s3-us-west-2 1.webp",
-    "Images/https___s3-us-west-2.webp",
     "daily note/2024/3/2024-03-21.md",
     "Spaces/Home/무제 폴더",
     "Spaces/Home/CSRF/CSRF.md",
