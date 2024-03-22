@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024/3/2024-03-22.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -88,7 +88,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -108,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024/3/2024-03-22.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md"
+                "file": "daily note/2024/3/2024-03-22.md"
               }
             }
           },
@@ -146,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+                "file": "daily note/2024/3/2024-03-22.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +190,9 @@
   },
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
+    "daily note/2024/3/2024-03-22.md",
+    "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
     "Images/Pasted image 20240321112826.png",
@@ -226,7 +228,6 @@
     "daily note/2024/3/2024-03-07.md",
     "daily note/2024/3/2024-03-06.md",
     "daily note/2024/3/2024-03-05.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "daily note/2024/3",
     "Spaces/Home/Spring/Spring Cache",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
