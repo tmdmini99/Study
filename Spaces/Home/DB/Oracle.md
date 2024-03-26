@@ -196,6 +196,8 @@ DELETE 테이블명 WHERE 조건식 : 특정한 ROW 삭제
 #### Merge into
 
 
+OVER(PARTITION BY ) 사용
+
 
 ---
 참조 - https://blog.naver.com/wiseyoun07/221146431131
