@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-03-27.md",
+                "file": "daily note/2024/3/2024-03-28.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-03-27.md",
+                "file": "daily note/2024/3/2024-03-28.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-03-27.md"
+                "file": "daily note/2024/3/2024-03-28.md"
               }
             }
           },
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-03-27.md",
+                "file": "daily note/2024/3/2024-03-28.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -190,8 +190,9 @@
   },
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
-    "Spaces/Home/DB/Oracle.md",
     "daily note/2024/3/2024-03-27.md",
+    "daily note/2024/3/2024-03-28.md",
+    "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/파티셔닝.md",
     "Spaces/Home/Spring/Spring Cache/Spring Cache 개념.md",
@@ -227,7 +228,6 @@
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
-    "daily note/2024/3/2024-03-15.md",
     "daily note/2024/3",
     "Spaces/Home/Spring/Spring Cache",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
