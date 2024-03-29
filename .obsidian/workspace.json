@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md",
+                "file": "Spaces/Home/JSP/JSTL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md",
+                "file": "Spaces/Home/JSP/JSTL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md"
+                "file": "Spaces/Home/JSP/JSTL.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md",
+                "file": "Spaces/Home/JSP/JSTL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,11 +189,15 @@
   },
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
-    "daily note/2024/3/2024-03-29.md",
+    "Spaces/Home/JSP/EL.md",
+    "Spaces/Home/JSP/JSTL.md",
+    "Spaces/Home/Java Script/splice().md",
+    "Spaces/Home/JSP",
+    "daily note/2024/3/2024-03-28.md",
     "Spaces/Home/Error/error 우선 순위.md",
+    "daily note/2024/3/2024-03-29.md",
     "Spaces/Home/CSRF/XSS.md",
     "daily note/2024/3/2024-03-27.md",
-    "daily note/2024/3/2024-03-28.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/파티셔닝.md",
@@ -224,9 +228,6 @@
     "Spaces/Home/CSRF",
     "Spaces/Home/Spring/Gradle/Gradle.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
-    "daily note/2024/3/2024-03-18.md",
-    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "daily note/2024/3",
     "Spaces/Home/Spring/Spring Cache",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
@@ -234,7 +235,6 @@
     "Spaces/Home/Spring/Gradle",
     "Spaces/Home/Spring/무제 폴더",
     "Spaces/Home/Spring/Gradle",
-    "Spaces/Home/Spring/Spring Legacy/Gradle",
     "무제 파일.canvas"
   ]
 }
