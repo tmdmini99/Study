@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md",
+                "file": "daily note/2024/3/2024-04-01.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -88,7 +88,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -108,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md",
+                "file": "daily note/2024/3/2024-04-01.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md"
+                "file": "daily note/2024/3/2024-04-01.md"
               }
             }
           },
@@ -146,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Error/error 우선 순위.md",
+                "file": "daily note/2024/3/2024-04-01.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +190,9 @@
   },
   "active": "0361ec916cb251c8",
   "lastOpenFiles": [
-    "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/Error/error 우선 순위.md",
+    "daily note/2024/3/2024-04-01.md",
+    "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/Java Script/splice().md",
@@ -227,7 +229,6 @@
     "daily note/2024/3/2024-03-20.md",
     "daily note/2024/3/2024-03-19.md",
     "Spaces/Home/CSRF",
-    "Spaces/Home/Spring/Gradle/Gradle.md",
     "daily note/2024/3",
     "Spaces/Home/Spring/Spring Cache",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
