@@ -26,15 +26,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/3/2024-04-01.md",
+                "file": "daily note/2024/4/2024-04-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "efbc48f6e4f0dfc6",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.12"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -88,8 +98,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -109,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/3/2024-04-01.md",
+                "file": "daily note/2024/4/2024-04-02.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/3/2024-04-01.md"
+                "file": "daily note/2024/4/2024-04-02.md"
               }
             }
           },
@@ -147,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/3/2024-04-01.md",
+                "file": "daily note/2024/4/2024-04-02.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -188,10 +197,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0361ec916cb251c8",
+  "active": "efbc48f6e4f0dfc6",
   "lastOpenFiles": [
+    "daily note/2024/4",
+    "daily note/2024/4/2024-04-01.md",
+    "daily note/2024/4/2024-04-02.md",
     "Spaces/Home/Error/error 우선 순위.md",
-    "daily note/2024/3/2024-04-01.md",
     "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/EL.md",
@@ -226,8 +237,6 @@
     "Spaces/Home/Java Script",
     "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/CSRF/reCAPTCH.md",
-    "daily note/2024/3/2024-03-20.md",
-    "daily note/2024/3/2024-03-19.md",
     "Spaces/Home/CSRF",
     "daily note/2024/3",
     "Spaces/Home/Spring/Spring Cache",
