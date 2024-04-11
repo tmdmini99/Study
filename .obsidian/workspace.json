@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-09.md",
+                "file": "daily note/2024/4/2024-04-11.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-09.md",
+                "file": "daily note/2024/4/2024-04-11.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-09.md"
+                "file": "daily note/2024/4/2024-04-11.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-09.md",
+                "file": "daily note/2024/4/2024-04-11.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +189,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/4/2024-04-08.md",
     "daily note/2024/4/2024-04-09.md",
+    "daily note/2024/4/2024-04-11.md",
+    "daily note/2024/4/2024-04-08.md",
     "Spaces/정보처리기사/트리 순회.md",
     "Images/소프트웨어 개발자 관점.png",
     "Spaces/Home/CSRF/XSS.md",
@@ -219,7 +220,6 @@
     "daily note/2024/3/2024-03-25.md",
     "daily note/2024/3/2024-03-22.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch 코드.md",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
     "Images/Pasted image 20240321112826.png",
