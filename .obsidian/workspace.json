@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-12.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-12.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-12.md"
+                "file": "Spaces/Home/Java Script/JavaScript.md"
               }
             }
           },
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-12.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +188,12 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/4/2024-04-11.md",
+    "Spaces/Home/Java Script/splice().md",
+    "Spaces/Home/Java Script/JavaScript.md",
+    "Spaces/Home/JSP/EL.md",
+    "Spaces/Home/JSP/JSTL.md",
     "daily note/2024/4/2024-04-12.md",
+    "daily note/2024/4/2024-04-11.md",
     "daily note/2024/4/2024-04-09.md",
     "daily note/2024/4/2024-04-08.md",
     "Spaces/정보처리기사/트리 순회.md",
@@ -206,9 +209,6 @@
     "daily note/2024/4/2024-04-01.md",
     "Spaces/Home/Error/error 우선 순위.md",
     "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
-    "Spaces/Home/JSP/JSTL.md",
-    "Spaces/Home/JSP/EL.md",
-    "Spaces/Home/Java Script/splice().md",
     "Spaces/Home/JSP",
     "daily note/2024/3/2024-03-28.md",
     "daily note/2024/3/2024-03-29.md",
@@ -219,7 +219,6 @@
     "Spaces/Home/Spring/Spring Cache/Spring Cache 개념.md",
     "daily note/2024/3/2024-03-26.md",
     "daily note/2024/3/2024-03-25.md",
-    "daily note/2024/3/2024-03-22.md",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
     "Images/Pasted image 20240321112826.png",
