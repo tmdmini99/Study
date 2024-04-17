@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-17.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-17.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-17.md"
+                "file": "Spaces/Home/Java Script/JavaScript.md"
               }
             }
           },
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-17.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,11 +188,11 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/4/2024-04-16.md",
-    "daily note/2024/4/2024-04-17.md",
-    "daily note/2024/4/2024-04-15.md",
-    "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/splice().md",
+    "Spaces/Home/Java Script/JavaScript.md",
+    "daily note/2024/4/2024-04-17.md",
+    "daily note/2024/4/2024-04-16.md",
+    "daily note/2024/4/2024-04-15.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/JSP/JSTL.md",
     "daily note/2024/4/2024-04-12.md",
