@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-16.md",
+                "file": "daily note/2024/4/2024-04-17.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-16.md",
+                "file": "daily note/2024/4/2024-04-17.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-16.md"
+                "file": "daily note/2024/4/2024-04-17.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-16.md",
+                "file": "daily note/2024/4/2024-04-17.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +189,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/4/2024-04-15.md",
     "daily note/2024/4/2024-04-16.md",
+    "daily note/2024/4/2024-04-17.md",
+    "daily note/2024/4/2024-04-15.md",
     "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/splice().md",
     "Spaces/Home/JSP/EL.md",
@@ -219,7 +220,6 @@
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/파티셔닝.md",
-    "Spaces/Home/Spring/Spring Cache/Spring Cache 개념.md",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
     "Images/Pasted image 20240321112826.png",
