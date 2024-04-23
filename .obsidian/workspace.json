@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-23.md",
+                "file": "Spaces/Home/DB/Oracle.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-23.md",
+                "file": "Spaces/Home/DB/Oracle.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-23.md"
+                "file": "Spaces/Home/DB/Oracle.md"
               }
             }
           },
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-23.md",
+                "file": "Spaces/Home/DB/Oracle.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,8 +188,9 @@
   },
   "active": "c30f8265481c299d",
   "lastOpenFiles": [
-    "daily note/2024/4/2024-04-22.md",
+    "Spaces/Home/DB/DataBase.md",
     "daily note/2024/4/2024-04-23.md",
+    "daily note/2024/4/2024-04-22.md",
     "daily note/2024/4/2024-04-20.md",
     "daily note/2024/4/2024-04-19.md",
     "daily note/2024/4/2024-04-18.md",
@@ -219,7 +219,6 @@
     "Spaces/Home/Error/error 우선 순위.md",
     "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/JSP",
-    "daily note/2024/3/2024-03-28.md",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
     "Images/Pasted image 20240321112826.png",
