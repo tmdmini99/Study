@@ -13,10 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md",
+                "file": "Spaces/Home/JSP/Freemarker.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "d31fbd0a1baff7e9",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Freemarker.jpg"
               }
             }
           },
@@ -33,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md",
+                "file": "Images/Freemarker.jpg",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md"
+                "file": "Images/Freemarker.jpg"
               }
             }
           },
@@ -145,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/Oracle.md",
+                "file": "Images/Freemarker.jpg",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -186,8 +197,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c30f8265481c299d",
+  "active": "d31fbd0a1baff7e9",
   "lastOpenFiles": [
+    "Spaces/Home/JSP/Freemarker.md",
+    "Images/Freemarker.jpg",
+    "Spaces/Home/JSP/JSTL.md",
+    "Spaces/Home/JSP/EL.md",
+    "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/DataBase.md",
     "daily note/2024/4/2024-04-23.md",
     "daily note/2024/4/2024-04-22.md",
@@ -199,8 +215,6 @@
     "daily note/2024/4/2024-04-17.md",
     "daily note/2024/4/2024-04-16.md",
     "daily note/2024/4/2024-04-15.md",
-    "Spaces/Home/JSP/EL.md",
-    "Spaces/Home/JSP/JSTL.md",
     "daily note/2024/4/2024-04-12.md",
     "daily note/2024/4/2024-04-11.md",
     "daily note/2024/4/2024-04-09.md",
@@ -215,9 +229,6 @@
     "daily note/2024/4/2024-04-04.md",
     "daily note/2024/4/2024-04-03.md",
     "daily note/2024/4",
-    "daily note/2024/4/2024-04-01.md",
-    "Spaces/Home/Error/error 우선 순위.md",
-    "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
     "Spaces/Home/JSP",
     "Images/Pasted image 20240321112845.png",
     "Images/Pasted image 20240321112834.png",
@@ -225,7 +236,6 @@
     "Images/Pasted image 20240321111832.png",
     "Images/Pasted image 20240321111654.png",
     "Images/Pasted image 20240321111633.png",
-    "Images/Pasted image 20240321111605.png",
     "Spaces/Home/Java Script",
     "Spaces/Home/CSRF",
     "daily note/2024/3",
