@@ -24,9 +24,12 @@
             "id": "d31fbd0a1baff7e9",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/Freemarker.jpg"
+                "file": "daily note/2024/4/2024-04-24.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           },
@@ -98,7 +101,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -118,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Freemarker.jpg",
+                "file": "daily note/2024/4/2024-04-24.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Freemarker.jpg"
+                "file": "daily note/2024/4/2024-04-24.md"
               }
             }
           },
@@ -156,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Freemarker.jpg",
+                "file": "daily note/2024/4/2024-04-24.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -199,8 +203,9 @@
   },
   "active": "d31fbd0a1baff7e9",
   "lastOpenFiles": [
-    "Spaces/Home/JSP/Freemarker.md",
     "Images/Freemarker.jpg",
+    "daily note/2024/4/2024-04-24.md",
+    "Spaces/Home/JSP/Freemarker.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/DB/Oracle.md",
@@ -227,7 +232,6 @@
     "Images/Pasted image 20240405105800.png",
     "daily note/2024/4/2024-04-05.md",
     "daily note/2024/4/2024-04-04.md",
-    "daily note/2024/4/2024-04-03.md",
     "daily note/2024/4",
     "Spaces/Home/JSP",
     "Images/Pasted image 20240321112845.png",
