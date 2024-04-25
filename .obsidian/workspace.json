@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-24.md",
+                "file": "daily note/2024/4/2024-04-25.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-24.md",
+                "file": "daily note/2024/4/2024-04-25.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-24.md"
+                "file": "daily note/2024/4/2024-04-25.md"
               }
             }
           },
@@ -160,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-24.md",
+                "file": "daily note/2024/4/2024-04-25.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -203,8 +203,9 @@
   },
   "active": "d31fbd0a1baff7e9",
   "lastOpenFiles": [
-    "Images/Freemarker.jpg",
     "daily note/2024/4/2024-04-24.md",
+    "daily note/2024/4/2024-04-25.md",
+    "Images/Freemarker.jpg",
     "Spaces/Home/JSP/Freemarker.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/EL.md",
