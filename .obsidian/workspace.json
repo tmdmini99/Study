@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-29.md",
+                "file": "daily note/2024/4/2024-04-30.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-29.md",
+                "file": "daily note/2024/4/2024-04-30.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-29.md"
+                "file": "daily note/2024/4/2024-04-30.md"
               }
             }
           },
@@ -160,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-29.md",
+                "file": "daily note/2024/4/2024-04-30.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -203,8 +203,9 @@
   },
   "active": "d31fbd0a1baff7e9",
   "lastOpenFiles": [
-    "daily note/2024/4/2024-04-26.md",
     "daily note/2024/4/2024-04-29.md",
+    "daily note/2024/4/2024-04-30.md",
+    "daily note/2024/4/2024-04-26.md",
     "daily note/2024/4/2024-04-25.md",
     "daily note/2024/4/2024-04-24.md",
     "Images/Freemarker.jpg",
@@ -230,7 +231,6 @@
     "Spaces/정보처리기사/트리 순회.md",
     "Images/소프트웨어 개발자 관점.png",
     "Spaces/Home/CSRF/XSS.md",
-    "daily note/2024/4/2024-04-02.md",
     "Images/Pasted image 20240321111553.png",
     "Images/Pasted image 20240405105800.png",
     "daily note/2024/4",
