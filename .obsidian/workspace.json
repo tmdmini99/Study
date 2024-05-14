@@ -24,12 +24,9 @@
             "id": "d31fbd0a1baff7e9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "daily note/2024/5/2024-05-14.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "path": "Spaces/Home/Spring/JPA"
               }
             }
           },
@@ -122,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/5/2024-05-14.md",
+                "file": "Spaces/Home/Spring/JPA/JPA.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/5/2024-05-14.md"
+                "file": "Spaces/Home/Spring/JPA/JPA.md"
               }
             }
           },
@@ -160,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/5/2024-05-14.md",
+                "file": "Spaces/Home/Spring/JPA/JPA.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -201,10 +198,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d31fbd0a1baff7e9",
+  "active": "06bdbb1533ab7755",
   "lastOpenFiles": [
-    "daily note/2024/5/2024-05-13.md",
+    "Spaces/Home/Data/JSTL.md",
     "daily note/2024/5/2024-05-14.md",
+    "daily note/2024/5/2024-05-13.md",
     "daily note/2024/5/2024-05-10.md",
     "daily note/2024/5/2024-05-09.md",
     "Spaces/Home/JSP/Freemarker.md",
@@ -230,7 +228,6 @@
     "daily note/2024/4/2024-04-18.md",
     "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/splice().md",
-    "daily note/2024/4/2024-04-17.md",
     "Images/소프트웨어 개발자 관점.png",
     "Images/Pasted image 20240321111553.png",
     "Images/Pasted image 20240405105800.png",
