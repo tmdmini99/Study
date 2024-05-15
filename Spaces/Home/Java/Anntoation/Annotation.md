@@ -588,8 +588,210 @@ public class TestController {
 만약 검색 조건이 추가되는 경우, UserSearchForm의 필드를 추가해주면, 핸들러를 수정할 필요도 없으며, UserService의 search() 메소드의 시그니처 역시 수정할 필요가 없습니다.
 
 
+## @Transactional
 
 
+xml 설정
+```xml
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     <property name="dataSource" ref="dataSource"/>
+</bean>
+<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+```
+
+
+
+- 어노테이션을 이용한 설정
+    
+
+@Transactional을 클래스 단위 혹은 메서드 단위에 선언해주면 된다.
+
+클래스에 선언하게 되면, 해당 클래스에 속하는 메서드에 공통적으로 적용된다. (test(), test2() 메서드에 적용)
+
+메서드에 선언하게 되면, 해당 메서드에만 적용된다. (test() 메소드에 적용)
+
+
+```java
+//클래스 단위 설정
+@Service
+@Transactional
+public class TestService {
+
+	public void test() {
+
+	}
+	
+	public void test2() {
+		
+	}
+
+}
+```
+
+
+```java
+//메소드 단위 설정
+@Service
+public class TestService {
+
+	@Transactional
+	public void test() {
+
+	}
+
+	public void test2() {
+
+	}
+}
+```
+
+
+**2. 동작 원리**
+
+@Transactional 어노테이션을 기준으로 설명하겠다.
+
+트랜잭션은 **Spring AOP**를 통해 구현되어있다. 
+
+더 정확하게 말하면, 어노테이션 기반 AOP를 통해 구현되어있다. (import문을 보면 알 수 있다)
+
+```java
+import org.springframework.transaction.annotation.Transactional;
+```
+
+따라서, 아래와 같은 특징이 있다
+
+- 클래스, 메소드에 @Transactional이 선언되면 해당 클래스에 트랜잭션이 적용된 프록시 객체 생성
+- 프록시 객체는 @Transactional이 포함된 메서드가 호출될 경우, 트랜잭션을 시작하고 Commit or Rollback을 수행
+- CheckedException or 예외가 없을 때는 Commit
+- UncheckedException이 발생하면 Rollback
+
+**3. 주의점**
+
+**1) 우선순위**
+
+@Transactional은 우선순위를 가지고 있다.
+
+클래스 메서드에 선언된 트랜잭션의 우선순위가 가장 높고, 인터페이스에 선언된 트랜잭션의 우선순위가 가장 낮다.
+
+```
+클래스 메소드 -> 클래스 -> 인터페이스 메소드 -> 인터페이스
+```
+
+따라서 공통적인 트랜잭션 규칙은 클래스에, 특별한 규칙은 메서드에 선언하는 식으로 구성할 수 있다.
+
+또한, 인터페이스 보다는 클래스에 적용하는 것을 권고한다.
+
+- 인터페이스나 인터페이스의 메서드에 적용할 수 있다.
+- 하지만, 인터페이스 기반 프록시에서만 유효한 트랜잭션 설정이 된다.
+- 자바 어노테이션은 인터페이스로부터 상속되지 않기 때문에  **클래스 기반 프록시 or AspectJ 기반에서 트랜잭션 설정을 인식 할 수 없다.**
+
+**2) 트랜잭션의 모드**
+
+@Transactional은 Proxy Mode와 AspectJ Mode가 있는데 **Proxy Mode가 Default**로 설정되어있다.
+
+Proxy Mode는 다음과 같은 경우 동작하지 않는다.
+
+- 반드시 public 메서드에 적용되어야한다.
+    - Protected, Private Method에서는 선언되어도 에러가 발생하지는 않지만, 동작하지도 않는다.
+    - Non-Public 메서드에 적용하고 싶으면 AspectJ Mode를 고려해야한다.
+- @Transactional이 적용되지 않은 Public Method에서 @Transactional이 적용된 Public Method를 호출할 경우, 트랜잭션이 동작하지 않는다.
+
+
+**4. @Transactional 설정**
+
+
+![[Transactional1.png]]
+
+
+**5. 다중 Transaction Manager**
+
+필요에 따라서 다수의 독립된 트랜잭션 매니져를 사용할 수 있다.
+
+이는 @Transactional의 **value** 속성에 사용할 PlatformTransactionlManager를 지정하면 된다.
+
+참고로 [**PlatformTransactionManager**](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/PlatformTransactionManager.html)는 Spring에서 제공하는  **트랜잭션 관리 인터페이스**이다.
+
+인터페이스의 구현체에는 JDBC, 하이버네이트 등이 있는데 이는 트랜잭션이 실제 작동할 환경이다.
+
+따라서 반드시 알맞은 PlatformTransactionlManager 구현체가 정의되어  있어야한다.
+
+다시 본론으로 돌아와, 다중 트랜잭션 매니저는 다음과 같이 지정한다.
+
+**value 속성에 Bean의 id or qualifier 값을 지정한다.** 
+
+아래는 qualifier를 이용한 Spring Docs의 예제이다.
+
+```java
+public class TransactionalService {
+
+    @Transactional("order")
+    public void setSomething(String name) { ... }
+
+    @Transactional("account")
+    public void doSomething() { ... }
+}
+
+```
+
+```xml
+<bean id="transactionManager1" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	...
+	<qualifier value="order"/>
+</bean>
+
+<bean id="transactionManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	...
+	<qualifier value="account"/>
+</bean>
+```
+
+**6. 일반적인 사용 예제**
+
+트랜잭션은 다음과 같은 경우 사용한다.
+
+- 하나의 작업 or 여러 작업을
+- 하나의 작업 단위로 묶어 Commit or Rollback 처리가 필요할 때
+
+특히, **JPA**를 사용한다면 단일 작업에 대해서는 @Transactional을 직접 선언할 필요가 없다.
+
+JPA의 구현체를 살펴보면 모든 메서드에 이미 @Transactional이 선언되어 있기 때문에 문제가 발생하면 Rollback 처리해주기 때문이다.
+
+
+
+![[Transactional2.png]]
+
+
+
+
+![[Transactional3.png]]
+
+
+따라서, 여러 작업을 하나의 단위로 묶어 Commit or Rollback 처리가 필요할 때 직접 선언해주면 된다.
+
+결과를 확인하기 위해 간단한 사용 예시를 만들었다.
+
+test() 메서드에서 @Transactional 선언을 통해 saveSuccess()와 saveFail()을 하나의 작업 단위로 묶었다.
+
+**saveSuccess() 메서드는 문제가 없지만, saveFail()에 문제가 생겨 saveSuccess() 역시 저장되지 않고 Rollback 된다.**
+
+
+
+![[Transactional4.png]]
+
+
+
+만약, @Trasactional을 선언하지 않는다면 saveFail()의 실패 여부와 관계없이 saveSuccess()는 저장된다.
+
+
+![[Transactional5.png]]
+
+
+
+
+![[Transactional6.png]]
+
+
+DB에 saveSuccess()가 저장되었다.
 
 
 
@@ -603,3 +805,6 @@ https://velog.io/@jkijki12/annotation
 https://velog.io/@sungmo738/Resource-Autowired-Inject-%EC%B0%A8%EC%9D%B4
 
 https://galid1.tistory.com/769
+
+
+https://imiyoungman.tistory.com/9 - @Transactional

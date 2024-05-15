@@ -6,6 +6,30 @@ Spring Batch에서 배치가 실패하여 작업 재시작을 하게 된다면 �
 
 또한 중복 실행을 막기 위해 성공한 이력이 있는 Batch는 동일한 Parameters로 실행 시 Exception이 발생하게 됩니다.
 
+
+ex)
+**_JOB: "매일 아침 6시마다 집 앞 공원에서 트랙을 3바퀴 돌고 온다."_**  
+이렇게 Job 을 선언하고 해당 Job을 수행하기 위한 Step 을 정의 한다  
+**_Step 1: "아침에 6시에 모닝콜이 울린다. 모닝콜을 끈다."_**  
+**_Step 2: "물을 한 잔 먹고 화장실을 간다. "_**  
+**_Step 3: "간단하게 세수를 한다."_**  
+**_Step 4: "신발끈을 묶는다."
+
+
+### 특징 _✓이 조건들을 만족해야 ‘배치’인 것이다!_
+
+
+
+|     | 조건      | 설명                                                     | 파일 만료시간 정보 삭제 기능                                   |
+| --- | ------- | ------------------------------------------------------ | -------------------------------------------------- |
+| 1   | 대용량 데이터 | 대량의 데이터를 가져오거나, 전달하거나, 계산하는 등의 처리를 할 수 있어야 한다.         | 대량의 데이터를 삭제한다.                                     |
+| 2   | 자동화     | 심각한 문제 해결을 제외하고 사용자 개입 없이 실행되어야 한다.                    | Scheduler를 이용하여 일정 시간마다 자동으로 실행하도록 한다.             |
+| 3   | 견고성     | 잘못된 데이터를 충돌 및 중단 없이 처리할 수 있어야 한다.                      | 현재 날짜보다 이전인 데이터만 지워주면 되기 때문에 ‘잘못된 데이터’ 가 존재할 수 없다. |
+| 4   | 신뢰성     | 로깅 및 추적을 통해 무엇이 잘못되었는 지를 추적할 수 있어야 한다.                 | —                                                  |
+| 5   | 성능      | 지정한 시간 안에 처리를 완료하거나 동시에 실행되는 다른 어플을 방해하지 않도록 수행되어야 한다. | —                                                  |
+
+
+
 ## **Spring Batch vs Quartz? Scheduler?**
 
 > **Spring Batch는 Scheduler가 아니기에 비교 대상이 아닙니다.**
@@ -14,6 +38,46 @@ Spring Batch는 Batch Job을 관리하지만 Job을 구동하거나 실행시키
 
 배치(Batch)는 논리적 또는 물리적으로 관련된 일련의 데이터를 그룹화하여 일괄 처리하는 방법을 의미합니다. 반면에 스케줄러(Scheduler)는 주어진 작업을 미리 정의된 시간에 실행할 수 있게 해주는 도구나 소프트웨어를 의미합니다.  
 여기서 주의할 점은 배치는 **대량의 데이터를 일괄적으로 처리**할 뿐, 특정 주기마다 자동으로 돌아가는 **스케줄링과는 관련이 없다는 것입니다**. Spring Batch는 스케줄러와 함께 사용할 수 있도록 설계되어 있을 뿐이지 스케줄러 자체를 대체하는 것은 아닙니다.
+
+#### **1) 배치(Batch)란?**
+
+> **배치(Batch) : 일괄처리**  
+> 사용자와 상호작용 없이 **여러 개의 작업**을 미리 정해진 순서에 따라 **중단 없이 처리**하는 것
+
+#### **2) 스케쥴러(Scheduler)란?**
+
+> **특정한 시간**에 등록한 작업을 **자동으로 실행**시키는 것  
+> → Spring Scheduler, Quartz 등
+
+
+#### **- Batch와 Scheduler 용어 정의**
+
+
+![[Pasted image 20240321112826.png]]
+
+Batch와 Scheduler 용어 정의
+
+
+
+![[Pasted image 20240321112834.png]]
+배치(Batch)의 5가지 특징
+
+### **2. 스프링 스케쥴러(Spring Scheduler)**
+
+> Spring Framework에서 기본적으로 제공하는 Scheduler
+
+
+
+![[Pasted image 20240321112845.png]]
+
+Spring Scheduler 특징
+
+
+
+
+**Spring Batch는 스케줄러가 아니므로, 고려 대상이 아니었다!**
+
+배치 작업을 관리하지만, 이 작업(Job)을 구동하거나 실행시키는 기능은 지원하지 않는다. 스프링에서 배치 작업을 실행시키려면 Quartz, Scheduler, Jenkins 등 전용 스케줄러를 사용해야 한다.
 
 
 ## **Batch 사용 사례**
@@ -77,17 +141,20 @@ Step은 Job의 배치처리를 정의하고 순차적인 단계를 캡슐화 합
 
 
 - Step은 Job의 하위 단계로서 실제 배치 처리 작업이 이루어지는 단위입니다.
-- 한 개 이상의 Step으로 Job이 구성되며, 각 Step은 순차적으로 처리됩니다.
+- 한 개 이상의 Step으로 Job이 구성되며, 각 Step은 순차적으로 캡슐화하여 처리됩니다 .
 - 각 Step 내부에서는 ItemReader, ItemProcessor, ItemWriter를 사용하는 chunk 방식 또는 Tasklet 하나를 가질 수 있습니다.
 
 ## **StepExecution**
 
 StepExecution은 JobExecution과 동일하게 Step 실행 시도에 대한 객체를 나타냅니다. 하지만 Job이 여러개의 Step으로 구성되어 있을 경우 이전 단계의 Step이 실패하게 되면 다음 단계가 실행되지 않음으로 실패 이후 StepExecution은 생성되지 않습니다. StepExecution 또한 JobExecution과 동일하게 실제 시작이 될 때만 생성됩니다. StepExecution에는 JobExecution에 저장되는 정보 외에 read 수, write 수, commit 수, skip 수 등의 정보들도 저장이 됩니다.
 
+- Step 실행 시도에 대한 정보를 저장하는 객체
+- Step 실행에 대한 상태, 시작시간, 종료시간, 생성시간, read 수, commit 수, skip 수 등의 정보들이 저장
 - StepExecution은 Step의 한 번의 실행을 나타내며, Step의 실행 상태, 실행 시간 등의 정보를 포함합니다.
 - JobExecution과 유사하게, 각 Step의 실행 시도마다 새로운 StepExecution이 생성됩니다.
 - 또한, 읽은 아이템의 수, 쓴 아이템의 수, 커밋 횟수, 스킵한 아이템의 수 등의 Step 실행에 대한 상세 정보도 포합 합니다.
-
+- Job이 여러 개 Step으로 구성되어 있을 경우, 이전 단계의 Step이 실패하게 되면 다음 단계가 실행되지 않음으로, 이후 Step에 대한 StepExecution은 생성되지 않음
+- JobExecution과 동일하게 실제 Step이 시작이 될 때만 생성
 
 ## **ExecutionContext**
 
@@ -96,7 +163,11 @@ ExecutionContext란 Job에서 데이터를 공유 할 수 있는 데이터 저�
 - ExecutionContext는 Step 간 또는 Job 실행 도중 데이터를 공유하는 데 사용되는 저장소입니다.
 - JobExecutionContext와 StepExecutionContext 두 종류가 있으며, 범위와 저장 시점에 따라 적절하게 사용됩니다.
 - Job이나 Step이 실패했을 경우, ExecutionContext를 통해 마지막 실행 상태를 재구성하여 재시도 또는 복구 작업을 수행할 수 있습니다.
-
+- 종류
+    - JobExecutionContext
+        - commit 시점에 저장
+    - StepExecutionContext
+        - 실행 사이에 저장
 ## **JobRepository**
 
 JobRepository는 위에서 말한 모든 배치 처리 정보를 담고있는 매커니즘입니다. Job이 실행되게 되면 JobRepository에 JobExecution과 StepExecution을 생성하게 되며 JobRepository에서 Execution 정보들을 저장하고 조회하며 사용하게 됩니다.
@@ -128,14 +199,14 @@ ItemWriter는 처리 된 Data를 Writer 할 때 사용한다. Writer는 처리 �
 
 - ItemWriter는 ItemProcessor에서 처리된 데이터를 최종적으로 기록하는 역할을 합니다.
 - ItemWriter 역시 다양한 형태의 구현체를 통해 데이터베이스에 기록하거나, 파일을 생성하거나 메시지를 발행하는 등 다양한 방식으로 데이터를 쓸 수 있습니다.
-
+- Item을 chunk로 묶어서 처리
 ## **ItemProcessor**
 
 Item Processor는 Reader에서 읽어온 Item을 데이터를 처리하는 역할을 하고 있다. Processor는 배치를 처리하는데 필수 요소는 아니며 Reader, Writer, Processor 처리를 분리하여 각각의 역할을 명확하게 구분하고 있습니다.
 
 - ItemProcessor는 ItemReader로부터 읽어온 아이템을 처리하는 역할을 합니다.
 - 이는 선택적인 부분으로서, 필요에 따라 사용할 수 있으며, 데이터 필터링, 변환 등의 작업을 수행할 수 있습니다.
-
+- 배치 처리의 필수 요소는 아니며, Reader, Writer, Processor 처리를 분리하여 각각의 역할을 명확히 구분하고 있음
 ## **Tasklet**
 
 - Tasklet은 간단한 단일 작업, 예를 들어 리소스의 정리 또는 시스템 상태의 체크 등을 수행할 때 사용됩니다.
@@ -161,6 +232,9 @@ Item Processor는 Reader에서 읽어온 Item을 데이터를 처리하는 역�
 Spring Batch에서의 Job은 여러가지 Step의 모음으로 구성되어 있으며 Job은 순차적인 Step을 수행하며 Batch를 수행하게 됩니다. Step은 Tasklet 처리 방식과 Chunk 지향 처리 방식을 지원하고 있습니다.
 
 ![[Spring Batch1.png]]
+
+
+
 
 
 ### **Job Example 1 - 단일 Step 구성하기**
@@ -214,6 +288,86 @@ public class ExampleJobConfig {
 ```
 
 위 코드에서는 JobBuilderFactory와 StepBuilderFactory를 사용하여 Job과 Step을 생성합니다. exampleJob이라는 Job은 단일 step만을 포함하며, 이 step에서는 tasklet을 통해 특정한 동작을 수행합니다. 그리고 RepeatStatus.FINISHED를 반환하여 작업이 성공적으로 완료되었음을 나타냅니다.
+
+
+#### JPA로 구현
+
+```java
+package com.tmax.meeting.document.config;
+
+import com.tmax.meeting.document.model.Document;
+import com.tmax.meeting.document.repository.DocumentRepository;
+import com.tmax.meeting.document.service.DocService;
+import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.repeat.RepeatStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import java.time.LocalDateTime;
+
+@Slf4j
+@Configuration
+@EnableBatchProcessing
+public class BatchConfig {
+
+  @Autowired
+  public JobBuilderFactory jobBuilderFactory;
+
+  @Autowired
+  public StepBuilderFactory stepBuilderFactory;
+
+  @Autowired
+  private DocumentRepository documentRepository;
+
+  @Autowired
+  private DocService docService;
+
+  @Bean
+  public Job job() {
+
+    Job job = jobBuilderFactory.get("job")
+        .start(step())
+        .build();
+
+    return job;
+  }
+
+  @Bean
+  public Step step() {
+    return stepBuilderFactory.get("step")
+        .tasklet((contribution, chunkContext) -> {
+          log.info("Step!");
+          // 업데이트 시각이 일주일 이전인 문서 목록을 가져옴
+          // 1. 네이티브 쿼리 사용
+          List<Document> limitedDocuments = documentRepository.selectLimitedDocument();
+          // 2. JPQL 사용
+          // LocalDateTime now = LocalDateTime.now();
+          // LocalDateTime aWeekAgo = now.minusDays(7);
+          // List<Document> limitedDocuments = documentRepository.findByUpdateAtLessThan(aWeekAgo)
+
+          if (limitedDocuments.size() > 0 && limitedDocuments != null) {
+            for (Document document : limitedDocuments) {
+              // deleteDocument는 document_id를 받아 서버와 db에서 문서 삭제를 구현하는 서비스
+              docService.deleteDocument(document.getDocumentId());
+            }
+          }
+          return RepeatStatus.FINISHED;
+        })
+        .build();
+  }
+}
+```
+
+
+
+
+
 
 
 ### **Job Example 2 - 다중 Step 구성하기**
@@ -513,6 +667,21 @@ Tasklet은 하나의 메서드로 구성 되어있는 간단한 인터페이스�
 - execute() 메서드는 RepeatStatus를 반환하는데 이는 Tasklet의 실행 상태를 나타낸다.
 - RepeatStatus.FINISHED를 반환하면, 해당 Tasklet의 처리가 완료된 것을 의미한다.
 - RepeatStatus.CONTINUABLE를 반환하면, Tasklet이 계속 실행되어야 함을 의미한다.
+
+### xml 구현 Tasklet
+
+
+
+```xml
+<job id="btchCnlkNtisHoffOrg">
+        <step id="btchCnlkNtisHoffOrgStep">
+            <tasklet transaction-manager="transactionManager" ref="btchCnlkNtisHoffOrgTasklet" />
+        </step>
+        <listeners>
+            <listener ref="batchJobExecutionListener" />
+        </listeners>
+    </job>
+```
 
 
 ### **Tasklet Example 1 - Job Class 안에 Tasklet 구현하기(Lambda)**
@@ -843,6 +1012,21 @@ Paging Size가 5이며 Chunk Size가 10일 경우 2번의 Read가 이루어진 �
 ## **PagingReader 사용 시 주의사항**
 
 페이징 처리 시 각 쿼리에 Offset 과 , Limit를 지정해 주어야 하는데 이는 PageSize를 지정하면 Batch에서 Offset과 Limit를 지정해줍니다. 하지만 페이징 처리를 할 때 마다 새로운 쿼리를 실행하기 때문에 데이터 순서가 보장 될 수 있도록 반드시 Order By를 사용하여야 합니다.
+
+
+### xml 구현 Chunk
+
+```xml
+<job id="delegatingJob" xmlns="http://www.springframework.org/schema/batch">
+		<step id="delegateJob.delegateStep1">
+			<tasklet>
+				<chunk reader="delegateJob.reader" writer="delegateJob.writer" commit-interval="3"/>
+			</tasklet>
+		</step>
+	</job>
+	
+```
+
 
 ### **Chunk Example 1 - Jdbc 기반의 Batch Job 구현하기**
 
@@ -1658,3 +1842,13 @@ references BATCH_STEP_EXECUTION(STEP_EXECUTION_ID)
 출처-  https://khj93.tistory.com/entry/Spring-Batch%EB%9E%80-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 
 https://dkswnkk.tistory.com/707
+
+https://devfunny.tistory.com/769
+
+
+https://yermi.tistory.com/entry/Spring-Batch%EC%99%80-Scheduler%EC%9D%98-%EC%B0%A8%EC%9D%B4-Spring-Scheduler-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95
+
+
+https://velog.io/@dev_tmb/%EB%B0%B0%EC%B9%98%EC%99%80-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
+https://velog.io/@smallcherry/%EB%B0%B0%EC%B9%98%EC%99%80-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC
