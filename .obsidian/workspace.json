@@ -11,8 +11,13 @@
             "id": "f823dca708135fb0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/정보처리기사/정보처리기사 2020.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ]
@@ -89,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "Spaces/정보처리기사/정보처리기사 2020.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md"
+                "file": "Spaces/정보처리기사/정보처리기사 2020.md"
               }
             }
           },
@@ -127,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/정보처리기사/트리 순회.md",
+                "file": "Spaces/정보처리기사/정보처리기사 2020.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -168,8 +173,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "f823dca708135fb0",
   "lastOpenFiles": [
+    "Spaces/정보처리기사/트리 순회.md",
+    "Spaces/정보처리기사/정보처리기사 2020.md",
+    "daily note/2024/5/2024-05-15.md",
+    "PDF/리눅스 명령어.pdf",
+    "Images/정보처리기사 1/트리 순회.md",
+    "Spaces/정보처리기사",
+    "daily note/2024/5/2024-05-13.md",
+    "daily note/2024/5/2024-05-10.md",
+    "daily note/2024/5/2024-05-14.md",
+    "무제 파일.canvas",
     "daily note/2023/12/2023-12-29.md",
     "daily note/2023/12/2023-12-28.md",
     "daily note/2023/12/2023-12-27.md",
@@ -192,16 +207,10 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/Maven/pom.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
-    "Spaces/Home/Spring/Spring Cache/Spring Cache 개념.md",
     "Spaces/Home/Spring/Spring Cache",
-    "Spaces/Home/Spring/Gradle/Gradle.md",
     "Spaces/Home/Spring/Gradle",
     "Images/Spring Batch/Spring Batch4.png",
     "Images/Spring Batch/Spring Batch2.png",
@@ -212,10 +221,6 @@
     "Images/Spring Batch/Spring Batch3.png",
     "Images/Spring Batch/Spring Batch10.png",
     "Images/Spring Batch/Spring Batch1.png",
-    "Images/Spring Batch/Spring  Batch9.png",
-    "Images/Spring Batch",
-    "daily note/2024/2/2024-02-27.md",
-    "daily note/2024/5",
-    "무제 파일.canvas"
+    "Images/Spring Batch/Spring  Batch9.png"
   ]
 }
