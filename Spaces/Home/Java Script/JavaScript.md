@@ -8,7 +8,7 @@ opener.$('\[popup-name="' + window.name + '"]').attr('popup-param').split(";");
 
 
 
-```
+```javaScript
 // XMLHttpRequest 객체 생성
 var xhr = new XMLHttpRequest();
 
@@ -28,5 +28,39 @@ xhr.onload = function () {
 
 // 요청 전송
 xhr.send();
+
+```
+
+
+## requestAjax
+
+```javaScript
+
+// 일반적인 ajax
+function requestAjax(url, params, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(JSON.parse(xhr.responseText));
+        } else if (xhr.readyState === 4) {
+            console.error("Request failed with status: " + xhr.status);
+        }
+    };
+    
+    xhr.send(params);
+}
+--------------------------------------------
+// 사용 예시 좀더 간단히 사용한 ajax
+var params = {
+    key1: "value1",
+    key2: "value2"
+};
+
+requestAjax("/route/01130cud.bms", JSON.stringify(params), function(data) {
+    console.log("Response:", data);
+});
 
 ```
