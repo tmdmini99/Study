@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery.md"
+                "file": "Spaces/Home/Java Script/JavaScript.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery.md",
+                "file": "Spaces/Home/Java Script/JavaScript.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,8 @@
   },
   "active": "f823dca708135fb0",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/Jquery.md",
+    "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/splice().md",
     "daily note/2024/5/2024-05-29.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
