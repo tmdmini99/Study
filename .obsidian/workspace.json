@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-03.md",
+                "file": "daily note/2024/6/2024-06-04.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-03.md",
+                "file": "daily note/2024/6/2024-06-04.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-03.md"
+                "file": "daily note/2024/6/2024-06-04.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-03.md",
+                "file": "daily note/2024/6/2024-06-04.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,11 +174,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "f823dca708135fb0",
   "lastOpenFiles": [
+    "daily note/2024/6/2024-06-03.md",
+    "daily note/2024/6/2024-06-04.md",
     "daily note/2024/6",
     "daily note/2024/5/2024-05-31.md",
-    "daily note/2024/6/2024-06-03.md",
     "daily note/2024/5/2024-05-30.md",
     "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/Jquery.md",
@@ -211,7 +213,6 @@
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
     "Spaces/Home/Spring/Spring Cache",
-    "Spaces/Home/Spring/Gradle",
     "Images/Spring Batch/Spring Batch4.png",
     "Images/Spring Batch/Spring Batch2.png",
     "Images/Spring Batch/Spring Batch8.jpg",
