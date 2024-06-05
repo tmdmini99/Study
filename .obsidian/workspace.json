@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-05.md",
+                "file": "Spaces/Home/Java Script/공부 해야 될것.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-05.md",
+                "file": "Spaces/Home/Java Script/공부 해야 될것.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-05.md"
+                "file": "Spaces/Home/Java Script/공부 해야 될것.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-05.md",
+                "file": "Spaces/Home/Java Script/공부 해야 될것.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,13 +175,14 @@
   },
   "active": "f823dca708135fb0",
   "lastOpenFiles": [
-    "daily note/2024/6/2024-06-04.md",
+    "Spaces/Home/Java Script/JavaScript.md",
+    "Spaces/Home/Java Script/공부 해야 될것.md",
     "daily note/2024/6/2024-06-05.md",
+    "daily note/2024/6/2024-06-04.md",
     "daily note/2024/6/2024-06-03.md",
     "daily note/2024/6",
     "daily note/2024/5/2024-05-31.md",
     "daily note/2024/5/2024-05-30.md",
-    "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/Jquery.md",
     "Spaces/Home/Java Script/splice().md",
     "daily note/2024/5/2024-05-29.md",
@@ -202,7 +202,6 @@
     "Spaces/Home/Docker/쿠버네티스.md",
     "Spaces/Obsidian/Obsidian플러그인.md",
     "Spaces/정보처리기사/트리 순회.md",
-    "daily note/2024/5/2024-05-15.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
     "무제 파일.canvas",
