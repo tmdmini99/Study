@@ -19,8 +19,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "16946da4ff46033b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily note/2024/6/2024-06-17.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -95,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-14.md",
+                "file": "daily note/2024/6/2024-06-17.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-14.md"
+                "file": "daily note/2024/6/2024-06-17.md"
               }
             }
           },
@@ -133,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-14.md",
+                "file": "daily note/2024/6/2024-06-17.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -174,8 +188,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f823dca708135fb0",
+  "active": "16946da4ff46033b",
   "lastOpenFiles": [
+    "daily note/2024/6/2024-06-17.md",
     "daily note/2024/6/2024-06-07.md",
     "daily note/2024/6/2024-06-14.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
@@ -202,7 +217,6 @@
     "daily note/2024/5/2024-05-19.md",
     "Spaces/정보처리기사/정보처리기사 2020.md",
     "Images/정보처리기사 1/트리 순회.md",
-    "Spaces/Home/Docker/쿠버네티스.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
     "무제 파일.canvas",
