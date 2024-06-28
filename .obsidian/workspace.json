@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md",
+                "file": "Spaces/Home/JSP/JSTL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md",
+                "file": "Spaces/Home/JSP/JSTL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md"
+                "file": "Spaces/Home/JSP/JSTL.md"
               }
             }
           },
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md",
+                "file": "Spaces/Home/JSP/JSTL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -202,6 +202,9 @@
   },
   "active": "7b416c5bb28f8c02",
   "lastOpenFiles": [
+    "Spaces/Home/JSP/Freemarker.md",
+    "Spaces/Home/JSP/EL.md",
+    "Spaces/Home/Java Script/공부 해야 될것.md",
     "daily note/2024/6/2024-06-28.md",
     "daily note/2024/6/2024-06-27.md",
     "daily note/2024/6/2024-06-25.md",
@@ -210,11 +213,9 @@
     "daily note/2024/6/2024-06-21.md",
     "daily note/2024/6/2024-06-20.md",
     "daily note/2024/6/2024-06-19.md",
-    "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/Home/Java Script/splice().md",
     "Spaces/Home/Java Script/Jquery.md",
     "Spaces/Home/Java Script/JavaScript.md",
-    "Spaces/Home/JSP/Freemarker.md",
     "daily note/2024/6/2024-06-14.md",
     "daily note/2024/6/2024-06-07.md",
     "daily note/2024/6/2024-06-17.md",
@@ -228,7 +229,6 @@
     "daily note/2024/5/2024-05-29.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
-    "Spaces/Home/Java/다형성/다형성.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
     "무제 파일.canvas",
