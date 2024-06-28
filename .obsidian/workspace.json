@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/JSP/JSTL.md",
+                "file": "daily note/2024/6/2024-06-28.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/JSP/JSTL.md",
+                "file": "daily note/2024/6/2024-06-28.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/JSP/JSTL.md"
+                "file": "daily note/2024/6/2024-06-28.md"
               }
             }
           },
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/JSP/JSTL.md",
+                "file": "daily note/2024/6/2024-06-28.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -202,6 +202,7 @@
   },
   "active": "7b416c5bb28f8c02",
   "lastOpenFiles": [
+    "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/Freemarker.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
@@ -228,7 +229,6 @@
     "daily note/2024/5/2024-05-30.md",
     "daily note/2024/5/2024-05-29.md",
     "Spaces/Home/Java/다형성/캐스팅.md",
-    "Spaces/Home/Java/다형성/오버로딩.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
     "무제 파일.canvas",
