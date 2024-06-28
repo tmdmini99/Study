@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md",
+                "file": "daily note/2024/6/2024-06-28.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md",
+                "file": "daily note/2024/6/2024-06-28.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md"
+                "file": "daily note/2024/6/2024-06-28.md"
               }
             }
           },
@@ -160,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-27.md",
+                "file": "daily note/2024/6/2024-06-28.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -204,6 +204,7 @@
   "active": "7b416c5bb28f8c02",
   "lastOpenFiles": [
     "daily note/2024/6/2024-06-27.md",
+    "daily note/2024/6/2024-06-28.md",
     "daily note/2024/6/2024-06-25.md",
     "daily note/2024/6/2024-06-26.md",
     "daily note/2024/6/2024-06-24.md",
@@ -229,7 +230,6 @@
     "Spaces/Home/Java/다형성/캐스팅.md",
     "Spaces/Home/Java/다형성/오버로딩.md",
     "Spaces/Home/Java/다형성/다형성.md",
-    "daily note/2024/5/2024-05-28.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
     "무제 파일.canvas",
