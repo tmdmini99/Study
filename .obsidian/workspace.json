@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-28.md",
+                "file": "daily note/2024/7/2024-07-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-28.md",
+                "file": "daily note/2024/7/2024-07-02.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-28.md"
+                "file": "daily note/2024/7/2024-07-02.md"
               }
             }
           },
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-28.md",
+                "file": "daily note/2024/7/2024-07-02.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -202,11 +202,13 @@
   },
   "active": "7b416c5bb28f8c02",
   "lastOpenFiles": [
+    "daily note/2024/6/2024-06-28.md",
+    "daily note/2024/7/2024-07-02.md",
+    "daily note/2024/7",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/Freemarker.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
-    "daily note/2024/6/2024-06-28.md",
     "daily note/2024/6/2024-06-27.md",
     "daily note/2024/6/2024-06-25.md",
     "daily note/2024/6/2024-06-26.md",
@@ -228,7 +230,6 @@
     "daily note/2024/5/2024-05-31.md",
     "daily note/2024/5/2024-05-30.md",
     "daily note/2024/5/2024-05-29.md",
-    "Spaces/Home/Java/다형성/캐스팅.md",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
     "무제 파일.canvas",
@@ -238,7 +239,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
-    "Spaces/Home/Spring/Spring Cache",
     "Images/Spring Batch/Spring Batch4.png",
     "Images/Spring Batch/Spring Batch2.png",
     "Images/Spring Batch/Spring Batch8.jpg",
