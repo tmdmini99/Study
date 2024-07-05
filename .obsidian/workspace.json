@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-26.md",
+                "file": "daily note/2024/7/2024-07-05.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -101,8 +101,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -122,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/6/2024-06-26.md",
+                "file": "daily note/2024/7/2024-07-05.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/6/2024-06-26.md"
+                "file": "daily note/2024/7/2024-07-05.md"
               }
             }
           },
@@ -160,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/6/2024-06-26.md",
+                "file": "daily note/2024/7/2024-07-05.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -203,6 +202,7 @@
   },
   "active": "16946da4ff46033b",
   "lastOpenFiles": [
+    "daily note/2024/6/2024-06-26.md",
     "daily note/2024/7/2024-07-05.md",
     "daily note/2024/7/2024-07-04.md",
     "daily note/2024/6/2024-06-28.md",
@@ -217,7 +217,6 @@
     "daily note/2024/6/2024-06-21.md",
     "daily note/2024/6/2024-06-24.md",
     "daily note/2024/6/2024-06-25.md",
-    "daily note/2024/6/2024-06-26.md",
     "daily note/2024/6/2024-06-03.md",
     "daily note/2024/6/2024-06-04.md",
     "daily note/2024/7/2024-07-03.md",
