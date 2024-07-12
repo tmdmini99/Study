@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/7/2024-07-11.md",
+                "file": "daily note/2024/7/2024-07-12.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/7/2024-07-11.md",
+                "file": "daily note/2024/7/2024-07-12.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/7/2024-07-11.md"
+                "file": "daily note/2024/7/2024-07-12.md"
               }
             }
           },
@@ -160,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/7/2024-07-11.md",
+                "file": "daily note/2024/7/2024-07-12.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -203,6 +203,8 @@
   },
   "active": "16946da4ff46033b",
   "lastOpenFiles": [
+    "daily note/2024/7/2024-07-11.md",
+    "daily note/2024/7/2024-07-12.md",
     "daily note/2024/6/2024-06-27.md",
     "daily note/2024/6/2024-06-28.md",
     "daily note/2024/7/2024-07-02.md",
@@ -212,7 +214,6 @@
     "daily note/2024/7/2024-07-08.md",
     "daily note/2024/7/2024-07-09.md",
     "daily note/2024/7/2024-07-10.md",
-    "daily note/2024/7/2024-07-11.md",
     "daily note/2024/6/2024-06-26.md",
     "daily note/2024/6/2024-06-07.md",
     "daily note/2024/6/2024-06-05.md",
@@ -229,7 +230,6 @@
     "daily note/2024/7",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/Freemarker.md",
-    "Spaces/Home/JSP/EL.md",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
     "Spaces/정보처리기사",
