@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/4/2024-04-15.md",
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/4/2024-04-15.md",
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/4/2024-04-15.md"
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md"
               }
             }
           },
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/4/2024-04-15.md",
+                "file": "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -202,6 +202,8 @@
   },
   "active": "16946da4ff46033b",
   "lastOpenFiles": [
+    "daily note/2024/4/2024-04-15.md",
+    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
     "daily note/2024/4/2024-04-08.md",
     "daily note/2024/4/2024-04-04.md",
     "daily note/2024/4/2024-04-01.md",
@@ -226,8 +228,6 @@
     "daily note/2024/6/2024-06-05.md",
     "daily note/2024/6/2024-06-17.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
-    "Spaces/Home/IntelliJ/Spring/Spring.md",
-    "Spaces/Home/IntelliJ/SSL/SSL적용.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
