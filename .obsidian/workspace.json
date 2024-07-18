@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/7/2024-07-17.md",
+                "file": "daily note/2024/7/2024-07-18.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/7/2024-07-17.md",
+                "file": "daily note/2024/7/2024-07-18.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/7/2024-07-17.md"
+                "file": "daily note/2024/7/2024-07-18.md"
               }
             }
           },
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/7/2024-07-17.md",
+                "file": "daily note/2024/7/2024-07-18.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -202,8 +202,8 @@
   },
   "active": "16946da4ff46033b",
   "lastOpenFiles": [
-    "daily note/2024/7/2024-07-18.md",
     "daily note/2024/7/2024-07-17.md",
+    "daily note/2024/7/2024-07-18.md",
     "daily note/2024/6/2024-06-14.md",
     "Spaces/Home/Java/람다/람다표현식.md",
     "daily note/2024/7/2024-07-16.md",
