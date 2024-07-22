@@ -26,20 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/7/2024-07-18.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8651177b879fa5ee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Java/삼항 연산자.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -60,7 +47,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -134,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/삼항 연산자.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/삼항 연산자.md"
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md"
               }
             }
           },
@@ -172,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/삼항 연산자.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,10 +200,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8651177b879fa5ee",
+  "active": "16946da4ff46033b",
   "lastOpenFiles": [
-    "daily note/2024/7/2024-07-22.md",
+    "Images/GROUP BY6.jpg",
+    "Spaces/Home/DB/DB 개념/GROUP BY.md",
+    "Images/GROUP BY5.png",
+    "Images/GROUP BY4.png",
+    "Images/GROUP BY3.jpg",
+    "Images/GROUP BY2.png",
+    "Images/GROUP BY1.png",
+    "daily note/2024/7/2024-07-18.md",
+    "Images/Pasted image 20240722134125.png",
+    "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/Java/삼항 연산자.md",
+    "daily note/2024/7/2024-07-22.md",
     "daily note/2024/7/2024-07-17.md",
     "daily note/2024/7/2024-07-16.md",
     "daily note/2024/7/2024-07-15.md",
@@ -237,10 +234,6 @@
     "daily note/2024/5/2024-05-03.md",
     "daily note/2024/5/2024-05-07.md",
     "daily note/2024/5/2024-05-08.md",
-    "daily note/2024/5/2024-05-13.md",
-    "daily note/2024/5/2024-05-10.md",
-    "daily note/2024/5/2024-05-14.md",
-    "daily note/2024/5/2024-05-15.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
@@ -254,13 +247,6 @@
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
     "Images/Spring Batch/Spring Batch4.png",
     "Images/Spring Batch/Spring Batch2.png",
-    "Images/Spring Batch/Spring Batch8.jpg",
-    "Images/Spring Batch/Spring Batch7.png",
-    "Images/Spring Batch/Spring Batch6.png",
-    "Images/Spring Batch/Spring Batch5.png",
-    "Images/Spring Batch/Spring Batch3.png",
-    "Images/Spring Batch/Spring Batch10.png",
-    "Images/Spring Batch/Spring Batch1.png",
-    "Images/Spring Batch/Spring  Batch9.png"
+    "Images/Spring Batch/Spring Batch8.jpg"
   ]
 }
