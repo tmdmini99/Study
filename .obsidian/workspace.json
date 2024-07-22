@@ -34,6 +34,19 @@
             }
           },
           {
+            "id": "8651177b879fa5ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily note/2024/7/2024-07-22.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
             "id": "7b416c5bb28f8c02",
             "type": "leaf",
             "state": {
@@ -47,7 +60,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -121,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/7/2024-07-18.md",
+                "file": "daily note/2024/7/2024-07-22.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/7/2024-07-18.md"
+                "file": "daily note/2024/7/2024-07-22.md"
               }
             }
           },
@@ -159,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/7/2024-07-18.md",
+                "file": "daily note/2024/7/2024-07-22.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -200,8 +213,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "16946da4ff46033b",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "daily note/2024/7/2024-07-22.md",
     "daily note/2024/7/2024-07-17.md",
     "daily note/2024/7/2024-07-16.md",
     "daily note/2024/7/2024-07-15.md",
@@ -227,7 +241,6 @@
     "daily note/2024/5/2024-05-14.md",
     "daily note/2024/5/2024-05-15.md",
     "daily note/2024/5/2024-05-17.md",
-    "daily note/2024/5/2024-05-19.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
