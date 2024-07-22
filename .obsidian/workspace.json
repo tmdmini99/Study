@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/7/2024-07-22.md",
+                "file": "Spaces/Home/Java/삼항 연산자.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/7/2024-07-22.md",
+                "file": "Spaces/Home/Java/삼항 연산자.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/7/2024-07-22.md"
+                "file": "Spaces/Home/Java/삼항 연산자.md"
               }
             }
           },
@@ -172,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/7/2024-07-22.md",
+                "file": "Spaces/Home/Java/삼항 연산자.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,9 +213,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "8651177b879fa5ee",
   "lastOpenFiles": [
     "daily note/2024/7/2024-07-22.md",
+    "Spaces/Home/Java/삼항 연산자.md",
     "daily note/2024/7/2024-07-17.md",
     "daily note/2024/7/2024-07-16.md",
     "daily note/2024/7/2024-07-15.md",
@@ -240,7 +241,6 @@
     "daily note/2024/5/2024-05-10.md",
     "daily note/2024/5/2024-05-14.md",
     "daily note/2024/5/2024-05-15.md",
-    "daily note/2024/5/2024-05-17.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
