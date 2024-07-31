@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/IntelliJ/JVM.md",
+                "file": "daily note/2024/7/2024-07-31.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -161,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/IntelliJ/JVM.md",
+                "file": "daily note/2024/7/2024-07-31.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +189,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/IntelliJ/JVM.md"
+                "file": "daily note/2024/7/2024-07-31.md"
               }
             }
           },
@@ -199,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/IntelliJ/JVM.md",
+                "file": "daily note/2024/7/2024-07-31.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -242,8 +242,8 @@
   },
   "active": "16946da4ff46033b",
   "lastOpenFiles": [
-    "Images/IntelliJ JVM5.png",
     "Spaces/Home/IntelliJ/JVM.md",
+    "Images/IntelliJ JVM5.png",
     "Images/IntelliJ JVM4.png",
     "Images/IntelliJ JVM3.png",
     "Images/IntelliJ JVM2.png",
