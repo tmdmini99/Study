@@ -26,10 +26,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/7/2024-07-31.md",
+                "file": "Spaces/Home/IntelliJ/JVM.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "03e1c2190de15316",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/IntelliJ JVM5.png"
+              }
+            }
+          },
+          {
+            "id": "1f8e18c87fbb724c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/IntelliJ JVM4.png"
+              }
+            }
+          },
+          {
+            "id": "7d4886b27a5583e7",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/IntelliJ JVM3.png"
+              }
+            }
+          },
+          {
+            "id": "e3087214cb041625",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/IntelliJ JVM2.png"
               }
             }
           },
@@ -121,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/7/2024-07-31.md",
+                "file": "Spaces/Home/IntelliJ/JVM.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +189,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/7/2024-07-31.md"
+                "file": "Spaces/Home/IntelliJ/JVM.md"
               }
             }
           },
@@ -159,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/7/2024-07-31.md",
+                "file": "Spaces/Home/IntelliJ/JVM.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -202,6 +242,13 @@
   },
   "active": "16946da4ff46033b",
   "lastOpenFiles": [
+    "Images/IntelliJ JVM5.png",
+    "Spaces/Home/IntelliJ/JVM.md",
+    "Images/IntelliJ JVM4.png",
+    "Images/IntelliJ JVM3.png",
+    "Images/IntelliJ JVM2.png",
+    "Images/IntelliJ JVM1.png",
+    "daily note/2024/7/2024-07-31.md",
     "daily note/2024/6/2024-06-28.md",
     "daily note/2024/6/2024-06-27.md",
     "daily note/2024/6/2024-06-26.md",
@@ -225,16 +272,11 @@
     "daily note/2024/7/2024-07-15.md",
     "daily note/2024/7/2024-07-11.md",
     "daily note/2024/7/2024-07-10.md",
-    "daily note/2024/7/2024-07-09.md",
-    "daily note/2024/7/2024-07-08.md",
-    "daily note/2024/7/2024-07-05.md",
     "Images/GROUP BY6.jpg",
     "Images/GROUP BY5.png",
     "Images/GROUP BY4.png",
     "Images/GROUP BY3.jpg",
     "Images/GROUP BY2.png",
-    "Images/GROUP BY1.png",
-    "Images/Pasted image 20240722134125.png",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
@@ -245,9 +287,6 @@
     "Spaces/Home/Spring/Spring Legacy/Query",
     "Spaces/Home/Spring/Spring Legacy/Maven",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA",
-    "Images/Spring Batch/Spring Batch4.png",
-    "Images/Spring Batch/Spring Batch2.png",
-    "Images/Spring Batch/Spring Batch8.jpg"
+    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA"
   ]
 }
