@@ -4,90 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "063270508e64e48c",
+        "id": "518d4e9f41991ef4",
         "type": "tabs",
         "children": [
           {
-            "id": "f823dca708135fb0",
+            "id": "cce16b062a26b068",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/6/2024-06-14.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "16946da4ff46033b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily note/2024/8/2024-08-01.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "03e1c2190de15316",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/IntelliJ JVM5.png"
-              }
-            }
-          },
-          {
-            "id": "1f8e18c87fbb724c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/IntelliJ JVM4.png"
-              }
-            }
-          },
-          {
-            "id": "7d4886b27a5583e7",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/IntelliJ JVM3.png"
-              }
-            }
-          },
-          {
-            "id": "e3087214cb041625",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/IntelliJ JVM2.png"
-              }
-            }
-          },
-          {
-            "id": "7b416c5bb28f8c02",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily note/2024/7/2024-07-05.md",
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-01.md",
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-01.md"
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md"
               }
             }
           },
@@ -199,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-01.md",
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -240,23 +173,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "cce16b062a26b068",
   "lastOpenFiles": [
-    "daily note/2024/7/2024-07-31.md",
-    "daily note/2024/7/2024-07-08.md",
-    "daily note/2024/7/2024-07-02.md",
-    "daily note/2024/8/2024-08-01.md",
-    "daily note/2024/12",
-    "daily note/2024/11",
-    "daily note/2024/10",
-    "daily note/2024/9",
+    "Spaces/Home/DB/DB 개념/Partition.md",
+    "Spaces/Home/DB/DB 개념/PIVOT.md",
+    "Images/Pasted image 20240801180233.png",
+    "Images/Pasted image 20240801180158.png",
+    "Images/Pasted image 20240801180126.png",
+    "Images/Pasted image 20240801180007.png",
+    "Images/Pasted image 20240801175910.png",
+    "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "daily note/2024/6/2024-06-14.md",
-    "daily note/2024/8",
-    "Spaces/Home/IntelliJ/JVM.md",
+    "daily note/2024/8/2024-08-01.md",
     "Images/IntelliJ JVM5.png",
     "Images/IntelliJ JVM4.png",
     "Images/IntelliJ JVM3.png",
     "Images/IntelliJ JVM2.png",
+    "daily note/2024/7/2024-07-05.md",
+    "daily note/2024/7/2024-07-31.md",
+    "daily note/2024/7/2024-07-08.md",
+    "daily note/2024/7/2024-07-02.md",
+    "daily note/2024/12",
+    "daily note/2024/11",
+    "daily note/2024/10",
+    "daily note/2024/9",
+    "daily note/2024/8",
+    "Spaces/Home/IntelliJ/JVM.md",
     "Images/IntelliJ JVM1.png",
     "daily note/2024/6/2024-06-28.md",
     "daily note/2024/6/2024-06-27.md",
@@ -274,15 +216,6 @@
     "daily note/2024/6/2024-06-03.md",
     "daily note/2024/7/2024-07-23.md",
     "daily note/2024/7/2024-07-22.md",
-    "daily note/2024/7/2024-07-18.md",
-    "daily note/2024/7/2024-07-17.md",
-    "daily note/2024/7/2024-07-16.md",
-    "daily note/2024/7/2024-07-15.md",
-    "Images/GROUP BY6.jpg",
-    "Images/GROUP BY5.png",
-    "Images/GROUP BY4.png",
-    "Images/GROUP BY3.jpg",
-    "Images/GROUP BY2.png",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
