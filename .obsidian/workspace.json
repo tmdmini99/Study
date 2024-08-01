@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "cce16b062a26b068",
+            "id": "87f0ee40f69fe633",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -17,6 +17,136 @@
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "e318930c3600468e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT18.png"
+              }
+            }
+          },
+          {
+            "id": "6b8b7c00dece47e9",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT17.png"
+              }
+            }
+          },
+          {
+            "id": "b4a9df4a141e0045",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT16.png"
+              }
+            }
+          },
+          {
+            "id": "7d082600d7bed0e2",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT15.png"
+              }
+            }
+          },
+          {
+            "id": "731794df42a38668",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT13.png"
+              }
+            }
+          },
+          {
+            "id": "b73b71200197c253",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT12.png"
+              }
+            }
+          },
+          {
+            "id": "67a1b6d60c5b1b31",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT11.png"
+              }
+            }
+          },
+          {
+            "id": "611a60a58a071683",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT9.png"
+              }
+            }
+          },
+          {
+            "id": "b5f30c57c1ca4e18",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT8.png"
+              }
+            }
+          },
+          {
+            "id": "39b981e5069a4fd0",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT8.png"
+              }
+            }
+          },
+          {
+            "id": "ad21b3d13371dbc5",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT7.png"
+              }
+            }
+          },
+          {
+            "id": "b8f3825489608ee4",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT6.png"
+              }
+            }
+          },
+          {
+            "id": "2ba6d96be4b0b4b0",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT5.png"
               }
             }
           },
@@ -223,19 +353,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cce16b062a26b068",
+  "active": "87f0ee40f69fe633",
   "lastOpenFiles": [
-    "Images/PIVOT4.png",
+    "Images/PIVOT18.png",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "Images/PIVOT3.png",
-    "Images/PIVOT2.png",
-    "Images/PIVOT1.png",
+    "Images/PIVOT17.png",
+    "Images/PIVOT16.png",
+    "Images/PIVOT15.png",
+    "Images/PIVOT14.png",
+    "Images/PIVOT13.png",
+    "Images/PIVOT12.png",
+    "Images/PIVOT11.png",
+    "Images/PIVOT10.png",
+    "Images/PIVOT9.png",
+    "Images/PIVOT8.png",
     "Spaces/Home/DB/DB 개념/Partition.md",
-    "Images/PARTITION5.png",
-    "Images/PARTITION4.png",
-    "Images/PARTITION3.png",
-    "Images/PARTITION2.png",
-    "Images/PARTITION1.png",
     "Spaces/Home/DB/DB 개념/DECODE.md",
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
     "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
@@ -244,7 +376,6 @@
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "daily note/2024/6/2024-06-14.md",
     "daily note/2024/8/2024-08-01.md",
-    "Images/IntelliJ JVM5.png",
     "daily note/2024/7/2024-07-05.md",
     "daily note/2024/7/2024-07-31.md",
     "daily note/2024/7/2024-07-08.md",
