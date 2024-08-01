@@ -19,6 +19,56 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ec0af18940057213",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT4.png"
+              }
+            }
+          },
+          {
+            "id": "4931fa2e4b6113f2",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT3.png"
+              }
+            }
+          },
+          {
+            "id": "b03c5749306b7f05",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT2.png"
+              }
+            }
+          },
+          {
+            "id": "42c1f0a17f0d5ca2",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PIVOT1.png"
+              }
+            }
+          },
+          {
+            "id": "63b47d009c62d22b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/PARTITION1.png"
+              }
+            }
           }
         ]
       }
@@ -175,20 +225,26 @@
   },
   "active": "cce16b062a26b068",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DB 개념/Partition.md",
+    "Images/PIVOT4.png",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "Images/Pasted image 20240801180233.png",
-    "Images/Pasted image 20240801180158.png",
-    "Images/Pasted image 20240801180126.png",
-    "Images/Pasted image 20240801180007.png",
-    "Images/Pasted image 20240801175910.png",
+    "Images/PIVOT3.png",
+    "Images/PIVOT2.png",
+    "Images/PIVOT1.png",
+    "Spaces/Home/DB/DB 개념/Partition.md",
+    "Images/PARTITION5.png",
+    "Images/PARTITION4.png",
+    "Images/PARTITION3.png",
+    "Images/PARTITION2.png",
+    "Images/PARTITION1.png",
+    "Spaces/Home/DB/DB 개념/DECODE.md",
+    "Spaces/Home/DB/DB 개념/서브 쿼리.md",
+    "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
+    "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
+    "Spaces/Home/DB/DB 개념/파티셔닝.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "daily note/2024/6/2024-06-14.md",
     "daily note/2024/8/2024-08-01.md",
     "Images/IntelliJ JVM5.png",
-    "Images/IntelliJ JVM4.png",
-    "Images/IntelliJ JVM3.png",
-    "Images/IntelliJ JVM2.png",
     "daily note/2024/7/2024-07-05.md",
     "daily note/2024/7/2024-07-31.md",
     "daily note/2024/7/2024-07-08.md",
@@ -199,7 +255,6 @@
     "daily note/2024/9",
     "daily note/2024/8",
     "Spaces/Home/IntelliJ/JVM.md",
-    "Images/IntelliJ JVM1.png",
     "daily note/2024/6/2024-06-28.md",
     "daily note/2024/6/2024-06-27.md",
     "daily note/2024/6/2024-06-26.md",
@@ -210,12 +265,6 @@
     "daily note/2024/6/2024-06-19.md",
     "daily note/2024/6/2024-06-18.md",
     "daily note/2024/6/2024-06-17.md",
-    "daily note/2024/6/2024-06-07.md",
-    "daily note/2024/6/2024-06-05.md",
-    "daily note/2024/6/2024-06-04.md",
-    "daily note/2024/6/2024-06-03.md",
-    "daily note/2024/7/2024-07-23.md",
-    "daily note/2024/7/2024-07-22.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
