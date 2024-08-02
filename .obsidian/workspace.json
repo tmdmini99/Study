@@ -4,16 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "518d4e9f41991ef4",
+        "id": "2ece789a99ddbf4b",
         "type": "tabs",
         "children": [
           {
-            "id": "87f0ee40f69fe633",
+            "id": "be73a5f2107115b6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/다형성/this 사용법1.png"
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -91,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/다형성/this 사용법1.png",
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/다형성/this 사용법1.png"
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md"
               }
             }
           },
@@ -129,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/다형성/this 사용법1.png",
+                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -170,29 +173,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "be73a5f2107115b6",
   "lastOpenFiles": [
+    "Images/PIVTIOT/PIVIOT19.png",
+    "Images/PIVIOT19.png",
+    "Spaces/Home/Git/GitHub.md",
+    "Images/GIT/GitHub4.png",
+    "Images/GIT/GitHub3.png",
+    "Images/GIT/GitHub2.png",
+    "Images/GIT/GitHub1.png",
+    "Images/GIT/GitHub5.png",
+    "Images/GIT",
+    "Images/GitHub5.png",
+    "Images/GitHub4.png",
+    "Images/GitHub3.png",
+    "Images/GitHub2.png",
+    "Spaces/Home/Git/Git.md",
+    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Images/RECAPTCH",
     "Images/SPRING CACHE",
-    "Images/다형성/FREEMARKER",
+    "Images/FREEMARKER",
     "Images/MAVEN",
     "Images/CSRF",
-    "Images/GROUP BY/GROUP BY5.png",
-    "Images/GROUP BY/GROUP BY4.png",
-    "Images/GROUP BY/GROUP BY3.jpg",
-    "Images/GROUP BY/GROUP BY2.png",
-    "Images/GROUP BY/GROUP BY1.png",
-    "Images/GROUP BY/GROUP BY6.jpg",
     "Images/GROUP BY",
-    "Images/JPA/Gradle JPA2.png",
-    "Images/JPA/Gradle JPA1.png",
-    "Images/JPA/Gradle JPA3.png",
-    "Images/GRADLE/Gradle3.png",
-    "Images/다형성/MAVEN",
+    "Images/MAVEN 1",
     "Images/IntelliJ JVM",
     "Images/GRADLE",
-    "Images/PIVTIOT",
-    "Images/PARTITION",
     "Spaces/Home/DB/DB 개념/WITH AS.md",
     "Spaces/Home/DB/DB 개념/CASE WHEN.md",
     "Spaces/Home/DB/DB 개념/DECODE.md",
@@ -215,9 +221,6 @@
     "daily note/2024/6/2024-06-27.md",
     "daily note/2024/6/2024-06-26.md",
     "daily note/2024/6/2024-06-25.md",
-    "daily note/2024/6/2024-06-24.md",
-    "daily note/2024/6/2024-06-21.md",
-    "daily note/2024/6/2024-06-20.md",
     "무제 파일.canvas"
   ]
 }

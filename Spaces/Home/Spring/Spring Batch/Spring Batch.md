@@ -53,13 +53,13 @@ Spring Batch는 Batch Job을 관리하지만 Job을 구동하거나 실행시키
 #### **- Batch와 Scheduler 용어 정의**
 
 
-![[Pasted image 20240321112826.png]]
+![[Spring Batch11.png]]
 
 Batch와 Scheduler 용어 정의
 
 
 
-![[Pasted image 20240321112834.png]]
+![[Spring Batch12.png]]
 배치(Batch)의 5가지 특징
 
 ### **2. 스프링 스케쥴러(Spring Scheduler)**
@@ -68,7 +68,7 @@ Batch와 Scheduler 용어 정의
 
 
 
-![[Pasted image 20240321112845.png]]
+![[Spring Batch13.png]]
 
 Spring Scheduler 특징
 
@@ -87,7 +87,7 @@ Spring Scheduler 특징
 커머스 사이트에서는 하루에 거래건이 50만에서 100만 건까지 이루어질 수 있습니다. 이런 경우 관련된 데이터는 최소 100만에서 200만 행 이상이 될 수 있는데, 한 달 동안은 이런 데이터가 5000만에서 1억까지 쌓일 수 있습니다. 이런 데이터를 실시간으로 집계하는 쿼리를 실행하면 조회 시간이 길어지고 서버에 많은 부담이 가게 됩니다. 그래서 매일 새벽에 전날의 매출 집계 데이터를 미리 생성해 두어, 외부에서 요청이 오면 전날에 집계한 데이터를 제공하는 방법으로 해결합니다.
 
 
-![[Spring Batch3.png]]
+![[Images/Spring Batch/Spring Batch3.png]]
 
 
 
@@ -231,7 +231,7 @@ Item Processor는 Reader에서 읽어온 Item을 데이터를 처리하는 역�
 
 Spring Batch에서의 Job은 여러가지 Step의 모음으로 구성되어 있으며 Job은 순차적인 Step을 수행하며 Batch를 수행하게 됩니다. Step은 Tasklet 처리 방식과 Chunk 지향 처리 방식을 지원하고 있습니다.
 
-![[Spring Batch1.png]]
+![[Images/Spring Batch/Spring Batch1.png]]
 
 
 
@@ -661,7 +661,7 @@ Tasklet은 하나의 메서드로 구성 되어있는 간단한 인터페이스�
 **Tasklet은 기본적으로 하나의 작업을 수행하는 방식입니다. 대체로 단순하거나 복잡하지 않은 작업을 수행하는 데 적합하며, 전체 데이터를 처리하는 것이 아니라 일부 데이터나 단일 작업을 처리하는 데 주로 사용됩니다.**
 
 
-![[Spring Batch2.png]]
+![[Images/Spring Batch/Spring Batch2.png]]
 
 - Tasklet 인터페이스의 execute() 메서드를 구현하여 사용한다. 이 메서드는 하나의 트랜잭션 범위에서 실행된다.
 - execute() 메서드는 RepeatStatus를 반환하는데 이는 Tasklet의 실행 상태를 나타낸다.
