@@ -21,16 +21,6 @@
             }
           },
           {
-            "id": "e318930c3600468e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT18.png"
-              }
-            }
-          },
-          {
             "id": "6b8b7c00dece47e9",
             "type": "leaf",
             "state": {
@@ -356,9 +346,9 @@
   },
   "active": "87f0ee40f69fe633",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "daily note/2024/8/2024-08-02.md",
     "Images/PIVOT18.png",
+    "daily note/2024/8/2024-08-02.md",
+    "Spaces/Home/DB/DB 개념/PIVOT.md",
     "Images/PIVOT17.png",
     "Images/PIVOT16.png",
     "Images/PIVOT15.png",
@@ -396,7 +386,6 @@
     "daily note/2024/6/2024-06-20.md",
     "daily note/2024/6/2024-06-19.md",
     "daily note/2024/6/2024-06-18.md",
-    "daily note/2024/6/2024-06-17.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
