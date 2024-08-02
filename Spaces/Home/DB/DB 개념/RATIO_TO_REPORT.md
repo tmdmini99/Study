@@ -42,7 +42,7 @@ SELECT job
 
 ![[RATIO_TO_REPORT3.png]]
 
-그룹함수를 사용한 컬럼인 경우 RATIO_TO_REPORT 함수 인자에도 그룹함수 값을 대입해야 한다.
+그룹함수를 사용한 컬럼인 경우 RATIO_TO_REPORT 함수 인자에도 그룹함수 값(ex SUM)을 대입해야 한다.
 
 #### ROLLUP 백분율 구하기
 

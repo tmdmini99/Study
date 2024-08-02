@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
+                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
+                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md"
+                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
+                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,18 +185,17 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
+    "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Images/GROUP BY/GROUP BY10.png",
     "Images/GROUP BY/GROUP BY9.png",
     "Images/GROUP BY/GROUP BY8.png",
     "Images/GROUP BY/GROUP BY7.png",
     "Images/GROUP BY/GROUP BY11.png",
     "Images/GROUP BY11.png",
-    "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Images/GROUP BY10.png",
     "Images/GROUP BY9.png",
     "Images/GROUP BY8.png",
     "Images/GROUP BY7.png",
-    "Images/GROUP BY/GROUP BY6.jpg",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DataBase.md",
