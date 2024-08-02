@@ -107,3 +107,10 @@ $('#addRow').click(function () {
 2. **이벤트 바인딩**: 새로운 행이 생성된 후, `$(selectRow).find('.btn_uncommon').click(function() {` 코드를 통해 해당 행에 있는 `.btn_uncommon` 버튼에 클릭 이벤트가 바인딩됩니다. 이 이벤트 핸들러는 새로 생성된 버튼에만 바인딩되며, 기존 버튼에는 영향을 미치지 않습니다.
     
 3. **클릭 이벤트의 작동**: 사용자가 `.btn_uncommon` 버튼을 클릭하면, 해당 버튼에 바인딩된 클릭 이벤트 핸들러가 실행됩니다. 이 핸들러는 이벤트가 발생한 요소를 기준으로 동작하므로, 동적으로 생성된 버튼에서도 정상적으로 작동합니다.
+
+
+
+## JSTL 쓰는법
+```sql
+$("#sc_ROUTE_RUN_TYPE").val("${BasicParamVo.sc_ROUTE_RUN_TYPE}");
+```
