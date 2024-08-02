@@ -256,6 +256,41 @@ GROUP BY ROLLUP(상품ID, 월);
 
 CASE WHEN문을 사용해서 맨 처음에 단순 ROLLUP함수만 썼을 때 NULL값으로 표시되었던 곳에 값을 넣어주었습니다. 집계가 계산된 결과에 대해서만 값을 넣어주면 되기 때문에 GROUPING(컬럼명)=1인 경우에만 '모든상품ID' 또는 '모든월' 값을 부여했고 0인 경우에는 원래대로 상품ID와 월을 써주었습니다.
 
+CASE 함수와 ROLLUP 함수를 응용해서 다음과 같은 표현도 가능하다.
+
+```sql
+SELECT 
+    CASE GROUPING(상품ID) WHEN 1 THEN '모든 상품ID' ELSE 상품ID END AS 상품ID,
+    CASE GROUPING(월) WHEN 1 THEN '모든 월' ELSE 월 END AS 월, 
+    SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY CUBE(상품ID, 월);
+```
+
+
+![[Pasted image 20240802145152.png]]
+
+```sql
+SELECT 
+    CASE GROUPING(상품ID) WHEN 1 THEN '모든 상품ID' ELSE 상품ID END AS 상품ID,
+    CASE GROUPING(월) WHEN 1 THEN '모든 월' ELSE 월 END AS 월, 
+    CASE GROUPING(회사) WHEN 1 THEN '모든 회사' ELSE 회사 END AS 회사,
+    SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY GROUPING SETS((상품ID, 월), 회사);
+```
+
+
+![[Pasted image 20240802145201.png]]
+
+
+이는 CUBE 함수, GROUPING SETS 함수에서도 마찬가지로 응용해볼 수 있다.
+
+
+
+
+
 ---
 참조 - https://velog.io/@tothek/GROUP-BY%EC%99%80-ROLLUP
 https://for-my-wealthy-life.tistory.com/44
+
