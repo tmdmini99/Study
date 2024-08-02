@@ -181,5 +181,81 @@ ROLLUP의 컬럼순서
 
 
 
+**3. CUBE**
+
+CUBE함수는 항목들 간의 다차원적인 소계를 계산합니다. ROLLUP과 달리 GROUP BY절에 명시한 모든 컬럼에 대해 소그룹 합계를 계산해줍니다.
+
+```sql
+SELECT 상품ID, 월, SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY CUBE(상품ID, 월);
+```
+
+
+
+![[Pasted image 20240802144529.png]]
+
+ROLLUP함수를 사용했을 때보다 결과가 좀 더 복잡합니다. 상품ID별 합계뿐만 아니라 월별 합계까지 한 번에 볼 수 있습니다.
+
+```sql
+GROUP BY CUBE(컬럼1, 컬럼2)
+=
+GROUP BY 컬럼1, 컬럼2
+UNION ALL
+GROUP BY 컬럼1
+UNION ALL
+GROUP BY 컬럼2
+UNION ALL
+모든 집합 그룹 결과
+```
+
+**4. GROUPING SETS**
+
+GROUPING SETS는 특정 항목에 대한 소계를 계산하는 함수입니다. 
+
+```sql
+SELECT 상품ID, 월, SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY GROUPING SETS(상품ID, 월);
+```
+
+![[Pasted image 20240802144541.png]]
+
+앞의 ROLLUP, CUBE에 비해 훨씬 결과가 단순합니다.
+
+ROLLUP과 CUBE는 GROUP BY 결과에 소그룹 합계와 토탈 합계를 보여주지만 GROUPING SETS는 각 소그룹별 합계만 간단하게 보여줍니다.
+
+GROUPING SETS 함수는 각각의 컬럼으로 GROUP BY한 값을 UNION ALL 한 것과 동일한 결과를 보여줍니다.
+
+```sql
+SELECT 상품ID, 월, SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY 상품ID
+UNION ALL
+SELECT 상품ID, 월, SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY 월;
+```
+
+**5. GROUPING** 
+
+GROUPING은 직접적으로 그룹별 집계를 구하는 함수는 아니지만 위의 집계함수들을 지원하는 함수입니다.
+
+집계가 계산된 결과에 대해서는 1의 값을 갖고 그렇지 않은 결과에 대해서는 0의 값을 갖습니다.
+
+```sql
+SELECT 
+    CASE GROUPING(상품ID) WHEN 1 THEN '모든 상품ID' ELSE 상품ID END AS 상품ID,
+    CASE GROUPING(월) WHEN 1 THEN '모든 월' ELSE 월 END AS 월, 
+    SUM(매출액) AS 매출액
+FROM 월별매출
+GROUP BY ROLLUP(상품ID, 월);
+```
+
+![[Pasted image 20240802144553.png]]
+
+CASE WHEN문을 사용해서 맨 처음에 단순 ROLLUP함수만 썼을 때 NULL값으로 표시되었던 곳에 값을 넣어주었습니다. 집계가 계산된 결과에 대해서만 값을 넣어주면 되기 때문에 GROUPING(컬럼명)=1인 경우에만 '모든상품ID' 또는 '모든월' 값을 부여했고 0인 경우에는 원래대로 상품ID와 월을 써주었습니다.
+
 ---
 참조 - https://velog.io/@tothek/GROUP-BY%EC%99%80-ROLLUP
+https://for-my-wealthy-life.tistory.com/44

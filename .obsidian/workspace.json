@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/JavaScript.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/JavaScript.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/JavaScript.md"
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/JavaScript.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,10 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
+    "Images/Pasted image 20240802144553.png",
+    "Images/Pasted image 20240802144541.png",
+    "Images/Pasted image 20240802144529.png",
+    "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/MySql.md",
@@ -192,8 +196,6 @@
     "Images/GIT/GitHub5.png",
     "Images/GIT",
     "Images/GitHub5.png",
-    "Images/GitHub4.png",
-    "Images/GitHub3.png",
     "Spaces/Home/Git/Git.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Images/RECAPTCH",
@@ -219,8 +221,6 @@
     "daily note/2024/7/2024-07-05.md",
     "daily note/2024/7/2024-07-31.md",
     "daily note/2024/7/2024-07-08.md",
-    "daily note/2024/7/2024-07-02.md",
-    "Spaces/Home/IntelliJ/JVM.md",
     "무제 파일.canvas"
   ]
 }
