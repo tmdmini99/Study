@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
+                "file": "daily note/2024/8/2024-08-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -254,7 +254,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -274,7 +275,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
+                "file": "daily note/2024/8/2024-08-02.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -302,7 +303,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/PIVOT.md"
+                "file": "daily note/2024/8/2024-08-02.md"
               }
             }
           },
@@ -312,7 +313,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/PIVOT.md",
+                "file": "daily note/2024/8/2024-08-02.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -355,8 +356,9 @@
   },
   "active": "87f0ee40f69fe633",
   "lastOpenFiles": [
-    "Images/PIVOT18.png",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
+    "daily note/2024/8/2024-08-02.md",
+    "Images/PIVOT18.png",
     "Images/PIVOT17.png",
     "Images/PIVOT16.png",
     "Images/PIVOT15.png",
@@ -366,7 +368,6 @@
     "Images/PIVOT11.png",
     "Images/PIVOT10.png",
     "Images/PIVOT9.png",
-    "Images/PIVOT8.png",
     "Spaces/Home/DB/DB 개념/Partition.md",
     "Spaces/Home/DB/DB 개념/DECODE.md",
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
