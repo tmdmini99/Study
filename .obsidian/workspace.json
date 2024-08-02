@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
+                "file": "Spaces/Home/DB/DB 개념/Partition.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
+                "file": "Spaces/Home/DB/DB 개념/Partition.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md"
+                "file": "Spaces/Home/DB/DB 개념/Partition.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
+                "file": "Spaces/Home/DB/DB 개념/Partition.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,6 +185,9 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
+    "Spaces/Home/DB/DB 개념/PIVOT.md",
+    "Spaces/Home/DB/DB 개념/WITH AS.md",
+    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Images/GROUP BY/GROUP BY10.png",
     "Images/GROUP BY/GROUP BY9.png",
@@ -196,7 +199,6 @@
     "Images/GROUP BY9.png",
     "Images/GROUP BY8.png",
     "Images/GROUP BY7.png",
-    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
@@ -207,8 +209,6 @@
     "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/DB 개념/WITH AS.md",
-    "Spaces/Home/DB/DB 개념/PIVOT.md",
     "Spaces/Home/Git/GitHub.md",
     "Images/GIT",
     "Spaces/Home/Git/Git.md",
