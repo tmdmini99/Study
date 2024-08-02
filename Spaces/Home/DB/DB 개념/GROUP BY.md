@@ -193,7 +193,7 @@ GROUP BY CUBE(상품ID, 월);
 
 
 
-![[Pasted image 20240802144529.png]]
+![[GROUP BY7.png]]
 
 ROLLUP함수를 사용했을 때보다 결과가 좀 더 복잡합니다. 상품ID별 합계뿐만 아니라 월별 합계까지 한 번에 볼 수 있습니다.
 
@@ -219,7 +219,7 @@ FROM 월별매출
 GROUP BY GROUPING SETS(상품ID, 월);
 ```
 
-![[Pasted image 20240802144541.png]]
+![[GROUP BY8.png]]
 
 앞의 ROLLUP, CUBE에 비해 훨씬 결과가 단순합니다.
 
@@ -252,7 +252,7 @@ FROM 월별매출
 GROUP BY ROLLUP(상품ID, 월);
 ```
 
-![[Pasted image 20240802144553.png]]
+![[GROUP BY9.png]]
 
 CASE WHEN문을 사용해서 맨 처음에 단순 ROLLUP함수만 썼을 때 NULL값으로 표시되었던 곳에 값을 넣어주었습니다. 집계가 계산된 결과에 대해서만 값을 넣어주면 되기 때문에 GROUPING(컬럼명)=1인 경우에만 '모든상품ID' 또는 '모든월' 값을 부여했고 0인 경우에는 원래대로 상품ID와 월을 써주었습니다.
 
@@ -268,7 +268,7 @@ GROUP BY CUBE(상품ID, 월);
 ```
 
 
-![[Pasted image 20240802145152.png]]
+![[GROUP BY10.png]]
 
 ```sql
 SELECT 
@@ -281,7 +281,7 @@ GROUP BY GROUPING SETS((상품ID, 월), 회사);
 ```
 
 
-![[Pasted image 20240802145201.png]]
+![[GROUP BY11.png]]
 
 
 이는 CUBE 함수, GROUPING SETS 함수에서도 마찬가지로 응용해볼 수 있다.
