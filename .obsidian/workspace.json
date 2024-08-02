@@ -13,10 +13,100 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md",
+                "file": "Spaces/Home/DB/DB 개념/WITH AS.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "e27a8b138aa83bea",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN10.png"
+              }
+            }
+          },
+          {
+            "id": "f814a0b98426cf34",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN9.png"
+              }
+            }
+          },
+          {
+            "id": "c2446d94f08e3ec7",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN8.png"
+              }
+            }
+          },
+          {
+            "id": "da19070befcb4558",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN7.png"
+              }
+            }
+          },
+          {
+            "id": "91488d7c8c7aebf6",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN6.png"
+              }
+            }
+          },
+          {
+            "id": "2ad95df667fb5b7a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN5.png"
+              }
+            }
+          },
+          {
+            "id": "242d1c8efecbda62",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN4.png"
+              }
+            }
+          },
+          {
+            "id": "3e62cd38085f4f7e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN3.png"
+              }
+            }
+          },
+          {
+            "id": "f874d9c63c530903",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/CASE WHEN2.png"
               }
             }
           }
@@ -94,7 +184,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md",
+                "file": "Spaces/Home/DB/DB 개념/WITH AS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +212,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md"
+                "file": "Spaces/Home/DB/DB 개념/WITH AS.md"
               }
             }
           },
@@ -132,7 +222,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md",
+                "file": "Spaces/Home/DB/DB 개념/WITH AS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,26 +265,26 @@
   },
   "active": "87f0ee40f69fe633",
   "lastOpenFiles": [
-    "Images/Pasted image 20240802100537.png",
-    "Images/Pasted image 20240802100530.png",
-    "Images/Pasted image 20240802100524.png",
-    "Images/Pasted image 20240802100517.png",
-    "Images/Pasted image 20240802100511.png",
-    "Images/Pasted image 20240802100504.png",
-    "Images/Pasted image 20240802100455.png",
-    "Images/Pasted image 20240802100346.png",
-    "Spaces/Home/DB/DB 개념/DECODE.md",
     "Spaces/Home/DB/DB 개념/CASE WHEN.md",
-    "Images/Pasted image 20240802100229.png",
-    "Images/Pasted image 20240802100221.png",
-    "Images/Pasted image 20240802100209.png",
+    "Spaces/Home/DB/DB 개념/WITH AS.md",
+    "Images/CASE WHEN10.png",
+    "Images/CASE WHEN9.png",
+    "Images/CASE WHEN8.png",
+    "Images/CASE WHEN7.png",
+    "Images/CASE WHEN6.png",
+    "Images/CASE WHEN5.png",
+    "Images/CASE WHEN4.png",
+    "Images/CASE WHEN3.png",
+    "Images/CASE WHEN2.png",
+    "Images/DECODE2.png",
+    "Spaces/Home/DB/DB 개념/DECODE.md",
+    "Spaces/Home/DB/DB 개념/Partition.md",
+    "Spaces/Home/DB/DB 개념/파티셔닝.md",
     "daily note/2024/8/2024-08-02.md",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "Spaces/Home/DB/DB 개념/Partition.md",
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
     "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
     "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
-    "Spaces/Home/DB/DB 개념/파티셔닝.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "daily note/2024/6/2024-06-14.md",
     "daily note/2024/8/2024-08-01.md",

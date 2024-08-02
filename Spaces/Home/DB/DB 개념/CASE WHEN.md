@@ -4,7 +4,7 @@
 
 
 
-![[Pasted image 20240802100346.png]]
+![[CASE WHEN1.png]]
 
 
 
@@ -50,48 +50,84 @@ CASE 표현식은 C, JAVA의 Swith문과 비슷한 방식으로 사용이 가능
 **예제 1 - 일반적인 CASE 표현식**
 
 
-![[Pasted image 20240802100455.png]]
+![[CASE WHEN2.png]]
 
 
 **예제 2 - ELSE를 생략 후 만족하는 조건이 없으면 NULL 리턴**
 
 
-![[Pasted image 20240802100504.png]]
+![[CASE WHEN3.png]]
 
 
 **예제 3 - 비교 연산자, 범위 연사자 등 사용이 가능**
 
-![[Pasted image 20240802100511.png]]
+![[CASE WHEN4.png]]
 
 **예제 4 - WHERE 절에 사용 가능**
 
 
-![[Pasted image 20240802100517.png]]
+![[CASE WHEN5.png]]
 
 
 **예제 5 - 오라클 내장 함수를 조건으로 사용 가능**
 
 
 
-![[Pasted image 20240802100524.png]]
+![[CASE WHEN6.png]]
 
 
 **예제 6 - 사용자 정의 함수를 조건으로 사용 가능**
 
-![[Pasted image 20240802100530.png]]
+![[CASE WHEN7.png]]
 
 
 **예제 7 - THEN 절에서 중첩 CASE 등 추가 연산 작업 가능**
 
-![[Pasted image 20240802100537.png]]
+![[CASE WHEN8.png]]
+
+### CASE WHEN 여러개 칼럼 조건 부여 (다중 칼럼)
+
+```sql
+SELECT ename
+     , job
+     , deptno
+     , sal
+     , CASE WHEN job = 'ANALYST'  AND deptno = 20 AND sal >= 3000 THEN 'CASE 1'
+            WHEN job = 'MANAGER'  AND deptno = 10 AND sal >= 2000 THEN 'CASE 2'
+            WHEN job = 'SALESMAN' AND deptno = 30 AND sal >= 1500 THEN 'CASE 3'
+       END AS case_result
+  FROM emp
+ WHERE job IN ('ANALYST', 'MANAGER', 'SALESMAN')
+```
 
 
+![[CASE WHEN9.png]]
 
 
+여러개의 칼럼을 비교하는 조건을 부여해야 할 경우 AND 연산자를 사용하여 조건을 부여하면 된다.
+
+모든 칼럼의 AND 조건을 만족해야 해당 값을 반환한다.
+
+#### OR 연산자를 사용하여 여러개의 칼럼 조건 부여
+
+```sql
+SELECT ename
+     , job
+     , deptno
+     , sal
+     , CASE WHEN job = 'ANALYST'  OR deptno = 20 OR sal >= 3000 THEN 'CASE 1'
+            WHEN job = 'MANAGER'  OR deptno = 10 OR sal >= 2000 THEN 'CASE 2'
+            WHEN job = 'SALESMAN' OR deptno = 30 OR sal >= 1500 THEN 'CASE 3'
+       END AS case_result
+  FROM emp
+ WHERE job IN ('ANALYST', 'MANAGER', 'SALESMAN')
+```
 
 
+![[CASE WHEN10.png]]
 
 
+여러개의 칼럼을 OR 연산자로 조건을 부여할 수 있으며, OR 조건 중 하나만 만족해도 해당 값을 반환하고 WHEN~THEN 조건 탐색을 종료한다.
 
 
 
@@ -102,3 +138,5 @@ CASE 표현식은 C, JAVA의 Swith문과 비슷한 방식으로 사용이 가능
 
 ---
 출처 - https://gent.tistory.com/311
+
+https://gent.tistory.com/596

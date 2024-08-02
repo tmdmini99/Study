@@ -6,7 +6,7 @@ DECODE 함수는 프로그래밍에서의  if else 와 비슷한 기능을 �
 
 
 
-![[Pasted image 20240802095913.png]]
+![[DECODE1.png]]
 
 
 ```sql
@@ -27,23 +27,23 @@ FROM temp
 
 
 
-![[Pasted image 20240802100045.png]]
+![[DECODE2.png]]
 
 **▲** ELSE 부분은 생략이 가능하다. 해당 조건이 없으면 NULL
 
 
-![[Pasted image 20240802100104.png]]
+![[DECODE3.png]]
 
 
 
 ### 활용 예제
 
-![[Pasted image 20240802100119.png]]
+![[DECODE4.png]]
 
-![[Pasted image 20240802100123.png]]
+![[DECODE5.png]]
 
 
-![[Pasted image 20240802100127.png]]
+![[DECODE6.png]]
 
  **▲** NVL2 함수처럼 NULL 값을 체크 할 수 있다
 
@@ -51,17 +51,17 @@ FROM temp
 
 
 
-![[Pasted image 20240802100209.png]]
+![[DECODE7.png]]
 
 ▲ 조건이 많을 경우 줄바꿈을 하여 쿼리를 작성할 것을 권장한다
 
 
-![[Pasted image 20240802100221.png]]
+![[DECODE8.png]]
 
 ▲ DECODE 함수 내부에 또 다른 DECODE 함수를 사용할 수 있다
 
 
-![[Pasted image 20240802100229.png]]
+![[DECODE9.png]]
 
 
 ▲ 월별, 일별 통계를 산출하거나, 행을 열로 바꿀때 유용하다
