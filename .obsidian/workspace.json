@@ -19,6 +19,26 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "72e17a6743a3d26a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/GROUP BY/GROUP BY6.jpg"
+              }
+            }
+          },
+          {
+            "id": "95587c110d6556da",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240802144529.png"
+              }
+            }
           }
         ]
       }
@@ -173,28 +193,34 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "be73a5f2107115b6",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
-    "Images/Pasted image 20240802145201.png",
-    "Images/Pasted image 20240802145152.png",
-    "Images/Pasted image 20240802144553.png",
-    "Images/Pasted image 20240802144541.png",
+    "Images/GROUP BY/GROUP BY6.jpg",
+    "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Images/Pasted image 20240802144529.png",
+    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
+    "Images/RATIO_TO_REPORT/RATIO_TO_REPORT4.png",
+    "Images/RATIO_TO_REPORT/RATIO_TO_REPORT3.png",
+    "Images/RATIO_TO_REPORT/RATIO_TO_REPORT2.png",
+    "Images/RATIO_TO_REPORT/RATIO_TO_REPORT1.png",
+    "Images/RATIO_TO_REPORT/RATIO_TO_REPORT5.png",
+    "Images/RATIO_TO_REPORT",
+    "Images/RATIO_TO_REPORT5.png",
+    "Images/RATIO_TO_REPORT4.png",
+    "Images/RATIO_TO_REPORT3.png",
+    "Images/RATIO_TO_REPORT2.png",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
+    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
+    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT/무제 파일.md",
+    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
-    "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/WITH AS.md",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "Images/PIVTIOT/PIVIOT19.png",
-    "Images/PIVIOT19.png",
     "Spaces/Home/Git/GitHub.md",
-    "Images/GIT/GitHub4.png",
-    "Images/GIT/GitHub3.png",
-    "Images/GIT/GitHub2.png",
     "Images/GIT",
     "Spaces/Home/Git/Git.md",
     "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
@@ -205,8 +231,6 @@
     "Images/CSRF",
     "Images/GROUP BY",
     "Images/MAVEN 1",
-    "Images/IntelliJ JVM",
-    "Images/GRADLE",
     "Spaces/Home/DB/DB 개념/CASE WHEN.md",
     "Spaces/Home/DB/DB 개념/DECODE.md",
     "Spaces/Home/DB/DB 개념/Partition.md",
@@ -215,12 +239,8 @@
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
     "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
     "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
-    "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "daily note/2024/6/2024-06-14.md",
     "daily note/2024/8/2024-08-01.md",
-    "daily note/2024/7/2024-07-05.md",
-    "daily note/2024/7/2024-07-31.md",
-    "daily note/2024/7/2024-07-08.md",
     "무제 파일.canvas"
   ]
 }
