@@ -21,96 +21,17 @@
             }
           },
           {
-            "id": "e27a8b138aa83bea",
+            "id": "65e702d91ab97325",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/CASE WHEN10.png"
-              }
-            }
-          },
-          {
-            "id": "f814a0b98426cf34",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN9.png"
-              }
-            }
-          },
-          {
-            "id": "c2446d94f08e3ec7",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN8.png"
-              }
-            }
-          },
-          {
-            "id": "da19070befcb4558",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN7.png"
-              }
-            }
-          },
-          {
-            "id": "91488d7c8c7aebf6",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN6.png"
-              }
-            }
-          },
-          {
-            "id": "2ad95df667fb5b7a",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN5.png"
-              }
-            }
-          },
-          {
-            "id": "242d1c8efecbda62",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN4.png"
-              }
-            }
-          },
-          {
-            "id": "3e62cd38085f4f7e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN3.png"
-              }
-            }
-          },
-          {
-            "id": "f874d9c63c530903",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/CASE WHEN2.png"
+                "file": "Images/WITH AS1.png"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/WITH AS.md",
+                "file": "Images/WITH AS1.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -212,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/WITH AS.md"
+                "file": "Images/WITH AS1.png"
               }
             }
           },
@@ -222,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/WITH AS.md",
+                "file": "Images/WITH AS1.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -263,20 +184,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "87f0ee40f69fe633",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DB 개념/CASE WHEN.md",
+    "Images/DECODE/CASE WHEN9.png",
+    "Images/DECODE/CASE WHEN8.png",
+    "Images/DECODE/CASE WHEN7.png",
+    "Images/DECODE/CASE WHEN6.png",
+    "Images/DECODE/CASE WHEN5.png",
+    "Images/DECODE/CASE WHEN4.png",
+    "Images/DECODE/CASE WHEN3.png",
+    "Images/DECODE/CASE WHEN2.png",
+    "Images/DECODE/CASE WHEN1.png",
+    "Images/DECODE/CASE WHEN10.png",
+    "Images/PARTITION",
+    "Images/CASE WHEN",
+    "Images/DECODE",
+    "Images/WITH AS",
     "Spaces/Home/DB/DB 개념/WITH AS.md",
-    "Images/CASE WHEN10.png",
-    "Images/CASE WHEN9.png",
-    "Images/CASE WHEN8.png",
-    "Images/CASE WHEN7.png",
-    "Images/CASE WHEN6.png",
-    "Images/CASE WHEN5.png",
-    "Images/CASE WHEN4.png",
-    "Images/CASE WHEN3.png",
-    "Images/CASE WHEN2.png",
-    "Images/DECODE2.png",
+    "Images/WITH AS1.png",
+    "Spaces/Home/DB/DB 개념/CASE WHEN.md",
     "Spaces/Home/DB/DB 개념/DECODE.md",
     "Spaces/Home/DB/DB 개념/Partition.md",
     "Spaces/Home/DB/DB 개념/파티셔닝.md",
@@ -305,12 +231,7 @@
     "daily note/2024/6/2024-06-24.md",
     "daily note/2024/6/2024-06-21.md",
     "daily note/2024/6/2024-06-20.md",
-    "daily note/2024/6/2024-06-19.md",
     "daily note/2024/7",
-    "daily note/2024/6",
-    "PDF/리눅스 명령어.pdf",
-    "Spaces/정보처리기사",
-    "무제 파일.canvas",
-    "daily note/2023/12"
+    "무제 파일.canvas"
   ]
 }
