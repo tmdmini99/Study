@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md",
+                "file": "Spaces/Home/JSP/기본 라이브러리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md",
+                "file": "Spaces/Home/JSP/기본 라이브러리.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md"
+                "file": "Spaces/Home/JSP/기본 라이브러리.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md",
+                "file": "Spaces/Home/JSP/기본 라이브러리.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,6 +185,11 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
+    "Spaces/Home/JSP/JSTL.md",
+    "Spaces/Home/JSP/기본 라이브러리.md",
+    "Spaces/Home/JSP/Freemarker.md",
+    "Spaces/Home/JSP/EL.md",
+    "Spaces/Home/DB/DB 개념/Partition.md",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
     "Spaces/Home/DB/DB 개념/WITH AS.md",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT.md",
@@ -222,14 +227,10 @@
     "Images/MAVEN 1",
     "Spaces/Home/DB/DB 개념/CASE WHEN.md",
     "Spaces/Home/DB/DB 개념/DECODE.md",
-    "Spaces/Home/DB/DB 개념/Partition.md",
     "Spaces/Home/DB/DB 개념/파티셔닝.md",
     "daily note/2024/8/2024-08-02.md",
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
     "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
-    "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
-    "daily note/2024/6/2024-06-14.md",
-    "daily note/2024/8/2024-08-01.md",
     "무제 파일.canvas"
   ]
 }
