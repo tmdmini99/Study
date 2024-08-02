@@ -13,180 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-02.md",
+                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "6b8b7c00dece47e9",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT17.png"
-              }
-            }
-          },
-          {
-            "id": "b4a9df4a141e0045",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT16.png"
-              }
-            }
-          },
-          {
-            "id": "7d082600d7bed0e2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT15.png"
-              }
-            }
-          },
-          {
-            "id": "731794df42a38668",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT13.png"
-              }
-            }
-          },
-          {
-            "id": "b73b71200197c253",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT12.png"
-              }
-            }
-          },
-          {
-            "id": "67a1b6d60c5b1b31",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT11.png"
-              }
-            }
-          },
-          {
-            "id": "611a60a58a071683",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT9.png"
-              }
-            }
-          },
-          {
-            "id": "b5f30c57c1ca4e18",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT8.png"
-              }
-            }
-          },
-          {
-            "id": "39b981e5069a4fd0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT8.png"
-              }
-            }
-          },
-          {
-            "id": "ad21b3d13371dbc5",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT7.png"
-              }
-            }
-          },
-          {
-            "id": "b8f3825489608ee4",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT6.png"
-              }
-            }
-          },
-          {
-            "id": "2ba6d96be4b0b4b0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT5.png"
-              }
-            }
-          },
-          {
-            "id": "ec0af18940057213",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT4.png"
-              }
-            }
-          },
-          {
-            "id": "4931fa2e4b6113f2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT3.png"
-              }
-            }
-          },
-          {
-            "id": "b03c5749306b7f05",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT2.png"
-              }
-            }
-          },
-          {
-            "id": "42c1f0a17f0d5ca2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PIVOT1.png"
-              }
-            }
-          },
-          {
-            "id": "63b47d009c62d22b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/PARTITION1.png"
               }
             }
           }
@@ -244,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -265,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-02.md",
+                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -293,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-02.md"
+                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md"
               }
             }
           },
@@ -303,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-02.md",
+                "file": "Spaces/Home/DB/DB 개념/CASE WHEN.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -346,20 +175,22 @@
   },
   "active": "87f0ee40f69fe633",
   "lastOpenFiles": [
-    "Images/PIVOT18.png",
+    "Images/Pasted image 20240802100537.png",
+    "Images/Pasted image 20240802100530.png",
+    "Images/Pasted image 20240802100524.png",
+    "Images/Pasted image 20240802100517.png",
+    "Images/Pasted image 20240802100511.png",
+    "Images/Pasted image 20240802100504.png",
+    "Images/Pasted image 20240802100455.png",
+    "Images/Pasted image 20240802100346.png",
+    "Spaces/Home/DB/DB 개념/DECODE.md",
+    "Spaces/Home/DB/DB 개념/CASE WHEN.md",
+    "Images/Pasted image 20240802100229.png",
+    "Images/Pasted image 20240802100221.png",
+    "Images/Pasted image 20240802100209.png",
     "daily note/2024/8/2024-08-02.md",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "Images/PIVOT17.png",
-    "Images/PIVOT16.png",
-    "Images/PIVOT15.png",
-    "Images/PIVOT14.png",
-    "Images/PIVOT13.png",
-    "Images/PIVOT12.png",
-    "Images/PIVOT11.png",
-    "Images/PIVOT10.png",
-    "Images/PIVOT9.png",
     "Spaces/Home/DB/DB 개념/Partition.md",
-    "Spaces/Home/DB/DB 개념/DECODE.md",
     "Spaces/Home/DB/DB 개념/서브 쿼리.md",
     "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
     "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
@@ -385,7 +216,6 @@
     "daily note/2024/6/2024-06-21.md",
     "daily note/2024/6/2024-06-20.md",
     "daily note/2024/6/2024-06-19.md",
-    "daily note/2024/6/2024-06-18.md",
     "daily note/2024/7",
     "daily note/2024/6",
     "PDF/리눅스 명령어.pdf",
