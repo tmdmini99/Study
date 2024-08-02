@@ -227,5 +227,42 @@ FOR RIDE_MM IN ( 'NOWTOTAL' AS NOWTOTAL, 'BEFTOTAL' AS BEFTOTAL,
 
 TOT_PAY를 더한다 
 
+
+
+### LENGTH
+네, SQL에서 튜플의 길이로 `ORDER BY`를 할 수 있습니다. 하지만 "튜플 길이"가 어떤 것을 의미하는지에 따라 구현 방법이 달라질 수 있습니다. 보통 "튜플 길이"라고 하면 여러 가지 의미를 가질 수 있습니다:
+
+1. **문자열의 길이**: 만약 특정 컬럼이 문자열 타입이고, 그 문자열의 길이에 따라 정렬하고 싶다면 `LENGTH()` 함수를 사용할 수 있습니다.
+
+```sql
+SELECT *
+FROM your_table
+ORDER BY LENGTH(your_column);
+
+```
+
+2. **튜플의 총 컬럼 수**: 특정 테이블의 각 레코드가 여러 개의 컬럼을 가진다면, "튜플 길이"를 그 레코드의 모든 컬럼의 길이의 합으로 정의할 수도 있습니다. 이 경우 각 컬럼의 길이를 더한 값을 기준으로 정렬할 수 있습니다.
+
+```sql
+SELECT *
+FROM your_table
+ORDER BY (LENGTH(column1) + LENGTH(column2) + LENGTH(column3));
+
+```
+
+3. **NULL 값이 아닌 컬럼의 개수**: 어떤 레코드에서 NULL이 아닌 컬럼의 수를 "길이"로 정의하고, 이를 기준으로 정렬하고 싶다면, 각 컬럼에 대해 NULL인지 아닌지를 체크한 후 그 합을 구해 정렬할 수 있습니다.
+
+```sql
+SELECT *,
+    (CASE WHEN column1 IS NOT NULL THEN 1 ELSE 0 END +
+     CASE WHEN column2 IS NOT NULL THEN 1 ELSE 0 END +
+     CASE WHEN column3 IS NOT NULL THEN 1 ELSE 0 END) AS non_null_count
+FROM your_table
+ORDER BY non_null_count;
+```
+
+
+위와 같이 "튜플 길이"의 의미에 따라 정렬하는 방법은 다양합니다. 어느 방법이 적절할지는 실제로 의도하는 "길이"의 정의에 따라 다릅니다.
+
 ---
 참조 - https://blog.naver.com/wiseyoun07/221146431131
