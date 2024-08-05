@@ -730,6 +730,146 @@ where t2.col2 = '일';
 
 
 
+QL에서 `JOIN`을 사용할 때 `LEFT JOIN` (LJOIN)과 `WHERE` 절에서의 `JOIN` 사용은 결과와 동작 방식에서 차이가 있습니다. 두 방식 모두 데이터베이스 테이블을 결합하는 데 사용되지만, 이들이 처리하는 방식에는 차이가 있습니다.
+
+### 1. `LEFT JOIN` (LJOIN)
+
+`LEFT JOIN` (또는 `LEFT OUTER JOIN`)은 두 테이블을 결합할 때 왼쪽 테이블의 모든 행을 포함하고, 오른쪽 테이블에서 일치하는 행이 없으면 `NULL`로 채웁니다.
+
+**문법:**
+```sql
+SELECT columns
+FROM table1
+LEFT JOIN table2
+ON table1.column = table2.column;
+
+```
+**특징:**
+
+- **모든 왼쪽 테이블의 행을 포함**: 오른쪽 테이블과 일치하지 않는 경우에도 왼쪽 테이블의 모든 행이 결과에 포함됩니다.
+- **NULL 값**: 오른쪽 테이블에서 일치하는 데이터가 없으면 해당 컬럼의 값이 `NULL`로 표시됩니다.
+
+**예시:**
+
+```sql
+SELECT employees.name, departments.department_name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id = departments.department_id;
+
+```
+이 쿼리는 모든 직원의 이름과 부서 이름을 가져옵니다. 만약 직원이 부서에 속하지 않는다면, 해당 직원의 부서 이름은 `NULL`로 표시됩니다.
+
+### 2. `WHERE` 절에서의 `JOIN`
+
+`WHERE` 절에서의 `JOIN`은 사실상 **내부 조인**을 수행하는 것으로, 두 테이블 간의 교차결합 후 조건에 맞는 행만 필터링합니다. 이 방식은 `INNER JOIN`과 유사합니다.
+
+**문법:**
+
+```sql
+SELECT columns
+FROM table1, table2
+WHERE table1.column = table2.column;
+
+```
+**특징:**
+
+- **교차 결합**: 두 테이블의 모든 가능한 조합을 고려하여 조건에 맞는 행만 필터링합니다.
+- **일치하는 행만 포함**: `WHERE` 절의 조건에 맞는 행만 결과에 포함됩니다.
+
+**예시:**
+
+```sql
+SELECT employees.name, departments.department_name
+FROM employees, departments
+WHERE employees.department_id = departments.department_id;
+
+```
+이 쿼리는 모든 직원과 부서의 이름을 가져오지만, 부서가 지정되지 않은 직원은 결과에 포함되지 않습니다.
+
+### 차이점 요약
+
+- **포함된 데이터**:
+    
+    - `LEFT JOIN`은 왼쪽 테이블의 모든 행을 포함하며, 오른쪽 테이블의 일치하지 않는 행은 `NULL`로 표시됩니다.
+    - `WHERE` 절에서의 `JOIN`은 두 테이블 간의 조건을 만족하는 행만 반환합니다.
+- **데이터 누락**:
+    
+    - `LEFT JOIN`은 오른쪽 테이블의 일치하는 데이터가 없는 경우에도 왼쪽 테이블의 데이터를 유지합니다.
+    - `WHERE` 절의 `JOIN`은 일치하는 데이터가 없는 경우 해당 행을 결과에서 제외합니다.
+- **용도**:
+    
+    - `LEFT JOIN`은 데이터의 존재 여부를 확인하고, 모든 왼쪽 테이블의 데이터를 포함해야 할 때 사용됩니다.
+    - `WHERE` 절의 `JOIN`은 단순히 두 테이블 간의 일치하는 데이터를 필터링할 때 사용됩니다.
+
+이러한 차이점을 이해하면, 필요에 따라 적절한 조인 방식을 선택할 수 있습니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+이 쿼리는 모든 직원의 이름과 부서 이름을 가져옵니다. 만약 직원이 부서에 속하지 않는다면, 해당 직원의 부서 이름은 `NULL`로 표시됩니다.
+
+### `JOIN`과 `(+)`의 비교
+
+#### 1. `LEFT JOIN`
+
+
+```sql
+SELECT employees.name, departments.department_name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id = departments.department_id;
+
+```
+
+
+- **SQL 표준**: `LEFT JOIN`은 SQL 표준의 일부로서 다양한 데이터베이스 시스템에서 사용됩니다.
+- **명확성**: 조인 조건을 `ON` 절에 명확히 작성하여 가독성이 좋습니다.
+
+
+#### 2. `(+)` 연산자
+
+```sql
+SELECT employees.name, departments.department_name
+FROM employees, departments
+WHERE employees.department_id = departments.department_id(+);
+
+```
+
+
+- **Oracle 전용**: `(+)` 연산자는 Oracle SQL 전용이며, 다른 데이터베이스 시스템에서는 지원하지 않습니다.
+- **구식**: SQL 표준에 비해 구식으로 간주되며, `LEFT JOIN`의 사용이 권장됩니다.
+
+
+
+
+#### 차이점
+
+- **호환성**: `LEFT JOIN`은 SQL 표준이므로 여러 데이터베이스 시스템에서 호환됩니다. `(+)` 연산자는 Oracle SQL 전용입니다.
+- **가독성**: `LEFT JOIN` 구문은 가독성이 좋고, 다른 SQL 표준 조인 구문과 일관성을 유지합니다.
+- **권장 사용**: SQL 표준을 따르는 `LEFT JOIN` 사용을 권장합니다. 이는 다른 데이터베이스 시스템에서도 호환되며, 코드 유지보수 및 협업에 유리합니다.
+
+따라서, Oracle에서 `(+)`를 사용할 수 있지만, 다른 데이터베이스 시스템과의 호환성 및 표준화된 코드를 유지하기 위해 `LEFT JOIN`을 사용하는 것이 좋습니다.
+
+
+
+
+
+
+
+
+
+
 
 
 
