@@ -57,8 +57,6 @@ fun max(a: Int, b: Int) = if (a > b) a else b
 
 자바에서는 변수를 선언할 때 타입이 맨 앞에 온다. 코틀린에서는 타입 지정을 생략하는 경우가 흔하다.
 
-Copy
-
 ```
 val answer = 42 // 타입 생략
 val answer: Int = 42 // 타입 지정
@@ -66,18 +64,12 @@ val answer: Int = 42 // 타입 지정
 
 단, 초기화 식을 사용하지 않고 변수를 선언하려면 변수 타입을 반드시 명시해야한다.
 
-Copy
-
 ```
 val answer: Int
 answer = 42
 ```
 
-#### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-3)
-
-변경 가능한 변수와 변경 불가능한 변수
+#### 변경 가능한 변수와 변경 불가능한 변수
 
 - val(값을 뜻하는 value에서 유래) - 변경 불가능한(immutable) 참조를 저장하는 변수다. 자바로 말하자면 final 변수에 해당한다.
     
@@ -86,7 +78,6 @@ answer = 42
 
 기본적으로는 모든 변수를 val 키워드를 사용해 불변 변수로 선언하고, 나중에 꼭 필요할 때에만 var로 변경하라. val 변수는 블록을 실행할 때 정확히 한 번만 초기화돼야 한다. 하지만 조건에 따라 val 값을 다른 여러 값으로 초기화할 수도 있다.
 
-Copy
 
 ```
 val message: String
@@ -100,8 +91,6 @@ if (canPerformOperation()) {
 
 val 참조 자체는 불변일지라도 그 참조가 가리키는 객체의 내부 값은 변경될 수 있다.
 
-Copy
-
 ```
 val languages = arrayListOf("Java")
 languages.add("Kotlin")
@@ -109,22 +98,55 @@ languages.add("Kotlin")
 
 var 키워드를 사용하면 변수의 값을 변경할 수 있지만 변수의 타입은 고정돼 바뀌지 않는다.
 
-Copy
-
 ```
 var answer = 42
 answer = "no answer" // 컴파일 오류 발생
 ```
 
-### 
+### 변수 초기화 미루기
 
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-4)
+#### 1) lateinit
 
-더 쉽게 문자열 형식 지정: 문자열 템플릿
+`lateinit` 키워드를 사용하여 변수를 선언하면 변수의 초기화를 미룰 수 있습니다.
+
+단, 2가지 조건이 있습니다.
+
+- var 키워드로 선언한 변수에만 사용 가능
+- Java에서 Primitive 타입으로 분류되는 Int, Long, Short, Double, Float, Boolean, Byte에는 사용할 수 없음.
+
+```kotlin
+lateinit var data1: Int		// 오류!
+lateinit val data2: String	// 오류!
+lateinit var data3: String 	// 성공!
+```
+
+#### 2) lazy 키워드
+
+lazy 키워드는 변수 선언문 뒤에 `by lazy {}`형식으로 선언하며, 변수가 최초로 이용되는 순간 중괄호로 묶은 부분이 자동으로 실행되어 그 결과 값이 변수의 초기 값으로 할당됩니다.
+
+```kotlin
+val data4: Int by lazy {
+    println("in lazy .....")
+    10
+}
+
+fun main(){
+    println("in main .....")
+    println(data4 + 10)
+    println(data4 + 10)
+}
+
+/* 결과
+in main .....
+in lazy .....
+20
+20
+*/
+```
+
+### 더 쉽게 문자열 형식 지정: 문자열 템플릿
 
 문자열 리터럴의 필요한 곳에 변수를 넣되 변수 앞에 $를 추가해야 한다.
-
-Copy
 
 ```
 fun main(args: Array<String>) {
@@ -135,15 +157,9 @@ fun main(args: Array<String>) {
 
 $ 문자를 문자열에 넣고 싶으면 println("\$x")와 같이 \를 사용해 $를 이스케이프시켜야 한다.
 
-## 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-5)
-
-클래스와 프로퍼티
+## 클래스와 프로퍼티
 
 이전에 만든 자바 Person 클래스를 다시 살펴보자.
-
-Copy
 
 ```
 public class Person {
@@ -160,20 +176,13 @@ public class Person {
 ```
 
 자바-코틀린 변환기를 써서 방금 본 Person 클래스를 코틀린으로 변환해보자.
-
-Copy
-
 ```
 class Person(val name: String)
 ```
 
 자바로 코틀린으로 변환한 결과, public 가시성 변경자가 사라졌음을 확인하였다. 코틀린의 기본 가시성은 public이므로 이런 경우 변경자를 생략해도 된다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-6)
-
-프로퍼티
+### 프로퍼티
 
 자바에서는 필드와 접근자(getter, setter)를 한데 묶어 프로퍼티라고 부르며, 프로퍼티라는 개념을 활용하는 프레임워크가 많다. 코틀린은 프로퍼티를 언어 기본 기능으로 제공하며, 코틀린 프로퍼티는 자바의 필드와 접근자 메소드를 완전히 대신한다.
 
@@ -188,15 +197,9 @@ class Person(
 
 **프로퍼티 팁** 자바에서는 getName과 setName이라는 접근자를 제공하는 자바 클래스를 코틀린에서 사용할 때는 name이라는 프로퍼티를 사용할 수 있다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-7)
-
-코틀린 소스코드 구조: 디렉터리와 패키지
+### 코틀린 소스코드 구조: 디렉터리와 패키지
 
 코틀린에서는 클래스 임포트와 함수 임포트에 차이가 없으며, 모든 선언을 import 키워드로 가져올 수 있다. 최상위 함수는 그 이름을 써서 임포트할 수 있다.
-
-Copy
 
 ```
 package geometry.example
@@ -208,23 +211,13 @@ fun main(args: Array<String>) {
 }
 ```
 
-## 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#enum-when)
-
-선택 표현과 처리: enum과 when
+## 선택 표현과 처리: enum과 when
 
 when은 자바의 switch를대치하되 훨씬 더 강력하며, 앞으로 더 자주 사용할 프로그래밍 요소라고 생각할 수 있다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#enum)
-
-enum 클래스 정의
+### enum 클래스 정의
 
 자바와 마찬가지로 enum은 단순히 값만 열거하는 존재가 아니다. enum 클래스 안에도 프러퍼티나 메소드를 정의할 수 있다.
-
-Copy
 
 ```
 enum class Color(
@@ -240,15 +233,9 @@ enum class Color(
 
 enum 클래스 안에 메소드를 정의하는 경우 반드시 enum 상수 목록과 메소드 정의 사이에 세미콜론을 넣어야 한다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#when-enum)
-
-when으로 enum 클래스 다루기
+### when으로 enum 클래스 다루기
 
 자바의 switch와 달리 when 절에서는 각 분기의 끝에 break를 넣지 않아도 된다.
-
-Copy
 
 ```
 fun getMnemonic(color: Color) =
@@ -263,15 +250,9 @@ fun getMnemonic(color: Color) =
 }
 ```
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#when)
-
-when과 임의의 객체를 함께 사용
+### when과 임의의 객체를 함께 사용
 
 코틀린에서 when은 자바의 switch보다 훨씬 더 강력하다. 분기 조건에 상수만을 사용할 수 있는 자바 switch와 달리 코틀린 when의 분기 조건은 임의의 객체를 허용한다.
-
-Copy
 
 ```
 fun mix(c1: Color, c2: Color) =
@@ -283,15 +264,10 @@ fun mix(c1: Color, c2: Color) =
 		}
 ```
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#when-1)
-
-인자 없는 when 사용
+### 인자 없는 when 사용
 
 이전의 함수는 비교대상을 Set 인스턴스를 생성한다. 보통은 이런 비효율성이 크게 문제가 되지 않는다. 하지만 이 함수가 아주 자주 호출된다면 불필요한 가비지 객체가 늘어나는 것을 방지하기 위해 함수를 고쳐 쓰는 편이 낫다.
 
-Copy
 
 ```
 fun mixOptimized(c1: Color, c2: Color) =
@@ -314,15 +290,9 @@ fun mixOptimized(c1: Color, c2: Color) =
 
 추가 객체를 만들지 않는다는 장점이 있지만 가독성은 더 떨어진다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-8)
-
-스마트 캐스트: 타입 검사와 타입 캐스트를 조합
+### 스마트 캐스트: 타입 검사와 타입 캐스트를 조합
 
 코틀린에서는 is를 사용해 변수 타입을 검사한다. is 검사는 자바의 instanceof와 비슷하다. 하지만 자바에서 어떤 변수의 타입을 instanceof로 확인한 다음에 그 타입에 속한 멤버에 접근하기 위해서는 명시적으로 변수 타입을 캐스팅해야 한다. 코틀린에서는 프로그래머 대신 컴파일러가 캐스팅을 해준다. 이를 스마트캐스트라고 부른다.
-
-Copy
 
 ```
 fun eval(e: Expr): Int {
@@ -337,15 +307,9 @@ fun eval(e: Expr): Int {
 }
 ```
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#if-when)
-
-리팩토링: if를 when으로 변경
+### 리팩토링: if를 when으로 변경
 
 코틀린에서는 if가 값을 만들어내기 때문에 자바와 달리 3항 연산자가 따로 없다.
-
-Copy
 
 ```
 fun eval(e: Expr): Int =
@@ -360,8 +324,6 @@ fun eval(e: Expr): Int =
 
 when 식을 앞에서 살펴본 값 동등성 검사가 아닌 다른 기능에도 쓸 수 있다.
 
-Copy
-
 ```
 fun eval(e: Expr): Int =
     when (e) {
@@ -374,23 +336,13 @@ fun eval(e: Expr): Int =
     }
 ```
 
-## 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#while-for)
-
-대상을 이터레이션: while과 for 루프
+## 대상을 이터레이션: while과 for 루프
 
 코틀린의 while루프는 자바와 동일하다. for는 자바의 for-each 루프에 해당하는 형태만 존재한다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-9)
-
-수에 대한 이터레이션: 범위와 수열
+### 수에 대한 이터레이션: 범위와 수열
 
 100부터 거꾸로 세되 짝수만으로 게임을 진행되도록 만들어보자.
-
-Copy
 
 ```
 fun main(args: Array<String>) {
@@ -402,15 +354,9 @@ fun main(args: Array<String>) {
 
 여기서는 증가 값 step을 갖는 수열에 대해 이터레이션한다. 증가 값을 사용하면 수를 건너 띌 수 있다. 증가 값을 음수로 만들면 정방향 수열이 아닌 역방향 수열을 만들 수 있다. 이 예제에서 100 downTo 1은 역방향 수열을 만든다.
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#in)
-
-in으로 컬렉션이나 범위의 원소 검사
+### in으로 컬렉션이나 범위의 원소 검사
 
 in 연산자를 사용해 어떤 값이 범위에 속하는지 검사할 수 있다. 반대로 !in을 사용하면 어떤 값이 범위에 속하지 않는지 검사할 수 있다.
-
-Copy
 
 ```
 fun recognize(c: Char) = when (c) {
@@ -420,15 +366,9 @@ fun recognize(c: Char) = when (c) {
 }
 ```
 
-## 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#undefined-10)
-
-코틀린의 예외 처리
+## 코틀린의 예외 처리
 
 코틀린의 예외처리는 자바나 다른 언어의 예외 처리와 비슷하다. 함수는 정상적으로 종료할 수 있지만 오류가 발생하면 예외를 던질 수 있다.
-
-Copy
 
 ```
 // 조건이 참이면 number의 값이 초기화되고 거짓이면 초기화되지 않고 throw를 호출한다. 
@@ -439,25 +379,14 @@ val number = try {
 }
 ```
 
-### 
-
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#try-catch-finally)
-
-try, catch, finally
+### try, catch, finally
 
 자바 코드와 가장 큰 차이는 throws절이 코드에 없다는 점이다. 자바에서는 함수를 작성할 떄 함수 선언 뒤에 throws IOException을 붙여야 한다. (IOExption이 체크 예외이기 때문이다.)
 
 자바 7의 자원을 사용하는 try-with-resoucr는 어떨까? 코틀린은 그런 경우를 위한 특별한 문법을 제공하지 않는다. 하지만 라이브러리 함수로 같은 기능을 구현한다. (해당 내용은 8장에서 살펴보기로 한다.)
 
-### 
+### try를 식으로 사용
 
-[](https://incheol-jung.gitbook.io/docs/study/kotlin-in-action/untitled#try)
-
-try를 식으로 사용
-
-이전의 예제를 다시 살펴보자
-
-Copy
 
 ```
 // 조건이 참이면 number의 값이 초기화되고 거짓이면 초기화되지 않고 throw를 호출한다. 
