@@ -1,4 +1,4 @@
-## KOTILIN
+## KOTLIN
 
 코틀린은 무엇인가?
 
@@ -10,7 +10,7 @@
 
 
 
-```KOTILIN
+```kotlin
 // 데이터 클래스
 data class Person(
     val name: String,
@@ -56,7 +56,7 @@ Alice의 나이를 지정하지는 않았지만 엘비스 연산자가 null을 0
 
 한편 자바와 달리 코틀린에서는 컴파일러가 문맥으로부터 변수 타입을 자동으로 유추할 수 있기 때문에 프로그래머는 타입 선언을 생략해도 된다. (이런 기능을 타입 추론이라고 부른다)
 
-```
+```kotlin
 var x = 1 // x를 정수(Int) 값으로 초기화한다. 
 ```
 
@@ -178,7 +178,7 @@ var x = 1 // x를 정수(Int) 값으로 초기화한다.
 가장 중요한 내용으로 코틀린은 프로그래밍의 NullPointerException을 없애기 위해노력한다. 코틀린의 타입 시스템은 null이 될 수 없는 값을 추적하며, 실행 시점에 NullPointerException이 발생할 수있는 연상을 사용하는 코드를 금지한다.
 
 
-```
+```kotlin
 val s: String? = null // 널이 될 수 있음
 var s2: String = "" // 널이 될 수 없음
 ```
@@ -186,7 +186,7 @@ var s2: String = "" // 널이 될 수 없음
 코틀린이 방지해주는 다른 예외로는 ClassCastException이 있다. 자바에서는 타입 검사와 그 직후 이뤄지는 타입 캐스트에서 같은 타입 이름을 반복사용하는 것이 귀찮아서 타입 검사를 생략하는 개발자가 많다. 반면 코틀린에서는 타입 검사와 캐스트가 한 연산자에 의해 이뤄진다.
 
 
-```
+```kotlin
 if (value is String) // 타입을 검사한다. 
 		println(value.toUpperCase()) // 해당 타입의 메소드를 사용한다. 
 ```

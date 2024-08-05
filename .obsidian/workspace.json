@@ -13,10 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILN 기초.md",
+                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "2968020dec3a529e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/KOTILIN 함수정의1.png"
               }
             }
           },
@@ -104,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILN 기초.md",
+                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILN 기초.md"
+                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md"
               }
             }
           },
@@ -142,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILN 기초.md",
+                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,8 +195,11 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/KOTILIN.md",
-    "Spaces/Home/KOTLIN/KOTILN 기초.md",
+    "Spaces/Home/KOTLIN/KOTLIN 함수 정의.md",
+    "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
+    "Spaces/Home/KOTLIN/KOTLIN 기초.md",
+    "Spaces/Home/KOTLIN/KOTLIN.md",
+    "Images/KOTILIN 함수정의1.png",
     "Images/KOTILIN1.jpg",
     "Spaces/Home/DB/MySql.md",
     "Images/Pasted image 20240805110507.png",
@@ -214,7 +227,6 @@
     "Images/GROUP BY/GROUP BY11.png",
     "Images/GROUP BY11.png",
     "Images/GROUP BY10.png",
-    "Images/GROUP BY9.png",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
@@ -222,9 +234,7 @@
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
-    "Spaces/Home/Git/GitHub.md",
     "Images/GIT",
-    "Spaces/Home/Git/Git.md",
     "Images/RECAPTCH",
     "Images/SPRING CACHE",
     "Images/FREEMARKER",
