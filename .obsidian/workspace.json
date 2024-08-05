@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN.md",
+                "file": "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -244,7 +244,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN.md",
+                "file": "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -272,7 +272,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN.md"
+                "file": "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md"
               }
             }
           },
@@ -282,7 +282,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN.md",
+                "file": "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -325,10 +325,11 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "Images/KOTLIN2.jpg",
+    "Spaces/Home/KOTLIN/9. KOTLIN ANNOTATION.md",
+    "Spaces/Home/KOTLIN/8. KOTLIN GENERIC.md",
+    "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/KOTLIN.md",
-    "Spaces/Home/KOTLIN/10. KOTLIN ANNOTATION.md",
-    "Spaces/Home/KOTLIN/9. KOTLIN GENERIC.md",
+    "Images/KOTLIN2.jpg",
     "Images/KOTLIN GENERIC5.avif",
     "Images/KOTLIN GENERIC4.avif",
     "Images/KOTLIN GENERIC2.jpg",
