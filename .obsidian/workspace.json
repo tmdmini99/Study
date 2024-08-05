@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILIN.md",
+                "file": "Spaces/Home/DB/MySql.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILIN.md",
+                "file": "Spaces/Home/DB/MySql.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILIN.md"
+                "file": "Spaces/Home/DB/MySql.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTILIN.md",
+                "file": "Spaces/Home/DB/MySql.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,8 +185,12 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
-    "Spaces/Home/Java/POJO.md",
+    "Images/Pasted image 20240805110507.png",
+    "Spaces/Home/DB/Oracle.md",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/KOTLIN/KOTILIN.md",
+    "Spaces/Home/Java/POJO.md",
     "Spaces/Home/KOTLIN",
     "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/객체.md",
@@ -211,26 +215,22 @@
     "Images/GROUP BY8.png",
     "Images/GROUP BY7.png",
     "Images/RATIO_TO_REPORT",
-    "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT/무제 파일.md",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Spaces/Home/Java Script/JavaScript.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
-    "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/Git/GitHub.md",
     "Images/GIT",
     "Spaces/Home/Git/Git.md",
-    "Spaces/Home/Spring/Spring Batch/Spring Batch.md",
     "Images/RECAPTCH",
     "Images/SPRING CACHE",
     "Images/FREEMARKER",
     "Images/MAVEN",
     "Images/CSRF",
     "Images/GROUP BY",
-    "Spaces/Home/DB/DB 개념/CASE WHEN.md",
     "무제 파일.canvas"
   ]
 }

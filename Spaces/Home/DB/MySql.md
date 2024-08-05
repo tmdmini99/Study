@@ -547,6 +547,13 @@ SELECT SUM(amount*price) AS "총 금액"
 ![[MySql3.png]]
 
 
+
+
+![[Pasted image 20240805110507.png]]
+
+
+
+
 - INNER JOIN: 기준이 되는 테이블 (left table)과 join이 걸리는 테이블(right table) 양쪽 모두에 matching되는 row만 select가 됨.
     
 - LEFT JOIN: 기준이 되는 테이블 (left table)의 모든 row와 join이 걸리는 테이블(right table)중 left table과 matching되는 row만 select가 됨.
@@ -603,6 +610,119 @@ SELECT IFNULL(name, '값이없습니다')
 
 
 ```
+
+
+**OUTER JOIN 에서의 ON vs WHERE**
+
+1) OUTER JOIN test 를 위한 샘플 준비.
+```sql
+-- 샘플 테이블 생성
+
+create table table1 (
+
+  col1 INT,
+
+  col2 VARCHAR(10)
+
+);
+
+create table table2 (
+
+  col1 INT,
+
+  col2 VARCHAR(10)
+
+);
+
+commit;
+
+-- 샘플 데이터 입력
+
+insert into table1 (col1, col2) values (1, '하나');
+
+insert into table1 (col1, col2) values (2, '둘');
+
+insert into table1 (col1, col2) values (3, '셋');
+
+insert into table2 (col1, col2) values (1, '일');
+
+insert into table2 (col1, col2) values (2, '이');
+
+commit;
+```
+2) 데이터 확인
+
+table1 :
+
+|      |      |
+| ---- | ---- |
+| col1 | col2 |
+| 1    | 하나   |
+| 2    | 둘    |
+| 3    | 셋    |
+
+table2 :
+
+|      |      |     |
+| ---- | ---- | --- |
+| col1 | col2 |     |
+| 1    | 일    |     |
+| 2    | 이    |     |
+
+3) OUTER JOIN 에서의 ON
+```sql
+SELECT t1.col1, t1.col2, t2.col1, t2.col2
+
+FROM   table1 t1
+
+LEFT OUTER JOIN table2 t2
+
+ON t1.col1 = t2.col1
+
+AND t2.col2 = '일';
+```
+위 쿼리의 결과 :
+
+|         |         |         |         |
+| ------- | ------- | ------- | ------- |
+| t1.col1 | t1.col2 | t2.col1 | t2.col2 |
+| 1       | 하나      | 1       | 일       |
+| 2       | 둘       | null    | null    |
+| 3       | 셋       | null    | null    |
+|         |         |         |         |
+
+**>> **table1의 전체 row와**** 
+
+     ******table2에서 col2 칼럼 값이 '일'인 로우만 뽑은 row 들을 OUTER JOIN.******
+
+**>> on 조건은 join 을 하기 전에 필터링 되는 기준**
+
+4) OUTER JOIN 에서의 WHERE (위 쿼리의 ON 조건을 WHERE 에 그대로 추가)
+```sql
+select t1.col1, t1.col2, t2.col1, t2.col2
+
+from  table1 t1
+
+LEFT OUTER JOIN table2 t2
+
+ON t1.col1 = t2.col1
+
+where t2.col2 = '일';
+```
+위 쿼리의 결과
+
+|   |   |   |   |
+|---|---|---|---|
+|t1.col1|t1.col2|t2.col1|t2.col2|
+|1|하나|1|일|
+
+**>> table1의 전체 row와**
+
+     **table2 전체 row 를 OUTER JOIN 한 후,**
+
+     **col2 칼럼 값이 '일'인 로우만 뽑는다.**
+
+**>> WHERE 조건은 JOIN을 한 이후에 필터링하는 기준**
 
 
 
