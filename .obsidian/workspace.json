@@ -13,10 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
+                "file": "Spaces/Home/KOTLIN/4. KOTLIN 람다식.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "47a4e68c1c558d07",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/KOTLIN 클래스3.avif"
+              }
+            }
+          },
+          {
+            "id": "87e96f620d50e62b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/KOTLIN 클래스2.avif"
+              }
+            }
+          },
+          {
+            "id": "a81a0217ad2ef061",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/KOTLIN 클래스1.avif"
               }
             }
           },
@@ -114,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
+                "file": "Spaces/Home/KOTLIN/4. KOTLIN 람다식.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md"
+                "file": "Spaces/Home/KOTLIN/4. KOTLIN 람다식.md"
               }
             }
           },
@@ -152,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
+                "file": "Spaces/Home/KOTLIN/4. KOTLIN 람다식.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -195,10 +225,14 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/KOTLIN 함수 정의.md",
-    "Spaces/Home/KOTLIN/KOTLIN 클래스.md",
-    "Spaces/Home/KOTLIN/KOTLIN 기초.md",
     "Spaces/Home/KOTLIN/KOTLIN.md",
+    "Spaces/Home/KOTLIN/4. KOTLIN 람다식.md",
+    "Spaces/Home/KOTLIN/3. KOTLIN 클래스.md",
+    "Spaces/Home/KOTLIN/2. KOTLIN 함수 정의.md",
+    "Spaces/Home/KOTLIN/1. KOTLIN 기초.md",
+    "Images/KOTLIN 클래스3.avif",
+    "Images/KOTLIN 클래스2.avif",
+    "Images/KOTLIN 클래스1.avif",
     "Images/KOTILIN 함수정의1.png",
     "Images/KOTILIN1.jpg",
     "Spaces/Home/DB/MySql.md",
@@ -224,16 +258,12 @@
     "Images/GROUP BY/GROUP BY9.png",
     "Images/GROUP BY/GROUP BY8.png",
     "Images/GROUP BY/GROUP BY7.png",
-    "Images/GROUP BY/GROUP BY11.png",
-    "Images/GROUP BY11.png",
-    "Images/GROUP BY10.png",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT/무제 파일.md",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Spaces/Home/Java Script/JavaScript.md",
-    "Spaces/Home/Java Script/공부 해야 될것.md",
     "Images/GIT",
     "Images/RECAPTCH",
     "Images/SPRING CACHE",
