@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/POJO.md",
+                "file": "Spaces/Home/KOTLIN/KOTILIN.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/POJO.md",
+                "file": "Spaces/Home/KOTLIN/KOTILIN.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/POJO.md"
+                "file": "Spaces/Home/KOTLIN/KOTILIN.md"
               }
             }
           },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/POJO.md",
+                "file": "Spaces/Home/KOTLIN/KOTILIN.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -185,8 +185,10 @@
   },
   "active": "be73a5f2107115b6",
   "lastOpenFiles": [
-    "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/POJO.md",
+    "Spaces/Home/KOTLIN/KOTILIN.md",
+    "Spaces/Home/KOTLIN",
+    "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/객체.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "daily note/2024/8/2024-08-05.md",
@@ -228,9 +230,7 @@
     "Images/MAVEN",
     "Images/CSRF",
     "Images/GROUP BY",
-    "Images/MAVEN 1",
     "Spaces/Home/DB/DB 개념/CASE WHEN.md",
-    "Spaces/Home/DB/DB 개념/DECODE.md",
     "무제 파일.canvas"
   ]
 }
