@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-06.md",
+                "file": "Spaces/Home/DB/DB 개념/DECODE.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -224,8 +224,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -245,7 +244,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-06.md",
+                "file": "Spaces/Home/DB/DB 개념/DECODE.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -273,7 +272,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-06.md"
+                "file": "Spaces/Home/DB/DB 개념/DECODE.md"
               }
             }
           },
@@ -283,7 +282,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-06.md",
+                "file": "Spaces/Home/DB/DB 개념/DECODE.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -326,8 +325,8 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "daily note/2024/8/2024-08-05.md",
     "daily note/2024/8/2024-08-06.md",
+    "daily note/2024/8/2024-08-05.md",
     "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/9. KOTLIN ANNOTATION.md",
     "Spaces/Home/KOTLIN/8. KOTLIN GENERIC.md",
