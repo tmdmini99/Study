@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-05.md",
+                "file": "daily note/2024/8/2024-08-06.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -224,7 +224,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -244,7 +245,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-05.md",
+                "file": "daily note/2024/8/2024-08-06.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -272,7 +273,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-05.md"
+                "file": "daily note/2024/8/2024-08-06.md"
               }
             }
           },
@@ -282,7 +283,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-05.md",
+                "file": "daily note/2024/8/2024-08-06.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -323,8 +324,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "daily note/2024/8/2024-08-05.md",
+    "daily note/2024/8/2024-08-06.md",
     "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/9. KOTLIN ANNOTATION.md",
     "Spaces/Home/KOTLIN/8. KOTLIN GENERIC.md",
@@ -355,13 +358,11 @@
     "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/객체.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
-    "daily note/2024/8/2024-08-05.md",
     "Spaces/Home/JSP/기본 라이브러리.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/Freemarker.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/DB/DB 개념/Partition.md",
-    "Spaces/Home/DB/DB 개념/PIVOT.md",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Images/GIT",
