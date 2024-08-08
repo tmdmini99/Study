@@ -35,13 +35,18 @@ File -> Setting -> Languages & Frameworks -> Android SDK -> SDK Tools -> Google 
 가상 애뮬레이터를 실행하기 위해 Tools -> Android -> SDK Manager -> Intel x86 Emulator ~를 설치합니다.(인텔)
 
 
+
+![[Pasted image 20240808174907.png]]
+
+
+
 ![[Pasted image 20240808173617.png]]
 
 
 가상 애뮬레이터를 실행하기 위해 Tools -> Android -> SDK Manager -> AMD 하이퍼바이저 드라이버
 
 
-
+![[Pasted image 20240808174844.png]]
 
 
 ![[Pasted image 20240808173718.png]]
