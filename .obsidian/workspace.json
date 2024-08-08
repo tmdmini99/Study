@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/DECODE.md",
+                "file": "daily note/2024/8/2024-08-08.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -244,7 +244,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/DECODE.md",
+                "file": "daily note/2024/8/2024-08-08.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -272,7 +272,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/DECODE.md"
+                "file": "daily note/2024/8/2024-08-08.md"
               }
             }
           },
@@ -282,7 +282,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/DECODE.md",
+                "file": "daily note/2024/8/2024-08-08.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -323,8 +323,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "def2c6113607a28d",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/DB/DB 개념/DECODE.md",
+    "daily note/2024/8/2024-08-08.md",
     "daily note/2024/8/2024-08-06.md",
     "daily note/2024/8/2024-08-05.md",
     "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
@@ -360,8 +362,6 @@
     "Spaces/Home/JSP/기본 라이브러리.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/Freemarker.md",
-    "Spaces/Home/JSP/EL.md",
-    "Spaces/Home/DB/DB 개념/Partition.md",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Images/GIT",
