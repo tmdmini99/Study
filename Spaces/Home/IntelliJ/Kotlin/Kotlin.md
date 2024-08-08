@@ -16,6 +16,8 @@ Create New Project를 클릭하고, Android 탭을 눌러서 Install SDK 버튼 
 ![[Pasted image 20240808172253.png]]
 
 
+![[Pasted image 20240808175605.png]]
+
 
 하지만 이 상태로 Build를 하게되면 **"License for package Android SDK Build-Tools 30.0.2 not accepted."** 라는 에러를 확인할 수 있는데 이에 대한 해결 방법은 아래와 같습니다.
 
@@ -82,3 +84,7 @@ https://blog.naver.com/ifthe1201/221412112020
 
 
 https://velog.io/@jihyeon9975/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%8A%94-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-1-
+
+
+
+https://blog.seoft.co.kr/31 -  안드로이드 초기 설정
