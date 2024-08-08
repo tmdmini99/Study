@@ -88,3 +88,5 @@ https://velog.io/@jihyeon9975/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%
 
 
 https://blog.seoft.co.kr/31 -  안드로이드 초기 설정
+
+https://www.jetbrains.com/help/idea/create-your-first-android-application.html#Android-make-application-interactive  - jetbrains
