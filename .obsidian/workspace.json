@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-08.md",
+                "file": "Spaces/Home/KOTLIN/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -244,7 +244,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-08.md",
+                "file": "Spaces/Home/KOTLIN/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -272,7 +272,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-08.md"
+                "file": "Spaces/Home/KOTLIN/무제 파일.md"
               }
             }
           },
@@ -282,7 +282,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-08.md",
+                "file": "Spaces/Home/KOTLIN/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -323,16 +323,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DB 개념/DECODE.md",
+    "Spaces/Home/KOTLIN/KOTLIN.md",
+    "Spaces/Home/KOTLIN/무제 파일.md",
     "daily note/2024/8/2024-08-08.md",
+    "Spaces/Home/DB/DB 개념/DECODE.md",
     "daily note/2024/8/2024-08-06.md",
     "daily note/2024/8/2024-08-05.md",
     "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/9. KOTLIN ANNOTATION.md",
     "Spaces/Home/KOTLIN/8. KOTLIN GENERIC.md",
-    "Spaces/Home/KOTLIN/KOTLIN.md",
     "Images/KOTLIN2.jpg",
     "Images/KOTLIN GENERIC5.avif",
     "Images/KOTLIN GENERIC4.avif",
@@ -361,7 +362,6 @@
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Spaces/Home/JSP/기본 라이브러리.md",
     "Spaces/Home/JSP/JSTL.md",
-    "Spaces/Home/JSP/Freemarker.md",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Images/GIT",
