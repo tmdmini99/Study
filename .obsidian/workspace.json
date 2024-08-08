@@ -13,160 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 앱 만들기.md",
+                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "0d4d364f4dba6bb9",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN2.jpg"
-              }
-            }
-          },
-          {
-            "id": "a5fb142d7d06c64c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN GENERIC5.avif"
-              }
-            }
-          },
-          {
-            "id": "83f7d317d4a8e353",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN GENERIC4.avif"
-              }
-            }
-          },
-          {
-            "id": "209b6a3a5dec925d",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN GENERIC2.jpg"
-              }
-            }
-          },
-          {
-            "id": "dc0d55fd14d3687b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN GENERIC1.jpg"
-              }
-            }
-          },
-          {
-            "id": "63acaabec6e9ea13",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN  고차함수1.jpg"
-              }
-            }
-          },
-          {
-            "id": "7c7283849d6b4a49",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN 오버로딩1.jpg"
-              }
-            }
-          },
-          {
-            "id": "24065d57be9fc777",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN TYPE3.avif"
-              }
-            }
-          },
-          {
-            "id": "c2c754eeecacb463",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN TYPE2.jpg"
-              }
-            }
-          },
-          {
-            "id": "7d0227759ba13e3c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN TYPE1.jpg"
-              }
-            }
-          },
-          {
-            "id": "47a4e68c1c558d07",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN 클래스3.avif"
-              }
-            }
-          },
-          {
-            "id": "87e96f620d50e62b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN 클래스2.avif"
-              }
-            }
-          },
-          {
-            "id": "a81a0217ad2ef061",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTLIN 클래스1.avif"
-              }
-            }
-          },
-          {
-            "id": "2968020dec3a529e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/KOTILIN 함수정의1.png"
-              }
-            }
-          },
-          {
-            "id": "72e17a6743a3d26a",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/GROUP BY/GROUP BY6.jpg"
               }
             }
           }
@@ -244,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 앱 만들기.md",
+                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -272,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 앱 만들기.md"
+                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md"
               }
             }
           },
@@ -282,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/KOTLIN 앱 만들기.md",
+                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -325,8 +175,12 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/KOTLIN.md",
     "Spaces/Home/KOTLIN/KOTLIN 앱 만들기.md",
+    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
+    "Spaces/Home/IntelliJ/Kotlin/Kotlin",
+    "Spaces/Home/IntelliJ/Kotlin",
+    "Images/KOTLIN2.jpg",
+    "Spaces/Home/KOTLIN/KOTLIN.md",
     "daily note/2024/8/2024-08-08.md",
     "Spaces/Home/DB/DB 개념/DECODE.md",
     "daily note/2024/8/2024-08-06.md",
@@ -334,7 +188,6 @@
     "Spaces/Home/KOTLIN/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/9. KOTLIN ANNOTATION.md",
     "Spaces/Home/KOTLIN/8. KOTLIN GENERIC.md",
-    "Images/KOTLIN2.jpg",
     "Images/KOTLIN GENERIC5.avif",
     "Images/KOTLIN GENERIC4.avif",
     "Images/KOTLIN GENERIC2.jpg",
@@ -361,7 +214,6 @@
     "Spaces/Home/Java/객체.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Spaces/Home/JSP/기본 라이브러리.md",
-    "Spaces/Home/JSP/JSTL.md",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Images/GIT",
@@ -369,8 +221,6 @@
     "Images/SPRING CACHE",
     "Images/FREEMARKER",
     "Images/MAVEN",
-    "Images/CSRF",
-    "Images/GROUP BY",
     "무제 파일.canvas"
   ]
 }
