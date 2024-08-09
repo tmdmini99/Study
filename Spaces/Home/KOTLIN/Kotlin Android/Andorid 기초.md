@@ -97,6 +97,7 @@ fun GreetingPreview() {
 
 
 
+#  ToDoList
 ## Layout 만들기
 
 ### app > res 우클릭 > new >  XML > Layout XML File 선택
@@ -104,5 +105,163 @@ fun GreetingPreview() {
 
 ![[Pasted image 20240809144747.png]]
 
+
+### Layout  code
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content"  
+    android:padding="20dp"  
+    android:textStyle="bold">  
+</TextView>
+```
+
+
+### activity_main.xml code
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:app="http://schemas.android.com/apk/res-auto"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"  
+    tools:context=".MainActivity">  
+  
+    <LinearLayout  
+        android:id="@+id/bottom_section"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentBottom="true"  
+        android:orientation="horizontal"  
+        android:padding="10dp">  
+  
+        <EditText  
+            android:id="@+id/todo_edit"  
+            android:layout_width="0dp"  
+            android:layout_height="wrap_content"  
+            android:layout_marginRight="10dp"  
+            android:layout_weight="1" />  
+  
+        <Button  
+            android:id="@+id/add_btn"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:text="추가"  
+            android:textSize="25sp" />  
+    </LinearLayout>  
+  
+    <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="match_parent"  
+        android:layout_above="@id/bottom_section"  
+        android:background="#eee">  
+  
+        <ListView  
+            android:id="@+id/list_view"  
+            android:layout_width="match_parent"  
+            android:layout_height="match_parent" />  
+    </LinearLayout>  
+</RelativeLayout>
+```
+
+
+### MainActivity.kt code
+
+```kotlin
+package com.example.myapplication  
+  
+import android.graphics.Paint  
+import android.os.Bundle  
+import android.widget.*  
+import androidx.activity.ComponentActivity  
+import androidx.activity.compose.setContent  
+import androidx.compose.foundation.layout.fillMaxSize  
+import androidx.compose.material3.MaterialTheme  
+import androidx.compose.material3.Surface  
+import androidx.compose.material3.Text  
+import androidx.compose.runtime.Composable  
+import androidx.compose.ui.Modifier  
+import androidx.compose.ui.tooling.preview.Preview  
+import com.example.myapplication.ui.theme.MyApplicationTheme  
+import androidx.appcompat.app.AppCompatActivity  
+class MainActivity : AppCompatActivity() {  
+  
+    private lateinit var todoList: ArrayList<String>  
+    private lateinit var adapter: ArrayAdapter<String>  
+    private lateinit var todoEdit: EditText  
+  
+    override fun onCreate(savedInstanceState: Bundle?) {  
+        super.onCreate(savedInstanceState)  
+        setContentView(R.layout.activity_main)  
+  
+        // Initialize ArrayList and ArrayAdapter  
+        todoList = ArrayList()  
+        adapter = ArrayAdapter(this, R.layout.layout, todoList)  
+  
+        // Initialize UI components  
+        val listView: ListView = this.findViewById(R.id.list_view)  
+        val addBtn: Button = findViewById(R.id.add_btn)  
+        todoEdit = findViewById(R.id.todo_edit)  
+  
+        // Set adapter  
+        listView.adapter = adapter  
+  
+        // Set button click listener  
+        addBtn.setOnClickListener {  
+            addItem()  
+        }  
+  
+        // Set ListView item click listener  
+        listView.setOnItemClickListener { adapterView, view, i, l ->  
+            val textView: TextView = view as TextView  
+            // Strike through text  
+            textView.paintFlags = textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG  
+        }  
+  
+        // Set content with Jetpack Compose  
+//        setContent {  
+//            MyApplicationTheme {  
+//                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {  
+//                    Greeting("Android 승민")  
+//                }  
+//            }  
+//        }  
+    }  
+  
+    private fun addItem() {  
+        val todo: String = todoEdit.text.toString()  
+        if (todo.isNotEmpty()) {  
+            todoList.add(todo)  
+            adapter.notifyDataSetChanged()  
+        } else {  
+            Toast.makeText(this, "할 일을 적어주세요", Toast.LENGTH_SHORT).show()  
+        }  
+    }  
+}  
+  
+@Composable  
+fun Greeting(name: String, modifier: Modifier = Modifier) {  
+    Text(  
+        text = "Hello $name!",  
+        modifier = modifier  
+    )  
+}  
+  
+@Preview(showBackground = true)  
+@Composable  
+fun GreetingPreview() {  
+    MyApplicationTheme {  
+        Greeting("Android")  
+    }  
+}
+```
+
+
+
 ---
 https://github.com/code-with-joyce/must_have_android/blob/main/10_TodoList/gradle.properties 보고 따라하기
+
+
+https://velog.io/@kevinkim2586/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EA%B0%80%EC%A7%80%EA%B3%A0-%EB%86%80%EA%B8%B0-4
