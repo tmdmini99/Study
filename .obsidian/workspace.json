@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -174,7 +173,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "def2c6113607a28d",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "daily note/2024/8/2024-08-09.md",
