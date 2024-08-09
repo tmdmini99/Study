@@ -57,12 +57,60 @@ File -> Setting -> Languages & Frameworks -> Android SDK -> SDK Tools -> Google 
 빨간색 체크 3개는 필수 설치이고 (기본으로 설치되어있음) 파란색 체크 2개 중 AMD CPU라면 위, Intel CPU라면 아래를 설치하면 된다.
 
 
+![[Pasted image 20240809104124.png]]
+
+
+
+
+
+### Tools에 android > Device Manager
+
+
+
+![[Pasted image 20240809104130.png]]
+
+
+
+
+### Create virtual device 선택
+
+
+![[Pasted image 20240809104134.png]]
+
+
+
+
+![[Pasted image 20240809104233.png]]
+
+
+원하는 기종 선택 후 Next
+
+![[Pasted image 20240809104537.png]]
+
+System Image는 적당히 원하는 것을 다운
+
+
+![[Pasted image 20240809104605.png]]
+
+
+
+
 
 가상 디바이스를 생성하기 위해 Tools -> Android -> AVD Manger를 클릭한 뒤, 나머지 절차를 진행합니다.
 
 
 
 ![[Pasted image 20240808173804.png]]
+
+
+
+![[Pasted image 20240809104658.png]]
+
+
+
+![[Pasted image 20240809104703.png]]
+
+
 
 
 
@@ -90,3 +138,7 @@ https://velog.io/@jihyeon9975/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%
 https://blog.seoft.co.kr/31 -  안드로이드 초기 설정
 
 https://www.jetbrains.com/help/idea/create-your-first-android-application.html#Android-make-application-interactive  - jetbrains
+
+
+
+https://allmana.tistory.com/201
