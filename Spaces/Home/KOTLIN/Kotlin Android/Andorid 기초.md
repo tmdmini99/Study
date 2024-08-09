@@ -360,6 +360,9 @@ fun GreetingPreview() {
 }
 ```
 
+
+
+
 #### `ComponentActivity`와 `AppCompatActivity` 차이
 
 
@@ -383,7 +386,144 @@ fun GreetingPreview() {
 
 
 
+## 삭제 버튼 추가
 
+
+list-item.xml
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/todo_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:paddingRight="10dp"/>
+
+    <Button
+        android:id="@+id/delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="삭제"
+        android:textSize="16sp"/>
+</LinearLayout>
+
+```
+
+
+
+
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var todoList: ArrayList<String>
+    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var todoEdit: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // ArrayList 초기화
+        todoList = ArrayList()
+
+        // 커스텀 어댑터 초기화
+        adapter = object : ArrayAdapter<String>(this, R.layout.list_item, R.id.todo_text, todoList) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = super.getView(position, convertView, parent)
+
+                // 삭제 버튼 이벤트 처리
+                val deleteBtn: Button = view.findViewById(R.id.delete_btn)
+                deleteBtn.setOnClickListener {
+                    todoList.removeAt(position)
+                    notifyDataSetChanged()  // 리스트 업데이트
+                }
+
+                return view
+            }
+        }
+
+        // UI 객체 초기화
+        val listView: ListView = findViewById(R.id.list_view)
+        val addBtn: Button = findViewById(R.id.add_btn)
+        todoEdit = findViewById(R.id.todo_edit)
+
+        // 어댑터 설정
+        listView.adapter = adapter
+
+        // 버튼 클릭 리스너 설정
+        addBtn.setOnClickListener {
+            addItem()
+        }
+
+        // 리스트 항목 클릭 이벤트
+        listView.setOnItemClickListener { adapterView, view, i, l ->
+            val textView: TextView = view.findViewById(R.id.todo_text)
+            textView.paintFlags = textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        }
+    }
+
+    private fun addItem() {
+        val todo: String = todoEdit.text.toString()
+        if (todo.isNotEmpty()) {
+            todoList.add(todo)
+            adapter.notifyDataSetChanged()
+            todoEdit.text.clear()  // 입력 필드 초기화
+        } else {
+            Toast.makeText(this, "할 일을 적어주세요", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+
+```
+
+
+
+activity_main.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/bottom_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/todo_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_section"/>
+</RelativeLayout>
+
+```
 
 
 ---
