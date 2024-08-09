@@ -97,5 +97,12 @@ fun GreetingPreview() {
 
 
 
+## Layout 만들기
+
+### app > res 우클릭 > new >  XML > Layout XML File 선택
+
+
+![[Pasted image 20240809144747.png]]
+
 ---
 https://github.com/code-with-joyce/must_have_android/blob/main/10_TodoList/gradle.properties 보고 따라하기
