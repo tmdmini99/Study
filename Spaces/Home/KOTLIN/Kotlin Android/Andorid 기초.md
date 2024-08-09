@@ -391,3 +391,6 @@ https://github.com/code-with-joyce/must_have_android/blob/main/10_TodoList/gradl
 
 
 https://velog.io/@kevinkim2586/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EA%B0%80%EC%A7%80%EA%B3%A0-%EB%86%80%EA%B8%B0-4
+
+
+https://aries574.tistory.com/404
