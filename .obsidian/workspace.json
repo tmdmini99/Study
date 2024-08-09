@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
+                "file": "daily note/2024/8/2024-08-09.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
+                "file": "daily note/2024/8/2024-08-09.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md"
+                "file": "daily note/2024/8/2024-08-09.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
+                "file": "daily note/2024/8/2024-08-09.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +176,8 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
+    "daily note/2024/8/2024-08-09.md",
     "Images/Pasted image 20240808175605.png",
     "Images/Pasted image 20240808174907.png",
     "Images/Pasted image 20240808174844.png",
@@ -185,9 +188,7 @@
     "Images/Pasted image 20240808173617.png",
     "Images/Pasted image 20240808173037.png",
     "Images/Pasted image 20240808172253.png",
-    "Images/Pasted image 20240808172207.png",
     "Spaces/Home/KOTLIN/KOTLIN 앱 만들기.md",
-    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",
     "Spaces/Home/KOTLIN/KOTLIN.md",
