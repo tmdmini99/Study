@@ -97,3 +97,5 @@ fun GreetingPreview() {
 
 
 
+---
+https://github.com/code-with-joyce/must_have_android/blob/main/10_TodoList/gradle.properties 보고 따라하기
