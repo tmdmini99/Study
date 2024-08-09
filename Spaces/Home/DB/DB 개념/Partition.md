@@ -119,7 +119,17 @@ FROM emp WHERE job IN ('MANAGER', 'SALESMAN') ORDER BY job
 
 
 
+### NULL값 순서 구하기
 
+ROW_NUM이 NULL이면 순서더하지 않고 ROW_NUM이 NULL인 애들만 순서 구하기
+
+```SQL
+CASE  
+    WHEN ROW_NUM IS NOT NULL THEN '합계'  
+    ELSE TO_CHAR(       ROW_NUMBER() OVER (          PARTITION BY ROW_NUM          ORDER BY             CASE WHEN ROW_NUM = '합계' THEN 0 ELSE 1 END,  
+             RIDE_DATE DESC NULLS FIRST,             COMP_NM NULLS FIRST,             DECODE(WEEK_TXT, '월', 1, '화', 2, '수', 3, '목', 4, '금', 5, '토', 6, '일', 7) NULLS FIRST  
+       )    )END AS EX_ROW_NUM
+```
 
 
 
