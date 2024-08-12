@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-12.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-12.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-12.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-12.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,13 +175,22 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "Spaces/Home/DB/DB 개념/Partition.md",
+    "Images/Pasted image 20240812133900.png",
+    "Images/Pasted image 20240812133849.png",
+    "Images/Pasted image 20240812133840.png",
+    "Images/Pasted image 20240812133731.png",
+    "Images/Pasted image 20240812133721.png",
+    "Images/Pasted image 20240812133347.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
+    "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
     "daily note/2024/8/2024-08-12.md",
+    "Spaces/Home/DB/DB 개념/Partition.md",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Images/Pasted image 20240809144747.png",
-    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
@@ -191,12 +199,7 @@
     "Images/Pasted image 20240809104658.png",
     "Images/Pasted image 20240809104605.png",
     "Images/Pasted image 20240809104537.png",
-    "Images/Pasted image 20240809104233.png",
-    "Images/Pasted image 20240809104134.png",
-    "Images/Pasted image 20240809104130.png",
-    "Images/Pasted image 20240809104124.png",
     "daily note/2024/8/2024-08-09.md",
-    "Images/Pasted image 20240808175605.png",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",
     "daily note/2024/8/2024-08-08.md",
@@ -212,10 +215,6 @@
     "Spaces/Home/KOTLIN/Kotlin/4. KOTLIN 람다식.md",
     "Spaces/Home/KOTLIN/Kotlin/3. KOTLIN 클래스.md",
     "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
-    "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
-    "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/KOTLIN",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
