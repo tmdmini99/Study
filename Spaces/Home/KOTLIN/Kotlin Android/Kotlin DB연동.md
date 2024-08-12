@@ -17,7 +17,7 @@
 초보자분들이 가장 헷갈려하는 부분은 패키지의 구조와 파일의 위치일 것이다.
 
 
-![[Pasted image 20240812133347.png]]
+![[Kotlin DB1.png]]
 
 **Java Resources**의 **src** 아래에 **com.db** 라는 패키지를 만들어 주었고
 
@@ -217,12 +217,12 @@ testdb는 Oracle를 설치할때 **SID**를 입력해줬을텐데 그것에 해
 화면은 아래와 같이 나온다.
 
 
-![[Pasted image 20240812133721.png]]
+![[Kotlin DB2.png]]
 
 
 다음은 Java코드이다. Main 코드와 클래스파일 하나를 만들어 줘야한다.
 
-![[Pasted image 20240812133731.png]]
+![[Kotlin DB3.png]]
 
 
 우선 **RegisterActivity** 클래스 부터 작성해보자.
@@ -364,7 +364,7 @@ CREATE TABLE userTBL (
 JSP웹을 통해 디비로 들어가기 때문에 **매니페스트**에 퍼미션을 줘야한다.
 
 
-![[Pasted image 20240812133840.png]]
+![[Kotlin DB4.png]]
 
 
 **<uses-permission android:name="android.permission.INTERNET"/>** 인터넷 접속을 허용하는 퍼미션이다.
@@ -373,16 +373,117 @@ JSP웹을 통해 디비로 들어가기 때문에 **매니페스트**에 퍼미
 
 이제 이클립스에서 서버를 실행시켜주고 안드로이드 에뮬레이터 혹은 안드로이드 기기로 테스트를 해보자.
 
-![[Pasted image 20240812133849.png]]
+![[Kotlin DB5.png]]
 
 회원가입 성공이라고 콘솔에 출력되는것을 확인할수있다. 데이터베이스도 확인해보자.
 
-![[Pasted image 20240812133900.png]]
+![[Kotlin DB6.png]]
 
 **select * from userTBL;** 을 통해 확인해보니 정상적으로 들어가는것을 확인할수 있다.
 
 
+## DB 시큐리티 설정
+
+
+### 안드로이드 네트워크 보안 설정 변경
+
+프로젝트에 **res/xml/network_security_config.xml** 파일을 생성하고 다음과 같이 설정해주세요.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+```
+
+이렇게하면 앱은 Cleartext 통신을 허용합니다. 다만, 이 방법은 보안 측면에서는 안좋다고 합니다...
+
+ 하지만!! 저는 이 방법이 통하지 않았어요... 바로 다음 방법을 시도해봤습니다.
+
+## AndroidManifest.xml에서 Cleartext 허용 설정 변경
+
+**AndroidManifest.xml** 파일에 다음과 같이 설정을 추가했습니다.
+
+```xml
+<application
+    ...
+    android:usesCleartextTraffic="true"
+    ...
+</application>
+```
+
+
+이 방법을 시도했더니 드디어! get 요청을 성공적으로 보냈습니다...!
+
+하지만 이 역시 보안상 좋지 않으니 되도록이면 https를 사용하시길!
+
+
+# localhost, 10.0.2.2
+
+위 방법을 다 시도했는데 안되시는 분들은
+
+base url이 localhost인지 확인하셔야 합니다.
+
+ip주소가 localhost 또는 127.0.0.1이신 분들은 아마 다음과 같은 에러 메세지를 마주하셨을겁니다
+
+**java.net.ConnectException: Failed to connect to localhost/127.0.0.1:8080**
+
+보통 로컬 서버는 localhost나 127.0.0.1 주소로 접근합니다.
+
+하지만 안드로이드 스튜디오에서의 localhost는 **애뮬레이터**의 로컬이기 때문에 
+
+localhost:포트번호가 아닌 **\http://10.0.2.2:포트번호** 로 base url을 설정해야합니다!
+
+![[Pasted image 20240812134302.png]]
+
+
+## 1단계
+
+\<AndroidManifest.xml>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+    <manifest ... >
+        <application android:networkSecurityConfig="@xml/network_security_config"
+                        ... >
+            ...
+        </application>
+    </manifest>
+```
+
+## 2단계
+
+방법 1) 믿을 수 있는 도메인만 추가하기
+
+\<res/xml/network_security_config.xml>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">test.com</domain>
+    </domain-config>
+</network-security-config>
+    
+```
+
+방법 2) 모든 http연결을 허가하기
+
+\<res/xml/network_security_config.xml>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+```
 
 
 ---
 출처 - https://coinco.tistory.com/68 - DB 연동
+
+
+https://hulrud.tistory.com/35 - DB 시큐리티 설정
+
+
+https://sskey.tistory.com/53
