@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Docker/Docker.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -154,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Docker/Docker.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Spaces/Home/Docker/Docker.md"
               }
             }
           },
@@ -192,7 +192,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Docker/Docker.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -235,6 +235,13 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/Docker/Apache.md",
+    "Spaces/Home/Docker/쿠버네티스.md",
+    "Spaces/Home/Docker/SSL.md",
+    "Spaces/Home/Docker/DockerError.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Spaces/Home/Docker/Docker-Compose.md",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Images/Pasted image 20240812134302.png",
     "Images/Kotlin DB6.png",
@@ -268,12 +275,6 @@
     "Spaces/Home/KOTLIN/Kotlin/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/Kotlin/9. KOTLIN ANNOTATION.md",
     "Spaces/Home/KOTLIN/Kotlin/8. KOTLIN GENERIC.md",
-    "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
-    "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
-    "Spaces/Home/KOTLIN/Kotlin/5. KOTLIN TYPE.md",
-    "Spaces/Home/KOTLIN/Kotlin/4. KOTLIN 람다식.md",
-    "Spaces/Home/KOTLIN/Kotlin/3. KOTLIN 클래스.md",
-    "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
     "Spaces/Home/KOTLIN",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
