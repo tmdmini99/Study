@@ -437,6 +437,68 @@ dbeaver 연결 실패시
 
 
 
+## Oracle
+
+```yml
+version: '3'
+services:
+  tomcat:
+    image: tomcat:9.0.84
+    container_name: myTomcat
+    ports:
+      - 8080:8080
+    volumes:
+      - ./DbConn-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+    environment:
+      - CATALINA_CONNECTOR_CONNECTIONTIMEOUT=600000
+
+  oracle:
+    image: oracleinanutshell/oracle-xe-11g
+    container_name: myOracle
+    ports:
+      - 1521:1521
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+      - ORACLE_ROOT_PASSWORD=1234
+      - ORACLE_DATABASE=testdb
+      - ORACLE_USER=test
+      - ORACLE_PASSWORD=test
+      - ORACLE_SYSTEM_PASSWORD=1234
+
+```
+
+
+```yml
+- ORACLE_ROOT_PASSWORD=1234
+      - ORACLE_DATABASE=testdb
+      - ORACLE_USER=test
+      - ORACLE_PASSWORD=test
+      - ORACLE_SYSTEM_PASSWORD=1234
+```
+얘네는 있어도 되고 없어도됨
+
+cmd에서
+```cmd
+docker exec -it myOracle bash
+su - oracle
+sqlplus / as sysdba
+ALTER USER sys IDENTIFIED BY newpassword;
+```
+
+차례로 입력 
+```
+ALTER USER sys IDENTIFIED BY newpassword;
+```
+여기서  newpassword대신 내가 원하는 password 입력
+
+
+![[Pasted image 20240812161340.png]]
+
+여기서 sys 입력후 role에 normal대신 다른것 입력
+
+
+
+
 ---
 참조 -  https://devzzi.tistory.com/76
 
