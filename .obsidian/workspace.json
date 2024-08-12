@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md",
+                "file": "daily note/2024/8/2024-08-12.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md",
+                "file": "daily note/2024/8/2024-08-12.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md"
+                "file": "daily note/2024/8/2024-08-12.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/Partition.md",
+                "file": "daily note/2024/8/2024-08-12.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +176,8 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/DB/DB 개념/Partition.md",
+    "daily note/2024/8/2024-08-12.md",
     "Spaces/Home/DB/DB 개념/PIVOT.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
@@ -213,8 +216,6 @@
     "Spaces/Home/DB/MySql.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/DB/SQL Injection.md",
-    "Spaces/Home/Java/POJO.md",
     "Spaces/Home/KOTLIN",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
