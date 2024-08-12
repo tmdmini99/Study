@@ -487,7 +487,7 @@ ALTER USER sys IDENTIFIED BY newpassword;
 
 차례로 입력 
 ```
-ALTER USER sys IDENTIFIED BY newpassword;
+ALTER USER sys IDENTIFIED BY 1234;
 ```
 여기서  newpassword대신 내가 원하는 password 입력
 
