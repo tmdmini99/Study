@@ -227,6 +227,7 @@ testdb는 Oracle를 설치할때 **SID**를 입력해줬을텐데 그것에 해
 
 우선 **RegisterActivity** 클래스 부터 작성해보자.
 
+자바버전
 
 ```java
 import android.os.AsyncTask;
@@ -290,6 +291,8 @@ public class RegisterActivity extends AsyncTask<String, Void, String> {
 ```
 
 
+코틀린 버전
+
 ```kotlin
 import android.os.AsyncTask
 import java.io.BufferedReader
@@ -341,6 +344,8 @@ class RegisterActivity : AsyncTask<String, Void, String>() {
 수정해야 될 부분으로는 IP주소부분이다 주석에 설명된것을 참고하면 된다.
 
 다음으로는 **MainActivity** 파일이다.
+
+자바 버전
 
 ```java
 import androidx.appcompat.app.AppCompatActivity;
@@ -400,7 +405,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 여기서도 마찬가지로 크게 바꿀건 없다.
-
+코틀린 버전
 ```kotlin
 import android.os.Bundle
 import android.util.Log

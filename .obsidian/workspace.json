@@ -13,70 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "ebbec35d63a1f66e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin DB6.png"
-              }
-            }
-          },
-          {
-            "id": "1ddc63310f2c2e18",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin DB5.png"
-              }
-            }
-          },
-          {
-            "id": "28649d52e3787b46",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin DB4.png"
-              }
-            }
-          },
-          {
-            "id": "3e41c9bf4cc8c9ba",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin DB3.png"
-              }
-            }
-          },
-          {
-            "id": "b344bc62f46871c0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin DB2.png"
-              }
-            }
-          },
-          {
-            "id": "cbfb1ee41e7a00e5",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin DB1.png"
               }
             }
           }
@@ -154,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker.md"
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
               }
             }
           },
@@ -192,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -235,6 +175,8 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
+    "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/쿠버네티스.md",
     "Spaces/Home/Docker/SSL.md",
@@ -242,7 +184,6 @@
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Images/Pasted image 20240812134302.png",
     "Images/Kotlin DB6.png",
     "Images/Kotlin DB5.png",
@@ -274,7 +215,6 @@
     "daily note/2024/8/2024-08-05.md",
     "Spaces/Home/KOTLIN/Kotlin/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/Kotlin/9. KOTLIN ANNOTATION.md",
-    "Spaces/Home/KOTLIN/Kotlin/8. KOTLIN GENERIC.md",
     "Spaces/Home/KOTLIN",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
