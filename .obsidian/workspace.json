@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -154,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md"
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
               }
             }
           },
@@ -192,7 +192,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -235,9 +235,9 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Images/Pasted image 20240812134302.png",
     "Images/Kotlin DB6.png",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Images/Kotlin DB5.png",
     "Images/Kotlin DB4.png",
     "Images/Kotlin DB3.png",
@@ -258,7 +258,6 @@
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Images/Pasted image 20240809104703.png",
     "Images/Pasted image 20240809104658.png",
-    "Images/Pasted image 20240809104605.png",
     "daily note/2024/8/2024-08-09.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",

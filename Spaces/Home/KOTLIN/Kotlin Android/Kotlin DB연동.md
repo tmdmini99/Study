@@ -289,6 +289,55 @@ public class RegisterActivity extends AsyncTask<String, Void, String> {
 }
 ```
 
+
+```kotlin
+import android.os.AsyncTask
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.net.HttpURLConnection
+import java.net.URL
+
+class RegisterActivity : AsyncTask<String, Void, String>() {
+    private var sendMsg: String = ""
+    private var receiveMsg: String = ""
+
+    override fun doInBackground(vararg params: String?): String? {
+        try {
+            val url = URL("http://IP주소:포트번호/DbConn/Android/androidDB.jsp")
+            val conn = url.openConnection() as HttpURLConnection
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+            conn.requestMethod = "POST"
+
+            OutputStreamWriter(conn.outputStream, "UTF-8").use { osw ->
+                sendMsg = "id=${params[0]}&pw=${params[1]}"
+                osw.write(sendMsg)
+                osw.flush()
+            }
+
+            if (conn.responseCode == HttpURLConnection.HTTP_OK) {
+                InputStreamReader(conn.inputStream, "UTF-8").use { tmp ->
+                    BufferedReader(tmp).use { reader ->
+                        val buffer = StringBuilder()
+                        var line: String?
+                        while (reader.readLine().also { line = it } != null) {
+                            buffer.append(line)
+                        }
+                        receiveMsg = buffer.toString()
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return receiveMsg
+    }
+}
+
+```
+
+
 수정해야 될 부분으로는 IP주소부분이다 주석에 설명된것을 참고하면 된다.
 
 다음으로는 **MainActivity** 파일이다.
@@ -351,6 +400,156 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 여기서도 마찬가지로 크게 바꿀건 없다.
+
+```kotlin
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var registerBtn: Button
+    private lateinit var idet: EditText
+    private lateinit var pwet: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        title = "ORACLE"
+
+        registerBtn = findViewById(R.id.register_btn)
+        idet = findViewById(R.id.register_id)
+        pwet = findViewById(R.id.register_pw)
+
+        registerBtn.setOnClickListener {
+            try {
+                Toast.makeText(this, "버튼눌림", Toast.LENGTH_SHORT).show()
+                val id = idet.text.toString()
+                val pw = pwet.text.toString()
+
+                val task = RegisterActivity()
+                val result = task.execute(id, pw).get()
+
+                // result를 이용한 추가 작업이 있으면 여기에서 처리
+
+            } catch (e: Exception) {
+                Log.i("DBtest", ".....ERROR.....!", e)
+            }
+        }
+    }
+}
+
+```
+
+
+## Kotlin에서는 `AsyncTask` 대신 `Coroutine` 사용 권장
+
+```kotlin
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.net.HttpURLConnection
+import java.net.URL
+
+class RegisterActivity {
+
+    suspend fun registerUser(id: String, pw: String): String? {
+        var sendMsg = "id=$id&pw=$pw"
+        var receiveMsg: String? = null
+
+        return withContext(Dispatchers.IO) {
+            try {
+                val url = URL("http://IP주소:포트번호/DbConn/Android/androidDB.jsp")
+                val conn = url.openConnection() as HttpURLConnection
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+                conn.requestMethod = "POST"
+
+                OutputStreamWriter(conn.outputStream, "UTF-8").use { osw ->
+                    osw.write(sendMsg)
+                    osw.flush()
+                }
+
+                if (conn.responseCode == HttpURLConnection.HTTP_OK) {
+                    InputStreamReader(conn.inputStream, "UTF-8").use { tmp ->
+                        BufferedReader(tmp).use { reader ->
+                            val buffer = StringBuilder()
+                            var line: String?
+                            while (reader.readLine().also { line = it } != null) {
+                                buffer.append(line)
+                            }
+                            receiveMsg = buffer.toString()
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            receiveMsg
+        }
+    }
+}
+
+```
+
+
+```kotlin
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var registerBtn: Button
+    private lateinit var idet: EditText
+    private lateinit var pwet: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        title = "ORACLE"
+
+        registerBtn = findViewById(R.id.register_btn)
+        idet = findViewById(R.id.register_id)
+        pwet = findViewById(R.id.register_pw)
+
+        registerBtn.setOnClickListener {
+            val id = idet.text.toString()
+            val pw = pwet.text.toString()
+
+            CoroutineScope(Dispatchers.Main).launch {
+                try {
+                    Toast.makeText(this@MainActivity, "버튼눌림", Toast.LENGTH_SHORT).show()
+                    val result = RegisterActivity().registerUser(id, pw)
+                    Log.d("DBtest", "결과: $result")
+
+                    // result를 이용한 추가 작업이 있으면 여기에서 처리
+                    Toast.makeText(this@MainActivity, result, Toast.LENGTH_LONG).show()
+                } catch (e: Exception) {
+                    Log.i("DBtest", ".....ERROR.....!", e)
+                }
+            }
+        }
+    }
+}
+
+```
+
+
 
 이제 값을 저장할 테이블을 만들어주자.
 
