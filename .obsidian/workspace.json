@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,11 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Images/Pasted image 20240812161340.png",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "daily note/2024/8/2024-08-12.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Apache.md",
@@ -206,7 +206,6 @@
     "Spaces/Home/KOTLIN/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Images/Pasted image 20240809104703.png",
-    "Images/Pasted image 20240809104658.png",
     "daily note/2024/8/2024-08-09.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",

@@ -128,6 +128,38 @@ testdb는 Oracle를 설치할때 **SID**를 입력해줬을텐데 그것에 해
 없을시 외계문자 i？？e¸？i？´ 와 같은 값이 보이게 된다.
 
 
+### pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+<project xmlns="http://maven.apache.org/POM/4.0.0"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+    <modelVersion>4.0.0</modelVersion>  
+  
+    <groupId>org.example</groupId>  
+    <artifactId>DbConn</artifactId>  
+    <version>1.0-SNAPSHOT</version>  
+    <packaging>war</packaging>  
+    <properties>  
+        <maven.compiler.source>8</maven.compiler.source>  
+        <maven.compiler.target>8</maven.compiler.target>  
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+    </properties>  
+    <dependencies>  
+        <dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>javax.servlet-api</artifactId>  
+            <version>4.0.1</version>  
+            <scope>provided</scope>  
+        </dependency>  
+    </dependencies>  
+</project>
+```
+
+
+
+
 ### 3. 안드로이드 스튜디오에서 XML와 JAVA 만들기
 먼저 **XML**을 만들어 주겠다.
 
