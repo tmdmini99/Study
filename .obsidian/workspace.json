@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Spring/Spring Framework.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Spring/Spring Framework.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
+                "file": "Spaces/Home/Spring/Spring Framework.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+                "file": "Spaces/Home/Spring/Spring Framework.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,22 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
+    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/pom.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
+    "Spaces/Home/Spring/MVC/MVC.md",
+    "Spaces/Home/Spring/Maven/Maven.md",
+    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
+    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
+    "daily note/2024/8/2024-08-13.md",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Images/Pasted image 20240812161340.png",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose.md",
@@ -199,22 +209,12 @@
     "Images/Kotlin DB1.png",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
     "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
-    "Spaces/Home/DB/DB 개념/Partition.md",
-    "Spaces/Home/DB/DB 개념/PIVOT.md",
-    "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Images/Pasted image 20240809144747.png",
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
-    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Images/Pasted image 20240809104703.png",
-    "daily note/2024/8/2024-08-09.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",
-    "daily note/2024/8/2024-08-08.md",
-    "Spaces/Home/DB/DB 개념/DECODE.md",
-    "daily note/2024/8/2024-08-06.md",
-    "daily note/2024/8/2024-08-05.md",
     "Spaces/Home/KOTLIN",
     "Images/RATIO_TO_REPORT",
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",

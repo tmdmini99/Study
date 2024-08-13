@@ -39,12 +39,11 @@
 
 ## servlet-context.xml
 
-```
+```xml
 <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
-        <beans:property name="prefix" value="/WEB-INF/views/" />  
-        <beans:property name="suffix" value=".jsp" />  
-  
-    </beans:bean>  
+	<beans:property name="prefix" value="/WEB-INF/views/" />  
+	<beans:property name="suffix" value=".jsp" />  
+</beans:bean>  
 ```
 
  InternalResouceViewResolver
