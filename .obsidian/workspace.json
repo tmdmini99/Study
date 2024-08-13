@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,11 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "daily note/2024/8/2024-08-13.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/Docker/Docker설치&명령어.md",
+    "daily note/2024/8/2024-08-13.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
@@ -191,7 +194,6 @@
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Images/Pasted image 20240812161340.png",
@@ -201,7 +203,6 @@
     "Spaces/Home/Docker/Apache.md",
     "Spaces/Home/Docker/쿠버네티스.md",
     "Spaces/Home/Docker/SSL.md",
-    "Spaces/Home/Docker/DockerError.md",
     "Images/Pasted image 20240812134302.png",
     "Images/Kotlin DB6.png",
     "Images/Kotlin DB5.png",
@@ -220,7 +221,6 @@
     "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
     "Images/GIT",
     "Images/RECAPTCH",
-    "Images/SPRING CACHE",
     "무제 파일.canvas"
   ]
 }
