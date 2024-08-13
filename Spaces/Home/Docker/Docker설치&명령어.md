@@ -239,6 +239,10 @@ network
 docker network create mynetwork
 ```
 
+기존 network 삭제
+```
+docker network rm mynetwork
+```
 
 
 컨테이너 각자 생성시 네트워크를 묶어줘야지만 사용 가능
