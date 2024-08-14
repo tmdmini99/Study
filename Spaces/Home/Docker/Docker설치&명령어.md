@@ -201,6 +201,10 @@ docker images
 docker run -d --name="tomcat-test" -p 8080:8080 tomcat:9.0.84
 ```
 
+시간 안맞을때 시간 맞추면서 도커 생성
+```
+docker run -d --name="tomcat-test" -p 8080:8080 -e JAVA_OPTS="-Duser.timezone=Asia/Seoul" tomcat:9.0.84
+```
 
 war파일을 복사 내가 저장해둔 위치를 지정
 
@@ -254,6 +258,8 @@ docker network connect my-mynetwork likesql
 ```
 
 이런식으로 네트워크 설정 가능
+
+
 
 
 
