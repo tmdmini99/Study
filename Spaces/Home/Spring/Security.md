@@ -138,7 +138,7 @@ Spring Security 는 FilterChainProxy 를 통해 다양한 필터 기능을 구�
 
 ### SecurityFilterChain
 
-![[Security7.png]]
+![[Images/Security/Security7.png]]
 
 스프링 시큐리티를 이용하면 개발시에 필요한 사용자의 인증, 권한, 보안 처리를 간단하지만 강력하게 구현 할 수 있다. 일반적인 웹 환경에서 브라우저가 서버에게 요청을 보내게 되면, DispatcherServlet(FrontController)가 요청을 받기 이전에 많은 ServletFilter(서블릿 필터)거치게 된다. Security와 관련한 서블릿 필터도 실제로는 연결된 여러 필터들로 구성 되어 있다. 이러한 모습때문에 Chain(체인)이라는 표현을 쓴다.
 
@@ -186,6 +186,11 @@ Spring Security 는 FilterChainProxy 를 통해 다양한 필터 기능을 구�
 ### Spring Security Architecture(구조)
 
 ![[Security1.png]]
+
+
+![[Images/Security7.png]]
+
+
 
 이 사진은 스프링 시큐리티의 아키텍처 사진이고 스프링 시큐리티의 흐름은 아래와 같다.
 
