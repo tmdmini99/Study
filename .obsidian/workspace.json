@@ -13,10 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "eeb2fdcc0dbdec4f",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Kotlin 개념1.png"
               }
             }
           }
@@ -74,8 +84,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md"
               }
             }
           },
@@ -133,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +185,12 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Images/Kotlin 개념1.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "daily note/2024/8/2024-08-16.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "daily note/2024/8/2024-08-14.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
@@ -197,13 +210,9 @@
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Images/Pasted image 20240812161340.png",
     "Spaces/Home/Docker/Docker-Compose.md",
     "daily note/2024/8/2024-08-12.md",
-    "Spaces/Home/Docker/Docker.md",
-    "Spaces/Home/Docker/Apache.md",
     "Images/Pasted image 20240812134302.png",
     "Images/Kotlin DB6.png",
     "Images/Kotlin DB5.png",
@@ -214,7 +223,6 @@
     "Images/Pasted image 20240809144747.png",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
-    "Images/Pasted image 20240809104703.png",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",
     "Spaces/Home/KOTLIN",
