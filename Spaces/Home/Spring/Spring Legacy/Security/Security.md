@@ -130,6 +130,39 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 ```
 
 
+form-login은 이걸 쓰는걸 추천
+
+```xml
+<security:form-login
+    login-processing-url="/login"
+    authentication-failure-url="/"
+    login-page="/"
+    username-parameter="userId"
+    password-parameter="pwd"
+    authentication-success-handler-ref="TestSuccessHandler"
+    authentication-failure-handler-ref="TestFailHandler"
+/>
+
+```
+
+## 권한 설정
+
+access 권한은 spEL 문법을 사용하여 설정할 수도 있습니다.
+
+|spEL|설명|
+|---|---|
+|hasRole(‘ROLE_USER’)|ROLE_USER 권한을 가진 유저만 접근 가능|
+|hasAnyRole(‘ROLE_USER’, ‘ROLE_ADMIN’)|ROLE_USER 또는 ROLE_ADMIN 권한을 가진 유저만 접근 가능|
+|permitAll|모두 접근 가능|
+|denyAll|모두 접근 불가|
+|isAnonymous()|인증하지 않은 유저만 접근 가능|
+|isRememberMe()|자동로그인 기능을 사용한 유저만 접근 가능|
+|isAuthenticated()|인증한 유저만 접근 가능|
+|isFullyAuthenticated()|인증을 하고, 자동 로그인 기능을 사용하지 않은 유저만 접근 가능|
+
+
+
+
 MemberService
 ```java
 package org.example.service;  
