@@ -9,7 +9,45 @@
 
 Activity  
 - 앱의 한 화면이다  
-  
+
+Bundle
+	-  Bundle이란 Map형태로 구현된 데이터의 묶음(Bundle)이다. Map형태라 key 값이 String이며, value값에는 Int, String과 같은 간단한 타입부터 Serializable, Parcelable 같은 복잡한 타입이 들어올 수 있다. Android에서는 객체를 전달할 때 보통 Parcelable을 구현한 객체를 전달한다.
+
+-  Bundle의 사용
+Android에서는 Bundle을 다음의 활동에 사용한다.
+
+Activity의 상태 저장 및 복구
+**Bundle은 데이터 저장 객체로 상태 저장 및 복구에 사용**된다. Activity가 onStop()되기 전에 onSavedInstanceState에서 저장할 데이터를 저장시키며, onStart()이후에 onRestoreInstanceState에서 복구시킨다.
+
+```kotlin
+override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+    val savedProject : Project? = savedInstanceState.getParcelable("project")
+    super.onRestoreInstanceState(savedInstanceState)
+}
+```
+
+코드1. Activity에서 저장된 데이터 복구시키기
+
+Intent의 extras를 이용하여 다른 구성요소
+Intent에서는 putExtra메서드를 이용해 데이터를 입력할 수 있다. 
+
+![](https://blog.kakaocdn.net/dn/3GwCO/btqYQwmu3wM/Mr6zBGExMgAHBwjuPdAO4K/img.png)
+
+그림1. Intent에 다양한 데이터 입력
+
+**이 때 입력되는 Extra가 바로 Bundle 객체**이다. 아래 코드는 putExtra에 Parcelable을 입력하는 예시로 extra에 Parcelable을 입력할 때 Bundle객체를 생성하여 입력하는 것을 볼 수 있다.
+
+```java
+    public @NonNull Intent putExtra(String name, @Nullable Parcelable[] value) {
+        if (mExtras == null) {
+            mExtras = new Bundle();
+        }
+        mExtras.putParcelableArray(name, value);
+        return this;
+    }
+```
+
+
 - Life Cycle(수명 주기)  
 - onCreate  
     -> activity가 만들어질 때 단 한번만 호출 된다.  
@@ -1044,3 +1082,6 @@ https://rkdrkd-history.tistory.com/47
 
 
 https://jutole.tistory.com/2 - fragment
+
+
+https://kotlinworld.com/45
