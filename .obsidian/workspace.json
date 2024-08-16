@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "daily note/2024/8/2024-08-16.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "daily note/2024/8/2024-08-16.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md"
+                "file": "daily note/2024/8/2024-08-16.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/Docker설치&명령어.md",
+                "file": "daily note/2024/8/2024-08-16.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +176,13 @@
   },
   "active": "def2c6113607a28d",
   "lastOpenFiles": [
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "daily note/2024/8/2024-08-16.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "daily note/2024/8/2024-08-14.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
-    "Spaces/Home/Docker/Docker설치&명령어.md",
     "daily note/2024/8/2024-08-13.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
@@ -202,7 +204,6 @@
     "daily note/2024/8/2024-08-12.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/Docker/Apache.md",
-    "Spaces/Home/Docker/쿠버네티스.md",
     "Images/Pasted image 20240812134302.png",
     "Images/Kotlin DB6.png",
     "Images/Kotlin DB5.png",
