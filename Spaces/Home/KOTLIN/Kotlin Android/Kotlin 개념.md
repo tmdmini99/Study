@@ -356,6 +356,186 @@ val intent: Intent = Intent(this, DetailActivity::class.java)
 
 - **\<uses-permission>** 태그로 허용해 달라고 요청할 수는 있지만, 되도록이면 **\<queries>**태그를 사용할 것
 
+# 1. 레이아웃 (Layout)
+
+레이아웃은 여러 요소들을 배치할 수 있는 캔버스라고 생각할 수 있을 것 같다. 레이아웃 위에 내가 넣고 싶은 요소들을 원하는 대로 배치하고 머릿속에 있는 어플리케이션의 화면을 레이아웃을 통해 구성해낼 수 있는 것이다.  
+  
+
+오늘 살펴볼 레이아웃은 3가지가 있다.
+
+- 컨스트레인트 레이아웃(제약, ConstraintLayout) (기본 레이아웃)
+- 리니어 레이아웃(선형, LinearLayout)
+- 프레임 레이아웃(FrameLayout)
+
+  
+
+화면 구성은 **"activity_main.xml"** 이라는 이름의 레이아웃 파일에서 할 수 있고, 이 파일은 자동으로 생성된다.
+
+  
+
+##### * 앱은 이미지, MP3, DB와 같은 많은 종류의 파일로 구성되는데, 코틀린으로 작성되는 소스 코드 파일을 제외한 모든 파일을 리소스(Resource)라고 한다. xml파일도 리소스에 해당하며 리소스 파일의 이름은 모두 소문자로 작성한다.
+
+  
+  
+
+# 2. 컨스트레인트 레이아웃 (ConstraintLayout)
+
+컨스트레인트 레이아웃은 안드로이드 기본(Default) 레이아웃으로 화면에 배치되는 위젯들 사이에 간단한 제약조건 설정만으로 전체 화면을 쉽게 구성할 수 있다.  
+  
+
+### 2.1. 핸들러 (Handler)
+
+![[Pasted image 20240816112247.png]]
+
+
+레이아웃에 객체를 클릭하면 위 사진과 같이 상하좌우로 4개의 동그라미가 생기는데 이것이 핸들러(Handler)이다.
+
+
+
+![[Pasted image 20240816112257.png]]
+
+
+- 핸들러의 상태  
+    . 연결 : 파란색  
+    . 연결 안 됨 : 흰색
+    
+- 컨스트레인트 : 주름무늬선
+    
+- 앵커 포인트 : 컨스트레인트가 연결될 수 있는 부위  
+      
+    
+
+### 2.2. 컨스트레인트 편집기
+
+- #### 연결
+    
+    파란색 "+" 버튼은 연결이 해제되어 있는 상태로 "+"를 클릭하면 가장 가까이에 있는 다른 위젯 또는 레이아웃의 앵커 포인트에 컨스트레인트가 생성된다. 연결된 앵커 포인트와의 마진(거리값)은 자동으로 설정된다.
+    
+      
+    
+- #### 크기 조절 핸들러
+    
+    주로 상하 또는 좌우 양쪽에 컨스트레인트가 연결되었을 때 사용한다.  
+    핸들러 가운데에 보이는 사각 박스 안의 ">> <<"를 클릭하면 세 가지 모드로 변경이 가능하다.  
+      
+    **-픽스드 (fixed) : 입력된 크기로 고정  
+    -매치 컨스트레인트 (match constraint) : 앵커 포인트에 맞춰서 크기와 가로세로비 조절 가능**
+    
+
+  
+
+- #### 바이어스
+    
+    상하 또는 좌우 양쪽이 같이 연결되어 있을 때 위치 조절 버튼 바이어스(Bias)가 활성화된다.  
+      
+    **- 0~100 사이의 값으로 변경 가능  
+    -중앙 : 50**  
+    
+
+  
+
+- #### 체이닝(Chaining)
+    
+    컨스트레인트로 연결된 위젯끼리 서로의 위칫값을 공유해서 상대적인 값으로 크기와 위치를 결정한다. 화면을 가로세로로 전환했을 때 위젯의 상대 비율을 유지해준다.
+
+  
+
+- #### 가이드라인(GuideLine)
+    
+    컨스트레인트 레이아웃에만 사용할 수 있는 보조 도구이다. 가이드라인을 드래그해서 임의의 위치에 가져다 놓으면 레이아웃 안에 배치되는 위젯에 가상의 앵커 포인트를 제공한다.  
+      
+      
+      
+    
+
+# 3. 리니어 레이아웃 (LinearLayout)
+
+위젯을 가로(horizontal)/세로(vertical) 한 줄로 배치하기 위한 레이아웃이다.
+
+### 3.1. 레이아웃 설정
+
+XML 코드를 직접 수정하거나 [Design] 버튼을 클릭해서 컴포넌트 트리의 최상위 레이아웃을 리니어 레이아웃으로 설정하면 리니어 레이아웃을 기본 레이아웃으로 설정할 수 있다.
+
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+</LinearLayout>
+```
+
+  
+
+### 3.2. orientation 속성
+
+하위 버전에서는 필수 속성으로 horizontal/vertical을 설정해줘야 했지만, 3.1부터는 입력하지 않으면 가로(horizontal)이 적용된다.  
+  
+
+### 3.3. layout_weight 속성
+
+레이아웃 안에 배치되는 위젯의 크기를 비율로 나타낼 수 있다.  
+**-기본 설정값 : 1  
+-정확한 비율 설정 : layout_weight 속성을 정확하게 주기 위해서는 layout_width 또는 layout_height 속성값을 '0dp'로 설정해줘야 한다.**  
+  
+
+### 3.4. gravity 속성
+
+위젯에 원하는 정렬을 설정할 수 있는 속성이다. 동시에 2개 이상의 방향을 선택할 수 있다.  
+  
+
+### 3.5. layout_gravity 속성
+
+부모 레이아웃을 기준으로 위젯의 위치가 정렬된다.  
+**-layout_gravity : right**
+
+![[Pasted image 20240816112352.png]]
+
+ 부모 레이아웃이 horizontal일 경우에는 layout_gravity : right가 적용되지 않는 것 같음..  
+  
+**cf) gravity : right**
+
+![[Pasted image 20240816112401.png]]
+
+
+### 3.6 스크롤뷰
+
+스크롤뷰를 추가해주면 위젯이 화면을 넘어갈 때 스크롤이 가능하다.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+</ScrollView>
+```
+
+  
+
+- #### Space 도구
+    
+    빈 여백을 만들 수 있는 레이아웃 보조 도구이다. 위젯 사이에 일정한 간격을 두고 싶을 때 사용한다.  
+      
+      
+      
+    
+
+# 4. 프레임 레이아웃 (FrameLayout)
+
+위젯을 중첩해서 사용하기 위한 레이아웃이다. 주로 게임 화면처럼 배경과 플레이어가 서로 다른 레이어에서 겹쳐 움직일 때 사용할 수 있다.
+
+레이아웃 중에서 처리 속도가 가장 빨라서 1개의 이미지만 화면에 보여준다든지 하는 단순한 형태로 사용할 경우에 성능이 가장 좋다.
+
 
 
 ---
