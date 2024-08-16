@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md"
               }
             }
           },
@@ -152,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -195,16 +195,16 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Spaces/Home/Spring/Security.md",
     "Images/Security7.png",
     "Images/Security/Security1.png",
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
