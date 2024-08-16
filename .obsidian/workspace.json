@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,19 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin/5. KOTLIN TYPE.md",
+    "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
+    "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
+    "Spaces/Home/KOTLIN/Kotlin/8. KOTLIN GENERIC.md",
+    "Spaces/Home/KOTLIN/Kotlin/9. KOTLIN ANNOTATION.md",
+    "Spaces/Home/KOTLIN/Kotlin/10. KOTLIN TYPE ALIAS.md",
+    "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Images/Pasted image 20240816141134.png",
     "Images/Pasted image 20240816141118.png",
     "Images/Pasted image 20240816141107.png",
@@ -185,18 +198,11 @@
     "Images/Pasted image 20240816141020.png",
     "Images/Pasted image 20240816141011.png",
     "Images/Pasted image 20240816141005.png",
-    "Images/Pasted image 20240816140945.png",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Pasted image 20240816113822.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "daily note/2024/8/2024-08-16.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "daily note/2024/8/2024-08-14.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "daily note/2024/8/2024-08-13.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
@@ -206,12 +212,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/pom.xml.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
-    "Spaces/Home/Spring/MVC/MVC.md",
-    "Spaces/Home/Spring/Maven/Maven.md",
-    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat 오류.md",
-    "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
-    "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
-    "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
