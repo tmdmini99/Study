@@ -17,3 +17,13 @@ Activity
 - onStop  
     -> 화면 전부가 보이지 않을 때  
 - onDestroy
+	- 
+- intent
+	- intent란 messaging object(메세지 객체) 이다. 이 객체를 통해 다른 컴포넌트 간에 정보를 주고 받을 수 있다.
+	- 
+```kotlin
+btnStart.setOnClickListener { val intent = Intent(this, QuizQuestionsActivity::class.java) startActivity(intent) }
+```
+
+this 가 현재 액티비티이며, QuizQuestionsActivity::class.java가 이동할 액티비티이다.
+startActivity(intent) 를 해주므로 화면 전환 코드는 끝이 난다. 꼭 startActivity를 해줘야한다.

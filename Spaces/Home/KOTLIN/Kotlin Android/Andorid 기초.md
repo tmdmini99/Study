@@ -526,6 +526,37 @@ activity_main.xml
 ```
 
 
+
+##  xml과 activity 동시에 생성
+
+#### **사용 방법**
+
+File -> New -> Activity -> 생성하고 싶은 Activity 형태(대체로 Empty Activity)
+
+![[Kotlin 기초1.png]]
+
+누르면
+
+
+![[Kotlin 기초2.png]]
+
+
+이렇게 생성 창이 나온다.
+
+Activity Name에 원하는 이름을 적어 넣고, finish를 클릭하면 해당 이름을 가지는 class와 xml이 나온다.
+
+필자는 PlusActivity로 이름을 정했다.
+
+그렇게 생성하게 되면 아래 사진처럼 생성이 된다.
+
+
+![[Kotlin 기초3.png]]
+
+
+
+
+
+
 ---
 https://github.com/code-with-joyce/must_have_android/blob/main/10_TodoList/gradle.properties 보고 따라하기
 
@@ -534,3 +565,6 @@ https://velog.io/@kevinkim2586/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC
 
 
 https://aries574.tistory.com/404
+
+
+https://comain.tistory.com/321 - xml, activity 동시에 생성
