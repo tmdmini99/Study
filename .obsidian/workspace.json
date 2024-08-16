@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/View.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,19 +175,20 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
-    "Images/Pasted image 20240816140422.png",
-    "Images/Pasted image 20240816140405.png",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Images/Pasted image 20240816141134.png",
+    "Images/Pasted image 20240816141118.png",
+    "Images/Pasted image 20240816141107.png",
+    "Images/Pasted image 20240816141103.png",
+    "Images/Pasted image 20240816141043.png",
+    "Images/Pasted image 20240816141039.jpg",
+    "Images/Pasted image 20240816141036.png",
+    "Images/Pasted image 20240816141020.png",
+    "Images/Pasted image 20240816141011.png",
+    "Images/Pasted image 20240816141005.png",
+    "Images/Pasted image 20240816140945.png",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Images/Pasted image 20240816114555.png",
-    "Images/Pasted image 20240816114544.png",
-    "Images/Pasted image 20240816114528.png",
-    "Images/Pasted image 20240816114522.png",
-    "Images/Pasted image 20240816114455.png",
-    "Images/Pasted image 20240816114442.png",
-    "Images/Pasted image 20240816114426.png",
-    "Images/Pasted image 20240816114410.png",
-    "Images/Pasted image 20240816114206.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Pasted image 20240816113822.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "daily note/2024/8/2024-08-16.md",
@@ -211,7 +212,6 @@
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
-    "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
