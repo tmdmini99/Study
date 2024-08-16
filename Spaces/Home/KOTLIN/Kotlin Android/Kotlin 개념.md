@@ -470,7 +470,162 @@ XML 코드를 직접 수정하거나 \[Design] 버튼을 클릭해서 컴포넌�
 </LinearLayout>
 ```
 
+#### 속성 1. layout_width / layout_height
+
+> 1. match_parent : 부모와 동일한 크기를 가진다. (기본 layout 의 부모라면 화면 전체 크기를 말함)
+> 2. wrap_content : 자신이 가진 content를 감싸는 정도의 크기를 가진다. (content가 없으면 0 )
+> 3. 임의값 (hard coding) : 직접 입력
+
+   
+ 
+
+#### 속성 2. orientation (속성값을 주지 않을경우, default = horizontal)
+
+> 1. 수평방향 (horizontal)
+
+```kotlin
+android:orientation="horizontal"
+```
   
+![[Pasted image 20240816114410.png]]
+
+
+> 2. 수직방향 (vertical)
+
+```kotlin
+android:orientation="vertical"
+```
+
+
+![[Pasted image 20240816114426.png]]
+
+
+#### 속성 3. layout_gravity, gravity
+
+> View 배치 시, gravity 값에 의해 정렬
+
+> - 옵션 : center / start / bottom / center_horizontal / center_vertical / clip_horizontal / clip_vertical  
+>     / end / fill / fill_horizontal / fill_vertical / left / right / top
+
+> 1. layout_gravity : 부모 컨테이너의 영역 기준으로 현재 View 위치 정렬
+> 
+> - ex) 버튼을 1개 가진 LinearLayout 에 적용 (옵션 : center - 수평, 수직으로 가운데 정렬)
+> - 결과 : 전체화면(부모) 기준으로 한 가운데에 위치
+
+```kotlin
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:background="@color/purple_200"
+    android:layout_gravity="center"
+```
+
+
+![[Pasted image 20240816114442.png]]
+
+> 2. gravity : 현재 자신(View)의 영역 기준으로 Child View 또는 Content 위치 정렬
+> 
+> - ex) 버튼을 1개 가진 LinearLayout 에 적용 (옵션 : bottom, center_horizontal)  
+>     결과 : 자기 자신의 View(LinearLayout) 기준으로 아래&가운데에 위치
+
+```kotlin
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:background="@color/purple_200"
+    android:layout_gravity="center"
+    android:gravity="bottom|center_horizontal"...
+```
+
+![[Pasted image 20240816114455.png]]
+
+#### 속성 4. background
+
+> 1. 색넣기 : RGB 값을 직접 입력 또는 Android Studio 에서 기본 제공하는 Color Set 사용
+
+```kotlin
+android:background="#F0F4C3"
+```
+
+
+![[Pasted image 20240816114522.png]]
+
+
+
+
+
+
+
+
+
+
+
+
+> 2. 이미지 넣기 : res -> drawable 의 이미지 불러오기
+
+```kotlin
+android:background="@drawable/ic_launcher_background"
+```
+
+
+
+![[Pasted image 20240816114528.png]]
+
+
+#### 속성 5. layout_weight
+
+> - layout_weight : 정해진 비율에 따라 포함된 View 를 배치하고 자 할때 사용
+> - 전체 각 View 가 차지하는 비율 = 전체 영역 중, (자신의 weight / weight 합계) 만큼을 차지하게 된다.
+> - ex) 3개의 버튼 중, 2개는 weight->1, 나머지 1개는 weight->2
+
+```kotlin
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="gravity"
+        android:layout_weight="1"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="gravity"
+        android:layout_weight="1" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="gravity"
+        android:layout_weight="2"/>
+```
+
+
+![[Pasted image 20240816114544.png]]
+
+
+
+
+#### 속성 6. margin, padding
+
+> LinearLayout 만의 특성이 아닌, 모든 레이아웃에서 공통으로 사용
+
+> 1. layout_width / layout_height : View 의 기본적인 크기를 정의할 때 사용
+> 2. 마진(Margin) : View - View 사이의 공간, 즉 테두리를 넘어 여백을 주고 싶을 때 사용
+> 3. 패딩(Padding) : View 내부에서 테두리와 내용간의 여유 공간을 주고 싶을 때 사용
+
+```kotlin
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Margin/Padding"
+        android:layout_margin="30dp"
+        android:padding="20dp"
+        android:background="#ffffff"
+        />
+```
+
+
+
+![[Pasted image 20240816114555.png]]
+
+
+
+
 
 ### 3.2. orientation 속성
 
@@ -683,7 +838,189 @@ dependencies {
 ![[img.gif]]
 
 
-![[Pasted image 20240816113822]]
+![[Pasted image 20240816113822.png]]
+
+
+ 비슷하다.
+
+Fragment(Blank)를 누르고 이름을 지정한 다음 Finish를 누르면 된다.
+
+Fragment를 총 2개 만든다.
+
+
+![[Pasted image 20240816113955.png]]
+
+#### 화면구성
+
+#### *activity_main.xml
+
+![[Pasted image 20240816114027.png]]
+
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment1_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="10dp">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/fragment1_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Go Frag1"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragment2_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <Button
+        android:id="@+id/fragment2_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Go Frag2"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fragment1_btn"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+
+여기서 볼 것은 Fragment를 사용하려면 FramLayout을 만들고 그 안에 넣어야 한다!  
+FrameLayout은 여러 화면을 쌓듯이(프레임 쌓듯이) 화면 위에 또 다른 화면을 가져와 띄울 수 있다.
+
+
+
+*fragment_1.xml
+
+
+![[Pasted image 20240816114103.png]]
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This Frag1"
+        android:textAllCaps="false"
+        android:textSize="48sp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+
+*fragment_2.xml
+
+    fragment_1.xml 과 똑같이 만들어주고 Text만 "This Frag2" 로 수정하시면 됩니다.
+
+#### Fragment 사용하기
+
+*MainActivity.kt
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        binding.run {  // 1번
+            fragment1Btn.setOnClickListener{
+                setFragment(Fragment1()) //3번
+            }
+            fragment2Btn.setOnClickListener {
+                setFragment(Fragment2())
+            }
+        }
+    }
+
+    private fun setFragment(frag : Fragment) {  //2번
+        supportFragmentManager.commit {
+            replace(R.id.frameLayout, frag)
+            setReorderingAllowed(true)
+            addToBackStack("")
+        }
+    }
+}
+```
+
+
+
+anager.commit  {}  :  사용자 상호작용에 응답해 Fragment를 추가하거나 삭제하는등 작업을  
+할 수 있게 해주는 매니저 라고 생각하시면 편합니다.  
+  
+replace(R.id.frameLayout, frag) :  replace(어느프레임 레이아웃에 띄울것이냐, 어떤프래그먼트냐)  
+어느프레임레이아웃에 띄울것이냐 : 아까 우리가만든 FrameLayout에 ID값 넣어줬죠? 그거 넣으시면됩니다.
+
+어떤프래그먼트냐 : 우리가 함수를 만들때 프래그먼트를 인자로 받아왔죠?  그거 넣으시면됩니다.
+
+setReorderingAllowed(true) : 애니메이션과 전환이 올바르게 작동하도록 트랜잭션과 관련된 프래그먼트의 상태 변경을 최적화 하는거 입니다.  (사실 저도 잘 모릅니다.. 그냥 공식문서에서 쓰라고 했습니다!)  
+  
+addToBackStack("")  : 이 코드를 넣으면뒤로 가기버튼을 눌렀을 시에 차이가 있는데요.  
+이 코드를 추가하면 뒤로가기 버튼을 누를시 FrameLayout에 겹쳐져있던 그 전의 Fragment를 보여줍니다.  
+이 코드를 추가하지않으면 뒤로가기 버튼을 누를시 바로 앱이 종료됩니다.  (한번추가하고 안하고 해서 실험해보세요!)
+
+3번코드 : 이 코드는 버튼을 누르면 함수를 호출하는 간단한 코드입니다.  
+주의 깊게 볼 것은 함수를 호출할 때 무슨 값을 넘겨 줬는지입니다.
+
+Fragment1() 과 Fragment2() 를 넘겨줬죠.
+
+
+
+![[Pasted image 20240816114206.png]]
+
+
+
+이겁니다.  잘보시면 Fragment1은 클래스 형식으로 만들어져있습니다.  Fragment를 상속받았구요.
+
+결국 우리가 함수를 호출할때 넘겨준것은 Fragment1 클래스를 객체화 해서 Fragment를 넘겨준것입니다.
+
+Fragment1 클래스는 우리가 아까 만든  *fragment_1.xml 그겁니다. 
+
+ setFragment(Fragment1()) = setFragment(어떤프래그먼트를 넘길거냐! 나는 Fragment1클래스를 객체화해서 만든 프래그먼트를 넘길것이다. !)
+
+
+
+
+
+
 
 
 
