@@ -4,109 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "2ece789a99ddbf4b",
+        "id": "d1c02dafa7771d50",
         "type": "tabs",
         "children": [
           {
-            "id": "def2c6113607a28d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "eeeadcc4f28a1662",
+            "id": "2950a09a6d393c2c",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Kotlin개념5.gif"
-              }
-            }
-          },
-          {
-            "id": "b9f5eb5767e09897",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin개념4.gif"
-              }
-            }
-          },
-          {
-            "id": "c0ed1f38716da4e8",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin개념3.png"
-              }
-            }
-          },
-          {
-            "id": "b790bffe453495b2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/kotlin개념2.gif"
-              }
-            }
-          },
-          {
-            "id": "6913d11f46d36c97",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/kotlin개념2.gif"
-              }
-            }
-          },
-          {
-            "id": "530caaed49ee26bd",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin 기초3.png"
-              }
-            }
-          },
-          {
-            "id": "62331d89280a21f1",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin 기초2.png"
-              }
-            }
-          },
-          {
-            "id": "90ffe08bc8281dbf",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin 기초1.png"
-              }
-            }
-          },
-          {
-            "id": "eeb2fdcc0dbdec4f",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Kotlin 개념1.png"
+                "file": "Images/Pasted image 20240816113822.png"
               }
             }
           }
@@ -184,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+                "file": "Images/Pasted image 20240816113822.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -212,7 +119,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md"
+                "file": "Images/Pasted image 20240816113822.png"
               }
             }
           },
@@ -222,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+                "file": "Images/Pasted image 20240816113822.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -263,21 +170,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "def2c6113607a28d",
+  "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Images/Pasted image 20240816113822.png",
+    "Pasted image 20240816113822.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+    "Images/Kotlin개념5.gif",
+    "Images/img.gif",
+    "Images/Pasted image 20240816113723.jpg",
+    "Images/Pasted image 20240816113627.jpg",
     "Images/Pasted image 20240816112401.png",
     "Images/Pasted image 20240816112352.png",
     "Images/Pasted image 20240816112257.png",
     "Images/Pasted image 20240816112247.png",
-    "Images/Kotlin개념5.gif",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Images/Kotlin개념4.gif",
-    "Images/Kotlin개념3.png",
-    "Images/kotlin개념2.gif",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
-    "Images/Kotlin 기초3.png",
-    "Images/Kotlin 기초2.png",
-    "Images/Kotlin 기초1.png",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "daily note/2024/8/2024-08-16.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
@@ -301,7 +208,6 @@
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Docker/Docker-Compose.md",
-    "daily note/2024/8/2024-08-12.md",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",

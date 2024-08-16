@@ -454,7 +454,7 @@ val intent: Intent = Intent(this, DetailActivity::class.java)
 
 ### 3.1. 레이아웃 설정
 
-XML 코드를 직접 수정하거나 [Design] 버튼을 클릭해서 컴포넌트 트리의 최상위 레이아웃을 리니어 레이아웃으로 설정하면 리니어 레이아웃을 기본 레이아웃으로 설정할 수 있다.
+XML 코드를 직접 수정하거나 \[Design] 버튼을 클릭해서 컴포넌트 트리의 최상위 레이아웃을 리니어 레이아웃으로 설정하면 리니어 레이아웃을 기본 레이아웃으로 설정할 수 있다.
 
 
 ```xml
@@ -538,6 +538,157 @@ XML 코드를 직접 수정하거나 [Design] 버튼을 클릭해서 컴포넌�
 
 
 
+
+
+
+
+
+# Fragment
+
+
+## Fragment는 무엇인가?
+
+
+
+![[Pasted image 20240816113627.jpg]]
+
+
+우리가 자주쓰는 카카오톡을 예로 들자 
+
+카카오톡 검정색 테두리 부분이 Activity 부분이다. 
+
+Activity안에 여러 Fragment를 만들어 넣을 수 있는 View공간을 만든다.  (하얀공간)
+
+오른쪽 사진에 있는 버튼들을 누르면 만들어둔 Fragment들을 View공간(하얀공간)에 넣어서 우리에게 보여주는 것이다.
+
+
+## Fragment를 왜 사용할까?
+
+내가 가장 먼저든 의문은 Activity로 화면을 계속 넘기면 되는 거 아닌가?  
+왜 Fragment를 사용해야 할까? 라는 것이었다.
+
+└ 이거에대한 답변 :  
+      Activity로 화면을 계속 넘기는 것보다는 Fragment로 일부만 바꾸는 것이 자원 이용량이 적어  
+      속도가 빠르기 때문에....
+
+Fragment를 사용하면  Activity를 적게 만들 수 있다. = Activity의 복잡도를 줄일 수 있다.
+
+Fragment를 사용하면  재사용할 수 있는 레이아웃을 분리해서 관리가 가능하다.
+
+Fragment를 사용하면 최소 1개의 Activity안에서 Fragment공간에 View만 집어넣으면 여러 Activity를 만들지 않아도
+
+우리에게 여러 화면을 보여줄 수 있다.
+
+## Fragment 특징
+
+#### 1. Fragment 자체로 우리에게 보일 수 없다.
+
+만들어둔 Fragment 화면이 우리에게 보이기 위해서는 Activity 안에 존재해야 한다.
+
+#### 2.  Fragment 만의 LifeCycle 이 존재한다.
+
+#### 3.  재사용이 가능하다.
+
+
+
+## Fragment LifeCycle(생명주기)
+
+
+![[Pasted image 20240816113723.jpg]]
+
+
+
+
+#### 1. On Attach()
+
+- Activity에 Fragment가 붙을 때 호출된다.
+- Fragment가 완벽하게 생성된 상태는 아니다.
+- 인자로 context가 주어진다.
+
+#### 2. On Create()
+
+- Activity와 같이 초기화가 필요한 리소스들을 초기화한다.
+- Fragment를 생성하면서 넘겨준 값이 있다면, 여기서 변수에 넣어준다.
+- UI 초기화는 하지못한다.
+-  Activity의 onCreate()에서는 View나 UI 관련 작업을 할 수 있지만, Fragment onCreate()에서는 할 수 없다.   
+      
+    
+
+#### 3.  On CreateView()
+
+- xml에 표기된 Layout들을 객체화해서 사용할 수 있게 해주는 곳.
+- Layout객체를 얻을 수 있으므로, 버튼이나 텍스트뷰 등을 초기화 할 수 있다.
+- View를 반환해여 한다. (UI를 제공하지않는 경우에는 Null을 반환하면 된다.)
+- Fragment에 속한 View나 ViewGroup에 대한 UI 바인딩 작업을 할 수 있다.
+- Fragment에서 UI를 그릴 때 호출되는 콜백이다.
+- 매개변수 container는 Activity의 ViewGroup이며, 여기에 Fragment가 위치하게 된다.
+- 매개변수 savedInstanceState는 Bundel 객체로 Fragment가 재개되는 경우 이전 상태에 대한 데이터를 제공한다.
+
+#### 4. On ActivityCreated() 
+
+- Fragment에서 onCreateView를 마치고, Activity에서 onCreate()가 호출되고 나서 호출된다.
+- Activity와 Fragment의 뷰가 모두 생선된 상태로, View를 변경하는 작업이 가능한 단계이다.
+- Activity에서 Fragment를 모두 생성하고 난 다음에 호출된다.
+- Acitvity와 Fragment의 View가 모두 생성되고, 연결된 상태.
+
+#### 5. On Start()
+
+- Fragment가 사용자에게 보여지기 직전 호출된다.
+
+#### 6. On Resume()
+
+- Fragment가 화면에 보여지는 단계.
+- 사용자와의 상호 작용이 가능하다.  ex) 버튼클릭
+- onPause() 되기 전까지는 이 단계에서 유지된다.
+
+#### 7. On Pause()
+
+- Parent Activity가 아닌 다른 Activity가 위로 올라오거나, 다른 Fragment가 add되면서 포커스를 잃을때  
+    일시정지 상태로 들어간다. 
+- Fragment와 사용자의 상호작용이 중지된다.
+- UI관련 처리를 정지하고, 중요한 데이터를 저장한다.
+
+#### 8. On Stop()
+
+- Fragment가 완전히 가려지는 경우, onPause()에 이어 onStop() 까지 실행된다.
+- Fragment는 더이상 보이지않고, Fragment 기능은 중지된다.
+- 이 단계에서 시스템이 자동으로 onStateInstance()를 호출하여 UI의 상태를 저장하므로  
+    Activity를 다시 띄우면 이전 상태 그대로 보인다.
+
+#### 9. On DestoryView()
+
+- Fragment와 관련된 View가 제거될 때 실행된다.
+- Activity에서 Fragment 생성 시 addToBackStack()을 요청했을 경우 onDestroy()를 호출하지 않고,  
+    인스턴스가 저장되어 있다가 Fragment를 다시 부를 때 onCreateView()를 실행하여 다시 화면에 보여지게 한다.
+
+#### 10. On Destroy()
+
+- View가 제거된 후 Fragment가 완전히 소멸되기 전에 호출된다.
+
+#### 11. On Detach()
+
+- Fragment가 완전히 소멸되고, Activity와의 연결도 끊어질 때 실행된다.
+
+## Fragment 사용방법
+
+★시작하기전에 Fragment KTX 를 사용하기 위해 build.gradle 에 다음과 같이 추가한다.
+
+
+```kotlin
+dependencies {
+    implementation("androidx.fragment:fragment-ktx:1.4.1")
+}
+```
+
+![[img.gif]]
+
+
+![[Pasted image 20240816113822]]
+
+
+
+
+
 ---
 출처 - https://comain.tistory.com/339
 
@@ -545,3 +696,6 @@ https://velog.io/@ywown/kotlin-%EC%9D%B8%ED%85%90%ED%8A%B8-%EB%B3%B5%EC%8A%B5
 
 
 https://rkdrkd-history.tistory.com/47
+
+
+https://jutole.tistory.com/2 - fragment
