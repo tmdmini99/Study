@@ -143,6 +143,46 @@ form-login은 이걸 쓰는걸 추천
     authentication-failure-handler-ref="TestFailHandler"
 />
 
+
+
+```
+
+security form 전체코드
+
+```xml
+<security:http auto-config="false" use-expressions="true">  
+        <security:intercept-url pattern="/resources/**" access="permitAll()"/>  
+        <security:intercept-url pattern="/join" access="isAnonymous()"/>  
+        <security:intercept-url pattern="/login" access="isAnonymous()"/>  
+        <security:intercept-url pattern="/" access="permitAll()"/>  
+        <security:intercept-url pattern="/logout" access="permitAll()"/>  
+        <security:intercept-url pattern="/common/00599.bms" access="permitAll()"/>  
+  
+        <!-- iframe 동작처리-->  
+        <security:headers >  
+            <security:frame-options policy="SAMEORIGIN" />  
+        </security:headers>  
+  
+        
+<security:form-login
+    login-processing-url="/login"
+    authentication-failure-url="/"
+    login-page="/"
+    username-parameter="userId"
+    password-parameter="pwd"
+    authentication-success-handler-ref="TestSuccessHandler"
+    authentication-failure-handler-ref="TestFailHandler"
+/>
+  
+        <security:logout logout-url="/logout"  
+                         invalidate-session="true"  
+                         delete-cookies="JSESSIONID"  
+                         success-handler-ref="TestSuccessHandler"  
+        />  
+        <!-- enable csrf protection -->  
+        <security:csrf />  
+  
+    </security:http>
 ```
 
 ## 권한 설정
