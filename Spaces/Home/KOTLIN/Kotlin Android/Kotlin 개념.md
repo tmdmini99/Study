@@ -49,27 +49,58 @@ onStart()가 수행되고 난 후, activity는 "Resume" 상태로 진입하면�
 
 - onResume  
     -> 다시 앱으로 돌아올 때 무조건 호출된다.  
-    onResume() 함수는 activity가 "Resume" 상태일 때 호출된다.
+	 onResume() 함수는 activity가 "Resume" 상태일 때 호출된다.
 	"Resume" 상태는 사용자가 앱과 상호작용 할 수 있는 상태를 뜻한다.
 ```kotlin
+override fun onResume() {
+    super.onResume()
 
+    Log.d("TAG", "onStart: activity resumed.")
+}
 ```
+intent를 통해 다른 액티비티로 넘어가는 경우에는 액티비티가 "Paused" 상태에 들어가 onPause()를 호출한다.
+
+onCreate() 에서 onResume()까지의 앱의 모습
+
+![[Kotlin개념4.gif]]
+
 - onPause  
     -> 화면의 일부가 가려졌을 때  
+    onPause는 activity가 "Paused" 상태일 때 호출된다.
+   "Paused" 상태는 acivity가 일시 정지 상태라는 것으로 이해하면 될 것 같다.
 ```kotlin
+override fun onPause() {
+    super.onPause()
 
+    Log.d("TAG", "onPause activity pause")
+}
 ```
 - onStop  
     -> 화면 전부가 보이지 않을 때  
+    activity가 화면에서 완전히 안보이게되었을 때 호출된다.
 ```kotlin
+override fun onStop() {
+    super.onStop()
 
+    Log.d("TAG", "onPause activity stopped")
+}
 ```
+사용자가 다시 돌아오게 되면, "Stopped" 상태에서 다시 시작해서 onRestart(), onStart(), onResume() 순서대로 다시 호출된다.
 - onDestroy
-
+activity가 완전히 죽기(?) 전에 수행되는 메서드이다.
 ```kotlin
+override fun onDestroy() {
+    super.onDestroy()
 
+    Log.d("TAG", "onPause activity died.")
+}
 ```
-	- 
+
+onPause()부터 onDestroy()까지의 모습
+
+![[Kotlin개념5.gif]]
+
+
 - intent
 	- intent란 messaging object(메세지 객체) 이다. 이 객체를 통해 다른 컴포넌트 간에 정보를 주고 받을 수 있다.
 	-  '컴포넌트를 실행하려고 시스템에 전달하는 메시지'
@@ -331,3 +362,6 @@ val intent: Intent = Intent(this, DetailActivity::class.java)
 출처 - https://comain.tistory.com/339
 
 https://velog.io/@ywown/kotlin-%EC%9D%B8%ED%85%90%ED%8A%B8-%EB%B3%B5%EC%8A%B5
+
+
+https://rkdrkd-history.tistory.com/47
