@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,9 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Images/Pasted image 20240816140422.png",
+    "Images/Pasted image 20240816140405.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Images/Pasted image 20240816114555.png",
     "Images/Pasted image 20240816114544.png",
@@ -185,9 +188,7 @@
     "Images/Pasted image 20240816114426.png",
     "Images/Pasted image 20240816114410.png",
     "Images/Pasted image 20240816114206.png",
-    "Images/Pasted image 20240816114103.png",
     "Pasted image 20240816113822.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "daily note/2024/8/2024-08-16.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",

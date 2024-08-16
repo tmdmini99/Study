@@ -500,6 +500,14 @@ android:orientation="vertical"
 ![[Pasted image 20240816114426.png]]
 
 
+
+![[Pasted image 20240816140405.png]]
+
+
+
+
+![[Pasted image 20240816140422.png]]
+
 #### 속성 3. layout_gravity, gravity
 
 > View 배치 시, gravity 값에 의해 정렬
