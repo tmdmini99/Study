@@ -49,6 +49,22 @@
 
 
 
+시큐리티 설정시 추가
+```xml
+<filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+```
+
+
+
 ---
 참조
 https://riverblue.tistory.com/35

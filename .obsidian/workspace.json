@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md"
               }
             }
           },
@@ -152,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -195,10 +195,13 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml",
+    "Spaces/Home/Spring/Spring Legacy/Maven/web.xml.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/xml",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
@@ -211,11 +214,8 @@
     "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
     "daily note/2024/8/2024-08-19.md",
     "daily note/2024/8/2024-08-16.md",
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/Spring/Spring Legacy/Maven/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Images/Security7.png",
     "Images/Security/Security1.png",
