@@ -11,13 +11,18 @@
             "id": "2950a09a6d393c2c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "path": "Spaces"
               }
+            }
+          },
+          {
+            "id": "d2c0a16fa15a5bc1",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -94,7 +99,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,9 +125,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md"
-              }
+              "state": {}
             }
           },
           {
@@ -132,7 +134,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,9 +174,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2950a09a6d393c2c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "File/openssl-1.0.2j-fips-x86_64 (2).zip",
+    "File",
+    "Spaces/FIle",
+    "Spaces/Home/Docker/SSL.md",
+    "Images/openssl-1.0.2j-fips-x86_64 (2).zip",
+    "Spaces/Home/Docker/WSL.md",
+    "Spaces/Home/Docker/DockerError.md",
+    "Spaces/Home/CSRF/XSS.md",
+    "Spaces/Home/CSRF/reCAPTCH.md",
+    "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Images/Security/Security1.png",
     "Images/Security7.png",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
@@ -183,7 +195,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/pom.xml.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
@@ -199,12 +210,6 @@
     "Images/Docker-Compose명령어/Docker-Compose명령어2.png",
     "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
     "daily note/2024/8/2024-08-19.md",
-    "daily note/2024/8/2024-08-16.md",
-    "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
-    "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Images/Pasted image 20240816141134.png",
     "Images/Pasted image 20240816141118.png",
     "Images/Pasted image 20240816141107.png",
@@ -217,9 +222,6 @@
     "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "Spaces/Home/IntelliJ/Kotlin",
     "Spaces/Home/KOTLIN",
-    "Images/RATIO_TO_REPORT",
-    "Spaces/Home/DB/DB 개념/RATIO_TO_REPORT",
-    "Images/GIT",
     "무제 파일.canvas"
   ]
 }

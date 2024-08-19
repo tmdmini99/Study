@@ -1287,3 +1287,6 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 
 
+Open SSL 파일
+
+![[openssl-1.0.2j-fips-x86_64 (2).zip]]
