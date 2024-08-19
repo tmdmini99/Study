@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-19.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-19.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-19.md"
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md"
               }
             }
           },
@@ -152,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-19.md",
+                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -193,10 +193,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
-    "daily note/2024/8/2024-08-16.md",
+    "Spaces/Home/Linux/Linux명령어.md",
+    "Pasted image 20240816113822.md",
+    "Spaces/Home/Linux/Linux.md",
+    "Spaces/Home/Spring/AOP/AOP.md",
+    "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
+    "Images/Docker-Compose명령어/Docker-Compose명령어2.png",
+    "Images/Docker-Compose명령어/Docker-Compose 설치2.png",
     "daily note/2024/8/2024-08-19.md",
+    "daily note/2024/8/2024-08-16.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/web.xml.md",
@@ -211,7 +218,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
-    "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
     "Spaces/Home/KOTLIN/Kotlin/5. KOTLIN TYPE.md",
     "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
     "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
@@ -219,18 +225,12 @@
     "Spaces/Home/KOTLIN/Kotlin/9. KOTLIN ANNOTATION.md",
     "Spaces/Home/KOTLIN/Kotlin/10. KOTLIN TYPE ALIAS.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Images/Pasted image 20240816141134.png",
     "Images/Pasted image 20240816141118.png",
     "Images/Pasted image 20240816141107.png",
     "Images/Pasted image 20240816141103.png",
     "Images/Pasted image 20240816141043.png",
     "Images/Pasted image 20240816141039.jpg",
-    "Images/Pasted image 20240816141036.png",
-    "Images/Pasted image 20240816141020.png",
-    "Pasted image 20240816113822.md",
-    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
