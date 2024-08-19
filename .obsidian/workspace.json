@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md",
+                "file": "daily note/2024/8/2024-08-19.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md",
+                "file": "daily note/2024/8/2024-08-19.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md"
+                "file": "daily note/2024/8/2024-08-19.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-16.md",
+                "file": "daily note/2024/8/2024-08-19.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -196,6 +196,8 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "daily note/2024/8/2024-08-16.md",
+    "daily note/2024/8/2024-08-19.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/web.xml.md",
@@ -229,9 +231,7 @@
     "Images/Pasted image 20240816141036.png",
     "Images/Pasted image 20240816141020.png",
     "Pasted image 20240816113822.md",
-    "daily note/2024/8/2024-08-16.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
