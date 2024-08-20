@@ -1,3 +1,6 @@
+https://sourceforge.net/projects/openssl/files/latest/download?source=typ_redirect%EF%BB%BF
+
+다운로드 사이트
 
 
 실제로 openssl 인증서 받을 때 쓴 명령어
@@ -107,6 +110,10 @@ services:
 
 \- C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/private.crt:/usr/local/apache2/conf/server.crt  실제 저장된 위치에서 자신이 만든 키를 가져와야함
  \- C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/private.key:/usr/local/apache2/conf/server.key 자신이 만든 키와 crt를 가져와야함
+
+
+만약 Apache HTTP Server에서 SSL을 처리하고 Tomcat으로 트래픽을 프록시하는 설정을 사용한다면, **Tomcat의 `server.xml` 파일에 SSL 설정을 추가할 필요가 없다**
+
 ## httpd.conf 
 
 
@@ -1284,6 +1291,29 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 
 ```
+
+
+
+server.xml에 추가할 경우 
+```xml
+<Connector
+    port="8443" 
+    protocol="org.apache.coyote.http11.Http11NioProtocol"
+    maxThreads="150"
+    SSLEnabled="true">
+    <SSLHostConfig>
+        <Certificate
+            certificateKeystoreFile="/path/to/keystore.jks"
+            type="RSA"
+            certificateKeystorePassword="yourKeystorePassword"/>
+    </SSLHostConfig>
+</Connector>
+
+```
+
+- **port**: SSL을 사용할 포트 번호를 지정합니다. 일반적으로 8443을 사용하지만, 필요에 따라 다른 포트로 변경할 수 있습니다.
+- **certificateKeystoreFile**: SSL 인증서를 포함하는 키스토어 파일의 경로를 지정합니다.
+- **certificateKeystorePassword**: 키스토어 파일의 비밀번호를 지정합니다.
 
 
 
