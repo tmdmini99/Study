@@ -11,12 +11,9 @@
             "id": "2950a09a6d393c2c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "daily note/2024/8/2024-08-20.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "Images/Pasted image 20240808174907.png"
               }
             }
           }
@@ -74,8 +71,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-20.md",
+                "file": "Images/Pasted image 20240808174907.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +119,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-20.md"
+                "file": "Images/Pasted image 20240808174907.png"
               }
             }
           },
@@ -133,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-20.md",
+                "file": "Images/Pasted image 20240808174907.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -174,10 +170,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2950a09a6d393c2c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/SSL.md",
     "daily note/2024/8/2024-08-20.md",
+    "Spaces/Home/Docker/SSL.md",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
     "Spaces/FIle",
