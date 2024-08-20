@@ -1330,3 +1330,140 @@ docker run -d -p 443:443 \
 Open SSL 파일
 
 ![[openssl-1.0.2j-fips-x86_64 (2).zip]]
+
+
+
+## Docker-FIle 통해서 SSL 추가
+
+
+```file
+FROM tomcat:9.0.84
+
+# 로컬의 server.xml 파일을 Tomcat 컨테이너의 conf 디렉토리에 복사
+COPY ./server.xml /usr/local/tomcat/conf/server.xml
+
+# SSL 인증서 파일도 함께 복사
+COPY ./keystore.jks /usr/local/tomcat/conf/keystore.jks
+
+```
+
+
+Docker-compose.yml
+```yml
+version: '3'
+services:
+  tomcat:
+    build: .
+    ports:
+      - "8080:8080"
+      - "8443:8443"  # HTTPS 포트
+
+
+```
+
+
+
+## docker-compose.yml
+
+
+
+도커 이미지를 커스텀 하지않고 바로 만들때
+```yml
+version: '3'
+services:
+  tomcat:
+    image: tomcat:9.0.84
+    container_name: myTomcat
+    ports:
+      - "8080:8080"
+      - "8443:8443"  # SSL 포트
+    volumes:
+      - ./server.xml:/usr/local/tomcat/conf/server.xml  # 로컬의 server.xml을 컨테이너에 마운트
+      - ./keystore.jks:/usr/local/tomcat/conf/keystore.jks  # SSL 인증서 파일 마운트
+    environment:
+      - JAVA_OPTS=-Djava.version=8
+      - CATALINA_CONNECTOR_CONNECTIONTIMEOUT=300000
+
+```
+
+
+
+
+## docker run
+
+
+```
+docker run -d --name myTomcat \
+  -p 8080:8080 \
+  -p 8443:8443 \
+  -v $(pwd)/server.xml:/usr/local/tomcat/conf/server.xml \
+  -v $(pwd)/keystore.jks:/usr/local/tomcat/conf/keystore.jks \
+  -v $(pwd)/my-app.war:/usr/local/tomcat/webapps/ROOT.war \
+  tomcat:9.0.84
+
+```
+
+
+- **`-d`**: 컨테이너를 백그라운드에서 실행합니다.
+- **`--name myTomcat`**: 컨테이너의 이름을 `myTomcat`으로 설정합니다.
+- **`-p 8080:8080`**: 로컬의 8080 포트를 컨테이너의 8080 포트에 매핑합니다.
+- **`-p 8443:8443`**: 로컬의 8443 포트를 컨테이너의 8443 포트에 매핑합니다. (HTTPS 포트)
+- **`-v $(pwd)/server.xml:/usr/local/tomcat/conf/server.xml`**: 로컬의 `server.xml` 파일을 컨테이너의 Tomcat 설정 디렉토리에 마운트합니다.
+- **`-v $(pwd)/keystore.jks:/usr/local/tomcat/conf/keystore.jks`**: 로컬의 `keystore.jks` 파일을 컨테이너의 Tomcat 설정 디렉토리에 마운트합니다.
+- **`-v $(pwd)/my-app.war:/usr/local/tomcat/webapps/ROOT.war`**: 로컬의 WAR 파일을 Tomcat의 웹 애플리케이션 디렉토리에 마운트하여 자동 배포합니다.
+- **`tomcat:9.0.84`**: 사용할 Tomcat 이미지 버전입니다. 필요에 따라 버전을 변경할 수 있습니다.
+
+
+
+### `$(pwd)`의 역할
+
+- **경로 지정**: `$(pwd)`는 현재 디렉토리의 절대 경로를 반환하므로, 로컬 파일의 정확한 경로를 컨테이너에 전달할 수 있습니다.
+- **파일 마운트**: `-v` 또는 `--volume` 옵션을 사용하여 로컬 디렉토리와 컨테이너 디렉토리 간의 매핑을 설정할 때 필요합니다.
+
+- **Unix 계열 시스템**: `$(pwd)`는 Unix 계열 시스템에서 경로를 동적으로 가져오는 방법입니다. 이 구문이 없으면 상대 경로로 파일을 마운트하려고 할 때, 현재 작업 디렉토리의 위치를 확실히 알 수 없으므로 문제가 발생할 수 있습니다.
+    
+- **Windows 시스템**: Windows에서는 `$(pwd)` 대신 `"%cd%"`를 사용할 수 있습니다.
+
+
+
+#### UNIX 계열에서 쓰는 방법
+
+```
+docker run -d --name myTomcat \
+  -p 8080:8080 \
+  -p 8443:8443 \
+  -v $(pwd)/server.xml:/usr/local/tomcat/conf/server.xml \
+  -v $(pwd)/keystore.jks:/usr/local/tomcat/conf/keystore.jks \
+  -v $(pwd)/my-app.war:/usr/local/tomcat/webapps/ROOT.war \
+  tomcat:9.0.84
+```
+
+
+#### 윈도우에서  쓰는 방법
+
+
+```
+docker run -d --name myTomcat \
+  -p 8080:8080 \
+  -p 8443:8443 \
+  -v "%cd%/server.xml:/usr/local/tomcat/conf/server.xml" \
+  -v "%cd%/keystore.jks:/usr/local/tomcat/conf/keystore.jks" \
+  -v "%cd%/my-app.war:/usr/local/tomcat/webapps/ROOT.war" \
+  tomcat:9.0.84
+
+```
+
+
+#### 절대 경로
+
+
+```
+docker run -d --name myTomcat \
+  -p 8080:8080 \
+  -p 8443:8443 \
+  -v /absolute/path/to/server.xml:/usr/local/tomcat/conf/server.xml \
+  -v /absolute/path/to/keystore.jks:/usr/local/tomcat/conf/keystore.jks \
+  -v /absolute/path/to/my-app.war:/usr/local/tomcat/webapps/ROOT.war \
+  tomcat:9.0.84
+
+```
