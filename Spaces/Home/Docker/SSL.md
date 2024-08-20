@@ -1389,7 +1389,7 @@ services:
 
 
 
-## docker run
+## docker run으로 server.xml 변경
 
 
 ```
