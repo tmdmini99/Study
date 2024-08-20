@@ -1316,6 +1316,16 @@ server.xml에 추가할 경우
 - **certificateKeystorePassword**: 키스토어 파일의 비밀번호를 지정합니다.
 
 
+```yml
+docker run -d -p 443:443 \
+    -v $(pwd)/my-httpd.conf:/usr/local/apache2/conf/httpd.conf \
+    -v $(pwd)/certificate.crt:/usr/local/apache2/conf/ssl.crt/certificate.crt \
+    -v $(pwd)/private.key:/usr/local/apache2/conf/ssl.key/private.key \
+    -v $(pwd)/ca-bundle.crt:/usr/local/apache2/conf/ssl.crt/ca-bundle.crt \
+    httpd:2.4
+
+```
+
 
 Open SSL 파일
 

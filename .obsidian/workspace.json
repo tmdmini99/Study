@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Docker/Docker-File.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Docker/Docker-File.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md"
+                "file": "Spaces/Home/Docker/Docker-File.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Docker/Docker-File.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,10 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Spaces/Home/Docker/Docker-File.md",
+    "Spaces/Home/Docker/SSL.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Images/img.gif",
     "Images/Pasted image 20240816141011.png",
     "Images/Pasted image 20240816140945.png",
@@ -185,7 +189,6 @@
     "Images/Pasted image 20240808173812.png",
     "Images/Pasted image 20240808174907.png",
     "daily note/2024/8/2024-08-20.md",
-    "Spaces/Home/Docker/SSL.md",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
     "Spaces/FIle",
@@ -198,7 +201,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Images/Security/Security1.png",
-    "Images/Security7.png",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/web.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
@@ -214,8 +216,6 @@
     "Spaces/Home/Linux/Linux명령어.md",
     "Pasted image 20240816113822.md",
     "Spaces/Home/Linux/Linux.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
-    "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
