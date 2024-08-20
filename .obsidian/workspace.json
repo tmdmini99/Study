@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "daily note/2024/8/2024-08-20.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "daily note/2024/8/2024-08-20.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md"
+                "file": "daily note/2024/8/2024-08-20.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "daily note/2024/8/2024-08-20.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,6 +177,7 @@
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
     "Spaces/Home/Docker/SSL.md",
+    "daily note/2024/8/2024-08-20.md",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
     "Spaces/FIle",
