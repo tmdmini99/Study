@@ -68,3 +68,59 @@ services:
       - "8080:8080"
 
 ```
+
+
+
+Docker FIle과 Docker-compose,yml이 같은 위치에 있을경우
+
+```
+project-root/
+├── Dockerfile
+└── docker-compose.yml
+
+```
+
+`docker-compose.yml`
+
+```yml
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+
+```
+
+
+**다른 위치에 둘 경우**:
+
+```
+project-root/
+├── docker-compose.yml
+├── app/
+│   └── Dockerfile
+└── mysql/
+    └── Dockerfile
+
+```
+
+
+```yml
+version: '3'
+services:
+  tomcat:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+
+```
