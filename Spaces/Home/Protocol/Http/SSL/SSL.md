@@ -280,6 +280,8 @@ openssl pkcs12 -export -in your-certificate.crt -inkey your-private.key -out key
 
 JDK 내부에서 keytool 을 제공한다. JDK 디렉토리로 이동하여 아래 명령어를 입력해 keystore 를 생성하자.
 
+
+굳이 jks파일로 만들필요 없음
 > 여기서 JDK 내부 디렉토리란 cmd창에서 C:\Program Files\Java\jdk-11\bin와 같이 자바가 다운되어있는 위치
 > cmd에서 이 위치로 이동후 사용해야함
 > 만약 key.p12가 다른곳에 있다면  밑에와 같이 key.p12가 있는 위치를 지정해줘야함

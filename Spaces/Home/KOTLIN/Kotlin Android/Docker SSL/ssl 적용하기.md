@@ -59,6 +59,25 @@ docker run --network=mynetwork --name tomcat-test -d -p 8080:8080 -p 8443:8443 -
 ```
 
 
+p12
+```
+docker run --network=mynetwork --name tomcat-test -d \
+    -p 8080:8080 -p 8443:8443 \
+    -v "C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/key.p12:/usr/local/tomcat/conf/key.p12" \
+    -v "C:/Project/andDb/.smarttomcat/andDb/conf/server.xml:/usr/local/tomcat/conf/server.xml" \
+    -e JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Duser.timezone=Asia/Seoul" \
+    tomcat:9.0.84
+
+```
+
+한줄
+```
+docker run --network=mynetwork --name tomcat-test -d -p 8080:8080 -p 8443:8443 -v "C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/key.p12:/usr/local/tomcat/conf/key.p12" -v "C:/Project/andDb/.smarttomcat/andDb/conf/server.xml:/usr/local/tomcat/conf/server.xml" -e JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Duser.timezone=Asia/Seoul" tomcat:9.0.84
+
+```
+
+
+
 
 ```
 docker cp C:\Project\andDb\target\andDb-1.0-SNAPSHOT.war tomcat-test:/usr/local/tomcat/webapps/ROOT.war
