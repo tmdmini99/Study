@@ -109,6 +109,27 @@ SHA256 Fingerprint=12:34:56:78:90:AB:CD:EF:GH:IJ:KL:MN:OP:QR:ST:UV:WX:YZ:12:34:5
 
 ```
 
+PowerShell 에서 base 64로 변경
+
+```
+# SHA-256 핀 값 (16진수 문자열로 입력)
+$fingerprintHex = "13CF308E4539397914C7961F7ED908CE07136378BD1A878FF31B203E27675BC8"
+
+# 16진수 문자열을 바이트 배열로 변환
+$bytes = [System.Collections.Generic.List[byte]]@()
+for ($i = 0; $i -lt $fingerprintHex.Length; $i += 2) {
+    $bytes.Add([Convert]::ToByte($fingerprintHex.Substring($i, 2), 16))
+}
+
+# 바이트 배열을 Base64 문자열로 변환
+$base64String = [Convert]::ToBase64String($bytes.ToArray())
+
+# 결과 출력
+Write-Output $base64String
+****
+```
+
+
 network_security_config.xml에 추가
 
 ```xml
