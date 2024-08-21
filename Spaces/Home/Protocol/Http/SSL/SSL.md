@@ -278,6 +278,9 @@ JDK 내부에서 keytool 을 제공한다. JDK 디렉토리로 이동하여 아�
 > cmd에서 이 위치로 이동후 사용해야함
 > 만약 key.p12가 다른곳에 있다면  밑에와 같이 ke.p12가 있는 위치를 지정해줘야함
 
+
+
+
 ```
 keytool -importkeystore -srckeystore C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\key.p12 -srcstoretype PKCS12 -destkeystore key.jks -deststoretype JKS
 ```
