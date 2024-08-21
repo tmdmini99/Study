@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2950a09a6d393c2c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Spaces/Home/Docker/Docker-File.md",
+    "Spaces/Home/Docker/DockerError.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Spring/Security.md",
@@ -187,13 +193,9 @@
     "Spaces/Home/KOTLIN/Kotlin Android/BCrypt.md",
     "Spaces/Home/Protocol/Http/SSE.md",
     "daily note/2024/8/2024-08-21.md",
-    "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/WSL.md",
     "Spaces/Home/Docker/쿠버네티스.md",
-    "Spaces/Home/Docker/Docker-File.md",
     "daily note/2024/8/2024-08-20.md",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
-    "Spaces/Home/Docker/Docker설치&명령어.md",
     "Images/img.gif",
     "Images/Pasted image 20240816141011.png",
     "Images/Pasted image 20240816140945.png",
@@ -207,14 +209,12 @@
     "File",
     "Spaces/FIle",
     "Images/openssl-1.0.2j-fips-x86_64 (2).zip",
-    "Spaces/Home/Docker/DockerError.md",
     "Spaces/Home/CSRF/XSS.md",
     "Spaces/Home/CSRF/reCAPTCH.md",
     "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Images/Security/Security1.png",
-    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/KOTLIN/Kotlin Android/xml",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",

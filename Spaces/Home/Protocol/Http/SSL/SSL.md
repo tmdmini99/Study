@@ -283,6 +283,17 @@ keytool -importkeystore -srckeystore C:\Users\tmdal\Downloads\openssl-1.0.2j-fip
 ```
 
 
+안될경우
+
+Win + x  단축키로 cmd창 관리자로 실행
+관리자모드에서는 이동시  ""를 붙여줘야함
+
+
+```
+cd "C:\Program Files\Java\jdk-11\bin"
+
+keytool -importkeystore -srckeystore "C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\key.p12" -srcstoretype PKCS12 -destkeystore key.jks -deststore
+```
 
 
 
