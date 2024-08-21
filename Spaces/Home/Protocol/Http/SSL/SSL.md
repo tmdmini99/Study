@@ -257,6 +257,12 @@ req -x509 -new -nodes -key rootCA.key -days 3650 -out rootCA.pem
 
 tomcat에 적용할 파일을 만드는데 비밀번호를 또 입력하라고 한다
 
+key.p12 생성 명령어
+```
+openssl pkcs12 -export -in your-certificate.crt -inkey your-private.key -out key.p12 -name tomcat
+
+```
+
 
 
 
@@ -276,8 +282,7 @@ JDK 내부에서 keytool 을 제공한다. JDK 디렉토리로 이동하여 아�
 
 > 여기서 JDK 내부 디렉토리란 cmd창에서 C:\Program Files\Java\jdk-11\bin와 같이 자바가 다운되어있는 위치
 > cmd에서 이 위치로 이동후 사용해야함
-> 만약 key.p12가 다른곳에 있다면  밑에와 같이 ke.p12가 있는 위치를 지정해줘야함
-
+> 만약 key.p12가 다른곳에 있다면  밑에와 같이 key.p12가 있는 위치를 지정해줘야함
 
 
 

@@ -83,3 +83,44 @@ server.xml
 />
 
 ```
+
+
+## 안드로이드에 적용
+
+cmd에서 SHA-256 지문을 확인
+
+```
+openssl x509 -in "C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\private.crt" -noout -fingerprint -sha256
+
+```
+
+만약 없을경우 key.jks에서 인증서 추출후 확인
+```
+// 인증서 추출
+keytool -exportcert -alias tomcat -keystore key.jks -file mycert.crt
+
+//SHA-256 핀 추출
+openssl x509 -in mycert.crt -noout -fingerprint -sha256
+
+
+//결과
+SHA256 Fingerprint=12:34:56:78:90:AB:CD:EF:GH:IJ:KL:MN:OP:QR:ST:UV:WX:YZ:12:34:56:78:90:AB:CD
+
+
+```
+
+network_security_config.xml에 추가
+
+```xml
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">example.com</domain>
+        <pin-set>
+            <pin digest="SHA-256">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>
+
+```
+
+
