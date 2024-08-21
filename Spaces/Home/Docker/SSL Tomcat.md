@@ -87,19 +87,21 @@ services:
 
 ### docker-comsose.yml만 사용
 
-```
-version: '3'
+```yml
+version: '3.8'
+
 services:
   tomcat:
     image: tomcat:9.0
     ports:
-      - "8080:8080"   # HTTP 포트
-      - "8443:8443"   # HTTPS 포트
+      - "8080:8080"    # HTTP 포트
+      - "8443:8443"    # HTTPS 포트
     volumes:
-      - ./keystore.jks:/usr/local/tomcat/conf/keystore.jks  # 호스트의 keystore.jks를 컨테이너 내부에 마운트
-      - ./server.xml:/usr/local/tomcat/conf/server.xml       # 호스트의 server.xml을 컨테이너 내부에 복사
+      - C:/Program Files/Java/jdk-11/bin/key.jks:/usr/local/tomcat/conf/keystore.jks
+      - C:/Project/andDb/.smarttomcat/andDb/conf/server.xml:/usr/local/tomcat/conf/server.xml
     environment:
-      - JAVA_OPTS=-Djavax.net.ssl.trustStore=/usr/local/tomcat/conf/keystore.jks
+      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom
+
 
 ```
 

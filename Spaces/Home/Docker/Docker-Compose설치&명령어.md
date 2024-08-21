@@ -448,7 +448,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./DbConn-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+      - ./DbConn-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war # ./DbConn-1.0-SNAPSHOT.war은 docker-compose.yml과 같은 위치에 있을경우 ./DbConn-1.0-SNAPSHOT.war으로 사용 가능
+      - C:/Project/andDb/.smarttomcat/andDb/conf/server.xml:/usr/local/tomcat/conf/server.xml # 실제 위치가 다를경우 직접 위치를 지정해줘야함 
     environment:
       - CATALINA_CONNECTOR_CONNECTIONTIMEOUT=600000
 
