@@ -103,3 +103,20 @@ services:
 
 ```
 
+
+server.xml
+```xml
+<Connector
+    port="8443"
+    protocol="org.apache.coyote.http11.Http11NioProtocol"
+    maxThreads="150"
+    SSLEnabled="true">
+    <SSLHostConfig>
+        <Certificate
+            certificateKeystoreFile="/usr/local/tomcat/conf/keystore.jks"
+            type="RSA"
+            certificateKeystorePassword="yourKeystorePassword"/>
+    </SSLHostConfig>
+</Connector>
+
+```
