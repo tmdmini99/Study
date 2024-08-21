@@ -104,6 +104,8 @@ server.xml
 ```
 
 
+yourKeystorePassword 부분에는 내가 넣은 비밀번호 입력
+
 ## 안드로이드에 적용
 
 cmd에서 SHA-256 지문을 확인
