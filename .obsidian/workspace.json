@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "daily note/2024/8/2024-08-21.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "daily note/2024/8/2024-08-21.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "daily note/2024/8/2024-08-21.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "daily note/2024/8/2024-08-21.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +176,8 @@
   },
   "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "daily note/2024/8/2024-08-21.md",
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Docker/WSL.md",
@@ -214,8 +217,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/xml",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
-    "Spaces/Home/DB/DB 개념/GROUP BY.md",
-    "Spaces/Home/Linux/Linux명령어.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
