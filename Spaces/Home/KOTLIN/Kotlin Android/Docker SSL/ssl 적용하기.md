@@ -147,7 +147,7 @@ $base64String = [Convert]::ToBase64String($bytes.ToArray())
 
 # 결과 출력
 Write-Output $base64String
-****
+
 ```
 
 
