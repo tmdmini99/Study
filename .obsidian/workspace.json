@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/PHP/PHP 설정.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/PHP/PHP 설정.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
+                "file": "Spaces/Home/PHP/PHP 설정.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/PHP/PHP 설정.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,11 +173,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "2950a09a6d393c2c",
   "lastOpenFiles": [
+    "Images/Pasted image 20240822164621.png",
+    "Images/Pasted image 20240822164553.png",
+    "Spaces/Home/PHP/PHP 설정.md",
+    "Images/Pasted image 20240822164506.png",
+    "Images/Pasted image 20240822164430.png",
+    "Images/Pasted image 20240822164332.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/PHP",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "daily note/2024/8/2024-08-22.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-File.md",
@@ -201,26 +207,20 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Protocol/Http/SSE.md",
-    "daily note/2024/8/2024-08-21.md",
     "Images/img.gif",
     "Images/Pasted image 20240816141011.png",
     "Images/Pasted image 20240816140945.png",
     "Images/Pasted image 20240816114528.png",
     "Images/Pasted image 20240809104537.png",
     "Images/Pasted image 20240809104233.png",
-    "Images/Pasted image 20240808175605.png",
-    "Images/Pasted image 20240808173812.png",
-    "Images/Pasted image 20240808174907.png",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
     "Spaces/FIle",
     "Images/openssl-1.0.2j-fips-x86_64 (2).zip",
-    "Images/Security/Security1.png",
     "Spaces/Home/KOTLIN/Kotlin Android/xml",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",
     "Spaces/Home/KOTLIN/Kotlin",
-    "Spaces/Home/IntelliJ/Kotlin/Kotlin",
     "무제 파일.canvas"
   ]
 }
