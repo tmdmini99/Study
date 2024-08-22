@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2950a09a6d393c2c",
+            "id": "0f4f31a81bce3ae7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,6 +18,22 @@
                 "backlinks": true,
                 "source": false
               }
+            }
+          },
+          {
+            "id": "6dd1a3ccbee2ce5f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "956de596b119abbd",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -173,19 +189,36 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2950a09a6d393c2c",
+  "active": "0f4f31a81bce3ae7",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
+    "Images/KOTLIN 오버로딩1.jpg",
+    "Spaces/Home/KOTLIN/Kotlin/5. KOTLIN TYPE.md",
+    "Images/Pasted image 20240822181130.jpg",
+    "Images/Pasted image 20240822181416.jpg",
+    "Images/Kotlin 기초1.png",
+    "Images/Kotlin 기초2.png",
+    "daily note/2024/8/2024-08-22.md",
+    "Images/Kotlin/KOTLIN 오버로딩1.jpg",
+    "Images/Kotiln Type5.avif",
+    "Images/Kotiln Type4.avif",
+    "Images/Kotiln Type2.jpg",
+    "Images/Kotiln Type1.jpg",
+    "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
+    "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
+    "Pasted image 20240816114206.png.md",
+    "Images/Kotlin",
+    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/BCrypt.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/PHP/PHP 설정.md",
-    "Images/Pasted image 20240822171454.png",
-    "Images/Pasted image 20240822164621.png",
-    "Images/Pasted image 20240822164553.png",
-    "Images/Pasted image 20240822164506.png",
-    "Images/Pasted image 20240822164430.png",
-    "Images/Pasted image 20240822164332.png",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/PHP",
-    "daily note/2024/8/2024-08-22.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-File.md",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
@@ -193,25 +226,9 @@
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/BCrypt.md",
     "Spaces/Home/Docker/SSL Tomcat.md",
     "Spaces/Home/Docker/SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
-    "Spaces/Home/Docker/DockerError.md",
-    "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Spaces/Home/Protocol/Http/SSE.md",
-    "Images/img.gif",
-    "Images/Pasted image 20240816141011.png",
-    "Images/Pasted image 20240816140945.png",
-    "Images/Pasted image 20240816114528.png",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
     "Spaces/FIle",
@@ -219,7 +236,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/xml",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동",
     "Spaces/Home/KOTLIN/Kotlin Android",
-    "Spaces/Home/KOTLIN/Kotlin",
     "무제 파일.canvas"
   ]
 }
