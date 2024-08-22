@@ -335,7 +335,7 @@ rm d:\tomcat.keystore
 
 ## Tomcat 에서 `server.xml` 파일 수정하기
 
-```abnf
+```xml
 <Connector port="443" protocol="org.apache.coyote.http11.Http11NioProtocol"
     maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
     clientAuth="false" sslProtocol="TLS"
