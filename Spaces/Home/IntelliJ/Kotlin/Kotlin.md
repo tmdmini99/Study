@@ -1,22 +1,22 @@
 ##### Android Plugin 다운
 
-![[Pasted image 20240808172111.png]]
+![[IntelliJ Kotlin1.png]]
 
 
 ##### SDK, Kotlin 설치
 
 Create New Project를 클릭하고, Android 탭을 눌러서 Install SDK 버튼 클릭
 
-![[Pasted image 20240808172207.png]]
+![[IntelliJ Kotlin2.png]]
 
 
 
 ##### Phone and Tablet 선택
 
-![[Pasted image 20240808172253.png]]
+![[IntelliJ Kotlin3.png]]
 
 
-![[Pasted image 20240808175605.png]]
+![[IntelliJ Kotlin4.png]]
 
 
 하지만 이 상태로 Build를 하게되면 **"License for package Android SDK Build-Tools 30.0.2 not accepted."** 라는 에러를 확인할 수 있는데 이에 대한 해결 방법은 아래와 같습니다.
@@ -26,11 +26,11 @@ Create New Project를 클릭하고, Android 탭을 눌러서 Install SDK 버튼 
 File -> Setting -> Languages & Frameworks -> Android SDK -> SDK Tools -> Google Play Licensing Library 설치
 
 
-![[Pasted image 20240808174243.png]]
+![[IntelliJ Kotlin5.png]]
 
 
 
-![[Pasted image 20240808173037.png]]
+![[IntelliJ Kotlin6.png]]
 
 #### **가상 애뮬레이터에서 앱 실행하기**
 
@@ -38,26 +38,26 @@ File -> Setting -> Languages & Frameworks -> Android SDK -> SDK Tools -> Google 
 
 
 
-![[Pasted image 20240808174907.png]]
+![[IntelliJ Kotlin7.png]]
 
 
 
-![[Pasted image 20240808173617.png]]
+![[IntelliJ Kotlin8.png]]
 
 
 가상 애뮬레이터를 실행하기 위해 Tools -> Android -> SDK Manager -> AMD 하이퍼바이저 드라이버
 
 
-![[Pasted image 20240808174844.png]]
+![[IntelliJ Kotlin9.png]]
 
 
-![[Pasted image 20240808173718.png]]
+![[IntelliJ Kotlin10.png]]
 
 
 빨간색 체크 3개는 필수 설치이고 (기본으로 설치되어있음) 파란색 체크 2개 중 AMD CPU라면 위, Intel CPU라면 아래를 설치하면 된다.
 
 
-![[Pasted image 20240809104124.png]]
+![[IntelliJ Kotlin11.png]]
 
 
 
@@ -67,7 +67,7 @@ File -> Setting -> Languages & Frameworks -> Android SDK -> SDK Tools -> Google 
 
 
 
-![[Pasted image 20240809104130.png]]
+![[IntelliJ Kotlin12.png]]
 
 
 
@@ -75,22 +75,22 @@ File -> Setting -> Languages & Frameworks -> Android SDK -> SDK Tools -> Google 
 ### Create virtual device 선택
 
 
-![[Pasted image 20240809104134.png]]
+![[IntelliJ Kotlin13.png]]
 
 
 
 
-![[Pasted image 20240809104233.png]]
+![[IntelliJ Kotlin14.png]]
 
 
 원하는 기종 선택 후 Next
 
-![[Pasted image 20240809104537.png]]
+![[IntelliJ Kotlin15.png]]
 
 System Image는 적당히 원하는 것을 다운
 
 
-![[Pasted image 20240809104605.png]]
+![[IntelliJ Kotlin16.png]]
 
 
 
@@ -100,15 +100,15 @@ System Image는 적당히 원하는 것을 다운
 
 
 
-![[Pasted image 20240808173804.png]]
+![[IntelliJ Kotlin17.png]]
 
 
 
-![[Pasted image 20240809104658.png]]
+![[IntelliJ Kotlin18.png]]
 
 
 
-![[Pasted image 20240809104703.png]]
+![[IntelliJ Kotlin19.png]]
 
 
 
@@ -117,7 +117,7 @@ System Image는 적당히 원하는 것을 다운
 가상 애뮬레이터 세팅이 마무리 되었다면, Run APP 버튼을 클릭합니다.
 
 
-![[Pasted image 20240808173812.png]]
+![[IntelliJ Kotlin20.png]]
 
 이후, 가상 애뮬레이터가 켜지면서 앱이 실행되는 것을 확인할 수 있습니다.
 

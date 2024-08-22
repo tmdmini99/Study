@@ -2,7 +2,7 @@
 
 
 
-![[Pasted image 20240816140904.png]]
+![[Kotlin View1.png]]
 
 
 - 안드로이드 앱의 **UI를 구성하는 기본 단위 = 위젯 + 레이아웃**
@@ -25,7 +25,7 @@
 
 **💡 Layout Editor 구성**
 
-![[Pasted image 20240816140945.png]]
+![[Kotlin View2.png]]
 
 
 - **1) Palette**  
@@ -58,7 +58,7 @@
 
 
 
-![[Pasted image 20240816141005.png]]
+![[Kotlin View3.png]]
 
 
 
@@ -68,7 +68,7 @@
 
 ### **뷰(View)**
 
-![[Pasted image 20240816141011.png]]
+![[Kotlin View4.png]]
 
 
 - View클래스는 **모든 UI 컴포넌트들의 부모** 클래스
@@ -76,7 +76,7 @@
 
 #### **layout_width, layout_height**
 
-![[Pasted image 20240816141020.png]]
+![[Kotlin View5.png]]
 
 - **match_parent**  
       - **부모** UI컴포넌트의 크기에 맞춤   
@@ -105,12 +105,12 @@
 - 5) mm (millimeters)
 - 6) sp (텍스트 지정 단위))
 
-![[Pasted image 20240816141036.png]]
+![[Kotlin View6.png]]
 
 
-![[Pasted image 20240816141039.jpg]]
+![[Kotlin View7.jpg]]
 
-![[Pasted image 20240816141043.png]]
+![[Kotlin View8.png]]
 
 
 
@@ -220,9 +220,9 @@ text_views.xml
 
 #### **이미지 버튼**
 
-![[Pasted image 20240816141103.png]]
+![[Kotlin View9.png]]
 
-![[Pasted image 20240816141107.png]]
+![[Kotlin View10.png]]
 
 
 
@@ -235,7 +235,7 @@ text_views.xml
 #### **9-patch (나인패치 이미지)**
 
 
-![[Pasted image 20240816141118.png]]
+![[Kotlin View11.png]]
 
 
 - ImageView에서의 배경 이미지는 가로/세로모드, 해상도에 따라 각각의 이미지가 필요함  
@@ -262,7 +262,7 @@ text_views.xml
 
 **💡 ImageView의 영역에 맞게 이미지 크기 조절**
 
-![[Pasted image 20240816141134.png]]
+![[Kotlin View12.png]]
 
 
 - scaleType 속성 >  **android:scaleType** 이용
