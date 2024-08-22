@@ -167,7 +167,30 @@ network_security_config.xml에 추가
 
 
 
+## 자체 서명 인증서 신뢰
 
+
+
+network_security_config.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- 인증서 고정 설정 -->
+        <domain includeSubdomains="true">example.com</domain>
+        <pin-set>
+            <!-- 공개 키 해시를 입력합니다. -->
+            <pin digest="SHA-256">E88wjkU5OXkUx5YfftkIzgcTY3i9GoeP8xsgPidnW8g=</pin>
+        </pin-set>
+        <!-- 신뢰할 인증서 설정 -->
+        <trust-anchors>
+            <!-- 인증서 파일이 raw 디렉토리에 있어야 합니다. -->
+            <certificates src="@raw/my_ca"/>
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
+
+```
 
 
 ---
