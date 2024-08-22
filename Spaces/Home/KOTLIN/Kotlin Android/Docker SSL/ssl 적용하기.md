@@ -195,4 +195,4 @@ network_security_config.xml
 
 ---
 
-출처 - https://developer.android.com/privacy-and-security/security-config?hl=ko#CertificatePinning 인증서 관련 
+출처 - https://developer.android.com/privacy-and-security/security-config?hl=ko#CertificatePinning 인증서 관련
