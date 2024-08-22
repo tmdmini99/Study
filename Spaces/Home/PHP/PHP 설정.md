@@ -21,6 +21,19 @@ zip 파일을 압축 해제 후 시스템 환경 변수에서  편집 클릭
 
 
 
+## PHP localhost 설정
+
+cmd 창에서 프로젝트 중 내가 localhost로 설정하고 싶은 디렉토리로 이동 
 
 
+```
+C:\Users\tmdal>cd C:\Project\PHPStudy
+```
+
+
+```
+C:\Project\PHPStudy>php -S localhost:8080
+```
+
+입력시 내부 서버가 실행
 
