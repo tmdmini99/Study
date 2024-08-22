@@ -166,3 +166,10 @@ network_security_config.xml에 추가
 ```
 
 
+
+
+
+
+---
+
+출처 - https://developer.android.com/privacy-and-security/security-config?hl=ko#CertificatePinning 인증서 관련 
