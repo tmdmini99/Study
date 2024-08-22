@@ -26,10 +26,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "80d47d7e6334b974",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Docker-Compose명령어/Docker-Compose설정2.png"
               }
             }
           },
@@ -124,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md"
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md"
               }
             }
           },
@@ -162,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -203,46 +213,47 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "db7a2556c1025996",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Images/Pasted image 20240812161340.png",
-    "Images/Pasted image 20240805110507.png",
-    "Images/Pasted image 20240822164506.png",
-    "Images/Pasted image 20240822164430.png",
-    "Images/Pasted image 20240822164332.png",
+    "Images/Docker-Compose설정3.png",
+    "Images/Docker-Compose명령어/Docker-Compose설정3.png",
+    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
+    "Images/Docker-Compose명령어/Docker-Compose설정2.png",
+    "Images/WSL/WSL1.png",
+    "Spaces/Home/PHP/PHP 설정.md",
+    "Images/PHP/PHP4.png",
+    "Images/PHP/PHP3.png",
+    "Images/PHP/PHP2.png",
+    "Images/PHP/PHP1.png",
+    "Images/PHP",
+    "Images/PHP4.png",
+    "Images/PHP3.png",
+    "Images/PHP2.png",
+    "Spaces/Home/DB/MySql.md",
+    "Spaces/Home/DB/Oracle.md",
+    "Spaces/Home/DB/DB 개념/CASE WHEN.md",
+    "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
+    "Spaces/Home/DB/DB 개념/정규화&반정규화.md",
+    "Spaces/Home/DB/DB 개념/파티셔닝.md",
+    "Spaces/Home/DB/DB 개념/PIVOT.md",
+    "Spaces/Home/DB/DB 개념/Partition.md",
+    "Spaces/Home/DB/DB 개념/WITH AS.md",
+    "Spaces/Home/DB/SQL Injection.md",
+    "Spaces/Home/DB/PostgreSql.md",
+    "Spaces/Home/Docker/Docker-Compose.md",
+    "Spaces/Home/Docker/Docker.md",
+    "Spaces/Home/Docker/Docker-File.md",
+    "Spaces/Home/Docker/Docker설치&명령어.md",
+    "Spaces/Home/Docker/DockerError.md",
+    "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/DB/DB 개념/분산 데이터베이스.md",
-    "Spaces/Home/DB/DB 개념/WITH AS.md",
     "Spaces/Home/DB/DB 개념/GROUP BY.md",
     "Spaces/Home/IntelliJ/JVM.md",
-    "Images/IntelliJ/IntelliJ Kotlin20.png",
-    "Images/IntelliJ/IntelliJ Kotlin19.png",
-    "Images/IntelliJ/IntelliJ Kotlin18.png",
-    "Images/IntelliJ/IntelliJ Kotlin17.png",
-    "Images/IntelliJ/IntelliJ Kotlin16.png",
-    "Images/IntelliJ/IntelliJ Kotlin15.png",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
-    "Spaces/Home/KOTLIN/Kotlin/2. KOTLIN 함수 정의.md",
-    "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/BCrypt.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin/10. KOTLIN TYPE ALIAS.md",
-    "Spaces/Home/KOTLIN/Kotlin/9. KOTLIN ANNOTATION.md",
-    "Spaces/Home/KOTLIN/Kotlin/3. KOTLIN 클래스.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
-    "Spaces/Home/PHP/PHP 설정.md",
-    "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
     "Images/Kotlin",
     "Spaces/Home/PHP",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
@@ -250,7 +261,6 @@
     "File",
     "Spaces/FIle",
     "Images/openssl-1.0.2j-fips-x86_64 (2).zip",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml",
     "무제 파일.canvas"
   ]
 }

@@ -493,7 +493,7 @@ ALTER USER sys IDENTIFIED BY 1234;
 여기서  newpassword대신 내가 원하는 password 입력
 
 
-![[Pasted image 20240812161340.png]]
+![[Docker-Compose설정3.png]]
 
 여기서 sys 입력후 role에 normal대신 다른것 입력
 

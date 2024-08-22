@@ -549,7 +549,7 @@ SELECT SUM(amount*price) AS "총 금액"
 
 
 
-![[Pasted image 20240805110507.png]]
+![[MySql4.png]]
 
 
 
