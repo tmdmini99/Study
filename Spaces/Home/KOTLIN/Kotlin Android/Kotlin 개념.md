@@ -31,7 +31,7 @@ override fun onRestoreInstanceState(savedInstanceState: Bundle) {
 Intent의 extras를 이용하여 다른 구성요소
 Intent에서는 putExtra메서드를 이용해 데이터를 입력할 수 있다. 
 
-![](https://blog.kakaocdn.net/dn/3GwCO/btqYQwmu3wM/Mr6zBGExMgAHBwjuPdAO4K/img.png)
+![[Kotlin 개념6.png]]
 
 그림1. Intent에 다양한 데이터 입력
 
@@ -423,14 +423,14 @@ val intent: Intent = Intent(this, DetailActivity::class.java)
 
 ### 2.1. 핸들러 (Handler)
 
-![[Pasted image 20240816112247.png]]
+![[Kotlin 개념7.png]]
 
 
 레이아웃에 객체를 클릭하면 위 사진과 같이 상하좌우로 4개의 동그라미가 생기는데 이것이 핸들러(Handler)이다.
 
 
 
-![[Pasted image 20240816112257.png]]
+![[Kotlin 개념8.png]]
 
 
 - 핸들러의 상태  
@@ -525,7 +525,7 @@ XML 코드를 직접 수정하거나 \[Design] 버튼을 클릭해서 컴포넌�
 android:orientation="horizontal"
 ```
   
-![[Pasted image 20240816114410.png]]
+![[Kotlin 개념9.png]]
 
 
 > 2. 수직방향 (vertical)
@@ -535,16 +535,16 @@ android:orientation="vertical"
 ```
 
 
-![[Pasted image 20240816114426.png]]
+![[Kotlin 개념10.png]]
 
 
 
-![[Pasted image 20240816140405.png]]
+![[Kotlin 개념11.png]]
 
 
 
 
-![[Pasted image 20240816140422.png]]
+![[Kotlin 개념12.png]]
 
 #### 속성 3. layout_gravity, gravity
 
@@ -566,7 +566,7 @@ android:orientation="vertical"
 ```
 
 
-![[Pasted image 20240816114442.png]]
+![[Kotlin 개념13.png]]
 
 > 2. gravity : 현재 자신(View)의 영역 기준으로 Child View 또는 Content 위치 정렬
 > 
@@ -581,7 +581,7 @@ android:orientation="vertical"
     android:gravity="bottom|center_horizontal"...
 ```
 
-![[Pasted image 20240816114455.png]]
+![[Kotlin 개념14.png]]
 
 #### 속성 4. background
 
@@ -592,7 +592,7 @@ android:background="#F0F4C3"
 ```
 
 
-![[Pasted image 20240816114522.png]]
+![[Kotlin 개념15.png]]
 
 
 
@@ -613,7 +613,7 @@ android:background="@drawable/ic_launcher_background"
 
 
 
-![[Pasted image 20240816114528.png]]
+![[Kotlin 개념16.png]]
 
 
 #### 속성 5. layout_weight
@@ -641,7 +641,7 @@ android:background="@drawable/ic_launcher_background"
 ```
 
 
-![[Pasted image 20240816114544.png]]
+![[Kotlin 개념17.png]]
 
 
 
@@ -667,7 +667,7 @@ android:background="@drawable/ic_launcher_background"
 
 
 
-![[Pasted image 20240816114555.png]]
+![[Kotlin 개념18.png]]
 
 
 
@@ -695,13 +695,13 @@ android:background="@drawable/ic_launcher_background"
 부모 레이아웃을 기준으로 위젯의 위치가 정렬된다.  
 **-layout_gravity : right**
 
-![[Pasted image 20240816112352.png]]
+![[Kotlin 개념19.png]]
 
  부모 레이아웃이 horizontal일 경우에는 layout_gravity : right가 적용되지 않는 것 같음..  
   
 **cf) gravity : right**
 
-![[Pasted image 20240816112401.png]]
+![[Kotlin 개념20.png]]
 
 
 ### 3.6 스크롤뷰
@@ -751,7 +751,7 @@ android:background="@drawable/ic_launcher_background"
 
 
 
-![[Pasted image 20240816113627.jpg]]
+![[Kotlin 개념21.jpg]]
 
 
 우리가 자주쓰는 카카오톡을 예로 들자 
@@ -795,7 +795,7 @@ Fragment를 사용하면 최소 1개의 Activity안에서 Fragment공간에 View
 ## Fragment LifeCycle(생명주기)
 
 
-![[Pasted image 20240816113723.jpg]]
+![[Kotlin 개념22.jpg]]
 
 
 
@@ -881,10 +881,10 @@ dependencies {
 }
 ```
 
-![[img.gif]]
+![[Kotlin 개념23.gif]]
 
 
-![[Pasted image 20240816113822.png]]
+![[Kotlin 개념24.png]]
 
 
  비슷하다.
@@ -894,13 +894,13 @@ Fragment(Blank)를 누르고 이름을 지정한 다음 Finish를 누르면 된�
 Fragment를 총 2개 만든다.
 
 
-![[Pasted image 20240816113955.png]]
+![[Kotlin 개념25.png]]
 
 #### 화면구성
 
 #### *activity_main.xml
 
-![[Pasted image 20240816114027.png]]
+![[Kotlin 개념26.png]]
 
 
 ```xml
@@ -963,7 +963,7 @@ FrameLayout은 여러 화면을 쌓듯이(프레임 쌓듯이) 화면 위�
 *fragment_1.xml
 
 
-![[Pasted image 20240816114103.png]]
+![[Kotlin 개념27.png]]
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1050,7 +1050,7 @@ Fragment1() 과 Fragment2() 를 넘겨줬죠.
 
 
 
-![[Pasted image 20240816114206.png]]
+![[Kotlin 개념28.png]]
 
 
 

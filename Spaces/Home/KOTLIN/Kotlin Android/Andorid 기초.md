@@ -103,7 +103,7 @@ fun GreetingPreview() {
 ### app > res 우클릭 > new >  XML > Layout XML File 선택
 
 
-![[Pasted image 20240809144747.png]]
+![[Kotlin Layout1.png]]
 
 
 ### Layout  code

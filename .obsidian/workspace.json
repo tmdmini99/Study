@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0f4f31a81bce3ae7",
+            "id": "d5929a8ae2dc7710",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md"
               }
             }
           },
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,35 +189,39 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0f4f31a81bce3ae7",
+  "active": "d5929a8ae2dc7710",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
-    "Images/KOTLIN 오버로딩1.jpg",
-    "Spaces/Home/KOTLIN/Kotlin/5. KOTLIN TYPE.md",
-    "Images/Pasted image 20240822181130.jpg",
-    "Images/Pasted image 20240822181416.jpg",
-    "Images/Kotlin 기초1.png",
-    "Images/Kotlin 기초2.png",
-    "daily note/2024/8/2024-08-22.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
+    "Spaces/Home/KOTLIN/Kotlin/10. KOTLIN TYPE ALIAS.md",
+    "Spaces/Home/KOTLIN/Kotlin/9. KOTLIN ANNOTATION.md",
+    "Spaces/Home/KOTLIN/Kotlin/3. KOTLIN 클래스.md",
+    "Images/Kotlin/Kotlin개념5.gif",
+    "Images/Kotlin/Kotlin개념4.gif",
+    "Images/Kotlin/Kotlin개념3.png",
+    "Images/Kotlin/kotlin개념2.gif",
+    "Images/Kotlin/KOTLIN2.jpg",
+    "Images/Kotlin/KOTLIN 클래스3.avif",
+    "Images/Kotlin/KOTLIN 클래스2.avif",
+    "Images/Kotlin/KOTLIN 클래스1.avif",
     "Images/Kotlin/KOTLIN 오버로딩1.jpg",
-    "Images/Kotiln Type5.avif",
-    "Images/Kotiln Type4.avif",
-    "Images/Kotiln Type2.jpg",
-    "Images/Kotiln Type1.jpg",
-    "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
-    "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
+    "Images/Kotlin/Kotlin 기초3.png",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Pasted image 20240816114206.png.md",
-    "Images/Kotlin",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/BCrypt.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
+    "Spaces/Home/PHP/PHP 설정.md",
+    "Spaces/Home/KOTLIN/Kotlin/6. KOTLIN 오버로딩.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/KOTLIN/Kotlin/5. KOTLIN TYPE.md",
+    "daily note/2024/8/2024-08-22.md",
+    "Spaces/Home/KOTLIN/Kotlin/7. KOTLIN 고차함수.md",
+    "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
+    "Pasted image 20240816114206.png.md",
+    "Images/Kotlin",
     "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/PHP/PHP 설정.md",
     "Spaces/Home/PHP",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/Docker/Docker-File.md",
@@ -225,9 +229,6 @@
     "Spaces/Home/Docker/Docker-Compose.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
-    "Spaces/Home/Docker/SSL Tomcat.md",
-    "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
