@@ -59,8 +59,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
               }
             }
           },
@@ -172,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,10 +212,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "db7a2556c1025996",
+  "active": "97668df2c1cbac8c",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/Docker/SSL.md",
