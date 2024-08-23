@@ -348,7 +348,53 @@ rm d:\tomcat.keystore
 
 
 
-## 
+## 특정 IP 추가
+
+
+### openssl.cnf에 추가
+
+```
+[ v3_req ]
+# Extensions to add to a certificate request
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+IP.1 = 10.0.2.2
+
+```
+
+
+### rootCA.pem
+위에서 키 만든것에 뒤에 -extensions v3_ca 추가 
+```
+req -x509 -new -nodes -key rootCA.key -days 3650 -out rootCA.pem -config C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin/openssl.cnf -extensions v3_ca
+```
+
+
+
+### private.crt
+위에 명령어에 -extensions v3_req -extfile openssl.cnf 추가
+
+```
+ x509 -req -in private.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out private.crt -days 3650 -extensions v3_req -extfile openssl.cnf
+```
+
+
+
+### 확인
+
+출력된 내용에 Subject Alternative Name 있는지 확인
+```
+openssl x509 -in private.crt -text -noout
+```
+
+
+
+
+
+
 
 
 
