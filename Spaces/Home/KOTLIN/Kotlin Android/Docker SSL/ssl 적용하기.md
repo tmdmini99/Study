@@ -88,17 +88,18 @@ docker cp C:\Project\andDb\target\andDb-1.0-SNAPSHOT.war tomcat-test:/usr/local/
 
 server.xml
 ```xml
-<Connector
-    port="8443"
-    protocol="org.apache.coyote.http11.Http11NioProtocol"
-    maxThreads="150"
-    scheme="https"
-    secure="true"
-    SSLEnabled="true"
-    keystoreFile="${catalina.base}/conf/keystore.jks"
-    keystorePass="yourKeystorePassword"
-    clientAuth="false"
-    sslProtocol="TLS"
+<Connector  
+    port="8443"  
+    protocol="org.apache.coyote.http11.Http11NioProtocol"  
+    maxThreads="150"  
+    scheme="https"  
+    secure="true"  
+    SSLEnabled="true"  
+    keystoreFile="/usr/local/tomcat/conf/key.p12"  
+    keystorePass= "123456"  
+    clientAuth="false"  
+    sslProtocol="TLS"  
+    keystoreType="PKCS12"  
 />
 
 ```

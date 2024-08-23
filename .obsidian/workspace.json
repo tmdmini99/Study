@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -59,8 +59,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md"
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
               }
             }
           },
@@ -172,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Docker/SSL.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,10 +212,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "db7a2556c1025996",
+  "active": "97668df2c1cbac8c",
   "lastOpenFiles": [
-    "Spaces/Home/Docker/Docker-File.md",
+    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+    "Spaces/Home/Docker/SSL.md",
+    "Spaces/Home/Docker/Docker-File.md",
     "daily note/2024/6/2024-06-28.md",
     "daily note/2024/7/2024-07-05.md",
     "daily note/2024/7/2024-07-04.md",
@@ -234,7 +237,6 @@
     "daily note/2024/7/2024-07-17.md",
     "daily note/2024/7/2024-07-16.md",
     "daily note/2024/8/2024-08-23.md",
-    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
@@ -249,9 +251,6 @@
     "Images/PHP4.png",
     "Images/PHP3.png",
     "Spaces/Home/DB/MySql.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/DB 개념/CASE WHEN.md",
-    "Spaces/Home/DB/DB 개념/이상현상(Anomaly).md",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
     "Images/Kotlin",
