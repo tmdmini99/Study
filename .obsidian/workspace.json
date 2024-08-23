@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-23.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -114,8 +114,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -135,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-23.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-23.md"
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
               }
             }
           },
@@ -173,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-23.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -216,8 +215,8 @@
   },
   "active": "db7a2556c1025996",
   "lastOpenFiles": [
-    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "daily note/2024/8/2024-08-23.md",
+    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
