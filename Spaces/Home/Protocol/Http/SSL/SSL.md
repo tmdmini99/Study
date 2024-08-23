@@ -366,6 +366,12 @@ IP.1 = 10.0.2.2
 ```
 
 
+### private.csr
+
+```
+openssl req -new -key private.key -out private.csr -config C:/OpenSSL/bin/openssl.cnf -extensions v3_req
+```
+
 ### rootCA.pem
 위에서 키 만든것에 뒤에 -extensions v3_ca 추가 
 ```
