@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -133,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
               }
             }
           },
@@ -171,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -214,8 +214,11 @@
   },
   "active": "97668df2c1cbac8c",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Gradle.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/Docker/SSL.md",
@@ -239,10 +242,8 @@
     "daily note/2024/8/2024-08-23.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
-    "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
     "Images/Docker-Compose명령어/Docker-Compose설정2.png",
     "Images/WSL/WSL1.png",
-    "Spaces/Home/PHP/PHP 설정.md",
     "Images/PHP/PHP4.png",
     "Images/PHP/PHP3.png",
     "Images/PHP/PHP2.png",
@@ -250,7 +251,6 @@
     "Images/PHP",
     "Images/PHP4.png",
     "Images/PHP3.png",
-    "Spaces/Home/DB/MySql.md",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
     "Images/Kotlin",
