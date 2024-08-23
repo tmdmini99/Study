@@ -264,6 +264,10 @@ openssl pkcs12 -export -in your-certificate.crt -inkey your-private.key -out key
 ```
 
 
+```
+openssl pkcs12 -export -in private.crt -inkey private.key -out key.p12 -name tomcat
+```
+
 
 
 ## SSL 환경변수 등록
