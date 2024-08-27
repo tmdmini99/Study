@@ -103,9 +103,30 @@ server.xml
 />
 
 ```
+keystorePass = '123456' 에서 123456 부분에는 내가 넣은 비밀번호 입력
 
 
-yourKeystorePassword 부분에는 내가 넣은 비밀번호 입력
+```xml
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           maxThreads="150" SSLEnabled="true">
+    <SSLHostConfig>
+        <Certificate certificateKeystoreFile="/usr/local/tomcat/conf/key.p12"
+                     certificateKeystorePassword="1234"
+                     type="RSA"
+                     certificateKeystoreType="PKCS12"/>
+        <Protocol>
+            <Property name="sslEnabledProtocols" value="TLSv1.2,TLSv1.3"/>
+        </Protocol>
+    </SSLHostConfig>
+</Connector>
+
+```
+
+**첫 번째 방법**은 간단한 설정에 적합하며, **두 번째 방법**은 세부적인 SSL/TLS 구성과 특정 요구사항에 맞는 설정을 필요로 하는 경우에 적합합니다
+
+
+
+
 
 ## 안드로이드에 적용
 
