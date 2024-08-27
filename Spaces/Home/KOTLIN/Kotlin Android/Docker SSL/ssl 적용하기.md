@@ -188,7 +188,20 @@ network_security_config.xml에 추가
 ```
 
 
+그냥 추출하는 법
 
+
+```
+"C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\openssl.exe" x509 -in "C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\private.crt" -pubkey -noout > "C:\Users\tmdal\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin\publickey.pem"
+```
+그냥 위치 지정후 public.key를 만듬
+
+그후 
+
+```
+openssl rsa -pubin -in publickey.pem -outform DER | openssl dgst -sha256 -binary | openssl base64  
+```
+치면 변경 완료
 ## 자체 서명 인증서 신뢰
 
 
