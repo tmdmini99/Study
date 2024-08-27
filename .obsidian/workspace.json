@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-27.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,8 +113,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -134,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-27.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-27.md"
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
               }
             }
           },
@@ -172,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-27.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,14 +214,19 @@
   },
   "active": "97668df2c1cbac8c",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "daily note/2024/8/2024-08-27.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Gradle.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
+    "daily note/2024/8/2024-08-27.md",
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Docker/Docker-File.md",
     "daily note/2024/6/2024-06-28.md",
@@ -236,11 +240,6 @@
     "daily note/2024/7/2024-07-11.md",
     "daily note/2024/7/2024-07-12.md",
     "daily note/2024/7/2024-07-15.md",
-    "daily note/2024/7/2024-07-23.md",
-    "daily note/2024/7/2024-07-22.md",
-    "daily note/2024/7/2024-07-18.md",
-    "daily note/2024/7/2024-07-17.md",
-    "daily note/2024/7/2024-07-16.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정2.png",
