@@ -86,6 +86,45 @@ docker cp C:\Project\andDb\target\andDb-1.0-SNAPSHOT.war tomcat-test:/usr/local/
 
 
 
+dockerfile로 이미지 생성후 만들기
+
+dockerfile
+```
+# Tomcat 9.0.84 이미지를 기반으로
+FROM tomcat:9.0.84
+
+# 필수 패키지 설치
+RUN apt-get update && apt-get install -y \
+    openssl \
+    libssl-dev
+
+# OpenSSL 버전 확인
+RUN openssl version
+
+# Tomcat 서버 포트 설정
+EXPOSE 8080 8443
+
+# Tomcat 서버 시작
+CMD ["catalina.sh", "run"]
+
+```
+
+빌드 명령어
+```
+docker build -t my-tomcat-image .
+
+```
+
+컨테이너 실행 명령어
+```
+docker run --network=mynetwork --name tomcat-test -d -p 8080:8080 -p 8443:8443 -v "C:/Users/tmdal/Downloads/openssl-1.0.2j-fips-x86_64/OpenSSL/bin/key.p12:/usr/local/tomcat/conf/key.p12" -v "C:/Project/andDb/.smarttomcat/andDb/conf/server.xml:/usr/local/tomcat/conf/server.xml" -e JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Duser.timezone=Asia/Seoul" my-tomcat-image
+```
+
+
+```
+docker cp C:\Project\andDb\target\andDb-1.0-SNAPSHOT.war tomcat-test:/usr/local/tomcat/webapps/ROOT.war
+```
+
 server.xml
 ```xml
 <Connector  

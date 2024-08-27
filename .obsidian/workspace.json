@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Docker/라이브러리 오류.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -59,7 +59,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -212,11 +213,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "97668df2c1cbac8c",
+  "active": "db7a2556c1025996",
   "lastOpenFiles": [
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
+    "Spaces/Home/Docker/라이브러리 오류.md",
+    "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
@@ -238,8 +241,6 @@
     "daily note/2024/7/2024-07-08.md",
     "daily note/2024/7/2024-07-10.md",
     "daily note/2024/7/2024-07-11.md",
-    "daily note/2024/7/2024-07-12.md",
-    "daily note/2024/7/2024-07-15.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정2.png",
