@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-28.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-28.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-28.md"
+                "file": "Spaces/Home/Protocol/Http/SSL/Domain 적용.md"
               }
             }
           },
@@ -172,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-28.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -213,11 +213,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "db7a2556c1025996",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
+    "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
+    "Spaces/Home/Network/Client.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "daily note/2024/8/2024-08-28.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Docker/라이브러리 오류.md",
     "Spaces/Home/Docker/Docker.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
@@ -229,7 +232,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "daily note/2024/8/2024-08-27.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Docker/Docker-File.md",
@@ -239,8 +241,6 @@
     "daily note/2024/7/2024-07-03.md",
     "daily note/2024/7/2024-07-02.md",
     "daily note/2024/7/2024-07-09.md",
-    "daily note/2024/7/2024-07-08.md",
-    "daily note/2024/7/2024-07-10.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정2.png",
