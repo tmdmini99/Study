@@ -59,7 +59,12 @@ docker run --network=mynetwork --name tomcat-test -d -p 8080:8080 -p 8443:8443 -
 ```
 
 
-p12
+p12 생성
+```
+openssl pkcs12 -export -in private.crt -inkey private.key -out key.p12 -name tomcat
+```
+
+p12 적용
 ```
 docker run --network=mynetwork --name tomcat-test -d \
     -p 8080:8080 -p 8443:8443 \

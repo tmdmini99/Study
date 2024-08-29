@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
               }
             }
           },
@@ -172,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,7 +215,10 @@
   },
   "active": "db7a2556c1025996",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
     "daily note/2024/8/2024-08-29.md",
     "daily note/2024/8/2024-08-28.md",
@@ -225,7 +228,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/Protocol/Http/SSL/개발 환경에 따라 적용하기.md",
     "daily note/2024/8/2024-08-09.md",
     "daily note/2024/8/2024-08-06.md",
@@ -237,10 +239,8 @@
     "daily note/2024/8/2024-08-23.md",
     "daily note/2024/8/2024-08-22.md",
     "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Network/Client.md",
     "Spaces/Home/Docker/라이브러리 오류.md",
-    "Spaces/Home/Docker/Docker.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정2.png",
