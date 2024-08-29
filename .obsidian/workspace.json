@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md"
               }
             }
           },
@@ -172,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Home/Protocol/Http/SSL/SSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,10 +215,10 @@
   },
   "active": "db7a2556c1025996",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
     "daily note/2024/8/2024-08-29.md",
     "daily note/2024/8/2024-08-28.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 SSL.md",
