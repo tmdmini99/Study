@@ -1,18 +1,18 @@
 
-![[Pasted image 20240829151508.png]]
+![[cafe24 plugin1.png]]
 
 카페 24 페이지에서 디자인(PC/모바일) 클릭
 
-![[Pasted image 20240829151552.png]]
+![[cafe24 plugin2.png]]
 
 디자인 보관함 -> 디자인 편집 클릭
 
-![[Pasted image 20240829151713.png]]
+![[cafe24 plugin3.png]]
 
 접속 후  HTML 수정 클릭 
 
 
-![[Pasted image 20240829151859.png]]
+![[cafe24 plugin4.png]]
 
 
 전체화면 보기 -> 레이아웃 -> 기본레이아웃 접속후 요청 script 코드 를 layout에 전부 추가 

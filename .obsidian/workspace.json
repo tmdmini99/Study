@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,17 +21,99 @@
             }
           },
           {
-            "id": "ab161db493227d17",
+            "id": "a39f552616f4b203",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Pasted image 20240829141507.png"
+                "file": "Images/cafe24 plugin4.png"
+              }
+            }
+          },
+          {
+            "id": "d74153f7af89e1aa",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/cafe24 plugin3.png"
+              }
+            }
+          },
+          {
+            "id": "55baa12473bbdff1",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/cafe24 plugin2.png"
+              }
+            }
+          },
+          {
+            "id": "b92b7335f5d71146",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/cafe24 plugin1.png"
+              }
+            }
+          },
+          {
+            "id": "e661018c832753a0",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Dialog4.png"
+              }
+            }
+          },
+          {
+            "id": "f6c2af1c73de58f2",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Dialog3.png"
+              }
+            }
+          },
+          {
+            "id": "39e4683a3af374d9",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Dialog2.png"
+              }
+            }
+          },
+          {
+            "id": "ab161db493227d17",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "39be454c6945ce4a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Dialog1.png"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20240829141507.png",
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20240829141507.png"
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md"
               }
             }
           },
@@ -143,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20240829141507.png",
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -184,20 +266,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ab161db493227d17",
+  "active": "6dce24aac3de808f",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
-    "Images/Pasted image 20240829141507.png",
+    "Images/cafe24 plugin4.png",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
+    "Images/cafe24 plugin3.png",
+    "Images/cafe24 plugin2.png",
+    "Images/cafe24 plugin1.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
+    "Images/Dialog4.png",
+    "Images/Dialog3.png",
+    "Images/Dialog2.png",
+    "Images/Dialog1.png",
     "Images/Pasted image 20240829152357.png",
     "Images/Pasted image 20240829152227.png",
     "Images/Pasted image 20240829152109.png",
-    "Images/Pasted image 20240829151859.png",
-    "Images/Pasted image 20240829151713.png",
-    "Images/Pasted image 20240829151552.png",
-    "Images/Pasted image 20240829151508.png",
-    "Images/Pasted image 20240829141728.png",
-    "Images/Pasted image 20240829141640.png",
     "Spaces/Cafe24",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/layout",

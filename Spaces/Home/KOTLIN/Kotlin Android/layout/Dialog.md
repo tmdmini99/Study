@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 ▼ AlertDialog에 여러정보를 Setting을 하려면 먼저 AlertDialog.Buider 객체를 생성합니다. Builder 클래스에서 제공하는 다양한 함수들을 사용하여 AlertDialog에 여러 정보를 Setting 하는데 위 예제에서는 setTitle() 함수를 사용하여 다이얼로그 창의 제목을 설정하고 setMessage() 함수를 통해 다이얼로그 창을 통해 사용자에게 보여주고 싶은 Message를 지정합니다. Setting이 끝나면 create() 함수를 통해 AlertDialog 객체를 생성하고 show() 함수를 통해 다이얼로그 창을 화면에 보여주게 됩니다.
 
 
-![[Pasted image 20240829141507.png]]
+![[Dialog1.png]]
 
 
 
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
 두 번째 인자는 해당 버튼을 클릭하였을 때 이벤트 처리를 위한 DialogInterface.OnClickListener 구현체를 넘겨줍니다. 위 예제에서는 익명 클래스 생성 방식으로 구현하였으며 onClick() 함수를 오버 라이딩하여 그 안에 해당 버튼을 클릭하였을 때 처리할 동작을 정의하면 됩니다. 예제에서는 각 버튼을 때 Toast 메시지를 통해 어떤 버튼이 클릭되었는지를 알려주는 구문을 작성하였습니다.
 
 
-![[Pasted image 20240829141554.png]]
+![[Dialog2.png]]
 
 
 
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity{
 ▼ 리스트(List)를 추가하기 위해서는 **setItems()** 함수를 사용합니다. 첫 번째 인자로 다이얼로그 창에 지정할 List입니다. 해당 예제에서는 앞서 정의한 문자열 배열 리소스 ID 값을 넘겨줍니다. 두 번째 인자는 항목을 클릭하였을 때 이벤트 처리를 위한 **DialogInterface.OnClickListener()** 구현체입니다. onClick() 함수의 두 번째 매개변수로 선택 된 항목의 Index 값이 넘어오기 때문에 **getResources(). getStringArray()를** 통해 문자열 배열을 받아와 선택된 항목을 Toast 메시지로 출력하도록 하였습니다.
 
 
-![[Pasted image 20240829141640.png]]
+![[Dialog3.png]]
 
 
 
@@ -357,7 +357,7 @@ class MainActivity : AppCompatActivity() {
 ▼ **setPositiveButton()** 함수를 통해 버튼을 추가합니다. 버튼을 클릭하였을 때는 **selectedItems**로부터 선택 된 항목들을 하나의 문자열 데이터로 변경하여 Toast 메시지를 통해 화면에 보여줍니다.
 
 
-![[Pasted image 20240829141728.png]]
+![[Dialog4.png]]
 
 ### **5. 단일 선택 목록 추가 - 라디오 버튼(Radio Button)**
 
