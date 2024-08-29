@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md"
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
+                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,15 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "Images/Pasted image 20240829151508.png",
+    "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
+    "Spaces/Cafe24/Cafe24 플러그인 적용.md",
+    "Spaces/Cafe24",
     "Images/Pasted image 20240829141728.png",
     "Images/Pasted image 20240829141640.png",
     "Images/Pasted image 20240829141554.png",
     "Images/Pasted image 20240829141507.png",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/layout/다이얼 로그.md",
     "Spaces/Home/KOTLIN/Kotlin Android/layout",
     "Spaces/Home/KOTLIN/Kotlin Android/Gradle.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
@@ -204,14 +207,12 @@
     "daily note/2024/8/2024-08-05.md",
     "daily note/2024/8/2024-08-02.md",
     "daily note/2024/8/2024-08-01.md",
-    "daily note/2024/8/2024-08-08.md",
     "Images/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정3.png",
     "Images/Docker-Compose명령어/Docker-Compose설정2.png",
     "Images/WSL/WSL1.png",
     "Images/PHP/PHP4.png",
     "Images/PHP/PHP3.png",
-    "Images/PHP/PHP2.png",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
@@ -220,7 +221,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "File",
-    "Spaces/FIle",
     "무제 파일.canvas"
   ]
 }
