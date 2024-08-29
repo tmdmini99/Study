@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 개발.md",
+                "file": "daily note/2024/8/2024-08-29.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -167,7 +167,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -187,7 +188,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 개발.md",
+                "file": "daily note/2024/8/2024-08-29.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 개발.md"
+                "file": "daily note/2024/8/2024-08-29.md"
               }
             }
           },
@@ -225,7 +226,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 개발.md",
+                "file": "daily note/2024/8/2024-08-29.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -268,9 +269,9 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "Spaces/Cafe24/Cafe24 개발.md",
     "Images/Pasted image 20240829162029.png",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
-    "Spaces/Cafe24/Cafe24 개발.md",
     "Images/cafe24 plugin4.png",
     "Images/cafe24 plugin3.png",
     "Images/cafe24 plugin2.png",
@@ -281,7 +282,6 @@
     "Images/Dialog2.png",
     "Images/Dialog1.png",
     "Images/Pasted image 20240829152357.png",
-    "Images/Pasted image 20240829152227.png",
     "Spaces/Cafe24",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/layout",
