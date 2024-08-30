@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md"
               }
             }
           },
@@ -225,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -268,6 +268,8 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "daily note/2024/9/2024-08-30.md",
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
@@ -275,7 +277,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Cafe24/image",
     "Images/Pasted image 20240830100730.png",
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/Cafe24 API 종류",
@@ -307,7 +308,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 SSL.md",
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
-    "Spaces/Home/Protocol/Http/SSL/개발 환경에 따라 적용하기.md",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
