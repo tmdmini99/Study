@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
               }
             }
           },
@@ -225,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -266,12 +266,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/image",
     "Images/Pasted image 20240830100730.png",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
-    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/Cafe24 API 종류",
@@ -313,7 +313,6 @@
     "Images/Kotlin",
     "Spaces/Home/PHP",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
-    "File/openssl-1.0.2j-fips-x86_64 (2).zip",
     "무제 파일.canvas"
   ]
 }
