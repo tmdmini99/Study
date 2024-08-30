@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md"
               }
             }
           },
@@ -225,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -268,8 +268,8 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
+    "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
