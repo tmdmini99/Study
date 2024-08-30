@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "daily note/2024/9/2024-08-30.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -167,7 +167,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -187,7 +188,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "daily note/2024/9/2024-08-30.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
+                "file": "daily note/2024/9/2024-08-30.md"
               }
             }
           },
@@ -225,7 +226,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "daily note/2024/9/2024-08-30.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -268,9 +269,9 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "daily note/2024/9/2024-08-30.md",
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
