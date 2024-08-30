@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-29.md",
+                "file": "daily note/2024/8/2024-08-30.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -188,7 +188,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-29.md",
+                "file": "daily note/2024/8/2024-08-30.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -216,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-29.md"
+                "file": "daily note/2024/8/2024-08-30.md"
               }
             }
           },
@@ -226,7 +226,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-29.md",
+                "file": "daily note/2024/8/2024-08-30.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -269,6 +269,8 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "daily note/2024/8/2024-08-29.md",
+    "daily note/2024/8/2024-08-30.md",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Images/Pasted image 20240829162029.png",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
@@ -289,7 +291,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin 개념.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
-    "daily note/2024/8/2024-08-29.md",
     "Spaces/Home/DB/무제 파일.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
