@@ -55,4 +55,30 @@ GET /api/v2/admin/store
 | contact_us_contents                  | 서비스 문의안내 내용<br><br>상품상세 페이지에 노출시키는 서비스 문의 안내 내용.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | sales_product_categories             | 판매 상품 카테고리<br><br>회원가입 및 쇼핑몰 생성 직후 입력하는 판매 상품 카테고리의 정보를 조회할 수 있습니다.  <br>  <br>(2023년 4월 이후 가입한 몰에 한하여 조회할 수 있습니다.)<br><br>Undecided : 아직 결정하지 못했어요.  <br>Apparel : 패션의류  <br>FashionAccessories : 패션잡화  <br>LuxuryGoods : 수입명품  <br>BrandApparel : 브랜드의류  <br>BrandAccessories : 브랜드잡화  <br>Food_Beverage : 식품  <br>Lifestyle_HealthCare : 생활/건강  <br>Furniture_HomeDecor : 가구/인테리어  <br>Beauty_PersonalCare : 화장품/미용  <br>Maternity_BabyProducts : 출산/육아  <br>Digital_HomeAppliances : 디지털/가전  <br>CarAccessories : 자동차  <br>Rentals : 렌탈 서비스  <br>Sports_Leisure : 스포츠/레저  <br>CD_DVD : 음반/DVD  <br>Books : 도서  <br>Travels_Services : 여가/생활편의  <br>Used_Refurbished_Exhibition : 중고/리퍼/ |
 
+## Activitylogs
+
+활동로그(Activitylog)는 쇼핑몰 관리자가 쇼핑몰 어드민에서 진행한 운영 활동을 기록한 내역입니다.  
+활동로그 리소스를 사용하면 쇼핑몰의 활동로그를 생성하거나 조회할 수 있습니다.
+
+```
+GET /api/v2/admin/activitylogs
+GET /api/v2/admin/activitylogs/{process_no}
+```
+
+
+
+### Activitylogs properties [](https://developers.cafe24.com/docs/ko/api/admin/#activitylogs-properties)
+
+|**Attribute**|**Description**|
+|---|---|
+|process_no|업무처리 넘버|
+|mode|모드<br><br>P : PC 어드민  <br>M : 모바일 어드민  <br>S : (구)스마트모드|
+|type|구분|
+|content|업무내용|
+|process_date|처리일시|
+|manager_id  <br><br>_형식 : [a-z0-9]_  <br>_글자수 최소: [4자]~최대: [16자]_|처리자|
+|manager_type|처리자 타입|
+
+
+
 
