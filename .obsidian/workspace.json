@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md"
               }
             }
           },
@@ -225,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -268,6 +268,7 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/image",
     "Images/Pasted image 20240830100730.png",
@@ -295,7 +296,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Andorid 기초.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
     "Spaces/Home/DB/무제 파일.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
