@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/8/2024-08-30.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/8/2024-08-30.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/8/2024-08-30.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
               }
             }
           },
@@ -225,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/8/2024-08-30.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -266,23 +266,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "6dce24aac3de808f",
   "lastOpenFiles": [
-    "daily note/2024/8/2024-08-29.md",
-    "daily note/2024/8/2024-08-30.md",
     "Spaces/Cafe24/Cafe24 개발.md",
-    "Images/Pasted image 20240829162029.png",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+    "Spaces/Cafe24/Cafe24 API 종류",
+    "Images/Pasted image 20240830100055.png",
+    "Images/cafe24 plugin1.png",
+    "daily note/2024/8/2024-08-30.md",
+    "daily note/2024/8/2024-08-29.md",
+    "Images/Pasted image 20240829162029.png",
     "Images/cafe24 plugin4.png",
     "Images/cafe24 plugin3.png",
     "Images/cafe24 plugin2.png",
-    "Images/cafe24 plugin1.png",
     "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
     "Images/Dialog4.png",
     "Images/Dialog3.png",
     "Images/Dialog2.png",
     "Images/Dialog1.png",
-    "Images/Pasted image 20240829152357.png",
     "Spaces/Cafe24",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/layout",
@@ -305,7 +307,6 @@
     "daily note/2024/8/2024-08-09.md",
     "daily note/2024/8/2024-08-06.md",
     "daily note/2024/8/2024-08-05.md",
-    "daily note/2024/8/2024-08-02.md",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
@@ -313,7 +314,6 @@
     "Spaces/Home/PHP",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL",
     "File/openssl-1.0.2j-fips-x86_64 (2).zip",
-    "File",
     "무제 파일.canvas"
   ]
 }
