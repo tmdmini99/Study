@@ -17,7 +17,7 @@
 
 suspend함수는 함수에 필요한 모든 런타임 문맥을 저장하고 함수 실행을 중단한 다음, 나중에 필요할 때 다시 실행을 계속 진행할 수 있게 한 것이다.
 
-```kotlin
+```run-kotlin
 suspend fun task() {
     println("Task 시작")
     delay(100)

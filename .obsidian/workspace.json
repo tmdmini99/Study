@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md"
+                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md"
               }
             }
           },
@@ -225,7 +225,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+                "file": "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -268,8 +268,11 @@
   },
   "active": "6dce24aac3de808f",
   "lastOpenFiles": [
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
+    "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
+    "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Cafe24/image",
     "Images/Pasted image 20240830100730.png",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
@@ -284,7 +287,6 @@
     "Images/cafe24 plugin4.png",
     "Images/cafe24 plugin3.png",
     "Images/cafe24 plugin2.png",
-    "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
     "Images/Dialog4.png",
     "Images/Dialog3.png",
     "Images/Dialog2.png",
@@ -306,7 +308,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Spaces/Home/KOTLIN/Kotlin Android/KOTLIN 앱 만들기.md",
     "Spaces/Home/Protocol/Http/SSL/개발 환경에 따라 적용하기.md",
-    "daily note/2024/8/2024-08-09.md",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
