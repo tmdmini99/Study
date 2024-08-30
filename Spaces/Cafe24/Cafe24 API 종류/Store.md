@@ -67,7 +67,7 @@ GET /api/v2/admin/activitylogs/{process_no}
 
 
 
-### Activitylogs properties [](https://developers.cafe24.com/docs/ko/api/admin/#activitylogs-properties)
+### Activitylogs properties 
 
 |**Attribute**|**Description**|
 |---|---|
@@ -79,6 +79,91 @@ GET /api/v2/admin/activitylogs/{process_no}
 |manager_id  <br><br>_형식 : [a-z0-9]_  <br>_글자수 최소: [4자]~최대: [16자]_|처리자|
 |manager_type|처리자 타입|
 
+
+
+### Retrieve a list of action logs 
+
+GET/api/v2/admin/activitylogs
+
+활동로그를 목록으로 조회할 수 있습니다.  
+운영 활동을 한 사람이 누구인지, 어떤 메뉴에서 언제 진행했는지 확인할 수 있습니다.
+
+특정 클라이언트만 사용 가능
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+```php
+<?php
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://{mallid}.cafe24api.com/api/v2/admin/activitylogs?start_date=2020-01-01T00:00:00+09:00&end_date=2020-03-01T23:59:59+09:00',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: Bearer {access_token}',
+    'Content-Type: application/json',
+    'X-Cafe24-Api-Version: {version}'
+  ),
+));
+$response = curl_exec($curl);
+$err = curl_error($curl);
+if ($err) {
+  echo 'cURL Error #:' . $err;
+} else {
+  echo $response;
+}
+```
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|manager_type|처리자 타입<br><br>P : 대표운영자  <br>A : 부운영자  <br>S : 공급사|
+|manager_id  <br><br>_형식 : [a-z0-9]_  <br>_글자수 최소: [4자]~최대: [16자]_|처리자|
+|mode|모드<br><br>P : PC 어드민  <br>M : 모바일 어드민  <br>S : (구)스마트모드|
+|type|구분|
+|content  <br><br>_최대글자수 : [500자]_|업무내용|
+|**start_date**  <br>**Required**  <br><br>_날짜_|검색 시작일|
+|**end_date**  <br>**Required**  <br><br>_날짜_|검색 종료일|
+|offset  <br><br>_최대값: [8000]_|조회결과 시작위치<br><br>DEFAULT 0|
+|limit  <br><br>_최소: [1]~최대: [100]_|조회결과 최대건수<br><br>DEFAULT 10|
+
+
+```json
+{
+    "activitylogs": [
+        {
+            "process_no": 130,
+            "mode": "P",
+            "type": "product management > product management > product list",
+            "content": "Edit product name",
+            "process_date": "2020-02-01T00:00:00+09:00",
+            "manager_id": "sampleid",
+            "manager_type": "representative operator"
+        },
+        {
+            "process_no": 131,
+            "mode": "P",
+            "type": "product management > product management > product list",
+            "content": "Edit product name",
+            "process_date": "2020-02-02T00:00:00+09:00",
+            "manager_id": "sampleid",
+            "manager_type": "representative operator"
+        }
+    ],
+    "links": [
+        {
+            "rel": "next",
+            "href": "https://{mallid}.cafe24api.com/api/v2/admin/activitylogs?limit=10&offset=10"
+        }
+    ]
+}
+```
 
 
 
