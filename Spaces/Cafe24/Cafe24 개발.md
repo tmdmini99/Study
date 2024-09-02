@@ -3,7 +3,7 @@ cafe24에 앱 개발시 페이지는 1개만 적용 할수 있다 그 안에서 
 ex 
 ## Redirect URI 입력
 
-![[Pasted image 20240829162029.png]]
+![[cafe24 2.png]]
 
 여기에 들어가는 url만 적용 가능
 

@@ -4,84 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "da9c3f7c757d5e2c",
+        "id": "14348f01ccf812be",
         "type": "tabs",
         "children": [
           {
-            "id": "828b2cf578e5d5fc",
+            "id": "846c60a98b564b2c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 플러그인 적용.md",
+                "file": "Spaces/Home/Java/OkHttp/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
-          },
-          {
-            "id": "35e67b4f9cb3bcbb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe24 plugin6.png"
-              }
-            }
-          },
-          {
-            "id": "f8688dc1bafeb3b1",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe24 plugin5.png"
-              }
-            }
-          },
-          {
-            "id": "b93925c7fd18c111",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe24 plugin4.png"
-              }
-            }
-          },
-          {
-            "id": "3dd39a358f2d73c8",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe25 Store1.png"
-              }
-            }
-          },
-          {
-            "id": "d74153f7af89e1aa",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe24 plugin3.png"
-              }
-            }
-          },
-          {
-            "id": "55baa12473bbdff1",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe24 plugin2.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/cafe24 plugin6.png",
+                "file": "Spaces/Home/Java/OkHttp/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -183,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/cafe24 plugin6.png"
+                "file": "Spaces/Home/Java/OkHttp/무제 파일.md"
               }
             }
           },
@@ -193,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/cafe24 plugin6.png",
+                "file": "Spaces/Home/Java/OkHttp/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -234,26 +173,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "35e67b4f9cb3bcbb",
+  "active": "846c60a98b564b2c",
   "lastOpenFiles": [
-    "Spaces/Cafe24/Cafe24 플러그인 적용.md",
-    "Images/cafe24 plugin5.png",
-    "Images/cafe24 plugin4.png",
-    "Images/cafe24 plugin1.png",
-    "Spaces/Cafe24/Cafe24 개발.md",
-    "Images/Pasted image 20240830175815.png",
-    "Images/Pasted image 20240830100730.png",
-    "Images/Pasted image 20240829162029.png",
-    "Images/Pasted image 20240829152357.png",
-    "Images/cafe24 plugin6.png",
-    "Images/Dialog4.png",
-    "Images/Pasted image 20240830175945.png",
     "Spaces/Home/Java/OkHttp/OkHttp.md",
+    "Spaces/Home/Java/OkHttp/무제 파일.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Spaces/Home/Java/Request&Response/Request&Response.md",
+    "Images/Dialog/Dialog3.png",
+    "Spaces/Cafe24/image/cafe24 2.png",
+    "Images/Dialog/Dialog1.png",
+    "Spaces/Cafe24/image/cafe24 Store4.png",
+    "Images/Dialog1.png",
+    "Images/Dialog/Dialog4.png",
+    "Images/Dialog/Dialog2.png",
+    "Images/Dialog",
+    "Spaces/Cafe24/Cafe24 개발.md",
+    "Spaces/Cafe24/Cafe24 플러그인 적용.md",
+    "Images/Dialog4.png",
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+    "Spaces/Cafe24/image/cafe24 1.png",
+    "Spaces/Cafe24/image/cafe24 Store3.png",
     "Spaces/Home/Java/OkHttp",
     "Spaces/Home/Protocol/Port/Port.md",
     "session.md",
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Request&Response",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
@@ -269,18 +214,13 @@
     "Spaces/Home/Java/추상화/추상화.md",
     "Spaces/Home/Java/객체.md",
     "Spaces/Home/Java/삼항 연산자.md",
-    "Spaces/Home/Java/POJO.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
-    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
-    "daily note/2024/9/2024-09-02.md",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
     "Spaces/Cafe24",
     "Spaces/Home/KOTLIN/Kotlin Android/layout",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
-    "Images/IntelliJ/IntelliJ JVM",
     "무제 파일.canvas"
   ]
 }

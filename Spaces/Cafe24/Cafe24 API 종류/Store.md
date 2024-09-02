@@ -1,7 +1,7 @@
 
 ## Store API
 
-![[cafe25 Store1.png]]
+![[cafe24 Store1.png]]
 
 
 ```
@@ -152,7 +152,7 @@ response
 ## Store accounts
 
 
-![[Pasted image 20240902101532.png]]
+![[cafe24 Store2.png]]
 
 
 상점 계좌(Store accounts)는 쇼핑몰의 무통장입금 정보에 대한 기능입니다.
@@ -696,7 +696,7 @@ PUT /api/v2/admin/payment/setting
 
 ## Paymentgateway
 
-  ![[Pasted image 20240830175815.png]]
+  ![[cafe24 Store3.png]]
   
 PG(Paymentgateway)를 통해 PG앱의 조회, 등록, 수정, 삭제가 가능합니다.
 
@@ -725,7 +725,7 @@ DELETE /api/v2/admin/paymentgateway/{client_id}/paymentmethods/{payment_method_c
 
 ## Paymentmethods
 
-  ![[Pasted image 20240830175945.png]]
+  ![[cafe24 Store4.png]]
   
 쇼핑몰에 설정된 결제수단을 조회할 수 있습니다.
 

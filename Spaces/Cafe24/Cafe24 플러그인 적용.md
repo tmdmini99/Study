@@ -58,7 +58,7 @@ ex
 메인 화면에 적당한 위치에 플러그인에서 적용하라는 코드를 직접 추가
 
 
-![[Pasted image 20240829152357.png]]
+![[cafe24 plugin7.png]]
 
 테스트 배너 생성 후  index.html에 추가
 
