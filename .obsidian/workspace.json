@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Home/Data/CSV.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Home/Data/CSV.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
+                "file": "Spaces/Home/Data/CSV.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Home/Data/CSV.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,12 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Images/복사방지/복사방지1.png",
     "Images/복사방지/복사방지11.png",
     "Images/복사방지/복사방지10.png",
