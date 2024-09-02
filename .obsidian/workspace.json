@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
+                "file": "Spaces/Home/Java/다형성/다형성.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
+                "file": "Spaces/Home/Java/다형성/다형성.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md"
+                "file": "Spaces/Home/Java/다형성/다형성.md"
               }
             }
           },
@@ -162,7 +162,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
+                "file": "Spaces/Home/Java/다형성/다형성.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -203,8 +203,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "828b2cf578e5d5fc",
   "lastOpenFiles": [
+    "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
+    "Spaces/Home/Java/추상화/추상화.md",
+    "Images/cafe25 Store1.png",
     "Spaces/Home/Java/객체.md",
     "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/POJO.md",
@@ -212,7 +215,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Images/Pasted image 20240902101532.png",
-    "Images/cafe25 Store1.png",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "daily note/2024/9/2024-09-02.md",
@@ -243,9 +245,6 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
     "Spaces/Home/DB/무제 파일.md",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/xml/newtwork_security_config.xml.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
-    "daily note/2024/8/2024-08-28.md",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
