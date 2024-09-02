@@ -149,6 +149,10 @@ response
 
 
 
+## Store accounts
+
+
+![[Pasted image 20240902101532.png]]
 
 ## Activitylogs
 
