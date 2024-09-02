@@ -62,69 +62,6 @@
                 "file": "Images/cafe24 plugin2.png"
               }
             }
-          },
-          {
-            "id": "b92b7335f5d71146",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cafe24 plugin1.png"
-              }
-            }
-          },
-          {
-            "id": "e661018c832753a0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Dialog4.png"
-              }
-            }
-          },
-          {
-            "id": "f6c2af1c73de58f2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Dialog3.png"
-              }
-            }
-          },
-          {
-            "id": "39e4683a3af374d9",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Dialog2.png"
-              }
-            }
-          },
-          {
-            "id": "ab161db493227d17",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/layout/Dialog.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "39be454c6945ce4a",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Dialog1.png"
-              }
-            }
           }
         ]
       }

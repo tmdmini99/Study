@@ -154,6 +154,30 @@ response
 
 ![[Pasted image 20240902101532.png]]
 
+
+상점 계좌(Store accounts)는 쇼핑몰의 무통장입금 정보에 대한 기능입니다.
+
+
+```
+GET /api/v2/admin/store/accounts
+```
+
+
+### Store accounts properties [](https://developers.cafe24.com/docs/ko/api/admin/#store-accounts-properties)
+
+| **Attribute**                      | **Description**                                                                                                                                                 |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| shop_no                            | 멀티쇼핑몰 번호                                                                                                                                                        |
+| bank_account_id                    | 무통장 입금 은행 ID                                                                                                                                                    |
+| bank_name                          | 은행명                                                                                                                                                             |
+| bank_code  <br><br>_최대글자수 : [50자]_ | 은행코드<br><br>[bank_code](https://d2wxkjpieznxai.cloudfront.net/resource/ko/bank_code.xlsx) ![](https://d2wxkjpieznxai.cloudfront.net/resource/ko/excel_icon.png) |
+| bank_account_no                    | 계좌번호                                                                                                                                                            |
+| bank_account_holder                | 예금주                                                                                                                                                             |
+| use_account                        | 사용여부<br><br>T : 사용함  <br>F : 사용안함                                                                                                                               |
+|                                    |                                                                                                                                                                 |
+|                                    |                                                                                                                                                                 |
+|                                    |                                                                                                                                                                 |
+
 ## Activitylogs
 
 활동로그(Activitylog)는 쇼핑몰 관리자가 쇼핑몰 어드민에서 진행한 운영 활동을 기록한 내역입니다.  
