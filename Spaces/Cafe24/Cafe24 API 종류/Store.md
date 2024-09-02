@@ -1151,3 +1151,616 @@ Response response = client.newCall(request).execute();
 }
 ```
 
+
+### Create a subscription payment rule 
+
+POST/api/v2/admin/subscription/shipments/setting
+
+정기배송 상품을 설정할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 쓰기권한 (mall.write_store)**|
+|호출건수 제한|**40**|
+|1회당 요청건수 제한|**1**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+|**subscription_shipments_name**  <br>**Required**  <br><br>_최대글자수 : [255자]_|정기배송 상품설정 명|
+|**product_binding_type**  <br>**Required**|정기배송 상품 설정<br><br>A : 전체상품  <br>P : 개별상품  <br>C : 상품분류|
+|one_time_purchase|1회구매 제공여부<br><br>T : 제공함  <br>F : 제공안함<br><br>DEFAULT T|
+|product_list  <br><br>_배열 최대사이즈: [10000]_|적용 상품|
+|category_list  <br><br>_배열 최대사이즈: [1000]_|적용 분류|
+|**use_discount**  <br>**Required**|정기배송 할인 사용여부<br><br>T : 사용함  <br>F : 사용안함|
+|discount_value_unit|할인 기준<br><br>P : 할인율  <br>W : 할인 금액|
+|discount_values  <br><br>_배열 최대사이즈: [40]_|할인 값<br><br>discount_value_unit이 P일 경우 최대값 : 100  <br>discount_value_unit이 W일 경우 최대값 : 99999999999999|
+|related_purchase_quantity|구매수량 관계 여부<br><br>T : 구매수량에 따라  <br>F : 구매수량에 관계없이|
+|**subscription_shipments_cycle_type**  <br>**Required**|배송주기 제공여부<br><br>T : 사용함  <br>F : 사용안함|
+|**subscription_shipments_cycle**  <br>**Required**|배송주기<br><br>1W : 1주  <br>2W : 2주  <br>3W : 3주  <br>4W : 4주  <br>1M : 1개월  <br>2M : 2개월  <br>3M : 3개월  <br>4M : 4개월  <br>5M : 5개월  <br>6M : 6개월  <br>1Y : 1년|
+|**use_order_price_condition**  <br>**Required**|혜택제공금액기준 사용여부<br><br>T : 사용함  <br>F : 사용안함|
+|order_price_greater_than  <br><br>_최대값: [99999999999999]_|혜택제공금액기준 제공 기준금액|
+|include_regional_shipping_rate|지역별배송비 포함여부<br><br>T : 포함  <br>F : 미포함|
+|shipments_start_date  <br><br>_최소값: [1]_  <br>_최대값: [30]_|배송시작일 설정<br><br>DEFAULT 3|
+|change_option|옵션 변경 가능 여부<br><br>T : 사용함  <br>F : 사용안함<br><br>DEFAULT F|
+
+Create a subscription payment rule
+
+> RequestcURL 
+
+```java
+MediaType mediaType = MediaType.parse("");
+RequestBody body = RequestBody.create(mediaType, "{\n" +
+"    \"shop_no\": 1,\n" +
+"    \"request\": {\n" +
+"        \"subscription_shipments_name\": \"SHIRTS SUBSCRIPTION SHIPMENTS\",\n" +
+"        \"product_binding_type\": \"P\",\n" +
+"        \"one_time_purchase\": \"T\",\n" +
+"        \"product_list\": [\n" +
+"            11,\n" +
+"            13\n" +
+"        ],\n" +
+"        \"category_list\": null,\n" +
+"        \"use_discount\": \"T\",\n" +
+"        \"discount_value_unit\": \"P\",\n" +
+"        \"discount_values\": [\n" +
+"            \"20.00\",\n" +
+"            \"11.00\"\n" +
+"        ],\n" +
+"        \"subscription_shipments_cycle_type\": \"T\",\n" +
+"        \"subscription_shipments_cycle\": [\n" +
+"            \"1M\",\n" +
+"            \"2M\"\n" +
+"        ],\n" +
+"        \"use_order_price_condition\": \"T\",\n" +
+"        \"order_price_greater_than\": \"25000.00\",\n" +
+"        \"include_regional_shipping_rate\": \"F\",\n" +
+"        \"shipments_start_date\": 3,\n" +
+"        \"change_option\": \"F\"\n" +
+"    }\n" +
+"}");
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/subscription/shipments/setting")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .post(body)
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```json
+{
+    "shipment": {
+        "shop_no": 1,
+        "subscription_no": 70,
+        "subscription_shipments_name": "SHIRTS SUBSCRIPTION SHIPMENTS",
+        "product_binding_type": "P",
+        "one_time_purchase": "T",
+        "product_list": [
+            11,
+            13
+        ],
+        "category_list": null,
+        "use_discount": "T",
+        "discount_value_unit": "P",
+        "discount_values": [
+            "20.00",
+            "11.00"
+        ],
+        "subscription_shipments_cycle_type": "T",
+        "subscription_shipments_cycle": [
+            "1M",
+            "2M"
+        ],
+        "use_order_price_condition": "T",
+        "order_price_greater_than": "25000.00",
+        "include_regional_shipping_rate": "F",
+        "shipments_start_date": 3,
+        "change_option": "F"
+    }
+}
+```
+
+### Update subscription products 
+
+PUT/api/v2/admin/subscription/shipments/setting/{subscription_no}
+
+설정된 정기배송 상품의 정기배송 설정을 수정할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 쓰기권한 (mall.write_store)**|
+|호출건수 제한|**40**|
+|1회당 요청건수 제한|**1**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+|**subscription_no**  <br>**Required**|정기배송 상품설정 번호|
+|subscription_shipments_name  <br><br>_최대글자수 : [255자]_|정기배송 상품설정 명|
+|product_binding_type|정기배송 상품 설정<br><br>A : 전체상품  <br>P : 개별상품  <br>C : 상품분류|
+|one_time_purchase|1회구매 제공여부<br><br>T : 제공함  <br>F : 제공안함|
+|product_list  <br><br>_배열 최대사이즈: [10000]_|적용 상품|
+|category_list  <br><br>_배열 최대사이즈: [1000]_|적용 분류|
+|use_discount|정기배송 할인 사용여부<br><br>T : 사용함  <br>F : 사용안함|
+|discount_value_unit|할인 기준<br><br>P : 할인율  <br>W : 할인 금액|
+|discount_values  <br><br>_배열 최대사이즈: [40]_|할인 값|
+|related_purchase_quantity|구매수량 관계 여부<br><br>T : 구매수량에 따라  <br>F : 구매수량에 관계없이|
+|subscription_shipments_cycle_type|배송주기 제공여부<br><br>T : 사용함  <br>F : 사용안함|
+|subscription_shipments_cycle|배송주기<br><br>1W : 1주  <br>2W : 2주  <br>3W : 3주  <br>4W : 4주  <br>1M : 1개월  <br>2M : 2개월  <br>3M : 3개월  <br>4M : 4개월  <br>5M : 5개월  <br>6M : 6개월  <br>1Y : 1년|
+|use_order_price_condition|혜택제공금액기준 사용여부<br><br>T : 사용함  <br>F : 사용안함|
+|order_price_greater_than  <br><br>_최대값: [99999999999999]_|혜택제공금액기준 제공 기준금액|
+|include_regional_shipping_rate|지역별배송비 포함여부<br><br>T : 포함  <br>F : 미포함|
+|shipments_start_date  <br><br>_최소값: [1]_  <br>_최대값: [30]_|배송시작일 설정|
+|change_option|옵션 변경 가능 여부<br><br>T : 사용함  <br>F : 사용안함|
+
+Update subscription products
+
+> RequestcURL 
+
+```java
+MediaType mediaType = MediaType.parse("");
+RequestBody body = RequestBody.create(mediaType, "{\n" +
+"    \"shop_no\": 1,\n" +
+"    \"request\": {\n" +
+"        \"subscription_shipments_name\": \"SHIRTS SUBSCRIPTION SHIPMENTS MODIFY\",\n" +
+"        \"product_binding_type\": \"P\",\n" +
+"        \"one_time_purchase\": \"T\",\n" +
+"        \"product_list\": [\n" +
+"            11,\n" +
+~~"            13\n" +
+~~"        ],\n" +
+"        \"use_discount\": \"T\",\n" +
+"        \"discount_value_unit\": \"P\",\n" +
+"        \"discount_values\": [\n" +
+"            \"10.00\",\n" +
+"            \"20.00\"\n" +
+"        ],\n" +
+"        \"subscription_shipments_cycle_type\": \"T\",\n" +
+"        \"subscription_shipments_cycle\": [\n" +
+"            \"3M\",\n" +
+"            \"5M\"\n" +
+"        ],\n" +
+"        \"use_order_price_condition\": \"T\",\n" +
+"        \"order_price_greater_than\": \"30000.00\",\n" +
+"        \"include_regional_shipping_rate\": \"F\",\n" +
+"        \"shipments_start_date\": 3,\n" +
+"        \"change_option\": \"F\"\n" +
+"    }\n" +
+"}");
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/subscription/shipments/setting/72")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .put(body)
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```json
+{
+    "shipment": {
+        "shop_no": 1,
+        "subscription_no": 72,
+        "subscription_shipments_name": "SHIRTS SUBSCRIPTION SHIPMENTS MODIFY",
+        "product_binding_type": "P",
+        "one_time_purchase": "T",
+        "product_list": [
+            11,
+            13
+        ],
+        "use_discount": "T",
+        "discount_value_unit": "P",
+        "discount_values": [
+            "10.00",
+            "20.00"
+        ],
+        "subscription_shipments_cycle_type": "T",
+        "subscription_shipments_cycle": [
+            "3M",
+            "5M"
+        ],
+        "use_order_price_condition": "T",
+        "order_price_greater_than": "30000.00",
+        "include_regional_shipping_rate": "F",
+        "shipments_start_date": 3,
+        "change_option": "F"
+    }
+}
+```
+
+### Delete subscription products 
+
+DELETE/api/v2/admin/subscription/shipments/setting/{subscription_no}
+
+설정된 정기배송 상품의 정기배송 설정을 해제할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 쓰기권한 (mall.write_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+|**subscription_no**  <br>**Required**|정기배송 상품설정 번호|
+
+Delete subscription products
+
+> RequestcURL 
+
+```java
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/subscription/shipments/setting/15")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .delete()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```json
+{
+    "shipment": {
+        "shop_no": 1,
+        "subscription_no": 15
+    }
+}
+```
+
+## Taxmanager
+
+세금 관리자(MSA)의 활성화 정보 관련 기능입니다.
+
+> Endpoints
+
+```
+GET /api/v2/admin/taxmanager
+```
+
+### Taxmanager properties
+
+|**Attribute**|**Description**|
+|---|---|
+|use|세금 관리자 활성화 정보|
+
+### Retrieve activation information for Tax Manager [](https://developers.cafe24.com/docs/ko/api/admin/#retrieve-activation-information-for-tax-manager)
+
+GET/api/v2/admin/taxmanager
+
+세금 관리자의 사용 정보를 조회할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+Retrieve activation information for Tax Manager
+
+> RequestcURL 
+
+```java
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/taxmanager")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .get()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```json
+{
+    "taxmanager": {
+        "use": "T"
+    }
+}
+```
+
+## Users
+
+운영자(Users)는 쇼핑몰의 대표관리자와 더불어 쇼핑몰을 운영할 수 있는 운영자와 관련된 기능입니다.  
+부운영자는 대표관리자가 부여한 권한 내에서 쇼핑몰을 운영할 수 있습니다.  
+쇼핑몰에 등록된 운영자를 목록으로 조회하거나 특정 운영자를 조회할 수 있습니다.
+
+> Endpoints
+
+```
+GET /api/v2/admin/users
+GET /api/v2/admin/users/{user_id}
+```
+
+### Users properties
+
+|**Attribute**|**Description**|
+|---|---|
+|user_id|운영자 아이디<br><br>운영자 혹은 부운영자의 아이디|
+|user_name|운영자 명<br><br>운영자 혹은 부운영자의 이름|
+|phone  <br><br>_전화번호_|전화번호<br><br>운영자 혹은 부운영자의 전화번호|
+|email  <br><br>_이메일_|이메일<br><br>운영자 혹은 부운영자의 이메일 주소|
+|ip_restriction_type|IP 접근제한<br><br>IP 접근제한의 사용여부<br><br>A : 사용함  <br>F : 사용안함|
+|admin_type|운영자 구분<br><br>대표운영자인지 부운영자인지의 구분<br><br>P : 대표운영자  <br>A : 부운영자|
+|last_login_date|최근 접속일시|
+|shop_no  <br><br>_최소값: [1]_|멀티쇼핑몰 번호|
+|nick_name|운영자 별명<br><br>운영자의 별명|
+|nick_name_icon_type|별명 아이콘 타입<br><br>별명 아이콘 등록. 직접 등록이나 샘플 등록이 가능함.<br><br>D : 직접 아이콘 등록  <br>S : 샘플 아이콘 등록|
+|nick_name_icon_url|별명 아이콘 URL|
+|board_exposure_setting|게시판 노출 설정|
+|memo|메모|
+|available|사용여부<br><br>T : 사용함  <br>F : 사용안함|
+|multishop_access_authority|멀티쇼핑몰 접근 권한<br><br>T : 허용함  <br>F : 허용안함|
+|menu_access_authority|메뉴 접근 권한|
+|detail_authority_setting|상세 권한 설정|
+|ip_access_restriction|IP 접근 제한|
+|access_permission|접속 허용 권한<br><br>T : 접속 허용시간 설정과 상관없이 항상 관리자 페이지 접속을 허용함  <br>F : 사용안함|
+
+### Retrieve a list of admin users 
+
+GET/api/v2/admin/users
+
+쇼핑몰에 등록된 운영자를 목록으로 조회할 수 있습니다.  
+운영자 아이디, 운영자명, 이메일, 전화번호 등을 조회할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|search_type|검색 타입<br><br>member_Id : 회원 아이디  <br>name : 이름|
+|keyword|검색어|
+|admin_type|운영자 구분<br><br>P : 대표운영자  <br>A : 부운영자|
+
+Retrieve a list of admin users
+
+> RequestcURL
+```
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/users")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .get()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```
+{
+    "users": [
+        {
+            "user_id": "admin",
+            "user_name": "John Doe",
+            "phone": "02-0000-0000",
+            "email": "sample@sample.com",
+            "ip_restriction_type": "A",
+            "admin_type": "P",
+            "last_login_date": "2022-01-01T12:00:00+09:00"
+        },
+        {
+            "user_id": "subadmin",
+            "user_name": "Jane Doe",
+            "phone": "02-0000-0000",
+            "email": "sample@sample.com",
+            "ip_restriction_type": "A",
+            "admin_type": "A",
+            "last_login_date": null
+        }
+    ]
+}
+```
+
+### Retrieve admin user details 
+
+GET/api/v2/admin/users/{user_id}
+
+쇼핑몰에 등록된 특정 운영자를 조회할 수 있습니다.  
+운영자 이름, 전화번호, 이메일 등을 조회할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no  <br><br>_최소값: [1]_|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+|user_id|운영자 아이디<br><br>운영자 혹은 부운영자의 아이디|
+
+Retrieve admin user details
+
+> RequestcURL 
+
+```java
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/users/subadmin1")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .get()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```json
+{
+    "user": {
+        "shop_no": 1,
+        "admin_type": "A",
+        "user_name": "John Doe",
+        "nick_name": "Cool John",
+        "nick_name_icon_type": "S",
+        "nick_name_icon_url": "https://img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_nick1.gif",
+        "board_exposure_setting": {
+            "admin_grade_icon": "T",
+            "nick_name_icon": "F",
+            "writer_name_icon": "F"
+        },
+        "phone": "02-1234-5678",
+        "email": "subadmin1@cafe24.com",
+        "memo": "test memo",
+        "available": "T",
+        "multishop_access_authority": "T",
+        "menu_access_authority": {
+            "order": {
+                "authority": true,
+                "detail_setting": {
+                    "74": {
+                        "key": "74",
+                        "name": "전체 주문 조회",
+                        "authority": true
+                    },
+                    "71": {
+                        "key": "71",
+                        "name": "입금전 관리",
+                        "authority": true
+                    },
+                    "72": {
+                        "key": "72",
+                        "name": "배송 준비중 관리",
+                        "authority": true
+                    }
+                }
+            },
+            "product": {
+                "authority": true,
+                "detail_setting": {
+                    "2037": {
+                        "key": "2037",
+                        "name": "상품목록",
+                        "authority": true
+                    },
+                    "2031": {
+                        "key": "2031",
+                        "name": "상품등록",
+                        "authority": true,
+                        "children": {
+                            "2032": {
+                                "key": "2032",
+                                "name": "간단 등록",
+                                "authority": true
+                            },
+                            "2033": {
+                                "key": "2033",
+                                "name": "일반 등록",
+                                "authority": true
+                            },
+                            "2138": {
+                                "key": "2138",
+                                "name": "세트 상품 등록",
+                                "authority": true
+                            },
+                            "2135": {
+                                "key": "2135",
+                                "name": "엑셀 등록",
+                                "authority": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "detail_authority_setting": {
+            "product": {
+                "edit_product_category": "F",
+                "modify_product_info": null,
+                "remove_product_info": "F",
+                "change_product_sale_status": "F",
+                "change_product_display_status": "F",
+                "edit_product_display_reservation": "F",
+                "download_product_excel_data_in_menu": "F",
+                "show_product_supply_business": "F",
+                "edit_product_supply_business": "F",
+                "edit_product_supply_production_cost": "F",
+                "show_supplier_product_name": "F",
+                "edit_product_manufacturer_info": "F",
+                "show_product_delivery_count": "F",
+                "show_product_sales_count": "F"
+            },
+            "order": {
+                "restrict_searching_order_info": "F",
+                "restrict_searching_personal_info": "F",
+                "restrict_printing_in_menu": "F",
+                "check_payment": "F",
+                "cancel_credit_payment": "F",
+                "cancel_payco_point_payment": "F",
+                "cancel_affiliated_gift_certificate_payment": "F",
+                "cancel_affiliation_point_payment": "F",
+                "cancel_order": "F",
+                "return_product": "F",
+                "exchange_product": "F",
+                "accept_refunding_product": "F",
+                "handle_refunding_product": "F",
+                "edit_order_memo": "F",
+                "download_order_data_in_menu": "F",
+                "show_dashboard_order_info": "F",
+                "show_total_ordered_amount": "F",
+                "show_integration_balance": "F",
+                "cancel_withdrawal": "F",
+                "exchange_withdrawal": "F",
+                "return_withdrawal": "F",
+                "refund_withdrawal": "F"
+            }
+        },
+        "ip_access_restriction": {
+            "usage": "T",
+            "registered_ip_list": [
+                "127.0.0.1"
+            ]
+        },
+        "access_permission": "F"
+    }
+}
+```
+
