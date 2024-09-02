@@ -24,7 +24,7 @@ src
 
 pom.xml
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -142,7 +142,7 @@ pom.xml
 
 Java Config 설정
 
-```
+```java
 package com.example.mvcquerydsldemo.config;
 
 import org.springframework.context.annotation.Bean;
@@ -192,7 +192,7 @@ public class AppConfig {
 
 WebConfig.java
 
-```
+```java
 package com.example.mvcquerydsldemo.config;
 
 import org.springframework.context.annotation.Bean;
@@ -224,7 +224,7 @@ public class WebConfig implements WebMvcConfigurer {
 ```
 
 User.java
-```
+```java
 package com.example.mvcquerydsldemo.model;
 
 import lombok.Getter;
@@ -254,7 +254,7 @@ public class User {
 
 UserRepository.java
 
-```
+```java
 package com.example.mvcquerydsldemo.repository;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -267,7 +267,7 @@ public interface UserRepository extends JpaRepository<User, Long>, UserRepositor
 
 UserRepositoryCustom.java
 
-```
+```java
 package com.example.mvcquerydsldemo.repository;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -284,7 +284,7 @@ public interface UserRepositoryCustom {
 UserRepositoryImpl.java
 
 
-```
+```java
 package com.example.mvcquerydsldemo.repository;
 
 import com.example.mvcquerydsldemo.model.QUser;
@@ -319,7 +319,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 UserService.java
 
 
-```
+```java
 package com.example.mvcquerydsldemo.service;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -363,7 +363,7 @@ public class UserService {
 UserController.java
 
 
-```
+```java
 package com.example.mvcquerydsldemo.controller;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -415,7 +415,7 @@ public class UserController {
 persistence.xml
 
 
-```
+```xml
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
@@ -436,7 +436,7 @@ persistence.xml
 
 
 jsp
-```
+```html
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -468,7 +468,7 @@ jsp
 
 web.xml
 
-```
+```xml
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
@@ -504,5 +504,132 @@ web.xml
 - **Spring MVC**: 컨트롤러에서 JSP 파일로 데이터를 전달하여 동적인 웹 페이지를 생성합니다.
 
 
+Java Config 대신 사용
 
 
+applicationContext.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/data/jpa
+                           http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <!-- Component Scan -->
+    <context:component-scan base-package="com.example.mvcquerydsldemo"/>
+
+    <!-- DataSource 설정 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:mem:testdb"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="password"/>
+    </bean>
+
+    <!-- JPA EntityManagerFactory 설정 -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.example.mvcquerydsldemo.model"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+    </bean>
+
+    <!-- JPA Transaction Manager 설정 -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- Enable Transaction Management -->
+    <tx:annotation-driven/>
+
+</beans>
+
+```
+
+web.xml
+
+```xml
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Spring MVC QueryDSL Demo</display-name>
+
+    <!-- Spring Context Configuration -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- Spring MVC Dispatcher Servlet -->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-mvc-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
+```
+
+
+
+spring-mvc-config.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- Enable Spring MVC -->
+    <mvc:annotation-driven/>
+
+    <!-- Configure View Resolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- Static Resource Configuration -->
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+    <!-- Enable Component Scanning -->
+    <context:component-scan base-package="com.example.mvcquerydsldemo"/>
+
+</beans>
+
+```

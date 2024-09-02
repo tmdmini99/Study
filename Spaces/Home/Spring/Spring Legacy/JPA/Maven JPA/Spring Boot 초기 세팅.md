@@ -24,7 +24,7 @@ src
 
 pom.xml
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -118,7 +118,7 @@ pom.xml
 
 2. 엔터티 클래스 (`User.java`)
 
-```
+```java
 package com.example.mvcquerydsldemo.model;
 
 import lombok.Getter;
@@ -148,7 +148,7 @@ public class User {
 
 UserRepository.java
 
-```
+```java
 package com.example.mvcquerydsldemo.repository;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -163,7 +163,7 @@ public interface UserRepository extends JpaRepository<User, Long>, UserRepositor
 
 UserRepositoryCustom.java
 
-```
+```java
 package com.example.mvcquerydsldemo.repository;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -179,7 +179,7 @@ public interface UserRepositoryCustom {
 
 UserRepositoryImpl.java
 
-```
+```java
 package com.example.mvcquerydsldemo.repository;
 
 import com.example.mvcquerydsldemo.model.QUser;
@@ -213,7 +213,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 
 UserService.java
 
-```
+```java
 package com.example.mvcquerydsldemo.service;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -251,7 +251,7 @@ public class UserService {
 
 UserController.java
 
-```
+```java
 package com.example.mvcquerydsldemo.controller;
 
 import com.example.mvcquerydsldemo.model.User;
@@ -294,7 +294,7 @@ public class UserController {
 
 application.properties
 
-```
+```properties
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
@@ -308,7 +308,7 @@ spring.h2.console.enabled=true
 초기 데이터 로딩 (`data.sql`)
 
 
-```
+```sql
 INSERT INTO user (username, email) VALUES ('john_doe', 'john@example.com');
 INSERT INTO user (username, email) VALUES ('jane_doe', 'jane@example.com');
 
