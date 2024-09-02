@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,9 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
+    "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
@@ -215,7 +216,6 @@
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
-    "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
