@@ -178,6 +178,70 @@ GET /api/v2/admin/store/accounts
 |                                    |                                                                                                                                                                 |
 |                                    |                                                                                                                                                                 |
 
+
+### Retrieve a list of store bank accounts 
+
+GET/api/v2/admin/store/accounts
+
+상점의 무통장입금 계좌정보를 목록으로 조회할 수 있습니다.  
+은행명, 은행코드, 계좌번호 등을 조회할 수 있습니다.
+
+
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+| **Parameter** | **Description**           |
+| ------------- | ------------------------- |
+| shop_no       | 멀티쇼핑몰 번호<br><br>DEFAULT 1 |
+
+```java
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/store/accounts")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .get()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+
+```json
+{
+    "accounts": [
+        {
+            "shop_no": 1,
+            "bank_account_id": 1,
+            "bank_name": "Hana Bank",
+            "bank_code": "bank_81",
+            "bank_account_no": "123123123",
+            "bank_account_holder": "Depositor Name",
+            "use_account": "T"
+        },
+        {
+            "shop_no": 1,
+            "bank_account_id": 2,
+            "bank_name": "KB Bank",
+            "bank_code": "bank_04",
+            "bank_account_no": "123456789",
+            "bank_account_holder": "Depositor Name",
+            "use_account": "T"
+        }
+    ]
+}
+```
+
+
+
 ## Activitylogs
 
 활동로그(Activitylog)는 쇼핑몰 관리자가 쇼핑몰 어드민에서 진행한 운영 활동을 기록한 내역입니다.  
@@ -348,7 +412,7 @@ if ($err) {
 GET /api/v2/admin/automessages/arguments
 ```
 
-### Automessages arguments properties [](https://developers.cafe24.com/docs/ko/api/admin/#automessages-arguments-properties)
+### Automessages arguments properties 
 
 |**Attribute**|**Description**|
 |---|---|
@@ -815,4 +879,275 @@ GET /api/v2/admin/socials/naverlogin
 PUT /api/v2/admin/socials/naverlogin
 ```
 
-더보기
+
+
+### Socials naverlogin properties 
+
+|**Attribute**|**Description**|
+|---|---|
+|shop_no|멀티쇼핑몰 번호|
+|use_naverlogin|네이버 로그인 사용여부|
+|client_id|클라이언트 아이디|
+|client_secret|클라이언트 시크릿 키|
+
+### Naver login details 
+
+GET/api/v2/admin/socials/naverlogin
+
+쇼핑몰에 네이버 로그인 설정여부를 조회할 수 있습니다.
+
+`해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.`
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no  <br><br>_최소값: [1]_|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+
+Naver login details
+
+
+```
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/socials/naverlogin")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .get()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+
+```
+{
+    "naverlogin": {
+        "shop_no": 1,
+        "use_naverlogin": "T",
+        "client_id": "d3t09cT11SNX22U5swHK",
+        "client_secret": "XxT3QPuMkU"
+    }
+}
+```
+
+### Update Naver login settings 
+
+PUT/api/v2/admin/socials/naverlogin
+
+쇼핑몰에 설정된 네이버 로그인 정보를 수정할 수 있습니다.
+
+`해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.`
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 쓰기권한 (mall.write_store)**|
+|호출건수 제한|**40**|
+|1회당 요청건수 제한|**1**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no  <br><br>_최소값: [1]_|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+|**use_naverlogin**  <br>**Required**|네이버 로그인 사용여부<br><br>T:사용함  <br>F:사용안함|
+|client_id  <br><br>_형식 : [a-zA-Z0-9_-]_  <br>_최대글자수 : [255자]_|클라이언트 아이디|
+|client_secret  <br><br>_형식 : [a-zA-Z0-9_-]_  <br>_최대글자수 : [255자]_|클라이언트 시크릿 키|
+
+Update Naver login settings
+
+```
+MediaType mediaType = MediaType.parse("");
+RequestBody body = RequestBody.create(mediaType, "{\n" +
+"    \"shop_no\": 1,\n" +
+"    \"request\": {\n" +
+"        \"use_naverlogin\": \"T\",\n" +
+"        \"client_id\": \"d3t09cT11SNX22U5swHK\",\n" +
+"        \"client_secret\": \"XxT3QPuMkU\"\n" +
+"    }\n" +
+"}");
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/socials/naverlogin")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .put(body)
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+> Response
+
+```
+{
+    "naverlogin": {
+        "shop_no": 1,
+        "use_naverlogin": "T",
+        "client_id": "d3t09cT11SNX22U5swHK",
+        "client_secret": "XxT3QPuMkU"
+    }
+}
+```
+
+
+
+## Subscription shipments setting
+
+정기배송 설정(Subscription shipments setting)은 정기결제를 통해 이루어지는 정기배송에 대한 기능입니다.  
+정기배송 설정을 통해 쇼핑몰의 정기배송 상품을 설정하거나 정기배송 상품을 조회할 수 있습니다.  
+정기배송 기능을 사용하기 위해서는 먼저 정기배송 서비스가 신청되어 있어야 합니다.  
+정기배송 서비스의 신청은 어드민에서 가능합니다.
+
+> Endpoints
+
+```
+GET /api/v2/admin/subscription/shipments/setting
+POST /api/v2/admin/subscription/shipments/setting
+PUT /api/v2/admin/subscription/shipments/setting/{subscription_no}
+DELETE /api/v2/admin/subscription/shipments/setting/{subscription_no}
+```
+
+### Subscription shipments setting properties [](https://developers.cafe24.com/docs/ko/api/admin/#subscription-shipments-setting-properties)
+
+| **Attribute**                                             | **Description**                                                                                                                                             |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| shop_no                                                   | 멀티쇼핑몰 번호                                                                                                                                                    |
+| subscription_no                                           | 정기배송 상품설정 번호                                                                                                                                                |
+| subscription_shipments_name                               | 정기배송 상품설정 명                                                                                                                                                 |
+| product_binding_type                                      | 정기배송 상품 설정<br><br>A : 전체상품  <br>P : 개별상품  <br>C : 상품분류                                                                                                      |
+| one_time_purchase                                         | 1회구매 제공여부<br><br>T : 제공함  <br>F : 제공안함                                                                                                                      |
+| product_list                                              | 적용 상품                                                                                                                                                       |
+| category_list                                             | 적용 분류                                                                                                                                                       |
+| use_discount                                              | 정기배송 할인 사용여부<br><br>T : 사용함  <br>F : 사용안함                                                                                                                   |
+| discount_value_unit                                       | 할인 기준<br><br>P : 할인율  <br>W : 할인 금액                                                                                                                         |
+| discount_values                                           | 할인 값                                                                                                                                                        |
+| related_purchase_quantity                                 | 구매수량 관계 여부<br><br>T : 구매수량에 따라  <br>F : 구매수량에 관계없이                                                                                                          |
+| subscription_shipments_cycle_type                         | 배송주기 제공여부<br><br>T : 사용함  <br>F : 사용안함                                                                                                                      |
+| subscription_shipments_cycle                              | 배송주기<br><br>1W : 1주  <br>2W : 2주  <br>3W : 3주  <br>4W : 4주  <br>1M : 1개월  <br>2M : 2개월  <br>3M : 3개월  <br>4M : 4개월  <br>5M : 5개월  <br>6M : 6개월  <br>1Y : 1년 |
+| use_order_price_condition                                 | 혜택제공금액기준 사용여부<br><br>T : 사용함  <br>F : 사용안함                                                                                                                  |
+| order_price_greater_than                                  | 혜택제공금액기준 제공 기준금액                                                                                                                                            |
+| include_regional_shipping_rate                            | 지역별배송비 포함여부<br><br>T : 포함  <br>F : 미포함                                                                                                                      |
+| shipments_start_date  <br><br>_최소값: [1]_  <br>_최대값: [30]_ | 배송시작일 설정                                                                                                                                                    |
+| change_option                                             | 옵션 변경 가능 여부<br><br>T : 사용함  <br>F : 사용안함                                                                                                                    |
+
+> Endpoints
+
+```
+GET /api/v2/admin/subscription/shipments/setting
+POST /api/v2/admin/subscription/shipments/setting
+PUT /api/v2/admin/subscription/shipments/setting/{subscription_no}
+DELETE /api/v2/admin/subscription/shipments/setting/{subscription_no}
+```
+
+
+### Retrieve a list of subscription products 
+
+GET/api/v2/admin/subscription/shipments/setting
+
+설정된 정기배송 상품에 대한 정보를 목록으로 조회할 수 있습니다.  
+정기배송 상품설정 번호, 설정 명, 설정값 등을 조회할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+|**Parameter**|**Description**|
+|---|---|
+|shop_no|멀티쇼핑몰 번호<br><br>DEFAULT 1|
+|subscription_no|정기배송 상품설정 번호|
+
+
+```java
+Request request = new Request.Builder()
+  .url("https://{mallid}.cafe24api.com/api/v2/admin/subscription/shipments/setting")
+  .addHeader("Authorization", "Bearer {access_token}")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-Cafe24-Api-Version", "{version}")
+  .get()
+  .build();
+  
+OkHttpClient client = new OkHttpClient();
+Response response = client.newCall(request).execute();
+```
+
+
+```json
+{
+    "shipments": [
+        {
+            "shop_no": 1,
+            "subscription_no": 70,
+            "subscription_shipments_name": "SHIRTS SUBSCRIPTION SHIPMENTS",
+            "product_binding_type": "P",
+            "one_time_purchase": "T",
+            "product_list": [
+                11,
+                13
+            ],
+            "category_list": null,
+            "use_discount": "T",
+            "discount_value_unit": "P",
+            "discount_values": [
+                "20.00",
+                "11.00"
+            ],
+            "subscription_shipments_cycle_type": "T",
+            "subscription_shipments_cycle": [
+                "1M",
+                "2M"
+            ],
+            "use_order_price_condition": "T",
+            "order_price_greater_than": "25000.00",
+            "include_regional_shipping_rate": "F",
+            "shipments_start_date": 3,
+            "change_option": "F"
+        },
+        {
+            "shop_no": 1,
+            "subscription_no": 71,
+            "subscription_shipments_name": "SHIRTS SUBSCRIPTION SHIPMENTS",
+            "product_binding_type": "P",
+            "one_time_purchase": "T",
+            "product_list": [
+                11,
+                13
+            ],
+            "category_list": null,
+            "use_discount": "T",
+            "discount_value_unit": "P",
+            "discount_values": [
+                "20.00",
+                "11.00"
+            ],
+            "subscription_shipments_cycle_type": "T",
+            "subscription_shipments_cycle": [
+                "1M",
+                "2M"
+            ],
+            "use_order_price_condition": "T",
+            "order_price_greater_than": "25000.00",
+            "include_regional_shipping_rate": "F",
+            "shipments_start_date": 3,
+            "change_option": "T"
+        }
+    ]
+}
+```
+
