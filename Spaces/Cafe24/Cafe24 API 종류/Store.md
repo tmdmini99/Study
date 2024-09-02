@@ -1019,7 +1019,7 @@ PUT /api/v2/admin/subscription/shipments/setting/{subscription_no}
 DELETE /api/v2/admin/subscription/shipments/setting/{subscription_no}
 ```
 
-### Subscription shipments setting properties [](https://developers.cafe24.com/docs/ko/api/admin/#subscription-shipments-setting-properties)
+### Subscription shipments setting properties 
 
 | **Attribute**                                             | **Description**                                                                                                                                             |
 | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
