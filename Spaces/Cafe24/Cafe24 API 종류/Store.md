@@ -55,6 +55,101 @@ GET /api/v2/admin/store
 | contact_us_contents                  | 서비스 문의안내 내용<br><br>상품상세 페이지에 노출시키는 서비스 문의 안내 내용.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | sales_product_categories             | 판매 상품 카테고리<br><br>회원가입 및 쇼핑몰 생성 직후 입력하는 판매 상품 카테고리의 정보를 조회할 수 있습니다.  <br>  <br>(2023년 4월 이후 가입한 몰에 한하여 조회할 수 있습니다.)<br><br>Undecided : 아직 결정하지 못했어요.  <br>Apparel : 패션의류  <br>FashionAccessories : 패션잡화  <br>LuxuryGoods : 수입명품  <br>BrandApparel : 브랜드의류  <br>BrandAccessories : 브랜드잡화  <br>Food_Beverage : 식품  <br>Lifestyle_HealthCare : 생활/건강  <br>Furniture_HomeDecor : 가구/인테리어  <br>Beauty_PersonalCare : 화장품/미용  <br>Maternity_BabyProducts : 출산/육아  <br>Digital_HomeAppliances : 디지털/가전  <br>CarAccessories : 자동차  <br>Rentals : 렌탈 서비스  <br>Sports_Leisure : 스포츠/레저  <br>CD_DVD : 음반/DVD  <br>Books : 도서  <br>Travels_Services : 여가/생활편의  <br>Used_Refurbished_Exhibition : 중고/리퍼/ |
 
+
+## Retrieve store details
+
+쇼핑몰의 정보를 조회할 수 있습니다.
+
+#### 기본스펙
+
+|**Property**|**Description**|
+|---|---|
+|SCOPE|**상점 읽기권한 (mall.read_store)**|
+|호출건수 제한|**40**|
+
+#### 요청사양
+
+| **Parameter** | **Description**                                              |
+| ------------- | ------------------------------------------------------------ |
+| shop_no       | 멀티쇼핑몰 번호<br><br>멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.<br><br>DEFAULT 1 |
+
+request
+```php
+<?php
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://{mallid}.cafe24api.com/api/v2/admin/store?shop_no=1',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: Bearer {access_token}',
+    'Content-Type: application/json',
+    'X-Cafe24-Api-Version: {version}'
+  ),
+));
+$response = curl_exec($curl);
+$err = curl_error($curl);
+if ($err) {
+  echo 'cURL Error #:' . $err;
+} else {
+  echo $response;
+}
+```
+
+
+response
+```json
+{
+    "store": {
+        "shop_no": 1,
+        "shop_name": "My Shopping Mall",
+        "mall_id": "myshop",
+        "base_domain": "sample.cafe24.com",
+        "primary_domain": "sample.com",
+        "company_registration_no": "118-81-20586",
+        "company_name": "My Shopping Mall",
+        "president_name": "John Doe",
+        "company_condition": "Retail",
+        "company_line": "E-Commerce Product",
+        "country": "Korea",
+        "country_code": "KOR",
+        "zipcode": "07071",
+        "address1": "Sindaebang dong Dongjak-gu, Seoul, Republic of Korea",
+        "address2": "Professional Construction Hall",
+        "phone": "02-0000-0000",
+        "fax": "02-0000-0000",
+        "email": "sample@sample.com",
+        "notification_only_email": "sample@sample.com",
+        "mall_url": "http://sample.com",
+        "mail_order_sales_registration": "T",
+        "mail_order_sales_registration_number": "강남 제 02-680-014호",
+        "missing_report_reason_type": "Preparing for Register",
+        "missing_report_reason": "Preparing to report ecommerce business",
+        "about_us_contents": "<b>My Shopping Mall Information</b>",
+        "company_map_url": "https://myshop.cafe24.com/web/upload/map.jpg",
+        "customer_service_phone": "02-0000-0000",
+        "customer_service_email": "sample@sample.com",
+        "customer_service_fax": "02-0000-0000",
+        "customer_service_sms": "02-0000-0000",
+        "customer_service_hours": "9:00 AM ~ 5:00 PM",
+        "privacy_officer_name": "Hong Gildong",
+        "privacy_officer_position": "Manager",
+        "privacy_officer_department": "Information Security Team",
+        "privacy_officer_phone": "02-0000-0000",
+        "privacy_officer_email": "sample@sample.com",
+        "contact_us_mobile": "T",
+        "contact_us_contents": "Service Information",
+        "sales_product_categories": [
+            "Apparel",
+            "FashionAccessories"
+        ]
+    }
+}
+```
+
+
+
+
 ## Activitylogs
 
 활동로그(Activitylog)는 쇼핑몰 관리자가 쇼핑몰 어드민에서 진행한 운영 활동을 기록한 내역입니다.  
