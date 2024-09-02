@@ -37,7 +37,7 @@ if (!document.getElementById('dfbm-script-44073')){
 ```
 
 
-![[Pasted image 20240829152109.png]]
+![[cafe24 plugin5.png]]
 
 그 후 원하는 위치에  원하는 곳에 플러그인 코드 추가
 
@@ -52,7 +52,7 @@ ex
     </div>    
 ```
 
-![[Pasted image 20240829152227.png]]
+![[cafe24 plugin6.png]]
 
 
 메인 화면에 적당한 위치에 플러그인에서 적용하라는 코드를 직접 추가
