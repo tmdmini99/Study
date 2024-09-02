@@ -13,10 +13,60 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
+                "file": "Spaces/Obsidian/복사 방지 해제.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "ab742b4ffc838e67",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/복사방지5.png"
+              }
+            }
+          },
+          {
+            "id": "66a67366f4ae2c61",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/복사방지4.png"
+              }
+            }
+          },
+          {
+            "id": "f1e8a675aaf6bd78",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/복사방지3.png"
+              }
+            }
+          },
+          {
+            "id": "c3cc5ada8b980a99",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/복사방지2.png"
+              }
+            }
+          },
+          {
+            "id": "ccbcde8b2d61f159",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/복사방지1.png"
               }
             }
           }
@@ -94,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
+                "file": "Spaces/Obsidian/복사 방지 해제.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/OkHttp/OkHttp 사용.md"
+                "file": "Spaces/Obsidian/복사 방지 해제.md"
               }
             }
           },
@@ -132,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
+                "file": "Spaces/Obsidian/복사 방지 해제.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,27 +225,30 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
+    "Images/복사방지5.png",
+    "Spaces/Obsidian/복사 방지 해제.md",
+    "Images/복사방지4.png",
+    "Images/복사방지3.png",
+    "Images/복사방지2.png",
+    "Images/복사방지1.png",
+    "Images/Pasted image 20240902161032.png",
+    "Images/Pasted image 20240902161027.png",
+    "Images/Pasted image 20240902161015.png",
+    "Images/Pasted image 20240902161000.png",
+    "Images/Pasted image 20240902160951.png",
+    "Images/Pasted image 20240902160943.png",
+    "Spaces/Home/XML/Bean.md",
+    "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Java/Request&Response/Request&Response.md",
-    "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
     "Spaces/Home/Java/OkHttp/OkHttp.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
-    "Images/Dialog/Dialog3.png",
-    "Spaces/Cafe24/image/cafe24 2.png",
-    "Images/Dialog/Dialog1.png",
-    "Spaces/Cafe24/image/cafe24 Store4.png",
-    "Images/Dialog1.png",
-    "Images/Dialog/Dialog4.png",
-    "Images/Dialog/Dialog2.png",
     "Images/Dialog",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
-    "Images/Dialog4.png",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
-    "Spaces/Cafe24/image/cafe24 1.png",
-    "Spaces/Cafe24/image/cafe24 Store3.png",
     "Spaces/Home/Java/OkHttp",
     "Spaces/Home/Protocol/Port/Port.md",
     "session.md",
@@ -211,9 +264,6 @@
     "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
     "Spaces/Home/Java/다형성/다형성.md",
     "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
-    "Spaces/Home/Java/추상화/추상화.md",
-    "Spaces/Home/Java/객체.md",
-    "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
