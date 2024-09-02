@@ -1553,7 +1553,7 @@ GET/api/v2/admin/users
 Retrieve a list of admin users
 
 > RequestcURL
-```
+```java
 Request request = new Request.Builder()
   .url("https://{mallid}.cafe24api.com/api/v2/admin/users")
   .addHeader("Authorization", "Bearer {access_token}")
@@ -1568,7 +1568,7 @@ Response response = client.newCall(request).execute();
 
 > Response
 
-```
+```json
 {
     "users": [
         {

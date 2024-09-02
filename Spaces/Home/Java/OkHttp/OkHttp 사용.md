@@ -1,7 +1,7 @@
 **OkHttp**는 REST API, HTTP 통신을 간편하게 사용할 수 있도록 만들어진 자바 라이브러리다. **"Square"**라는 회사가 만든 OkHttp 라이브러리는 어쩌면 더 잘 알려져있는 **Retrofit**이라는 라이브러리의 기본이 된다. OkHttp 라이브러리를 이용하면 간편하게 몇 줄의 코드로 REST API, HTTP 기반의 요청, 응답을 처리할 수 있다.
 
 
-![[Pasted image 20240902160517.png]]
+![[OkHttp1.png]]
 
 
 OkHttp 라이브러리는 오픈소스로 공개된 소프트웨어다. (링크 : [OkHttp github](https://github.com/square/okhttp)) 문제가 생기거나 내부 동작이 궁금하면 코드를 열어볼 수 있다. 
@@ -27,7 +27,7 @@ implementation group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
 이런 식으로 입력하면 된다.
 
 
-![[Pasted image 20240902160524.png]]
+![[OkHttp2.png]]
 
 ## REST API 예제
 

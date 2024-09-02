@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Obsidian/복사 방지 해제.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,52 +21,22 @@
             }
           },
           {
-            "id": "ab742b4ffc838e67",
+            "id": "73e72e503ea3b2d8",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/복사방지5.png"
+                "file": "Images/OkHttp2.png"
               }
             }
           },
           {
-            "id": "66a67366f4ae2c61",
+            "id": "11d446b1066ff3d2",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/복사방지4.png"
-              }
-            }
-          },
-          {
-            "id": "f1e8a675aaf6bd78",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/복사방지3.png"
-              }
-            }
-          },
-          {
-            "id": "c3cc5ada8b980a99",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/복사방지2.png"
-              }
-            }
-          },
-          {
-            "id": "ccbcde8b2d61f159",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/복사방지1.png"
+                "file": "Images/OkHttp1.png"
               }
             }
           }
@@ -144,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Obsidian/복사 방지 해제.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Obsidian/복사 방지 해제.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
               }
             }
           },
@@ -182,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Obsidian/복사 방지 해제.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -225,27 +195,26 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
-    "Images/복사방지5.png",
-    "Spaces/Obsidian/복사 방지 해제.md",
-    "Images/복사방지4.png",
-    "Images/복사방지3.png",
-    "Images/복사방지2.png",
-    "Images/복사방지1.png",
-    "Images/Pasted image 20240902161032.png",
-    "Images/Pasted image 20240902161027.png",
-    "Images/Pasted image 20240902161015.png",
-    "Images/Pasted image 20240902161000.png",
-    "Images/Pasted image 20240902160951.png",
-    "Images/Pasted image 20240902160943.png",
-    "Spaces/Home/XML/Bean.md",
+    "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
+    "Images/OkHttp2.png",
+    "Images/OkHttp1.png",
+    "Spaces/Obsidian/복사 방지 해제.md",
+    "Images/복사방지11.png",
+    "Images/복사방지10.png",
+    "Images/복사방지9.png",
+    "Images/복사방지8.png",
+    "Images/복사방지7.png",
+    "Images/복사방지6.png",
+    "Images/복사방지5.png",
+    "Images/복사방지4.png",
+    "Spaces/Home/XML/Bean.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Java/Request&Response/Request&Response.md",
     "Spaces/Home/Java/OkHttp/OkHttp.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Images/Dialog",
-    "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
