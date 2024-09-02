@@ -8,19 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a39f552616f4b203",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "828b2cf578e5d5fc",
             "type": "leaf",
             "state": {
@@ -137,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
               }
             }
           },
@@ -175,7 +162,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -216,10 +203,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a39f552616f4b203",
+  "active": "828b2cf578e5d5fc",
   "lastOpenFiles": [
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application/계산기.md",
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Images/Pasted image 20240902101532.png",
     "Images/cafe25 Store1.png",
