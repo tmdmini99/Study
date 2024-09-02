@@ -1,7 +1,7 @@
 
 ## Store API
 
-![[Pasted image 20240830100055.png]]
+![[cafe25 Store1.png]]
 
 
 ```

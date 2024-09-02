@@ -13,10 +13,33 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-02.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "828b2cf578e5d5fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3dd39a358f2d73c8",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/cafe25 Store1.png"
               }
             }
           },
@@ -177,7 +200,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-02.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -205,7 +228,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-02.md"
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
               }
             }
           },
@@ -215,7 +238,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-02.md",
+                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -256,13 +279,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "a39f552616f4b203",
   "lastOpenFiles": [
+    "Images/cafe25 Store1.png",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+    "Spaces/Cafe24/Cafe24 개발.md",
+    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "daily note/2024/9/2024-09-02.md",
     "Images/Pasted image 20240830175945.png",
     "Images/Pasted image 20240830175815.png",
-    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "daily note/2024/9/2024-08-30.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
@@ -270,10 +295,8 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Cafe24/image",
     "Images/Pasted image 20240830100730.png",
-    "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/Cafe24 API 종류",
-    "Images/Pasted image 20240830100055.png",
     "Images/cafe24 plugin1.png",
     "daily note/2024/8/2024-08-30.md",
     "daily note/2024/8/2024-08-29.md",
@@ -297,7 +320,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB연동.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 코드.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Kotlin DB 연동/Kotlin DB 연동 SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/View.md",
     "Images/PHP",
     "Images/IntelliJ/무제 폴더",
     "Images/IntelliJ/IntelliJ JVM",
