@@ -13,30 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "73e72e503ea3b2d8",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/OkHttp2.png"
-              }
-            }
-          },
-          {
-            "id": "11d446b1066ff3d2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/OkHttp1.png"
               }
             }
           }
@@ -114,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md"
               }
             }
           },
@@ -152,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -195,28 +175,32 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
+    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+    "Images/복사방지/복사방지1.png",
+    "Images/복사방지/복사방지11.png",
+    "Images/복사방지/복사방지10.png",
+    "Images/복사방지/복사방지9.png",
+    "Images/복사방지/복사방지8.png",
+    "Images/복사방지/복사방지7.png",
+    "Images/복사방지/복사방지6.png",
+    "Images/복사방지/복사방지5.png",
+    "Images/복사방지/복사방지4.png",
+    "Images/복사방지/복사방지3.png",
+    "Images/OkHttp",
+    "Images/복사방지",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
-    "Images/OkHttp2.png",
-    "Images/OkHttp1.png",
     "Spaces/Obsidian/복사 방지 해제.md",
-    "Images/복사방지11.png",
-    "Images/복사방지10.png",
-    "Images/복사방지9.png",
-    "Images/복사방지8.png",
-    "Images/복사방지7.png",
-    "Images/복사방지6.png",
-    "Images/복사방지5.png",
-    "Images/복사방지4.png",
     "Spaces/Home/XML/Bean.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Java/Request&Response/Request&Response.md",
     "Spaces/Home/Java/OkHttp/OkHttp.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Images/Dialog",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Home/Java/OkHttp",
     "Spaces/Home/Protocol/Port/Port.md",
@@ -232,14 +216,11 @@
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
     "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
     "Spaces/Home/Java/다형성/다형성.md",
-    "Spaces/Home/Java/객체 지향 프로그래밍/객체 지향 프로그래밍.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
     "Spaces/Cafe24",
     "Spaces/Home/KOTLIN/Kotlin Android/layout",
-    "Images/PHP",
-    "Images/IntelliJ/무제 폴더",
     "무제 파일.canvas"
   ]
 }
