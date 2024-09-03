@@ -23,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
+                "file": "Spaces/Home/API/PostMan.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
+                "file": "Spaces/Home/API/PostMan.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md"
+                "file": "Spaces/Home/API/PostMan.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
+                "file": "Spaces/Home/API/PostMan.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -196,18 +196,19 @@
   },
   "active": "ceb210d589a839da",
   "lastOpenFiles": [
+    "Images/Pasted image 20240903135010.png",
+    "Images/Pasted image 20240903135001.png",
+    "Images/Pasted image 20240903134952.png",
+    "Images/Pasted image 20240903134941.png",
+    "Images/Pasted image 20240903134932.png",
+    "Images/Pasted image 20240903134916.png",
+    "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
+    "Spaces/Home/API/PostMan.md",
     "Images/Pasted image 20240903102651.png",
     "Images/Pasted image 20240903102601.png",
     "Images/Pasted image 20240903102422.png",
     "Images/Pasted image 20240903094036.png",
-    "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
     "Images/Pasted image 20240903102506.png",
-    "Images/Pasted image 20240903102400.png",
-    "Images/Pasted image 20240903101710.png",
-    "Images/Pasted image 20240903101634.png",
-    "Images/Pasted image 20240903095722.png",
-    "Images/Pasted image 20240903095710.png",
-    "Images/Pasted image 20240903095630.png",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "daily note/2024/9/2024-09-03.md",
@@ -236,7 +237,6 @@
     "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
     "Spaces/Home/Protocol/Http/SSL/개발 환경에 따라 적용하기.md",
     "Spaces/Home/Protocol/HandShake/HandShake.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
