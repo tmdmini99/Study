@@ -197,7 +197,7 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 
 ![[Cafe24 PostMan16.png]]
 
-![[Pasted image 20240903162713.png]]
+![[CAFE24 PostMan22.png]]
 추가후 나머지 부분은 동일 그리고 send로 값 가져오기
 성공시 밑에 데이터 표출
 
