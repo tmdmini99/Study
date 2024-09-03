@@ -27,4 +27,16 @@ import시 이렇게 api가 들어옴
 
 
 파일 다운후 압축 해제 -> Environments 메뉴로 이동 후 Cafe24 API Environment 파일을 업로드 
+
+
 ![[Pasted image 20240903093926.png]]
+
+
+
+
+
+![[Pasted image 20240903094904.png]]
+
+실제 입력
+
+![[Pasted image 20240903095317.png]]
