@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+                "file": "Spaces/Home/Java/JSON/JSON.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+                "file": "Spaces/Home/Java/JSON/JSON.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md"
+                "file": "Spaces/Home/Java/JSON/JSON.md"
               }
             }
           },
@@ -212,7 +212,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+                "file": "Spaces/Home/Java/JSON/JSON.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -255,8 +255,12 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
-    "Spaces/Home/API/PostMan.md",
+    "Spaces/Home/Data/JSON.md",
+    "Spaces/Home/Java/JSON/JSON.md",
+    "Spaces/Home/Java/JSON",
+    "Spaces/Home/API/API.md",
     "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+    "Spaces/Home/API/PostMan.md",
     "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/image/CAFE24 ACCESS/Cafe24 Access Token.jpg",
@@ -273,7 +277,6 @@
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace",
     "Spaces/Home/API/Rest API.md",
-    "Spaces/Home/API/API.md",
     "Spaces/Cafe24/image/CAFE24 POSTMAN",
     "Spaces/Cafe24/image/CAFE24 STORE",
     "Spaces/Cafe24/image/CAFE24 PLUGIN",
@@ -297,9 +300,7 @@
     "Spaces/Home/Java/Request&Response/Request&Response.md",
     "Spaces/Home/Java/OkHttp/OkHttp.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
-    "Images/Dialog",
     "Spaces/Home/Protocol/Port/Port.md",
-    "session.md",
     "무제 파일.canvas"
   ]
 }
