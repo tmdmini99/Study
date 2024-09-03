@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/Cafe24 PostMan.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/Cafe24 PostMan.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md"
+                "file": "Spaces/Cafe24/Cafe24 PostMan.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/Cafe24 PostMan.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +175,11 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
-    "Spaces/Home/Data/CSV.md",
+    "Spaces/Cafe24/Cafe24 개발.md",
+    "Spaces/Cafe24/Cafe24 PostMan.md",
+    "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "daily note/2024/9/2024-09-03.md",
+    "Spaces/Home/Data/CSV.md",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
@@ -196,7 +198,6 @@
     "Images/복사방지/복사방지3.png",
     "Images/OkHttp",
     "Images/복사방지",
-    "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
     "Spaces/Obsidian/복사 방지 해제.md",
     "Spaces/Home/XML/Bean.md",
@@ -204,7 +205,6 @@
     "Spaces/Home/Java/OkHttp/OkHttp.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Images/Dialog",
-    "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
     "Spaces/Home/Java/OkHttp",
     "Spaces/Home/Protocol/Port/Port.md",
@@ -216,7 +216,6 @@
     "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
