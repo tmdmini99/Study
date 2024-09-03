@@ -56,6 +56,13 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 ![[Pasted image 20240903095401.png]]
 
 
+**Note!**
+
+환경 설정이 완료된 후 반드시 POSTMAN 화면 우측 상단에서 'No Environment'대신 'Cafe24 API Environment'를 적용하세요.
+
+![[Pasted image 20240903101634.png]]
+
+![[Pasted image 20240903101710.png]]
 
 ## 액세스 토큰 발급
 

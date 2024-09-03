@@ -23,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan.md",
+                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan.md",
+                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan.md"
+                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md"
               }
             }
           },
@@ -143,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Cafe24/Cafe24 PostMan.md",
+                "file": "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -186,6 +186,8 @@
   },
   "active": "ceb210d589a839da",
   "lastOpenFiles": [
+    "Images/Pasted image 20240903101710.png",
+    "Images/Pasted image 20240903101634.png",
     "Images/Pasted image 20240903095722.png",
     "Images/Pasted image 20240903095710.png",
     "Images/Pasted image 20240903095630.png",
@@ -195,9 +197,7 @@
     "Images/Pasted image 20240903095317.png",
     "Images/Pasted image 20240903094904.png",
     "Images/Pasted image 20240903093926.png",
-    "Images/Pasted image 20240903094036.png",
-    "Spaces/Cafe24/Cafe24 PostMan.md",
-    "Images/Pasted image 20240903093902.png",
+    "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "daily note/2024/9/2024-09-03.md",
