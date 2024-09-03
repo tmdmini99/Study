@@ -1,11 +1,36 @@
 
+![[Pasted image 20240903152158.png]]
 
 
 
 
+![[Pasted image 20240903152204.png]]
 
 
 
+
+```
+[https:://test.cafe24.com/api/v2/oauth/authorize?response_type=code&client_id=K4zSI7doDOVpvLhsjO4blBB&state=ssasd=&redirect_uri=vlutestid.cafe24.com/&scope=mall.read_application,mall.write_application](https://vlutestid.cafe24.com/api/v2/oauth/authorize?response_type=code&client_id=K4zSI7oDOVpvLhsjO4blBB&state=ssasd=&redirect_uri=https://vlutestid.cafe24.com/&scope=mall.read_application,mall.write_application)
+
+```
+
+
+![[Pasted image 20240903152505.png]]
+
+내가 입력한 clientId, redirectUri -> 내 실제 주소 입력 가능
+
+실제로 입력한 모습 
+```
+https://tmdals23222.cafe24.com/api/v2/oauth/authorize?response_type=code&client_id=Ze7D6V5nQS2PPoXlfE6yGB&state=ssasd%3D&redirect_uri=https://tmdals23222.cafe24.com/&scope=mall.read_application%2Cmall.write_application&shop_no=1&callback_uri=
+```
+
+발급받은 코드는 1분뒤 폐기
+
+```
+https://tmdals23222.cafe24.com/?code=anCHXp9wEJTqccl2DToMWD&state=ssasd=
+```
+
+![[Pasted image 20240903152624.png]]
 
 PostMan 접속후 회원 가입
 
