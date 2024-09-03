@@ -149,7 +149,7 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 
 
 
-.로그인에 성공하면 인증 정보를 확인
+로그인에 성공하면 인증 정보를 확인
 
 ![[Cafe24 PostMan21.png]]
 
@@ -171,6 +171,15 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
     액세스 토큰의 유효기간은 2시간.
 
 
+## 실제 발급 
+
+아까 인증 받은 코드를 Body 부분에 추가
+
+![[Cafe24 PostMan16.png]]
+
+![[Pasted image 20240903162713.png]]
+추가후 나머지 부분은 동일 그리고 send로 값 가져오기
+성공시 밑에 데이터 표출
 
 ## 액세스 토큰 재발급
 

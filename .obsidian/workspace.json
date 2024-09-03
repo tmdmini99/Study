@@ -19,6 +19,16 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d5fda2312d612d89",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240903162713.png"
+              }
+            }
           }
         ]
       }
@@ -175,6 +185,9 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "Images/Pasted image 20240903162713.png",
+    "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+    "Images/Pasted image 20240903162610.png",
     "Images/Pasted image 20240903152624.png",
     "Images/Pasted image 20240903152622.png",
     "Images/Pasted image 20240903152505.png",
@@ -187,7 +200,6 @@
     "Spaces/Home/API/API.md",
     "Spaces/Home/API/Open API.md",
     "Spaces/Home/API/PostMan.md",
-    "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
     "Spaces/Cafe24/image/CAFE24 POSTMAN",
     "Spaces/Cafe24/image/CAFE24 STORE",
     "Spaces/Cafe24/image/CAFE24 PLUGIN",
@@ -195,9 +207,6 @@
     "Images/POSTMAN/PostMan5.png",
     "Images/POSTMAN/PostMan4.png",
     "Images/POSTMAN/PostMan3.png",
-    "Images/POSTMAN/PostMan2.png",
-    "Images/POSTMAN/PostMan1.png",
-    "Images/POSTMAN/PostMan6.png",
     "Images/POSTMAN",
     "Spaces/Cafe24/workspace/Cafe24 개발.md",
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
