@@ -11,6 +11,16 @@
             "id": "846c60a98b564b2c",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240903094036.png"
+              }
+            }
+          },
+          {
+            "id": "ceb210d589a839da",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "Spaces/Cafe24/Cafe24 PostMan.md",
@@ -20,7 +30,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -173,10 +184,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "846c60a98b564b2c",
+  "active": "ceb210d589a839da",
   "lastOpenFiles": [
-    "Spaces/Cafe24/Cafe24 개발.md",
+    "Images/Pasted image 20240903093926.png",
+    "Images/Pasted image 20240903094036.png",
     "Spaces/Cafe24/Cafe24 PostMan.md",
+    "Images/Pasted image 20240903093902.png",
+    "Images/Pasted image 20240903093802.png",
+    "Images/Pasted image 20240903093602.png",
+    "Images/Pasted image 20240903093500.png",
+    "Images/Pasted image 20240903093342.png",
+    "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "daily note/2024/9/2024-09-03.md",
     "Spaces/Home/Data/CSV.md",
@@ -189,13 +207,6 @@
     "Images/복사방지/복사방지1.png",
     "Images/복사방지/복사방지11.png",
     "Images/복사방지/복사방지10.png",
-    "Images/복사방지/복사방지9.png",
-    "Images/복사방지/복사방지8.png",
-    "Images/복사방지/복사방지7.png",
-    "Images/복사방지/복사방지6.png",
-    "Images/복사방지/복사방지5.png",
-    "Images/복사방지/복사방지4.png",
-    "Images/복사방지/복사방지3.png",
     "Images/OkHttp",
     "Images/복사방지",
     "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
@@ -215,7 +226,6 @@
     "Spaces/Home/Protocol/Http/SSL/개발 환경에 따라 적용하기.md",
     "Spaces/Home/Protocol/HandShake/HandShake.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
