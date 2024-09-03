@@ -13,10 +13,80 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "0ac5e13844e05493",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240903162713.png"
+              }
+            }
+          },
+          {
+            "id": "893273955f088482",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Cafe24 Authorization Code4.png"
+              }
+            }
+          },
+          {
+            "id": "b7de56f7454f50d0",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Cafe24 Authorization Code3.png"
+              }
+            }
+          },
+          {
+            "id": "d7fdb68a9cd2da9b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Cafe24 Authorization Code2.png"
+              }
+            }
+          },
+          {
+            "id": "071407b3f8253574",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Cafe24 Authorization Code1.png"
+              }
+            }
+          },
+          {
+            "id": "78adb42e010ce5e3",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Cafe24 Authorization Code1.png"
+              }
+            }
+          },
+          {
+            "id": "a3909a8ea01385ea",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 ACCESS/Cafe24 Access Token.jpg"
               }
             }
           },
@@ -30,7 +100,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -104,7 +175,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Images/Pasted image 20240903162713.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md"
+                "file": "Images/Pasted image 20240903162713.png"
               }
             }
           },
@@ -142,7 +213,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Images/Pasted image 20240903162713.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -183,17 +254,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e33cd4a078c1e079",
+  "active": "0ac5e13844e05493",
   "lastOpenFiles": [
     "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
     "Images/Pasted image 20240903162713.png",
-    "Images/Pasted image 20240903162610.png",
-    "Images/Pasted image 20240903152624.png",
     "Images/Pasted image 20240903152622.png",
-    "Images/Pasted image 20240903152505.png",
-    "Images/Pasted image 20240903152204.png",
-    "Images/Pasted image 20240903152158.png",
+    "Images/Cafe24 Authorization Code4.png",
+    "Images/Cafe24 Authorization Code3.png",
+    "Images/Cafe24 Authorization Code2.png",
+    "Images/Cafe24 Authorization Code1.png",
+    "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
+    "Spaces/Cafe24/image/CAFE24 ACCESS/Cafe24 Access Token.jpg",
+    "Spaces/Cafe24/image/CAFE24 ACCESS",
     "daily note/2024/9/2024-09-03.md",
+    "Images/Pasted image 20240903162610.png",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace",
     "Spaces/Home/API/Rest API.md",
@@ -206,7 +280,6 @@
     "Spaces/Cafe24/image/CAFE24",
     "Images/POSTMAN/PostMan5.png",
     "Images/POSTMAN/PostMan4.png",
-    "Images/POSTMAN/PostMan3.png",
     "Images/POSTMAN",
     "Spaces/Cafe24/workspace/Cafe24 개발.md",
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
@@ -226,10 +299,8 @@
     "Spaces/Home/Java/OkHttp/OkHttp.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Images/Dialog",
-    "Spaces/Home/Java/OkHttp",
     "Spaces/Home/Protocol/Port/Port.md",
     "session.md",
-    "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "무제 파일.canvas"
   ]
 }

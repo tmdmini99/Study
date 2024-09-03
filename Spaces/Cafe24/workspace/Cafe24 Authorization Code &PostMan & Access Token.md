@@ -1,10 +1,12 @@
 
-![[Pasted image 20240903152158.png]]
+
+
+![[Cafe24 Authorization Code1.png]]
 
 
 
 
-![[Pasted image 20240903152204.png]]
+![[Cafe24 Authorization Code2.png]]
 
 
 
@@ -15,7 +17,7 @@
 ```
 
 
-![[Pasted image 20240903152505.png]]
+![[Cafe24 Authorization Code3.png]]
 
 내가 입력한 clientId, redirectUri -> 내 실제 주소 입력 가능
 
@@ -30,8 +32,26 @@ https://tmdals23222.cafe24.com/api/v2/oauth/authorize?response_type=code&client_
 https://tmdals23222.cafe24.com/?code=anCHXp9wEJTqccl2DToMWD&state=ssasd=
 ```
 
-![[Pasted image 20240903152624.png]]
+![[Cafe24 Authorization Code4.png]]
 
+
+만약 postman이 아니라 직접 가져오는 법 ex)
+
+```
+https://{mall_id}.cafe24api.com/api/v2/oauth/token'
+-H 'Authorization: Basic {base64_encode({client_id}:{client_Secret})}'
+-H 'Content-Type: application/x-www-form-urlencoded'
+-d 'grant_type=authorization_code'
+-d 'code={authorization_code}'
+-d 'redirect_uri={redirect_uri}
+```
+mall_id : tmdals23222 
+authorization_code : anCHXp9wEJTqccl2DToMWD
+redirect_uri :  \https://tmdals23222.cafe24.com/
+
+입력
+
+## PostMan
 PostMan 접속후 회원 가입
 
 https://www.postman.com/
