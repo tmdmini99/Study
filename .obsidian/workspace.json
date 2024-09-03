@@ -29,6 +29,16 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7a948d3a8cd3cf73",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20240903102422.png"
+              }
+            }
           }
         ],
         "currentTab": 1
@@ -186,18 +196,18 @@
   },
   "active": "ceb210d589a839da",
   "lastOpenFiles": [
+    "Images/Pasted image 20240903102651.png",
+    "Images/Pasted image 20240903102601.png",
+    "Images/Pasted image 20240903102422.png",
+    "Images/Pasted image 20240903094036.png",
+    "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
+    "Images/Pasted image 20240903102506.png",
+    "Images/Pasted image 20240903102400.png",
     "Images/Pasted image 20240903101710.png",
     "Images/Pasted image 20240903101634.png",
     "Images/Pasted image 20240903095722.png",
     "Images/Pasted image 20240903095710.png",
     "Images/Pasted image 20240903095630.png",
-    "Images/Pasted image 20240903095537.png",
-    "Images/Pasted image 20240903095506.png",
-    "Images/Pasted image 20240903095401.png",
-    "Images/Pasted image 20240903095317.png",
-    "Images/Pasted image 20240903094904.png",
-    "Images/Pasted image 20240903093926.png",
-    "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
     "Spaces/Cafe24/Cafe24 개발.md",
     "Spaces/Cafe24/Cafe24 플러그인 적용.md",
     "daily note/2024/9/2024-09-03.md",
