@@ -8,22 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "846c60a98b564b2c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20240903094036.png"
-              }
-            }
-          },
-          {
-            "id": "ceb210d589a839da",
+            "id": "e33cd4a078c1e079",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/API/PostMan.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -31,17 +21,76 @@
             }
           },
           {
-            "id": "7a948d3a8cd3cf73",
+            "id": "6831ecc6fad4d6cc",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Pasted image 20240903102422.png"
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan21.png"
+              }
+            }
+          },
+          {
+            "id": "c98ec8626d96fd71",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan20.png"
+              }
+            }
+          },
+          {
+            "id": "8e457d1870a587b6",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan19.png"
+              }
+            }
+          },
+          {
+            "id": "6dcbb1833d119432",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan18.png"
+              }
+            }
+          },
+          {
+            "id": "e6b87d85f8dc7784",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan17.png"
+              }
+            }
+          },
+          {
+            "id": "2f2ffaddfc65a0ee",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan16.png"
+              }
+            }
+          },
+          {
+            "id": "41134405a955c419",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan15.png"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -115,7 +164,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/API/PostMan.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/API/PostMan.md"
+                "file": "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md"
               }
             }
           },
@@ -153,7 +202,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/API/PostMan.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -194,26 +243,34 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ceb210d589a839da",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Images/Pasted image 20240903135010.png",
-    "Images/Pasted image 20240903135001.png",
-    "Images/Pasted image 20240903134952.png",
-    "Images/Pasted image 20240903134941.png",
-    "Images/Pasted image 20240903134932.png",
-    "Images/Pasted image 20240903134916.png",
-    "Spaces/Cafe24/Cafe24 PostMan & Access Token.md",
+    "Spaces/Cafe24/workspace",
+    "Spaces/Home/API/Rest API.md",
+    "Spaces/Home/API/API.md",
+    "Spaces/Home/API/Open API.md",
     "Spaces/Home/API/PostMan.md",
-    "Images/Pasted image 20240903102651.png",
-    "Images/Pasted image 20240903102601.png",
-    "Images/Pasted image 20240903102422.png",
-    "Images/Pasted image 20240903094036.png",
-    "Images/Pasted image 20240903102506.png",
-    "Spaces/Cafe24/Cafe24 개발.md",
-    "Spaces/Cafe24/Cafe24 플러그인 적용.md",
+    "Spaces/Cafe24/workspace/Cafe24 PostMan & Access Token.md",
+    "Spaces/Cafe24/image/CAFE24 POSTMAN",
+    "Spaces/Cafe24/image/CAFE24 STORE",
+    "Spaces/Cafe24/image/CAFE24 PLUGIN",
+    "Spaces/Cafe24/image/CAFE24",
+    "Images/POSTMAN/PostMan5.png",
+    "Images/POSTMAN/PostMan4.png",
+    "Images/POSTMAN/PostMan3.png",
+    "Images/POSTMAN/PostMan2.png",
+    "Images/POSTMAN/PostMan1.png",
+    "Images/POSTMAN/PostMan6.png",
+    "Images/POSTMAN",
+    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan21.png",
+    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan20.png",
+    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan19.png",
+    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan18.png",
+    "Spaces/Cafe24/workspace/Cafe24 개발.md",
+    "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
     "daily note/2024/9/2024-09-03.md",
     "Spaces/Home/Data/CSV.md",
-    "Spaces/Cafe24/Cafe24 API 종류/Store.md",
+    "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
@@ -228,20 +285,12 @@
     "Spaces/Home/Java/OkHttp/OkHttp.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
     "Images/Dialog",
-    "Spaces/Cafe24/Cafe24 API 종류/무제 파일.md",
+    "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Home/Java/OkHttp",
     "Spaces/Home/Protocol/Port/Port.md",
     "session.md",
     "Spaces/Home/Java/Request&Response",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
-    "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
-    "Spaces/Home/Protocol/Http/SSL/개발 환경에 따라 적용하기.md",
-    "Spaces/Home/Protocol/HandShake/HandShake.md",
-    "Spaces/Home/KOTLIN/Kotlin Android/Application",
-    "Spaces/Cafe24/image",
-    "Spaces/Cafe24/Cafe24 API 종류",
-    "Spaces/Cafe24",
-    "Spaces/Home/KOTLIN/Kotlin Android/layout",
     "무제 파일.canvas"
   ]
 }

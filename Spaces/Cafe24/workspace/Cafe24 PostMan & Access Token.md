@@ -2,34 +2,34 @@ PostMan 접속후 회원 가입
 
 https://www.postman.com/
 
-![[Pasted image 20240903093342.png]]
+![[Cafe24 PostMan1.png]]
 
 cafe24의 Run in Postman 클릭
 
-![[Pasted image 20240903093500.png]]
+![[Cafe24 PostMan2.png]]
 
 앱으로 할지 웹으로 할지는 선택 앱이 없을 경우 밑에 get the app 클릭후 앱 다운로드 
 
-![[Pasted image 20240903093602.png]]
+![[Cafe24 PostMan3.png]]
 
 
 웹 클릭시 웹 페이지로 넘어가며 import 할꺼냐 뜨고  app 클릭시 app으로  어떤 workspace에 import 할지 나옴
 내가 원하는 workspace 클릭
-![[Pasted image 20240903093802.png]]
+![[Cafe24 PostMan4.png]]
 
 import시 이렇게 api가 들어옴 
 
-![[Pasted image 20240903093902.png]]
+![[Cafe24 PostMan5.png]]
 
 카페24 developers 에서 카페24 api 환경설정 파일 클릭시 파일 다운로드
 
-![[Pasted image 20240903094036.png]]
+![[Cafe24 PostMan6.png]]
 
 
 파일 다운후 압축 해제 -> Environments 메뉴로 이동 후 Cafe24 API Environment 파일을 업로드 
 
 
-![[Pasted image 20240903093926.png]]
+![[Cafe24 PostMan7.png]]
 
 밑에 항목 입력
 
@@ -40,36 +40,36 @@ import시 이렇게 api가 들어옴
 | client_id           | 앱 생성 시 발급 받은 클라이언트 아이디                                                                                                 |
 | client_secret       | 앱 생성 시 발급 받은 클라이언트 시크릿                                                                                                 |
 | version             | [개발자 어드민 > 앱 관리]에 표시되어있는 API Version을 입력하세요. 예) 2021-09-01                                                             |
-| authorization_basic | client_id와 client_secret 키를 client_id:client_secret 형식으로 base64 인코딩하여 입력합니다.  <br>![[Pasted image 20240903095506.png]] |
+| authorization_basic | client_id와 client_secret 키를 client_id:client_secret 형식으로 base64 인코딩하여 입력합니다.  <br>![[Cafe24 PostMan8.png]] |
 
 
-![[Pasted image 20240903094904.png]]
+![[Cafe24 PostMan9.png]]
 
 실제 입력
 
-![[Pasted image 20240903095317.png]]
+![[Cafe24 PostMan10.png]]
 
 
 
 client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 
-![[Pasted image 20240903095401.png]]
+![[Cafe24 PostMan11.png]]
 
 
 **Note!**
 
 환경 설정이 완료된 후 반드시 POSTMAN 화면 우측 상단에서 'No Environment'대신 'Cafe24 API Environment'를 적용하세요.
 
-![[Pasted image 20240903101634.png]]
+![[Cafe24 PostMan12.png]]
 
-![[Pasted image 20240903101710.png]]
+![[Cafe24 PostMan13.png]]
 
 ## 액세스 토큰 발급
 
 -  cafe24 API 콜렉션 중 'Authorize Access Token' 항목을 선택
 - 2. Authorization 탭으로 이동하여, TYPE을 OAuth2.0으로 선택한 후 아래의 값들을 입력하고 화면 하단의 Get New Access Token 버튼을 클릭
 
-![[Pasted image 20240903095537.png]]
+![[Cafe24 PostMan14.png]]
 
 
 아래 항목 입력
@@ -88,36 +88,36 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 | Client Authentication | 필수   | Send a Basic Auth header                                | 인증 정보를 전달할 위치를 의미합니다. 기본값 그대로 사용하세요.                                                                                                                                                                                                               |
 
 
-![[Pasted image 20240903095630.png]]
+![[Cafe24 PostMan15.png]]
 
 실제 적용 내용 
 
 
-![[Pasted image 20240903102400.png]]
+![[Cafe24 PostMan16.png]]
 
 여기서 
-![[Pasted image 20240903102422.png]]
+![[Cafe24 PostMan17.png]]
 이 부분은 
 
-![[Pasted image 20240903102601.png]]
+![[Cafe24 PostMan18.png]]
 
 여기와 똑같아야함 
 
 저기서  파란 버튼 클릭시  이렇게 나오는데 여기서 맞는 권한 가져다가 쓰기
 
-![[Pasted image 20240903102651.png]]
+![[Cafe24 PostMan19.png]]
 
 
 3. Get New Access Token 버튼을 클릭하면 쇼핑몰 관리자 로그인 창이 표시. 대표관리자 계정으로 로그인
 
 
-![[Pasted image 20240903095710.png]]
+![[Cafe24 PostMan20.png]]
 
 
 
 .로그인에 성공하면 인증 정보를 확인
 
-![[Pasted image 20240903095722.png]]
+![[Cafe24 PostMan21.png]]
 
 > Note
 > 액세스 토큰을 복사하여 메모장 등에 임시저장하세요.

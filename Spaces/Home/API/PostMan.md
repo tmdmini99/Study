@@ -33,24 +33,24 @@ OS에 상관없고 어디서나 사용가능.
 ### 2. 다운로드 클릭
 
 
-![[Pasted image 20240903134916.png]]
+![[PostMan1.png]]
 
 
-### **2. 회원가입**
+### 2. 회원가입
 
-![[Pasted image 20240903134932.png]]
-
-
-### **3. 메인 화면  →  Workspaces  **→ New  **Workspaces******
+![[PostMan2.png]]
 
 
+### 3. 메인 화면  →  Workspaces  → New  Workspaces
 
-![[Pasted image 20240903134941.png]]
+
+
+![[PostMan3.png]]
 
 
 ### 4.  Create New Workspce
 
-![[Pasted image 20240903134952.png]]
+![[PostMan4.png]]
 
 
 1) Name 입력
@@ -62,13 +62,12 @@ OS에 상관없고 어디서나 사용가능.
 ### 5.  Workspces
 
 
-![[Pasted image 20240903135001.png]]
+![[PostMan5.png]]
 
 ### 5.  테스트 해보기!!
 
 
-![[Pasted image 20240903135010.png]]
-
+![[PostMan6.png]]
 
 
 1) GET,POST,PUT...  등등 선택
@@ -80,6 +79,7 @@ OS에 상관없고 어디서나 사용가능.
 4) Body 에서 보여줄 데이터 형식이 Json,XMl HTML... 등등으로 선택
 
 
+[[Cafe24 PostMan & Access Token]]에서 확인 가능 api 적용
 
 
 
