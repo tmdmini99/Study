@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/CSV.md",
+                "file": "daily note/2024/9/2024-09-03.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/CSV.md",
+                "file": "daily note/2024/9/2024-09-03.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/CSV.md"
+                "file": "daily note/2024/9/2024-09-03.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/CSV.md",
+                "file": "daily note/2024/9/2024-09-03.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +176,8 @@
   },
   "active": "846c60a98b564b2c",
   "lastOpenFiles": [
+    "Spaces/Home/Data/CSV.md",
+    "daily note/2024/9/2024-09-03.md",
     "Spaces/Cafe24/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
@@ -214,8 +217,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/ssl 적용하기.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Docker SSL/자체 서명 SSL.md",
     "Spaces/Home/KOTLIN/Kotlin/KOTLIN Coroutine.md",
-    "Spaces/Home/KOTLIN/Kotlin/KOTLIN.md",
-    "Spaces/Home/KOTLIN/Kotlin/1. KOTLIN 기초.md",
     "Spaces/Home/KOTLIN/Kotlin Android/Application",
     "Spaces/Cafe24/image",
     "Spaces/Cafe24/Cafe24 API 종류",
