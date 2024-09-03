@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 PostMan 접속후 회원 가입
 
 https://www.postman.com/
@@ -142,3 +151,14 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 
 - 1. cafe24 API 콜렉션 중 'Authorize Access Token via Refresh Token' 항목을 선택.
 - 2. Authorization 탭으로 이동 이동하여 Type을 OAuth2.0으로 선택한 후 화면 하단의 Get New Access Token 버튼을 클릭.
+
+
+
+
+
+
+
+
+---
+자료 - https://algoisanswer.tistory.com/18
+출처 - 

@@ -79,7 +79,7 @@ OS에 상관없고 어디서나 사용가능.
 4) Body 에서 보여줄 데이터 형식이 Json,XMl HTML... 등등으로 선택
 
 
-[[Cafe24 PostMan & Access Token]]에서 확인 가능 api 적용
+[[Cafe24 Authorization Code &PostMan & Access Token]]에서 확인 가능 api 적용
 
 
 

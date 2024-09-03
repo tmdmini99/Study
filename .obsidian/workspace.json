@@ -13,80 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "6831ecc6fad4d6cc",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan21.png"
-              }
-            }
-          },
-          {
-            "id": "c98ec8626d96fd71",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan20.png"
-              }
-            }
-          },
-          {
-            "id": "8e457d1870a587b6",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan19.png"
-              }
-            }
-          },
-          {
-            "id": "6dcbb1833d119432",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan18.png"
-              }
-            }
-          },
-          {
-            "id": "e6b87d85f8dc7784",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan17.png"
-              }
-            }
-          },
-          {
-            "id": "2f2ffaddfc65a0ee",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan16.png"
-              }
-            }
-          },
-          {
-            "id": "41134405a955c419",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan15.png"
               }
             }
           }
@@ -144,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -165,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md"
+                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md"
               }
             }
           },
@@ -203,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-03.md",
+                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -246,13 +175,14 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "daily note/2024/9/2024-09-03.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace",
     "Spaces/Home/API/Rest API.md",
     "Spaces/Home/API/API.md",
     "Spaces/Home/API/Open API.md",
     "Spaces/Home/API/PostMan.md",
-    "Spaces/Cafe24/workspace/Cafe24 PostMan & Access Token.md",
+    "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
     "Spaces/Cafe24/image/CAFE24 POSTMAN",
     "Spaces/Cafe24/image/CAFE24 STORE",
     "Spaces/Cafe24/image/CAFE24 PLUGIN",
@@ -270,7 +200,6 @@
     "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 PostMan18.png",
     "Spaces/Cafe24/workspace/Cafe24 개발.md",
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
-    "daily note/2024/9/2024-09-03.md",
     "Spaces/Home/Data/CSV.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Random/Random.md",
