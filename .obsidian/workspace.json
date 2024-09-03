@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md",
+                "file": "Spaces/Home/Java/Generic/Generic.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md",
+                "file": "Spaces/Home/Java/Generic/Generic.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md"
+                "file": "Spaces/Home/Java/Generic/Generic.md"
               }
             }
           },
@@ -212,7 +212,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md",
+                "file": "Spaces/Home/Java/Generic/Generic.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -255,8 +255,8 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
-    "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Java/JSON/JSON.md",
+    "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Java/JSON",
     "Spaces/Home/API/API.md",
     "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
