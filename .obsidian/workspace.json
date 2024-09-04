@@ -13,90 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-04.md",
+                "file": "Spaces/Home/DB/SQL Injection.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "0ac5e13844e05493",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code4.png"
-              }
-            }
-          },
-          {
-            "id": "893273955f088482",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code4.png"
-              }
-            }
-          },
-          {
-            "id": "b7de56f7454f50d0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code3.png"
-              }
-            }
-          },
-          {
-            "id": "d7fdb68a9cd2da9b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code2.png"
-              }
-            }
-          },
-          {
-            "id": "071407b3f8253574",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code1.png"
-              }
-            }
-          },
-          {
-            "id": "78adb42e010ce5e3",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code1.png"
-              }
-            }
-          },
-          {
-            "id": "a3909a8ea01385ea",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 ACCESS/Cafe24 Access Token.jpg"
-              }
-            }
-          },
-          {
-            "id": "d5fda2312d612d89",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Spaces/Cafe24/image/CAFE24 POSTMAN/CAFE24 PostMan22.png"
               }
             }
           }
@@ -154,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -175,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-04.md",
+                "file": "Spaces/Home/DB/SQL Injection.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-04.md"
+                "file": "Spaces/Home/DB/SQL Injection.md"
               }
             }
           },
@@ -213,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-04.md",
+                "file": "Spaces/Home/DB/SQL Injection.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -256,10 +175,17 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
-    "Spaces/Home/Java/Generic/Generic.md",
-    "daily note/2024/9/2024-09-04.md",
-    "Spaces/Home/Java/JSON/JSON.md",
+    "Spaces/Home/DB/DataBase.md",
+    "Spaces/Home/Data/JSTL.md",
+    "Spaces/Home/Data/HTML/JSTL & EL.md",
+    "Spaces/Home/Data/HTML/HTML.md",
+    "Spaces/Home/Data/Data  형태.md",
     "Spaces/Home/Data/JSON.md",
+    "Spaces/Home/Data/XML.md",
+    "Spaces/Home/Data/Parsing.md",
+    "daily note/2024/9/2024-09-04.md",
+    "Spaces/Home/Java/Generic/Generic.md",
+    "Spaces/Home/Java/JSON/JSON.md",
     "Spaces/Home/Java/JSON",
     "Spaces/Home/API/API.md",
     "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
@@ -293,15 +219,8 @@
     "Spaces/Home/Java/Random/Random.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Images/OkHttp",
     "Images/복사방지",
-    "Spaces/Home/Java/OkHttp/OkHttp 사용.md",
-    "Spaces/Obsidian/복사 방지 해제.md",
-    "Spaces/Home/XML/Bean.md",
-    "Spaces/Home/Java/Request&Response/Request&Response.md",
-    "Spaces/Home/Java/OkHttp/OkHttp.md",
     "무제 파일.canvas"
   ]
 }
