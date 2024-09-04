@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md",
+                "file": "daily note/2024/9/2024-09-04.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -154,7 +154,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -174,7 +175,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md",
+                "file": "daily note/2024/9/2024-09-04.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md"
+                "file": "daily note/2024/9/2024-09-04.md"
               }
             }
           },
@@ -212,7 +213,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Generic.md",
+                "file": "daily note/2024/9/2024-09-04.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -255,6 +256,8 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Generic/Generic.md",
+    "daily note/2024/9/2024-09-04.md",
     "Spaces/Home/Java/JSON/JSON.md",
     "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Java/JSON",
@@ -299,8 +302,6 @@
     "Spaces/Home/XML/Bean.md",
     "Spaces/Home/Java/Request&Response/Request&Response.md",
     "Spaces/Home/Java/OkHttp/OkHttp.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Gradle JPA/JPA 설정.md",
-    "Spaces/Home/Protocol/Port/Port.md",
     "무제 파일.canvas"
   ]
 }
