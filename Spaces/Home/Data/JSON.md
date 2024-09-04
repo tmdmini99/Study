@@ -150,6 +150,11 @@ geojson
 
 
 
+@JsonNaming, @JsonProperty의 사용법
+
+```json
+{ "my_name": "kevin", "my_age": 20, "my_country": "korea" }
+```
 
 
 
