@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md"
+                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Data/JSON.md",
+                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,13 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
-    "square.md",
+    "Images/Pasted image 20240904104546.png",
+    "Spaces/Home/IntelliJ/SSL/SSL적용.md",
+    "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
+    "Spaces/Home/IntelliJ/DB SSH 설정",
+    "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/Data/JSON.md",
+    "square.md",
     "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
     "Spaces/Home/Java/Math/Math.md",
     "Spaces/Home/DB/SQL Injection.md",
@@ -208,7 +213,6 @@
     "Images/Pasted image 20240903162610.png",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace",
-    "Spaces/Home/API/Rest API.md",
     "Spaces/Cafe24/image/CAFE24 POSTMAN",
     "Spaces/Cafe24/image/CAFE24 STORE",
     "Spaces/Cafe24/image/CAFE24 PLUGIN",
@@ -216,11 +220,7 @@
     "Images/POSTMAN/PostMan5.png",
     "Images/POSTMAN/PostMan4.png",
     "Images/POSTMAN",
-    "Spaces/Cafe24/workspace/Cafe24 개발.md",
-    "Spaces/Home/Data/CSV.md",
-    "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Images/OkHttp",
-    "Images/복사방지",
     "무제 파일.canvas"
   ]
 }
