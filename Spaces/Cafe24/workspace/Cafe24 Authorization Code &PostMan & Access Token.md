@@ -49,8 +49,10 @@ mall_id : tmdals23222
 authorization_code : anCHXp9wEJTqccl2DToMWD
 redirect_uri :  \https://tmdals23222.cafe24.com/
 
-입력
 
+
+
+위에 아무것도 하지않고 사용 가능
 ## PostMan
 PostMan 접속후 회원 가입
 
@@ -175,6 +177,7 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
 
 > Note
 > 액세스 토큰을 복사하여 메모장 등에 임시저장하세요.
+> 권한 확인 필수! 권한 확인으로 오류가 뜰수 있음
 
 
 - 5. 문서 상단의 환경설정 방법을 참고하여 'Manage Environment' 화면으로 이동.
@@ -191,7 +194,7 @@ client ID, client Secret Key, service Key는 app관리에 들어가면 있음
     액세스 토큰의 유효기간은 2시간.
 
 
-## 실제 발급 
+## 실제 발급  코드 발급 받는 법(굳이 쓸 필요 x)
 
 아까 인증 받은 코드를 Body 부분에 추가
 

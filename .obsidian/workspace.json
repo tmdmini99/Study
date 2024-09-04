@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md",
+                "file": "Spaces/Home/Data/JSON.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md",
+                "file": "Spaces/Home/Data/JSON.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md"
+                "file": "Spaces/Home/Data/JSON.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/SQL Injection.md",
+                "file": "Spaces/Home/Data/JSON.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,15 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+    "Spaces/Home/Data/JSON.md",
+    "Spaces/Home/Java/Math/Math.md",
+    "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/DataBase.md",
     "Spaces/Home/Data/JSTL.md",
     "Spaces/Home/Data/HTML/JSTL & EL.md",
     "Spaces/Home/Data/HTML/HTML.md",
     "Spaces/Home/Data/Data  형태.md",
-    "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Data/XML.md",
     "Spaces/Home/Data/Parsing.md",
     "daily note/2024/9/2024-09-04.md",
@@ -188,7 +191,6 @@
     "Spaces/Home/Java/JSON/JSON.md",
     "Spaces/Home/Java/JSON",
     "Spaces/Home/API/API.md",
-    "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
     "Spaces/Home/API/PostMan.md",
     "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
@@ -217,8 +219,6 @@
     "Spaces/Home/Data/CSV.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Spaces/Home/Java/Random/Random.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Legacy 초기세팅.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/Spring Boot 초기 세팅.md",
     "Images/OkHttp",
     "Images/복사방지",
     "무제 파일.canvas"
