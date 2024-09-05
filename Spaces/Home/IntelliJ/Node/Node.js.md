@@ -76,6 +76,9 @@ EJS를 사용하려면 EJS 플러그인도 설치합니다.
 Node.js 설치 경로에서 node.exe 파일을 지정합니다. 기본 설치 경로는 "C:\Program Files\nodejs\node.exe"입니다.
 
 
+![[Pasted image 20240905141236.png]]
+
+
 
 
 
