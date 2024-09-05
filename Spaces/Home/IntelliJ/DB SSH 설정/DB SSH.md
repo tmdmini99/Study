@@ -7,7 +7,7 @@ DBeaver에서 SSH 터널을 통해 DB에 연결하는 것과 유사하게, Intel
 1. IntelliJ IDEA를 열고, 오른쪽에 있는 **"Database"** 탭을 클릭합니다.
 2. 데이터베이스 창이 없으면 `View > Tool Windows > Database`를 통해 활성화할 수 있습니다.
 
-![[Pasted image 20240904104546.png]]
+![[DB SSH1.png]]
 
 
 ### 2. 새 데이터베이스 연결 설정

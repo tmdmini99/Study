@@ -8,9 +8,9 @@ cmd창에서 pg 라이브러리 설치
 npm install pg
 ```
 
-![[Pasted image 20240905150108.png]]
+![[Node.js1.png]]
 
-![[Pasted image 20240905150849.png]]
+![[Node.js2.png]]
 
 인텔리 제이 프로젝트 일시 프로젝트 위치로 가서 실행
 
@@ -24,7 +24,7 @@ npm install axios
 - **서버와의 통신**: 서버와 클라이언트 간에 데이터 전송 및 수신을 처리합니다.
 
 확인 하는법
-![[Pasted image 20240905151225.png]]
+![[Node.js3.png]]
 
 
 PostgreSQL 연결 코드 작성

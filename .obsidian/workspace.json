@@ -13,14 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
+                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "54190a149a19d56b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md"
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md"
               }
             }
           },
@@ -132,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,54 +187,54 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e33cd4a078c1e079",
+  "active": "54190a149a19d56b",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
-    "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
+    "Images/JavaScript1.png",
+    "Images/IntelliJ/DB SSH1.png",
+    "Images/JS/JavaScript1.png",
+    "Images/Node/Node.js3.png",
+    "Images/Node/Node.js2.png",
+    "Images/Node/Node.js1.png",
+    "Images/Node/Node.js 설치10.png",
+    "Images/Node/Node.js 설치9.png",
+    "Images/Node/Node.js 설치8.png",
+    "Images/Node/Node.js 설치7.png",
+    "Images/Node/Node.js 설치6.png",
+    "Images/Node",
+    "Images/JS",
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+    "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
+    "Spaces/Home/API/API.md",
+    "Spaces/Home/Data/Parsing.md",
+    "Spaces/Home/Data/JSTL.md",
+    "Spaces/Home/Data/JSON.md",
+    "Spaces/Home/Data/Data  형태.md",
+    "Spaces/Home/Data/CSV.md",
+    "Spaces/Home/IntelliJ/JVM.md",
+    "Spaces/Home/IntelliJ/Spring/Spring.md",
+    "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
+    "Spaces/Home/IntelliJ/Node/Node.js.md",
     "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
-    "Images/Pasted image 20240905151225.png",
-    "Images/Pasted image 20240905150849.png",
-    "Images/Pasted image 20240905150108.png",
+    "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
+    "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
     "Spaces/Home/Java Script/Node.js/Node.md",
     "Spaces/Home/Java Script/Jquery",
     "Spaces/Home/Java Script/Java Script",
     "Spaces/Home/Java Script/Node.js",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Java Script/JavaScript 문법.md",
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
     "daily note/2024/9/2024-09-05.md",
-    "Spaces/Home/IntelliJ/Node/Node.js.md",
-    "Images/Pasted image 20240905144650.png",
-    "Images/Pasted image 20240905144640.png",
-    "Images/Pasted image 20240905144633.png",
-    "Images/Pasted image 20240905144628.png",
-    "Images/Pasted image 20240905141236.png",
-    "Images/Pasted image 20240905141117.png",
-    "Images/Pasted image 20240905141007.png",
     "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/IntelliJ/Node",
-    "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
     "Spaces/Home/IntelliJ/SSL/SSL적용.md",
     "Spaces/Home/IntelliJ/DB SSH 설정",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
-    "Spaces/Home/Data/JSON.md",
     "square.md",
     "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
-    "Spaces/Home/Java/Math/Math.md",
-    "Spaces/Home/DB/SQL Injection.md",
-    "Spaces/Home/DB/DataBase.md",
-    "Spaces/Home/Data/JSTL.md",
-    "Spaces/Home/Data/HTML/JSTL & EL.md",
-    "Spaces/Home/Data/HTML/HTML.md",
-    "Spaces/Home/Data/Data  형태.md",
-    "Spaces/Home/Data/XML.md",
-    "Spaces/Home/Data/Parsing.md",
     "Spaces/Home/Java/JSON",
     "Spaces/Cafe24/image/CAFE24 ACCESS",
     "Spaces/Cafe24/workspace",
-    "Spaces/Cafe24/image/CAFE24 POSTMAN",
-    "Spaces/Cafe24/image/CAFE24 STORE",
     "무제 파일.canvas"
   ]
 }

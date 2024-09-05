@@ -1,4 +1,4 @@
-![[Pasted image 20240905131348.png]]
+![[JavaScript1.png]]
 
 
 바스크립트는 HTML에 종속되어있는 언어입니다. HTML 조작과 변경을 위해 사용합니다.
