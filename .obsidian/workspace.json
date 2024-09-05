@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,12 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
+    "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
     "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
+    "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
     "Images/Pasted image 20240905151225.png",
     "Images/Pasted image 20240905150849.png",
     "Images/Pasted image 20240905150108.png",
-    "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
     "Spaces/Home/Java Script/Node.js/Node.md",
     "Spaces/Home/Java Script/Jquery",
     "Spaces/Home/Java Script/Java Script",
