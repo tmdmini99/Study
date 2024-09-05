@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
+                "file": "Spaces/Home/Java Script/Node.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
+                "file": "Spaces/Home/Java Script/Node.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md"
+                "file": "Spaces/Home/Java Script/Node.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
+                "file": "Spaces/Home/Java Script/Node.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +175,14 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/JavaScpript.md",
+    "Images/Pasted image 20240905131348.png",
+    "Spaces/Home/Java Script/JavaScript 문법.md",
+    "Spaces/Home/Java Script/Node.md",
+    "daily note/2024/9/2024-09-05.md",
+    "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
     "Images/Pasted image 20240904104546.png",
     "Spaces/Home/IntelliJ/SSL/SSL적용.md",
-    "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
     "Spaces/Home/IntelliJ/DB SSH 설정",
     "Spaces/Home/IntelliJ/Kotlin/Kotlin.md",
     "Spaces/Home/Data/JSON.md",
@@ -199,9 +204,7 @@
     "Spaces/Home/API/API.md",
     "Spaces/Home/API/PostMan.md",
     "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
-    "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/image/CAFE24 ACCESS/Cafe24 Access Token.jpg",
-    "Spaces/Home/API/Open API.md",
     "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code4.png",
     "Images/Pasted image 20240903152622.png",
     "Spaces/Cafe24/image/CAFE24 POSTMAN/CAFE24 PostMan22.png",
@@ -209,16 +212,12 @@
     "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code2.png",
     "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code1.png",
     "Spaces/Cafe24/image/CAFE24 ACCESS",
-    "daily note/2024/9/2024-09-03.md",
     "Images/Pasted image 20240903162610.png",
-    "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace",
     "Spaces/Cafe24/image/CAFE24 POSTMAN",
     "Spaces/Cafe24/image/CAFE24 STORE",
     "Spaces/Cafe24/image/CAFE24 PLUGIN",
     "Spaces/Cafe24/image/CAFE24",
-    "Images/POSTMAN/PostMan5.png",
-    "Images/POSTMAN/PostMan4.png",
     "Images/POSTMAN",
     "Images/OkHttp",
     "무제 파일.canvas"
