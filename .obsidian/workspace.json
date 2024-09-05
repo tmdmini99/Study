@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/PostgreSql.md",
+                "file": "Spaces/Home/IntelliJ/Node/Node.js.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/PostgreSql.md",
+                "file": "Spaces/Home/IntelliJ/Node/Node.js.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/PostgreSql.md"
+                "file": "Spaces/Home/IntelliJ/Node/Node.js.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/PostgreSql.md",
+                "file": "Spaces/Home/IntelliJ/Node/Node.js.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,15 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "Images/Pasted image 20240905141117.png",
+    "Images/Pasted image 20240905141007.png",
+    "Images/Pasted image 20240905140843.jpg",
+    "Images/Pasted image 20240905140730.png",
+    "Spaces/Home/IntelliJ/Node/Node.js.md",
+    "Images/Pasted image 20240905140525.png",
+    "Images/Pasted image 20240905140455.png",
+    "Spaces/Home/DB/PostgreSql.md",
+    "Spaces/Home/IntelliJ/Node",
     "Spaces/Home/Java Script/Node.md",
     "Spaces/Home/Java Script/JavaScpript.md",
     "Images/Pasted image 20240905131348.png",
@@ -202,24 +211,16 @@
     "Spaces/Home/Java/JSON/JSON.md",
     "Spaces/Home/Java/JSON",
     "Spaces/Home/API/API.md",
-    "Spaces/Home/API/PostMan.md",
-    "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
     "Spaces/Cafe24/image/CAFE24 ACCESS/Cafe24 Access Token.jpg",
     "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code4.png",
     "Images/Pasted image 20240903152622.png",
-    "Spaces/Cafe24/image/CAFE24 POSTMAN/CAFE24 PostMan22.png",
-    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code3.png",
-    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code2.png",
-    "Spaces/Cafe24/image/CAFE24 POSTMAN/Cafe24 Authorization Code1.png",
     "Spaces/Cafe24/image/CAFE24 ACCESS",
-    "Images/Pasted image 20240903162610.png",
     "Spaces/Cafe24/workspace",
     "Spaces/Cafe24/image/CAFE24 POSTMAN",
     "Spaces/Cafe24/image/CAFE24 STORE",
     "Spaces/Cafe24/image/CAFE24 PLUGIN",
     "Spaces/Cafe24/image/CAFE24",
     "Images/POSTMAN",
-    "Images/OkHttp",
     "무제 파일.canvas"
   ]
 }
