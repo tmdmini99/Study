@@ -10,6 +10,13 @@ npm install pg
 
 ![[Pasted image 20240905150108.png]]
 
+![[Pasted image 20240905150849.png]]
+
+인텔리 제이 프로젝트 일시 프로젝트 위치로 가서 실행
+
+확인 하는법
+![[Pasted image 20240905151225.png]]
+
 
 PostgreSQL 연결 코드 작성
 
