@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.md",
+                "file": "Spaces/Home/DB/PostgreSql.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.md",
+                "file": "Spaces/Home/DB/PostgreSql.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.md"
+                "file": "Spaces/Home/DB/PostgreSql.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.md",
+                "file": "Spaces/Home/DB/PostgreSql.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,10 +175,10 @@
   },
   "active": "e33cd4a078c1e079",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Node.md",
     "Spaces/Home/Java Script/JavaScpript.md",
     "Images/Pasted image 20240905131348.png",
     "Spaces/Home/Java Script/JavaScript 문법.md",
-    "Spaces/Home/Java Script/Node.md",
     "daily note/2024/9/2024-09-05.md",
     "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
     "Images/Pasted image 20240904104546.png",
