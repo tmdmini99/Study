@@ -78,7 +78,7 @@ Node.js 설치 경로에서 node.exe 파일을 지정합니다. 기본 설치 �
 
 ![[Pasted image 20240905141236.png]]
 
-### [3. 프로젝트 생성](https://devit.koreacreatorfesta.com/entry/Nodejs-Intellij%EC%97%90%EC%84%9C-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95#3.%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%83%9D%EC%84%B1-1)
+### 3. 프로젝트 생성
 
 IntelliJ에서 새로운 Node.js 프로젝트를 생성하는 방법입니다.
 
@@ -97,9 +97,9 @@ EJS는 HTML 내에 JavaScript를 내장하여 동적 웹 페이지를 쉽게 만
 
 ![[Pasted image 20240905144640.png]]
 
-## [2. 프로젝트 실행 방법](https://devit.koreacreatorfesta.com/entry/Nodejs-Intellij%EC%97%90%EC%84%9C-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95#2.%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%8B%A4%ED%96%89%20%EB%B0%A9%EB%B2%95-1)
+## 2. 프로젝트 실행 방법
 
-### [IntelliJ에서 실행](https://devit.koreacreatorfesta.com/entry/Nodejs-Intellij%EC%97%90%EC%84%9C-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95#IntelliJ%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89-1)
+### IntelliJ에서 실행
 
 프로젝트 실행: Shift + F10을 눌러 프로젝트를 실행합니다. IntelliJ는 프로젝트의 기본 설정에 따라 서버를 실행합니다.
 
