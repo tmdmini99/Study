@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+                "file": "daily note/2024/9/2024-09-06.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -88,7 +88,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -108,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+                "file": "daily note/2024/9/2024-09-06.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md"
+                "file": "daily note/2024/9/2024-09-06.md"
               }
             }
           },
@@ -146,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+                "file": "daily note/2024/9/2024-09-06.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,6 +190,8 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+    "daily note/2024/9/2024-09-06.md",
     "Images/JavaScript1.png",
     "Images/IntelliJ/DB SSH1.png",
     "Images/JS/JavaScript1.png",
@@ -199,10 +202,8 @@
     "Images/Node/Node.js 설치9.png",
     "Images/Node/Node.js 설치8.png",
     "Images/Node/Node.js 설치7.png",
-    "Images/Node/Node.js 설치6.png",
     "Images/Node",
     "Images/JS",
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
     "Spaces/Home/API/API.md",
     "Spaces/Home/Data/Parsing.md",
