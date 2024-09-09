@@ -444,11 +444,11 @@ console.log(process.cwd());
 
 **예시:**
 
-javascript
+```js
+console.log(require.main.filename);
+// 출력 예시: /Users/username/project-directory/index.js
 
-코드 복사
-
-`console.log(require.main.filename); // 출력 예시: /Users/username/project-directory/index.js`
+```
 
 ### 4. **`process.env`**
 
@@ -457,11 +457,10 @@ javascript
 
 **예시:**
 
-javascript
+```js
+console.log(process.env.NODE_ENV);
 
-코드 복사
-
-`console.log(process.env.NODE_ENV);`
+```
 
 ### 5. **`module`**
 
@@ -470,11 +469,10 @@ javascript
 
 **예시:**
 
-javascript
-
-코드 복사
-
-`console.log(module.filename); // 현재 파일의 전체 경로 출력`
+```js
+console.log(module.filename);
+// 현재 파일의 전체 경로 출력
+```
 
 ### `__dirname`의 역할:
 
