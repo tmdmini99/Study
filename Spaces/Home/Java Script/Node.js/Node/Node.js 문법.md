@@ -496,3 +496,217 @@ console.log(__dirname);
 - **`process.env`**: 환경 변수 정보.
 
 
+> **변수 let 과 const**
+
+  
+
+ES6 이전에는 변수를 var을 사용했는데 이제 let (변수) 과 const (상수) 로 나누어진다.
+
+var 과의 차이점은 var은 전역 범위인 반면 let 과 const 는 선언한 { } 내부 블록에서만 유효하다. 
+
+  
+```js
+ function test () {
+
+    let letNumber = 1;
+
+    const constNumber = 1;
+
+  
+
+    if(true){
+
+        let letNumber = 2;      
+
+        const constNumber = 2; 
+
+  
+
+        console.log(letNumber);      // 2 출력
+
+  console.log(constNumber);   // 2 출력
+
+    }
+
+  
+
+	console.log(letNumber);      // 1 출력
+
+  console.log(constNumber);   // 1 출력
+
+}
+
+```
+
+  
+
+  
+
+  
+
+> **템플릿 리터럴**
+
+  
+
+ES6 에서는 백틱 ( ` ) 을 이용하여 문자열을 + 기호 없이 간단히 처리할 수 있다.
+
+또한 백틱 ( ` ) 안에서는 멀티 라인도 자유롭게 사용할 수 있다.
+
+  
+```
+const id = "myId" ;
+
+const url = `http://noahlog.tistory.com/login/${id}` ;
+
+  
+
+const message = ` 줄바꿈도 마음대로
+
+  사용이 가능합니다. ` ;
+```
+
+  
+
+  
+
+  
+
+> **함수의 기본 매개 변수값 지정**
+
+  
+
+ES6 의 함수는 매개변수에 기본값 (default) 을 지정해 줄 수 있다.
+
+  
+
+```
+function test ( height =10 , width = 20, color = 'green' ) {
+
+...
+
+}
+```
+
+  
+
+  
+
+  
+
+> **객체 리터럴**
+
+  
+
+ES6 에서는 객체 리터럴의 사용성이 좀 더 간편화 되었다.
+
+  
+
+```
+var say = function() { console.log("hello"); }
+
+  
+
+const myObject = {
+
+say,
+
+work() { console.log("do work"); } ,
+
+['name'] : 'noah'
+
+};
+```
+
+  
+
+  
+
+  
+
+> **화살표 함수**
+
+  
+
+ES6 에서는 축약형 함수인 화살표 함수를 사용할 수 있다. 
+
+특이한 점이 있다면 화살표 함수에서 this 는 함수 자신을 호출하는 객체가 아닌
+
+화살표 함수의 상위 스코프 (scope) 를 호출한다.
+
+  
+
+```
+const numbers = [ 1, 2, 3, 4, 5 ];
+
+  
+
+let choice = numbers.map( v => v + 1);    //축약 형태로 return 도 생략 가능
+
+  
+
+const noah = {
+
+name : "noah",
+
+friend : [ "mimi" ],
+
+printFriends() { 
+
+this.friend.forEach( f => 
+
+console.log(` ${this.name} loves ${f}`)); 
+
+}
+
+};
+
+  
+
+noah.printFriends();    // 결과값 : noah loves mimi
+```
+
+  
+
+  
+
+  
+
+  
+
+> **비구조화 할당 (destructuring Assignment)**
+
+  
+
+비구조화 할당은 배열이나 객체에서 데이터를 편리하게 가져올 수 있게 해준다.
+
+  
+
+```
+//객체 
+
+const blog = {
+
+owner : "noah",
+
+url : "noahlogs.tistory.com",
+
+getPost() { console.log("ES6 문법 정리"); }
+
+};
+
+  
+
+let { owner, getPost } = blog;       //각각 blog 객체의 owner , getPost() 의 데이터가 할당
+
+
+
+//배열
+
+const pocket = ["coin" , 10 , true];
+
+const [ first , second, third ] = pocket;    //배열의 순서대로 값이 할당
+```
+
+---
+
+출처 -  https://noahlogs.tistory.com/26
