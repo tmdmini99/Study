@@ -41,7 +41,7 @@ Window
 ### 1. path.normalize
 
 normalize에 Path를 넣으면 알아서 경로를 normalize해서 return
-
+`./`, `../`, `/` 문자를 남용한 경로는 파일 시스템에서 정확히 어느 위치를 나타내는지 햇갈리는 경우가 있다. 이럴 때는 `normalize()` 함수를 사용하여 불필요한 부분을 정리하여 경로를 단순화 할 수 있다
 ```js
 const path = require("path");
 let myPath = path.normalize("/this/is//a//my/.././path/normalize");
@@ -51,6 +51,10 @@ console.log(myPath); //   /this/is/a/path/normalize
 
 위의 경우 ../는 상위 디렉토리로 가기 때문에 my가 생략
 
+```js
+> path.normalize("/Users/../daleseo//test.txt")
+'/daleseo/test.txt'
+```
 
 ### 2. path.join(\[...paths])
 
@@ -117,7 +121,44 @@ myPath = path.basename("/foo/bar/baz/asdf/image.png", ".png");
 console.log(myPath); //image
 ```
 
-### 파일 이름 얻기
+#### 파일 확장자 얻기
+
+
+`extname()` 함수를 사용하면 주어진 경로에서 파일의 `.`을 포함한 확장자를 얻을 수 있음
+
+
+```js
+> path.extname("/Users/daleseo/test.txt")
+'.txt'
+```
+
+
+### 절대 경로인지 알아내기
+
+
+주어진 경로가 절대 경로인지 상대 경로인지 알아내려면 `isAbsolute()` 함수를 사용
+```js
+> path.isAbsolute("/Users/daleseo/test.txt")
+true
+> path.isAbsolute("./test.txt")
+false
+```
+
+### 상대 경로 구하기
+
+간혹 어떤 경로를 기준으로 다른 경로의 상대 경로를 알고 싶은 경우가 있습니다. 이럴 때는 `relative()` 함수에 기준의 되는 경로를 첫번째 인자로 대상이 되는 경로를 두번째 인자로 넘기면 상대 경로를 구해줍니다.
+
+```js
+> path.relative("/Users", "/Users/daleseo/test.txt")
+'daleseo/test.txt'
+```
+
+```js
+> path.relative("/Users/daleseo/test.txt", "/Applications")
+'../../../Applications'
+```
+
+
 
 
 ---
