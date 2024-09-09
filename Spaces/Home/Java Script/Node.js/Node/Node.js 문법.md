@@ -407,3 +407,94 @@ node.js의 vm처럼, 현재 코드가 실행되고 있는 context가 아닌 다�
 eval은 아무래도 문제 요소가 많아서 실제 코드에 사용하기는 좀 어렵지 않나 싶어요.
 
 
+
+Node.js에서 전역적으로 제공되는 몇 가지 다른 유사한 변수와 객체가 있습니다. 이들은 현재 실행 중인 스크립트나 모듈의 경로, 파일명, 환경 정보 등을 제공합니다. 주요 전역 변수들은 다음과 같습니다:
+
+### 1. **`__filename`**
+
+- 현재 실행 중인 **스크립트 파일의 절대 경로**를 나타냅니다.
+- `__dirname`과 달리, 파일의 전체 경로(파일명 포함)를 제공합니다.
+
+**예시:**
+
+```js
+console.log(__filename);
+// 출력 예시: /Users/username/project-directory/app.js
+
+```
+
+### 2. **`process.cwd()`**
+
+- **현재 작업 디렉토리의 경로**를 반환합니다.
+- `__dirname`과의 차이점은, `process.cwd()`는 **프로세스를 실행한 디렉토리**를 기준으로 하며, `__dirname`은 **스크립트 파일이 위치한 디렉토리**를 기준으로 합니다.
+- 현재 디렉토리를 변경할 수 있는 `process.chdir()` 함수도 존재합니다.
+
+**예시:**
+
+```js
+console.log(process.cwd());
+// 출력 예시: /Users/username/another-directory (실행한 디렉토리)
+
+```
+
+### 3. **`require.main.filename`**
+
+- 현재 애플리케이션에서 **첫 번째로 실행된 모듈(메인 모듈)의 파일 경로**를 나타냅니다.
+- 보통 앱의 진입점인 첫 번째 실행 파일의 경로를 알고 싶을 때 사용합니다.
+
+**예시:**
+
+javascript
+
+코드 복사
+
+`console.log(require.main.filename); // 출력 예시: /Users/username/project-directory/index.js`
+
+### 4. **`process.env`**
+
+- **환경 변수**에 접근할 수 있는 객체입니다.
+- 현재 시스템의 환경 변수나 사용자 정의 환경 변수를 가져오거나 설정할 때 사용합니다.
+
+**예시:**
+
+javascript
+
+코드 복사
+
+`console.log(process.env.NODE_ENV);`
+
+### 5. **`module`**
+
+- 현재 모듈과 관련된 정보를 제공합니다.
+- `module.filename`은 현재 모듈의 파일 경로를 나타냅니다.
+
+**예시:**
+
+javascript
+
+코드 복사
+
+`console.log(module.filename); // 현재 파일의 전체 경로 출력`
+
+### `__dirname`의 역할:
+
+- 현재 스크립트 파일이 속한 디렉토리의 경로를 반환합니다.
+- 파일 경로를 동적으로 생성할 때 유용합니다. 예를 들어, 프로젝트의 특정 디렉토리에서 파일을 읽거나 쓸 때 사용됩니다.
+
+### 예시
+
+
+```js
+const path = require('path');  
+console.log(__dirname); 
+// 출력 예시: /Users/username/project-directory`
+```
+### 요약:
+
+- **`__dirname`**: 현재 파일이 위치한 디렉토리의 절대 경로.
+- **`__filename`**: 현재 파일의 절대 경로(파일명 포함).
+- **`process.cwd()`**: 프로세스가 실행된 디렉토리의 경로.
+- **`require.main.filename`**: 첫 번째로 실행된 모듈의 경로.
+- **`process.env`**: 환경 변수 정보.
+
+

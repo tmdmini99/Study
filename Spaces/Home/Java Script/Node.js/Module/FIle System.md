@@ -1,5 +1,5 @@
 
-#  Node.js 내장 모듈인 fs(File System) 사용법
+#  Node.js 내장 모듈인 File System(fs) 사용법
 
 
 ## 사용법
@@ -93,6 +93,46 @@ fs.writeFile("./sample2.txt", file, (err) =>{
  */
 fs.writeFileSync("./sample2.txt", file)
 ```
+
+비동기 방식
+```js
+const fs = require('fs');
+const path = require('path');
+
+// 현재 디렉토리에 sample.txt 파일 경로 설정
+const filePath = path.join(__dirname, 'sample.txt');
+
+// "안녕하세요" 데이터를 sample.txt에 쓰기
+fs.writeFile(filePath, '안녕하세요', 'utf8', (err) => {
+  if (err) {
+    console.error('파일 쓰기 중 오류 발생:', err);
+  } else {
+    console.log('sample.txt에 데이터가 성공적으로 저장되었습니다.');
+  }
+});
+
+```
+
+동기 방식
+```js
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, 'sample.txt');
+
+try {
+  fs.writeFileSync(filePath, '안녕하세요', 'utf8');
+  console.log('sample.txt에 데이터가 성공적으로 저장되었습니다.');
+} catch (err) {
+  console.error('파일 쓰기 중 오류 발생:', err);
+}
+
+```
+
+
+- `fs.writeFile()`: **비동기**로 파일에 데이터를 쓰기 때문에 작업이 끝날 때까지 기다리지 않고, 콜백으로 완료를 처리합니다.
+- `fs.writeFileSync()`: **동기**로 파일에 데이터를 쓰기 때문에 작업이 끝날 때까지 다른 코드가 실행되지 않으며, 바로 예외를 처리할 수 있습니다.
+
 
 ![[Pasted image 20240909094155.png]]
 

@@ -68,6 +68,11 @@ console.log(myPath); //   /this/is/a/path/join
 ```
 
 
+```js
+> path.join("Users", "daleseo", "test.txt")
+'Users/daleseo/test.txt'
+```
+
 ### 3. path.resolve(\[...paths])
 
 path.resolve는 path.join과 path.normalize를 합친 것

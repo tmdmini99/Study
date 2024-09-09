@@ -8,33 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e33cd4a078c1e079",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "54190a149a19d56b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Module/FIle System.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md"
               }
             }
           },
@@ -146,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,14 +175,14 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
+    "Spaces/Home/Java Script/Node.js/Module/Node.js CSV.md",
+    "Spaces/Home/Java Script/Node.js/Module/Path.md",
     "Images/Pasted image 20240909094206.png",
     "Images/Pasted image 20240909094204.png",
     "Images/Pasted image 20240909094155.png",
-    "Spaces/Home/Java Script/Node.js/Module/Path.md",
-    "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
     "Spaces/Home/Java Script/Node.js/Project",
-    "Spaces/Home/Java Script/Node.js/Module/Node.js CSV.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.md",
     "Spaces/Home/Java Script/Node.js/Node",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
@@ -213,7 +199,6 @@
     "Images/Pasted image 20240906101700.png",
     "Images/Pasted image 20240906101648.png",
     "Images/Pasted image 20240906101646.jpg",
-    "Images/Pasted image 20240906101637.jpg",
     "Spaces/Home/IntelliJ/Node/Node.js.md",
     "daily note/2024/9/2024-09-06.md",
     "Spaces/Home/VisualStudioCode/Node",
