@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Module/Path.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Module/Path.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 문법.md"
+                "file": "Spaces/Home/Java Script/Node.js/Module/Path.md"
               }
             }
           },
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Module/Path.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -189,11 +189,17 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Node.js CSV.md",
-    "Spaces/Home/Java Script/Node.js/Node.js Excel.md",
-    "Spaces/Home/Java Script/Node.js/Node.js DB 연동.md",
-    "Spaces/Home/Java Script/Node.js/Node.js 프로젝트 파일.md",
-    "Spaces/Home/Java Script/Node.js/Node.js 문법.md",
+    "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
+    "Spaces/Home/Java Script/Node.js/Module/Path.md",
+    "Spaces/Home/Java Script/Node.js/Project",
+    "Spaces/Home/Java Script/Node.js/Module/Node.js CSV.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.md",
+    "Spaces/Home/Java Script/Node.js/Node",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+    "Spaces/Home/Java Script/Node.js/Module",
+    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
+    "daily note/2024/9/2024-09-09.md",
+    "Spaces/Home/Java Script/Node.js/Module/Node.js DB 연동.md",
     "Spaces/Cafe24/workspace/cafe24 node.js 프로젝트 파일.md",
     "Spaces/Home/VisualStudioCode/Node/Node.js실행.md",
     "Images/Pasted image 20240906101741.jpg",
@@ -223,18 +229,12 @@
     "Spaces/Home/IntelliJ/JVM.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
-    "Spaces/Home/Java Script/Node.js/Node.md",
     "Spaces/Home/Java Script/Jquery",
     "Spaces/Home/Java Script/Java Script",
     "Spaces/Home/Java Script/Node.js",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Java Script/JavaScript 문법.md",
     "Spaces/Home/Java Script/공부 해야 될것.md",
-    "daily note/2024/9/2024-09-05.md",
-    "Spaces/Home/DB/PostgreSql.md",
-    "Spaces/Home/IntelliJ/Node",
-    "Spaces/Home/IntelliJ/DB SSH 설정",
-    "Spaces/Home/Java/JSON",
     "무제 파일.canvas"
   ]
 }
