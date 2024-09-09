@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,10 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
+    "Images/Pasted image 20240909101147.png",
+    "Images/Pasted image 20240909100831.png",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
     "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js CSV.md",
     "Spaces/Home/Java Script/Node.js/Module/Path.md",
@@ -198,8 +200,6 @@
     "Images/Pasted image 20240906101721.png",
     "Images/Pasted image 20240906101717.png",
     "Images/Pasted image 20240906101700.png",
-    "Images/Pasted image 20240906101648.png",
-    "Images/Pasted image 20240906101646.jpg",
     "Spaces/Home/IntelliJ/Node/Node.js.md",
     "daily note/2024/9/2024-09-06.md",
     "Spaces/Home/VisualStudioCode/Node",
@@ -220,7 +220,6 @@
     "Spaces/Home/Java Script/Jquery",
     "Spaces/Home/Java Script/Java Script",
     "Spaces/Home/Java Script/Node.js",
-    "Spaces/Home/Java Script/Jquery/Jquery.md",
     "무제 파일.canvas"
   ]
 }
