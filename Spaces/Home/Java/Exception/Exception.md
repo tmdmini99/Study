@@ -323,7 +323,7 @@ public class codeTest {
 
 결과
 
-![[Pasted image 20231218133627.png]]
+![[Pasted image 20240910164336.png]]
 
 -> For input string: "사과"
 e.getMessage() 은 정말 Exception의 유형도 없이 정말 간단하게 왜 에러가 발생하였는지 보여주기만 합니다.
@@ -344,7 +344,9 @@ public class codeTest {
     }
 }
 ```
-![[Pasted image 20231218133755.png]]
+
+
+![[Pasted image 20240910164357.png]]
 
 
 ---
