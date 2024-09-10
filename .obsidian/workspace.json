@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +175,13 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 모듈.md",
+    "Images/Pasted image 20240910144529.png",
     "Spaces/Home/Java Script/Node.js/Node/Node.md",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
     "daily note/2024/9/2024-09-10.md",
     "Images/Pasted image 20240909101147.png",
     "Images/Pasted image 20240909100831.png",
@@ -200,7 +204,6 @@
     "Images/Pasted image 20240906101730.png",
     "Images/Pasted image 20240906101721.png",
     "Images/Pasted image 20240906101717.png",
-    "Images/Pasted image 20240906101700.png",
     "Spaces/Home/IntelliJ/Node/Node.js.md",
     "daily note/2024/9/2024-09-06.md",
     "Spaces/Home/VisualStudioCode/Node",
@@ -214,10 +217,6 @@
     "Spaces/Home/Data/JSTL.md",
     "Spaces/Home/Data/JSON.md",
     "Spaces/Home/Data/Data  형태.md",
-    "Spaces/Home/Data/CSV.md",
-    "Spaces/Home/IntelliJ/JVM.md",
-    "Spaces/Home/IntelliJ/Spring/Spring.md",
-    "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/Java Script/Jquery",
     "Spaces/Home/Java Script/Java Script",
     "Spaces/Home/Java Script/Node.js",
