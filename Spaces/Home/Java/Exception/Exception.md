@@ -323,7 +323,7 @@ public class codeTest {
 
 결과
 
-![[Pasted image 20240910164336.png]]
+![[Exception1.png]]
 
 -> For input string: "사과"
 e.getMessage() 은 정말 Exception의 유형도 없이 정말 간단하게 왜 에러가 발생하였는지 보여주기만 합니다.
@@ -346,7 +346,7 @@ public class codeTest {
 ```
 
 
-![[Pasted image 20240910164357.png]]
+![[Exception2.png]]
 
 
 ---
@@ -366,8 +366,8 @@ public class codeTest {
 }
 ```
 
-![[Pasted image 20231218133759.png]]
 
+![[Exception3.png]]
 
 
 
@@ -389,8 +389,8 @@ public class codeTest {
 - Error
 - Exception
 - Runtime Exception
- ![[Pasted image 20231218172854.png]]
-
+ 
+![[Exception4.png]]
 ## Throwable
 
 클래스 Throwable은 범 예외 클래스들의 공통된 조상이다. 모든 예외 클래스들이 가지고 있는 공통된 메소드를 정의하고 있다. 중요한 역할을 하는 클래스임에는 틀림없지만 이 클래스를 직접 사용하지는 않기 때문에 우리에게는 중요하지 않다.
@@ -403,14 +403,14 @@ public class codeTest {
 
 결국 우리의 관심사는 Exception 클래스와 RuntimeException 클래스로 좁혀진다. 우선 Exception 클래스의 하위 클래스들의 목록을 살펴보자. 아래 클래스들은 모두 Exception 클래스를 상속한 예외 클래스다.
 
-![](https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/module/516/2065.png)
+![[Exception5.png]]
 
 필자가 강조 표시한 부분을 보자. 저 많은 클래스 중의 하나가 RuntimeException이다. 도대체 RuntimeException 클래스는 어떤 특이점이 있길래 부모 클래스인 Exception 클래스와 함께 언급되는 것일까? RuntimeException을 제외한 Exception 클래스의 하위 클래스들과 RuntimeException 클래스의 차이를 자바에서는 checked와 unckecked라고 부른다. 관계를 정리하면 아래와 같다.
 
 - checked 예외 - RuntimeException을 제외한 Exception의 하위 클래스
 - unchekced 예외 - RuntimeException의 하위 클래스
 
-![[Pasted image 20231220111541.png]]
+![[Exception6.png]]
 #### 1) Checked Exception
 
 체크 예외는 예외를 잡아서 처리하거나(`try ~ catch`), 이게 안되면, 예외를 밖으로 던지는 `throw 예외`를 필수로 선언해야 한다.  

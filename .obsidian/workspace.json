@@ -8,19 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "da710c0619816d2d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "2481f6a93b07cc76",
             "type": "leaf",
             "state": {
@@ -32,9 +19,47 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ec2b3c03e1708e6e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d2d8d360d921dc21",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fae05c5ac971717a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -63,7 +88,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Pasted image ",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,8 +113,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -188,17 +212,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2481f6a93b07cc76",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Images/Pasted image 20240910164357.png",
-    "Images/Pasted image 20240910164336.png",
+    "Images/vscode/vscode15.png",
+    "Images/vscode/vscode14.png",
+    "Images/vscode/vscode13.png",
+    "Images/vscode/vscode12.png",
+    "Images/vscode/vscode11.png",
+    "Images/vscode/vscode10.jpg",
+    "Images/vscode/vscode9.jpg",
+    "Images/vscode/vscode8.jpg",
+    "Images/vscode/vscode7.jpg",
+    "Images/vscode/vscode6.jpg",
+    "Images/vscode/vscode5.jpg",
+    "Images/Exception",
+    "Spaces/Home/Java/Exception/Exception.md",
+    "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
-    "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
-    "Spaces/Home/Java/Exception/Exception.md",
-    "Images/Node.js fs3.png",
-    "Images/Node.js fs2.png",
-    "Images/Node.js fs1.png",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
@@ -208,12 +239,6 @@
     "Spaces/Home/IntelliJ/Node/Node.js.md",
     "Spaces/Home/VisualStudioCode/Node/Node.js실행.md",
     "Images/vscode",
-    "Images/vscode16.jpg",
-    "Images/vscode15.png",
-    "Images/vscode14.png",
-    "Images/vscode13.png",
-    "Images/vscode12.png",
-    "Images/vscode11.png",
     "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js DB 연동.md",
@@ -235,7 +260,6 @@
     "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
     "Spaces/Home/API/API.md",
     "Spaces/Home/Java Script/Jquery",
-    "Spaces/Home/Java Script/Java Script",
     "무제 파일.canvas"
   ]
 }
