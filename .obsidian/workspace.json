@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-10.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-10.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-10.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-10.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,9 +175,10 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Node.js/Node/Node.md",
+    "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
     "daily note/2024/9/2024-09-10.md",
-    "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
     "Images/Pasted image 20240909101147.png",
     "Images/Pasted image 20240909100831.png",
     "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
@@ -189,7 +189,6 @@
     "Images/Pasted image 20240909094155.png",
     "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
     "Spaces/Home/Java Script/Node.js/Project",
-    "Spaces/Home/Java Script/Node.js/Node/Node.md",
     "Spaces/Home/Java Script/Node.js/Node",
     "Spaces/Home/Java Script/Node.js/Module",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
