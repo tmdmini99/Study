@@ -26,19 +26,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1385f5046f5d5d01",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "Spaces/Home/Java/Exception/Exception.md",
                 "mode": "source",
                 "backlinks": true,
@@ -47,7 +34,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -201,14 +188,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1385f5046f5d5d01",
+  "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
-    "Images/Node.js fs3.png",
+    "Spaces/Home/Java/JVM/Garbage Collection.md",
     "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
-    "Images/Node.js fs2.png",
     "Spaces/Home/Java/Exception/Exception.md",
+    "Images/Node.js fs3.png",
+    "Images/Node.js fs2.png",
     "Images/Node.js fs1.png",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",

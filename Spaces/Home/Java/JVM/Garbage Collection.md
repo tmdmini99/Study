@@ -270,7 +270,7 @@ Major GC가 일어나면 Thread가 멈추고 Mark and Sweep 작업을 해야 해
 
 ### **[ Garbage Collection(가비지 컬렉션) 내용 요약 ]**
 
-![[Pasted image 20231227163555.png]]
+![[GC23.png]]
 
 
 
@@ -432,7 +432,7 @@ java -XX:+UseG1GC -jar Application.java
 - Garbage로 가득찬 영역을 빠르게 회수하여 빈 공간을 확보하므로, 결국 GC 빈도가 줄어드는 효과를 얻게 되는 원리
 
 
-![[GC31.png]] ![[Pasted image 20231219104404.png]]
+![[GC31.png]] ![[GC30.png]]
 
 **[ G1 GC의 효율성 ]**  
 Java9+ 부터 기본 GC로 자리잡은 G1 GC에서는 이전의 GC들처럼 일일히 메모리를 탐색해 객체들을 제거하지 않는다.   

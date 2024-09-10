@@ -172,7 +172,7 @@ List<String> l2 = Collections.synchronizedList(new LinkedList<>());
 
 하지만 [ArrayList](#ArrayList)보다 검색에 있어서는 느리다는 단점이 있습니다
 
-	![[Pasted image 20231211120131.png]]
+	![[LinkedList4.png]]
 	
 
 
