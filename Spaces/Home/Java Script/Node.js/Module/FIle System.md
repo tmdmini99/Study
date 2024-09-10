@@ -134,7 +134,7 @@ try {
 - `fs.writeFileSync()`: **동기**로 파일에 데이터를 쓰기 때문에 작업이 끝날 때까지 다른 코드가 실행되지 않으며, 바로 예외를 처리할 수 있습니다.
 
 
-![[Pasted image 20240909094155.png]]
+![[Node.js fs1.png]]
 
 - 파일 삭제
 
@@ -169,10 +169,10 @@ Error가 발생하지 않으면 파일은 자연스럽게 삭제가 됩니다.
 
 보통 에러를 처리 안 하면 첫 번째 이미지와 같이 내용이 나옵니다.
 
-![[Pasted image 20240909094204.png]]
+![[Node.js fs2.png]]
 Error 처리 X
 
-![[Pasted image 20240909094206.png]]
+![[Node.js fs3.png]]
 Error 처리 O
 
 - 파일 체크
