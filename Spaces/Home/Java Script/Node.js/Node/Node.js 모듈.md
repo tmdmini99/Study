@@ -1,6 +1,6 @@
 **모듈 만들기**
 
-![[Pasted image 20240910144529.png]]
+![[Node.js 모듈1.png]]
 
 프로젝트에 app.js 와 movie.js를 만든다.
 
@@ -10,7 +10,7 @@
 
 **movie.js**
 
-```
+```js
 // movie 라는 모듈을 만든다.
 function printHarryPotter(){
     console.log("Harry Potter!");
@@ -42,7 +42,7 @@ module.exports.자신이 원하는 이름 = 함수;
 
 **app.js**
 
-```
+```js
 var movie = require('./movie');
 movie.HarryPotter(); // movie.js에서 exports 한 이름으로 호출하면 사용할 수 있다.
 movie.DawnOfDead();
@@ -66,7 +66,7 @@ movie.설정한 변수명
 
 **실행 결과**
 
-```
+```js
 Harry Potter!
 Dawn Of Dead!
 ```

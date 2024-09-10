@@ -730,7 +730,7 @@ console.log(result);
 
 `filter` 를 쓸 때, 조건식을 filter()의 괄호 안에 쓰는 방법이 있고 filter외부에 사용하는 방법이 있다.
 
-![[Pasted image 20240910145736.jpg]]
+![[Node.js 문법1.jpg]]
 
 ## 함수를 filter 내에 주기
 
@@ -741,6 +741,58 @@ console.log(result);
 
 위 사진의 **#2 solution** 을 보면, `filter` 의 조건을 외부함수로 선언한 후 callback하고 있다.  
 이 방법은 filter 조건식이 복잡해질 수록 코드 관리에 유용할 것 같다.
+
+
+ex)
+filter를 이용해 다음 배열에서 species가 'mammalia'인 새로운 배열을 만들고 콘솔에 출력해 주세요.
+
+```js
+let animals = [
+  { species: 'mammalia', name: "cat" },
+  { species: 'reptiles', name: "lizard" },
+  { species: 'amphibia', name: "flog" },
+  { species: 'mammalia', name: "dog" },
+  { species: 'amphibia', name: "salamander" }
+];
+```
+
+
+위 문제를 풀기 위해서 우선 새로운 배열을 저장할 변수 `result`를 선언한다.  
+👉 `let result`
+
+그 후 animals 배열에 `filter` 메서드를 사용한다.  
+👉 `let result = animals.filter()`
+
+이제 filter에 조건함수를 줄 것이다. 근데 animals 배열의 요소들은 `{}` 안에 담겨있다. 이런 중괄호 안의 요소를 `property`라고 하는데, `.`을 찍어서 접근할 수 있다.  
+또한 `species`가 `'mammalia'`와 일치하는지 검사하기 위해 동등연산자 `==` 를 사용할 것이다. 그럼 조건식을 아래와 같이 작성할 수 있다.  
+👉 `let result = animals.filter((value) => value.species == 'mammalia')`
+
+이를 코드로 작성하면 아래와 같다.
+
+```js
+let animals = [
+  { species: 'mammalia', name: "cat" },
+  { species: 'reptiles', name: "lizard" },
+  { species: 'amphibia', name: "flog" },
+  { species: 'mammalia', name: "dog" },
+  { species: 'amphibia', name: "salamander" }
+];
+
+  let result = animals.filter((value) => value.species == 'mammalia')
+  
+
+console.log(result);
+
+```
+
+결과가 아래와 같이 나오면 성공이다.
+
+```js
+[
+{ species: "mammalia", name: "cat" }, 
+{ species: "mammalia", name: "dog" }
+]
+```
 
 
 

@@ -13,14 +13,58 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "1eee111e9a2c5783",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ab84256f47536c8e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Node.js 동기&비동기1.png"
+              }
+            }
+          },
+          {
+            "id": "95fc0a7be1266176",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Node.js 모듈1.png"
+              }
+            }
+          },
+          {
+            "id": "dc87a3e53144baa7",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Node.js 문법1.jpg"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.md"
               }
             }
           },
@@ -132,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,25 +217,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "54190a149a19d56b",
+  "active": "1eee111e9a2c5783",
   "lastOpenFiles": [
-    "Images/Pasted image 20240910145736.jpg",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 모듈.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
-    "Images/Pasted image 20240910144529.png",
+    "Images/Pasted image 20240906101730.png",
+    "Images/Pasted image 20240906101717.png",
+    "Images/Pasted image 20240906101637.jpg",
+    "Images/Pasted image 20240906101631.jpg",
+    "Images/Pasted image 20240906101628.jpg",
+    "Images/Pasted image 20240906101616.jpg",
+    "Images/Pasted image 20240906101528.png",
+    "Images/Pasted image 20240906101539.jpg",
+    "Images/Pasted image 20240906101545.jpg",
+    "Images/Node.js 동기&비동기2.png",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
+    "Images/Node.js 동기&비동기1.png",
+    "Spaces/Home/Java Script/Node.js/Node/Node.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 모듈.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
     "daily note/2024/9/2024-09-10.md",
-    "Images/Pasted image 20240909101147.png",
-    "Images/Pasted image 20240909100831.png",
     "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js CSV.md",
     "Spaces/Home/Java Script/Node.js/Module/Path.md",
-    "Images/Pasted image 20240909094206.png",
-    "Images/Pasted image 20240909094204.png",
-    "Images/Pasted image 20240909094155.png",
     "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
     "Spaces/Home/Java Script/Node.js/Project",
     "Spaces/Home/Java Script/Node.js/Node",
@@ -201,10 +249,6 @@
     "Spaces/Home/Java Script/Node.js/Module/Node.js DB 연동.md",
     "Spaces/Cafe24/workspace/cafe24 node.js 프로젝트 파일.md",
     "Spaces/Home/VisualStudioCode/Node/Node.js실행.md",
-    "Images/Pasted image 20240906101741.jpg",
-    "Images/Pasted image 20240906101730.png",
-    "Images/Pasted image 20240906101721.png",
-    "Images/Pasted image 20240906101717.png",
     "Spaces/Home/IntelliJ/Node/Node.js.md",
     "daily note/2024/9/2024-09-06.md",
     "Spaces/Home/VisualStudioCode/Node",
