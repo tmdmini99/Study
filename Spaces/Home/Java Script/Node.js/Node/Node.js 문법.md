@@ -707,6 +707,43 @@ const pocket = ["coin" , 10 , true];
 const [ first , second, third ] = pocket;    //배열의 순서대로 값이 할당
 ```
 
+
+
+#  filter 란?
+
+자바스크립트에서 `filter` 는 배열에 사용하며, 주어진 함수를 만족하는 모든 요소를 모아 새 배열로 반환한다.
+
+아래 코드를 통해 `filter` 가 어떻게 사용되는지 간단히 알아보자.
+
+```null
+let array = [3,5,11,0,9,'string'];
+let result = array.filter((value) => value < 10)
+console.log(result);
+
+//output : array [3, 5, 0, 9]
+```
+
+위의 코드를 보면, array라는 배열이 있다. 이 배열에서 10미만의 값만 추출하려고 한다.  
+이를 위해 우선 결과값들을 담아둘 `result` 변수를 만들었다. 그 후 기존 배열에 `.filter()`를 붙이고 괄호 안에는 **필터조건이 되는 함수**를 넣어 주었다.
+
+#  filter 사용법
+
+`filter` 를 쓸 때, 조건식을 filter()의 괄호 안에 쓰는 방법이 있고 filter외부에 사용하는 방법이 있다.
+
+![[Pasted image 20240910145736.jpg]]
+
+## 함수를 filter 내에 주기
+
+위 사진의 **#1 solution**을 보면, `filter` 메서드의 조건식을 괄호 안에 바로 작성해 주었다.  
+이 방법은 **조건식이 간단할 경우** 유용하며, 코드 라인을 줄일 수 있고 한 눈에 보기 편한 장점이 있다.
+
+## 함수를 filter 외부에 사용
+
+위 사진의 **#2 solution** 을 보면, `filter` 의 조건을 외부함수로 선언한 후 callback하고 있다.  
+이 방법은 filter 조건식이 복잡해질 수록 코드 관리에 유용할 것 같다.
+
+
+
 ---
 
 출처 -  https://noahlogs.tistory.com/26

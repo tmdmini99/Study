@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md"
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,12 +175,13 @@
   },
   "active": "54190a149a19d56b",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+    "Images/Pasted image 20240910145736.jpg",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 모듈.md",
-    "Images/Pasted image 20240910144529.png",
     "Spaces/Home/Java Script/Node.js/Node/Node.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+    "Images/Pasted image 20240910144529.png",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
     "daily note/2024/9/2024-09-10.md",
     "Images/Pasted image 20240909101147.png",
