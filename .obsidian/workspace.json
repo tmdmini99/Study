@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "daily note/2024/9/2024-09-11.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,7 +113,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -133,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "daily note/2024/9/2024-09-11.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md"
+                "file": "daily note/2024/9/2024-09-11.md"
               }
             }
           },
@@ -171,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "daily note/2024/9/2024-09-11.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -212,8 +213,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Exception/Exception.md",
+    "daily note/2024/9/2024-09-11.md",
     "Images/vscode/vscode15.png",
     "Images/vscode/vscode14.png",
     "Images/vscode/vscode13.png",
@@ -224,9 +227,7 @@
     "Images/vscode/vscode8.jpg",
     "Images/vscode/vscode7.jpg",
     "Images/vscode/vscode6.jpg",
-    "Images/vscode/vscode5.jpg",
     "Images/Exception",
-    "Spaces/Home/Java/Exception/Exception.md",
     "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
     "Spaces/Home/Java/Generic/Collection/List.md",
     "Spaces/Home/Java/JVM/Garbage Collection.md",
