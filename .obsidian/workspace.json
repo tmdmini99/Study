@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-11.md",
+                "file": "daily note/2024/9/2024-09-12.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-11.md",
+                "file": "daily note/2024/9/2024-09-12.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-11.md"
+                "file": "daily note/2024/9/2024-09-12.md"
               }
             }
           },
@@ -172,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-11.md",
+                "file": "daily note/2024/9/2024-09-12.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,8 +215,9 @@
   },
   "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "Spaces/Home/Java/Exception/Exception.md",
     "daily note/2024/9/2024-09-11.md",
+    "daily note/2024/9/2024-09-12.md",
+    "Spaces/Home/Java/Exception/Exception.md",
     "Images/vscode/vscode15.png",
     "Images/vscode/vscode14.png",
     "Images/vscode/vscode13.png",
@@ -259,7 +260,6 @@
     "Images/Node",
     "Images/JS",
     "Spaces/Home/IntelliJ/DB SSH 설정/DB SSH.md",
-    "Spaces/Home/API/API.md",
     "Spaces/Home/Java Script/Jquery",
     "무제 파일.canvas"
   ]
