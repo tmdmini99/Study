@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-13.md",
+                "file": "daily note/2024/9/2024-09-19.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-13.md",
+                "file": "daily note/2024/9/2024-09-19.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-13.md"
+                "file": "daily note/2024/9/2024-09-19.md"
               }
             }
           },
@@ -172,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-13.md",
+                "file": "daily note/2024/9/2024-09-19.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,8 +215,9 @@
   },
   "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "daily note/2024/9/2024-09-12.md",
     "daily note/2024/9/2024-09-13.md",
+    "daily note/2024/9/2024-09-19.md",
+    "daily note/2024/9/2024-09-12.md",
     "daily note/2024/9/2024-09-11.md",
     "Spaces/Home/Java/Exception/Exception.md",
     "Images/vscode/vscode15.png",
@@ -257,7 +258,6 @@
     "daily note/2024/9/2024-09-06.md",
     "Spaces/Home/VisualStudioCode/Node",
     "Spaces/Home/VisualStudioCode",
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Images/Node",
     "Images/JS",
     "Spaces/Home/Java Script/Jquery",
