@@ -113,8 +113,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -213,7 +212,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2481f6a93b07cc76",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "daily note/2024/9/2024-09-19.md",
     "daily note/2024/9/2024-09-20.md",
