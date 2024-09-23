@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-23.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,8 +113,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -134,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-23.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-23.md"
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
               }
             }
           },
@@ -172,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-23.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,8 +214,10 @@
   },
   "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "daily note/2024/9/2024-09-20.md",
+    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
+    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "daily note/2024/9/2024-09-23.md",
+    "daily note/2024/9/2024-09-20.md",
     "daily note/2024/9/2024-09-19.md",
     "daily note/2024/9/2024-09-13.md",
     "daily note/2024/9/2024-09-12.md",
@@ -246,7 +247,6 @@
     "Spaces/Home/VisualStudioCode/Node/Node.js실행.md",
     "Images/vscode",
     "Spaces/Home/Java Script/공부 해야 될것.md",
-    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js DB 연동.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
     "daily note/2024/9/2024-09-10.md",
@@ -255,7 +255,6 @@
     "Spaces/Home/Java Script/Node.js/Project",
     "Spaces/Home/Java Script/Node.js/Node",
     "Spaces/Home/Java Script/Node.js/Module",
-    "daily note/2024/9/2024-09-09.md",
     "Spaces/Home/VisualStudioCode/Node",
     "Spaces/Home/VisualStudioCode",
     "Images/Node",
