@@ -182,3 +182,6 @@ export default class App extends Component {
 
 ---
 출처 - https://velog.io/@yeonah/%EC%9B%B9%EB%B7%B0Webview%EA%B0%80-%EB%AD%90%EC%95%BC
+
+
+https://hammerbrother.tistory.com/entry/App%EC%97%90%EC%84%9C-%EC%9B%B9%EB%B7%B0WebView%EB%8A%94-%EC%99%9C-%EC%93%B0%EB%8A%94-%EA%B2%83%EC%9D%BC%EA%B9%8C-%EC%9B%B9%EB%B7%B0%EC%9D%98-%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90-%EC%9B%B9%EB%B7%B0%EB%9E%80
