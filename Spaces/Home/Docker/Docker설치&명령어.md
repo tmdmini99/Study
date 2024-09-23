@@ -308,5 +308,26 @@ database.xml로 변경 해줘야함
 도커로 연결시 주로 데이터베이스의 시간대와 애플리케이션의 시간대가 서로 맞지 않거나, 애플리케이션 서버가 사용하는 JVM에 해당 시간대 정보가 없을 때 발생.
 
 
+
+
+
+
+
+```
+docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+
+docker exec -it my-postgres bash
+
+psql -U postgres
+
+ALTER USER postgres PASSWORD '새로운비밀번호';
+```
+
+
+
+
+
+
+
 ---
 참조 - https://firework-ham.tistory.com/62
