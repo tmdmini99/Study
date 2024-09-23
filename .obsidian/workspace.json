@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/API/PostMan.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -133,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/API/PostMan.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
+                "file": "Spaces/Home/API/PostMan.md"
               }
             }
           },
@@ -171,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/API/PostMan.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -214,8 +214,9 @@
   },
   "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
+    "Spaces/Home/API/Open API.md",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "daily note/2024/9/2024-09-23.md",
     "daily note/2024/9/2024-09-20.md",
     "daily note/2024/9/2024-09-19.md",
@@ -251,7 +252,6 @@
     "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
     "daily note/2024/9/2024-09-10.md",
     "Spaces/Home/Java Script/Node.js/Module/Node.js CSV.md",
-    "Spaces/Home/Java Script/Node.js/Module/Path.md",
     "Spaces/Home/Java Script/Node.js/Project",
     "Spaces/Home/Java Script/Node.js/Node",
     "Spaces/Home/Java Script/Node.js/Module",

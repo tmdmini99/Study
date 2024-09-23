@@ -604,9 +604,17 @@ const processData = async () => {
 
       } else if (URL.includes('?')) {
 
-        URL = URL.split('?')[0];
+        // URL에 '?'가 포함된 경우, 그 뒤에 'status'가 있는지 확인
 
-        // console.log(`Processing URL without query parameters: ${URL}`);
+        if (!URL.includes('?status')) {
+
+          // 'status'가 없으면 '?' 이전 부분까지만 유지
+
+          URL = URL.split('?')[0];
+
+          // console.log(`Processing URL without query parameters: ${URL}`);
+
+        }
 
       }
 
