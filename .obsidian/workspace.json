@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "daily note/2024/9/2024-09-25.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,7 +113,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -133,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "daily note/2024/9/2024-09-25.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
+                "file": "daily note/2024/9/2024-09-25.md"
               }
             }
           },
@@ -171,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "daily note/2024/9/2024-09-25.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -214,8 +215,9 @@
   },
   "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+    "daily note/2024/9/2024-09-25.md",
+    "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "daily note/2024/9/2024-09-24.md",
     "Spaces/Home/WebView/WebView.md",
@@ -250,7 +252,6 @@
     "daily note/2024/9/2024-09-13.md",
     "daily note/2024/9/2024-09-12.md",
     "daily note/2024/9/2024-09-11.md",
-    "Spaces/Home/Java/Exception/Exception.md",
     "Images/Exception",
     "Images/vscode",
     "Spaces/Home/Java Script/Node.js/Project",
