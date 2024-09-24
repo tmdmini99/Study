@@ -13,46 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/9/2024-09-25.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ec2b3c03e1708e6e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d2d8d360d921dc21",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fae05c5ac971717a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Home/Java/Exception/Exception.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -134,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/9/2024-09-25.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/9/2024-09-25.md"
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
               }
             }
           },
@@ -172,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/9/2024-09-25.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -215,10 +175,11 @@
   },
   "active": "2481f6a93b07cc76",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
-    "daily note/2024/9/2024-09-25.md",
-    "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
+    "daily note/2024/9/2024-09-25.md",
+    "Spaces/Home/Java/Exception/Exception.md",
+    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+    "Spaces/Home/DB/PostGre.md",
     "daily note/2024/9/2024-09-24.md",
     "Spaces/Home/WebView/WebView.md",
     "Images/Pasted image 20240923164019.png",
@@ -251,7 +212,6 @@
     "daily note/2024/9/2024-09-19.md",
     "daily note/2024/9/2024-09-13.md",
     "daily note/2024/9/2024-09-12.md",
-    "daily note/2024/9/2024-09-11.md",
     "Images/Exception",
     "Images/vscode",
     "Spaces/Home/Java Script/Node.js/Project",
