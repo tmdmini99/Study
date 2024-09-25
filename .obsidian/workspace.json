@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "14348f01ccf812be",
+        "id": "235ff74cb7652621",
         "type": "tabs",
         "children": [
           {
-            "id": "2481f6a93b07cc76",
+            "id": "c9cca1f82321bd6a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,12 +173,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2481f6a93b07cc76",
+  "active": "c9cca1f82321bd6a",
   "lastOpenFiles": [
+    "Images/tiles 1.png",
+    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+    "Spaces/Home/Spring/Maven/Maven.md",
+    "Spaces/Home/Spring/Spring Legacy/Tiles",
+    "Spaces/Home/Spring/Security.md",
+    "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
+    "Spaces/Home/Spring/Spring Framework.md",
+    "Spaces/Home/Spring/Filter.md",
+    "Spaces/Home/Network/Server&Client.md",
+    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+    "File/springframework_setting-main.zip",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "daily note/2024/9/2024-09-25.md",
     "Spaces/Home/Java/Exception/Exception.md",
-    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2024/9/2024-09-24.md",
     "Spaces/Home/WebView/WebView.md",
@@ -191,7 +201,6 @@
     "Images/Pasted image 20240923163907.png",
     "Images/Pasted image 20240923163856.png",
     "Images/Pasted image 20240923163850.png",
-    "Images/Pasted image 20240923163835.png",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/WebView",
     "Spaces/Home/DB/PostgreSql.md",
@@ -204,14 +213,6 @@
     "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/workspace/Cafe24 개발.md",
     "Spaces/Home/Docker/라이브러리 오류.md",
-    "Spaces/Home/Docker/Docker.md",
-    "Spaces/Home/API/PostMan.md",
-    "Spaces/Home/API/Open API.md",
-    "daily note/2024/9/2024-09-23.md",
-    "daily note/2024/9/2024-09-20.md",
-    "daily note/2024/9/2024-09-19.md",
-    "daily note/2024/9/2024-09-13.md",
-    "daily note/2024/9/2024-09-12.md",
     "Images/Exception",
     "Images/vscode",
     "Spaces/Home/Java Script/Node.js/Project",
@@ -219,8 +220,6 @@
     "Spaces/Home/Java Script/Node.js/Module",
     "Spaces/Home/VisualStudioCode/Node",
     "Spaces/Home/VisualStudioCode",
-    "Images/Node",
-    "Images/JS",
     "무제 파일.canvas"
   ]
 }
