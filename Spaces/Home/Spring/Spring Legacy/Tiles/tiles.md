@@ -97,6 +97,50 @@ Template의 빈 공간을 채우기 위하여 사용되는 정보로 3가지 타
 </bean>
 ```
 
+또는
+
+```xml
+ <!-- Tiles -->
+    <beans:bean id="tilesConfigurer" 
+                class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <beans:property name="definitions">
+            <beans:list>
+                <beans:value>/WEB-INF/tiles/tiles.xml</beans:value>
+            </beans:list>
+        </beans:property>
+    </beans:bean>        
+    <beans:bean id="tilesViewResolver" 
+                class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <beans:property name="viewClass" 
+                        value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        <beans:property name="order" value="1" />
+    </beans:bean>
+    
+    <!-- viewResolver 설정 (사용자 view의 위치, 확장명 설정) -->	
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <beans:property name="prefix" value="/WEB-INF/views/" />
+      <beans:property name="suffix" value=".jsp" />
+      <beans:property name="order" value="2" />
+    </beans:bean> 
+
+```
+
+
+Tiles 세팅이 우선순위에 있어서 1순위 이기 때문에 아래의 코드를 통해 1순위로 지정을 해주었고
+
+```xml
+<beans:property name="order" value="1" />
+```
+
+기존의 viewResolver는 2순위로 지정해 주었습니다.
+
+```xml
+<beans:property name="order" value="2" />
+```
+
+한마디로 view(JSP파일)를 불러올 때 tiles를 우선순위로 두겠다는 소리입니다.
+
+
 
 ```java
 // Java Config 설정시
