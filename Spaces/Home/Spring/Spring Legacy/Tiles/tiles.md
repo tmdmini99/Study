@@ -226,6 +226,26 @@ public class TilesConfig {
 ```
 
 
+\<put-attribute name="body" value="/WEB-INF/jsp/views/{1}/{2}.jsp" />에서 `{1}`과 `{2}`는 요청 경로의 각 부분에 해당하는 동적 변수를 나타냅니다.
+
+```jsp
+http://localhost:8080/yourapp/login/user
+```
+
+여기서 `login`이 첫 번째 경로 파트, `user`가 두 번째 경로 파트가 됩니다.
+
+- `{1}`: 요청 경로의 첫 번째 부분, 이 경우 `login`
+- `{2}`: 요청 경로의 두 번째 부분, 이 경우 `user`
+
+따라서 위의 설정을 통해 다음과 같은 경로의 JSP 파일이 선택됩니다:
+
+bash
+
+코드 복사
+
+/WEB-INF/jsp/views/login/user.jsp
+
+이 방식은 URL 패턴을 동적으로 처리할 수 있어, 다양한 경로에 대한 JSP 파일을 하나의 패턴으로 렌더링할 수 있게 해줍니다.
 
 ```jsp
 // default.jsp
