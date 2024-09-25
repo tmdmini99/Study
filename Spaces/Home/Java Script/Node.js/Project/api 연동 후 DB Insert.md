@@ -119,7 +119,7 @@ module.exports = router;
 
 // CSV 파일 경로와 출력 디렉토리 설정
 
-const csvFolderPath = path.join(__dirname, '../csv2'); // 엑셀 폴더 경로
+const csvFolderPath = path.join(__dirname, '../csv3'); // 엑셀 폴더 경로
 
 const outputDir = path.join(__dirname, '../shopify'); // 파일 저장 폴더
 
@@ -230,8 +230,260 @@ const jsonFilePath = path.join(outputDir, 'api_data.json');
 // CSV 데이터와 API JSON 데이터를 처리하는 함수
 
   
----
 
+//------------------------------------------
+
+  
+
+// 제일 마지막 process 코드
+
+// const processData = async () => {
+
+//   try {
+
+//     // 1. 모든 CSV 파일에서 데이터 읽기
+
+//     const csvData = await readAllCsvFilesInFolder(csvFolderPath, ['분류1', '분류2', '분류3', 'URL', 'METHOD']);
+
+//     // 2. METHOD가 'GET'인 데이터 필터링
+
+//     const getRequests = csvData.filter(item => item.METHOD.toLowerCase() === 'get');
+
+//     // 3. 각 CSV 데이터에 대해 API 요청 및 JSON 파일 저장
+
+//     for (const item of getRequests) {
+
+//       let { '분류1': category1, '분류2': category2, '분류3': category3, URL } = item;
+
+  
+
+//       // URL 유효성 확인
+
+//       if (!URL || /{.*?}/.test(URL)) {
+
+//         // console.log(`Skipping invalid URL: ${URL}`);
+
+//         continue;
+
+//       } else if (URL.includes('?')) {
+
+//         // URL에 '?'가 포함된 경우, 그 뒤에 'status'가 있는지 확인
+
+//         if (!URL.includes('?status')) {
+
+//           // 'status'가 없으면 '?' 이전 부분까지만 유지
+
+//           URL = URL.split('?')[0];
+
+//           // console.log(`Processing URL without query parameters: ${URL}`);
+
+//         }
+
+//       }
+
+  
+
+//       const baseURL = 'https://kpopmerch-inc.myshopify.com'; // Base URL
+
+//       // console.log(`Making request to: ${baseURL}${URL}`);
+
+  
+
+//       let hasNextPage = true;
+
+//       let pageInfo = '';
+
+  
+
+//       while (hasNextPage) {
+
+//         // 페이지네이션을 처리하기 위해 page_info가 있으면 URL에 추가
+
+//         const apiUrl = pageInfo ? `${baseURL}${URL}?limit=50&page_info=${pageInfo}` : `${baseURL}${URL}?limit=50`;
+
+  
+
+//         const apiOptions = {
+
+//           method: 'GET',
+
+//           url: apiUrl, // 절대 경로로 URL을 결합
+
+//           headers: {
+
+//             'Content-Type': 'application/json',
+
+//             'X-Shopify-Access-Token': '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',
+
+//           },
+
+//         };
+
+  
+
+//         try {
+
+//           // API 요청으로 JSON 데이터 가져오기
+
+//           const response = await axios(apiOptions);
+
+//           const jsonData = response.data;
+
+  
+
+//           // 테이블명 설정
+
+//           const tableName = Object.keys(jsonData)[0]; // "webhooks"
+
+//           const records = jsonData[tableName]; // "webhooks" 배열 데이터
+
+  
+
+//           // JSON 데이터를 파일로 저장할 디렉토리 구조 설정
+
+//           const category1Dir = path.join(outputDir, category1);
+
+//           const category2Dir = path.join(category1Dir, category2);
+
+//           const category3Dir = path.join(category2Dir, category3);
+
+  
+
+//           if (!fs.existsSync(category3Dir)) {
+
+//             fs.mkdirSync(category3Dir, { recursive: true });
+
+//             console.log(`Created directories: ${category3Dir}`);
+
+//           }
+
+  
+
+//           // URL에서 파일 이름 추출하고 확장자 추가
+
+//           const fileName = path.basename(URL); // 'products.json'처럼 확장자 추가
+
+//           const jsonFileName = path.join(category3Dir, `${fileName}`);
+
+  
+
+//           let existingData = {};
+
+//           // 파일이 이미 존재하면 기존 데이터를 읽어들임
+
+//           if (fs.existsSync(jsonFileName)) {
+
+//             const existingFileContent = fs.readFileSync(jsonFileName, 'utf8');
+
+//             existingData = JSON.parse(existingFileContent); // 기존 데이터를 JSON으로 변환
+
+//           }
+
+  
+
+//           // 새로운 데이터를 기존 데이터와 병합
+
+//           if (existingData[tableName]) {
+
+//             existingData[tableName] = [...existingData[tableName], ...records]; // 배열을 합침
+
+//           } else {
+
+//             existingData[tableName] = records; // 처음 생성할 때
+
+//           }
+
+  
+
+//           // JSON 파일로 병합된 데이터 저장
+
+//           fs.writeFileSync(jsonFileName, JSON.stringify(existingData, null, 2), 'utf8');
+
+//           // console.log(`JSON data successfully updated and saved to ${jsonFileName}.`);
+
+  
+
+//           // 4. API 응답 데이터를 데이터베이스에 삽입
+
+//           await insertDataIntoTable(jsonData, `${URL}`); // 테이블 삽입 함수 호출
+
+//           // console.log(`Data inserted into table from ${URL}`);
+
+  
+
+//           // Shopify API의 Link 헤더에서 페이지네이션 정보 확인
+
+//           const linkHeader = response.headers['link'];
+
+//           console.log(`Link header: ${linkHeader}`);
+
+  
+
+//           // 페이지네이션 처리
+
+//           if (linkHeader) {
+
+//             const nextLinkMatch = linkHeader.match(/<([^>]+)>;\s*rel="next"/);
+
+//             console.log(nextLinkMatch);
+
+//             if (nextLinkMatch) {
+
+//               const nextUrl = nextLinkMatch[1];
+
+//               const nextPageInfoMatch = nextUrl.match(/page_info=([^&]*)/);
+
+//               if (nextPageInfoMatch) {
+
+//                 pageInfo = nextPageInfoMatch[1];
+
+//                 console.log(`Next page info: ${pageInfo}`);
+
+//               } else {
+
+//                 hasNextPage = false;
+
+//               }
+
+//             } else {
+
+//               hasNextPage = false;
+
+//             }
+
+//           } else {
+
+//             hasNextPage = false;
+
+//           }
+
+  
+
+//         } catch (apiErr) {
+
+//           console.error(`Error making API request to ${URL}:`, apiErr.message || apiErr);
+
+//           hasNextPage = false; // 에러 발생 시 페이지네이션 종료
+
+//         }
+
+//       }
+
+//     }
+
+  
+
+//   } catch (err) {
+
+//     console.error('Error processing data:', err.message || err);
+
+//   }
+
+// };
+
+  
+
+//------------------------------------------
 
   
 
@@ -257,15 +509,11 @@ const processData = async () => {
 
       // URL 유효성 확인
 
-      if (!URL || /{.*?}/.test(URL)) {
-
-        continue;
-
-      } else if (URL.includes('?')) {
+      if (URL.includes('?')) {
 
         // URL에 '?'가 포함된 경우, 그 뒤에 'status'가 있는지 확인
 
-        if (!URL.includes('?status')) {
+        if (!URL.includes('?status=any')) {
 
           // 'status'가 없으면 '?' 이전 부분까지만 유지
 
@@ -275,7 +523,11 @@ const processData = async () => {
 
       }
 
-  
+      if (!URL || /{.*?}/.test(URL) || URL.endsWith("search.json")) {
+
+        continue;
+
+      }
 
       const baseURL = 'https://kpopmerch-inc.myshopify.com'; // Base URL
 
@@ -343,7 +595,7 @@ const processData = async () => {
 
           // JSON 데이터를 파일로 저장할 디렉토리 구조 설정
 
-          const category1Dir = path.join(outputDirs, category1);
+          const category1Dir = path.join(outputDir, category1);
 
           const category2Dir = path.join(category1Dir, category2);
 
@@ -357,7 +609,7 @@ const processData = async () => {
 
           // 파일 이름을 고정 (orders.json)
 
-          const fileName = `${tableName}.json`;
+          const fileName = path.basename(URL.includes('?') ? URL.split('?')[0] : URL);  // 'products.json'처럼 확장자 추가
 
           const jsonFileName = path.join(category3Dir, fileName);
 
@@ -474,6 +726,11 @@ async function insertDataIntoTable(jsonData, url) {
 
   let records = jsonData[tableName]; // 데이터 (여기서는 단일 값 57741)
 
+    // console.log('ffffffffffffff',records,'dddddd');
+
+    // console.log(Array.isArray(records),'data');  
+
+    // console.log('s',jsonData,'dddddd');
 
   // "count"일 때 테이블 이름 변경
 
@@ -483,6 +740,11 @@ async function insertDataIntoTable(jsonData, url) {
 
     finalTableName = `${url.split('/').slice(-2, -1)[0]}_count`; // URL의 마지막 부분에서 테이블 이름 결정
 
+    // console.log(finalTableName);
+
+    // console.log(typeof(records));
+
+    // console.log(records !== null);
 
   }else if(tableName ==='transactions'){
 
@@ -510,7 +772,23 @@ async function insertDataIntoTable(jsonData, url) {
 
       const keys = Object.keys(record);
 
+    //   const values = keys.map(key => record[key]);
 
+    //   const values = keys.map((key) => {
+
+    //     // 값이 객체나 배열인 경우 문자열로 변환
+
+    //     if (typeof record[key] === 'object' && record[key] !== null) {
+
+    //         return JSON.stringify(record[key]);
+
+    //     }
+
+    //     // 그 외의 경우는 원래 값을 그대로 반환
+
+    //     return record[key];
+
+    // });
 
     const values = keys.map((key) => {
 
@@ -552,7 +830,69 @@ async function insertDataIntoTable(jsonData, url) {
 
   });
 
+//   const values = keys.map((key) => {
 
+//     const value = record[key];
+
+  
+
+//     // 값이 배열인 경우
+
+//     if (Array.isArray(value)) {
+
+//         // 배열이 비어 있는 경우 공백 문자열 반환
+
+//         if (value.length === 0) {
+
+//             return "''";  // 빈 문자열로 처리
+
+//         }
+
+  
+
+//         // 배열을 쉼표로 구분된 문자열로 변환
+
+//         return `'${value.map(item => item.toString().replace(/"/g, '""')).join(',')}'`;
+
+//     } else if (typeof value === 'object' && value !== null) {
+
+//         // 값이 객체인 경우 JSON 문자열로 변환 (단일 인용부호 제거)
+
+//         return JSON.stringify(value);  // JSON 객체는 그대로 전달
+
+//     }
+
+  
+
+//     // 특정 필드가 timestamp와 같이 빈 문자열을 허용하지 않는 경우 null로 처리
+
+//     if (key === 'timestamp_field_name' && (value === '' || value === null)) {
+
+//         return null;  // 'null' 문자열이 아닌 실제 null 값
+
+//     }
+
+  
+
+//     // 값이 null이거나 빈 문자열이면 처리
+
+//     if (value === null || value === '') {
+
+//         return null;  // null 값으로 처리
+
+//     }
+
+  
+
+//     // 그 외의 경우는 원래 값을 그대로 반환
+
+//     return value;
+
+// });
+
+  
+  
+  
   
   
   
@@ -665,7 +1005,7 @@ async function insertDataIntoTable(jsonData, url) {
 
 // 데이터 처리 함수 실행
 
-// processData();
+processData();
 
   
 
@@ -683,15 +1023,27 @@ const processSingleApiData = async () => {
 
     let category3 = 'Orders Properties'; // 분류3
 
-    let URL = '/admin/api/2024-07/customers.json'; // API의 특정 URL
+    let URL = '/admin/api/2024-07/gift_cards.json'; // API의 특정 URL
 
   
 
     // URL 유효성 확인
 
-    if (!URL || /{.*?}/.test(URL)) {
+    if (URL.includes('?')) {
 
-      console.log(`Skipping invalid URL: ${URL}`);
+      // URL에 '?'가 포함된 경우, 그 뒤에 'status'가 있는지 확인
+
+      if (!URL.includes('?status=any')) {
+
+        // 'status'가 없으면 '?' 이전 부분까지만 유지
+
+        URL = URL.split('?')[0];
+
+      }
+
+    }
+
+    if (!URL || /{.*?}/.test(URL) || URL.endsWith("search.json")) {
 
       return;
 
@@ -795,7 +1147,7 @@ const processSingleApiData = async () => {
 
         // 파일 이름을 고정 (orders.json)
 
-        const fileName = `${tableName}.json`;
+        const fileName = path.basename(URL.includes('?') ? URL.split('?')[0] : URL);  // 'products.json'처럼 확장자 추가
 
         const jsonFileName = path.join(category3Dir, fileName);
 
@@ -854,8 +1206,6 @@ const processSingleApiData = async () => {
         // API 응답 데이터를 데이터베이스에 삽입
 
         await insertDataIntoTable(jsonData, URL); // 테이블 삽입 함수 호출
-
-  
 
         // Shopify API의 Link 헤더에서 페이지네이션 정보 확인
 
@@ -919,7 +1269,7 @@ const processSingleApiData = async () => {
 
 // 함수 실행
 
-processSingleApiData();
+// processSingleApiData();
 ```
 
 
