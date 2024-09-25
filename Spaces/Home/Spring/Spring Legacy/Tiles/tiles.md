@@ -239,11 +239,10 @@ http://localhost:8080/yourapp/login/user
 
 따라서 위의 설정을 통해 다음과 같은 경로의 JSP 파일이 선택됩니다:
 
-bash
 
-코드 복사
-
+```
 /WEB-INF/jsp/views/login/user.jsp
+```
 
 이 방식은 URL 패턴을 동적으로 처리할 수 있어, 다양한 경로에 대한 JSP 파일을 하나의 패턴으로 렌더링할 수 있게 해줍니다.
 
