@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Theme/Theme.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Theme/Theme.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
+                "file": "Spaces/Home/Spring/Theme/Theme.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Theme/Theme.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,17 @@
   },
   "active": "c9cca1f82321bd6a",
   "lastOpenFiles": [
+    "Images/Pasted image 20240926091204.png",
+    "Images/Pasted image 20240926091202.png",
+    "Images/Pasted image 20240926091153.png",
+    "Images/Pasted image 20240926091147.png",
+    "Images/Pasted image 20240926091141.png",
+    "Images/Pasted image 20240926091118.png",
+    "Images/Pasted image 20240926091108.png",
+    "Images/Pasted image 20240926091058.png",
+    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+    "Spaces/Home/Spring/Theme/Theme.md",
+    "Spaces/Home/Spring/Theme",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Images/tiles 1.png",
     "Spaces/Home/Spring/Maven/Maven.md",
@@ -184,7 +195,6 @@
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Network/Server&Client.md",
-    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "File/springframework_setting-main.zip",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "daily note/2024/9/2024-09-25.md",
@@ -194,13 +204,6 @@
     "Spaces/Home/WebView/WebView.md",
     "Images/Pasted image 20240923164019.png",
     "Images/Pasted image 20240923164016.png",
-    "Images/Pasted image 20240923164005.png",
-    "Images/Pasted image 20240923163931.png",
-    "Images/Pasted image 20240923163919.png",
-    "Images/Pasted image 20240923163914.png",
-    "Images/Pasted image 20240923163907.png",
-    "Images/Pasted image 20240923163856.png",
-    "Images/Pasted image 20240923163850.png",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/WebView",
     "Spaces/Home/DB/PostgreSql.md",
@@ -212,14 +215,12 @@
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Spaces/Cafe24/workspace/Cafe24 개발.md",
-    "Spaces/Home/Docker/라이브러리 오류.md",
     "Images/Exception",
     "Images/vscode",
     "Spaces/Home/Java Script/Node.js/Project",
     "Spaces/Home/Java Script/Node.js/Node",
     "Spaces/Home/Java Script/Node.js/Module",
     "Spaces/Home/VisualStudioCode/Node",
-    "Spaces/Home/VisualStudioCode",
     "무제 파일.canvas"
   ]
 }
