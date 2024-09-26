@@ -25,13 +25,13 @@
         
         ![image.png](Blue&Green2.png)
         
-        ![image.png](image%202.png)
+        ![image.png](DB%20Monitoring3.png)
         
     - Parameter Group의 binlog_format 확인
         
         ![image.png](Blue&Green3.png)
         
-        ![image.png](image%204.png)
+        ![image.png](DB%20Monitoring7.png)
         
         ![image.png](Blue&Green4.png)
         
@@ -162,4 +162,5 @@
 
 ![Blue&Green29.png](Blue&Green29.png)
 
-[다음 실습 : DB Monitoring in RDS](https://www.notion.so/3-DB-Monitoring-in-RDS-fffcadd332698126ac6ce4173fa9e04c?pvs=21)
+
+

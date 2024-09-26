@@ -8,7 +8,7 @@
 
 
 
-![[Pasted image 20240923163829.png]]
+![[WebView1.png]]
 
 
 
@@ -22,7 +22,7 @@
 ## ❓ 일반 브라우저랑 뭐가 다른데
 
 
-![[Pasted image 20240923163835.png]]
+![[WebView2.png]]
 
 - 웹뷰를 사용하면 **웹 콘텐츠**를 **네이티브 앱 뷰**와 같이 사용자에게 보여줌
 - 일반 웹 브라우저와 달리 웹뷰에는 주소창, 새로고침, 즐겨찾기와 같은 기능은 없고 **단순히 웹페이지만 보여줌**
@@ -59,7 +59,7 @@
 ### 1-1. React Native CLI
 
 
-![[Pasted image 20240923163850.png]]
+![[WebView3.png]]
 
 
 ### 1-2. Expo CLI (추천)
@@ -67,7 +67,7 @@
 ReactNative를 조금 더 프레임워크화 한 편한 툴
 
 
-![[Pasted image 20240923163856.png]]
+![[WebView4.png]]
 
 
 
@@ -77,17 +77,17 @@ Expo CLI를 사용했습니다!
 
 ### 2-1. 프로젝트 설정
 
-![[Pasted image 20240923163907.png]]
+![[WebView5.png]]
 
 ### 2-2. 웹뷰 추가
 
 
-![[Pasted image 20240923163914.png]]
+![[WebView6.png]]
 
 ### 2-3.결과
 
 
-![[Pasted image 20240923163919.png]]
+![[WebView7.png]]
 
 
 > 2-2 webview라이브러리만 설치하면 자동으로 웹뷰로 감싼 프로젝트가 생성되는 줄 알았는데, 직적 import해서 쳐야 함! 아래 코드 복사!
@@ -130,7 +130,7 @@ export default class App extends Component {
 
 
 
-![[Pasted image 20240923163931.png]]
+![[WebView8.png]]
 
 
 
@@ -155,7 +155,7 @@ export default class App extends Component {
 - injectedJavaScript 프로퍼티
 - injectJavaScript 메서드
 
-![[Pasted image 20240923164005.png]]
+![[WebView9.png]]
 
 
 - > **(삽질금지)** injectJavaScript만 사용하더라도, onMessage도 스크린샷과 같이 넣어줘야 받을 수 있다.
@@ -167,10 +167,10 @@ export default class App extends Component {
 - postMessage 메서드
 
 
-![[Pasted image 20240923164016.png]]
+![[WebView10.png]]
 
 
-![[Pasted image 20240923164019.png]]
+![[WebView11.png]]
 
 
 **추가 설명**
