@@ -417,6 +417,54 @@ public class MenuVO {
 
 
 
+## 중요
+
+
+```java
+@Controller
+public class HomeController {
+    @GetMapping("/")
+    public String index() {
+        return "home"; // => home.jsp 출력
+    }
+}
+
+```
+
+
+ 여기서 return 하는 home이
+
+```xml
+<definition name="*" extends="tiles-default">
+    <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+</definition>
+
+```
+
+여기서 \*에 들어감
+
+만약 
+
+```java
+@GetMapping("/test")  
+public String test() {  
+    return "test/test"; // => home.jsp 출력  
+}
+```
+
+
+```xml
+<definition name="*/*" extends="tiles-default">
+		<put-attribute name="body" value="/WEB-INF/jsp/main/{1}/{2}.jsp" />
+	</definition>
+```
+
+여기서 test/test 가   \*/\*에 들어감
+
+
+
+
+
 
 
 
