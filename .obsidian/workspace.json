@@ -13,10 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/AWS/aws.md",
+                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "e0275514481c55be",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/rds9.png"
+              }
+            }
+          },
+          {
+            "id": "8fcbbc31444da6bf",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/rds8.png"
+              }
+            }
+          },
+          {
+            "id": "d92900846d487fa2",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/rds7.png"
               }
             }
           }
@@ -74,7 +104,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/AWS/aws.md",
+                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/AWS/aws.md"
+                "file": "Spaces/Home/AWS/1. RDS Provisioning.md"
               }
             }
           },
@@ -132,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/AWS/aws.md",
+                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,20 +206,21 @@
   },
   "active": "c9cca1f82321bd6a",
   "lastOpenFiles": [
-    "Images/Pasted image 20240926094749.png",
-    "Images/Pasted image 20240926094730.png",
-    "Images/Pasted image 20240926094721.png",
-    "Images/Pasted image 20240926094706.png",
-    "Images/image.png",
-    "Spaces/Home/AWS/aws.md",
+    "Images/rds9.png",
+    "Spaces/Home/AWS/1. RDS Provisioning.md",
+    "Images/rds8.png",
+    "Images/rds7.png",
+    "Images/rds6.png",
+    "Images/rds5.png",
+    "Images/rds4.png",
+    "Images/rds3.png",
+    "Images/rds2.png",
+    "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
+    "Images/rds1.png",
+    "Images/image 10.avif",
+    "Images/image 9.avif",
     "Spaces/Home/Spring/Theme/Theme.md",
     "Spaces/Home/AWS",
-    "Images/Pasted image 20240926091204.png",
-    "Images/Pasted image 20240926091202.png",
-    "Images/Pasted image 20240926091153.png",
-    "Images/Pasted image 20240926091147.png",
-    "Images/Pasted image 20240926091141.png",
-    "Images/Pasted image 20240926091118.png",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "Spaces/Home/Spring/Theme",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
@@ -215,7 +247,6 @@
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
-    "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
     "Images/Exception",
     "Images/vscode",
     "Spaces/Home/Java Script/Node.js/Project",
