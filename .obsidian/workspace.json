@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
+                "file": "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,32 +21,82 @@
             }
           },
           {
-            "id": "e0275514481c55be",
+            "id": "a514132d8f22c70f",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/rds9.png"
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green29.png"
               }
             }
           },
           {
-            "id": "8fcbbc31444da6bf",
+            "id": "77d5a639cf5a2e9c",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/rds8.png"
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green28.png"
               }
             }
           },
           {
-            "id": "d92900846d487fa2",
+            "id": "60851edc70d9ad40",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/rds7.png"
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green27.png"
+              }
+            }
+          },
+          {
+            "id": "d57643cf45a2c3ba",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green26.png"
+              }
+            }
+          },
+          {
+            "id": "dbdffea04ecb25af",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green25.png"
+              }
+            }
+          },
+          {
+            "id": "2579f0f71345932b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green24.png"
+              }
+            }
+          },
+          {
+            "id": "fab70e72a013e6ff",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green23.png"
+              }
+            }
+          },
+          {
+            "id": "d7ea7442712ec08a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/ASW/Blue&amp;Green/Blue&Green22.png"
               }
             }
           }
@@ -125,7 +175,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
+                "file": "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/AWS/1. RDS Provisioning.md"
+                "file": "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md"
               }
             }
           },
@@ -163,7 +213,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
+                "file": "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -206,32 +256,38 @@
   },
   "active": "c9cca1f82321bd6a",
   "lastOpenFiles": [
-    "Images/rds9.png",
-    "Spaces/Home/AWS/1. RDS Provisioning.md",
-    "Images/rds8.png",
-    "Images/rds7.png",
-    "Images/rds6.png",
-    "Images/rds5.png",
-    "Images/rds4.png",
-    "Images/rds3.png",
-    "Images/rds2.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green29.png",
     "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
-    "Images/rds1.png",
-    "Images/image 10.avif",
-    "Images/image 9.avif",
+    "Images/ASW/Blue&amp;Green/Blue&Green28.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green27.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green26.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green25.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green24.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green23.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green22.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green21.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green20.png",
+    "Images/ASW/Blue&amp;Green/Blue&Green19.png",
+    "Images/All Spring",
+    "Images/Android",
+    "Spaces/Home/AWS/1. RDS Provisioning.md",
+    "Images/All SQL",
+    "Images/Network",
+    "Images/JAVA",
+    "Images/ASW/Blue&amp;Green",
+    "Images/tiles",
+    "Images/ASW/RDS",
+    "Images/ASW",
     "Spaces/Home/Spring/Theme/Theme.md",
     "Spaces/Home/AWS",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
-    "Spaces/Home/Spring/Theme",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Spaces/Home/Spring/Maven/Maven.md",
-    "Spaces/Home/Spring/Spring Legacy/Tiles",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Network/Server&Client.md",
-    "File/springframework_setting-main.zip",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "daily note/2024/9/2024-09-25.md",
     "Spaces/Home/Java/Exception/Exception.md",
@@ -239,7 +295,6 @@
     "daily note/2024/9/2024-09-24.md",
     "Spaces/Home/WebView/WebView.md",
     "Spaces/Home/Docker/Docker설치&명령어.md",
-    "Spaces/Home/WebView",
     "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Cafe24/workspace/cafe24 node.js 프로젝트 파일.md",
@@ -247,11 +302,6 @@
     "Spaces/Cafe24/workspace/Cafe24 플러그인 적용.md",
     "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
-    "Images/Exception",
-    "Images/vscode",
-    "Spaces/Home/Java Script/Node.js/Project",
-    "Spaces/Home/Java Script/Node.js/Node",
-    "Spaces/Home/Java Script/Node.js/Module",
     "무제 파일.canvas"
   ]
 }

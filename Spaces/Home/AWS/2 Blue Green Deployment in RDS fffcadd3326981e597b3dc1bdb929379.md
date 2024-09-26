@@ -16,86 +16,86 @@
 
 ### 0. 실습 시작 전 구성도
 
-![image.png](image.png)
+![Blue&Green29.png](Blue&Green29.png)
 
 ### 1. 사전 구성 요소 확인
 
 - 이전 실습에서 생성한 RDS
     - RDS 자동 백업 활성화 확인
         
-        ![image.png](image%201.png)
+        ![image.png](Blue&Green2.png)
         
         ![image.png](image%202.png)
         
     - Parameter Group의 binlog_format 확인
         
-        ![image.png](image%203.png)
+        ![image.png](Blue&Green3.png)
         
         ![image.png](image%204.png)
         
-        ![image.png](image%205.png)
+        ![image.png](Blue&Green4.png)
         
 
 ### 2. Blue/Green Deployment 생성
 
-![image.png](image%206.png)
+![image.png](Blue&Green5.png)
 
 - 블루/그린 배포 식별자(`bg-deployment`) 입력
 - 블루/그린 배포 설정
     - 그린 데이터베이스의 엔진 버전 : 현재 버전(`MySQL 5.7.44-rds.20240808`)과 동일한 버전
     - 그린 데이터베이스의 DB 파라미터 그룹 선택 : 동일 DB 파라미터 그룹(`pg-mysql-57`)
     
-    ![image1.png](image1.png)
+    ![Blue&Green6.png](Blue&Green6.png)
     
     - 다른 설정은 모두 기본값
     - ‘스테이징 환경 생성’ 클릭
     
-    ![image1-1.png](image1-1.png)
+    ![Blue&Green7.png](Blue&Green7.png)
     
 
 ### 3. Blue/Green Deployment 생성 완료 확인
 
-![image3.png](image3.png)
+![Blue&Green8.png](Blue&Green8.png)
 
 ### 4. 현재 구성도
 
-![image.png](image%207.png)
+![image.png](Blue&Green9.png)
 
 ### 5. Green DB 엔진 버전 업그레이드
 
 - Green DB를 수정해 버전 업그레이드 진행
     
-    ![image3.png](image3%201.png)
+    ![image3.png](Blue&Green10.png)
     
 - DB 엔진 버전 : 8.0.39 선택
     
-    ![image4.png](image4.png)
+    ![Blue&Green11.png](Blue&Green11.png)
     
 - 추가 구성에서 DB 파라미터 그룹/옵션 그룹 선택
     - DB 파라미터 그룹 : `pg-mysql-80`
     - 옵션 그룹 : `mysql80-option-group`
     
-    ![image.png](image%208.png)
+    ![image.png](Blue&Green12.png)
     
 
 - 수정 내역 확인 및 즉시 적용
     
-    ![image.png](image%209.png)
+    ![image.png](Blue&Green13.png)
     
 
 ### 6. 버전 업그레이드 확인
 
-![image7.png](image7.png)
+![Blue&Green14.png](Blue&Green14.png)
 
 - Green DB의 상태가 ‘사용 가능’으로 변경되면 업그레이드 로그 확인
     
-    ![image8.png](image8.png)
+    ![Blue&Green15.png](Blue&Green15.png)
     
     - ‘로그’ 항목에서 PrePatchCompatibility.log 확인
     
-    ![image9.png](image9.png)
+    ![Blue&Green16.png](Blue&Green16.png)
     
-    ![image10.png](image10.png)
+    ![Blue&Green17.png](Blue&Green17.png)
     
 
 ### 7. Blue/Green Deployment 전환
@@ -115,51 +115,51 @@
     python3 simple_failover.py -e$DBENDPOINT -u$DBUSER -p$DBPASS
     ```
     
-    ![image17.png](image17.png)
+    ![Blue&Green18.png](Blue&Green18.png)
     
 - Blue/Green Deployment 전환 실행
     
-    ![image13.png](image13.png)
+    ![Blue&Green19.png](Blue&Green19.png)
     
     - Blue DB - Green DB 간 변경점 확인
     
-    ![image14.png](image14.png)
+    ![Blue&Green20.png](Blue&Green20.png)
     
     - 제한 시간 설정은 기본값(5분)
     - ‘전환’ 클릭
     
-    ![image15.png](image15.png)
+    ![Blue&Green21.png](Blue&Green21.png)
     
-    ![image16.png](image16.png)
+    ![Blue&Green22.png](Blue&Green22.png)
     
     - 전환 도중 Downtime 확인
         
-        ![image18.png](image18.png)
+        ![Blue&Green23.png](Blue&Green23.png)
         
 
 ### 8. 전환 결과 확인 및 리소스 삭제 진행
 
 - 전환 완료 후 구성도
     
-    ![image.png](image%2010.png)
+    ![image.png](Blue&Green24.png)
     
 
 - Blue/Green Deployment 삭제
     
-    ![image20.png](image20.png)
+    ![Blue&Green25.png](Blue&Green25.png)
     
 
-![image21.png](image21.png)
+![Blue&Green26.png](Blue&Green26.png)
 
 - Old Blue DB 삭제
     
-    ![image22.png](image22.png)
+    ![Blue&Green27.png](Blue&Green27.png)
     
-    ![image23.png](image23.png)
+    ![Blue&Green28.png](Blue&Green28.png)
     
 
 ### 9. 실습 완료 후 구성도
 
-![image.png](image.png)
+![Blue&Green29.png](Blue&Green29.png)
 
 [다음 실습 : DB Monitoring in RDS](https://www.notion.so/3-DB-Monitoring-in-RDS-fffcadd332698126ac6ce4173fa9e04c?pvs=21)
