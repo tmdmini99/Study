@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Theme/Theme.md",
+                "file": "Spaces/Home/AWS/aws.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Theme/Theme.md",
+                "file": "Spaces/Home/AWS/aws.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Theme/Theme.md"
+                "file": "Spaces/Home/AWS/aws.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Theme/Theme.md",
+                "file": "Spaces/Home/AWS/aws.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,19 +175,23 @@
   },
   "active": "c9cca1f82321bd6a",
   "lastOpenFiles": [
+    "Images/Pasted image 20240926094749.png",
+    "Images/Pasted image 20240926094730.png",
+    "Images/Pasted image 20240926094721.png",
+    "Images/Pasted image 20240926094706.png",
+    "Images/image.png",
+    "Spaces/Home/AWS/aws.md",
+    "Spaces/Home/Spring/Theme/Theme.md",
+    "Spaces/Home/AWS",
     "Images/Pasted image 20240926091204.png",
     "Images/Pasted image 20240926091202.png",
     "Images/Pasted image 20240926091153.png",
     "Images/Pasted image 20240926091147.png",
     "Images/Pasted image 20240926091141.png",
     "Images/Pasted image 20240926091118.png",
-    "Images/Pasted image 20240926091108.png",
-    "Images/Pasted image 20240926091058.png",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
-    "Spaces/Home/Spring/Theme/Theme.md",
     "Spaces/Home/Spring/Theme",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
-    "Images/tiles 1.png",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/Spring Legacy/Tiles",
     "Spaces/Home/Spring/Security.md",
@@ -202,8 +206,6 @@
     "Spaces/Home/DB/PostGre.md",
     "daily note/2024/9/2024-09-24.md",
     "Spaces/Home/WebView/WebView.md",
-    "Images/Pasted image 20240923164019.png",
-    "Images/Pasted image 20240923164016.png",
     "Spaces/Home/Docker/Docker설치&명령어.md",
     "Spaces/Home/WebView",
     "Spaces/Home/DB/PostgreSql.md",
@@ -214,13 +216,11 @@
     "Spaces/Cafe24/workspace/Cafe24 Access Token.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/무제 파일.md",
     "Spaces/Cafe24/workspace/Cafe24 API 종류/Store.md",
-    "Spaces/Cafe24/workspace/Cafe24 개발.md",
     "Images/Exception",
     "Images/vscode",
     "Spaces/Home/Java Script/Node.js/Project",
     "Spaces/Home/Java Script/Node.js/Node",
     "Spaces/Home/Java Script/Node.js/Module",
-    "Spaces/Home/VisualStudioCode/Node",
     "무제 파일.canvas"
   ]
 }
