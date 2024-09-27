@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/Annotation.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,7 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
@@ -220,7 +221,6 @@
     "Spaces/Home/Network/Server&Client.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "daily note/2024/9/2024-09-25.md",
-    "Spaces/Home/Java/Exception/Exception.md",
     "무제 파일.canvas"
   ]
 }
