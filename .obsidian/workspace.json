@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md"
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "daily note/2024/9/2024-09-27.md",
+    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Images/Android/Dialog/Dialog4.png",
     "Images/Android/Dialog/Dialog3.png",
     "Images/Android/Dialog/Dialog2.png",
@@ -186,7 +188,6 @@
     "Images/FrameWork/IntelliJ/IntelliJ Kotlin6.png",
     "Images/FrameWork/IntelliJ/IntelliJ Kotlin5.png",
     "Images/FrameWork/IntelliJ/IntelliJ Kotlin4.png",
-    "Images/FrameWork/IntelliJ/IntelliJ Kotlin20.png",
     "Images/FrameWork/IntelliJ",
     "Images/FrameWork",
     "Images/새 폴더",
@@ -198,7 +199,6 @@
     "Images/Network/WSL",
     "Spaces/Home/WebView/WebView.md",
     "Spaces/Home/Spring/Theme/Theme.md",
-    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Spaces/Home/AWS/4 RDS Failover with Multi-AZ fffcadd3326981a9861be1d152f5397e.md",
     "Spaces/Home/AWS/3 DB Monitoring in RDS fffcadd332698126ac6ce4173fa9e04c.md",
     "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
