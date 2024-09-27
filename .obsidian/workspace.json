@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +175,10 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
+    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "daily note/2024/9/2024-09-27.md",
-    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Images/Android/Dialog/Dialog4.png",
     "Images/Android/Dialog/Dialog3.png",
     "Images/Android/Dialog/Dialog2.png",
@@ -220,7 +221,6 @@
     "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Cafe24/workspace/cafe24 node.js 프로젝트 파일.md",
-    "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
     "무제 파일.canvas"
   ]
 }
