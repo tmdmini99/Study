@@ -463,6 +463,12 @@ public String test() {
 
 
 
+tiles 적용 시키지 않을때 header는 적용 시켜야 해서 넣어놨음
+```xml
+<definition name="login/login" template="/WEB-INF/views/login/login.jsp">  
+    <put-attribute name="header" value="/WEB-INF/tiles/layouts/header.jsp" />  
+</definition>
+```
 
 
 

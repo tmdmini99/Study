@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +175,7 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "daily note/2024/9/2024-09-27.md",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Images/Android/Dialog/Dialog4.png",
@@ -204,7 +205,6 @@
     "Spaces/Home/AWS/2 Blue Green Deployment in RDS fffcadd3326981e597b3dc1bdb929379.md",
     "Images/ASW/무제 파일.md",
     "Spaces/Home/AWS/1. RDS Provisioning.md",
-    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "Spaces/Home/Spring/Maven/Maven.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy 와 Spring Boot  차이.md",
