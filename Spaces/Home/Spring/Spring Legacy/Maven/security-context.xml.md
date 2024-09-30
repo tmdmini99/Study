@@ -254,6 +254,64 @@ public class LoginVo implements UserDetails {
 ```
 
 
+java 8 버전 이하에서 사용시
+
+```java
+package com.kpop.merch.login.vo;  
+  
+import lombok.Data;  
+import org.springframework.security.core.GrantedAuthority;  
+import org.springframework.security.core.authority.SimpleGrantedAuthority;  
+import org.springframework.security.core.userdetails.UserDetails;  
+  
+import java.util.ArrayList;  
+import java.util.Collection;  
+import java.util.List;  
+  
+@Data  
+public class LoginVo implements UserDetails {  
+    private String username;  
+    private String password;  
+    private List<GrantedAuthority> authorities;  
+  
+  
+    public void setAuthorities(List<String> authList){  
+        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();  
+        for(int i=0; i < authList.size(); i++){  
+            authorities.add(new SimpleGrantedAuthority(authList.get(i)));  
+        }  
+        this.authorities = authorities;  
+    }  
+  
+    @Override  
+    public Collection<? extends GrantedAuthority> getAuthorities() {  
+        return authorities;  
+    }  
+  
+    @Override  
+    public boolean isAccountNonExpired() {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean isAccountNonLocked() {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean isCredentialsNonExpired() {  
+        return false;  
+    }  
+  
+    @Override  
+    public boolean isEnabled() {  
+        return false;  
+    }  
+}
+```
+
+
+
 
 로그인 성공시 handler
 ```java
