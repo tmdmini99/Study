@@ -53,6 +53,12 @@
 
 
 security-context.xml
+
+```xml
+<security:intercept-url pattern="/resources/**" access="permitAll()"/>
+```
+을 추가해줘야지 로그인 하지 않아도 css적용 가능
+
 ```xml
 <beans:beans xmlns="http://www.springframework.org/schema/beans"  
              xmlns:security="http://www.springframework.org/schema/security"  
@@ -66,6 +72,7 @@ security-context.xml
   
     <security:http auto-config="true" use-expressions="true">  
         <!-- "/" 경로를 인증된 사용자만 접근 가능 -->  
+        <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/" access="isAuthenticated()" />  
         <security:intercept-url pattern="/login/login" access="permitAll" />  
         <security:intercept-url pattern="/**" access="isAuthenticated()" />  
