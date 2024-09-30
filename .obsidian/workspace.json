@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,17 +175,18 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Security.md",
+    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
+    "daily note/2024/9/2024-09-30.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/QueryDSL.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
-    "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
-    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "daily note/2024/9/2024-09-27.md",
     "Images/Android/Dialog/Dialog4.png",
@@ -220,7 +221,6 @@
     "Spaces/Home/Spring/Spring Framework.md",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Network/Server&Client.md",
-    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
     "무제 파일.canvas"
   ]
 }

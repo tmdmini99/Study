@@ -144,6 +144,22 @@ Encoder 사용하여 bean 생성
 등록해야지만 provider로 이동
 
 
+Web.xml 추가 필요
+
+```xml
+<filter>  
+    <filter-name>springSecurityFilterChain</filter-name>  
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>  
+</filter>  
+  
+<filter-mapping>  
+    <filter-name>springSecurityFilterChain</filter-name>  
+    <url-pattern>/*</url-pattern>  
+</filter-mapping>
+```
+
+
+
 UserDetail 대신 provider 사용시
 ```java
 package com.kpop.merch.login.provider;  
