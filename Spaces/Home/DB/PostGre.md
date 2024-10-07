@@ -278,3 +278,83 @@ function 삭제
 ```sql
 DROP FUNCTION IF EXISTS get_tables_with_s_variant();
 ```
+
+
+id 및  모든 테이블에서 s붙은거와 안붙은 애들이 있는것들만 출력
+```sql
+CREATE OR REPLACE FUNCTION get_tables_with_s_variant()
+
+RETURNS TABLE (base_table_name TEXT, plural_table_name TEXT, id_column TEXT, table_id BIGINT) AS $$
+
+DECLARE
+
+rec RECORD;
+
+base_table_name TEXT;
+
+plural_table_name TEXT;
+
+id_column TEXT;
+
+query TEXT;
+
+BEGIN
+
+FOR rec IN
+
+SELECT table_name
+
+FROM information_schema.tables
+
+WHERE table_name LIKE '%s'
+
+AND table_schema = 'public'
+
+LOOP
+
+base_table_name := LEFT(rec.table_name, LENGTH(rec.table_name) - 1); -- Remove 's'
+
+-- Define id_column based on base table name
+
+id_column := CASE base_table_name
+
+WHEN 'order' THEN 'order_id'
+
+WHEN 'product' THEN 'product_id'
+
+ELSE 'id' -- 기본적으로 'id'를 사용합니다.
+
+END;
+
+  
+
+-- 실제 테이블의 ID 컬럼이 있는지 확인
+
+IF EXISTS (
+
+SELECT 1
+
+FROM information_schema.columns
+
+WHERE table_name = rec.table_name
+
+AND column_name = id_column
+
+) THEN
+
+-- Create dynamic query, casting the id to BIGINT
+
+query := format('SELECT %L AS base_table_name, %L AS plural_table_name, %L AS id_column, %I::BIGINT AS table_id FROM %I',
+
+base_table_name, rec.table_name, id_column, id_column, rec.table_name);
+
+-- Execute query dynamically and return result
+
+RETURN QUERY EXECUTE query;
+
+END IF;
+
+END LOOP;
+
+END $$ LANGUAGE plpgsql;
+```
