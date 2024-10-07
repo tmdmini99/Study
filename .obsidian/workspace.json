@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-07.md",
+                "file": "Spaces/Home/DB/PostGre.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/10/2024-10-07.md",
+                "file": "Spaces/Home/DB/PostGre.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/10/2024-10-07.md"
+                "file": "Spaces/Home/DB/PostGre.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/10/2024-10-07.md",
+                "file": "Spaces/Home/DB/PostGre.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,10 +173,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
+    "Spaces/Home/DB/PostgreSql.md",
+    "Spaces/Home/DB/PostGre.md",
     "daily note/2024/10/2024-10-07.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/Spring Cache/Spring Cache 개념.md",
     "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
@@ -210,8 +212,6 @@
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA 쿼리.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
-    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
     "Images/Android/Dialog",
     "Images/FrameWork/IntelliJ",
     "Images/FrameWork",

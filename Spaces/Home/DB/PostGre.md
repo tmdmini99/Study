@@ -206,3 +206,75 @@ END LOOP;
 
 END $$ LANGUAGE plpgsql;
 ```
+
+
+
+
+모든 테이블에서 s붙은거와 안붙은 애들이 있는것들만 출력
+
+```sql
+CREATE OR REPLACE FUNCTION get_tables_with_s_variant()
+
+RETURNS TABLE(base_table_name TEXT, plural_table_name TEXT) AS $$
+
+DECLARE
+
+rec RECORD;
+
+base_table_name TEXT;
+
+BEGIN
+
+-- '_s'로 끝나는 테이블들을 검색
+
+FOR rec IN
+
+SELECT table_name::TEXT -- 명시적으로 TEXT로 캐스팅
+
+FROM information_schema.tables
+
+WHERE table_name LIKE '%s'
+
+AND table_schema = 'public'
+
+LOOP
+
+-- '_s'를 제거하여 기본 테이블 이름 추출
+
+base_table_name := LEFT(rec.table_name, LENGTH(rec.table_name) - 1);
+
+  
+
+-- 해당 기본 테이블이 존재하는지 확인
+
+IF EXISTS (
+
+SELECT 1
+
+FROM information_schema.tables
+
+WHERE table_name = base_table_name
+
+AND table_schema = 'public'
+
+) THEN
+
+-- 기본 테이블과 '_s'로 끝나는 테이블을 반환
+
+RETURN QUERY
+
+SELECT base_table_name, rec.table_name::TEXT; -- 두 번째 컬럼도 TEXT로 캐스팅
+
+END IF;
+
+END LOOP;
+
+END $$ LANGUAGE plpgsql;
+
+```
+
+
+function 삭제
+```sql
+DROP FUNCTION IF EXISTS get_tables_with_s_variant();
+```
