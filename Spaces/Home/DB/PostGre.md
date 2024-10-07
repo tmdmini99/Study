@@ -358,3 +358,90 @@ END LOOP;
 
 END $$ LANGUAGE plpgsql;
 ```
+
+
+
+
+
+id가 base_table_name+ \_id 로 나오게 수정
+```sql
+CREATE OR REPLACE FUNCTION get_tables_with_s_variant()
+
+RETURNS TABLE (base_table_name TEXT, plural_table_name TEXT, id_column TEXT, table_id BIGINT) AS $$
+
+DECLARE
+
+rec RECORD;
+
+base_table_name TEXT;
+
+plural_table_name TEXT;
+
+id_column TEXT;
+
+BEGIN
+
+FOR rec IN
+
+SELECT table_name
+
+FROM information_schema.tables
+
+WHERE table_name LIKE '%s' -- 's'로 끝나는 테이블 찾기
+
+AND table_schema = 'public'
+
+LOOP
+
+base_table_name := LEFT(rec.table_name, LENGTH(rec.table_name) - 1); -- 's' 제거
+
+  
+
+-- 기본 테이블 존재 여부 확인
+
+IF EXISTS (
+
+SELECT 1
+
+FROM information_schema.tables
+
+WHERE table_name = base_table_name
+
+AND table_schema = 'public'
+
+) THEN
+
+-- ID 컬럼 정의
+
+id_column := base_table_name || '_id'; -- base_table_name + '_id'
+
+  
+
+-- 실제 테이블의 ID 컬럼이 있는지 확인
+
+IF EXISTS (
+
+SELECT 1
+
+FROM information_schema.columns
+
+WHERE table_name = rec.table_name
+
+AND column_name = 'id' -- 실제 컬럼은 'id'입니다.
+
+) THEN
+
+-- 동적 쿼리 생성 및 반환 (id를 BIGINT로 캐스팅)
+
+RETURN QUERY EXECUTE format('SELECT %L AS base_table_name, %L AS plural_table_name, ''%s'' AS id_column, id::BIGINT AS table_id FROM %I',
+
+base_table_name, rec.table_name, id_column, rec.table_name);
+
+END IF;
+
+END IF;
+
+END LOOP;
+
+END $$ LANGUAGE plpgsql;
+```
