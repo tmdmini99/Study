@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
+                "file": "daily note/2024/10/2024-10-07.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
+                "file": "daily note/2024/10/2024-10-07.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md"
+                "file": "daily note/2024/10/2024-10-07.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
+                "file": "daily note/2024/10/2024-10-07.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8892146adda2318c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
+    "daily note/2024/10/2024-10-07.md",
     "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
     "Spaces/Home/Spring/Spring Cache/Spring Cache 개념.md",
     "Spaces/Home/Spring/Spring Boot/Spring Boot.md",
@@ -192,7 +194,6 @@
     "Spaces/Home/Spring/Spring Legacy/log4j.md",
     "Spaces/Home/Java/JSON/JSON.md",
     "Spaces/Home/Data/JSON.md",
-    "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
     "daily note/2024/9/2024-09-30.md",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
@@ -211,7 +212,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/servlet-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
-    "daily note/2024/9/2024-09-27.md",
     "Images/Android/Dialog",
     "Images/FrameWork/IntelliJ",
     "Images/FrameWork",
