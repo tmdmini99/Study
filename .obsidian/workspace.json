@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/CSS/CSS 변수.md",
+                "file": "daily note/2024/10/2024-10-10.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/CSS/CSS 변수.md",
+                "file": "daily note/2024/10/2024-10-10.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/CSS/CSS 변수.md"
+                "file": "daily note/2024/10/2024-10-10.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/CSS/CSS 변수.md",
+                "file": "daily note/2024/10/2024-10-10.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,19 +175,20 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Images/Pasted image 20241010154044.png",
-    "Images/Pasted image 20241010153933.png",
     "Spaces/Home/CSS/CSS.md",
-    "Spaces/Home/CSS/CSS 변수.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+    "Spaces/Home/Spring/Maven/Maven.md",
+    "Spaces/Home/Spring/Spring Legacy/log4j.md",
     "daily note/2024/10/2024-10-10.md",
     "daily note/2024/10/2024-10-08.md",
+    "Spaces/Home/CSS/CSS 변수.md",
+    "Images/Pasted image 20241010154044.png",
+    "Images/Pasted image 20241010153933.png",
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일2.md",
     "daily note/2024/10/2024-10-07.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
-    "Spaces/Home/Spring/Spring Legacy/log4j.md",
     "Spaces/Home/CSS",
     "daily note/2024/7/2024-07-17.md",
     "daily note/2024/7/2024-07-16.md",
@@ -211,7 +212,6 @@
     "Images/Interceptor7.png",
     "Images/Interceptor6.png",
     "Images/Interceptor5.png",
-    "Images/Interceptora4.png",
     "Spaces/Home/Spring/Interceptor",
     "Images/Android/Dialog",
     "Images/FrameWork/IntelliJ",
