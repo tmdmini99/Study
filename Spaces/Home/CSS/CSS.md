@@ -186,6 +186,57 @@ JavaScript 없이도 많은 효과를 간단하게 구현할 수 있습니다. �
 
 
 
+tooltip css
+```css
+/* Tooltip 가상 요소 스타일 */
+th:after {
+    content: var(--tooltip-text, ''); /* 툴팁의 내용 설정 */
+    visibility: hidden; /* 초기 상태는 숨김 */
+    width: 120px; /* 너비 설정 */
+    background-color: black; /* 배경색 */
+    color: #fff; /* 글자색 */
+    text-align: center; /* 가운데 정렬 */
+    padding: 8px; /* 패딩 */
+    position: absolute; /* 절대 위치 설정 */
+    z-index: 9999; /* z-index 설정 */
+    bottom: 125%; /* 툴팁의 위치를 조정하여 th 바로 위에 위치 */
+    left: 50%; /* 가운데 정렬 */
+    transform: translateX(-50%); /* 가운데 정렬 보정 */
+    opacity: 0; /* 초기 불투명도 */
+    transition: opacity 0.2s; /* 부드러운 전환 효과 */
+    border-radius: var(--p-border-radius-100); /* 둥근 모서리 설정 */
+    pointer-events: none; /* 마우스 이벤트 무시 */
+}
+
+/* Tooltip의 "꼬리" 생성 */
+th:before {
+    content: ''; /* 삼각형 모양 생성 */
+    position: absolute; /* 절대 위치 설정 */
+    bottom: 100%; /* 툴팁 위에 위치 */
+    left: 50%; /* 가운데 정렬 */
+    margin-left: -5px; /* 삼각형을 가운데 정렬하기 위한 보정 */
+    border-width: 5px; /* 삼각형 크기 조정 */
+    border-style: solid; /* 경계 스타일 */
+    border-color: black transparent transparent transparent; /* 삼각형 색상 설정: 위쪽으로 향하도록 설정 */
+    z-index: 9999; /* z-index 설정 */
+    visibility: hidden; /* 초기 상태는 숨김 */
+    opacity: 0; /* 초기 불투명도 */
+    transition: opacity 0.2s; /* 부드러운 전환 효과 */
+}
+
+/* Hover 상태에서 툴팁과 삼각형을 보이게 설정 */
+th:hover:after,
+th:hover:before
+{
+    visibility: visible; /* 보이게 설정 */
+    opacity: 1; /* 불투명도 1로 설정 */
+}
+
+/* th 요소에 대한 상대 위치 설정 */
+th {
+    position: relative; /* 상대 위치 설정 */
+}
+```
 
 
 
