@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/CSS/CSS.md",
+                "file": "Spaces/Home/CSS/CSS 변수.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/CSS/CSS.md",
+                "file": "Spaces/Home/CSS/CSS 변수.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/CSS/CSS.md"
+                "file": "Spaces/Home/CSS/CSS 변수.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/CSS/CSS.md",
+                "file": "Spaces/Home/CSS/CSS 변수.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,11 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
+    "Images/Pasted image 20241010154044.png",
+    "Images/Pasted image 20241010153933.png",
     "Spaces/Home/CSS/CSS.md",
+    "Spaces/Home/CSS/CSS 변수.md",
+    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "daily note/2024/10/2024-10-10.md",
     "daily note/2024/10/2024-10-08.md",
@@ -200,8 +203,6 @@
     "daily note/2024/7/2024-07-02.md",
     "daily note/2024/8/2024-08-01.md",
     "daily note/2024/8/2024-08-02.md",
-    "daily note/2024/8/2024-08-05.md",
-    "daily note/2024/8/2024-08-06.md",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
     "Images/Interceptor10.png",
@@ -211,7 +212,6 @@
     "Images/Interceptor6.png",
     "Images/Interceptor5.png",
     "Images/Interceptora4.png",
-    "Images/Interceptor3.jpg",
     "Spaces/Home/Spring/Interceptor",
     "Images/Android/Dialog",
     "Images/FrameWork/IntelliJ",
