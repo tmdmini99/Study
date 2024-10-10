@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +175,9 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/CSS/CSS.md",
+    "Spaces/Home/Spring/Spring Legacy/log4j.md",
     "daily note/2024/10/2024-10-10.md",
+    "Spaces/Home/CSS/CSS.md",
     "daily note/2024/10/2024-10-07.md",
     "Spaces/Home/CSS",
     "daily note/2024/10/2024-10-08.md",
@@ -201,7 +202,6 @@
     "daily note/2024/8/2024-08-12.md",
     "daily note/2024/8/2024-08-13.md",
     "daily note/2024/8/2024-08-14.md",
-    "daily note/2024/8/2024-08-16.md",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
     "Images/Interceptor10.png",

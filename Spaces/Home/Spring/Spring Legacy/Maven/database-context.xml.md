@@ -1,4 +1,18 @@
 
+```xml
+<dependency>  
+    <groupId>commons-dbcp</groupId>  
+    <artifactId>commons-dbcp</artifactId>  
+    <version>1.4</version>  
+</dependency>  
+  
+  
+<dependency>  
+    <groupId>org.lazyluke</groupId>  
+    <artifactId>log4jdbc-remix</artifactId>  
+    <version>0.2.7</version>  
+</dependency>
+```
 
 
 ```xml
