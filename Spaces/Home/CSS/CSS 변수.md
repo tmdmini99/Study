@@ -98,7 +98,220 @@ CSS 변수 역시 **상속**되는 특성을 지니고 있다. 보통 HTML에�
 
 만일 CSS 변수의 수가 너무 많아, 특정 변수가 정의 됬는지 안됬는지 모를떄, 변수값이 없다면, ~~var()~~ 를 중첩함으로써 여러 개의 **대체 변수**를 정의할 수 있다.
 
+```css
+.newCustomer {
+    /* --new-font-color가 없으면 orange를 사용 */
+    color: var(--new-font-color, orange);  
+}
 
+.oldCustomer {
+    /* --old-font-color가 없으면 var(--normal-font-color, blue)를 사용한다 */
+    /* 그런데 또 --normal-font-color가 없으면 blue를 사용한다 */
+    color: var(--old-font-color, var(--normal-font-color, blue)); 
+}
+```
+
+### **CSS 변수 사용 주의사항**
+
+#### **유효하지 않은 CSS 변수값이 설정 될 경우**
+
+브라우저가 유효하지 않은 var()를 만나면 그 속성의 초기값이나 상속된 값을 사용한다.
+
+예를들어 아래 .chicken 선택자에 변수값이 16px로 유효하지 않은 color 값이 들어간 셈이다. 이 경우, v.chicken의 부모 엘리먼트의 color 속성값을 상속받게 된다. 그런데 만일 .chicken의 부모 엘리먼트가 없을경우 브라우저의 기본 값이 들어간다.
+
+
+```css
+:root {
+	--chicken-color: 16px;  
+}
+.chicken {
+	color: blue;
+}
+.chicken2 {
+	color: var(--chicken-color);  /* color: 16px은 유효하지 않음 */
+}
+```
+
+
+
+#### **변수로 단위값 사용 주의사항**
+
+만일 속성의 단위 값을 변수로 처리해야 할때 보통 아래와 같이 설정하면 된다고 생각할테인데, 실제 브라우저는 숫자와 단위 사위의 무의미한 공백이 발생하면서 두개의 토큰으로 인식하는 문제점이 발생한다.
+
+
+```css
+.block {
+   --p: 33;
+   width: var(--p)vw;
+   height: var(--p)vh;
+}
+
+/*
+.block {
+   width: 33 vw; 띄어쓰기가 적용되어 에러를 발생시킨다
+   height: 33 vh;
+}
+*/
+```
+
+
+
+따라서 이 경우 `calc()` 함수를 사용해야 원하는 의도를 이행할 수 있다.
+
+
+```css
+.block {
+   --p: 33;
+   width: calc(var(--p) * 1vw);
+   height: calc(var(--p) * 1vh);
+}
+```
+
+
+
+### **CSS 변수 활용 예제**
+
+#### **color의 rgb를 변수화**
+
+단순히 16진수 색상 코드(#fff)를 변수에 저장하는 것을 넘어서, rgb 및 alpha(투명도)를 변수로 세밀하게 조정 할 수도 있다.
+
+
+```css
+:root {
+    --color: 240, 240, 240;
+    --alpha: 0.8;
+}
+
+div {
+	background-color: rgba(var(--color), var(--alpha)); /* rgba(240, 240, 240, 80%) */
+}
+```
+
+
+
+#### **background-image의 url을 변수화**
+
+요소의 배경 이미지 경로를 변수로 처리하여야 할때 주의해야할 점이 있다. 
+
+예를들어 아래와 같이 이미지 경로만을 변수에 설정하고 속성 부분에서 ~~url(var(--img))~~ 식으로 호출하는 방법은 문법적으로 지원하지 않는다.
+
+
+```css
+:root {
+	--img: "img/sample.jpg";
+}
+
+div {
+    background: url(var(--img)); /* ERROR - 동작되지 않음 */
+}
+```
+
+
+따라서 `url(이미지경로)` 자체를 변수화하여 사용하면 된다.
+
+
+```css
+:root {
+	--img: url("img/sample.jpg");
+}
+
+div {
+    background: var(--img);
+}
+```
+
+
+
+## **JavaScript에서 CSS 변수 조작하기**
+
+자바스크립트로 여타 스타일 속성을 변화 시켜 동적인 알록달록한 홈페이지를 구성했듯이 CSS 변수도 조작이 가능하다.
+
+### **자바스크립트로 CSS 변수값 얻기**
+
+예를 들어 앞의 예에서 루트 가상 클래스(:root)에 선언한 특정 변수의 값을 가져오는 스크립트 코드는 다음과 같다.
+
+```css
+:root {
+	--hover: red;
+}
+```
+
+
+```js
+// 가상 클래스 요소 얻기
+let root = document.querySelector(':root'); 
+
+// window.getComputedStyle 메서드를 이용하면, 해당 요소에 전역적으로 적용된 모든 형태의 style을 반환한다
+let variables = getComputedStyle(root); 
+
+// 변수 값 얻기
+variables.getPropertyValue('--hover');
+```
+
+### **자바스크립트로 CSS 변수값 변경하기**
+
+그러나 여기서 주의할 점은 `getComputedStyle()` 메서드로 스타일 속성을 가져올순 있지만, 이 속성을 바로 변경할 수 없다는 점이다. 그래서 만일 자바스크립트로 변수의 값을 동적으로 조작하고 싶다면, 다른 스타일 속성 접근하듯이 **인라인 스타일**로 조작하는 수 밖에 없다.
+
+다음은 CSS 변수에 배경 이미지 값을 설정하고, 버튼을 누르면 이 CSS 변수값을 변경함으로써 요소의 배경 이미지를 변화 시키는 예제이다. 먼저 아래와 같이 html 인라인 스타일에 배경 이미지의 CSS 변수를 정의해 놓는다.
+
+```html
+<div style="--bg-img: url(https://p4.wallpaperbetter.com/wallpaper/757/701/315/beach-high-definition-1920x1080-nature-beaches-hd-art-wallpaper-preview.jpg)"></div>
+
+<button>배경 이미지 바꾸기</button>
+```
+
+
+
+```css
+div {
+    background: var(--bg-img);
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+}
+```
+
+
+```js
+document.querySelector('button').addEventListener('click', (e) => {
+    const $div = document.querySelector('div');
+    $div.style.setProperty('--bg-img', 'url(https://cdn.imweb.me/upload/S201903225c9441f9db892/219f92a94fb2a.jpg)');
+})
+```
+
+
+```html
+<div style="--bg-img: url(https://p4.wallpaperbetter.com/wallpaper/757/701/315/beach-high-definition-1920x1080-nature-beaches-hd-art-wallpaper-preview.jpg)"></div>
+
+<button>배경 이미지 바꾸기</button>
+```
+
+```css
+div {
+  background: var(--bg-img);
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+}
+```
+
+
+```js
+document.querySelector('button').addEventListener('click', (e) => {
+  document.querySelector('div').style.setProperty('--bg-img', 'url(https://cdn.imweb.me/upload/S201903225c9441f9db892/219f92a94fb2a.jpg)');
+})
+```
+
+
+### **자바스크립트로 CSS 변수 다룰때 주의점**
+
+#### **1. CSS 변수가 중복될 경우 우선순위**
+
+이런식으로 css 변수를 활용할때 주의할점은 자바스크립트로 변수 값을 변경하는 경우 **인라인으로 CSS가 선언**되기 때문에, 별도의 css 파일에 정의한 변수보다 속성 적용 우선 순위가 높아 만일 변수를 중복 선언된 게 있을 경우 주의를 요하여야 한다. 
+
+#### **2. 전역으로 CSS 변수를 사용해야 한다면 상위 요소에 선언**
+
+또한 특정 html 태그 요소에 인라인으로 css 변수를 선언한다면, 그 변수는 해당 요소에만 들어있는 **지역변수**로서 취급 되기 때문에 다른 요소에서 가져다 쓰지 못한다. 이때는 \<html> 이나 \<body> 태그와 같은 상위 요소에 인라인 스타일로 css 변수를 저장하는 식으로, 위에서 배웠던 css 변수 상속 기능을 응용하면 된다.
 
 
 
