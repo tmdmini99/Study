@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md"
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/10/2024-10-10.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,13 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
+    "daily note/2024/10/2024-10-10.md",
     "daily note/2024/10/2024-10-08.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일2.md",
     "daily note/2024/10/2024-10-07.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
-    "daily note/2024/10/2024-10-10.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/log4j.md",
     "Spaces/Home/CSS/CSS.md",
@@ -200,8 +202,6 @@
     "daily note/2024/8/2024-08-02.md",
     "daily note/2024/8/2024-08-05.md",
     "daily note/2024/8/2024-08-06.md",
-    "daily note/2024/8/2024-08-09.md",
-    "daily note/2024/8/2024-08-08.md",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
     "Images/Interceptor10.png",
