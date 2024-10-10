@@ -187,6 +187,13 @@ JavaScript 없이도 많은 효과를 간단하게 구현할 수 있습니다. �
 
 
 tooltip css
+이렇게 기본 설정 
+
+```css
+:root {  
+    --tooltip-text: ''; /* 기본 툴팁 텍스트 설정 */}
+```
+
 ```css
 /* Tooltip 가상 요소 스타일 */
 th:after {
