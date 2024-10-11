@@ -63,23 +63,27 @@ $(document).ready(function() {
                 const customerId = $(this).data('id'); // 버튼에서 customer ID 가져오기
 
                 // AJAX 요청
-                $.ajax({
-                    url: `/api/customers/${customerId}`, // API 엔드포인트는 적절히 수정해야 합니다.
-                    method: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        // 응답받은 데이터로 스팬 업데이트
-                        const row = $(`#customer-${customerId}`);
-                        if (row.length) {
-                            row.find('.customer-name').text(data.name || '이름 없음');
-                            row.find('.customer-location').text(data.location || '위치 없음');
-                            row.find('.customer-email').text(data.email || '이메일 없음');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('AJAX 요청 중 오류 발생:', error);
-                    }
-                });
+                $.ajax({  
+				    url: `/customers/customers`, // API 엔드포인트  
+				    method: 'GET',  
+				    data: { id: customerId }, // 데이터로 고객 ID 전송  
+				    dataType: 'json',  
+				    success: function(data) {  
+				        // 응답받은 데이터로 고객 정보 업데이트  
+				        const row = $('.custom-Popover__Section');  
+				        row.find('.customer-name').text(data.name || '이름 없음');  
+				        row.find('.customer-location').text(data.location || '위치 없음');  
+				        row.find('.customer-order-count').text(`주문 ${data.orderCount || 0}개`);  
+				        row.find('.customer-email').text(data.email || '이메일 없음');  
+				  
+				        row.find('.customer').closest('a').attr('href', `/customers/${customerId}`); // href 속성 변경  
+				        row.find('.custom-Popover__Section').toggle(); // 클릭 시 div를 보이거나 숨김  
+				    },  
+				    error: function(xhr, status, error) {  
+				        console.error('AJAX 요청 중 오류 발생:', error);  
+				        alert('고객 정보를 가져오는 중 오류가 발생했습니다.'); // 사용자에게 오류 알림  
+				    }  
+				});
             });
         });
 
