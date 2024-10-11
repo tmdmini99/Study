@@ -58,5 +58,22 @@ public class CustomersController {
 ```
 
 
-```
+이렇게 사용시 controller 모든 메소드에 responseBody 적용
+
+```java
+@Controller
+@RequestMapping("/customers/*")
+@RequiredArgsConstructor
+@ResponseBody
+public class CustomersController {
+    private final CustomersService customersService;
+
+    @GetMapping("customer")
+    public String ordersList(@ModelAttribute BasicParamVo basicParamVo, Model model) {
+
+        List<OrdersVo> list = customersService.selectList(basicParamVo);
+        model.addAttribute("list", list);
+        return "customers/customers";
+    }
+} 
 ```
