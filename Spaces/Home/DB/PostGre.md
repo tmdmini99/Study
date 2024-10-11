@@ -480,33 +480,73 @@ WHERE name = '삼성';
 ```
 
 
+## **1. json vs jsonb 타입**
 
+
+json 타입은 **입력된 텍스트 원본**을 저장하고, jsonb 타입은 **decopmose된 바이너리 형식**으로 저장한다는 차이가 있습니다.
+
+json 타입은 입력된 텍스트에 대한 정확한 복사본을 저장하기 때문에, 처리할 때마다 매번 파싱을 다시 해야만 합니다.  
+jsonb 타입에 비해 처리 속도가 느리나, 원본 그대로를 저장할 수 있다는 장점이 있습니다.
+
+jsonb 타입은 정제된 데이터를 저장합니다. 데이터를 저장할 땐 추가적인 변환이 필요해 속도가 약간 느리지만, 이후 추가적인 파싱이 필요하지 않으므로 처리 속도가 json 타입에 비해 빠릅니다. 또한, jsonb 타입은 인덱싱을 지원한다는 아주 강력한 이점도 갖고 있습니다.
+
+json 타입은 입력된 텍스트의 정확한 복사본을 저장하기에 토큰 사이의 의미없는 공백도 모두 저장하며, JSON 객체 내 키 순서도 보장합니다. 또한, 중복된 키가 있는 경우에도 모든 key가 중복되어 저장됩니다.
+
+반면 jsonb 타입은 공백을 보존하지 않고, 객체 키의 순서를 보장하지 않으며 중복 객체 key 또한 저장하지 않습니다. 만약 중복 key 값이 입력되면 마지막 key의 값만을 저장합니다.
+
+```sql
+>> SELECT '{"bar": "baz", "balance": 7.77, "active":false}'::json;
+
+{"bar": "baz", "balance": 7.77, "active":false}
+```
+
+```sql
+>> SELECT '{"bar": "baz", "balance": 7.77, "active":false}'::jsonb;
+
+{"bar": "baz", "active": false, "balance": 7.77}
+```
+
+일반적으로 대부분의 애플리케이션은 기존 객체 키에 대한 순서 보장과 같은 요구사항이 없는 한 json 데이터를 jsonb 타입으로 저장합니다.
+
+## **2. json 연산자**
+
+### 1) ->, ->>
 
 json 배열에서 인덱스 또는 key에 해당하는 요소를 추출하고 싶을 때가 있습니다. 이때 int 형이 주어지면 배열 내 인덱스로, text 형이 주어진다면 해당 key에 대응하는 요소를 추출합니다.
 
-json 연산자
-###  -> 
 ```sql
-SELECT '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->2;
-SELECT '{"a": {"b":"foo"}}'::jsonb->'a'
+>> SELECT '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->2;
+
+{"c": "baz"}
+
+>> SELECT '{"a": {"b":"foo"}}'::jsonb->'a'
+
+{"b": "foo"}
 ```
 
-### ->>
-
 ```sql
-SELECT '[1,2,3]'::jsonb->>2
-SELECT '{"a":1,"b":2}'::json->>'b'
+>> SELECT '[1,2,3]'::jsonb->>2
+
+3
+
+>> SELECT '{"a":1,"b":2}'::json->>'b'
+
+2
 ```
 
 -> 연산자는 결과를 json 형태로 추출하며, ->> 연산자는 결과를 text 형으로 추출합니다.
 
 ```sql
->> SELECT pg_typeof('[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->2); jsonb >> SELECT pg_typeof('[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->>2); text
+>> SELECT pg_typeof('[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->2);
+
+jsonb
+
+>> SELECT pg_typeof('[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->>2);
+
+text
 ```
 
-
-
-### [**2) #>, #>>**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%--%-E%-C%--%--%-E%-E)
+### **2) #>, #>>**
 
 PostgreSQL에서 jsonb 컬럼을 조회할 때 중첩된 필드의 특정 조건만을 검색하고 싶을 때가 있습니다.
 
@@ -534,11 +574,11 @@ FROM member
 WHERE memberInfo ->> 'user' = '{"hostname": "yeongun"}'
 ```
 
-## [**3. jsonb 전용 연산자**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--jsonb%--%EC%A-%--%EC%-A%A-%--%EC%--%B-%EC%--%B-%EC%-E%--)
+## **3. jsonb 전용 연산자**
 
 jsonb 타입에서만 사용할 수 있는 연산자도 존재합니다.
 
-### [**1) @>, <@**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%--%-E%-C%--%-C%--)
+### **1) @>, <@**
 
 @>, <@ 연산자는 주어진 jsonb 값이 있는지 여부를 반환합니다. 결과는 true 또는 false 중 하나입니다.
 
@@ -550,7 +590,7 @@ true
 true
 ```
 
-### [**2) ?, ?|, ?&**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%-F%-C%--%-F%-C%-C%--%-F%--)
+### **2) ?, ?|, ?&**
 
 ?, ?|, ?& 연산자는 jsonb 데이터 내 key가 존재하는지를 판단합니다. 결과는 true 또는 false 중 하나입니다.
 
@@ -586,7 +626,7 @@ true
 false
 ```
 
-### [**3) ||**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%-C%-C)
+### **3) ||**
 
 || 연산자는 주어진 2개의 jsonb 데이터를 하나로 합칩니다.
 
@@ -596,7 +636,7 @@ false
 ["a", "b", "c", "d"]
 ```
 
-### [**4) -**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%---)
+### **4) -**
 
 - 연산자는 jsonb 데이터 내 주어진 key를 제거합니다.
 
@@ -614,12 +654,19 @@ text 형이 아닌 int 형이 주어지면 배열 내 특정 인덱스에 해당
 ["a", "c"]
 ```
 
-### [**5) #-**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%---)
+### **5) \#-**
 
-#- 연산자는 주어진 경로에 해당하는 값을 제거합니다.
+\#- 연산자는 주어진 경로에 해당하는 값을 제거합니다.
 
 ```sql
 >> SELECT '["a", {"b":{"c": "foo"}}]'::jsonb #- '{1,b,c}';
 
 ["a", {"b": {}}]
 ```
+
+
+
+
+
+---
+출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
