@@ -1,5 +1,21 @@
 
 
+
+- JSON의 숫자 값은 기본적으로 `Double`로 해석됩니다.
+- 문자열로 변환하고 싶다면 JSON 객체를 직접 순회하여 값을 `String`으로 변환하는 로직을 구현해야 합니다.
+- 위에서 설명한 방법들을 통해 JSON 데이터를 원하는 형식으로 변환할 수 있습니다.
+
+- **JSON 숫자 형식**:
+    
+    - JSON에서 숫자는 정수와 실수(부동 소수점)로 표현될 수 있습니다. 예를 들어, `123`은 정수로, `123.45`는 부동 소수점 숫자로 표현됩니다.
+- **Gson의 동작**:
+    
+    - `Gson`은 JSON을 Java 객체로 변환할 때, JSON의 숫자를 `Double` 타입으로 해석합니다. 이는 Java에서 부동 소수점 숫자가 `double` 타입으로 표현되기 때문입니다.
+    - JSON에 정수형 숫자가 포함되어 있더라도 `Gson`은 이를 `Double`로 변환할 수 있습니다.
+    - 
+
+
+
 mybatis-config.xml에서 이렇게 설정 필요
 
 ```xml
@@ -170,9 +186,7 @@ public class YourVO {
 ```java
 package com.kpop.merch.common.handler;  
   
-import com.google.gson.Gson;  
-import com.google.gson.JsonElement;  
-import com.google.gson.JsonSyntaxException;  
+import com.google.gson.*;  
 import com.google.gson.reflect.TypeToken;  
 import org.apache.ibatis.type.BaseTypeHandler;  
 import org.apache.ibatis.type.JdbcType;  
@@ -182,6 +196,8 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;  
 import java.sql.ResultSet;  
 import java.sql.SQLException;  
+import java.util.ArrayList;  
+import java.util.HashMap;  
 import java.util.List;  
 import java.util.Map;  
   
@@ -212,25 +228,44 @@ public class JsonbTypeHandler extends BaseTypeHandler<Object> {
         return parseJson(json);  
     }  
   
-    private Object parseJson(String json) {
-	    if (json == null) {  
-		    return null;  // JSON 문자열이 null인 경우 null 반환  
-		}  
-        try {  
-            JsonElement element = gson.fromJson(json, JsonElement.class);  
-  
-            if (element.isJsonObject()) {  
-                // JSON이 객체일 경우 Map으로 변환  
-                return gson.fromJson(json, new TypeToken<Map<String, Object>>() {}.getType());  
-            } else if (element.isJsonArray()) {  
-                // JSON이 배열일 경우 List로 변환  
-                return gson.fromJson(json, new TypeToken<List<Map<String, Object>>>() {}.getType());  
-            }  
-        } catch (JsonSyntaxException e) {  
-            throw new IllegalStateException("JSON parsing error", e);  
-        }  
-        return null;  
+    private Object parseJson(String json) {  
+    if (json == null) {  
+        return null;  // JSON 문자열이 null인 경우 null 반환  
     }  
+    try {  
+        JsonElement element = gson.fromJson(json, JsonElement.class);  
+  
+        if (element.isJsonObject()) {  
+            // JSON이 객체일 경우 Map으로 변환  
+            return convertJsonObjectToMap(element.getAsJsonObject());  
+        } else if (element.isJsonArray()) {  
+            // JSON이 배열일 경우 List로 변환  
+            return convertJsonArrayToList(element.getAsJsonArray());  
+        }  
+    } catch (JsonSyntaxException e) {  
+        throw new IllegalStateException("JSON parsing error", e);  
+    }  
+    return null;  
+}  
+  
+private Map<String, String> convertJsonObjectToMap(JsonObject jsonObject) {  
+    Map<String, String> result = new HashMap<>();  
+    for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {  
+        result.put(entry.getKey(), entry.getValue().toString());  // 모든 값을 문자열로 변환  
+    }  
+    return result;  
+}  
+  
+private List<Map<String, String>> convertJsonArrayToList(JsonArray jsonArray) {  
+    List<Map<String, String>> result = new ArrayList<>();  
+    for (JsonElement element : jsonArray) {  
+        if (element.isJsonObject()) {  
+            result.add(convertJsonObjectToMap(element.getAsJsonObject()));  
+        }  
+    }  
+    return result;  
+}  
+  
 }
 ```
 
