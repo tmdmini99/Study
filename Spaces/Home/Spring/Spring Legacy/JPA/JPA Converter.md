@@ -118,3 +118,40 @@ public interface MyEntityRepository extends JpaRepository<MyEntity, Long> {
 }
 
 ```
+
+
+
+MyService.java
+```java
+package com.kpop.merch.service;
+
+import com.kpop.merch.entity.MyEntity;
+import com.kpop.merch.repository.MyEntityRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class MyService {
+
+    @Autowired
+    private MyEntityRepository myEntityRepository;
+
+    public void saveData() {
+        Map<String, Object> dataMap = new HashMap<>();
+        dataMap.put("key1", "value1");
+        dataMap.put("key2", "value2");
+
+        MyEntity myEntity = new MyEntity();
+        myEntity.setData(dataMap);
+        myEntityRepository.save(myEntity);
+    }
+
+    public MyEntity getData(Long id) {
+        return myEntityRepository.findById(id).orElse(null);
+    }
+}
+
+```
