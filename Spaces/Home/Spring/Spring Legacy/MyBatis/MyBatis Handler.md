@@ -166,7 +166,7 @@ public class YourVO {
 ```
 
 
-배열과 일반 json 모두 처리
+배열과 일반 json 모두 처리(ID가 커져서 16진수로 바뀌는 경우 [[GSON]] 참고)
 ```java
 package com.kpop.merch.common.handler;  
   

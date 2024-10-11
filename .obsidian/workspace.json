@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md",
+                "file": "Spaces/Home/Java/JSON/GSON.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md",
+                "file": "Spaces/Home/Java/JSON/GSON.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md"
+                "file": "Spaces/Home/Java/JSON/GSON.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/JSON/JSON.md",
+                "file": "Spaces/Home/Java/JSON/GSON.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,8 +173,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
+    "Spaces/Home/Java/JSON/GSON.md",
+    "Spaces/Home/Java/JSON/JSON.md",
     "Spaces/Home/Java/Controller.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Error/jsp 에러.md",
@@ -185,7 +188,6 @@
     "Spaces/Home/Java Script/Java Script/문구 복사.md",
     "Spaces/Home/Java Script/Java Script/템플릿 리터럴.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA Converter.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
     "daily note/2024/10/2024-10-11.md",
     "daily note/2024/10/2024-10-10.md",
     "Spaces/Home/CSS/CSS.md",
@@ -202,8 +204,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/CSS",
     "daily note/2024/7/2024-07-17.md",
-    "daily note/2024/7/2024-07-16.md",
-    "daily note/2024/7/2024-07-15.md",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
     "Images/Interceptor10.png",
