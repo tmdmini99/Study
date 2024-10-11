@@ -34,3 +34,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 ```
+
+
+
+이런식으로 메소드 밑에 @ResponseBody 사용
+```java
+  
+@Controller  
+@RequestMapping("/customers/*")  
+@RequiredArgsConstructor  
+public class CustomersController {  
+    private final CustomersService customersService;  
+  
+    @GetMapping("customer")  
+    @ResponseBody  
+    public String ordersList(@ModelAttribute BasicParamVo basicParamVo, Model model) {  
+  
+        List<OrdersVo> list = customersService.selectList(basicParamVo);  
+        model.addAttribute("list", list);  
+        return "customers/customers";  
+    }  
+}
+```
+
+
+```
+```
