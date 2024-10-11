@@ -54,4 +54,33 @@ requestAjax("/route/01130cud.bms", JSON.stringify(params), function(data) {
     console.log("Response:", data);
 });
 
+
+
+
+$(document).ready(function() {
+            // 버튼 클릭 이벤트 리스너
+            $('.load-customer-data').on('click', function() {
+                const customerId = $(this).data('id'); // 버튼에서 customer ID 가져오기
+
+                // AJAX 요청
+                $.ajax({
+                    url: `/api/customers/${customerId}`, // API 엔드포인트는 적절히 수정해야 합니다.
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        // 응답받은 데이터로 스팬 업데이트
+                        const row = $(`#customer-${customerId}`);
+                        if (row.length) {
+                            row.find('.customer-name').text(data.name || '이름 없음');
+                            row.find('.customer-location').text(data.location || '위치 없음');
+                            row.find('.customer-email').text(data.email || '이메일 없음');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX 요청 중 오류 발생:', error);
+                    }
+                });
+            });
+        });
+
 ```
