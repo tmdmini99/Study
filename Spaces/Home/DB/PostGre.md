@@ -459,3 +459,167 @@ EXCEPT
 
 SELECT id FROM "order";
 ```
+
+
+
+
+
+Jsonb 데이터 수정
+PostgreSQL 같은 경우는 JSON 필드 내부 중 일부만 수정할 수 없으며 기존 JSON 데이터를 가공하여 만든 데이터를 저장하는 방식입니다.  
+그래서 위에서 SELECT한 구문의 결과를 employees 필드에 새로 입력하는 방식입니다.
+
+```sql
+INSERT INTO company VALUES(1, '삼성', '[{"name":"홍길동1", "age": "20"}, {"name":"홍길동2", "age": "21"}, {"name":"홍길동3", "age": "22"}]');
+```
+
+
+```sql
+UPDATE company
+SET employees = employees || '{"name": "공유", "age": "15"}'
+WHERE name = '삼성';
+```
+
+
+
+
+json 배열에서 인덱스 또는 key에 해당하는 요소를 추출하고 싶을 때가 있습니다. 이때 int 형이 주어지면 배열 내 인덱스로, text 형이 주어진다면 해당 key에 대응하는 요소를 추출합니다.
+
+json 연산자
+###  -> 
+```sql
+SELECT '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->2;
+SELECT '{"a": {"b":"foo"}}'::jsonb->'a'
+```
+
+### ->>
+
+```sql
+SELECT '[1,2,3]'::jsonb->>2
+SELECT '{"a":1,"b":2}'::json->>'b'
+```
+
+-> 연산자는 결과를 json 형태로 추출하며, ->> 연산자는 결과를 text 형으로 추출합니다.
+
+```sql
+>> SELECT pg_typeof('[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->2); jsonb >> SELECT pg_typeof('[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::jsonb->>2); text
+```
+
+
+
+### [**2) #>, #>>**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%--%-E%-C%--%--%-E%-E)
+
+PostgreSQL에서 jsonb 컬럼을 조회할 때 중첩된 필드의 특정 조건만을 검색하고 싶을 때가 있습니다.
+
+이때 #>, #>> 연산자를 사용하면 원하는 데이터를 추출할 수 있습니다. 검색 조건으로 활용하는 필드는 콤마로 구분합니다.
+
+#> 연산자는 결과를 json 형태로 추출하며, #>> 연산자는 결과를 text 형으로 추출합니다.
+
+```sql
+>> SELECT '{"a": {"b":{"c": "foo"}}}'::jsonb#>'{a,b}';
+
+{"c": "foo"}
+```
+
+위 연산자들은 json형으로 저장된 컬럼에 원하는 조건에 해당하는 데이터를 추출하고 싶을 때 사용할 수 있습니다.
+
+```sql
+SELECT * 
+FROM member 
+WHERE memberInfo #>> '{user,hostname}' = 'yeongun'
+```
+
+```sql
+SELECT * 
+FROM member 
+WHERE memberInfo ->> 'user' = '{"hostname": "yeongun"}'
+```
+
+## [**3. jsonb 전용 연산자**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--jsonb%--%EC%A-%--%EC%-A%A-%--%EC%--%B-%EC%--%B-%EC%-E%--)
+
+jsonb 타입에서만 사용할 수 있는 연산자도 존재합니다.
+
+### [**1) @>, <@**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%--%-E%-C%--%-C%--)
+
+@>, <@ 연산자는 주어진 jsonb 값이 있는지 여부를 반환합니다. 결과는 true 또는 false 중 하나입니다.
+
+```sql
+>> SELECT '{"a":1, "b":2}'::jsonb @> '{"b":2}'::jsonb;
+true
+
+>> SELECT '{"b":2}'::jsonb <@ '{"a":1, "b":2}'::jsonb;
+true
+```
+
+### [**2) ?, ?|, ?&**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%-F%-C%--%-F%-C%-C%--%-F%--)
+
+?, ?|, ?& 연산자는 jsonb 데이터 내 key가 존재하는지를 판단합니다. 결과는 true 또는 false 중 하나입니다.
+
+? 연산자는 jsonb 데이터 내 해당 key가 존재하는지 여부를 반환합니다.
+
+```sql
+>> SELECT '{"a":1, "b":2}'::jsonb ? 'b';
+true
+
+>> SELECT '{"a":1, "b":2}'::jsonb ? 'c';
+false
+```
+
+?|, ?& 연산자는 검색 조건으로 배열이 주어집니다.
+
+?| 연산자는 주어진 배열 내 값들 중 jsonb 데이터의 key로 **하나라도** 존재하면 true를 반환합니다.
+
+```sql
+>> SELECT '{"a":1, "b":2, "c":3}'::jsonb ?| array['c', 'd'];
+true
+
+>> SELECT '{"a":1, "b":2, "c":3}'::jsonb ?| array['d', 'e'];
+false
+```
+
+?& 연산자는 주어진 배열 내 값들이 **모두** jsonb 데이터의 key로 존재할 때 true를 반환합니다.
+
+```sql
+>> SELECT '["a", "b"]'::jsonb ?& array['a', 'b'];
+true
+
+>> SELECT '["a", "b"]'::jsonb ?& array['a', 'c'];
+false
+```
+
+### [**3) ||**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%-C%-C)
+
+|| 연산자는 주어진 2개의 jsonb 데이터를 하나로 합칩니다.
+
+```sql
+>> SELECT '["a", "b"]'::jsonb || '["c", "d"]'::jsonb
+
+["a", "b", "c", "d"]
+```
+
+### [**4) -**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%---)
+
+- 연산자는 jsonb 데이터 내 주어진 key를 제거합니다.
+
+```sql
+>> SELECT '{"a": 1, "b": 2, "c": 3}'::jsonb - 'a';
+
+{"b": 2, "c": 3}
+```
+
+text 형이 아닌 int 형이 주어지면 배열 내 특정 인덱스에 해당하는 요소를 제거합니다.
+
+```sql
+>> SELECT '["a", "b", "c"]'::jsonb - 1;
+
+["a", "c"]
+```
+
+### [**5) #-**](https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--%---)
+
+#- 연산자는 주어진 경로에 해당하는 값을 제거합니다.
+
+```sql
+>> SELECT '["a", {"b":{"c": "foo"}}]'::jsonb #- '{1,b,c}';
+
+["a", {"b": {}}]
+```
