@@ -445,3 +445,17 @@ END LOOP;
 
 END $$ LANGUAGE plpgsql;
 ```
+
+
+
+### 방법 2: `EXCEPT` 사용하기
+
+`EXCEPT` 연산자를 사용하면, 첫 번째 쿼리의 결과에서 두 번째 쿼리의 결과를 제외하여 차집합을 구할 수 있습니다. 이 방법은 두 테이블의 공통된 컬럼이 `id`일 때 사용할 수 있습니다.
+
+```sql
+SELECT id FROM orders
+
+EXCEPT
+
+SELECT id FROM "order";
+```
