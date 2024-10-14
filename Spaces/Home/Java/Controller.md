@@ -59,3 +59,28 @@ public class CustomersController {
 - **JSP 같은 템플릿을 렌더링해야 하는 경우**에는 `@Controller`를 사용하고, JSON 응답이 필요한 메서드에만 `@ResponseBody`를 사용해야 합니다.
 
 따라서 **JSP와 JSON 응답을 둘 다 사용하려면** `@Controller`를 사용하고, 특정 메서드에만 `@ResponseBody`를 적용하는 방식이 더 적합합니다.
+
+
+
+
+```java
+@GetMapping("orders/{id}")
+public String ordersList(@PathVariable("id") Long id, Model model) {
+    // 여기서 id는 URL에서 가져온 값입니다.
+    List<OrdersVo> list = ordersService.selectList(id);
+    model.addAttribute("list", list);
+    return "orders/orders";
+}
+
+```
+
+
+ `@GetMapping("orders/{id}")`는 URL 경로에서 동적으로 값을 받을 수 있도록 설정한 것입니다. 이 구조에서 `{id}`는 URL의 경로 변수로, 클라이언트가 요청하는 URL의 특정 부분에 해당하는 값을 자동으로 메서드의 파라미터로 매핑합니다.
+
+
+`@PathVariable`은 Spring MVC에서 URL 경로의 일부를 메서드 파라미터로 전달할 수 있게 해주는 애너테이션입니다. 이 애너테이션을 사용하면 클라이언트가 보낸 요청의 URL에서 특정 값을 추출하여 사용할 수 있습니다.
+
+
+- `@PathVariable("id") Long id`: `@PathVariable` 애너테이션을 사용하여 URL의 `{id}` 부분을 `id`라는 이름의 메서드 파라미터로 받습니다. 이 값은 URL 요청에 따라 다르게 들어오며, 이 메서드에서는 주문 ID를 나타냅니다.
+- 예를 들어, `GET /orders/123` 요청이 들어오면 `id`는 `123`이 되고, 이 값을 사용하여 주문 목록을 조회합니다.
+
