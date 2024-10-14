@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Controller.md",
+                "file": "Spaces/Home/JSP/태그.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java/Controller.md",
+                "file": "Spaces/Home/JSP/태그.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java/Controller.md"
+                "file": "Spaces/Home/JSP/태그.md"
               }
             }
           },
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java/Controller.md",
+                "file": "Spaces/Home/JSP/태그.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,11 +175,12 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Controller.md",
+    "Spaces/Home/JSP/태그.md",
     "Spaces/Home/Java Script/Jquery/url update.md",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
-    "Spaces/Home/Java/Controller.md",
     "daily note/2024/10/2024-10-14.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
@@ -202,7 +203,6 @@
     "Spaces/Home/CSS/CSS 변수.md",
     "Images/Pasted image 20241010154044.png",
     "Images/Pasted image 20241010153933.png",
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/CSS",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
