@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/복사.md",
+                "file": "daily note/2024/10/2024-10-14.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/복사.md",
+                "file": "daily note/2024/10/2024-10-14.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/복사.md"
+                "file": "daily note/2024/10/2024-10-14.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/복사.md",
+                "file": "daily note/2024/10/2024-10-14.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +176,9 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
+    "daily note/2024/10/2024-10-14.md",
+    "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
     "Spaces/Home/DB/PostGre.md",
@@ -202,7 +204,6 @@
     "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일2.md",
     "daily note/2024/10/2024-10-07.md",
-    "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/CSS",
     "Images/Interceptor12.png",
     "Images/Interceptor11.png",
