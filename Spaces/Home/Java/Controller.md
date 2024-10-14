@@ -107,3 +107,14 @@ public String ordersList(@PathVariable("id") Long id, Model model) {
     - `/orders/{id}` (주문 상세 페이지) → `@GetMapping("/{id}")`
 - **장점**: 더 명확하고 유지 관리하기 쉽습니다. 각 요청에 대해 구체적으로 매핑할 수 있어, 나중에 수정하기도 용이합니다.
 - **단점**: 한 컨트롤러가 처리하는 경로가 많아질 경우, 코드가 길어질 수 있습니다.
+
+
+여기에서 `@GetMapping("orders/{id}")`는 `/orders/orders/{id}`로 매핑되지 않습니다. `@RequestMapping("/orders/*")` 때문에 `/orders/orders/{id}` 경로가 제대로 매핑되지 않을 수 있습니다.
+
+이럴 경우 /orders 로 설정
+
+
+
+
+
+
