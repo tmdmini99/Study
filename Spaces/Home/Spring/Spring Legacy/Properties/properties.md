@@ -22,7 +22,8 @@ properties 여러개 설정
 </property>  
 </bean>
 ```
-반드시 classpath를 포함시킬
+
+반드시 classpath를 포함시킬필요는 없다.
 
 
 
@@ -95,3 +96,29 @@ jsp
 ```
 
 fmt를 사용하여 가져옴
+
+
+
+
+xml 설정에서 
+
+```xml
+<bean id='messageSourceAccessor' class='org.springframework.context.support.MessageSourceAccessor'>  
+    <constructor-arg ref='messageSource'/>  
+</bean>
+```
+
+### `MessageSourceAccessor`의 역할
+
+`MessageSourceAccessor`는 Spring의 `MessageSource`에서 제공하는 메시지를 접근하는 편리한 방법을 제공합니다. 이 클래스는 여러 가지 메시지를 키를 통해 쉽게 가져올 수 있도록 해주며, 주로 다음과 같은 경우에 사용됩니다:
+
+- **메시지 키에 대한 간단한 접근**: `MessageSource`를 직접 사용하는 대신, `MessageSourceAccessor`를 사용하면 메시지를 더 간단하게 가져올 수 있습니다.
+- **다국어 지원**: 여러 언어에 대한 메시지를 로드하고, 필요한 언어에 따라 메시지를 선택할 수 있습니다.
+- **코드 간결성**: 메시지 접근을 위해 별도로 `MessageSource`를 호출할 필요가 없으므로 코드가 간결해집니다.
+
+### 2. 필요성 여부
+
+- **없어도 되는 경우**: 만약 애플리케이션에서 국제화 기능을 사용하지 않거나, 메시지를 직접 `MessageSource`에서 호출해서 사용할 수 있다면 이 설정은 필요하지 않습니다.
+- **사용하는 경우**: 국제화(i18n)를 적극적으로 사용하고, 여러 군데에서 메시지를 가져올 필요가 있다면 이 설정을 추가하는 것이 좋습니다.
+\
+필요에 따라 사용
