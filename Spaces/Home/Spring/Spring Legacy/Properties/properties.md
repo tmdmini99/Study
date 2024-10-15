@@ -128,6 +128,7 @@ xml 설정에서
 ## 프로퍼티 적용후  한글이 안나올때
 
 
+root-context.xml
 ```xml
 <!-- MessageSource 설정 -->  
 <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">  
@@ -143,6 +144,48 @@ xml 설정에서
 
 추가
 
-```xml
 
+servlet-context.xml
+
+```xml
+<!-- LocaleResolver 설정 -->  
+<beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">  
+    <beans:property name="defaultLocale" value="ko_KR" /> <!-- 기본 Locale을 한국어로 설정 -->  
+</beans:bean>  
+  
+<!-- LocaleChangeInterceptor 설정 -->  
+<beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">  
+    <beans:property name="paramName" value="lang" /> <!-- URL에서 lang 파라미터를 통해 Locale 변경 -->  
+</beans:bean>
 ```
+
+
+
+인터셉터에서 추가 
+```xml
+<interceptors>  
+    <interceptor>  
+        <mapping path="/**"/> <!-- 모든 요청에 대해 적용 -->  
+        <beans:ref bean="localeChangeInterceptor"/>  
+    </interceptor>  
+</interceptors>
+```
+
+
+그래도 안될시 
+
+
+![[Pasted image 20241015132634.png]]
+
+
+여기 부분이 UTF-8인지 확인 
+만약 아닐 시
+
+
+`Editor` > `File Encodings`에서 `Project Encoding`과 `Default encoding for properties files`를 `UTF-8`로 설정
+
+
+![[Pasted image 20241015132802.png]]
+
+
+여기 부분들 확인 
