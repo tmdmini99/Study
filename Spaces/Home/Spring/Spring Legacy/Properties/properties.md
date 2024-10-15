@@ -16,21 +16,21 @@ properties 여러개 설정
   
 <property name="basenames">  <!-- 여러개인 경우 -->  
     <list>  
-        <value>classpath:country.countryCode</value>
+        <value>country.countryCode</value>
         <value>/WEB-INF/properties/data2</value>  
     </list>  
 </property>  
 </bean>
 ```
 
-반드시 classpath를 포함시킬필요는 없다.
+
 
 
 
 
 만약 src/main/resources를 사용한다면 
 ```xml
-<value>classpath:country.countryCode</value> <!-- 반드시 classpath:를 포함 -->
+<value>country.countryCode</value> <!-- 반드시 classpath:를 포함 -->
 ```
 이런식으로 country.countryCode로 사용해야 하고
 
