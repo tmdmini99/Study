@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-15.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/10/2024-10-15.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/10/2024-10-15.md"
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md"
               }
             }
           },
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/10/2024-10-15.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +175,15 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/DB/PostGre.md",
+    "Spaces/Home/DB/PostgreSql.md",
     "daily note/2024/10/2024-10-15.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
     "Spaces/Home/Java/JSON/JSON.md",
     "daily note/2024/10/2024-10-14.md",
     "Spaces/Home/JSP/태그.md",
@@ -187,7 +193,6 @@
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
-    "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java/JSON/GSON.md",
     "Spaces/Home/Error/jsp 에러.md",
     "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
@@ -196,12 +201,6 @@
     "Spaces/Home/Java Script/Java Script/템플릿 리터럴.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/JPA Converter.md",
     "daily note/2024/10/2024-10-11.md",
-    "daily note/2024/10/2024-10-10.md",
-    "Spaces/Home/CSS/CSS.md",
-    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
-    "Spaces/Home/Spring/Maven/Maven.md",
-    "Spaces/Home/Spring/Spring Legacy/log4j.md",
-    "daily note/2024/10/2024-10-08.md",
     "Images/Pasted image 20241010154044.png",
     "Images/Pasted image 20241010153933.png",
     "Spaces/Home/CSS",
