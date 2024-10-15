@@ -2,9 +2,43 @@
 
 설정
 
+단일 설정
 ```xml
-
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">  
+    <property name="basename" value="country.countryCode" /> <!-- 패키지 경로 포함 -->  
+</bean>
 ```
+
+properties 여러개 설정
+
+```xml
+<bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource" id="messageSource">  
+  
+<property name="basenames">  <!-- 여러개인 경우 -->  
+    <list>  
+        <value>classpath:country.countryCode</value>
+        <value>/WEB-INF/properties/data2</value>  
+    </list>  
+</property>  
+</bean>
+```
+반드시 classpath를 포함시킬
+
+
+
+
+만약 src/main/resources를 사용한다면 
+```xml
+<value>classpath:country.countryCode</value> <!-- 반드시 classpath:를 포함 -->
+```
+이런식으로 country.countryCode로 사용해야 하고
+
+
+만약 webapp 밑에 resources 를 사용한다면 
+```xml
+<value>/resources/css/common.css</value>
+```
+이런식으로 사용해야 함
 
 
 properties 값
