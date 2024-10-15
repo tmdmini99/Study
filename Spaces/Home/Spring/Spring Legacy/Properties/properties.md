@@ -122,3 +122,27 @@ xml 설정에서
 - **사용하는 경우**: 국제화(i18n)를 적극적으로 사용하고, 여러 군데에서 메시지를 가져올 필요가 있다면 이 설정을 추가하는 것이 좋습니다.
 \
 필요에 따라 사용
+
+
+
+## 프로퍼티 적용후  한글이 안나올때
+
+
+```xml
+<!-- MessageSource 설정 -->  
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">  
+    <property name="basename" value="country.countryCode" /> <!-- 패키지 경로 포함 -->  
+    <property name="defaultEncoding" value="UTF-8" />  
+</bean>
+```
+여기서 
+
+```xml
+<property name="defaultEncoding" value="UTF-8" />  
+```
+
+추가
+
+```xml
+
+```
