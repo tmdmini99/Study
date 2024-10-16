@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md",
+                "file": "daily note/2024/10/2024-10-16.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md",
+                "file": "daily note/2024/10/2024-10-16.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md"
+                "file": "daily note/2024/10/2024-10-16.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md",
+                "file": "daily note/2024/10/2024-10-16.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,6 +176,8 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Jquery/url update.md",
+    "daily note/2024/10/2024-10-16.md",
     "Spaces/Home/JSP/CSS 파일 Linked 동적으로 하는법.md",
     "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
     "Images/Pasted image 20241015132802.png",
@@ -201,13 +204,11 @@
     "daily note/2024/10/2024-10-14.md",
     "Spaces/Home/JSP/태그.md",
     "Spaces/Home/Java/Controller.md",
-    "Spaces/Home/Java Script/Jquery/url update.md",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
     "Spaces/Home/Java/JSON/GSON.md",
     "Spaces/Home/Error/jsp 에러.md",
-    "Spaces/Home/Error/Cannot resolve symbol 'Resource'.md",
     "Images/Pasted image 20241010153933.png",
     "Spaces/Home/CSS",
     "Images/Interceptor12.png",
