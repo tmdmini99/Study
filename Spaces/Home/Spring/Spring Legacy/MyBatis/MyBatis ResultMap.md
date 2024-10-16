@@ -59,6 +59,31 @@ result map 사용법
 ```
 
 
+### resultMap 재사용 방법
+
+
+```xml
+<resultMap id="customersResultMap" type="com.kpop.merch.customers.vo.CustomersVo" autoMapping="true">
+    <id property="id" column="customer_id"/>
+    <result property="name" column="name"/>
+    <result property="email" column="email"/>
+    <!-- 다른 CUSTOMERS 테이블 컬럼들 -->
+</resultMap>
+
+```
+
+```xml
+<resultMap id="giftCardsResultMap" type="com.kpop.merch.products.vo.GiftCardsVo" autoMapping="true">
+    <!-- GIFT_CARDS 테이블 자동 매핑 -->
+    <id property="id" column="id"/>
+    
+    <!-- CUSTOMERS 테이블 매핑 (CustomersVo) -->
+    <association property="customersVo" javaType="com.kpop.merch.customers.vo.CustomersVo" resultMap="customersResultMap" />
+</resultMap>
+
+```
+
+
 
 ## Bind
 
