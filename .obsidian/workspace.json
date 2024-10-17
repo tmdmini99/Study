@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -144,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md"
+                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md"
               }
             }
           },
@@ -182,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -225,8 +225,11 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Images/Shadow DOM5.png",
+    "Spaces/Home/Java Script/Java Script/Pagination.md",
+    "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
+    "Spaces/Home/Java Script/Java Script/문구 복사.md",
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+    "Images/Shadow DOM5.png",
     "Images/Shadow DOM4.gif",
     "Images/Shadow DOM3.gif",
     "Images/Shadow DOM2.png",
@@ -259,8 +262,6 @@
     "Spaces/Home/Java/JSON/JSON.md",
     "daily note/2024/10/2024-10-14.md",
     "Spaces/Home/JSP/태그.md",
-    "Spaces/Home/Java/Controller.md",
-    "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/CSS",
     "Spaces/Home/Spring/Interceptor",
     "Images/Android/Dialog",
