@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
+                "file": "Spaces/Home/Java Script/Jquery/url update.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -144,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
+                "file": "Spaces/Home/Java Script/Jquery/url update.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md"
+                "file": "Spaces/Home/Java Script/Jquery/url update.md"
               }
             }
           },
@@ -182,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
+                "file": "Spaces/Home/Java Script/Jquery/url update.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -225,8 +225,8 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Java Script/Pagination.md",
     "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
+    "Spaces/Home/Java Script/Java Script/Pagination.md",
     "Spaces/Home/Java Script/Java Script/문구 복사.md",
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "Images/Shadow DOM5.png",
