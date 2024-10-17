@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md",
+                "file": "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -144,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md",
+                "file": "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md"
+                "file": "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md"
               }
             }
           },
@@ -182,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/url update.md",
+                "file": "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -225,6 +225,11 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Anntoation/Annotation.md",
+    "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md",
+    "Spaces/Home/Java/Anntoation/JPA Annotation.md",
+    "Spaces/Home/Java Script/Java Script/fetch.md",
+    "Spaces/Home/Java Script/Jquery/url update.md",
     "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
     "Spaces/Home/Java Script/Java Script/Pagination.md",
     "Spaces/Home/Java Script/Java Script/문구 복사.md",
@@ -242,7 +247,6 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
     "daily note/2024/10/2024-10-16.md",
-    "Spaces/Home/Java Script/Jquery/url update.md",
     "Spaces/Home/JSP/CSS 파일 Linked 동적으로 하는법.md",
     "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
     "Images/Pasted image 20241015132802.png",
@@ -258,10 +262,6 @@
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/DB/PostgreSql.md",
-    "daily note/2024/10/2024-10-15.md",
-    "Spaces/Home/Java/JSON/JSON.md",
-    "daily note/2024/10/2024-10-14.md",
-    "Spaces/Home/JSP/태그.md",
     "Spaces/Home/CSS",
     "Spaces/Home/Spring/Interceptor",
     "Images/Android/Dialog",
