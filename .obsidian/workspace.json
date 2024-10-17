@@ -13,10 +13,60 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-17.md",
+                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "17a5b135082cb91d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Shadow DOM5.png"
+              }
+            }
+          },
+          {
+            "id": "469aa825f3ddf823",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Shadow DOM4.gif"
+              }
+            }
+          },
+          {
+            "id": "caa206663a65304d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Shadow DOM3.gif"
+              }
+            }
+          },
+          {
+            "id": "a79263c5cf59d66e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Shadow DOM2.png"
+              }
+            }
+          },
+          {
+            "id": "a22d1592c6647969",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Shadow DOM1.jpg"
               }
             }
           }
@@ -74,8 +124,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily note/2024/10/2024-10-17.md",
+                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily note/2024/10/2024-10-17.md"
+                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md"
               }
             }
           },
@@ -133,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily note/2024/10/2024-10-17.md",
+                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +225,14 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
+    "Images/Shadow DOM5.png",
+    "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+    "Images/Shadow DOM4.gif",
+    "Images/Shadow DOM3.gif",
+    "Images/Shadow DOM2.png",
+    "Images/Shadow DOM1.jpg",
     "daily note/2024/10/2024-10-17.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
@@ -192,7 +247,6 @@
     "Images/Pasted image 20241015132732.png",
     "Images/Pasted image 20241010154044.png",
     "Images/Pasted image 20241015132630.png",
-    "Images/Pasted image 20241015132603.png",
     "Spaces/Home/Spring/Spring Legacy/Maven/root && servlet 차이.md",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
@@ -207,13 +261,7 @@
     "Spaces/Home/JSP/태그.md",
     "Spaces/Home/Java/Controller.md",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
-    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
-    "Spaces/Home/Java Script/Jquery/복사.md",
-    "Images/Pasted image 20241010153933.png",
     "Spaces/Home/CSS",
-    "Images/Interceptor12.png",
-    "Images/Interceptor11.png",
-    "Images/Interceptor10.png",
     "Spaces/Home/Spring/Interceptor",
     "Images/Android/Dialog",
     "Images/FrameWork/IntelliJ",
