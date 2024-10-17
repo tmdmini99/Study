@@ -19,7 +19,7 @@ Annotation 적용
 ```java
 @PaginationRequired   //직접 적용
 @GetMapping("draftOrders")  
-public String draftOrdersList(@ModelAttribute BasicParamVo basicParamVo, Model model) {  
+public String draftOrdersList(@ModelAttribute("basicParamVo") BasicParamVo basicParamVo, Model model) {  
   
     List<? extends BasicVo> list = draftOrdersService.selectList(basicParamVo);  
     model.addAttribute("list", list);  
