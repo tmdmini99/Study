@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
+                "file": "daily note/2024/10/2024-10-17.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
+                "file": "daily note/2024/10/2024-10-17.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md"
+                "file": "daily note/2024/10/2024-10-17.md"
               }
             }
           },
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
+                "file": "daily note/2024/10/2024-10-17.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -175,8 +176,9 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
+    "daily note/2024/10/2024-10-17.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
@@ -207,7 +209,6 @@
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
-    "Spaces/Home/Java/JSON/GSON.md",
     "Images/Pasted image 20241010153933.png",
     "Spaces/Home/CSS",
     "Images/Interceptor12.png",
