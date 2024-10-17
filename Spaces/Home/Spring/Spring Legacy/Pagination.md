@@ -304,3 +304,212 @@ int totalPages = (int) Math.ceil((double) totalRecords / pageSize);
 ```
 
 
+---
+
+## 내가 만든 Pagination
+
+
+```java
+@GetMapping("customers")  
+@PaginationRequired  
+public String getCustomer(@ModelAttribute BasicParamVo basicParamVo, Model model) {  
+     List<BasicVo> customersList = (List<BasicVo>) customersService.selectList(basicParamVo);  
+    System.out.println(basicParamVo.getPageNumber()+"페이지 2");  
+     model.addAttribute("list",customersList);  
+     return "customers/customers";  
+}
+```
+
+컨트롤러에서 `@PaginationRequired  `가 붙어 있는 경우에만 
+handler에서 실행
+
+
+
+```java
+package com.kpop.merch.common.interceptor;  
+  
+import com.kpop.merch.common.dao.CommonDao;  
+import com.kpop.merch.common.util.Pagination;  
+import com.kpop.merch.common.util.PaginationRequired;  
+import com.kpop.merch.common.vo.BasicParamVo;  
+import com.kpop.merch.common.vo.BasicVo;  
+import lombok.RequiredArgsConstructor;  
+import lombok.extern.log4j.Log4j2;  
+import lombok.extern.slf4j.Slf4j;  
+import org.springframework.web.method.HandlerMethod;  
+import org.springframework.web.servlet.HandlerInterceptor;  
+import org.springframework.web.servlet.ModelAndView;  
+  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+import java.util.List;  
+  
+@Slf4j  
+@RequiredArgsConstructor  
+public class CustomInterceptor implements HandlerInterceptor {  
+  
+    private final CommonDao commonDao;  
+  
+    @Override  
+    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {  
+  
+        return true;  
+    }  
+  
+    @Override  
+    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {  
+  
+        httpServletRequest.setAttribute("ordersCount", commonDao.ordersCount());  
+  
+        // PaginationRequired 어노테이션이 붙어 있는 메서드인 경우  
+        if (o instanceof HandlerMethod &&  
+            ((HandlerMethod) o).hasMethodAnnotation(PaginationRequired.class)) {  
+  
+            System.out.println("posthandle");  
+  
+            // BasicParamVo 객체를 가져옵니다.  
+            BasicParamVo basicParamVo = (BasicParamVo) modelAndView.getModel().get("basicParamVo");  
+            System.out.println(basicParamVo.getPageNumber()+"페이지 11");  
+  
+            // list에서 totalCount 계산 (customersList의 크기에서 가져온다고 가정)  
+            List<? extends BasicVo> list = (List<? extends BasicVo>) modelAndView.getModel().get("list");  
+            int totalCount = 0;  
+  
+            // 리스트가 null이 아니고, 비어 있지 않을 때만 totalCount 계산  
+            if (list != null && !list.isEmpty()) {  
+                totalCount = list.get(0).getTotalCount() > 0 ? list.get(0).getTotalCount() : 0;  
+            } else {  
+                System.out.println("List is null or empty");  
+            }  
+  
+            // 페이지 정보 설정  
+            int pageSize = basicParamVo.getPageSize();  
+            int totalPages = (int) Math.ceil((double) totalCount / pageSize);  // 총 페이지 수 계산  
+  
+            // 페이지 정보 설정 및 디버깅용 출력  
+            basicParamVo.setTotalPages(totalPages);  
+  
+            // 디버깅용 출력  
+            System.out.println("Total Pages: " + basicParamVo.getTotalPages());  
+            System.out.println("현재 페이지: " + basicParamVo.getPageNumber());  
+  
+  
+        }  
+    }  
+  
+  
+    @Override  
+    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {  
+  
+    }}
+```
+
+
+
+Custom Annotation만들기
+```java
+package com.kpop.merch.common.util;  
+  
+import java.lang.annotation.ElementType;  
+import java.lang.annotation.Retention;  
+import java.lang.annotation.RetentionPolicy;  
+import java.lang.annotation.Target;  
+  
+@Target(ElementType.METHOD) // 메서드에 적용  
+@Retention(RetentionPolicy.RUNTIME) // 런타임까지 유지  
+public @interface PaginationRequired {  
+}
+```
+
+
+Pagination 비동기 처리
+```js
+function navigatePage(direction, currentPage, totalPages) {  
+    // 방향에 따라 페이지 번호를 조정합니다.  
+    currentPage += direction;  
+  
+    // 페이지 번호가 1보다 작거나 총 페이지 수보다 크면 수정하지 않음  
+    if (currentPage < 1) {  
+        currentPage = 1;  
+    }  
+    if (currentPage > totalPages) {  
+        currentPage = totalPages; // 최대 페이지 수 설정  
+    }  
+    // 페이지 번호가 제대로 설정되었는지 확인  
+        console.log("Navigating to page:", currentPage);  
+  
+    // fetch로 JSP 페이지 요청  
+    // 현재 URL 가져오기  
+    const currentUrl = new URL(window.location.href);  
+  
+    // 페이지 번호 파라미터를 URL에 추가 또는 수정합니다.  
+    currentUrl.searchParams.set('pageNumber', currentPage);  
+    currentUrl.searchParams.set('name', "test");  
+    // fetch 요청 시 URL을 확인  
+       console.log("Fetching URL:", currentUrl.toString());  
+    fetch(currentUrl)  
+        .then(response => {  
+            if (!response.ok) {  
+                throw new Error('Network response was not ok');  
+            }  
+            return response.text(); // HTML 내용 반환  
+        })  
+        .then(html => {  
+            // <body> 내용을 업데이트합니다.  
+            // 서버에서 응답받은 HTML을 결과 영역에 삽입  
+             let newDocument = new DOMParser().parseFromString(html, 'text/html');  
+             let newContent = newDocument.getElementById('content'); // 업데이트할 부분 선택  
+  
+             if (newContent) {  
+                    document.getElementById('content').innerHTML = newContent.innerHTML; // 기존 content만 업데이트  
+  
+             }  
+        })  
+        .catch(error => {  
+            console.error('There has been a problem with your fetch operation:', error);  
+        });  
+}
+```
+
+
+
+
+Pagination 앞뒤 버튼
+```jsp
+<c:if test="${list[0].totalCount > 50}">  
+    <div class="Polaris-IndexTable__PaginationWrapper">  
+        <nav aria-label="페이지 매김" class="Polaris-Pagination Polaris-Pagination--table">  
+            <div class="Polaris-Box" style="--pc-box-background: var(--p-color-bg-surface-secondary); --pc-box-padding-block-start-xs: var(--p-space-150); --pc-box-padding-block-end-xs: var(--p-space-150); --pc-box-padding-inline-start-xs: var(--p-space-300); --pc-box-padding-inline-end-xs: var(--p-space-200);">  
+                <div class="Polaris-InlineStack" style="--pc-inline-stack-align: center; --pc-inline-stack-block-align: center; --pc-inline-stack-wrap: wrap; --pc-inline-stack-flex-direction-xs: row;">  
+                    <div class="Polaris-Pagination__TablePaginationActions" data-buttongroup-variant="segmented">  
+                        <div>  
+                            <!-- 이전 페이지 버튼 -->  
+                            <button id="previousURL" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantSecondary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter Polaris-Button--iconOnly" aria-label="이전" type="button" onclick="navigatePage(-1, ${basicParamVo.pageNumber}, ${basicParamVo.totalPages})" ${basicParamVo.pageNumber==1 ? 'disabled' : '' }>  
+                                <span class="Polaris-Button__Icon">  
+                                    <span class="Polaris-Icon">  
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">  
+                                            <path fill-rule="evenodd" d="M9.78 3.47a.75.75 0 0 1 0 1.06l-3.47 3.47 3.47 3.47a.749.749 0 1 1-1.06 1.06l-4-4a.75.75 0 0 1 0-1.06l4-4a.75.75 0 0 1 1.06 0"></path>  
+                                        </svg>  
+                                    </span>  
+                                </span>  
+                            </button>  
+                        </div>  
+                        <div>  
+                            <!-- 다음 페이지 버튼 -->  
+                            <button id="nextURL" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantSecondary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter Polaris-Button--iconOnly" aria-label="다음" type="button" onclick="navigatePage(1, ${basicParamVo.pageNumber}, ${basicParamVo.totalPages})" ${basicParamVo.pageNumber==basicParamVo.totalPages ? 'disabled' : '' }>  
+                                <span class="Polaris-Button__Icon">  
+                                    <span class="Polaris-Icon">  
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">  
+                                            <path fill-rule="evenodd" d="M5.72 12.53a.75.75 0 0 1 0-1.06l3.47-3.47-3.47-3.47a.749.749 0 1 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06 0"></path>  
+                                        </svg>  
+                                    </span>  
+                                </span>  
+                            </button>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </nav>  
+    </div>  
+</c:if>
+```
