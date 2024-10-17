@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Pagination.md",
+                "file": "daily note/2024/10/2024-10-17.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -144,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Pagination.md",
+                "file": "daily note/2024/10/2024-10-17.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Pagination.md"
+                "file": "daily note/2024/10/2024-10-17.md"
               }
             }
           },
@@ -182,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Pagination.md",
+                "file": "daily note/2024/10/2024-10-17.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -225,6 +225,7 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Pagination.md",
     "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md",
     "Spaces/Home/Java/Controller.md",
     "Spaces/Home/Java/Anntoation/Annotation.md",
@@ -261,7 +262,6 @@
     "Spaces/Home/Spring/Spring Legacy/Maven/root && servlet 차이.md",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
-    "Spaces/Home/Spring/Spring Legacy/Tiles/tiles.md",
     "Spaces/Home/CSS",
     "Spaces/Home/Spring/Interceptor",
     "Images/Android/Dialog",
