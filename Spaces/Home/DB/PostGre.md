@@ -672,6 +672,50 @@ SELECT * FROM orders WHERE row_to_json(orders)::text LIKE '%21348%';
 ```
 
 
+## 모든 행 검색 속도 개선
+
+```sql
+SELECT A.*,COUNT(*) OVER() totalCount FROM (
+             select *
+ from (
+     
+        SELECT * FROM products
+         
+        ) a
+         
+            WHERE EXISTS (
+                SELECT 1
+            FROM jsonb_each_text(row_to_json(a)::jsonb) AS kv
+                WHERE kv.value ILIKE '%' || 'ateez' || '%'
+            )
+         
+
+        ) A
+        LIMIT 50
+        OFFSET (1 - 1) * 50
+```
+
+
+```sql
+WHERE EXISTS (
+                SELECT 1
+            FROM jsonb_each_text(row_to_json(a)::jsonb) AS kv
+                WHERE kv.value ILIKE '%' || 'ateez' || '%'
+            ) 
+```
+
+사용 jsonb로  변경 후 검색
+
+
+`row_to_json` 함수를 사용하여 레코드를 JSON 형식으로 변환한 다음, 이를 JSONB로 변환하여 `jsonb_each_text` 함수를 사용할 수 있기 때문입니다.
+
+### 요약
+
+- **레코드 전체를 JSON으로 변환**: `row_to_json(a)`를 사용하여 레코드 전체를 JSON으로 변환합니다.
+- **JSONB로 변환**: 그 후 `::jsonb`를 사용하여 JSON을 JSONB로 변환합니다.
+- **모든 타입 지원**: 이 방법은 레코드에 포함된 모든 컬럼의 값을 포함하므로, JSONB 타입이 아니어도 상관없습니다
+- 
+이 쿼리는 `products` 테이블의 모든 컬럼을 검색하여, 'team'이라는 단어가 포함된 값을 가진 모든 레코드를 찾습니다. JSONB로 변환된 레코드는 다른 타입의 값들도 포함하므로, 다양한 데이터 타입에 대해 일관되게 검색할 수 있습니다.
 
 
 ---
