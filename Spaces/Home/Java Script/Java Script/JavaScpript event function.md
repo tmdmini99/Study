@@ -78,7 +78,40 @@ $('.orderChange').hover(
 
 input event
 ```js
-
+$(document).on('input', '.Polaris-TextField__Input', function() {  
+       const searchTerm = $(this).val(); // 입력값 가져오기  
+       console.log('입력된 값:', searchTerm); // 입력값 출력  
+  
+       // 현재 주소를 가져옴  
+       // 현재 URL을 URL 객체로 생성  
+       const url = new URL(window.location.href);  
+  
+       // 모든 쿼리 파라미터 제거  
+       url.search = ''; // 쿼리 스트링을 빈 문자열로 설정하여 모든 파라미터 제거  
+       // 추가 작업 수행  
+       if (searchTerm) {  
+           fetch(url.toString() + `?search=`+searchTerm, {  
+               method: 'GET'  
+           })  
+           .then(response => response.json())  
+           .then(data => {  
+               const searchResults = document.getElementById('searchResults');  
+               searchResults.innerHTML = ''; // 기존 결과 지우기  
+               let newDocument = new DOMParser().parseFromString(response, 'text/html');  
+               let newContent = newDocument.getElementById('searchResults'); // 업데이트할 부분 선택  
+               if (data.length > 0) {  
+                   document.getElementById('searchResults').innerHTML = newContent.innerHTML; // 기존 content만 업데이트  
+               } else {  
+                   searchResults.innerHTML = '<div>검색 결과가 없습니다.</div>';  
+               }  
+           })  
+           .catch(error => {  
+               console.error('검색 요청 실패:', error);  
+               const searchResults = document.getElementById('searchResults');  
+               searchResults.innerHTML = '<div>검색 중 오류가 발생했습니다.</div>';  
+           });  
+       }  
+   });
 ```
 
 
