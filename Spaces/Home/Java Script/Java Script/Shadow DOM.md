@@ -384,7 +384,7 @@ function renderIcons() {
 ```
 
 
-
+다른곳에서 쓴것도 랜더링 해줘야함
 
 
 

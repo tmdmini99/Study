@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shadow DOM"
+              "title": "JavaScpript event function"
             }
           },
           {
@@ -192,7 +192,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Shadow DOM의 백링크"
+              "title": "JavaScpript event function의 백링크"
             }
           },
           {
@@ -224,10 +224,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md"
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md"
               },
               "icon": "lucide-list",
-              "title": "Shadow DOM 개요"
+              "title": "JavaScpript event function 개요"
             }
           },
           {
@@ -236,12 +236,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Shadow DOM의 나가는 링크"
+              "title": "JavaScpript event function의 나가는 링크"
             }
           },
           {
@@ -285,8 +285,14 @@
   },
   "active": "f633eb4dedc66d12",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/Home/DB/PostGre.md",
+    "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
+    "Spaces/Home/Java Script/Jquery/url update.md",
+    "Spaces/Home/Java Script/Java Script/fetch.md",
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
+    "Spaces/Home/Java Script/Java Script/Pagination.md",
+    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/Java/URL 인코더/URL 인코더.md",
@@ -300,14 +306,10 @@
     "Spaces/Home/Java/Anntoation/Annotation.md",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
-    "Spaces/Home/Java Script/Jquery/url update.md",
     "Spaces/Home/Spring/Spring Legacy/ModelAndView.md",
     "Spaces/Home/Java/Anntoation/JPA Annotation.md",
-    "Spaces/Home/Java Script/Java Script/fetch.md",
     "Spaces/Home/Java Script/Node.js/Project/서버 api.md",
-    "Spaces/Home/Java Script/Java Script/Pagination.md",
     "Spaces/Home/Java Script/Java Script/문구 복사.md",
-    "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "Images/Shadow DOM5.png",
     "Images/Shadow DOM4.gif",
     "Images/Shadow DOM3.gif",
@@ -315,8 +317,6 @@
     "Images/Shadow DOM1.jpg",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Handler.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
     "Images/Pasted image 20241015132802.png",
     "Images/Pasted image 20241015132634.png",
     "Images/Pasted image 20241015132732.png",
