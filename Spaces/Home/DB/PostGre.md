@@ -665,6 +665,12 @@ text 형이 아닌 int 형이 주어지면 배열 내 특정 인덱스에 해당
 ```
 
 
+## 모든 행 검색
+
+```java
+SELECT * FROM orders WHERE row_to_json(orders)::text LIKE '%21348%';
+```
+
 
 
 

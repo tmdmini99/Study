@@ -26,12 +26,15 @@
             "id": "f633eb4dedc66d12",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.7.4"
+                "file": "Spaces/Home/DB/PostGre.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
+              "title": "PostGre"
             }
           },
           {
@@ -158,6 +161,16 @@
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
             }
+          },
+          {
+            "id": "874cfff9e033e95d",
+            "type": "leaf",
+            "state": {
+              "type": "mk-file-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Spaces"
+            }
           }
         ]
       }
@@ -179,6 +192,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spaces/Home/DB/PostGre.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +202,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "백링크"
+              "title": "PostGre의 백링크"
             }
           },
           {
@@ -209,9 +223,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Spaces/Home/DB/PostGre.md"
+              },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "PostGre 개요"
             }
           },
           {
@@ -220,11 +236,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spaces/Home/DB/PostGre.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "나가는 링크"
+              "title": "PostGre의 나가는 링크"
             }
           },
           {
@@ -268,6 +285,7 @@
   },
   "active": "f633eb4dedc66d12",
   "lastOpenFiles": [
+    "daily note/2024/10/2024-10-18.md",
     "daily note/2024/10/2024-10-17.md",
     "Spaces/Home/Java Script/Jquery/뒤로가기.md",
     "Spaces/Home/Spring/Spring Legacy/Pagination.md",
@@ -303,7 +321,6 @@
     "Images/Pasted image 20241015132732.png",
     "Images/Pasted image 20241010154044.png",
     "Images/Pasted image 20241015132630.png",
-    "Spaces/Home/Spring/Spring Legacy/Maven/root && servlet 차이.md",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/CSS",
     "Spaces/Home/Spring/Interceptor",
