@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md",
+                "file": "Spaces/Home/Java/URL 인코더/URL 인코더.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PostGre"
+              "title": "URL 인코더"
             }
           },
           {
@@ -192,7 +192,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md",
+                "file": "Spaces/Home/Java/URL 인코더/URL 인코더.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "PostGre의 백링크"
+              "title": "URL 인코더의 백링크"
             }
           },
           {
@@ -224,10 +224,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md"
+                "file": "Spaces/Home/Java/URL 인코더/URL 인코더.md"
               },
               "icon": "lucide-list",
-              "title": "PostGre 개요"
+              "title": "URL 인코더 개요"
             }
           },
           {
@@ -236,12 +236,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md",
+                "file": "Spaces/Home/Java/URL 인코더/URL 인코더.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "PostGre의 나가는 링크"
+              "title": "URL 인코더의 나가는 링크"
             }
           },
           {
@@ -285,6 +285,9 @@
   },
   "active": "f633eb4dedc66d12",
   "lastOpenFiles": [
+    "Spaces/Home/DB/PostGre.md",
+    "Spaces/Home/Java/URL 인코더/URL 인코더.md",
+    "Spaces/Home/Java/URL 인코더",
     "daily note/2024/10/2024-10-18.md",
     "daily note/2024/10/2024-10-17.md",
     "Spaces/Home/Java Script/Jquery/뒤로가기.md",
@@ -314,8 +317,6 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
     "daily note/2024/10/2024-10-16.md",
-    "Spaces/Home/JSP/CSS 파일 Linked 동적으로 하는법.md",
-    "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
     "Images/Pasted image 20241015132802.png",
     "Images/Pasted image 20241015132634.png",
     "Images/Pasted image 20241015132732.png",
@@ -330,7 +331,6 @@
     "Images/새 폴더",
     "Images/All Docker/쿠버네티스",
     "Images/All Docker/Docker-Compose명령어",
-    "Images/All Docker/Docker-Compose",
     "무제 파일.canvas"
   ]
 }
