@@ -314,45 +314,73 @@ shadow.appendChild(linkElem);
 
 
 
-
-
-
-
 ```jsp
 <c:if test="${list[0].totalCount > 50}">  
-    <div id="pagination-container"></div>  
-</c:if>  
-  
-<script>  
-    document.addEventListener('DOMContentLoaded', function () {  
-        // Shadow DOM을 생성할 요소 선택  
-        const container = document.getElementById('pagination-container');  
-        const shadowRoot = container.attachShadow({ mode: 'open' });  
-  
-        // JSP에서 필요한 변수를 가져오기  
-        const currentPageNumber = ${basicParamVo.pageNumber}; // 현재 페이지 번호  
-        const totalPages = ${basicParamVo.totalPages}; // 총 페이지 수  
-  
-        // Shadow DOM에 삽입할 HTML        const paginationHTML = `  
-            <style>                .Polaris-IndexTable__PaginationWrapper {                    /* 추가 스타일을 여기에 입력하세요. */  
-                }                .Polaris-Button {                    /* 버튼 스타일 */                }            </style>            <div class="Polaris-IndexTable__PaginationWrapper">                <nav aria-label="페이지 매김" class="Polaris-Pagination Polaris-Pagination--table">  
-                    <div class="Polaris-Box" style="--pc-box-background: var(--p-color-bg-surface-secondary); --pc-box-padding-block-start-xs: var(--p-space-150); --pc-box-padding-block-end-xs: var(--p-space-150); --pc-box-padding-inline-start-xs: var(--p-space-300); --pc-box-padding-inline-end-xs: var(--p-space-200);">                        <div class="Polaris-InlineStack" style="--pc-inline-stack-align: center; --pc-inline-stack-block-align: center; --pc-inline-stack-wrap: wrap; --pc-inline-stack-flex-direction-xs: row;">                            <div class="Polaris-Pagination__TablePaginationActions" data-buttongroup-variant="segmented">                                <div>                                    <!-- 이전 페이지 버튼 -->                                    <button id="previousURL" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantSecondary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter Polaris-Button--iconOnly" aria-label="이전" type="button" onclick="navigatePage(-1, currentPageNumber, totalPages)" ${basicParamVo.pageNumber == 1 ? 'disabled' : ''}>  
-                                        <span class="Polaris-Button__Icon">                                            <span class="Polaris-Icon">                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">                                                    <path fill-rule="evenodd" d="M9.78 3.47a.75.75 0 0 1 0 1.06l-3.47 3.47 3.47 3.47a.749.749 0 1 1-1.06 1.06l-4-4a.75.75 0 0 1 0-1.06l4-4a.75.75 0 0 1 1.06 0"></path>                                                </svg>                                            </span>                                        </span>                                    </button>                                </div>                                <div>                                    <!-- 다음 페이지 버튼 -->                                    <button id="nextURL" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantSecondary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter Polaris-Button--iconOnly" aria-label="다음" type="button" onclick="navigatePage(1, currentPageNumber, totalPages)" ${basicParamVo.pageNumber == basicParamVo.totalPages ? 'disabled' : ''}>  
-                                        <span class="Polaris-Button__Icon">                                            <span class="Polaris-Icon">                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">                                                    <path fill-rule="evenodd" d="M5.72 12.53a.75.75 0 0 1 0-1.06l3.47-3.47-3.47-3.47a.749.749 0 1 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06 0"></path>                                                </svg>                                            </span>                                        </span>                                    </button>                                </div>                            </div>                        </div>                    </div>                </nav>            </div>        `;  
-  
-        // Shadow DOM에 HTML 삽입  
-        shadowRoot.innerHTML = paginationHTML;  
-    });  
-</script>
+    <div class="Polaris-IndexTable__PaginationWrapper">  
+        <nav aria-label="페이지 매김" class="Polaris-Pagination Polaris-Pagination--table">  
+            <div class="Polaris-Box" style="--pc-box-background: var(--p-color-bg-surface-secondary); --pc-box-padding-block-start-xs: var(--p-space-150); --pc-box-padding-block-end-xs: var(--p-space-150); --pc-box-padding-inline-start-xs: var(--p-space-300); --pc-box-padding-inline-end-xs: var(--p-space-200);">  
+                <div class="Polaris-InlineStack" style="--pc-inline-stack-align: center; --pc-inline-stack-block-align: center; --pc-inline-stack-wrap: wrap; --pc-inline-stack-flex-direction-xs: row;">  
+                    <div class="Polaris-Pagination__TablePaginationActions" data-buttongroup-variant="segmented">  
+                        <div>  
+                            <!-- 이전 페이지 버튼 -->  
+                            <button id="previousURL" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantSecondary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter Polaris-Button--iconOnly" aria-label="이전" type="button" onclick="navigatePage(-1, ${basicParamVo.pageNumber}, ${basicParamVo.totalPages})" ${basicParamVo.pageNumber==1 ? 'disabled' : '' }>  
+                                <span class="Polaris-Button__Icon" id="previousIconContainer"></span>  
+                            </button>  
+                        </div>  
+                        <div>  
+                            <!-- 다음 페이지 버튼 -->  
+                            <button id="nextURL" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantSecondary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter Polaris-Button--iconOnly" aria-label="다음" type="button" onclick="navigatePage(1, ${basicParamVo.pageNumber}, ${basicParamVo.totalPages})" ${basicParamVo.pageNumber==basicParamVo.totalPages ? 'disabled' : '' }>  
+                                <span class="Polaris-Button__Icon" id="nextIconContainer"></span>  
+                            </button>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </nav>  
+    </div>  
+</c:if>
 ```
 
 
 
 
 
-
-
 ```js
+function renderIcons() {  
+        const previousIconContainer = document.getElementById('previousIconContainer');  
+        const nextIconContainer = document.getElementById('nextIconContainer');  
+  
+        // 이전 페이지 아이콘  
+        if (!previousIconContainer.shadowRoot) {  
+            const shadowRootPrev = previousIconContainer.attachShadow({mode: 'open'});  
+            shadowRootPrev.innerHTML = `  
+                <style>  
+                    .Polaris-Icon {  
+                        width: 16px;                        height: 16px;                    }  
+                </style>                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="Polaris-Icon">  
+                    <path fill-rule="evenodd" d="M9.78 3.47a.75.75 0 0 1 0 1.06l-3.47 3.47 3.47 3.47a.749.749 0 1 1-1.06 1.06l-4-4a.75.75 0 0 1 0-1.06l4-4a.75.75 0 0 1 1.06 0"></path>  
+                </svg>  
+            `;  
+        }  
+  
+        // 다음 페이지 아이콘  
+        if (!nextIconContainer.shadowRoot) {  
+            const shadowRootNext = nextIconContainer.attachShadow({mode: 'open'});  
+            shadowRootNext.innerHTML = `  
+                <style>  
+                    .Polaris-Icon {  
+                        width: 16px;                        height: 16px;                    }  
+                </style>                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="Polaris-Icon">  
+                    <path fill-rule="evenodd" d="M5.72 12.53a.75.75 0 0 1 0-1.06l3.47-3.47-3.47-3.47a.749.749 0 1 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06 0"></path>  
+                </svg>  
+            `;  
+        }  
+    }  
+  
+  
+    $(document).ready(function () {  
+        renderIcons(); // 초기 로딩 시 아이콘 렌더링  
+    });
 ```
 
 
