@@ -347,35 +347,39 @@ shadow.appendChild(linkElem);
 
 ```js
 function renderIcons() {  
-        const previousIconContainer = document.getElementById('previousIconContainer');  
-        const nextIconContainer = document.getElementById('nextIconContainer');  
+    const previousIconContainer = document.getElementById('previousIconContainer');  
+    const nextIconContainer = document.getElementById('nextIconContainer');  
   
-        // 이전 페이지 아이콘  
-        if (!previousIconContainer.shadowRoot) {  
-            const shadowRootPrev = previousIconContainer.attachShadow({mode: 'open'});  
-            shadowRootPrev.innerHTML = `  
-                <style>  
-                    .Polaris-Icon {  
-                        width: 16px;                        height: 16px;                    }  
-                </style>                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="Polaris-Icon">  
-                    <path fill-rule="evenodd" d="M9.78 3.47a.75.75 0 0 1 0 1.06l-3.47 3.47 3.47 3.47a.749.749 0 1 1-1.06 1.06l-4-4a.75.75 0 0 1 0-1.06l4-4a.75.75 0 0 1 1.06 0"></path>  
-                </svg>  
-            `;  
-        }  
-  
-        // 다음 페이지 아이콘  
-        if (!nextIconContainer.shadowRoot) {  
-            const shadowRootNext = nextIconContainer.attachShadow({mode: 'open'});  
-            shadowRootNext.innerHTML = `  
-                <style>  
-                    .Polaris-Icon {  
-                        width: 16px;                        height: 16px;                    }  
-                </style>                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="Polaris-Icon">  
-                    <path fill-rule="evenodd" d="M5.72 12.53a.75.75 0 0 1 0-1.06l3.47-3.47-3.47-3.47a.749.749 0 1 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06 0"></path>  
-                </svg>  
-            `;  
-        }  
+    // 이전 페이지 아이콘  
+    if (!previousIconContainer.shadowRoot) {  
+        const shadowRootPrev = previousIconContainer.attachShadow({ mode: 'open' });  
+        shadowRootPrev.innerHTML = `  
+            <style>  
+                .Polaris-Icon {  
+                    width: 16px;                    height: 16px;                }  
+            </style>            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="Polaris-Icon">  
+                <path fill-rule="evenodd" d="M9.78 3.47a.75.75 0 0 1 0 1.06l-3.47 3.47 3.47 3.47a.749.749 0 1 1-1.06 1.06l-4-4a.75.75 0 0 1 0-1.06l4-4a.75.75 0 0 1 1.06 0"></path>  
+            </svg>  
+        `;  
+    } else {  
+        console.log('이전 페이지 아이콘이 이미 렌더링되었습니다.');  
     }  
+  
+    // 다음 페이지 아이콘  
+    if (!nextIconContainer.shadowRoot) {  
+        const shadowRootNext = nextIconContainer.attachShadow({ mode: 'open' });  
+        shadowRootNext.innerHTML = `  
+            <style>  
+                .Polaris-Icon {  
+                    width: 16px;                    height: 16px;                }  
+            </style>            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="Polaris-Icon">  
+                <path fill-rule="evenodd" d="M5.72 12.53a.75.75 0 0 1 0-1.06l3.47-3.47-3.47-3.47a.749.749 0 1 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06 0"></path>  
+            </svg>  
+        `;  
+    } else {  
+        console.log('다음 페이지 아이콘이 이미 렌더링되었습니다.');  
+    }  
+}
   
   
     $(document).ready(function () {  
