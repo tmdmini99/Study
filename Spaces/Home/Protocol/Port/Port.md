@@ -39,10 +39,53 @@
 
 
 
+## Port Kill
 
 
 
 
+```bash
+netstat -ano | findstr :<포트번호>
+```
+
+
+```bash
+netstat -ano | findstr :3000
+```
+
+
+```bash
+taskkill /PID <PID> /F
+```
+
+
+```bash
+taskkill /PID 1234 /F
+```
+
+
+max/linux
+
+```bash
+lsof -i :<포트번호>
+```
+
+```bash
+lsof -i :3000
+
+```
+
+
+```bash
+kill -9 <PID>
+
+```
+
+
+```bash
+kill -9 1234
+
+```
 
 
 
