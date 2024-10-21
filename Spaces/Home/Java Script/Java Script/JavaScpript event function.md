@@ -135,6 +135,73 @@ text 내용 가지고  이벤트 만들기
 
 
 
+```js
+// 디바운스 함수  
+function debounce(func, wait) {  
+    let timeout;  
+    return function (...args) {  
+        const context = this;  
+        clearTimeout(timeout);  
+        timeout = setTimeout(() => func.apply(context, args), wait);  
+    };  
+}  
+  
+$(document).on('input', '.Polaris-TextField__Input', debounce(function() {  
+    const searchTerm = $(this).val(); // 입력값 가져오기  
+    console.log('입력된 값:', searchTerm); // 입력값 출력  
+  
+    // 현재 주소를 가져옴  
+    const url = new URL(window.location.href);  
+  
+    // searchTerm이 비어 있으면 search 파라미터 삭제  
+    if (searchTerm) {  
+        url.searchParams.set('search', searchTerm); // 검색어가 있을 경우  
+    } else {  
+        url.searchParams.delete('search'); // 검색어가 없을 경우 파라미터 삭제  
+    }  
+  
+    // AJAX 요청  
+    fetch(url.toString(), {  
+        method: 'GET'  
+    })  
+    .then(response => response.text()) // 텍스트로 응답을 가져오기  
+    .then(data => {  
+        const searchResults = $('.Polaris-IndexTable'); // 클래스로 선택  
+        searchResults.empty(); // 기존 결과 지우기  
+  
+        // HTML 내용으로 업데이트  
+        let newDocument = $.parseHTML(data); // jQuery를 사용하여 HTML 파싱  
+        let newContent = $(newDocument).find('.Polaris-IndexTable'); // Polaris-IndexTable 클래스 선택  
+  
+        if (newContent.length > 0) { // Polaris-IndexTable이 존재할 경우  
+            searchResults.html(newContent.html()); // 기존 content만 업데이트  
+        } else if ($(newDocument).find('._ResourceListItemsWrapper_qvkap_26').length > 0) { // _ResourceListItemsWrapper_qvkap_26 클래스 확인  
+            let resourceListContent = $(newDocument).find('._ResourceListItemsWrapper_qvkap_26');  
+            searchResults.html(resourceListContent.html()); // _ResourceListItemsWrapper_qvkap_26 내용으로 업데이트  
+        } else {  
+            // 둘 다 없을 경우 처리  
+            console.warn('Polaris-IndexTable 또는 _ResourceListItemsWrapper_qvkap_26 클래스를 가진 요소를 찾을 수 없습니다. 서버 응답:', data);  
+            searchResults.html('<div>검색 결과가 없습니다.</div>');  
+        }  
+  
+        // URL 업데이트  
+        history.pushState(null, '', url.toString()); // URL도 업데이트  
+    })  
+    .catch(error => {  
+        console.error('검색 요청 실패:', error);  
+        const searchResults = $('.Polaris-IndexTable'); // 클래스로 선택  
+        searchResults.html('<div>검색 중 오류가 발생했습니다.</div>');  
+    });  
+}, 300)); // 300ms 후에 요청을 보내도록 설정
+```
+
+
+**디바운스 함수**: 입력 이벤트가 발생할 때마다 타이머를 설정하여 사용자가 입력을 멈춘 후 300ms 후에 AJAX 요청을 보내도록 설정합니다. 이로 인해 입력 중에 불필요한 요청이 발생하지 않게 됩니다.
+
+
+
+
+
 ## 새로 고침 이벤트
 
 ex
