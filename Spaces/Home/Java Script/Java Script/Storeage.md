@@ -71,6 +71,8 @@ $(document).ready(function () {
 $(window).on('beforeunload', function () {
     // 새로 고침 시 searchEvent 값을 세션 스토리지에 저장
     saveSearchEvent(searchEvent);
+    // 세션 스토리지값 삭제
+    sessionStorage.removeItem('searchEvent');
 });
 
 ```
