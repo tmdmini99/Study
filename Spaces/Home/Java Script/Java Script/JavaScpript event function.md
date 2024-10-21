@@ -124,3 +124,11 @@ $(document).on('input', '.Polaris-TextField__Input', function() {
 ### keyup 과 input 이벤트의 차이
 - `keyup` 이벤트는 사용자가 키를 누르고 뗄 때 발생하므로, 입력 필드에서 실시간으로 변경된 값을 감지하는 데 유용합니다.
 - `input` 이벤트는 입력값이 변경될 때마다 발생하지만, 어떤 이유로 `keyup` 이벤트를 사용하고 싶으신 경우에 적합합니다.
+
+
+
+```js
+$(document).on('click', '.Polaris-IndexFilters__ButtonWrap button:contains("취소")', function() {}
+```
+
+text 내용 가지고  이벤트 만들기
