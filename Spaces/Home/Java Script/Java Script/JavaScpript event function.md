@@ -132,3 +132,22 @@ $(document).on('click', '.Polaris-IndexFilters__ButtonWrap button:contains("취�
 ```
 
 text 내용 가지고  이벤트 만들기
+
+
+
+## 새로 고침 이벤트
+
+ex
+```js
+window.addEventListener('beforeunload', function (event) {
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+        console.log('페이지가 새로고침되었습니다.');
+        // 여기서 새로고침 시 수행할 동작을 추가
+    }
+    
+    // 기본적으로 사용자에게 새로고침 경고 메시지를 띄우고 싶다면 아래와 같이 처리
+    event.preventDefault(); // 일부 브라우저에서 필요
+    event.returnValue = ''; // 빈 문자열을 반환하여 경고 창 표시
+});
+
+```
