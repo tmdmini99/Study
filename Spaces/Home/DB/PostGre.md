@@ -718,5 +718,18 @@ WHERE EXISTS (
 이 쿼리는 `products` 테이블의 모든 컬럼을 검색하여, 'team'이라는 단어가 포함된 값을 가진 모든 레코드를 찾습니다. JSONB로 변환된 레코드는 다른 타입의 값들도 포함하므로, 다양한 데이터 타입에 대해 일관되게 검색할 수 있습니다.
 
 
+## id값 숫자일때 +1 -1 하는법
+
+
+```sql
+SELECT (id::BIGINT) + 1 AS next_id, id, (id::BIGINT) + 1 AS pre_id
+
+FROM orders
+
+WHERE id ~ '^[0-9]+$';
+```
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
