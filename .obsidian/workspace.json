@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
+                "file": "Spaces/Home/JSP/동기 작업.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CORS 적용"
+              "title": "동기 작업"
             }
           }
         ]
@@ -233,10 +233,12 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Thymeleaf.md",
+    "Spaces/Home/JSP/동기 작업.md",
+    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
     "Images/Pasted image 20241022093844.png",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Crawler/Crawler.md",
-    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
     "Spaces/Home/Protocol/Http/CORS/CORS.md",
     "Spaces/Home/Protocol/Http/CORS",
     "Images/Pasted image 20241022090905.png",
@@ -267,9 +269,7 @@
     "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/IntelliJ/Tomcat/Smart Tomcat.md",
     "Spaces/Home/IntelliJ/SSL/SSL적용.md",
-    "Spaces/Home/Protocol/Port/Port.md",
     "Images/Pasted image 20241021104250.png",
-    "Images/Pasted image 20241021104242.png",
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/CSRF/CSS",
