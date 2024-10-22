@@ -171,6 +171,93 @@ https://cors-anywhere.herokuapp.com/https://soyeon207.com
 로 cors-anywhere URL 뒤에 요청하는 URL 을 붙여서 요청하면 되는데 헤로쿠의 프록시 서버가 중간에 응답 헤더를 설정해주는 방식으로 파워풀 하긴 하지만 속도가 느리고 현재는 정상적으로 작동하지 않음
 
 
+# Proxy 적용
+
+
+## Proxy
+
+CORS 처리를 백엔드 개발자에게 요청할 필요없이 React 라이브러리, Webpack Dev Server에서 제공하는 proxy기능을 사용하면 CORS 정책을 우회할 수 있다. 이는 별도의 응답 헤더를 받을 필요 없이 브라우저는 React 앱으로 데이터를 요청하고, 해당 요청을 백엔드로 전달하게 됩니다. 여기서 React 앱이 서버로부터 받은 응답 데이터를 다시 브라우저로 전달하는 방법을 쓰기 때문에 브라우저는 CORS 정책을 위반했는지 모르게 됩니다. 브라우저를 proxy 기능을 통해 속이는 것입니다.
+
+![[img1.daumcdn.webp]]
+
+
+
+위 그림에서 Direct data exchange는 proxy를 사용하기 전의 흐름이다.
+
+프론트엔드, 즉 여러분이 개발한 React 앱에서 브라우저 쪽으로 요청을 보냅니다. 그러면 브라우저는 백엔드, 즉 서버 쪽으로 리소스를 요청하게 됩니다. 이때 접근 권한이 있는지, 즉 출처가 같은지 확인하는데 이때 백엔드 서버는 정상적으로 200 OK 응답을 브라우저에게 보냅니다. 마지막으로 브라우저는 받은 리소스 및 응답과 함께 출처가 같은지 아닌지 확인하게 되는데, 이때 출처가 다르다면 응답을 파기(CORS Error) 하고, 출처가 같다면 응답을 파기하지 않고 다시 프론트엔드 쪽으로 응답을 보내주는 것입니다.
+
+하지만 아래부분인 data exchange through a proxy server는 proxy를 적용해 브라우저를 속인 후 흐름입니다. React 앱에서 브라우저를 통해 API를 요청할 때, proxy를 통해 백엔드 서버로 요청을 우회하여 보내게 됩니다. 그러면 백엔드 서버는 응답을 React 앱으로 보내고, React 앱은 받은 응답을 백엔드 서버 대신 브라우저에게 전달합니다. 이렇게 되면 출처가 같아지기 때문에 브라우저는 이 사실을 눈치채지 못하고 허용하게 됩니다.
+
+## [Proxy 사용방법](https://jhbljs92.tistory.com/entry/Proxy-CORS-%EC%A0%95%EC%B1%85-%EC%9A%B0%ED%9A%8C#Proxy%20%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-1)
+
+### [1. webpack dev server의 proxy 기능 사용](https://jhbljs92.tistory.com/entry/Proxy-CORS-%EC%A0%95%EC%B1%85-%EC%9A%B0%ED%9A%8C#1.%20webpack%20dev%20server%EC%9D%98%20proxy%20%EA%B8%B0%EB%8A%A5%20%EC%82%AC%EC%9A%A9-1)
+
+먼저 webpack dev server에서 제공하는 proxy 기능을 사용하는 방법이 있습니다. webpack dev server의 proxy를 사용하게 되면, 브라우저 API를 요청할 때 백엔드 서버에 직접적으로 요청을 하지 않고, 현재 개발서버의 주소로 우회 요청을 하게 됩니다. 그러면 웹팩 개발 서버에서 해당 요청을 받아 그대로 백엔드 서버로 전달하고, 백엔드 서버에서 응답한 내용을 다시 브라우저 쪽으로 반환합니다.
+
+1-1. 클라이언트 폴더 **package.json**의 맨 밑에 프록시 설정을 추가.
+
+데이터를 받아올 서버의 주소가 localhost:3080이므로 아래와 같이 서버의 주소를 넣어준다.
+
+
+
+
+![[Pasted image 20241022150508.png]]
+
+
+
+1-2. 그다음 fetch함수를 도메인 주소를 지우고 파라미터만 남겨둔다.
+
+
+
+![[Pasted image 20241022150516.png]]
+
+
+
+위처럼 요청 url에 /api/books, /api/book 처럼 도메인주소를 지우고 파라미터만 남겨주었다.
+
+이렇게 하면 요청을 보낼 때 현재페이지의 도메인으로 인식하게 되어 http://localhost:3080/api/books, http://localhost:3080/api/book 로 요청이 보내진다.
+
+**이렇게 수정을 했다면 반드시 서버와 앱을 껐다 키자!!**
+
+위와 같은 방법으로 설정하는 방법은 CRA로 만든 프로젝트에서는 유효하지 않기 때문에
+
+리액트 라이브러리 http-proxy-middleware를 불러와 처리해야한다.
+
+### [2. http-proxy-middleware 라이브러리](https://jhbljs92.tistory.com/entry/Proxy-CORS-%EC%A0%95%EC%B1%85-%EC%9A%B0%ED%9A%8C#2.%20http-proxy-middleware%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-1)
+
+webpack dev server에서 제공하는 proxy는 전역적인 설정이기 때문에, 종종 해당 방법이 충분히 적용되지 않는 경우가 생기기도 합니다. 그래서 수동으로 proxy를 적용해줘야 하는 경우가 있는데, 이때는 http-proxy-middleware 라이브러리를 사용해야 합니다.
+
+2-1. 클라이언트 폴더에서 아래의 명령어로 라이브러리 설치
+
+```bash
+npm install http-proxy-middleware --save
+```
+
+2-2. 그리고 React App의 src 파일 안에서 **setupProxy.js** 파일을 생성하고, 안에서 설치한 라이브러리 파일을 불러온 다음, 아래와 같이 작성을 합니다.
+
+
+
+![[Pasted image 20241022150523.png]]
+
+
+파일명은 무조건 **setupProxy.js**로 해야한다.
+
+하지만 받아올 서버가 여러개라면 두가지 방법으로 작성해 줄 수 있다.
+
+**첫번째 방법: 여러개의 app.use()로 각각 처리**
+
+
+![[Pasted image 20241022150529.png]]
+
+
+**두번째 방법: 라우터 이용하기**
+
+
+![[Pasted image 20241022150534.png]]
+
+
+
+
 
 
 
