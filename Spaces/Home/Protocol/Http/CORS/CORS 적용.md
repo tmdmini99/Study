@@ -257,6 +257,51 @@ npm install http-proxy-middleware --save
 
 
 
+---
+
+
+
+
+### `@CrossOrigin`을 사용하는 경우
+
+- **목적**: 클라이언트(프론트엔드)에서 다른 출처의 API에 요청할 수 있도록 허용하는 것입니다.
+- **작동 방식**: 이 어노테이션을 통해 서버는 특정 출처의 요청을 수락하게 됩니다. 즉, 브라우저가 다른 출처의 API를 호출할 때 CORS 정책에 의해 차단되지 않도록 합니다.
+- **예시**: `@CrossOrigin(originPatterns = "http://localhost:8080")`이 있으면, 해당 URL에서의 요청이 서버에 전달됩니다. 하지만 이 방식은 프록시 역할을 하지 않고, 단순히 허용하는 것입니다.
+
+### 2. 프록시 컨트롤러를 만드는 경우
+
+- **목적**: 외부 API에 대한 요청을 중계하는 역할을 합니다. 클라이언트가 직접 외부 API에 요청하지 않고, 서버(백엔드)가 대신 요청하여 그 결과를 클라이언트에 전달합니다.
+- **작동 방식**: 클라이언트는 서버의 프록시 엔드포인트로 요청을 보내고, 서버는 외부 API에 요청한 후 그 응답을 클라이언트에 반환합니다. 이 과정에서 서버가 요청을 변환하거나 추가적인 처리를 할 수 있습니다.
+- **예시**: `ProxyController`에서 `/proxy/crawl`로 요청을 받아 외부 URL로 요청을 전송하고, 받은 데이터를 가공해서 클라이언트에게 전달합니다.
+
+### 차이점 요약
+
+|요소|`@CrossOrigin` 사용|프록시 컨트롤러 생성|
+|---|---|---|
+|**목적**|CORS 정책 설정|외부 API 요청 중계|
+|**작동 방식**|클라이언트가 직접 외부 API에 접근 가능|서버가 외부 API에 요청을 대신 수행|
+|**장점**|설정이 간단하고 빠르게 적용 가능|요청을 변환하거나 추가 로직 적용 가능|
+|**단점**|CORS 오류 발생 가능|서버 부하 증가, 응답 시간 증가 가능|
+
+```java
+@Controller
+public class ProxyController {
+    @GetMapping("/proxy/crawl")
+    public ResponseEntity<String> proxyCrawlRequest(@RequestParam String url) {
+        RestTemplate restTemplate = new RestTemplate();
+        try {
+            ResponseEntity<byte[]> response = restTemplate.getForEntity(url, byte[].class);
+            String body = new String(response.getBody(), StandardCharsets.UTF_8);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(new MediaType("application", "rss+xml", StandardCharsets.UTF_8));
+            return new ResponseEntity<>(body, headers, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body("데이터를 가져오지 못했습니다: " + e.getMessage());
+        }
+    }
+}
+
+```
 
 
 
