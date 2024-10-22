@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
+                "file": "Spaces/Home/Java Script/Java Script/현재 경로 패턴 반환.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "database-context.xml"
+              "title": "현재 경로 패턴 반환"
             }
           }
         ]
@@ -233,6 +233,7 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/DB/Oracle.md",
     "Spaces/Home/DB/SQL Injection.md",
@@ -269,7 +270,6 @@
     "Spaces/Home/Java Script/Java Script/Pagination.md",
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "Spaces/Home/Java Script/Java Script/splice().md",
-    "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/CSRF/CSS",
