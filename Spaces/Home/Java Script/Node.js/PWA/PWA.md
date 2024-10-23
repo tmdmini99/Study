@@ -1,200 +1,61 @@
+# PWA(Progressive Web Apps)란?
+
+![[PWA1.png]]
+
+
+최근 IOS 버전 16.4에 웹 앱 알림를 지원하는 기능에 추가되었다. 그래서 웹 개발자들 사이에서 PWA에 대한 기대감이 커지고 있는데 PWA는 무엇일까?
+
+# PWA
+
+PWA는 프로그레시브 웹 앱(progressive web app)의 준말로, 웹 기술(HTML, CSS, Javascript)을 가지고 모바일 네이티브 앱과 비슷하게 만들 수 있는 기술을 말한다.(Apple은 PWA를 웹 응용 프로그램이라고 부르기도한다.)  
+모바일 웹 사이트와 네이티브 앱의 중간 형태로, 모바일 앱과 웹 사이트의 장점을 결합하여 사용자 친화적인 앱 경험을 제공할 수 있다고 한다.
+
+> 즉 PWA은 HTML, CSS, JavaScript를 포함한 일반적인 웹 기술을 사용하여 개발된 응용 프로그램 소프트웨어이며 표준적인 웹 브라우저를 포함한 모든 플랫폼에서 작동한다.
+
+사용자의 관점에서 PWA는 App Store나 Play store에서 다운로드하지 않고도 장치의 홈 화면에 추가할 수 있는 웹 사이트에 비유할 수 있다.
+
+사실 iOS는 PWA의 아이디어를 지원하는 최초의 플랫폼이었다. iPhone이 처음 소개되었을 때 App Store가 아직 존재하지 않았고 초기 앱은 HTML5를 사용하여 제작되었다. 하지만 App Store가 도입된 후 PWA에 대한 Apple의 지원이 줄어들기 시작했고 최근에서야 다시 PWA에 대한 지원이 추가된 것이다.
+
+## 장점
+
+- 빠른 성능을 제공한다.
+- 앱 스토어를 거치지 않아도 웹 브라우저에서 바로 앱을 사용할 수 있다.
+- 앱 스토어를 거치지 않아도 앱 업데이트가 자동으로 이루어진다.
+- 오프라인에서도 작동이 가능하다.
+- 검색 엔진 최적화(SEO)에 유리하다.
+- 모바일 앱과 웹의 장점을 모두 활용할 수 있다.
+
+## 단점
+
+- 아직 모든 기능이 네이티브 앱과 같지는 않다. OS에서 지원하지 않는 경우 하드웨어 접근이나 네이티브 기능에 대한 제한이 있을 수 있다. 따라서 사용자 경험이 모든 디바이스에서 동일하지 않을 수 있다.
+- 브라우저에서 실행되기 때문에 네이티브 앱에 비해서 지연 속도가 크고 배터리 소모량이 더 많을 수 있다.
+
+# PWA 도입 사례
 
 
 
-### Node.js로 PWA 만들기
-
-여기서는 Node.js와 Express.js를 사용하여 기본적인 PWA를 만드는 과정을 설명하겠습니다.
-
-#### 1. Node.js 설치
-
-Node.js가 설치되어 있지 않다면 [Node.js 공식 웹사이트](https://nodejs.org/)에서 설치해 주세요.
-
-#### 2. 프로젝트 설정
-
-1. **새 프로젝트 폴더 만들기**:
-
-```bash
-mkdir my-pwa
-cd my-pwa
-```
+![[PWA2.png]]
 
 
-**npm 초기화**:
-
-```bash
-npm init -y
-```
+![[PWA3.png]]
 
 
-**Express.js 설치**:
-```bash
-npm install express
-```
+Pinterest : 전체 모바일 사이트를 PWA로 재구성했다. 핵심 참여자가 60% 증가했으며, 사용자 광고수익도 44% 증가했다.  
+Tinder : 로딩시간을 11.91초에서 4.69초로 줄였다. PWA는 안드로이드앱보다 90% 작은 크기를 유지한다.  
+Uber : 2G에서도 빠르게 작동하도록 설계했다. 기본앱은 50k이며, 2G 네트워크에서도 3초이내에 로드 할 수 있다.
 
-#### 3. 기본 서버 설정
+# PWA의 미래
 
-1. **`server.js` 파일 만들기**: 프로젝트 루트에 `server.js` 파일을 생성하고 아래 코드를 추가합니다.
-
-
-```js
-const express = require('express');
-const path = require('path');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// 정적 파일 제공
-app.use(express.static(path.join(__dirname, 'public')));
-
-// 루트 경로에 대한 응답
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-```
+PWA는 현재 구글과 함께 마이크로소프트, 모질라 등 많은 기업들이 참여하고 있다.  
+구글은 PWA기술을 통해 크롬 OS를 성장시키고 발전 시킬 가능성이 있으며, 마이크로소프트는 부진했던 모바일 시장에 진입할 수 있는 통로가 될 수 있기 때문이다.
 
 
-#### 4. 정적 파일 및 PWA 설정
 
-1. **`public` 폴더 만들기**:
-
-```bash
-mkdir public
-```
+또한 요즘 많은 기업들이 App store, Play store의 인앱결제 수수료에 불만을 가지고 있어 법적 싸움까지 가는 경우가 많아지고 있다. PWA는 앱 스토어를 거치지 않고 사용자에게 바로 브라우저를 통해 앱을 제공할 수 있기 때문에 인앱결제 수수료에 대해 고민하고 있는 많은 기업들의 대안이 될 수 있다.  
+물론 OS에서 지원해주지 않는 이상 PWA는 힘을 쓸 수 없지만 기업과 사용자의 지속적인 요구에 PWA에 대한 OS의 지원은 지속적으로 이루어질 것이라 예상되고 PWA의 미래는 밝다고 개인적으로 생각한다.
 
 
-**HTML 파일 생성**: `public` 폴더 안에 `index.html` 파일을 생성하고 아래 코드를 추가합니다.
 
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PWA</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Welcome to My Progressive Web App!</h1>
-    <p>This is a simple PWA example.</p>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                .then(registration => {
-                    console.log('Service Worker registered with scope:', registration.scope);
-                })
-                .catch(error => {
-                    console.log('Service Worker registration failed:', error);
-                });
-            });
-        }
-    </script>
-</body>
-</html>
-```
-
-
-**매니페스트 파일 생성**: `public` 폴더 안에 `manifest.json` 파일을 만들고 아래 내용을 추가합니다.
-
-
-```json
-{
-    "short_name": "MyApp",
-    "name": "My Progressive Web App",
-    "icons": [
-        {
-            "src": "images/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "images/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "start_url": "/index.html",
-    "display": "standalone",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff"
-}
-```
-
-
-**스타일 시트 추가**: `public` 폴더 안에 `styles.css` 파일을 만들고 아래 내용을 추가합니다.
-
-```js
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
-    color: #333;
-}
-```
-
-
-**서비스 워커 파일 생성**: `public` 폴더 안에 `service-worker.js` 파일을 만들고 아래 내용을 추가합니다.
-
-```js
-self.addEventListener('install', event => {
-    console.log('Service Worker: Installed');
-    event.waitUntil(
-        caches.open('static-v1').then(cache => {
-            return cache.addAll([
-                '/',
-                '/index.html',
-                '/styles.css',
-                '/images/icon-192x192.png',
-                '/images/icon-512x512.png'
-            ]);
-        })
-    );
-});
-
-self.addEventListener('activate', event => {
-    console.log('Service Worker: Activated');
-});
-
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-        .then(response => {
-            return response || fetch(event.request);
-        })
-    );
-});
-
-```
-
-
-1. **아이콘 이미지 추가**: `public/images` 폴더를 만들고 필요한 아이콘 이미지 파일(`icon-192x192.png`, `icon-512x512.png`)을 추가합니다.
-    
-
-#### 5. 서버 실행
-
-- 아래 명령어를 통해 서버를 실행합니다.
-
-
-```bash
-node server.js
-```
-
-
-- 브라우저를 열고 `http://localhost:3000`으로 이동하여 PWA를 확인합니다.
-
-### 6. PWA 기능 테스트
-
-- Chrome DevTools의 Application 탭에서 매니페스트와 서비스 워커가 올바르게 등록되었는지 확인합니다.
-- 오프라인 상태에서도 페이지가 작동하는지 테스트합니다.
-
-### 7. 추가 옵션
-
-- Node.js와 Express.js 외에도 다른 백엔드 프레임워크를 사용할 수도 있습니다. 예를 들어, Koa, Hapi 등 다양한 선택지가 있습니다.
-- 데이터베이스를 추가하여 동적인 데이터를 처리할 수도 있습니다.
+---
+출처 - https://velog.io/@foxrain_gg/PWAProgressive-Web-Apps%EB%9E%80
