@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/JSP/Iframe.md",
+                "file": "Spaces/Home/JSP/Iframe 단점 및 대체.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Iframe"
+              "title": "Iframe 단점 및 대체"
             }
           }
         ]
@@ -197,8 +197,10 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
     "Spaces/Home/JSP/Iframe.md",
+    "Spaces/Home/JSP/Iframe 단점 및 대체.md",
+    "Images/Pasted image 20241023134628.png",
+    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
     "daily note/2024/10/2024-10-23.md",
     "Spaces/Home/Protocol/Protocol.md",
     "Spaces/Home/Java Script/Java Script/현재 경로 패턴 반환.md",
@@ -221,7 +223,6 @@
     "Spaces/Home/Protocol/Http/CORS",
     "Images/Pasted image 20241022090905.png",
     "Images/Pasted image 20241022090900.png",
-    "Images/Pasted image 20241022090848.png",
     "Spaces/Home/Protocol/Http/SSL/SSL.md",
     "Spaces/Home/Protocol/Http/SSL/Domain 적용.md",
     "daily note/2024/10/2024-10-22.md",
@@ -233,7 +234,6 @@
     "Spaces/Home/Java Script/Jquery/window.load document.ready 차이.md",
     "Spaces/Home/Java Script/Jquery/복사.md",
     "Spaces/Home/Java Script/Jquery/뒤로가기.md",
-    "Spaces/Home/Java Script/Java Script/문구 복사.md",
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/CSRF/CSS",
