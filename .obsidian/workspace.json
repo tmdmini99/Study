@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-23.md",
+                "file": "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-10-23"
+              "title": "CORS 적용"
             }
           }
         ]
@@ -75,54 +75,6 @@
             }
           },
           {
-            "id": "f3e163b26c384178",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "874cfff9e033e95d",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "b3f854ecf359c757",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "260fbdbc077d79fe",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "a24aaa3a858d9872",
             "type": "leaf",
             "state": {
@@ -132,8 +84,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
@@ -246,8 +197,8 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
     "daily note/2024/10/2024-10-23.md",
+    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
     "Spaces/Home/Protocol/Protocol.md",
     "Spaces/Home/Java Script/Java Script/현재 경로 패턴 반환.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
