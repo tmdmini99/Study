@@ -229,14 +229,284 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 ```
 
 
+controller
+```java
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UpdateController {
+    private final SimpMessagingTemplate messagingTemplate;
+
+    public UpdateController(SimpMessagingTemplate messagingTemplate) {
+        this.messagingTemplate = messagingTemplate;
+    }
+
+    @PostMapping("/update")
+    public void updateData() {
+        // 데이터베이스 업데이트 로직
+        // ...
+
+        // 클라이언트에 알림 전송
+        messagingTemplate.convertAndSend("/topic/updates", "데이터가 업데이트되었습니다.");
+    }
+}
+
+```
+
+#### 1.2 Node.js에서 웹소켓 클라이언트 설정하기
+
+Node.js에서 웹소켓 클라이언트를 설정하려면 `socket.io-client` 패키지를 사용할 수 있습니다.
+
+**설치**
+
+
+
+```bash
+npm install socket.io-client
+```
+
+Node.js 코드
+
+```js
+const io = require('socket.io-client');
+const socket = io('http://your-spring-server-address/ws');
+
+socket.on('connect', () => {
+    console.log('Connected to Spring WebSocket server');
+});
+
+socket.on('/topic/updates', (message) => {
+    alert(message); // 클라이언트에서 alert 띄우기
+});
+```
+
+
+
+### 2. 폴링(Polling) 기법 사용하기
+
+폴링은 일정 시간 간격으로 서버에 요청을 보내어 상태를 확인하는 방법입니다. 이 방법은 실시간성이 떨어지지만, 간단하게 구현할 수 있습니다.
+
+
+
+2.1 Spring Boot에서 데이터 상태 확인 API 만들기
+
 
 ```java
+@RestController
+public class StatusController {
+    private boolean dataUpdated = false;
+
+    @PostMapping("/update")
+    public void updateData() {
+        // 데이터베이스 업데이트 로직
+        // ...
+
+        // 업데이트 상태 변경
+        dataUpdated = true;
+    }
+
+    @GetMapping("/check-update")
+    public boolean checkUpdate() {
+        boolean updated = dataUpdated;
+        dataUpdated = false; // 한 번 확인한 후 초기화
+        return updated;
+    }
+}
 
 ```
 
 
 
+2.2 Node.js에서 폴링 설정하기
 
+
+```js
+setInterval(() => {
+    fetch('http://your-spring-server-address/check-update')
+        .then(response => response.json())
+        .then(data => {
+            if (data) {
+                alert('데이터가 업데이트되었습니다.');
+            }
+        });
+}, 5000); // 5초마다 체크
+```
+
+
+
+### 결론
+
+- **웹소켓**을 사용하면 실시간으로 데이터베이스 업데이트를 감지할 수 있어 사용자 경험을 개선할 수 있습니다.
+- **폴링** 기법은 구현이 간단하지만, 서버에 더 많은 요청을 보내게 되어 부하가 증가할 수 있습니다.
+
+
+
+
+app.post
+
+
+
+### 1. Spring Boot에서 POST 요청 보내기
+
+Spring Boot에서 데이터베이스 업데이트가 이루어질 때, Node.js 서버에 HTTP POST 요청을 보내는 코드를 추가합니다.
+
+#### 1.1 Spring Boot에서 HttpClient 설정하기
+
+먼저, Spring Boot에서 HTTP 클라이언트를 사용하기 위해 `spring-boot-starter-web` 의존성이 필요합니다.
+
+**의존성 추가 (pom.xml)**
+
+
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+
+#### 1.2 데이터베이스 업데이트 시 POST 요청 보내기
+
+**UpdateController.java**
+
+
+```java
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class UpdateController {
+    
+    private final RestTemplate restTemplate;
+
+    public UpdateController(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<String> updateData() {
+        // 데이터베이스 업데이트 로직
+        // ...
+
+        // Node.js 서버에 POST 요청 보내기
+        String nodeUrl = "http://your-node-server-address/notify-update";
+        restTemplate.postForEntity(nodeUrl, null, String.class);
+
+        return ResponseEntity.ok("Data updated successfully");
+    }
+}
+
+```
+
+
+### 2. Node.js 서버에서 POST 요청 수신하기
+
+Node.js 서버에서 Spring Boot로부터 POST 요청을 수신하고 알림을 띄우는 코드를 작성합니다.
+
+#### 2.1 Express 설정하기
+
+Express 서버를 설정하고 POST 요청을 처리하는 라우트를 만듭니다.
+
+**Node.js 코드**
+
+
+```js
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.json()); // JSON 요청 본문을 파싱하기 위해 middleware 추가
+
+app.post('/notify-update', (req, res) => {
+    // 요청 수신 시 alert를 띄울 수 없으므로, 콘솔에 로그를 남김
+    console.log('데이터가 업데이트되었습니다.'); // 알림
+    // 클라이언트에 알림을 띄우려면, 웹소켓이나 다른 방법을 사용해야 함
+
+    // 응답 반환
+    res.send('Notification received');
+});
+
+app.listen(port, () => {
+    console.log(`Node.js server listening at http://localhost:${port}`);
+});
+```
+
+
+### 3. 클라이언트에서 알림 띄우기
+
+Node.js 서버에서 직접 클라이언트에게 알림을 띄우는 것은 불가능합니다. 일반적으로는 웹소켓이나 AJAX 요청을 통해 클라이언트와의 통신을 구현합니다. 하지만, 단순한 알림을 위해 Node.js 서버에서 클라이언트에게 추가적인 요청을 보내도록 설정할 수 있습니다.
+
+#### 3.1 AJAX를 사용한 알림 구현
+
+클라이언트에서 정기적으로 Node.js 서버에 요청을 보내어 데이터 업데이트 상태를 확인하도록 설정할 수 있습니다. 아래는 예시 코드입니다.
+
+**클라이언트 코드 (예: HTML)**
+
+
+```html
+<script>
+setInterval(() => {
+    fetch('http://your-node-server-address/check-update') // Node.js 서버의 알림 상태 확인 API
+        .then(response => response.json())
+        .then(data => {
+            if (data.updated) {
+                alert('데이터가 업데이트되었습니다.');
+            }
+        });
+}, 5000); // 5초마다 확인
+</script>
+```
+
+
+
+- **Spring Boot**에서 데이터베이스 업데이트가 발생하면 **Node.js** 서버에 HTTP POST 요청을 보내어 업데이트를 알립니다.
+- **Node.js**는 요청을 수신하고, 클라이언트에서 알림을 띄우기 위해 별도의 요청을 처리하는 로직을 추가할 수 있습니다.
+- 클라이언트 측에서 정기적으로 Node.js 서버에 요청을 보내어 업데이트 상태를 확인하는 방법도 가능합니다.
+
+
+### 웹소켓 (WebSocket)
+
+#### 장점
+
+1. **실시간 통신**: 웹소켓은 양방향 통신을 지원하므로 서버와 클라이언트 간에 실시간으로 데이터를 주고받을 수 있습니다. 예를 들어, 데이터가 업데이트될 때마다 클라이언트에 즉시 알림을 보낼 수 있습니다.
+    
+2. **효율성**: 웹소켓은 HTTP 핸드셰이크 후, 지속적인 연결을 유지하여 데이터 전송 시 오버헤드가 적습니다. 즉, 연결이 계속 유지되므로 매번 요청을 보내는 것보다 효율적입니다.
+    
+3. **이벤트 기반**: 서버가 클라이언트의 상태를 감지하고 이벤트를 발생시킬 수 있으므로 사용자 경험이 더 원활합니다.
+    
+
+#### 단점
+
+1. **복잡성**: 웹소켓을 구현하는 데 필요한 코드가 더 복잡합니다. 서버와 클라이언트 모두에 대해 웹소켓 연결과 이벤트 처리를 구현해야 합니다.
+    
+2. **서버 리소스 사용**: 지속적인 연결을 유지해야 하므로 서버의 리소스 사용량이 늘어날 수 있습니다. 특히 클라이언트 수가 많아질 경우, 성능에 영향을 줄 수 있습니다.
+    
+3. **브라우저 호환성**: 대부분의 최신 브라우저에서 지원하지만, 특정 환경에서는 문제가 발생할 수 있습니다.
+    
+
+### HTTP POST
+
+#### 장점
+
+1. **간단한 구현**: HTTP POST 방식은 RESTful API를 사용하는 것과 유사하게 구현할 수 있으며, 구조가 간단합니다. Spring Boot와 Express.js와 같은 프레임워크에서 쉽게 사용할 수 있습니다.
+    
+2. **상태 비저장**: 요청과 응답이 독립적이므로, 서버가 클라이언트의 상태를 관리할 필요가 없습니다.
+    
+3. **보안**: HTTPS를 사용하여 데이터를 안전하게 전송할 수 있으며, CSRF(사이트 간 요청 위조)와 같은 보안 문제를 더 쉽게 관리할 수 있습니다.
+    
+
+#### 단점
+
+1. **비실시간 통신**: 클라이언트가 서버에 요청을 보내야 하므로 실시간성이 떨어집니다. 데이터 업데이트 시마다 클라이언트에서 주기적으로 요청을 보내야 합니다.
+    
+2. **오버헤드**: 매번 HTTP 요청을 보내고 응답을 받는 과정에서 오버헤드가 발생합니다. 특히 빈번한 요청을 보내야 하는 경우 성능 저하가 발생할 수 있습니다.
 
 
 
