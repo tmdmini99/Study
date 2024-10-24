@@ -32,7 +32,25 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 ```js
-
+$.ajax({
+	url: "https://jsonplaceholder.typicode.com/posts",  // POST 요청을 보낼 URL
+	method: "POST", // POST 방식
+	data: JSON.stringify(postData), // 데이터를 JSON 형식으로 변환
+	contentType: "application/json; charset=UTF-8", // 전송할 데이터의 형식 지정
+	success: function(response) {
+		// 성공적으로 데이터를 보낸 경우 응답 데이터 출력
+		$("#responseResult").html(`
+			<h3>Post Created Successfully</h3>
+			<p><strong>ID:</strong> ${response.id}</p>
+			<p><strong>Title:</strong> ${response.title}</p>
+			<p><strong>Body:</strong> ${response.body}</p>
+		`);
+	},
+	error: function(error) {
+		// 에러 발생 시
+		$("#responseResult").html("<p>Something went wrong.</p>");
+	}
+});
 ```
 
 

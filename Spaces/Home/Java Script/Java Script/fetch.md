@@ -114,3 +114,33 @@ fetch('/api/v2/resource', {
 });
 ```
 
+
+
+
+
+```js
+// Fetch를 사용하여 POST 요청 보내기
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",  // POST 방식
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8"  // JSON 형식 지정
+                },
+                body: JSON.stringify(postData)  // 데이터를 JSON 문자열로 변환하여 전송
+            })
+            .then(response => response.json())  // JSON 응답을 JavaScript 객체로 변환
+            .then(data => {
+                // 성공적으로 응답 데이터를 받았을 때
+                document.getElementById("responseResult").innerHTML = `
+                    <h3>Post Created Successfully</h3>
+                    <p><strong>ID:</strong> ${data.id}</p>
+                    <p><strong>Title:</strong> ${data.title}</p>
+                    <p><strong>Body:</strong> ${data.body}</p>
+                `;
+            })
+            .catch(error => {
+                // 에러 발생 시
+                document.getElementById("responseResult").innerHTML = "<p>Something went wrong.</p>";
+                console.error("Error:", error);
+            });
+        });
+```
