@@ -144,3 +144,86 @@ fetch('/api/v2/resource', {
             });
         });
 ```
+
+
+
+fetch 요청 취소
+
+```js
+let abortController; // 전역 변수로 설정  
+let isLoading = false; // 로딩 상태 플래그  
+  
+$(document).on('input', '.Polaris-TextField__Input', async function() {  
+    // 이전 요청이 진행 중이면 취소  
+    if (abortController) {  
+        // 요청 취소를 백엔드에 알림  
+        const requestId = abortController.requestId; // 현재 요청의 ID        await fetch(`/cancel`, {  
+            method: 'GET'  
+        });  
+  
+        abortController.abort(); // 이전 요청 취소  
+        console.log('Previous request aborted');  
+    }  
+  
+    // 새로운 AbortController 생성  
+    abortController = new AbortController();  
+    const signal = abortController.signal;  
+  
+    const searchTerm = $(this).val(); // 입력값 가져오기  
+    console.log('입력된 값:', searchTerm);  
+  
+    const url = new URL(window.location.href);  
+    if (searchTerm) {  
+        url.searchParams.set('search', searchTerm);  
+    } else {  
+        url.searchParams.delete('search');  
+    }  
+  
+    // pageNumber 파라미터 삭제  
+    url.searchParams.delete('pageNumber');  
+  
+    // 로딩 바 표시  
+    showLoading(); // 로딩 바 표시  
+    isLoading = true; // 로딩 상태 설정  
+  
+    try {  
+        const response = await fetch(url.toString(), {  
+            method: 'GET',  
+            signal: signal // signal 추가  
+        });  
+  
+        if (response.ok) {  
+            const data = await response.text();  
+            const searchResults = $('.Polaris-IndexTable');  
+            searchResults.empty(); // 기존 결과 지우기  
+  
+            // HTML 내용으로 업데이트  
+            let newDocument = $.parseHTML(data);  
+            let newContent = $(newDocument).find('.Polaris-IndexTable');  
+  
+            if (newContent.length > 0) {  
+                searchResults.html(newContent.html()); // 결과 업데이트  
+            } else {  
+                searchResults.html('<div>검색 결과가 없습니다.</div>');  
+            }  
+  
+            // URL 업데이트  
+            history.pushState(null, '', url.toString());  
+        }  
+    } catch (error) {  
+        if (error.name === 'AbortError') {  
+            console.log('요청이 취소되었습니다.'); // 요청이 취소된 경우  
+        } else {  
+            console.error('검색 요청 실패:', error);  
+            const searchResults = $('.Polaris-IndexTable');  
+            searchResults.html('<div>검색 중 오류가 발생했습니다.</div>');  
+        }  
+    } finally {  
+        // 요청 완료 후 로딩 바 숨김  
+        if (isLoading) {  
+            hideLoading(); // 로딩 바 숨김  
+            isLoading = false; // 로딩 상태 리셋  
+        }  
+    }  
+});
+```
