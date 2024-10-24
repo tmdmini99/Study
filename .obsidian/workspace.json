@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/10/2024-10-24.md",
+                "file": "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-10-24"
+              "title": "동기 & 비동기"
             }
           },
           {
@@ -111,30 +111,6 @@
             }
           },
           {
-            "id": "a24aaa3a858d9872",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "30a365d5113a9fa0",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "1f95781611e8a5b3",
             "type": "leaf",
             "state": {
@@ -144,8 +120,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -256,16 +231,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8892146adda2318c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Node.js/Project/api 연동 후 DB Insert.md",
+    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일2.md",
+    "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
+    "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
+    "Spaces/Home/Java Script/Node.js/Module/Node.js DB 연동.md",
+    "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
+    "Spaces/Home/Java Script/Node.js/Node/Node.md",
+    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "daily note/2024/10/2024-10-24.md",
     "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/JSP/EL.md",
     "Spaces/Home/Java Script/Node.js/Node/환경 변수 설정.md",
-    "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 변수.md",
-    "Spaces/Home/Java Script/Node.js/Node/Node.js 문법.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 모듈.md",
     "Spaces/Home/Java Script/Node.js/PWA/PWA 파일 설정.md",
     "Spaces/Home/Java Script/Node.js/PWA/PWA.md",
@@ -283,19 +265,12 @@
     "Spaces/Home/Protocol/Protocol.md",
     "Spaces/Home/Java Script/Java Script/현재 경로 패턴 반환.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
-    "Spaces/Home/DB/PostGre.md",
-    "Spaces/Home/DB/Oracle.md",
-    "Spaces/Home/DB/SQL Injection.md",
     "Images/Pasted image 20241022150534.png",
     "Images/Pasted image 20241022150529.png",
     "Images/Pasted image 20241022150523.png",
     "Images/Pasted image 20241022150516.png",
     "Images/Pasted image 20241022150508.png",
     "Images/img1.daumcdn.webp",
-    "Spaces/Home/JSP/동기 작업.md",
-    "Spaces/Home/Spring/Spring Legacy/Thymeleaf.md",
-    "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
-    "Spaces/Home/Crawler/Crawler.md",
     "Spaces/Home/Protocol/Http/CORS",
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",
