@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/PostgreSql.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PostgreSql"
+              "title": "security-context.xml"
             }
           },
           {
@@ -89,7 +89,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "잘못된 자격 증명",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -120,7 +120,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -233,6 +234,13 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Security/AuthenticationProvider.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
+    "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
+    "Spaces/Home/Java/JSON/GSON.md",
+    "Spaces/Home/Spring/Spring Legacy/Pagination.md",
+    "Spaces/Home/Spring/Security.md",
+    "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
@@ -252,19 +260,12 @@
     "Spaces/Home/Java Script/Node.js/Node/환경 변수 설정.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 함수.md",
     "Spaces/Home/Java Script/Node.js/Node/Node.js 모듈.md",
-    "Spaces/Home/Java Script/Node.js/PWA/PWA 파일 설정.md",
-    "Spaces/Home/Java Script/Node.js/PWA/PWA.md",
     "Images/PWA3.png",
     "Images/PWA2.png",
     "Images/PWA1.png",
-    "Spaces/Home/IntelliJ/PWA/PWA 설정.md",
     "Spaces/Home/Java Script/Node.js/PWA",
-    "Spaces/Home/JSP/Iframe 단점 및 대체.md",
     "Spaces/Home/IntelliJ/PWA",
-    "Spaces/Home/JSP/Iframe.md",
     "Images/Pasted image 20241023134628.png",
-    "Spaces/Home/Protocol/Http/CORS/CORS 적용.md",
-    "daily note/2024/10/2024-10-23.md",
     "Images/Pasted image 20241022150534.png",
     "Images/Pasted image 20241022150529.png",
     "Images/Pasted image 20241022150523.png",
