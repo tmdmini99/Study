@@ -336,3 +336,12 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     }  
 }
 ```
+
+
+로그아웃시 csrf로 보내줘야함
+```jsp
+<form action="/login/logout" method="post">  
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>  
+                        <button type="submit" class="btn btn-default btn-flat float-end">Sign out</button>  
+                    </form>
+```

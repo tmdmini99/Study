@@ -180,6 +180,68 @@ sub-protocol로 자주 쓰이는게 STOMP
 
 
 
+
+### 웹소켓(WebSockets) 사용하기
+
+웹소켓은 클라이언트와 서버 간의 실시간 양방향 통신을 가능하게 해줍니다. Spring과 Node.js 모두 웹소켓을 지원하므로, 이를 사용하여 데이터베이스 업데이트 알림을 전송할 수 있습니다.
+
+#### 1.1 Spring Boot에서 웹소켓 설정하기
+
+Spring Boot에서 웹소켓을 설정하는 방법은 다음과 같습니다.
+
+**의존성 추가 (pom.xml)**
+
+
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+
+```
+
+
+WebSocketConfig.java
+
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+
+@Configuration
+@EnableWebSocketMessageBroker
+public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        config.enableSimpleBroker("/topic"); // 클라이언트가 구독할 주제
+        config.setApplicationDestinationPrefixes("/app");
+    }
+
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/ws").withSockJS(); // 클라이언트에서 연결할 엔드포인트
+    }
+}
+
+```
+
+
+
+```java
+
+```
+
+
+
+
+
+
+
+
+
 ---
 참조 -  https://velog.io/@rhdmstj17/%EC%86%8C%EC%BC%93%EA%B3%BC-%EC%9B%B9%EC%86%8C%EC%BC%93-%ED%95%9C-%EB%B2%88%EC%97%90-%EC%A0%95%EB%A6%AC-2  - 실시간 통신
 
