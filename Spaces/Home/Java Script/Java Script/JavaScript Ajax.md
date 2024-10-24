@@ -10,30 +10,31 @@ document.addEventListener("DOMContentLoaded", function() {
             const customerId = this.getAttribute('data-id');
 
             // AJAX 요청
-            fetch(`/api/customers/${customerId}`) // API 엔드포인트는 적절히 수정해야 합니다.
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // 응답받은 데이터로 스팬 업데이트
-                    const row = document.getElementById(`customer-${customerId}`);
-                    if (row) {
-                        row.querySelector('.customer-name').textContent = data.name || '이름 없음';
-                        row.querySelector('.customer-location').textContent = data.location || '위치 없음';
-                        row.querySelector('.customer-email').textContent = data.email || '이메일 없음';
-                    }
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                });
+            $.ajax({
+				url: "https://jsonplaceholder.typicode.com/posts/1", // 요청 보낼 URL
+				method: "GET",  // GET 요청 방식
+				success: function(response) {
+					// 성공적으로 데이터를 받아온 경우
+					$("#result").html(`
+						<h3>${response.title}</h3>
+						<p>${response.body}</p>
+					`);
+				},
+				error: function(error) {
+					// 에러 발생 시
+					$("#result").html("<p>Something went wrong.</p>");
+				}
+			});
         });
     });
 });
 
 ```
+
+```js
+
+```
+
 
 
 
@@ -77,3 +78,6 @@ public class CustomersController {
     }
 } 
 ```
+
+
+
