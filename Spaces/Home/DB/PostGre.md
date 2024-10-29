@@ -731,5 +731,54 @@ WHERE id ~ '^[0-9]+$';
 
 
 
+모든 테이블에서   데이터 검색  notice로 나오게 하는 쿼리
+
+```sql
+DO $$
+DECLARE
+    table_name text;
+    column_name text;
+    search_value text := '검색할 데이터'; -- 검색할 데이터 지정
+    query text;
+    result int;
+BEGIN
+    -- 데이터베이스의 모든 테이블과 컬럼을 순회
+    FOR table_name, column_name IN
+        SELECT c.table_name, c.column_name
+        FROM information_schema.columns c
+        JOIN information_schema.tables t
+        ON c.table_name = t.table_name
+        WHERE t.table_schema = 'public' -- 스키마 이름 지정 (필요 시 변경)
+          AND t.table_type = 'BASE TABLE'
+    LOOP
+        -- 검색할 쿼리 동적 생성
+        query := format('SELECT 1 FROM %I.%I WHERE CAST(%I AS text) LIKE %L LIMIT 1', 'public', table_name, column_name, '%' || search_value || '%');
+        
+        BEGIN
+            -- 쿼리 실행 및 검색 결과 저장
+            EXECUTE query INTO result;
+
+            -- 결과가 존재하면 NOTICE 출력
+            IF result IS NOT NULL THEN
+                RAISE NOTICE 'Value found in table %, column %', table_name, column_name;
+            END IF;
+        EXCEPTION WHEN others THEN
+            -- 데이터 타입이 맞지 않거나 에러 발생 시 무시
+            CONTINUE;
+        END;
+    END LOOP;
+END $$;
+```
+
+
+
+
+
+
+
+
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
