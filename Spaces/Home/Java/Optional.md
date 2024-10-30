@@ -170,7 +170,7 @@ Optional을 사용하면 코드가 Null-Safe해지고, 가독성이 좋아지며
 
 만약 Optional로 받은 변수를 값이 있는지 판단하지 않고 접근하려고 한다면 NoSuchElementException가 발생하게 된다.
 
-```sql
+```java
 Optional<User> optionalUser = ... ;
 
 // optional이 갖는 value가 없으면 NoSuchElementException 발생
@@ -199,7 +199,7 @@ public class User implements Serializable {
 
 예를 들어 다음과 같이 Optional을 받아서 값을 꺼낸다고 하자. 우리는 앞에서 살펴본대로 optionalUser의 값이 비어있으면 NoSuchElementException가 발생할 수 있으므로 다음과 같이 값의 유무를 검사하고 꺼내도록 코드를 작성하였다.
 
-```jav
+```java
 public void temp(Optional<User> optionalUser) {
     User user = optionalUser.orElseThrow(IllegalStateException::new);
     
@@ -209,7 +209,7 @@ public void temp(Optional<User> optionalUser) {
 
 그런데 위와 같은 코드는 또 다시 NPE를 유발할 수 있다. 왜냐하면 optionalUser 객체 자체가 null일 수 있기 때문이다. 그러면 우리는 이러한 문제를 해결하기 위해 다음과 같이 코드를 수정해야 한다.
 
-```typescript
+```java
 public void temp(Optional<User> optionalUser) {
     if (optionalUser != null && optionalUser.isPresent()) {
         // 이후의 후처리 작업 진행...
