@@ -399,6 +399,123 @@ Optional은 반환 타입으로써 에러가 발생할 수 있는 경우에 결�
 
 
 
+## 실제 Optional 적용
+
+
+
+```java
+package com.kpop.merch.shopifyBalance.service;  
+  
+import com.kpop.merch.common.service.ServiceInterface;  
+import com.kpop.merch.common.vo.BasicParamVo;  
+import com.kpop.merch.common.vo.BasicVo;  
+import com.kpop.merch.customers.dao.CustomersDao;  
+import com.kpop.merch.shopifyBalance.dao.PaymentsDao;  
+import com.kpop.merch.shopifyBalance.vo.PaymentsTransactionVo;  
+import com.kpop.merch.shopifyBalance.vo.PaymentsVo;  
+import lombok.RequiredArgsConstructor;  
+import org.springframework.stereotype.Service;  
+  
+import java.time.LocalDate;  
+import java.util.*;  
+  
+@Service  
+@RequiredArgsConstructor  
+public class PaymentsService implements ServiceInterface {  
+    private final PaymentsDao paymentsDao;  
+  
+  
+    public List<? extends BasicVo> selectList(BasicParamVo basicParamVo) {  
+        return paymentsDao.selectList(basicParamVo);  
+    }  
+  
+    @Override  
+    public BasicVo selectOne(BasicParamVo paramVo) {  
+        return paymentsDao.selectOne(paramVo);  
+    }  
+  
+    public List<? extends BasicVo> selectTransaction(BasicParamVo basicParamVo) {  
+        return paymentsDao.selectTransaction(basicParamVo);  
+    }  
+    public Optional<String> findEarliestPaidAmount(List<PaymentsVo> list) {  
+        return list.stream()  
+                .filter(vo -> "paid".equals(vo.getStatus())) // "paid" 상태 필터링  
+                .max(Comparator.comparing(PaymentsVo::getDate)) // 가장 이른 날짜 찾기  
+                .map(PaymentsVo::getAmount); // 해당 항목의 amount 반환  
+    }  
+    public Optional<? extends BasicVo> findEarliestPaid(List<PaymentsVo> list) {  
+        return list.stream()  
+                .filter(vo -> "paid".equals(vo.getStatus())) // "paid" 상태 필터링  
+                .max(Comparator.comparing(PaymentsVo::getDate)); // 가장 이른 날짜 찾기  
+    }  
+  
+  
+    public Optional<? extends BasicVo> findEarliestScheduled(List<PaymentsVo> list) {  
+        return list.stream()  
+            .filter(vo -> "scheduled".equals(vo.getStatus()))  
+            .min(Comparator.comparing(PaymentsVo::getDate));  
+    }  
+    public Optional<String> findEarliestScheduledAmount(List<PaymentsVo> list) {  
+        return list.stream()  
+                .filter(vo -> "scheduled".equals(vo.getStatus())) // "paid" 상태 필터링  
+                .min(Comparator.comparing(PaymentsVo::getDate)) // 가장 이른 날짜 찾기  
+                .map(PaymentsVo::getAmount); // 해당 항목의 amount 반환  
+    }  
+    public Optional<String> findTotalPendingAmount() {  
+        List<PaymentsTransactionVo> list = (List<PaymentsTransactionVo>) paymentsDao.selectbalance();  
+        double total = list.stream()  
+                .filter(vo -> "pending".equals(vo.getPayoutStatus())) // "pending" 상태 필터링  
+                .mapToDouble(vo -> Double.parseDouble(vo.getAmount())) // String을 Double로 변환  
+                .sum(); // 총합 계산  
+  
+        // 총합이 0이 아닌 경우에만 Optional에 담아 반환  
+        return total > 0 ? Optional.of(String.valueOf(total)) : Optional.empty();  
+    }  
+  
+  
+    public Map<String, String> processPaymentDates() {  
+        List<PaymentsVo> list = (List<PaymentsVo>) paymentsDao.selectListPayment();  
+        // 가장 빠른 날짜의 paid와 scheduled 상태 항목을 가져오기  
+        Optional<PaymentsVo> earliestPaid = (Optional<PaymentsVo>) findEarliestPaid(list);  
+        Optional<PaymentsVo> earliestScheduled = (Optional<PaymentsVo>) findEarliestScheduled(list);  
+        Optional<String> earliestPaidAmount = findEarliestPaidAmount(list);  
+        Optional<String> earliestScheduledAmount = findEarliestScheduledAmount(list);  
+        // 모든 pending 상태 항목의 amount 총합 가져오기  
+        Optional<String> totalPendingAmount = findTotalPendingAmount();  
+        // 결과를 Map에 저장하여 반환  
+        Map<String, String> result = new HashMap<>();  
+        earliestPaid.ifPresent(vo -> {  
+            result.put("earliestPaidDate", vo.getDate());  
+            result.put("earliestPaidId", vo.getId()); // ID 추가  
+        });  
+        // earliestScheduled 정보 추가  
+        earliestScheduled.ifPresent(vo -> {  
+            // 가장 이른 scheduled 상태의 날짜와 id를 결과에 추가  
+            result.put("earliestScheduledDate", vo.getDate().toString());  
+            result.put("earliestScheduledId", vo.getId()); // ID 추가  
+            // 동일한 날짜의 currency 찾기  
+            String currency = list.stream()  
+                    .filter(payment -> payment.getDate().equals(vo.getDate()) && "scheduled".equals(payment.getStatus()))  
+                    .map(PaymentsVo::getCurrency)  // getCurrency 메서드 호출  
+                    .findFirst()  // 첫 번째 통화 반환  
+                    .orElse("N/A");  // 해당 통화가 없으면 "N/A" 반환  
+  
+            result.put("earliestScheduledCurrency", currency);  // 통화를 맵에 추가  
+        });  
+        earliestPaidAmount.ifPresent(amount -> result.put("earliestPaidAmount", amount));  
+        earliestScheduledAmount.ifPresent(amount -> result.put("earliestScheduledAmount", amount));  
+        // 총 pending amount 추가  
+        totalPendingAmount.ifPresent(amount -> result.put("totalPendingAmount", amount));  
+  
+        return result;  
+    }  
+  
+}
+```
+
+
+
+
 ---
 
 출처- https://mangkyu.tistory.com/70
