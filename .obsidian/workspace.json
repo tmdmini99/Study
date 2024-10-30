@@ -13,13 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Optional.md",
+                "file": "daily note/2024/10/2024-10-25.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Optional"
+              "title": "2024-10-25"
+            }
+          },
+          {
+            "id": "fd69b9f4498e843f",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/AOP15.png"
+              },
+              "icon": "lucide-image",
+              "title": "AOP15"
             }
           },
           {
@@ -89,7 +101,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "aop",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -111,42 +123,6 @@
             }
           },
           {
-            "id": "1f95781611e8a5b3",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "22e00fafac546ba8",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "00672cd27ace3783",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "3b20d7521e05deb2",
             "type": "leaf",
             "state": {
@@ -156,7 +132,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -269,16 +246,17 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "Spaces/Home/Java/Model/Model.md",
+    "Spaces/Home/Spring/AOP/AOP.md",
+    "Images/AOP15.png",
+    "daily note/2024/10/2024-10-25.md",
     "Spaces/Home/Java/Optional.md",
+    "Spaces/Home/Java/Model/Model.md",
     "Spaces/Home/Java/Model",
     "Spaces/Home/Java/Excel & CSV.md",
     "daily note/2024/10/2024-10-30.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2024/10/2024-10-29.md",
-    "daily note/2024/10/2024-10-25.md",
     "daily note/2024/10/2024-10-24.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
     "Spaces/Home/Java Script/Java Script/fetch.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
@@ -295,7 +273,6 @@
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
     "Images/PWA3.png",
     "Images/PWA2.png",
     "Images/PWA1.png",
@@ -307,7 +284,6 @@
     "Images/Pasted image 20241022150523.png",
     "Images/Pasted image 20241022150516.png",
     "Images/Pasted image 20241022150508.png",
-    "Images/img1.daumcdn.webp",
     "Spaces/Home/Protocol/Http/CORS",
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",

@@ -302,7 +302,7 @@ public void doThrowing(JoinPoint joinPoint, Exception ex) {
 
 ### 애노테이션 동작 순서
 
-![](https://github.com/backtony/blog-code/blob/master/spring/img/aop/2/2-4.PNG?raw=true)  
+  ![[AOP15.png]]
 동일한 @Aspect 안에서는 위와 같은 우선순위로 동작합니다.  
 즉, 동일한 @Aspect 안에서 여러 개의 Advice가 존재하는데 타겟 메서드가 여러 Advice의 대상이 될 경우 다음과 같이 동작합니다.
 
@@ -855,7 +855,7 @@ JDK 동적 프록시는 인터페이스 기반이므로 프록시를 생성합�
         - 프록시의 대상 객체로 판단하기 때문에 MemberServiceImpl은 AOP 적용 대상입니다.
 
 **CGLIB 프록시**  
-![[AOP8.png]]
+![[Images/JAVA/AOP/AOP8.png]]
 
 CGLIB은 구체 클래스 기반으로 프록시를 생성하여 빈으로 등록합니다.
 
