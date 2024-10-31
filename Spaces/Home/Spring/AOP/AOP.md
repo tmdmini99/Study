@@ -1102,6 +1102,100 @@ JDK 동적 프록시 설정으로 돌리게 되면 빈에 등록된 프록시는
 - target을 생성할 때는 생성자 호출 1번, objenesis 라이브러리로 프록시 객체 생성할때는 생성자 호출 없이 객체 생성 -> 부모 생성자 호출 2번 문제 해결
 
 
+## AOP 적용 방법
+
+
+servlet-context.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"  
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+             xmlns:beans="http://www.springframework.org/schema/beans"  
+             xmlns:context="http://www.springframework.org/schema/context"  
+             xmlns:aop="http://www.springframework.org/schema/aop"  
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">  
+  
+    <annotation-driven />  
+  
+    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->  
+    <resources mapping="/resources/**" location="/resources/"/>  
+  
+  
+    <!-- LocaleResolver 설정 -->  
+    <beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">  
+        <beans:property name="defaultLocale" value="ko_KR" /> <!-- 기본 Locale을 한국어로 설정 -->  
+    </beans:bean>  
+  
+    <!-- LocaleChangeInterceptor 설정 -->  
+    <beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">  
+        <beans:property name="paramName" value="lang" /> <!-- URL에서 lang 파라미터를 통해 Locale 변경 -->  
+    </beans:bean>  
+  
+    <!-- Tiles -->  
+     <beans:bean id="tilesConfigurer"  
+                class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">  
+        <beans:property name="definitions">  
+            <beans:list>  
+                <beans:value>/WEB-INF/spring/root/tiles-context.xml</beans:value>  
+            </beans:list>  
+        </beans:property>  
+    </beans:bean>  
+    <beans:bean id="tilesViewResolver"  
+                class="org.springframework.web.servlet.view.UrlBasedViewResolver">  
+        <beans:property name="viewClass"  
+                        value="org.springframework.web.servlet.view.tiles3.TilesView" />  
+        <beans:property name="order" value="1" />  
+    </beans:bean>  
+  
+  
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->  
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <beans:property name="prefix" value="/WEB-INF/views/" />  
+        <beans:property name="suffix" value=".jsp" />  
+         <beans:property name="order" value="2" />  
+    </beans:bean>  
+  
+    <!-- 프로젝트 패키지이름 확인 -->  
+    <aop:aspectj-autoproxy proxy-target-class="true" />  
+    <context:component-scan base-package="com.kpop.merch" />  
+  
+  
+    <interceptors>  
+        <interceptor>  
+            <mapping path="/**"/>  
+            <exclude-mapping path="/resources/**"/>  
+            <exclude-mapping path="/login"/>  
+            <exclude-mapping path="/logout"/>  
+            <exclude-mapping path="/error"/>  
+            <beans:bean id="commonInterceptor" class="com.kpop.merch.common.interceptor.CustomInterceptor"/>  
+        </interceptor>  
+        <interceptor>  
+            <mapping path="/**"/> <!-- 모든 요청에 대해 적용 -->  
+            <beans:ref bean="localeChangeInterceptor"/>  
+        </interceptor>  
+    </interceptors>  
+  
+</beans:beans>
+```
+
+
+이걸
+```xml
+<aop:aspectj-autoproxy proxy-target-class="true" />  
+```
+security-context.xml이 아닌 servlet-context.xml에 넣어야 한다 
+
+또한  순서는 이렇게 aop 설정이 먼저와야 한다
+```xml
+<aop:aspectj-autoproxy proxy-target-class="true" />  
+<context:component-scan base-package="com.kpop.merch" />  
+```
+
+
+
+
+
 
 
 ---
