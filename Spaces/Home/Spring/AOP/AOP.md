@@ -1105,6 +1105,28 @@ JDK 동적 프록시 설정으로 돌리게 되면 빈에 등록된 프록시는
 ## AOP 적용 방법
 
 
+pom.xml
+```xml
+<dependencies>  
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->  
+<dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-aop</artifactId>  
+    <version>${org.springframework-version}</version>  
+</dependency>  
+  
+    <!-- AspectJ Weaver (필요 시 추가) -->  
+    <dependency>  
+        <groupId>org.aspectj</groupId>  
+        <artifactId>aspectjweaver</artifactId>  
+        <version>1.9.7</version> <!-- 버전은 프로젝트에 맞춰 조정 -->  
+    </dependency>
+</dependencies>
+
+```
+
+
+
 servlet-context.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
