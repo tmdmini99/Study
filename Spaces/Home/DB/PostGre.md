@@ -772,8 +772,10 @@ END $$;
 
 
 
-
-
+order by
+```sql
+SELECT * FROM orders ORDER BY (line_items->>'quantity')::int DESC;
+```
 
 
 
