@@ -144,7 +144,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -255,14 +256,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "daily note/2024/10/2024-10-25.md",
+    "Spaces/Home/Spring/AOP/AOP.md",
     "Spaces/Home/Java Script/Jquery/새로고침.md",
     "daily note/2024/10/2024-10-31.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2024/10/2024-10-30.md",
-    "daily note/2024/10/2024-10-25.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
     "Images/AOP15.png",
     "Spaces/Home/Java/Optional.md",
     "Spaces/Home/Java/Model/Model.md",
