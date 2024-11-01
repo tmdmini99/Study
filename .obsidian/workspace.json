@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md",
+                "file": "daily note/2024/11/2024-11-01.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AOP"
+              "title": "2024-11-01"
             }
           },
           {
@@ -138,6 +138,18 @@
             "id": "452ca43133f5c759",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "0509d476015b0f7b",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -145,7 +157,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -258,8 +270,9 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
-    "daily note/2024/10/2024-10-25.md",
     "Spaces/Home/Spring/AOP/AOP.md",
+    "daily note/2024/11/2024-11-01.md",
+    "daily note/2024/10/2024-10-25.md",
     "Spaces/Home/Java Script/Jquery/새로고침.md",
     "daily note/2024/10/2024-10-31.md",
     "Spaces/Home/DB/PostGre.md",
@@ -285,7 +298,6 @@
     "Spaces/Home/Java/JSON/GSON.md",
     "Spaces/Home/Spring/Spring Legacy/Pagination.md",
     "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/DB/PostgreSql.md",
     "Images/PWA3.png",
     "Images/PWA2.png",
     "Images/PWA1.png",
