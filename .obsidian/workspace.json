@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
+                "file": "Spaces/Home/Spring/AOP/AOP.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JavaScpript event function"
+              "title": "AOP"
             }
           },
           {
@@ -269,6 +269,7 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "daily note/2024/11/2024-11-01.md",
     "Spaces/Home/Spring/AOP/AOP.md",
     "daily note/2024/10/2024-10-25.md",
@@ -296,7 +297,6 @@
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Java/JSON/GSON.md",
     "Spaces/Home/Spring/Spring Legacy/Pagination.md",
-    "Spaces/Home/Spring/Security.md",
     "Images/PWA3.png",
     "Images/PWA2.png",
     "Images/PWA1.png",

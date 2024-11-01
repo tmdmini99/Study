@@ -1216,6 +1216,89 @@ security-context.xml이 아닌 servlet-context.xml에 넣어야 한다
 
 
 
+aop java 이전 요청 취소
+```java
+package com.kpop.merch.common.util;  
+  
+import org.aspectj.lang.ProceedingJoinPoint;  
+import org.aspectj.lang.annotation.Around;  
+import org.aspectj.lang.annotation.Aspect;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.stereotype.Component;  
+  
+import javax.sql.DataSource;  
+import java.sql.Connection;  
+import java.sql.ResultSet;  
+import java.sql.Statement;  
+import java.util.Map;  
+import java.util.concurrent.ConcurrentHashMap;  
+  
+@Aspect  
+@Component  
+public class ColumnAspect {  
+  
+    private static final Map<String, String> requestPidMap = new ConcurrentHashMap<>();  
+    private static final String FIXED_REQUEST_ID = "fixed-request-id";  
+  
+    @Autowired  
+    private DataSource dataSource;  
+  
+    @Around("execution(* com.kpop.merch..*(..))")  
+    public Object aroundFetchValidFields(ProceedingJoinPoint joinPoint) throws Throwable {  
+        String requestId = FIXED_REQUEST_ID;  
+        System.out.println("새 요청 들어옴, 요청 ID: " + requestId);  
+  
+        // 이전 요청의 PID가 있는 경우 해당 요청을 취소  
+        String previousPid = requestPidMap.get(requestId);  
+        if (previousPid != null) {  
+            System.out.println("이전 요청을 취소합니다. 요청 ID: " + requestId);  
+            cancelPreviousRequest(previousPid);  
+        }  
+  
+        Object result;  
+        try (Connection connection = dataSource.getConnection()) {  
+            // 현재 쿼리 PID를 조회하고 저장  
+            String currentPidValue = getCurrentQueryPid(connection);  
+            requestPidMap.put(requestId, currentPidValue);  
+  
+            result = joinPoint.proceed(); // 실제 메소드 호출  
+        } catch (Throwable e) {  
+            if (e instanceof org.postgresql.util.PSQLException) {  
+                System.out.println("쿼리가 취소되었습니다. 요청 ID: " + requestId);  
+                return null;  
+            }  
+            throw e;  
+        } finally {  
+            requestPidMap.remove(requestId); // 요청 처리 완료 후 PID 제거  
+        }  
+        return result;  
+    }  
+  
+    private void cancelPreviousRequest(String pid) {  
+        String cancelQuery = "SELECT pg_terminate_backend(" + pid + ");"; // 강제 종료 쿼리  
+        try (Connection connection = dataSource.getConnection();  
+             Statement statement = connection.createStatement()) {  
+            statement.execute(cancelQuery);  
+            System.out.println("이전 요청이 강제 종료되었습니다. PID: " + pid);  
+        } catch (Exception e) {  
+            System.out.println("이전 요청 취소 중 오류 발생: " + e.getMessage());  
+        }  
+    }  
+  
+    private String getCurrentQueryPid(Connection connection) {  
+        String pidQuery = "SELECT pg_backend_pid();";  
+        try (Statement statement = connection.createStatement();  
+             ResultSet resultSet = statement.executeQuery(pidQuery)) {  
+            if (resultSet.next()) {  
+                return resultSet.getString(1);  
+            }  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null;  
+    }  
+}
+```
 
 
 
