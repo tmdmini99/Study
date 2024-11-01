@@ -1301,8 +1301,71 @@ public class ColumnAspect {
 ```
 
 
+sql injection 감지
+```java
+package com.kpop.merch.common.util;  
+  
+import com.kpop.merch.common.vo.BasicParamVo;  
+import org.aspectj.lang.JoinPoint;  
+import org.aspectj.lang.ProceedingJoinPoint;  
+import org.aspectj.lang.annotation.Around;  
+import org.aspectj.lang.annotation.Aspect;  
+import org.aspectj.lang.annotation.Before;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.stereotype.Component;  
+  
+import javax.sql.DataSource;  
+import java.sql.Connection;  
+import java.sql.ResultSet;  
+import java.sql.Statement;  
+import java.util.Map;  
+import java.util.concurrent.ConcurrentHashMap;  
+  
+@Aspect  
+@Component  
+public class ColumnAspect {  
+  
+  
+    @Before("execution(* com.kpop.merch..*Dao.*(..))")  
+    public void validateOrderByParameter(JoinPoint joinPoint) {  
+        System.out.println("before validateOrderByParameter");  
+        Object[] args = joinPoint.getArgs();  
+  
+        for (Object arg : args) {  
+            System.out.println("매개변수 타입: " + arg.getClass().getName());  
+  
+            // BasicParamVo 타입인지 확인  
+            if (arg instanceof BasicParamVo) {  
+                BasicParamVo paramVo = (BasicParamVo) arg;  
+  
+                // orderBy 속성 값 가져오기  
+                String orderBy = paramVo.getOrderBy();  
+                System.out.println("검사 중인 orderBy 파라미터: " + orderBy);  
+  
+                // 검증 로직  
+                if (orderBy != null) {  
+                    // SQL 인젝션 방지를 위한 검증  
+                    if (containsUnsafeCharacters(orderBy)) {  
+                        throw new IllegalArgumentException("SQL Injection 위험이 있는 입력이 감지되었습니다: " + orderBy);  
+                    }  
+                }  
+            } else {  
+                System.out.println("String이 아닌 매개변수 발견: " + arg);  
+            }  
+        }  
+    }  
+  
+    // 안전하지 않은 문자가 포함되어 있는지 확인하는 메서드  
+    private boolean containsUnsafeCharacters(String input) {  
+        // 알파벳, 숫자, 언더스코어 외의 문자가 있는지 검사  
+        // 허용할 수 있는 안전한 열 이름을 정규 표현식으로 추가  
+        return !input.matches("^[a-zA-Z0-9_\\s()>'\"-]*$"); // 여기서 안전한 열이 아니면 true를 반환  
+    }  
+  
+  
+  
 
-
+```
 
 
 ---
