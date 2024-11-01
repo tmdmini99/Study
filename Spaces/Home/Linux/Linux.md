@@ -605,3 +605,6 @@ https://sasca37.tistory.com/286
 
 https://soopeach.tistory.com/244
 https://security04.tistory.com/1
+
+
+https://velog.io/@selenium/Ubuntu-%EC%84%9C%EB%B2%84-%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%97%B0%EA%B2%B0  포트 포워딩

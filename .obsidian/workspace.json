@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/11/2024-11-01.md",
+                "file": "Spaces/Home/Linux/Linux.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-01"
+              "title": "Linux"
             }
           },
           {
@@ -269,9 +269,10 @@
   },
   "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/AWS/1. RDS Provisioning.md",
+    "daily note/2024/11/2024-11-01.md",
     "Spaces/Home/Spring/AOP/AOP.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
-    "daily note/2024/11/2024-11-01.md",
     "daily note/2024/10/2024-10-25.md",
     "Spaces/Home/Java Script/Jquery/새로고침.md",
     "daily note/2024/10/2024-10-31.md",
@@ -296,7 +297,6 @@
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/Java/JSON/GSON.md",
-    "Spaces/Home/Spring/Spring Legacy/Pagination.md",
     "Images/PWA3.png",
     "Images/PWA2.png",
     "Images/PWA1.png",
