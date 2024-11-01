@@ -120,6 +120,91 @@ $(document).on('input', '.Polaris-TextField__Input', function() {
 ```
 
 
+input에서 마지막 사용자가 입력 끝낸 후 3초후 동작
+```js
+let abortController;  
+let debounceTimeout;  
+let requestCount = 0;  
+  
+$(document).on('input', '.Polaris-TextField__Input', function() {  
+    clearTimeout(debounceTimeout);  
+    debounceTimeout = setTimeout(async () => {  
+        // 이전 요청이 진행 중이면 취소  
+        if (abortController) {  
+            abortController.abort(); // 이전 요청 취소  
+            console.log('Previous request aborted');  
+        }  
+  
+        // 새로운 AbortController 생성  
+        abortController = new AbortController();  
+        const signal = abortController.signal;  
+        abortController.requestId = $(this).val(); // 현재 입력값을 요청 ID로 사용  
+  
+        const searchTerm = $(this).val(); // 입력값 가져오기  
+        console.log('입력된 값:', searchTerm);  
+  
+        const url = new URL(window.location.href);  
+        if (searchTerm) {  
+            url.searchParams.set('search', searchTerm);  
+        } else {  
+            url.searchParams.delete('search');  
+        }  
+  
+        // pageNumber 파라미터 삭제  
+        url.searchParams.delete('pageNumber');  
+        requestCount++; // 요청 카운트 증가  
+        showLoading();  
+        updateLoadingBar(0);  
+        isRequestActive = true; // 요청 활성 상태 설정  
+  
+        try {  
+            const response = await fetch(url.toString(), {  
+                method: 'GET',  
+                signal: signal // signal 추가  
+            });  
+  
+            if (response.ok) {  
+                const data = await response.text();  
+                const searchResults = $('.Polaris-IndexTable');  
+                searchResults.empty(); // 기존 결과 지우기  
+  
+                // HTML 내용으로 업데이트  
+                let newDocument = $.parseHTML(data);  
+                let newContent = $(newDocument).find('.Polaris-IndexTable');  
+  
+                if (newContent.length > 0) {  
+                    searchResults.html(newContent.html()); // 결과 업데이트  
+                } else if ($(newDocument).find('._ResourceListItemsWrapper_qvkap_26').length > 0) {  
+                    let resourceListContent = $(newDocument).find('._ResourceListItemsWrapper_qvkap_26');  
+                    searchResults.html(resourceListContent.html()); // 업데이트  
+                } else {  
+                    console.warn('No results found in the response.');  
+                    searchResults.html('<div>검색 결과가 없습니다.</div>');  
+                }  
+  
+                // URL 업데이트  
+                history.pushState(null, '', url.toString());  
+            }  
+        } catch (error) {  
+            if (error.name === 'AbortError') {  
+                console.log('요청이 취소되었습니다.'); // 요청이 취소된 경우  
+            } else {  
+                console.error('검색 요청 실패:', error);  
+                const searchResults = $('.Polaris-IndexTable');  
+                searchResults.html('<div>검색 중 오류가 발생했습니다.</div>');  
+            }  
+        } finally {  
+            requestCount--; // 요청 카운트 감소  
+            if (requestCount === 0) {  
+                updateLoadingBar(100); // 로딩 바 업데이트  
+                hideLoading(); // 로딩 바 숨김  
+            }  
+        }  
+    }, 300); // 300ms 후에 요청  
+});
+```
+
+
 
 ### keyup 과 input 이벤트의 차이
 - `keyup` 이벤트는 사용자가 키를 누르고 뗄 때 발생하므로, 입력 필드에서 실시간으로 변경된 값을 감지하는 데 유용합니다.
