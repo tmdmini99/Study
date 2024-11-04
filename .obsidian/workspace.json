@@ -101,7 +101,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "다른 페이지",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -132,7 +132,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -243,7 +244,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8892146adda2318c",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "Spaces/Home/Java Script/Node.js/express.md",
     "Spaces/Home/Java Script/Node.js/TypeScript/TypeScript 프로젝트 생성.md",
