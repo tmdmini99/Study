@@ -135,7 +135,6 @@ public class ExcelUtil {
 
 
 CSV
-
 ```java
 package com.kpop.merch.common.util;  
   
@@ -156,15 +155,18 @@ import java.util.ArrayList;
 import java.util.List;  
   
 @RestController  
-public class ExcelUtil {  
+public class CSVUtil {  
   
     @Autowired  
     private SqlSessionFactory sqlSessionFactory;  
   
-    @PostMapping("/excel/excel")  
+    @PostMapping("/csv/csv")  
     public ResponseEntity<byte[]> generateCsv(@RequestParam String table) {  
+        System.out.println("들어옴");  
         if (table == null || table.isEmpty()) {  
-            return ResponseEntity.badRequest().body("Table name is required.".getBytes(StandardCharsets.UTF_8));  
+            return ResponseEntity.badRequest()  
+                    .header(HttpHeaders.CONTENT_TYPE, "text/plain")  
+                    .body("Table name is required.".getBytes(StandardCharsets.UTF_8));  
         }  
   
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {  
@@ -172,7 +174,8 @@ public class ExcelUtil {
   
             if (rows == null || rows.isEmpty()) {  
                 return ResponseEntity.status(HttpStatus.NO_CONTENT)  
-                    .body("No data found in the specified table.".getBytes(StandardCharsets.UTF_8));  
+                        .header(HttpHeaders.CONTENT_TYPE, "text/plain")  
+                        .body("No data found in the specified table.".getBytes(StandardCharsets.UTF_8));  
             }  
   
             StringBuilder csvContent = new StringBuilder();  
@@ -181,7 +184,7 @@ public class ExcelUtil {
             // 헤더 작성  
             csvContent.append(String.join(",", headers)).append("\n");  
   
-            // 데이터 행 작성 - 모든 필드의 값 추가  
+            // 데이터 행 작성  
             for (BasicVo row : rows) {  
                 List<String> rowValues = new ArrayList<>();  
                 for (String header : headers) {  
@@ -200,9 +203,11 @@ public class ExcelUtil {
         } catch (Exception e) {  
             e.printStackTrace();  
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)  
-                .body("Error while generating CSV file.".getBytes(StandardCharsets.UTF_8));  
+                    .header(HttpHeaders.CONTENT_TYPE, "text/plain")  
+                    .body("Error while generating CSV file.".getBytes(StandardCharsets.UTF_8));  
         }  
     }  
+  
   
     // 모든 필드 이름을 가져오는 메서드  
     private List<String> getHeaders(BasicVo vo) {  
