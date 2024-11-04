@@ -179,3 +179,60 @@ npm run build
 ```bash
 npm start
 ```
+
+
+### 2. **Nodemon과 TypeScript의 조합 사용하기**
+
+`nodemon`을 사용하여 개발 중에 서버를 자동으로 재시작하도록 설정할 수 있습니다. `nodemon`은 파일의 변경을 감지하여 서버를 다시 시작합니다. TypeScript와 함께 사용하려면 `ts-node`와 함께 설정할 수 있습니다.
+
+**의존성 설치**: `nodemon`과 `ts-node`를 개발 의존성으로 설치합니다.
+```bash
+npm install --save-dev nodemon ts-node
+```
+
+```bash
+npm install --save-dev nodemon
+```
+
+```bash
+npm install --save-dev ts-node
+```
+
+
+**Nodemon 설정**: `nodemon.json` 파일을 프로젝트 루트에 생성하여 다음과 같이 설정합니다:
+
+```bash
+typeTest/
+├── node_modules/
+├── dist/
+├── src/
+│   ├── index.ts
+│   ├── app.ts
+│   └── ...
+├── package.json
+├── tsconfig.json
+└── nodemon.json  <-- 여기서 생성
+
+```
+
+```json
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "exec": "ts-node ./src/routes/index.ts"
+}
+```
+
+**Nodemon 실행**: `package.json`의 `scripts`에 `dev` 스크립트를 추가합니다.
+```json
+"scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "nodemon"
+}
+```
+
+그런 다음 다음 명령어로 서버를 실행합니다:
+```bash
+npm run dev
+```
