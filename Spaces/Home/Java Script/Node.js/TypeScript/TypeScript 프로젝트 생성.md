@@ -170,3 +170,12 @@ npx tsc
 node dist/www.js
 ```
 
+
+```bash
+npm run build
+```
+
+
+```bash
+npm start
+```
