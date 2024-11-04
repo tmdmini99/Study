@@ -215,11 +215,16 @@ typeTest/
 
 ```
 
+난 시작을 `www.ts`로 하기 때문에 이걸로 설정
 ```json
 {
+
     "watch": ["src"],
+
     "ext": "ts",
-    "exec": "ts-node ./src/routes/index.ts"
+
+    "exec": "ts-node ./src/www.ts"
+
 }
 ```
 
