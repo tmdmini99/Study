@@ -32,3 +32,15 @@ server.listen(port);
 ### 실행 방법
 
 - 이 구조에서는 터미널에서 `npm start` 명령어를 사용하여 `www.js` 파일이 실행되고, 그 결과로 Express 애플리케이션이 서버로 실행됩니다. 이 명령어는 일반적으로 `package.json`에 설정되어 있습니다.
+
+
+### CORS 문제 확인
+
+만약 클라이언트와 서버가 다른 출처(도메인)에서 실행되고 있다면, CORS(Cross-Origin Resource Sharing) 문제로 인해 요청이 차단될 수 있습니다. 이 경우 Express 서버에 CORS 미들웨어를 추가하여 요청을 허용해야 합니다.
+
+app.js
+```js
+const cors = require('cors');
+app.use(cors()); // CORS 허용
+```
+
