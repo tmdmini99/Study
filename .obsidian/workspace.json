@@ -168,8 +168,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "horizontal",
@@ -280,7 +279,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8892146adda2318c",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "Spaces/Home/Spring/AOP/AOP.md",
     "daily note/2024/11/2024-11-04.md",
