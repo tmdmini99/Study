@@ -55,5 +55,78 @@ HTTP 통신을 하기 때문에 Request, Response 헤더가 불필요하게 크�
 
 
 
+polling방식으로 확인
+```js
+$(document).on('click', 'button:has(span:contains("내보내기"))', function() {  
+    const pathSegments = window.location.pathname.split('/');  
+    const tableName = pathSegments[pathSegments.length - 1];  
+  
+    // 동적으로 로딩 모달 생성  
+    const loadingModal = $(`  
+        <div id="loadingModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;">  
+            <div class="loading-content" style="background: white; padding: 20px; border-radius: 5px; text-align: center;">  
+                <p>파일을 준비 중입니다...</p>  
+                <div class="spinner" style="margin-top: 10px; width: 30px; height: 30px; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite;"></div>  
+            </div>  
+        </div>  
+    `);  
+  
+    // 로딩 모달 애니메이션 정의  
+    $('<style>')  
+        .prop('type', 'text/css')  
+        .html(`  
+            @keyframes spin {                0% { transform: rotate(0deg); }                100% { transform: rotate(360deg); }            }        `).appendTo('head');  
+  
+    // 로딩 모달을 body에 추가  
+    $('body').append(loadingModal);  
+  
+    // 동적으로 폼 생성  
+    const form = $('<form>', {  
+        action: '/csv/csv',  
+        method: 'POST',  
+        target: 'downloadFrame'  
+    }).appendTo('body');  
+  
+    // 숨겨진 input 필드 생성 (table 파라미터 전달)  
+    $('<input>', {  
+        type: 'hidden',  
+        name: 'table',  
+        value: tableName  
+    }).appendTo(form);  
+  
+    // CSRF 토큰 추가 (필요시)  
+    $('<input>', {  
+        type: 'hidden',  
+        name: $('#csrfToken').attr('name'),  
+        value: $('#csrfToken').val()  
+    }).appendTo(form);  
+  
+    // iframe을 통해 다운로드 요청  
+    const iframe = $('<iframe>', {  
+        name: 'downloadFrame',  
+        style: 'display: none;'  
+    }).appendTo('body');  
+  
+    // 폼 제출  
+    form.submit();  
+  
+    // 주기적으로 iframe의 상태를 확인하는 폴링 함수  
+    const interval = setInterval(() => {  
+        const iframeDocument = iframe[0].contentDocument || iframe[0].contentWindow.document;  
+  
+        // 응답 완료 시 로딩 모달 제거  
+        if (iframeDocument.readyState === 'complete') {  
+            clearInterval(interval); // 폴링 중지  
+            loadingModal.remove();  
+            form.remove();  
+            iframe.remove();  
+        }  
+    }, 500); // 0.5초 간격으로 확인  
+});
+```
+
+
+
+
 ---
 참조 - 
