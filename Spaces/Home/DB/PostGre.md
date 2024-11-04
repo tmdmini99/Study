@@ -778,8 +778,22 @@ SELECT * FROM orders ORDER BY (line_items->>'quantity')::int DESC;
 ```
 
 
+데이터가 없는 테이블 찾기
+```sql
+SELECT
 
+schemaname,
 
+relname AS tablename
+
+FROM
+
+pg_stat_user_tables
+
+WHERE
+
+n_live_tup = 0;
+```
 
 
 ---
