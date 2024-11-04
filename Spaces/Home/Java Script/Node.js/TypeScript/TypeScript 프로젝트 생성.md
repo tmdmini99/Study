@@ -31,23 +31,45 @@ npx tsc --init
 
 ```json
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "outDir": "./dist",
-        "rootDir": "./src",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
-    },
-    "include": [
-        "src/**/*"  // src 폴더 내 모든 파일 포함
-    ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+
+  "compilerOptions": {
+
+      "target": "es6",                // 컴파일할 자바스크립트 버전
+
+      "module": "commonjs",           // 모듈 시스템
+
+      "outDir": "./dist",             // 컴파일된 파일이 저장될 디렉토리
+
+      "rootDir": "./src",             // 소스 파일이 위치한 디렉토리
+
+      "strict": true,                  // 모든 엄격한 타입 검사를 활성화
+
+      "esModuleInterop": true,         // ES6 모듈 호환성
+
+      "skipLibCheck": true,            // 타입 검사 건너뛰기
+
+      "forceConsistentCasingInFileNames": true, // 파일 이름 대소문자 일관성 유지
+
+      "allowJs": true, // JavaScript 파일을 포함하도록 설정
+
+      "checkJs": false // JavaScript 파일에 대해 타입 검사를 하지 않도록 설정
+
+  },
+
+  "include": [
+
+      "src/**/*"                       // src 폴더 내 모든 파일 포함
+
+  ],
+
+  "exclude": [
+
+      "node_modules",                  // node_modules 폴더 제외
+
+      "dist"                           // dist 폴더 제외
+
+  ]
+
 }
 
 ```
