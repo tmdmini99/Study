@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
+                "file": "Spaces/Home/CSRF/CSS/CSS.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "properties"
+              "title": "CSS"
             }
           },
           {
@@ -255,8 +255,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "8892146adda2318c",
   "lastOpenFiles": [
+    "Spaces/Home/AWS/1. RDS Provisioning.md",
+    "Spaces/Home/Java/Bluetooth/Bluetooth 코드.md",
+    "Spaces/Home/Java/Bluetooth/Bluetooth 환경설정.md",
+    "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
+    "Spaces/Home/Java/Bluetooth",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/PostgreSql.md",
@@ -280,10 +285,6 @@
     "Spaces/Home/Java Script/Node.js/Module/Node.js Excel.md",
     "Spaces/Home/Java Script/Node.js/Module/FIle System.md",
     "Spaces/Home/Java/Excel & CSV.md",
-    "Spaces/Home/Protocol/Http/HTTP Polling.md",
-    "daily note/2024/11/2024-11-04.md",
-    "Spaces/Home/Spring/AOP/AOP.md",
-    "daily note/2024/10/2024-10-31.md",
     "Images/AOP15.png",
     "Spaces/Home/Java/Model",
     "Images/PWA3.png",
@@ -302,7 +303,6 @@
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/CSRF/CSS",
     "Spaces/Home/Spring/Interceptor",
-    "Images/Android/Dialog",
     "무제 파일.canvas"
   ]
 }
