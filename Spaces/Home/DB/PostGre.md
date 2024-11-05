@@ -796,5 +796,90 @@ n_live_tup = 0;
 ```
 
 
+모든 테이블에서 데이터 찾기
+```sql
+CREATE OR REPLACE FUNCTION find_tables_with_value()
+
+RETURNS TABLE(result_table_name TEXT) AS $$
+
+DECLARE
+
+r RECORD;
+
+col RECORD;
+
+query TEXT;
+
+found BOOLEAN;
+
+BEGIN
+
+FOR r IN
+
+SELECT table_name
+
+FROM information_schema.tables
+
+WHERE table_schema = 'public' -- 원하는 스키마를 지정
+
+LOOP
+
+RAISE NOTICE 'Checking table: %', r.table_name; -- 현재 검사 중인 테이블 이름 출력
+
+-- 각 테이블의 모든 컬럼을 검사
+
+FOR col IN
+
+SELECT column_name
+
+FROM information_schema.columns
+
+WHERE table_schema = 'public' AND table_name = r.table_name
+
+LOOP
+
+query := format('SELECT EXISTS (
+
+SELECT 1
+
+FROM %I
+
+WHERE %I::text ILIKE ''%%7401329033397%%''
+
+)', r.table_name, col.column_name);
+
+-- 쿼리 실행
+
+EXECUTE query INTO found;
+
+  
+
+IF found THEN
+
+result_table_name := r.table_name; -- 변수에 테이블 이름 저장
+
+RETURN NEXT; -- 결과 반환
+
+EXIT; -- 모든 컬럼 검사 후 테이블 발견 시 종료
+
+END IF;
+
+END LOOP;
+
+END LOOP;
+
+END; $$
+
+LANGUAGE plpgsql;
+
+  
+
+-- 함수 호출
+
+SELECT * FROM find_tables_with_value();
+```
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
