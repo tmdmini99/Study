@@ -965,5 +965,41 @@ SELECT * FROM find_tables_with_value('7401329033397');
 
 
 
+다른 테이블 컬럼을 jsonb로 원래 데이터 +로 넣기
+```sql
+SELECT o.*,
+               COALESCE(
+                   jsonb_agg(
+                       jsonb_set(
+                           item,
+                           '{image}',
+                           COALESCE(p.IMAGE -> 'src', '"default_image_url"')::jsonb
+                       )
+                   ),
+                   '[]'::jsonb -- 빈 배열을 기본값으로 설정
+               ) AS order_line_items
+        FROM orders o
+        LEFT JOIN jsonb_array_elements(o.LINE_ITEMS) AS item ON TRUE
+        LEFT JOIN products p ON (item->>'product_id') = p.id
+        WHERE o.id = '5327978725557'
+        GROUP BY o.id
+```
+
+
+이상태에서 mybatis 사용시 resultMap으로 매핑 
+
+```java
+private List<Map<String, Object>> lineItems;
+```
+
+```xml
+<resultMap id="orderResultMap" type="com.kpop.merch.orders.vo.OrdersVo">  
+    <result property="lineItems" column="order_line_items" javaType="java.util.List"/>  
+    <!-- 나머지 필드는 자동으로 매핑 -->  
+</resultMap>
+```
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
