@@ -97,6 +97,20 @@ jsp
 
 fmt를 사용하여 가져옴
 
+여기에 들어가는 basename은
+```jsp
+<fmt:setBundle basename="country.isoCode" />
+```
+
+내가 선언한 property의  value와 같아야 한다
+```xml
+<bean id="isoSource" class="org.springframework.context.support.ResourceBundleMessageSource">  
+    <property name="basename" value="country.isoCode" />  
+    <property name="defaultEncoding" value="UTF-8" />  
+</bean>
+```
+
+
 
 
 
