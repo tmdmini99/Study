@@ -1000,6 +1000,24 @@ private List<Map<String, Object>> lineItems;
 ```
 
 
+json 안에 json 쓰는 법
+```sql
+SELECT A.*,COUNT(*) OVER() totalCount FROM (
+             select *
+ from (
+     
+        SELECT * FROM checkouts
+         
+        ) a
+         
+         
+            order by customer -> 'default_address' ->> 'country_code' asc
+         
+        ) A
+        LIMIT 50
+        OFFSET (1 - 1) * 50
+```
+
 
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
