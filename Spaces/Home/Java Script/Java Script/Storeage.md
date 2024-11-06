@@ -80,3 +80,7 @@ $(window).on('beforeunload', function () {
 
 
 
+### 1. **DOM 요소의 상태를 문자열로 저장**
+
+`localStorage`에 저장할 수 있는 값은 문자열만 가능하므로, **DOM 요소의 상태**(예: `class`, `id`, `data-` 속성 등)를 **문자열**로 변환하여 저장합니다
+
