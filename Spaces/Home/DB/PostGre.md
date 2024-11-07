@@ -1044,6 +1044,13 @@ LATERAL jsonb_array_elements(P.variants) AS variant
 WHERE jsonb_array_length(P.variants) >= 2;
 ```
 
+```sql
+SELECT variant->>'inventory_item_id' AS inventory_item_id
+FROM PRODUCTS P, 
+LATERAL jsonb_array_elements(P.variants) AS variant
+WHERE variant->>'inventory_item_id' = '12345';
+```
+
 
 jsonb_array_elements(P.variants):
 
