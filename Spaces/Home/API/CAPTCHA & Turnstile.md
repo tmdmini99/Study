@@ -17,7 +17,80 @@
 더욱이 요즘 봇들은 사람보다 캡챠를 더 잘푸는 경우도 많다. "오디오 CAPTCHA" 는 사람이 풀기에는 시각적 CAPTCHA보다 훨씬 더 나쁘며, 오디오 챌린지의 경우 31.2% 정도의 성공율을 보인다고 한다. 그리고 최근 연구에 따르면 봇은 85% 이상의 시도에서 오디오 CAPTCHA를 정확하게 푼다고 한다. 이미지 역시 점점 봇이 더 잘풀고 있다. 
 
 
-![[Pasted image 20241107110038.png]]
+
+## 2. 더 나은 점
+
+1. 웹 콘텐츠 접근성 가이드라인(Web Content Accessibility Guidelined, WCAG 2.1)
+2. ePrivacy, GDPR 및 CCPA 준수 요건 (개인 정보 보호 관련)
+3. 사람에게 더 친화적이고 봇에게는 더욱 더 어렵게
+4. 적용은 더 쉽고 빠르게 그리고 무료
+
+사람에게 퀴즈를 내지 않는다! 그런데 어떻게 봇인이 아닌지 감지를 하는 것일까? 단순 체크 박스 클릭하나로? **_"the actual act of checking a box isn’t important, it’s the background data we’re analyzing while the box is checked that matters"_** 라고 한다.
+
+행위가 중요한게 아니라 박스가 선택될 때 수집되어 분석되는 데이터가 핵심이라고 한다. 네이티브 브라우저의 API를 호출하고, 가볍고 빠른 테스트를 진행한다고 한다. (ex: proof-of-work tests, proof-of-space tests) 그리고 1년간 베타 중 "진짜 브라우저" 에 대한 데이터를 학습 (머신 러닝)을 진행한 것 같다. 아마 이 과정에서 E2E testing 도구로 사용되는 셀레니움 등을 필터링 한다고 여겨진다.
+
+## 3. 찍어먹어 보기
+
+
+![[Pasted image 20241107132119.png]]
+
+[일단 개발자 문자가 잘 되어 있다.](https://developers.cloudflare.com/turnstile/) 그리고 리액트 라이브러리도 존재한다. [깃허브 데모 레포](https://github.com/cloudflare/turnstile-demo-workers) 에서 빠르게 적용된 코드 역시 확인 가능하다 .
+
+그리고 Enterprise에는 SaaS 플랫폼 지원과 Cloudflare 로고를 없앨 수 있다. "셀프 서비스 고객은 2024년 초에 고급 기능에 대한 유료 옵션이 제공될 것으로" 계획하고 있다고 한다. **_사용자는 베타 기간과 마찬가지로 100만 건의 사이트 확인 요청 한도 미만으로_** Turnstile의 고급 기능에 계속 액세스할 수 있다고 한다. 고급 기능은 클라우드플레어의 계정을 생성하고, 추가 설정을 할 필요가 있다.
+
+### 1) getting started
+
+```bash
+git clone https://github.com/cloudflare/turnstile-demo-workers.git
+cd turnstile-demo-workers
+npm install
+npm run dev
+```
+
+
+![[Pasted image 20241107132128.png]]
+
+
+
+![[Pasted image 20241107132131.png]]
+
+
+
+그리고 사실 이게 끝이다! 데모 페이지를 구경하면 된다! 사실 체크도 의심되는 사용자에게만 해달라고 요청하고, 자명한 유저에 대상으로는 자동 체크가 된다. 이 간극이 거의 1초라고 한다!
+
+### 2) detail
+
+```html
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+```
+
+
+
+![[Pasted image 20241107132140.png]]
+
+
+
+간단하게 살펴보면 cloudflare의 `api.js` 를 import 해서 가져오면 해당 파일에서 `IIFE, Immediately Invoked Function Expression` 처리된 js code로 아래 2가지 api를 호출하게 된다. ~~자 이제 저 2개의 파일, html과 script응답만 분석하면 turnstile을 파훼할 수 있는 방법을 알게 될지도 모른다!~~
+
+일단 적용하기 엄청 편하다. 특히 form 이 있는 곳 어디든 쉽고 빠르고 편하게 적용이 가능하다는 것이다.
+
+### 3) 고오급 기능 맛보기
+
+
+![[Pasted image 20241107132151.png]]
+
+
+
+![[Pasted image 20241107132155.png]]
+
+
+아래 docs를 보고 복사 - 붙여넣기
+
+![[Pasted image 20241107132208.png]]
+
+
+
+
 
 
 ---
