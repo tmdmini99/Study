@@ -1019,5 +1019,43 @@ SELECT A.*,COUNT(*) OVER() totalCount FROM (
 ```
 
 
+jsonb 배열일때 값 가져오기
+```sql
+SELECT (variants->0)->>'inventory_item_id' FROM PRODUCTS P;
+```
+
+배열 길이 구하기
+```sql
+SELECT *
+FROM PRODUCTS P
+WHERE JSON_LENGTH(variants) >= 2;
+```
+
+
+json 배열 값 가져오기
+
+```sql
+SELECT variant->>'inventory_item_id' AS inventory_item_id
+
+FROM PRODUCTS P,
+
+LATERAL jsonb_array_elements(P.variants) AS variant
+
+WHERE jsonb_array_length(P.variants) >= 2;
+```
+
+
+jsonb_array_elements(P.variants):
+
+jsonb_array_elements 함수는 JSONB 배열의 각 요소를 개별 행으로 변환합니다.
+P.variants는 PRODUCTS 테이블의 variants 컬럼을 의미하며, 이 컬럼에 저장된 JSONB 배열이 함수의 입력으로 사용됩니다.
+이 함수는 배열의 각 요소를 반환하여, 배열에 있는 각 객체를 SQL 쿼리에서 다룰 수 있도록 해줍니다.
+LATERAL:
+
+LATERAL 키워드는 해당 행의 다른 컬럼을 참조할 수 있게 해줍니다.
+즉, LATERAL을 사용하면 P.variants와 같은 테이블의 다른 컬럼을 참조하여, 각 행에 대해 jsonb_array_elements 함수를 적용할 수 있습니다.
+이는 각 행의 variants 배열에 대해 함수가 호출되도록 보장합니다.
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
