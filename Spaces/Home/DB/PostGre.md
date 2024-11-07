@@ -1049,6 +1049,12 @@ SELECT variant->>'inventory_item_id' AS inventory_item_id
 FROM PRODUCTS P, 
 LATERAL jsonb_array_elements(P.variants) AS variant
 WHERE variant->>'inventory_item_id' = '12345';
+
+
+SELECT *
+FROM products p
+LEFT JOIN LATERAL jsonb_array_elements(p.variants) AS variant ON TRUE
+LEFT JOIN inventory_items i ON variant->>'inventory_item_id' = i.id;
 ```
 
 
@@ -1062,6 +1068,16 @@ LATERAL:
 LATERAL 키워드는 해당 행의 다른 컬럼을 참조할 수 있게 해줍니다.
 즉, LATERAL을 사용하면 P.variants와 같은 테이블의 다른 컬럼을 참조하여, 각 행에 대해 jsonb_array_elements 함수를 적용할 수 있습니다.
 이는 각 행의 variants 배열에 대해 함수가 호출되도록 보장합니다.
+
+LEFT JOIN LATERAL을 빼고 LATERAL만 사용할 수는 있지만, 이 경우 products 테이블의 모든 행을 유지하는 것이 아니라, variants 배열이 있는 행만 반환하게 됩니다. LATERAL을 사용하면 각 행에 대해 variants 배열의 요소를 분리할 수 있지만, LEFT JOIN을 사용하지 않으면 variants가 없는 행은 결과에서 제외됩니다.
+
+
+```sql
+SELECT *
+FROM products p,
+LATERAL jsonb_array_elements(p.variants) AS variant
+LEFT JOIN inventory_items i ON variant->>'inventory_item_id' = i.id;
+```
 
 
 ---
