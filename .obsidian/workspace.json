@@ -173,6 +173,16 @@
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
             }
+          },
+          {
+            "id": "055d33c763f56d7f",
+            "type": "leaf",
+            "state": {
+              "type": "mk-file-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Spaces"
+            }
           }
         ]
       }
@@ -285,8 +295,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1b19c9e6a50e13c6",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/Java Script/Java Script/Storeage.md",
     "daily note/2024/11/2024-11-07.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/DB/PostGre.md",
@@ -299,7 +310,6 @@
     "Spaces/Home/DB/SQL Injection.md",
     "Spaces/Home/DB/PostgreSql.md",
     "daily note/2024/11/2024-11-05.md",
-    "Spaces/Home/Java Script/Java Script/Storeage.md",
     "Spaces/Home/Java Script/Node.js/TypeScript/TypeScript 프로젝트 생성.md",
     "Spaces/Home/Java Script/Node.js/express.md",
     "Spaces/Home/Java Script/Node.js/TypeScript",
