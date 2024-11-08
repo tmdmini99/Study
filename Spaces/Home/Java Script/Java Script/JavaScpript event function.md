@@ -303,3 +303,9 @@ window.addEventListener('beforeunload', function (event) {
 });
 
 ```
+
+
+tr 선택 tr:not
+```js
+
+```
