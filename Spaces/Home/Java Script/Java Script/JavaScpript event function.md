@@ -308,4 +308,15 @@ window.addEventListener('beforeunload', function (event) {
 tr 선택 tr:not
 ```js
 
+
+
+$(document).on('click', 'tbody:not(.uncommon) tr.inventory', function(event) {
+	alert(1);
+})
+
+
+
+$(document).on('click', 'tbody:not(.uncommon) tr:not(.inventory)', function(event) { 
+	alert(2);
+})
 ```
