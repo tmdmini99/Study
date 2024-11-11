@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/AWS/1. RDS Provisioning.md",
+                "file": "daily note/2024/11/2024-11-11.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. RDS Provisioning"
+              "title": "2024-11-11"
             }
           },
           {
@@ -140,6 +140,18 @@
           },
           {
             "id": "65e0ddf57e8cb940",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "f2e0fab21c36767b",
             "type": "leaf",
             "state": {
               "type": "mk-file-view",
@@ -261,6 +273,7 @@
   },
   "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "daily note/2024/11/2024-11-11.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "daily note/2024/11/2024-11-08.md",
@@ -306,7 +319,6 @@
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",
     "Spaces/Home/CSRF/CSS",
-    "Spaces/Home/Spring/Interceptor",
     "무제 파일.canvas"
   ]
 }
