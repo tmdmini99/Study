@@ -72,6 +72,30 @@ public class GreetingController {
 ```
 
 
+```java
+@Controller
+public class OrderController {
+
+    @Autowired
+    private MessageSource messageSource;
+
+    @GetMapping("/order/detail")
+    public String orderDetail(Model model) {
+        // 로케일 설정 없이 메시지를 가져옵니다.
+        String phoneMessage = messageSource.getMessage("countryPhone.au", null, Locale.getDefault());
+        String countryCodeMessage = messageSource.getMessage("countryCode.au", null, Locale.getDefault());
+
+        model.addAttribute("phoneMessage", phoneMessage);
+        model.addAttribute("countryCodeMessage", countryCodeMessage);
+
+        return "orderDetail";
+    }
+}
+
+```
+
+
+
 jsp
 
 ```jsp

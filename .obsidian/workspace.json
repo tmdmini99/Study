@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/11/2024-11-11.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-11"
+              "title": "properties"
             }
           },
           {
@@ -117,7 +117,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "properties",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
