@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/11/2024-11-12.md",
+                "file": "Spaces/Home/Protocol/Http/WebSocket.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-12"
+              "title": "WebSocket"
             }
           },
           {
@@ -261,13 +261,13 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "daily note/2024/11/2024-11-12.md",
     "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Protocol/Http/Socekt.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Spring/Security.md",
-    "daily note/2024/11/2024-11-12.md",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",

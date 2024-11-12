@@ -509,8 +509,49 @@ setInterval(() => {
 2. **오버헤드**: 매번 HTTP 요청을 보내고 응답을 받는 과정에서 오버헤드가 발생합니다. 특히 빈번한 요청을 보내야 하는 경우 성능 저하가 발생할 수 있습니다.
 
 
+websocket-context.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xmlns:messaging="http://www.springframework.org/schema/messaging"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd
+                           http://www.springframework.org/schema/messaging http://www.springframework.org/schema/messaging/spring-messaging.xsd">
 
+    <!-- WebSocket 설정 활성화 -->
+    <websocket:annotation-driven />
 
+    <!-- WebSocket STOMP 엔드포인트 설정 -->
+    <bean id="stompEndpointRegistry" class="org.springframework.web.socket.config.annotation.StompEndpointRegistry">
+        <property name="addEndpoint" value="/messages" />
+        <property name="withSockJS" value="true" />
+    </bean>
+
+    <!-- 메시지 브로커 설정 -->
+    <bean id="messageBroker" class="org.springframework.messaging.simp.config.MessageBrokerRegistry">
+        <property name="enableSimpleBroker" value="/queue,/topic" />
+        <property name="setApplicationDestinationPrefixes" value="/app" />
+    </bean>
+
+</beans>
+
+```
+
+pom.xml
+```xml
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-websocket</artifactId>
+    <version>5.3.0</version> <!-- 버전은 사용 중인 Spring 버전에 맞게 설정 -->
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-messaging</artifactId>
+    <version>5.3.0</version> <!-- 버전은 사용 중인 Spring 버전에 맞게 설정 -->
+</dependency>
+```
 
 
 
