@@ -540,3 +540,6 @@ https://kellis.tistory.com/65
 
 
 https://velog.io/@ctdlog/Web-Socket
+
+
+https://velog.io/@suhyun_zip/%EC%9B%B9%EC%86%8C%EC%BC%93-%EC%B1%84%ED%8C%85-%EA%B8%B0%EB%8A%A5-23.09.04
