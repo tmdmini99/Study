@@ -103,13 +103,34 @@ END
 
 $$;
 
+  ----------------------------------------- 스키마 지정
+
+DO
+
+$$
+
+DECLARE
+
+r RECORD;
+
+target_schema TEXT := 'webhook'; -- 원하는 스키마 이름
+
+BEGIN
+
+EXECUTE 'SET session_replication_role = replica';
+
   
 
-INSERT INTO events_count (count) VALUES (57742);
+FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = target_schema) LOOP
 
-  
+EXECUTE 'TRUNCATE TABLE ' || quote_ident(target_schema) || '.' || quote_ident(r.tablename) || ' CASCADE';
 
-SELECT * FROM tags;
+END LOOP;
+
+END
+
+$$;
+
 ```
 
 
