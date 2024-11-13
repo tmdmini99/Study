@@ -556,6 +556,57 @@ pom.xml
 
 
 
+`TextWebSocketHandler`와 `WebSocketHandler`는 Spring WebSocket에서 사용되는 두 가지 주요 WebSocket 핸들러 인터페이스입니다. 각각의 차이점과 용도에 따라 어떤 것이 더 좋은지 결정할 수 있습니다.
+
+### 1. **`WebSocketHandler`**
+
+`WebSocketHandler`는 WebSocket 연결을 처리하는 기본 인터페이스입니다. 이 인터페이스는 WebSocket 세션과 메시지를 처리하는 메서드를 정의합니다. 이 메서드들을 구현하여 WebSocket의 연결, 메시지 전송, 오류 처리 등을 직접 구현할 수 있습니다.
+
+**주요 메서드**:
+
+- `afterConnectionEstablished(WebSocketSession session)` : WebSocket 연결이 설정되었을 때 호출됩니다.
+- `handleMessage(WebSocketSession session, WebSocketMessage<?> message)` : 클라이언트에서 전송한 메시지를 처리합니다.
+- `handleTransportError(WebSocketSession session, Throwable exception)` : 전송 중 오류가 발생하면 호출됩니다.
+- `afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus)` : 연결이 종료된 후 호출됩니다.
+- `supportsPartialMessages()` : 부분 메시지를 지원할지 여부를 결정합니다.
+
+**장점**:
+
+- 매우 유연하고 기본적인 WebSocket 처리 방식입니다. 여러 종류의 메시지 형식을 직접 처리하고 싶을 때 유용합니다.
+- 기본적인 WebSocket 핸들러로, 추가적인 기능을 원하는 경우 자신만의 로직을 작성할 수 있습니다.
+
+### 2. **`TextWebSocketHandler`**
+
+`TextWebSocketHandler`는 `WebSocketHandler`를 구현한 추상 클래스입니다. 이 클래스는 텍스트 기반 메시지(WebSocket에서 가장 흔히 사용되는 메시지 포맷)를 처리할 때 유용합니다. `WebSocketHandler`의 메서드를 기본적으로 구현하며, 텍스트 메시지 처리만 집중할 수 있도록 설계되어 있습니다.
+
+`TextWebSocketHandler`를 사용하면, `handleTextMessage` 메서드만 구현하면 됩니다. 이를 통해 텍스트 메시지 처리에 집중할 수 있습니다.
+
+**주요 메서드**:
+
+- `handleTextMessage(WebSocketSession session, TextMessage message)` : 텍스트 메시지를 처리하는 메서드입니다.
+- `afterConnectionEstablished(WebSocketSession session)` : 연결이 설정되었을 때 호출됩니다.
+- `afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus)` : 연결이 종료된 후 호출됩니다.
+- `handleTransportError(WebSocketSession session, Throwable exception)` : 오류가 발생했을 때 호출됩니다.
+
+**장점**:
+
+- 텍스트 메시지 처리에 특화되어 있어, 기본적인 메시지 처리 로직이 이미 구현되어 있어 더욱 간단하게 사용할 수 있습니다.
+- 텍스트 메시지만 처리할 경우, 코드가 간결해지고 구현이 쉬워집니다.
+
+### **어떤 것을 선택해야 할까?**
+
+- **텍스트 기반의 메시지 처리만 필요하다면**: `TextWebSocketHandler`가 더 적합합니다. 기본적인 텍스트 메시지 처리만 필요하다면, `handleTextMessage`만 구현하면 되므로 코드가 더 간결하고 관리하기 쉽습니다.
+    
+- **다양한 메시지 형식(텍스트 외에도 바이너리, 커스텀 메시지 등)을 처리해야 한다면**: `WebSocketHandler`를 사용하는 것이 더 좋습니다. `WebSocketHandler`는 메시지 형식에 구애받지 않으며, 다양한 종류의 메시지를 처리할 수 있도록 유연하게 설계되었습니다. `handleMessage` 메서드를 오버라이드하여 텍스트뿐만 아니라 바이너리 데이터나 다른 형태의 메시지도 처리할 수 있습니다.
+    
+
+### **결론**
+
+- **`TextWebSocketHandler`**: 텍스트 메시지 처리만 필요한 경우 사용.
+- **`WebSocketHandler`**: 다양한 메시지 형식이나 복잡한 로직이 필요한 경우 사용.
+
+
+
 
 
 
