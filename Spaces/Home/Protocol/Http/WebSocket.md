@@ -607,6 +607,143 @@ pom.xml
 
 
 
+```java
+package com.kpop.merch.common.filter;  
+  
+import com.kpop.merch.common.handler.SessionTimeoutWebSocketHandler;  
+import lombok.var;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.stereotype.Component;  
+import org.springframework.web.context.support.WebApplicationContextUtils;  
+  
+import javax.servlet.ServletContext;  
+import javax.servlet.annotation.WebListener;  
+import javax.servlet.http.HttpSessionEvent;  
+import javax.servlet.http.HttpSessionListener;  
+  
+@Component  
+public class SessionTimeoutListener implements HttpSessionListener {  
+  
+  
+    @Autowired  
+    private SessionTimeoutWebSocketHandler webSocketHandler;  
+  
+    @Override  
+    public void sessionCreated(HttpSessionEvent se) {  
+        // 세션 생성 시 로그 출력  
+        System.out.println("세션 생성: " + se.getSession().getId());  
+    }  
+  
+    @Override  
+    public void sessionDestroyed(HttpSessionEvent se) {  
+        // 세션 만료 시 로그 출력  
+        System.out.println("세션 만료: " + se.getSession().getId());  
+        if (webSocketHandler == null) {  
+            ServletContext servletContext = se.getSession().getServletContext();  
+            var ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);  
+            webSocketHandler = ctx.getBean(SessionTimeoutWebSocketHandler.class);  
+        }  
+        // 세션 만료 시 WebSocketHandler의 notifySessionExpired 호출  
+            if (webSocketHandler != null) {  
+                webSocketHandler.notifySessionExpired();  
+            } else {  
+                System.out.println("WebSocketHandler가 초기화되지 않았습니다.");  
+            }  
+  
+  
+    }  
+}
+```
+```java
+package com.kpop.merch.common.handler;  
+  
+  
+import org.springframework.stereotype.Component;  
+import org.springframework.web.socket.CloseStatus;  
+import org.springframework.web.socket.TextMessage;  
+import org.springframework.web.socket.WebSocketSession;  
+import org.springframework.web.socket.handler.TextWebSocketHandler;  
+  
+import javax.servlet.http.HttpSession;  
+import java.io.IOException;  
+import java.util.concurrent.CopyOnWriteArraySet;  
+  
+@Component("webSocketHandler")  
+public class SessionTimeoutWebSocketHandler  extends TextWebSocketHandler{  
+  
+    private static final CopyOnWriteArraySet<WebSocketSession> sessions = new CopyOnWriteArraySet<>();  
+  
+    @Override  
+    public void afterConnectionEstablished(WebSocketSession session) throws Exception {  
+        super.afterConnectionEstablished(session);  
+  
+        // HTTP 세션을 WebSocket 세션에 연결하기 (Optional: HTTP 세션에 있는 사용자 정보를 사용하려는 경우)  
+        HttpSession httpSession = (HttpSession) session.getAttributes().get("HTTP_SESSION");  
+  
+        if (httpSession != null) {  
+            // HTTP 세션에서 사용자 ID를 가져와 WebSocket 세션에 사용자 정보를 추가  
+            String userId = (String) httpSession.getAttribute("userId");  
+            if (userId != null) {  
+                session.getAttributes().put("userId", userId);  // WebSocket 세션에 사용자 ID 추가  
+                System.out.println("2");  
+            }  
+        } else {  
+            // HTTP 세션이 없다면 기본 사용자 정보로 설정  
+            session.getAttributes().put("user", "user123");  // 예시로 사용자 ID 추가  
+            System.out.println("1");  
+        }  
+  
+        // 세션을 리스트에 추가  
+        sessions.add(session);  
+  
+        // 디버깅용 로그  
+        System.out.println("WebSocket connected: " + session.getId());  
+        System.out.println("Session Attributes: " + session.getAttributes());  
+        System.out.println("세션 추가됨: " + session.getId());  
+        System.out.println("Total connected sessions: " + sessions.size());  // 현재 연결된 세션 수 확인  
+    }  
+  
+  
+    @Override  
+    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {  
+        super.afterConnectionClosed(session, status);  
+        // 세션 종료 시 리스트에서 해당 세션 제거  
+        notifySessionExpired();  // 세션 만료 알림을 먼저 보냄  
+        sessions.remove(session);  
+        System.out.println("WebSocket disconnected: " + session.getId());  
+        System.out.println("세션 종료됨: " + session.getId());  
+        System.out.println("Total connected sessions: " + sessions.size());  // 현재 연결된 세션 수 확인  
+  
+        // 이미 종료된 세션에서는 메시지를 보내지 않음  
+        if (!session.isOpen()) {  
+            System.out.println("세션이 이미 닫혀 있습니다. 메시지를 보내지 않습니다.");  
+        }  
+    }  
+  
+    public void notifySessionExpired() {  
+        System.out.println("세션 만료 알림 발송");  
+  
+        // 세션이 닫힌 상태인지 확인  
+        for (WebSocketSession session : sessions) {  
+            System.out.println("세션 상태 확인: " + session.getId() + " 상태: " + (session.isOpen() ? "열려 있음" : "닫힘"));  
+            if (session.isOpen()) {  
+                try {  
+                    System.out.println("들어오나?");  
+                    TextMessage message = new TextMessage("Session expired. Please log in again.");  
+                    session.sendMessage(message);  
+                } catch (IOException e) {  
+                    e.printStackTrace();  
+                }  
+            } else {  
+                System.out.println("세션이 이미 닫혔습니다. 메시지를 보내지 않습니다.");  
+            }  
+            System.out.println("들어오나?2");  
+        }  
+        System.out.println("들어오나3?");  
+    }  
+  
+}
+```
 
 
 
