@@ -16,5 +16,9 @@ SSE는 **별도의 프로토콜을 사용하지 않고 HTTP 프로토콜만으�
 
 
 
+
+
+
+
 ---
 참조 - https://velog.io/@alswn9938/SSE%EB%9E%**80**

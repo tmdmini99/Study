@@ -199,6 +199,12 @@ Spring Boot에서 웹소켓을 설정하는 방법은 다음과 같습니다.
     <artifactId>spring-boot-starter-websocket</artifactId>
 </dependency>
 
+
+<dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-web</artifactId>  
+    <version>${org.springframework-version}</version>  
+</dependency>
 ```
 
 
@@ -654,6 +660,11 @@ public class SessionTimeoutListener implements HttpSessionListener {
     }  
 }
 ```
+
+
+
+component로 bean id 지정
+
 ```java
 package com.kpop.merch.common.handler;  
   
@@ -743,6 +754,131 @@ public class SessionTimeoutWebSocketHandler  extends TextWebSocketHandler{
     }  
   
 }
+```
+
+
+`nullPointerException`이 발생하는 이유가 `@Component`와 `@Autowired`를 사용한 의존성 주입이 제대로 작동하지 않는 경우라면, 이는 보통 다음과 같은 원인일 수 있습니다:
+
+1. **`SessionTimeoutListener`가 스프링 컨텍스트 외부에서 생성되었을 가능성**이 큽니다. `@WebListener`와 같이 서블릿 컨테이너에서 직접 관리하는 리스너는 스프링이 빈으로 관리하지 않으므로, `@Autowired`를 통한 주입이 이루어지지 않습니다.
+2. **의존성 주입이 제대로 이루어지지 않아 빈이 `null` 상태**로 남게 됩니다.
+
+이 경우 `SessionTimeoutListener`가 스프링 컨텍스트에서 관리될 수 있도록 설정을 수정하거나, 수동으로 스프링 컨텍스트에서 `webSocketHandler` 빈을 가져오는 방식으로 해결할 수 있습니다.
+
+다음은 이러한 문제를 해결하는 두 가지 방법입니다.
+
+---
+
+### 방법 1: `SessionTimeoutListener`를 스프링에서 관리하도록 변경
+
+`SessionTimeoutListener`를 빈으로 등록하고, 세션 리스너로 사용할 때 스프링 컨텍스트에서 생성된 빈을 등록하도록 `WebApplicationInitializer`나 XML 설정을 통해 지정할 수 있습니다.
+
+#### 1. `SessionTimeoutListener`에 `@Component` 사용
+
+현재 `@Component`가 선언되어 있다면, 그대로 유지합니다.
+
+```java
+@Component
+public class SessionTimeoutListener implements HttpSessionListener {
+    @Autowired
+    private SessionTimeoutWebSocketHandler webSocketHandler;
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        webSocketHandler.notifySessionExpired();
+    }
+}
+
+```
+
+#### 2. `WebApplicationInitializer`에서 세션 리스너 설정
+
+스프링 부트가 아닌 레거시 스프링에서 서블릿을 설정하는 방식으로 `WebApplicationInitializer`를 사용할 수 있습니다. 아래와 같이 세션 리스너를 등록하고, 스프링 빈을 컨텍스트에서 가져오도록 합니다.
+
+```java
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
+public class AppInitializer implements WebApplicationInitializer {
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        // 스프링 애플리케이션 컨텍스트에서 SessionTimeoutListener 빈을 가져와 등록
+        var ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
+        var listener = ctx.getBean(SessionTimeoutListener.class);
+        servletContext.addListener(listener);
+    }
+}
+
+```
+
+### 방법 2: 스프링 컨텍스트에서 직접 빈 가져오기
+
+세션 리스너 내부에서 `webSocketHandler`를 직접 스프링 컨텍스트에서 가져오는 방법입니다.
+
+#### `SessionTimeoutListener` 코드 수정
+
+```java
+import org.springframework.web.context.support.WebApplicationContextUtils;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+public class SessionTimeoutListener implements HttpSessionListener {
+
+    private SessionTimeoutWebSocketHandler webSocketHandler;
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        if (webSocketHandler == null) {
+            ServletContext servletContext = se.getSession().getServletContext();
+            var ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
+            webSocketHandler = ctx.getBean(SessionTimeoutWebSocketHandler.class);
+        }
+        webSocketHandler.notifySessionExpired();
+    }
+}
+```
+
+
+`ws://localhost:8080/ws/notify` 맞춰줘야함
+
+```js
+const socket = new WebSocket("ws://localhost:8080/ws/notify");  
+socket.onopen = () => {  
+  console.log("WebSocket connected");  
+};  
+socket.onclose = () => {  
+  console.log("WebSocket connection closed");  
+};  
+socket.onmessage = function(event) {  
+    console.log("Received message: ", event.data);  // 받은 메시지 출력  
+    if (event.data === "Session expired. Please log in again.") {  
+        alert("세션이 만료되었습니다. 다시 로그인해 주세요.");  
+        window.location.href = "/login/login";  
+    }  
+};
+```
+
+
+
+
+
+
+web.xml
+```xml
+<listener>  
+    <listener-class>com.kpop.merch.common.filter.SessionTimeoutListener</listener-class>  
+</listener>
+```
+
+
+servlet-context.xml
+```xml
+<websocket:handlers>  
+    <websocket:mapping path="/ws/notify" handler="webSocketHandler"/>  
+</websocket:handlers>
 ```
 
 
