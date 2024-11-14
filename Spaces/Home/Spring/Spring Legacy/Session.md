@@ -39,4 +39,17 @@ web.xml
 
 
 
+security-context.xml 에서 http 태그 안에 삽입
+```xml
+<security:session-management invalid-session-url="/login/login">  
+    <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />  
+</security:session-management>
+```
 
+
+web.xml
+```xml
+<session-config>  
+    <session-timeout>30</session-timeout>  <!-- 30분 -->  
+</session-config>
+```
