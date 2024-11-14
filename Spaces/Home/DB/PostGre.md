@@ -1101,5 +1101,18 @@ LEFT JOIN inventory_items i ON variant->>'inventory_item_id' = i.id;
 ```
 
 
+
+모든 테이블에서 컬럼명 검색
+
+```sql
+SELECT table_name, column_name
+FROM information_schema.columns
+WHERE column_name = 'your_column_name'
+  AND table_schema = 'public';  -- 필요에 따라 스키마를 변경하세요.
+```
+
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
