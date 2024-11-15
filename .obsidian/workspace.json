@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "session",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -120,8 +120,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -232,19 +231,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0705d70457345ec",
+  "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "Spaces/Home/Protocol/Http/WebSocket.md",
+    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",
     "Spaces/Home/Protocol/Http/SSE.md",
     "Spaces/Home/Protocol/Http/Socekt.md",
     "daily note/2024/11/2024-11-15.md",
-    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2024/11/2024-11-14.md",
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/무제 파일.md",
     "daily note/2024/11/2024-11-13.md",
     "daily note/2024/11/2024-11-12.md",

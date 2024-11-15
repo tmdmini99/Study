@@ -61,3 +61,68 @@ web.xml
 
 
 
+
+```java
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class SessionTimeoutListener implements HttpSessionListener {
+
+    private SSEController sseController;
+
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+        // 세션 생성 시 처리
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        // 세션 만료 시 로그 출력
+        System.out.println("세션 만료: " + se.getSession().getId());
+
+        // ServletContext에서 WebApplicationContext 가져오기
+        ServletContext servletContext = se.getSession().getServletContext();
+        WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
+
+        // WebApplicationContext에서 SSEController 빈을 가져옵니다.
+        if (sseController == null) {
+            sseController = ctx.getBean(SSEController.class);
+        }
+
+        // sseController가 null이 아닌지 확인 후 알림 보내기
+        if (sseController != null) {
+            String sessionId = se.getSession().getId();
+            sseController.notifySessionExpired(sessionId);  // 세션 만료 알림 전송
+        } else {
+            System.out.println("SSEController 빈을 찾을 수 없습니다.");
+        }
+    }
+}
+
+```
+
+
+
+```java
+import org.springframework.web.context.support.WebApplicationContextUtils;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+public class SessionTimeoutListener implements HttpSessionListener {
+
+    private SessionTimeoutWebSocketHandler webSocketHandler;
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        if (webSocketHandler == null) {
+            ServletContext servletContext = se.getSession().getServletContext();
+            var ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
+            webSocketHandler = ctx.getBean(SessionTimeoutWebSocketHandler.class);
+        }
+        webSocketHandler.notifySessionExpired();
+    }
+}
+
+```
