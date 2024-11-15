@@ -375,3 +375,53 @@ filter에 `<async-supported>true</async-supported>` 추가 sse 비동기 통신�
 
 ```
 
+
+프론트 타이머
+```js
+// // 세션 만료 시간을 설정 (단위: 밀리초)  
+// const sessionExpireTime = 30 * 60 * 1000; // 30분  
+// const alertBeforeExpire = 5 * 60 * 1000;  // 5분 전에 알림  
+//  
+// // 경고 타이머 설정  
+// const alertTimer = setTimeout(() => {  
+//   alert("세션이 5분 후에 만료됩니다. 계속하려면 세션을 연장하세요.");  
+// }, sessionExpireTime - alertBeforeExpire);  
+//  
+// // 실제 만료 시점에 알림 또는 세션 종료 처리  
+// const expireTimer = setTimeout(() => {  
+//   alert("세션이 만료되었습니다. 다시 로그인 해주세요.");  
+//   // 로그아웃 처리나 페이지 리다이렉트 등의 추가 작업 가능  
+// }, sessionExpireTime);  
+  
+// let eventSource;  
+//  
+// function connectSSE() {  
+//     // SSE 연결을 시작  
+//     eventSource = new EventSource("/sse/session");  
+//  
+//     // 연결이 성공했을 때 이벤트 처리  
+//     eventSource.onopen = function(event) {  
+//         console.log("SSE 연결이 성공적으로 이루어졌습니다.");  
+//     };  
+//  
+//     // 서버에서 보낸 메시지 처리  
+//     eventSource.onmessage = function(event) {  
+//         console.log("서버로부터 받은 메시지:", event.data);  
+//  
+//         if (event.data === "세션이 만료되었습니다.") {  
+//             alert(event.data);  
+//             // 세션 만료 시 연결 종료  
+//             eventSource.close();  // EventSource 종료  
+//             window.location.href = "/login";  // 로그인 페이지로 리다이렉션  
+//         }  
+//     };  
+//  
+//     eventSource.onerror = function(event) {  
+//         console.error("SSE 연결이 끊어졌습니다.");  
+//         eventSource.close();  
+//     };  
+// }  
+//  
+// // SSE 연결 초기화  
+// connectSSE();
+```
