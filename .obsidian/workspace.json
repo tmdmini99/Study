@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Session.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Session"
+              "title": "Security"
             }
           }
         ]
@@ -233,8 +233,8 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
-    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Spring/Spring Legacy/Session.md",
+    "Spaces/Home/Protocol/Http/WebSocket.md",
     "Spaces/Home/Protocol/Http/HTTP Polling.md",
     "Spaces/Home/Protocol/Http/Http.md",
     "Spaces/Home/Protocol/Http/HTTPS(HTTP와 차이점).md",

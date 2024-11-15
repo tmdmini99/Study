@@ -300,7 +300,16 @@ ctrl + 마우스 가져다 대면 바로 확인 가능 자신의 시큐리티 �
 
 
 
-
+url과 handler는 같이 사용 불가
+```xml
+<security:logout  
+        logout-url="/login/logout"  
+        logout-success-url="/login/login"  
+        invalidate-session="true"  
+        delete-cookies="JSESSIONID"  
+        success-handler-ref="logoutSuccessHandler"  
+></security:logout>
+```
 
 
 
