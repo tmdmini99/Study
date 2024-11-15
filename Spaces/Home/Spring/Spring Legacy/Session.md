@@ -58,3 +58,6 @@ web.xml
     <session-timeout>30</session-timeout>  <!-- 30분 -->  
 </session-config>
 ```
+
+
+
