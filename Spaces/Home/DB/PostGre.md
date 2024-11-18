@@ -1112,6 +1112,36 @@ WHERE column_name = 'your_column_name'
 ```
 
 
+```sql
+
+--- 둘다 가지고 있어야 함
+
+SELECT table_name
+
+FROM information_schema.columns
+
+WHERE column_name IN ('payment_id', 'token')
+
+AND table_schema = 'public' -- 필요에 따라 스키마를 변경하세요.
+
+GROUP BY table_name
+
+HAVING COUNT(DISTINCT column_name) = 2;
+
+  
+
+--- 둘중에 하나만 있어도 가능
+
+
+SELECT table_name, column_name
+
+FROM information_schema.columns
+
+WHERE column_name IN ('payment_id', 'token')
+
+AND table_schema = 'public'; -- 필요에 따라 스키마를 변경하세요.
+```
+
 
 
 ---

@@ -695,7 +695,149 @@ processDatas(csvFileName, csvFolderPath, outputDir);
 
 
 
+```js
+async function insertReqBody(req, res, targetTable) {
 
+    try {
+
+        const json = req.body;
+
+        console.log('Received Request Body:', json);
+
+  
+
+        // records가 단일 객체 또는 배열인지 확인
+
+        const records = Array.isArray(json) ? json : [json];
+
+        const insertedData = [];
+
+  
+
+        for (const record of records) {
+
+            if (typeof record !== 'object' || record === null) {
+
+                console.error('Invalid record format. Expected an object:', record);
+
+                continue;
+
+            }
+
+  
+
+            const keys = Object.keys(record);
+
+            if (keys.length === 0) {
+
+                console.error('No columns to insert for record:', record);
+
+                continue;
+
+            }
+
+  
+
+            // 컬럼 이름을 큰따옴표로 감싸기
+
+            const columns = keys.map(key => `"${key}"`).join(', ');
+
+  
+
+            const values = keys.map((key) => {
+
+                const value = record[key];
+
+  
+
+                if (Array.isArray(value)) {
+
+                    // 배열인 경우, 각 항목을 문자열로 변환한 후 JSON 배열로 변환
+
+                    return JSON.stringify(value);  // 배열을 JSON 문자열로 변환
+
+                } else if (typeof value === 'object' && value !== null) {
+
+                    // 객체인 경우, JSON 문자열로 변환
+
+                    return JSON.stringify(value);  
+
+                } else if (value === null) {
+
+                    return null;
+
+                }
+
+                return value;
+
+            });
+
+  
+
+            const placeholders = keys.map((_, i) => `$${i + 1}`).join(', ');
+
+  
+
+            const query = `INSERT INTO webhook.${targetTable} (${columns}) VALUES (${placeholders}) RETURNING *`;
+
+  
+
+            console.log('Generated Query:', query);
+
+            console.log('Values:', values);
+
+  
+
+            try {
+
+                const result = await pool.query(query, values);
+
+                if (result && result.rows.length > 0) {
+
+                    insertedData.push(result.rows[0]);
+
+                }
+
+            } catch (error) {
+
+                console.error(`Error inserting data into ${targetTable}:`, error.message, {
+
+                    query,
+
+                    values,
+
+                });
+
+            }
+
+        }
+
+  
+
+        res.status(201).json({
+
+            message: 'Data inserted successfully',
+
+            data: insertedData,
+
+        });
+
+    } catch (error) {
+
+        console.error('Error occurred:', error.message);
+
+        res.status(500).json({
+
+            message: 'An error occurred during insertion',
+
+            error: error.message,
+
+        });
+
+    }
+
+}
+```
 
 
 jstl사용하여 split
