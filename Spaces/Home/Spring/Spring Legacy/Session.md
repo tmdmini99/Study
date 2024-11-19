@@ -549,3 +549,86 @@ public class SessionTimeoutListener implements HttpSessionListener {
     }  
 }
 ```
+
+
+??
+```java
+package com.kpop.merch.common.filter;  
+  
+import com.kpop.merch.common.controller.SessionSseController;  
+import org.springframework.web.context.WebApplicationContext;  
+import org.springframework.web.context.support.WebApplicationContextUtils;  
+  
+import javax.servlet.ServletContext;  
+import javax.servlet.http.HttpSession;  
+import javax.servlet.http.HttpSessionEvent;  
+import javax.servlet.http.HttpSessionListener;  
+import java.time.ZoneId;  
+import java.time.ZonedDateTime;  
+import java.time.format.DateTimeFormatter;  
+  
+public class SessionTimeoutListener implements HttpSessionListener {  
+  
+    private SessionSseController sseController;  
+  
+    @Override  
+    public void sessionCreated(HttpSessionEvent se) {  
+        HttpSession session = se.getSession();  
+        System.out.println("세션 생성: " + session.getId());  
+        session.getServletContext().log("세션 생성: " + session.getId());  
+  
+        // 기존 세션 ID를 ServletContext에 저장하는 대신, 세션 속성으로 저장  
+        ServletContext servletContext = session.getServletContext();  
+        servletContext.setAttribute("existingSessionId", session.getId());  
+    }  
+  
+    @Override  
+    public void sessionDestroyed(HttpSessionEvent se) {  
+        HttpSession session = se.getSession();  
+        session.getServletContext().log("세션 만료: " + session.getId());  
+  
+        System.out.println("세션 만료: " + session.getId() + " 현재 시간: " +  
+                ZonedDateTime.now(ZoneId.of("Asia/Seoul")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));  
+  
+        // ServletContext에서 WebApplicationContext 가져오기  
+        ServletContext servletContext = session.getServletContext();  
+        WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);  
+  
+        if (sseController == null) {  
+            sseController = ctx.getBean(SessionSseController.class);  
+        }  
+  
+        // 세션에서 'logout' 값 가져오기 (로그아웃 여부 확인)  
+        Boolean isLogout = (Boolean) session.getAttribute("logout");  
+  
+        // 세션에서 'newLogin' 값 가져오기 (새 로그인 여부 확인)  
+        Boolean newLogin = (Boolean) session.getAttribute("newLogin");  
+  
+        // 기존 세션과 새로운 세션을 비교  
+        String existingSessionId = (String) servletContext.getAttribute("existingSessionId");  
+  
+        if (existingSessionId != null && !existingSessionId.equals(session.getId())) {  
+            // 중복 로그인 발생 시 기존 세션에만 알림 전송  
+            System.out.println("중복 로그인 발생: 기존 사용자에게만 알림 전송");  
+  
+            // 중복 로그인 알림  
+            sseController.notifySessionExpired2();  // 중복 로그인 알림 전송  
+  
+            // 세션 만료 알림을 보내지 않도록 처리  
+            return; // 중복 로그인 알림을 보내고 세션 만료 알림을 보내지 않음  
+        }  
+  
+        if (Boolean.TRUE.equals(isLogout)) {  
+            // 로그아웃 처리된 경우 알림을 보내지 않음  
+            System.out.println("로그아웃된 세션: 알림 전송 안 함");  
+            return;  
+        }  
+  
+        // 세션 만료: 해당 사용자에게만 알림  
+        System.out.println("세션 만료: 현재 사용자에게 알림 전송");  
+        sseController.notifySessionExpired(); // 해당 세션에만 세션 만료 알림  
+    }  
+  
+  
+}
+```
