@@ -494,3 +494,58 @@ public class CustomLogoutFilter implements Filter {
 ```
 
 
+
+```java
+package com.kpop.merch.common.filter;  
+  
+  
+import com.kpop.merch.common.controller.SessionSseController;  
+import org.springframework.web.context.WebApplicationContext;  
+import org.springframework.web.context.support.WebApplicationContextUtils;  
+  
+import javax.servlet.ServletContext;  
+import javax.servlet.http.HttpSession;  
+import javax.servlet.http.HttpSessionEvent;  
+import javax.servlet.http.HttpSessionListener;  
+import java.time.ZoneId;  
+import java.time.ZonedDateTime;  
+import java.time.format.DateTimeFormatter;  
+  
+public class SessionTimeoutListener implements HttpSessionListener {  
+  
+  
+    private SessionSseController sseController;  
+  
+  
+    @Override  
+    public void sessionCreated(HttpSessionEvent se) {  
+        HttpSession session = se.getSession();  
+        System.out.println("세션 생성: " + session.getId());  
+        session.getServletContext().log("세션 생성: " + session.getId());  
+    }  
+  
+    @Override  
+    public void sessionDestroyed(HttpSessionEvent se) {  
+        HttpSession session = se.getSession();  
+        session.getServletContext().log("세션 만료: " + session.getId());  
+  
+        System.out.println("세션 만료: " + session.getId() + " 현재 시간: " +  
+            ZonedDateTime.now(ZoneId.of("Asia/Seoul")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));  
+  
+  
+        // ServletContext에서 WebApplicationContext 가져오기  
+        ServletContext servletContext = se.getSession().getServletContext();  
+        WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);  
+  
+        // WebApplicationContext에서 SSEController 빈을 가져옵니다.  
+        if (sseController == null) {  
+            sseController = ctx.getBean(SessionSseController.class);  
+        }  
+        // 세션에서 isLogout 값 가져오기  
+        Boolean isLogout = (Boolean) session.getAttribute("logout");  
+        if (!(isLogout != null && isLogout)) {  
+            sseController.notifySessionExpired();  
+        }  
+    }  
+}
+```
