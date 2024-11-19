@@ -266,6 +266,11 @@ public class SessionSseController {
 }
 ```
 
+```java
+private static final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();  
+```
+
+여기서 static으로 설정해줘야함
 
 js 코드
 ```js
@@ -299,36 +304,6 @@ function connectSSE() {
   
 // 페이지 로드 시 SSE 연결 초기화  
 connectSSE();
-```
-
-
-LogoutSuccessHandler
-```java
-package com.kpop.merch.login.handler;  
-  
-import org.springframework.security.core.Authentication;  
-import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;  
-import javax.servlet.http.HttpServletRequest;  
-import javax.servlet.http.HttpServletResponse;  
-import javax.servlet.http.HttpSession;  
-import java.io.IOException;  
-  
-public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {  
-  
-    @Override  
-    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {  
-        // 로그아웃 성공 후 처리할 작업  
-        System.out.println("로그아웃 성공!");  
-  
-        // 로그아웃 후 /login 페이지로 리다이렉트  
-        HttpSession session = request.getSession(false);  
-        if (session != null) {  
-            session.setAttribute("logoutFlag", true);  // 로그아웃 플래그 설정  
-        }  
-  
-        response.sendRedirect("/login/login");  // 로그인 페이지로 리다이렉트  
-    }  
-}
 ```
 
 
@@ -425,3 +400,97 @@ filter에 `<async-supported>true</async-supported>` 추가 sse 비동기 통신�
 // // SSE 연결 초기화  
 // connectSSE();
 ```
+
+
+
+security.xml
+
+```xml
+<security:http auto-config="true" use-expressions="true">  
+    <security:custom-filter before="LOGOUT_FILTER" ref="customLogoutFilter"/>  
+        <security:headers>  
+            <security:frame-options policy="SAMEORIGIN" />  
+            <security:frame-options disabled="true" />  
+            <security:content-security-policy policy-directives="frame-ancestors *;" />  
+  
+        </security:headers>  
+  
+        <security:custom-filter ref="commonFilter" after="SESSION_MANAGEMENT_FILTER" />  
+  
+        <security:intercept-url pattern="/resources/**" access="permitAll()"/>  
+        <security:intercept-url pattern="/events/**" access="permitAll()" />  
+<!--        <security:intercept-url pattern="/" access="permitAll()" />-->  
+        <security:intercept-url pattern="/login/login" access="permitAll()" />  
+        <security:intercept-url pattern="/**" access="permitAll()" />  
+  
+        <security:form-login  
+            login-processing-url="/login/login"  
+            authentication-failure-url="/login/login?error=true"  
+            login-page="/login/login"  
+            username-parameter="username"  
+            password-parameter="password"  
+            default-target-url="/"  
+            authentication-success-handler-ref="loginSuccessHandler" />  
+  
+        <security:logout  
+                logout-url="/login/logout"  
+                invalidate-session="true"  
+                delete-cookies="JSESSIONID"  
+                success-handler-ref="logoutSuccessHandler"  
+        />  
+        <!-- 로그인 후 세션을 생성하도록 설정 -->  
+  
+        <security:session-management invalid-session-url ="/login/login" session-fixation-protection="migrateSession">  
+            <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false" />  
+        </security:session-management>  
+    </security:http>
+```
+
+여기에 등록
+
+```xml
+<security:custom-filter before="LOGOUT_FILTER" ref="customLogoutFilter"/>  
+```
+
+
+
+
+
+```java
+package com.kpop.merch.login.handler;  
+  
+import org.springframework.security.core.Authentication;  
+import org.springframework.security.web.authentication.logout.LogoutHandler;  
+  
+import javax.servlet.*;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+import javax.servlet.http.HttpSession;  
+import java.io.IOException;  
+  
+public class CustomLogoutFilter implements Filter {  
+  
+  
+    @Override  
+    public void init(FilterConfig filterConfig) throws ServletException {  
+  
+    }  
+    @Override  
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {  
+        HttpServletRequest httpRequest = (HttpServletRequest) request;  
+        HttpServletResponse httpResponse = (HttpServletResponse) response;  
+        HttpSession session = httpRequest.getSession(false);  
+        if (session != null && httpRequest.getRequestURI().endsWith("/login/logout")) {  
+            System.out.println("CustomLogoutFilter 호출됨2");  
+            session.setAttribute("logout", true);  
+        }  
+        chain.doFilter(request, response);  
+    }  
+  
+    @Override  
+    public void destroy() {  
+  
+    }}
+```
+
+
