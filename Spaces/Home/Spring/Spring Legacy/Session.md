@@ -612,7 +612,7 @@ public class SessionTimeoutListener implements HttpSessionListener {
             System.out.println("중복 로그인 발생: 기존 사용자에게만 알림 전송");  
   
             // 중복 로그인 알림  
-            sseController.notifySessionExpired2();  // 중복 로그인 알림 전송  
+//            sseController.notifySessionExpired2();  // 중복 로그인 알림 전송  
   
             // 세션 만료 알림을 보내지 않도록 처리  
             return; // 중복 로그인 알림을 보내고 세션 만료 알림을 보내지 않음  

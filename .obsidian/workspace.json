@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/11/2024-11-20.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Session.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-20"
+              "title": "Session"
             }
           },
           {
@@ -147,8 +147,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
@@ -261,8 +260,8 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "daily note/2024/11/2024-11-20.md",
+    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "daily note/2024/11/2024-11-19.md",
     "daily note/2024/11/2024-11-18.md",
     "Spaces/Home/DB/PostGre.md",
