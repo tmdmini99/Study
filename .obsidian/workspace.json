@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Session.md",
+                "file": "daily note/2024/11/2024-11-20.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Session"
+              "title": "2024-11-20"
             }
           },
           {
@@ -129,6 +129,18 @@
             "id": "4adc178691e988e2",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "d96e01f3520f6a7d",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -136,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -249,9 +261,10 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/Session.md",
+    "daily note/2024/11/2024-11-20.md",
     "daily note/2024/11/2024-11-19.md",
     "daily note/2024/11/2024-11-18.md",
-    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일2.md",
     "Spaces/Home/Java Script/Node.js/Project/Node.js 프로젝트 파일.md",
@@ -274,7 +287,6 @@
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Filter.md",
     "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
-    "daily note/2024/11/2024-11-11.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
