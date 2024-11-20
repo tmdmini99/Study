@@ -638,3 +638,107 @@ public class SessionTimeoutListener implements HttpSessionListener {
 #### **`HttpSessionBindingListener` 활용**
 
 `HttpSessionBindingListener`를 사용하면 속성이 세션에 추가되거나 제거될 때 이벤트를 처리할 수 있습니다. 이를 통해 `userId`가 세션에 추가될 때 `HttpSessionListener`처럼 동작하도록 구현할 수 있습니다.
+
+
+
+```java
+package com.kpop.merch.common.filter;  
+  
+import javax.servlet.ServletContext;  
+import javax.servlet.http.HttpSession;  
+import javax.servlet.http.HttpSessionBindingEvent;  
+import javax.servlet.http.HttpSessionBindingListener;  
+import java.util.Collection;  
+import java.util.Enumeration;  
+import java.util.concurrent.ConcurrentHashMap;  
+  
+public class SessionAttributeListener implements HttpSessionBindingListener {  
+  
+    private static final ConcurrentHashMap<HttpSession, String> loginUsers = new ConcurrentHashMap<>();  
+       private static SessionAttributeListener sessionListener = null;  
+  
+       // 싱글톤 객체를 반환하는 메소드  
+       public static synchronized SessionAttributeListener getInstance() {  
+           if (sessionListener == null) {  
+               sessionListener = new SessionAttributeListener();  
+           }  
+           return sessionListener;  
+       }  
+  
+       // 세션이 연결될 때 호출 (해시맵에 접속자 저장)  
+       @Override  
+       public void valueBound(HttpSessionBindingEvent event) {  
+           // userId가 세션에 바인딩될 때 호출  
+           loginUsers.put(event.getSession(), event.getName());  
+           System.out.println(event.getName() + " 로그인 완료");  
+           System.out.println("현재 접속자 수 : " + getUserCount());  
+       }  
+  
+       // 세션이 끊겼을 때 호출  
+       @Override  
+       public void valueUnbound(HttpSessionBindingEvent event) {  
+           // userId가 세션에서 언바인딩될 때 호출  
+           loginUsers.remove(event.getSession());  
+           System.out.println(event.getName() + " 로그아웃 완료");  
+           System.out.println("현재 접속자 수 : " + getUserCount());  
+       }  
+  
+       // 특정 userId의 세션을 찾아서 무효화 (로그아웃 처리)  
+       public void removeSession(String userId) {  
+           Enumeration<HttpSession> e = loginUsers.keys();  
+           while (e.hasMoreElements()) {  
+               HttpSession session = e.nextElement();  
+               if (loginUsers.get(session).equals(userId)) {  
+                   session.invalidate(); // 세션 무효화  
+               }  
+           }  
+       }  
+  
+       // 현재 접속자 중 해당 아이디가 사용중인지를 체크  
+       public boolean isUsing(String userId) {  
+           return loginUsers.containsValue(userId);  
+       }  
+  
+       // 로그인 완료된 사용자의 아이디를 세션에 저장하는 메소드  
+       public void setSession(HttpSession session, String userId) {  
+           // SessionBinding 이벤트 발생  
+           session.setAttribute(userId, this); // 세션에 사용자 아이디와 함께 SessionListener 객체를 바인딩  
+       }  
+  
+       // 세션으로부터 userId를 조회  
+       public String getUserID(HttpSession session) {  
+           return loginUsers.get(session);  
+       }  
+  
+       // 현재 접속자 수 반환  
+       public int getUserCount() {  
+           return loginUsers.size();  
+       }  
+  
+       // 현재 접속중인 모든 사용자 리스트 출력  
+       public void printLoginUsers() {  
+           Enumeration<HttpSession> e = loginUsers.keys();  
+           int i = 0;  
+           System.out.println("===========================================");  
+           while (e.hasMoreElements()) {  
+               HttpSession session = e.nextElement();  
+               System.out.println((++i) + ". 접속자 : " + loginUsers.get(session));  
+           }  
+           System.out.println("===========================================");  
+       }  
+  
+       // 현재 접속중인 모든 사용자 목록 반환  
+       public Collection<String> getUsers() {  
+           return loginUsers.values();  
+       }  
+   }
+```
+
+
+
+
+
+---
+출처 - https://medium.com/@leejungmin03/spring-%EC%A4%91%EB%B3%B5%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%A7%80-9ef32f7e7110
+
+https://ikso2000.tistory.com/103
