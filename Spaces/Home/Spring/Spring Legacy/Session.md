@@ -735,10 +735,219 @@ public class SessionAttributeListener implements HttpSessionBindingListener {
 ```
 
 
+원본 코드
+```java
+@WebListener
+public class SessionConfig implements HttpSessionListener{
+	
+    private static final Map<String, HttpSession> sessions = new ConcurrentHashMap<>();
 
-``
+    //중복로그인 지우기
+    public synchronized static String getSessionidCheck(String type, String compareId){
+	String result = "";
+	for( String key : sessions.keySet() ){
+		HttpSession hs = sessions.get(key);
+		Auth auth = new Auth();
+		if(hs != null) {
+			auth = (Auth) hs.getAttribute(type);
+			if(auth != null && auth.getUserId().toString().equals(compareId)) {
+				result = key.toString();
+			}
+		}
+	}
+	removeSessionForDoubleLogin(result);
+	return result;
+    }
+    
+    private static void removeSessionForDoubleLogin(String userId){    	
+        System.out.println("remove userId : " + userId);
+        if(userId != null && userId.length() > 0){
+            sessions.get(userId).invalidate();
+            sessions.remove(userId);    		
+        }
+    }
+
+    @Override
+    public void sessionCreated(HttpSessionEvent hse) {
+        System.out.println(hse);
+        sessions.put(hse.getSession().getId(), hse.getSession());
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent hse) {
+        if(sessions.get(hse.getSession().getId()) != null){
+            sessions.get(hse.getSession().getId()).invalidate();
+            sessions.remove(hse.getSession().getId());	
+        }
+    }
+}
+```
 
 
+
+## 직접 적용 코드
+
+```java
+package com.kpop.merch.common.filter;  
+  
+import com.kpop.merch.common.controller.SessionSseController;  
+import org.springframework.web.context.WebApplicationContext;  
+import org.springframework.web.context.support.WebApplicationContextUtils;  
+  
+import javax.servlet.ServletContext;  
+import javax.servlet.annotation.WebListener;  
+import javax.servlet.http.HttpSession;  
+import javax.servlet.http.HttpSessionEvent;  
+import javax.servlet.http.HttpSessionListener;  
+import java.time.ZoneId;  
+import java.time.ZonedDateTime;  
+import java.time.format.DateTimeFormatter;  
+import java.util.Map;  
+import java.util.concurrent.ConcurrentHashMap;  
+  
+@WebListener  
+public class SessionTimeoutListener implements HttpSessionListener {  
+  
+    // 세션 관리 및 중복 로그인 방지를 위한 세션 맵  
+    private static final Map<String, HttpSession> sessions = new ConcurrentHashMap<>();  
+    private SessionSseController sseController;  
+  
+    @Override  
+    public void sessionCreated(HttpSessionEvent se) {  
+        HttpSession session = se.getSession();  
+        System.out.println("세션 생성: " + session.getId());  
+        session.getServletContext().log("세션 생성: " + session.getId());  
+  
+        // 로그인 시 중복 로그인 체크  
+        String userId = getSessionidCheck("user", (String) session.getAttribute("user"));  
+        if (userId != null && !userId.isEmpty()) {  
+            // 기존 세션이 존재하면 해당 세션을 무효화  
+            System.out.println("중복 로그인 방지: 기존 세션 무효화: " + userId);  
+            removeSessionForDoubleLogin(userId);  
+        }  
+  
+        // 세션을 관리 맵에 추가  
+        sessions.put(session.getId(), session);  
+    }  
+  
+    @Override  
+    public void sessionDestroyed(HttpSessionEvent se) {  
+        HttpSession session = se.getSession();  
+        session.getServletContext().log("세션 만료: " + session.getId());  
+  
+        System.out.println("세션 만료: " + session.getId() + " 현재 시간: " +  
+                ZonedDateTime.now(ZoneId.of("Asia/Seoul")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));  
+  
+        // WebApplicationContext에서 SessionSseController를 가져오기  
+        ServletContext servletContext = session.getServletContext();  
+        WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);  
+  
+        if (sseController == null) {  
+            sseController = ctx.getBean(SessionSseController.class);  
+        }  
+  
+        // 세션 속성에서 로그아웃 상태 확인  
+        Boolean isLogout = (Boolean) session.getAttribute("logout");  
+        String sessionId = session.getId();  
+  
+        if (Boolean.TRUE.equals(isLogout)) {  
+            // 로그아웃된 세션: 알림 전송 안 함  
+            System.out.println("로그아웃된 세션: 알림 전송 안 함");  
+            removeSessionForDoubleLogin(sessionId);  
+            return;  
+        }  
+  
+        // 세션 만료: 해당 세션에만 알림 전송  
+        System.out.println("세션 만료: 현재 사용자에게 알림 전송");  
+        sseController.notifySessionExpiredForSession(sessionId, "세션이 만료되었습니다.");  
+  
+        // 세션 종료 시 중복 로그인 방지를 위한 세션 제거  
+        removeSessionForDoubleLogin(sessionId);  
+    }  
+  
+    // 중복 로그인 체크 메서드  
+    public synchronized static String getSessionidCheck(String type, String compareId) {  
+        String result = "";  
+        for (String key : sessions.keySet()) {  
+            HttpSession hs = sessions.get(key);  
+            if (hs != null) {  
+                Object auth = hs.getAttribute(type); // "user" 타입으로 로그인 정보 가져옴  
+                if (auth != null && auth instanceof String) { // 로그인 정보가 String 형태로 저장되어 있다고 가정  
+                    String userId = (String) auth;  
+                    if (userId.equals(compareId)) {  
+                        result = key; // 중복된 세션 ID 반환  
+                    }  
+                }  
+            }  
+        }  
+        removeSessionForDoubleLogin(result); // 중복 세션 삭제  
+        return result;  
+    }  
+  
+    // 중복 로그인 시 기존 세션 무효화  
+    private static void removeSessionForDoubleLogin(String userId) {  
+        if (userId != null && userId.length() > 0) {  
+            HttpSession session = sessions.get(userId);  
+            if (session != null) {  
+                session.invalidate(); // 세션 무효화  
+                sessions.remove(userId); // 세션 맵에서 삭제  
+                System.out.println("중복 로그인 방지: 세션 무효화: " + userId);  
+            }  
+        }  
+    }  
+}
+```
+
+
+
+```java
+package com.kpop.merch.login.handler;  
+  
+import com.kpop.merch.common.filter.SessionTimeoutListener;  
+import com.kpop.merch.login.vo.LoginVo;  
+import org.springframework.security.core.Authentication;  
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;  
+  
+import javax.servlet.ServletException;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+import javax.servlet.http.HttpSession;  
+import java.io.IOException;  
+  
+public class LoginSuccessHandler implements AuthenticationSuccessHandler {  
+  
+    private static final String SESSION_KEY = "user"; // 세션에 저장될 키  
+  
+    @Override  
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {  
+        // 인증된 사용자 정보 가져오기 (LoginVo 객체)  
+  
+            authentication.getPrincipal(); // LoginVo 객체를 가져옵니다.  
+            System.out.println("들어옴0000000000000000000000000000000000000000000000000000000000000000");  
+            // 중복 로그인 체크 (중복 로그인 방지 로직 추가)  
+            String userId = SessionTimeoutListener.getSessionidCheck("user", authentication.getName()); // userId로 중복 로그인 체크  
+  
+            if (userId != null && !userId.isEmpty()) {  
+                // 기존 세션이 존재하면 해당 세션을 무효화하는 로직을 추가  
+                System.out.println("중복 로그인 방지: 기존 세션 무효화: " + userId);  
+                // 기존 세션 무효화 처리 추가  
+                HttpSession existingSession = request.getSession(false); // 기존 세션을 가져옴  
+                if (existingSession != null) {  
+                    existingSession.invalidate(); // 기존 세션 무효화  
+                }  
+            }  
+  
+            // 새로운 세션 생성 후, 세션에 사용자 정보 저장  
+            HttpSession session = request.getSession();  
+            session.setAttribute(SESSION_KEY, authentication.getName()); // LoginVo 객체를 세션에 저장  
+//            session.setMaxInactiveInterval(1800); // 세션 만료 시간 설정 (예: 30분)  
+  
+            // 리다이렉트 (홈 화면으로 이동 등)  
+            response.sendRedirect("/"); // 로그인 후 홈으로 리다이렉트  
+  
+    }  
+}
+```
 
 
 
