@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Shell/Shell.md",
+                "file": "Spaces/Home/Shell/Shell Code.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shell"
+              "title": "Shell Code"
             }
           },
           {
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -147,8 +147,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -261,8 +260,9 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/Shell/Shell.md",
+    "Spaces/Home/Shell/Shell Code.md",
+    "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/Shell",
     "daily note/2024/11/2024-11-20.md",
     "daily note/2024/11/2024-11-19.md",
@@ -287,7 +287,6 @@
     "Spaces/Home/Protocol/Http/STOMP.md",
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Spring/Security.md",
-    "Spaces/Home/Spring/Filter.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",

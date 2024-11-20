@@ -266,314 +266,344 @@ num=`expr \( 3 \* 5 \) / 4 + 7`    ( 터미널에서는 \가 역슬래시로 
 expr 명령으로 (10+20)/8 - 8 계산해보기
 
 ```bash
-
+#!/bin/bash  
+  
+num=`expr \( 10 + 20 \) / 8 - 8`
 ```
 
 
-**-5 가 출력된다.**
+-5 가 출력된다.
 
 ---
 
-**#조건문 문법**
+# 조건문 문법
 
-*** 기본 if 문법**
+* 기본 if 문법
 
-**then 과 fi 안에만 들어가 있으면 되기 때문에**
+then 과 fi 안에만 들어가 있으면 되기 때문에
 
-**명령문을 꼭 탭으로 띄워야 하는 것은 아니다.**
+명령문을 꼭 탭으로 띄워야 하는 것은 아니다.
 
-**if [ 조건 ]** 
+if \[ 조건 ] 
 
-**then**
+then
 
-     **명령문**
+     명령문
 
-**fi**
+fi
 
-> **python이 얼마나 가독성이 좋은지 이해할 수 있다....**
 
-**예제 6.**
+예제 6.
 
-**두 인자값을 받아서 두 인자값이 다르면 'different values' 를 출력해보자**
+두 인자값을 받아서 두 인자값이 다르면 'different values' 를 출력해보자
 
-> **#!/bin/bash**  
->   
-> **if [ $1 != $2 ]                             //  != 둘이 다르면 이라는 의미**  
-> **then**  
->       **echo "different values"**  
->       **exit**  
-> **fi**
 
-**!=**
-
-**둘이 다르면 이라는 의미**
-
-**echo $ 를 사용하지 않고**
-
-**echo "문장" 이라고 사용한다.**
-
-**결과적으로 이와 같이 출력된다.**
-
-**different values**
-
-**조건**
-
-**조건 작성이 다른 프로그래밍 언어와 달리 가독성이 현저히 떨어진다. 필요할 때마다 참조하면 됨!**
-
-**문자1 == 문자2    // 문자 1과 문자 2가 일치**
-
-**문자1 !=  문자2    // 문자 1과 문자 2가 일치하지 않는다.**
-
-**-z 문자               // 문자가 null 이면 참(값이 없으면 true)**
-
-**-n 문자               // 문자가 null 이 아니면 참**
-
-**수치 비교**
-
-**<, > 는 if 조건 시 [[]]를 넣는 경우 정상 작동하기는 하지만, 기본적으로 다음 문법을 사용한다.**  
+```bash
+#!/bin/bash
   
-**값1 -eq 값2       //값이 같음(equal)**  
-**값1 -ne 값2       //값이 같지 않음(not equal)**  
-**값1 -lt 값2        //값1이 값2보다 작음(less than)**  
-**값1 -le 값2        //값1이 값2보다 작거나 같음(less or equal)**  
-**값1 -gt 값2       //값1이 값2보다 큼(greater than)**  
-**값1 -ge 값2       //값1이 값2보다 크거나 같음(greater or equal)**
+if [ $1 != $2 ]                             //  != 둘이 다르면 이라는 의미  
+then  
+      echo "different values"  
+      exit  
+fi
+```
 
-**파일 검사**  
-**-e 파일명   //파일이 존재하면 참**  
-**-d 파일명   //파일이 디렉토리면 참**  
-**-h 파일명   //파일이 심볼릭 링크 파일이면 참**  
-**-f 파일명   //파일이 일반파일이면 참**  
-**-r 파일명   //파일이 읽기 가능하면 참**  
-**-s 파일명   //파일크기가 0이 아니면 참**  
-**-u 파일명   //파일이 set-user-id가 설정되면 참**  
-**-w 파일명   //파일이 쓰기 가능이면 참**  
-**-x 파일명   //파일이 실행 가능이면 참**
 
-**예제 7.**
+!=
 
-**쉘 스크립트로 해당 파일이 있는지 없는지 확인해보자**
+둘이 다르면 이라는 의미
 
-> **#!/bin/bash**  
->   
-> **if [ -e $1 ]**  
-> **then**  
->    **echo "file exist"**  
-> **fi**
+echo $ 를 사용하지 않고
 
-**라고 코드를 작성하고**
+echo "문장" 이라고 사용한다.
 
-**./if3.sh (파일명) 으로 현재 찾는 파일이 디렉토리에 있다면**
+결과적으로 이와 같이 출력된다.
 
-**file exitst 가 출력되는 것을 확인할 수 있다.**
+different values
 
+조건
+
+조건 작성이 다른 프로그래밍 언어와 달리 가독성이 현저히 떨어진다. 필요할 때마다 참조하면 됨!
+
+문자1 == 문자2    // 문자 1과 문자 2가 일치
+
+문자1 !=  문자2    // 문자 1과 문자 2가 일치하지 않는다.
+
+-z 문자               // 문자가 null 이면 참(값이 없으면 true)
+
+-n 문자               // 문자가 null 이 아니면 참
+
+수치 비교
+
+<, > 는 if 조건 시 [[]]를 넣는 경우 정상 작동하기는 하지만, 기본적으로 다음 문법을 사용한다.  
   
-**논리 연산 (참고)**  
-**조건1 -a 조건2     //AND**  
-**조건1 -o 조건2     //OR**  
-**조건1 && 조건2    //양쪽 다 성립**  
-**조건1 || 조건2       //한쪽 또는 양쪽 다 성립**  
-**!조건                  // 조건이 성립하지 않음**  
-**true                   // 조건이 언제나 성립**  
-**false                  // 조건이 언제나 성립하지 않음**  
+값1 -eq 값2       //값이 같음(equal)  
+값1 -ne 값2       //값이 같지 않음(not equal)  
+값1 -lt 값2        //값1이 값2보다 작음(less than)  
+값1 -le 값2        //값1이 값2보다 작거나 같음(less or equal)  
+값1 -gt 값2       //값1이 값2보다 큼(greater than)  
+값1 -ge 값2       //값1이 값2보다 크거나 같음(greater or equal)
+
+파일 검사  
+-e 파일명   //파일이 존재하면 참  
+-d 파일명   //파일이 디렉토리면 참  
+-h 파일명   //파일이 심볼릭 링크 파일이면 참  
+-f 파일명   //파일이 일반파일이면 참  
+-r 파일명   //파일이 읽기 가능하면 참  
+-s 파일명   //파일크기가 0이 아니면 참  
+-u 파일명   //파일이 set-user-id가 설정되면 참  
+-w 파일명   //파일이 쓰기 가능이면 참  
+-x 파일명   //파일이 실행 가능이면 참
+
+예제 7.
+
+쉘 스크립트로 해당 파일이 있는지 없는지 확인해보자
+
+```bash
+#!/bin/bash  
   
-  
-  
+if [ -e $1 ] 
+then 
+   **echo "file exist"
+fi
+```
+
+라고 코드를 작성하고
+
+./if3.sh (파일명) 으로 현재 찾는 파일이 디렉토리에 있다면
+
+file exitst 가 출력되는 것을 확인할 수 있다.
 
   
-*** 기본 if/else 구문**  
-**if [ 조건 ]**   
-**then**  
-     **명령문      // 이 명령문에는 참일 때**  
-**else**    
-     **명령문      // 이 명령문에는 거짓일 때**  
-**fi**
+논리 연산 (참고)  
+조건1 -a 조건2     //AND  
+조건1 -o 조건2     //OR  
+조건1 && 조건2    //양쪽 다 성립  
+조건1 || 조건2       //한쪽 또는 양쪽 다 성립  
+!조건                  // 조건이 성립하지 않음  
+true                   // 조건이 언제나 성립  
+false                  // 조건이 언제나 성립하지 않음  
+  
+  
 
-**예제 8.**
+  
+* 기본 if/else 구문
+if [ 조건 ]   
+then  
+     명령문      // 이 명령문에는 참일 때  
+else    
+     명령문      // 이 명령문에는 거짓일 때  
+fi
 
-**두 인자값을 받아서 두 인자값이 같으면 'same value', 다르면 'different value'가 출력되도록 해보자**
+예제 8.
 
-> **#!/bin/bash**  
->   
-> **if [ $1 -eq $2 ]**  
-> **then**   
->     **echo "same values"**  
-> **else**  
->     **echo "different values"**  
-> **fi**
+두 인자값을 받아서 두 인자값이 같으면 'same value', 다르면 'different value'가 출력되도록 해보자
 
-**라고 작성**
+```bash
+#!/bin/bash  
+  
+if [ $1 -eq $2 ]  
+then   
+    echo "same values"  
+else  
+    echo "different values"  
+fi
+```
 
-**하고 인자를 같게 넣으면 same values,**
+라고 작성
 
-**다르게 넣으면 different values 가 출력되는 것을 확인할 수 있다.**
+하고 인자를 같게 넣으면 same values,
+
+다르게 넣으면 different values 가 출력되는 것을 확인할 수 있다.
 
 ---
 
-**ping**
+ping
 
-**서버에서 여러 가지 컴퓨터가 연결되어 있을 때**  
-**연결된 특정 컴퓨터가 정상적으로 동작하는 지,꺼져 있는지, 비정상적으로 동작하는지 확인하는 명령어**  
-**해당 컴퓨터의 ip 주소로 ping 명령어를 실행한다.**  
-**그 주소에 확인 요청을 한다.**  
-**정상적인 컴퓨터는 응답을 한다.**  
-**응답이 오지 않으면 정상적으로 동작하지 않는다고 판단한다.**
-
-  
-**ping -c 1 192.168.0.1 1>/dev/null**  
- **0 : 표준입력, 1 : 표준출력, 2 : 표준에러**  
- **1>/dev/null : 표준 출력 내용은 버려라 (출력하지 말아라)**  
-**-c 1 : 1번만 체크해봐라 라는 의미**
-
-**코드 예제는 다음과 같다.**
-
-> **#!/bin/bash**  
-> **ping -c 1 192.168.0.1 1> /dev/null**  
-> **if [ $? == 0 ]**   
-> **then**   
->      **echo "Gateway ping success!"      // 0 일 경우 응답이 온 것이라 성공!**  
-> **else**  
->      **echo "Gateway ping failed!"        // 응답이 없을 때 나타남**  
-> **fi**
-
-**$? : 가장 최근에 쉘 스크립트에서 실행한 명령의 결과값을 가져온다.**  
-  
+서버에서 여러 가지 컴퓨터가 연결되어 있을 때  
+연결된 특정 컴퓨터가 정상적으로 동작하는 지,꺼져 있는지, 비정상적으로 동작하는지 확인하는 명령어  
+해당 컴퓨터의 ip 주소로 ping 명령어를 실행한다.  
+그 주소에 확인 요청을 한다.  
+정상적인 컴퓨터는 응답을 한다.  
+응답이 오지 않으면 정상적으로 동작하지 않는다고 판단한다.
 
   
+ping -c 1 192.168.0.1 1>/dev/null  
+ 0 : 표준입력, 1 : 표준출력, 2 : 표준에러  
+ 1>/dev/null : 표준 출력 내용은 버려라 (출력하지 말아라)  
+-c 1 : 1번만 체크해봐라 라는 의미
+
+코드 예제는 다음과 같다.
+
+
+
+
+
+```bash
+#!/bin/bash**  
+ping -c 1 192.168.0.1 1> /dev/null  
+if [ $? == 0 ]   
+then   
+     echo "Gateway ping success!"      // 0 일 경우 응답이 온 것이라 성공
+else  
+     echo "Gateway ping failed!"        // 응답이 없을 때 나타남  
+fi
+```
+
+$? : 가장 최근에 쉘 스크립트에서 실행한 명령의 결과값을 가져온다. 
+
+
+
+조건문 한줄에 작성하기 (if 구문)
+
   
-  
-  
-**조건문 한줄에 작성하기 (if 구문)**
+```bash
+if [ 조건 ]; then 명령문; fi
 
-> **if [ 조건 ]; then 명령문; fi**
 
-> **if [ -z $1 ]; then echo 'Insert arguments"; fi** 
-
-**if [ 뒤와 ] 앞에는 반드시 공백이 있어야함 [ ] 에서 &&, ||, <, > 연산자들이 에러가 나는 경우는 [ [ ] ] 를 사용하면 정상 작동하는 경우가 있음**  
-  
-  
-  
-  
-  
-**반복문 문법 - 기본 for 구분**
-
-**for 변수 in 변수값1 변수값2 ....**  
-**do**   
-    **명령문**  
-**done**  
-  
-
-**예제 8.**
-
-**현재 디렉토리에 있는 파일과 디렉토리를 출력해보자**
-
-> **#!/bin/bash**   
-> **for database in $(ls)**   
-> **do**    
->      **echo $database**   
-> **done** 
-
-**이렇게 쓰거나**
-
-> **#!/bin/bash**   
-> **for database in $(ls); do**   
->      **echo $database**   
-> **done** 
-
-**이렇게 쓰거나**
-
-> **#!/bin/bash**   
-> **for database in $(ls); do echo $database; done** 
-
-**또는**
-
-> **#!/bin/bash**  
-> **lists=$(ls)**  
-> **num=${#lists[@]}**  
-> **index=0**  
-> **while [ $num -ge 0 ]**  
-> **do**  
->      **echo ${lists[$index]}**  
->      **index=`expr $index + 1`**  
->      **num=`expr $num - 1`**  
-> **done**
-
-**로 작성할 수 있다.**
+if [ -z $1 ]; then echo 'Insert arguments"; fi
+```
 
   
   
-**반복문 문법 - 기본 while 구문**   
+
+if \[ 뒤와 ] 앞에는 반드시 공백이 있어야함 [ ] 에서 &&, ||, <, > 연산자들이 에러가 나는 경우는 \[ [ ] ] 를 사용하면 정상 작동하는 경우가 있음  
   
-**while [ 조건문 ]**    
-**do**   
-     **명령문**   
-**done**   
+  
+  
+  
+  
+반복문 문법 - 기본 for 구분
+
+for 변수 in 변수값1 변수값2 ....  
+do   
+    명령문  
+done  
+  
+
+예제 8.
+
+현재 디렉토리에 있는 파일과 디렉토리를 출력해보자
+
+```bash
+#!/bin/bash   
+for database in $(ls)   
+do    
+     echo $database   
+done
+```
+
+이렇게 쓰거나
+
+
+```bash
+#!/bin/bash   
+for database in $(ls); do   
+     echo $database   
+done
+```
+
+
+이렇게 쓰거나
+
+```bash
+#!/bin/bash
+for database in $(ls); do echo $database; done
+```
+
+또는
+
+```bash
+#!/bin/bash  
+lists=$(ls)  
+num=${#lists[@]}  
+index=0  
+while [ $num -ge 0 ]  
+do**  
+     echo ${lists[$index]}  
+     index=`expr $index + 1`  
+     num=`expr $num - 1`  
+done
+```
+
+로 작성할 수 있다.
+
+  
+  
+반복문 문법 - 기본 while 구문   
+  
+while [ 조건문 ]    
+do   
+     명령문   
+done   
   
 
 ---
 
-**#쉘 스크립트 실제 예제**
+# 쉘 스크립트 실제 예제
 
-**1. 백업하기**
+1. 백업하기
 
-**코드 예제는 다음과 같다.**
+코드 예제는 다음과 같다.
 
-> **#!/bin/bash**  
->   
-> **if [ -z $1 ] | | [ -z $2 ]; then                                 // | | or 두 가지 하나라도 없으면**  
->        **echo usage : $0 sourcedir targetidir**  
-> **else**  
->    **SRCDIR=$1**  
->    **DSTDIR=$2**  
->    **BACKUPFILE=backup.$(date +%y%m%d%H%M%S).tar.gz**  
->    **if [ -d $DSTDIR ]; then**  
->        **tar -cvzf $DSTDIR/$BACKUPFILE $SRCDIR**  
->    **else**  
->        **mkdir $DSTDIR**  
->        **tar -cvzf $DSTDIR/$BACKUPFILE $SRCDIR**  
->    **fi**  
-> **fi**  
->   
-
-**코드에서** 
-
-**| | 는 or 이라는 뜻으로 두 가지 중 하나라도 없으면 이라는 의미**
-
-**BACKUPFILE=backup.$(date +%y%m%d%H%M%S).tar.gz  이 문장은 백업할 파일이름을 back~gz 로 하겠다는 뜻**
-
-**코드를 풀어쓰자면**
-
-**2개의 인자를 받아서 두 가지 중 하나라도 없으면**   
-**$0 쉘이름**  
-**sourcedir 압축할 디렉토리명**  
-**targetidr  압축된 파일을 넣을 디렉토리명**  
-**백업할 파일이름을 back~gz 로 해주는데**  
-**date 라는 쉘 명령어를 사용해서 년, 월, 일, 시간, 분, 초 를 알수있게 해준다. (backup.현재시각.tar.gz)**
-
-**mkdir 디렉토리 생성하는 명령어**  
-**tar 압축 명령(확장자) 묶었다.**  
-**gz 압축까지 되었다는 의미**
-
-**tar**
-
-**압축 명령**
-
-**tar 주요 옵션**  
-**x 묶음을 해체**  
-**c 파일을 묶음**  
-**v 묶음/해제 과정을 화면에 표시**  
-**z gunzip을 사용**  
-**f 파일 이름을 지정**  
+```bash
+#!/bin/bash
   
-**압축 시 주로 사용하는 옵션**  
-**tar -cvzf [압축된 파일 이름] [압축할 파일이나 폴더명]**  
+if [ -z $1 ] | | [ -z $2 ]; then                                 // | | or 두 가지 하나라도 없으면  
+       echo usage : $0 sourcedir targetidir  
+else  
+   SRCDIR=$1  
+   DSTDIR=$2  
+   BACKUPFILE=backup.$(date +%y%m%d%H%M%S).tar.gz  
+   if [ -d $DSTDIR ]; then  
+       tar -cvzf $DSTDIR/$BACKUPFILE $SRCDIR  
+   else  
+       mkdir $DSTDIR  
+       tar -cvzf $DSTDIR/$BACKUPFILE $SRCDIR  
+   fi  
+fi
+```
+
+
+코드에서 
+
+| | 는 or 이라는 뜻으로 두 가지 중 하나라도 없으면 이라는 의미
+
+BACKUPFILE=backup.$(date +%y%m%d%H%M%S).tar.gz  이 문장은 백업할 파일이름을 back~gz 로 하겠다는 뜻
+
+코드를 풀어쓰자면
+
+2개의 인자를 받아서 두 가지 중 하나라도 없으면   
+$0 쉘이름  
+sourcedir 압축할 디렉토리명  
+targetidr  압축된 파일을 넣을 디렉토리명  
+백업할 파일이름을 back~gz 로 해주는데  
+date 라는 쉘 명령어를 사용해서 년, 월, 일, 시간, 분, 초 를 알수있게 해준다. (backup.현재시각.tar.gz)
+
+mkdir 디렉토리 생성하는 명령어  
+tar 압축 명령(확장자) 묶었다.  
+gz 압축까지 되었다는 의미
+
+tar
+
+압축 명령
+
+tar 주요 옵션  
+x 묶음을 해체  
+c 파일을 묶음  
+v 묶음/해제 과정을 화면에 표시  
+z gunzip을 사용  
+f 파일 이름을 지정  
   
-**압축을 풀 때 주로 사용하는 옵션**  
-**tar -xvzf [압축 해제할 압축 아카이브 이름]**
+압축 시 주로 사용하는 옵션  
+tar -cvzf [압축된 파일 이름] [압축할 파일이나 폴더명]  
+  
+압축을 풀 때 주로 사용하는 옵션  
+tar -xvzf [압축 해제할 압축 아카이브 이름]
 
-**2. 로그 파일 정리하기**
+2. 로그 파일 정리하기
 
-**정책 예시  
+정책 예시 ** 
 1. 로그 파일 중에 2일 이상 지난 파일들은 압축을 해서 보관해라  
 2. 압축된 로그 파일 중에 3일 이상 경과한 것들은 삭제해라  
   
@@ -586,18 +616,20 @@ find . -type f -name '파일명검색어' -exec bash -c "명령어1; �
 // '파일명검색어' 정규표 형식으로  
 // 명령어는 쉘 명령어 실행**
 
-**코드 예제는 다음과 같다.**
+코드 예제는 다음과 같다.
 
-> **#!/bin/bash  
->   
-> LOGDIR=/var/log  
-> GZIPDAY=1  
-> DELDAY=2  
-> cd $LOGDIR  
-> echo "cd $LOGDIR"  
->   
-> sudo find . -type f -name '*log.?' -mtime +$GZIPDAY -exec bash -c "gzip {}" \; 2>  
-> sudo find . -type f -name '*.gz' -mtime +$DELDAY -exec bash -c "rm -f {}" \; 2>**
+```bash
+#!/bin/bash  
+  
+LOGDIR=/var/log  
+GZIPDAY=1  
+DELDAY=2  
+cd $LOGDIR  
+echo "cd $LOGDIR"  
+  
+sudo find . -type f -name '*log.?' -mtime +$GZIPDAY -exec bash -c "gzip {}" \; 2>  
+sudo find . -type f -name '*.gz' -mtime +$DELDAY -exec bash -c "rm -f {}" \; 2>
+```
 
 
 
