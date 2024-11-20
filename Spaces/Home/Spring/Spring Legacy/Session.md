@@ -632,3 +632,9 @@ public class SessionTimeoutListener implements HttpSessionListener {
   
 }
 ```
+
+
+
+#### **`HttpSessionBindingListener` 활용**
+
+`HttpSessionBindingListener`를 사용하면 속성이 세션에 추가되거나 제거될 때 이벤트를 처리할 수 있습니다. 이를 통해 `userId`가 세션에 추가될 때 `HttpSessionListener`처럼 동작하도록 구현할 수 있습니다.
