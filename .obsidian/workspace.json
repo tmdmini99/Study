@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Session.md",
+                "file": "Spaces/Home/Shell/Shell.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Session"
+              "title": "Shell"
             }
           },
           {
@@ -260,8 +260,10 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
-    "daily note/2024/11/2024-11-20.md",
     "Spaces/Home/Spring/Spring Legacy/Session.md",
+    "Spaces/Home/Shell/Shell.md",
+    "Spaces/Home/Shell",
+    "daily note/2024/11/2024-11-20.md",
     "daily note/2024/11/2024-11-19.md",
     "daily note/2024/11/2024-11-18.md",
     "Spaces/Home/DB/PostGre.md",
@@ -285,7 +287,6 @@
     "Spaces/Home/Docker/SSL.md",
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/Spring/Filter.md",
-    "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
@@ -305,7 +306,6 @@
     "Spaces/Home/Protocol/Http/CORS",
     "Spaces/Home/Java/URL 인코더",
     "Spaces/Home/Spring/Spring Legacy/Properties",
-    "Spaces/Home/CSRF/CSS",
     "무제 파일.canvas"
   ]
 }
