@@ -279,8 +279,432 @@ export default App;
 Vue.js 예제:
 
 
-```d
+```js
+<template>
+  <div>
+    <h1>User List</h1>
+    <ul>
+      <li v-for="user in users" :key="user.id">{{ user.name }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      users: []
+    };
+  },
+  mounted() {
+    fetch("http://localhost:8080/api/users")
+      .then(response => response.json())
+      .then(data => {
+        this.users = data;
+      });
+  }
+};
+</script>
 ```
+
+
+
+### 3.3. **SPA 빌드 및 배포**
+
+1. **프런트엔드 빌드**:
+    
+    - React:
+- 
+
+```bash
+npm run build
+```
+
+
+- 결과물이 `build/` 폴더에 생성됩니다.
+- Vue.js
+
+```bash
+npm run build
+```
+
+
+- - 결과물이 `dist/` 폴더에 생성됩니다.
+- **Spring Legacy로 배포**:
+    
+    - 빌드된 파일(`build/` 또는 `dist/` 내용)을 Spring의 `src/main/resources/static`에 복사.
+
+
+
+
+
+### SPA에서 JWT를 활용한 인증 구현
+
+JWT(JSON Web Token)는 클라이언트와 서버 간 인증을 간단하고 안전하게 처리할 수 있는 방식으로, 특히 SPA와 같이 상태 비저장(stateless) 방식의 애플리케이션에 적합합니다.
+
+---
+
+## **JWT 인증의 기본 흐름**
+
+1. **사용자 로그인**: 사용자가 아이디/비밀번호로 로그인 요청.
+2. **JWT 발급**: 서버는 인증 정보를 검증하고 JWT를 생성하여 클라이언트에 반환.
+3. **클라이언트 저장**: 클라이언트는 JWT를 로컬 스토리지 또는 쿠키에 저장.
+4. **요청 시 토큰 전송**: 클라이언트는 이후 API 요청마다 JWT를 `Authorization` 헤더에 담아 전송.
+5. **서버 검증**: 서버는 수신된 JWT의 유효성을 검증하고 요청을 처리.
+
+---
+
+## **Spring에서 JWT 인증 구현**
+
+### 1. **필요한 라이브러리 추가**
+
+Spring 프로젝트의 `pom.xml`에 JWT 관련 라이브러리를 추가합니다.
+
+
+pom.xml
+```xml
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.11.5</version>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+
+```
+
+
+### 2. **JWT 유틸리티 클래스 작성**
+
+JWT 생성, 검증, 파싱 등을 담당하는 유틸리티 클래스를 작성합니다.
+
+
+```java
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
+
+import java.security.Key;
+import java.util.Date;
+
+public class JwtUtil {
+
+    private static final String SECRET_KEY = "my-secret-key-for-jwt-my-secret-key"; // 32자 이상
+    private static final long EXPIRATION_TIME = 1000 * 60 * 60; // 1시간
+
+    private static final Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+
+    public static String generateToken(String username) {
+        return Jwts.builder()
+                .setSubject(username)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public static Claims validateToken(String token) throws JwtException {
+        return Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
+}
+```
+
+
+### 3. **JWT 발급 엔드포인트 생성**
+
+사용자가 로그인하면 JWT를 발급하는 컨트롤러를 작성합니다.
+
+
+```java
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+        // 사용자 인증 (여기선 간단히 하드코딩)
+        if ("user".equals(loginRequest.getUsername()) && "password".equals(loginRequest.getPassword())) {
+            String token = JwtUtil.generateToken(loginRequest.getUsername());
+            return ResponseEntity.ok(new LoginResponse(token));
+        } else {
+            return ResponseEntity.status(401).body("Invalid credentials");
+        }
+    }
+
+    public static class LoginRequest {
+        private String username;
+        private String password;
+
+        // Getter, Setter
+        public String getUsername() { return username; }
+        public void setUsername(String username) { this.username = username; }
+        public String getPassword() { return password; }
+        public void setPassword(String password) { this.password = password; }
+    }
+
+    public static class LoginResponse {
+        private String token;
+
+        public LoginResponse(String token) {
+            this.token = token;
+        }
+
+        public String getToken() {
+            return token;
+        }
+    }
+}
+```
+
+
+### 4. **JWT 인증 필터 추가**
+
+JWT를 검증하는 Spring Security 필터를 작성합니다.
+
+
+```java
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+            try {
+                Claims claims = JwtUtil.validateToken(token);
+                // 여기서 필요한 권한이나 정보를 Context에 추가 가능
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(claims.getSubject(), null, null);
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            } catch (JwtException e) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Invalid token");
+                return;
+            }
+        }
+        filterChain.doFilter(request, response);
+    }
+}
+```
+
+
+### 5. **Spring Security 설정**
+
+JWT 필터를 Spring Security에 추가합니다.
+
+
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/api/auth/**").permitAll() // 인증 없이 접근 가능
+                .anyRequest().authenticated()
+                .and()
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
+
+security-context.xml
+
+
+```xml
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/security
+                                 http://www.springframework.org/schema/security/spring-security.xsd
+                                 http://www.springframework.org/schema/beans
+                                 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 비밀번호 암호화를 위한 PasswordEncoder -->
+    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <!-- Custom JWT Authentication Filter -->
+    <beans:bean id="jwtAuthenticationFilter" class="com.example.JwtAuthenticationFilter"/>
+
+    <!-- Spring Security Configuration -->
+    <http pattern="/api/auth/**" security="none"/> <!-- 인증 없이 접근 가능 -->
+
+    <http>
+        <csrf disabled="true"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/> <!-- 인증 필요 -->
+
+        <!-- JWT 필터를 UsernamePasswordAuthenticationFilter 전에 추가 -->
+        <custom-filter ref="jwtAuthenticationFilter" before="USERNAME_PASSWORD_AUTHENTICATION_FILTER"/>
+    </http>
+
+</beans:beans>
+```
+
+
+### 2. **핵심 변환 내용**
+
+1. **PasswordEncoder 등록**
+
+```java
+@Bean
+public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+}
+```
+
+
+```xml
+<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+```
+
+
+```java
+@Configuration
+public class JwtAuthenticationFilter extends OncePerRequestFilter { ... }
+```
+
+
+```xml
+<beans:bean id="jwtAuthenticationFilter" class="com.example.JwtAuthenticationFilter"/>
+```
+
+- **HTTP 설정**
+    
+    - `csrf().disable()` → `<csrf disabled="true"/>`
+    - `antMatchers("/api/auth/**").permitAll()` → `<http pattern="/api/auth/**" security="none"/>`
+    - `addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)` → `<custom-filter ref="jwtAuthenticationFilter" before="USERNAME_PASSWORD_AUTHENTICATION_FILTER"/>`
+- **Authenticated URL 설정**
+
+```java
+.anyRequest().authenticated()
+```
+
+
+```xml
+<intercept-url pattern="/**" access="isAuthenticated()"/>
+```
+
+
+
+### 3. **XML 설정 적용**
+
+Spring Security XML을 사용하려면 `web.xml` 또는 `dispatcher-servlet.xml`에서 해당 Security 설정을 등록합니다.
+
+#### 예: `web.xml`에 Security 설정 추가
+
+
+```xml
+<web-app>
+    <!-- Spring Security 설정 -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
+```
+
+
+예: `dispatcher-servlet.xml`에 Security 설정 참조
+
+
+```xml
+<import resource="classpath:security-config.xml"/>
+
+```
+
+
+
+### 6. **클라이언트(SPA)에서 JWT 활용**
+
+프런트엔드에서 로그인 후 JWT를 저장하고, API 요청 시 헤더에 추가합니다.
+
+#### 로그인 요청 (React/Vue 예시):
+
+```js
+fetch("http://localhost:8080/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: "user", password: "password" }),
+})
+    .then(res => res.json())
+    .then(data => {
+        localStorage.setItem("token", data.token); // JWT 저장
+    });
+```
+
+
+API 요청:
+
+```js
+fetch("http://localhost:8080/api/users", {
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+})
+    .then(res => res.json())
+    .then(data => console.log(data));
+```
+
+
+
 
 
 
