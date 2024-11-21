@@ -111,8 +111,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -223,8 +222,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1b19c9e6a50e13c6",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/Home/무제 폴더",
     "Spaces/Home/API/API.md",
     "daily note/2024/11/2024-11-21.md",
     "Spaces/Home/Shell/Shell Code.md",
@@ -251,7 +251,6 @@
     "Spaces/Home/Protocol/Http/무제 파일.md",
     "daily note/2024/11/2024-11-13.md",
     "daily note/2024/11/2024-11-12.md",
-    "Spaces/Home/Protocol/Http/STOMP.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
