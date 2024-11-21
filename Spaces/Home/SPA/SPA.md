@@ -129,6 +129,164 @@ Next.js와 같은 React 라이브러리의 프레임워크를 사용하면 흔�
 
 
 
+## **백엔드(Spring Legacy) 설정**
+
+### 2.1. **RESTful API 컨트롤러 만들기**
+
+기존 JSP 또는 Thymeleaf 기반의 페이지 렌더링을 제거하고, RESTful API를 반환하도록 컨트롤러를 수정합니다.
+
+
+```java
+@RestController
+@RequestMapping("/api")
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users); // JSON 형태로 반환
+    }
+
+    @PostMapping("/users")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User createdUser = userService.createUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    }
+}
+
+```
+
+
+**특징**:
+
+- `@RestController`: JSON 데이터를 반환.
+- `ResponseEntity`: HTTP 상태코드와 데이터를 명시적으로 전달.
+
+
+
+### 2.2. **CORS(Cross-Origin Resource Sharing) 설정**
+
+SPA는 백엔드와 프런트엔드가 서로 다른 도메인에서 동작하기 때문에 CORS 설정이 필요합니다.
+
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/**")
+                .allowedOrigins("http://localhost:3000") // React/Vue 개발 서버 주소
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowCredentials(true);
+    }
+}
+
+```
+
+
+
+### 2.3. **정적 리소스 핸들링**
+
+SPA 빌드 결과물(`index.html`, `bundle.js` 등)을 Spring에서 제공하려면, 정적 파일을 `src/main/resources/static`에 배치해야 합니다.
+
+1. 빌드된 프런트엔드 파일을 복사:
+    
+    - React: `npm run build` 실행 후 생성된 `build/` 폴더 내용을 `src/main/resources/static`에 복사.
+    - Vue.js: `npm run build` 실행 후 `dist/` 폴더 내용을 복사.
+2. 메인 요청 처리:
+    
+    - SPA의 진입점인 `index.html`을 반환하도록 설정.
+
+
+```java
+@Controller
+public class HomeController {
+    @GetMapping("/")
+    public String index() {
+        return "index"; // static/index.html 반환
+    }
+}
+
+```
+
+
+
+## 3. **프런트엔드(SPA) 설정**
+
+### 3.1. **React/Vue 프로젝트 생성**
+
+React 또는 Vue.js와 같은 SPA 프레임워크를 선택하여 프로젝트를 생성합니다.
+
+#### React 프로젝트 생성:
+
+
+```bash
+npx create-react-app my-app
+cd my-app
+```
+
+
+
+Vue.js 프로젝트 생성:
+
+
+
+```bash
+npm install -g @vue/cli
+vue create my-app
+cd my-app
+```
+
+
+### 3.2. **API 호출 코드 작성**
+
+SPA에서 백엔드 API를 호출하여 데이터를 가져오는 코드를 작성합니다.
+
+#### React 예제:
+
+
+```js
+import React, { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/users")
+      .then(response => response.json())
+      .then(data => setUsers(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>User List</h1>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+
+
+Vue.js 예제:
+
+
+```d
+```
+
+
+
+
+
+
 ---
 출처 - https://velog.io/@dikum98/SPA-Single-Page-Application%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94
 
