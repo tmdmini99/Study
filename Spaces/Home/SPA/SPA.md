@@ -212,6 +212,39 @@ public class HomeController {
 
 ```
 
+`index.html`을 직접 만들 필요 x
+
+React 프로젝트에서 `npm run build`를 실행하면 자동으로 생성
+
+
+### React에서 `index.html` 생성 과정:
+
+1. **React 템플릿**  
+    React 프로젝트의 `public/index.html` 파일이 기본 템플릿입니다. 이 파일이 React의 빌드 과정에서 사용됩니다.
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+```
+
+
+- **`npm run build` 실행**  
+    빌드 명령어를 실행하면 `build/index.html` 파일이 생성됩니다. 이 파일은 React 컴포넌트를 렌더링하는 진입점 역할을 하며, React의 `bundle.js`와 같은 리소스를 포함합니다.
+    
+- **Spring에서 빌드 결과물 사용**  
+    React의 `build/index.html` 파일은 Spring 프로젝트의 `src/main/resources/static/` 폴더에 복사됩니다. Spring 서버는 이 파일을 클라이언트 요청 시 반환합니다.
+
+
 
 
 ## 3. **프런트엔드(SPA) 설정**
