@@ -124,8 +124,19 @@
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
             }
+          },
+          {
+            "id": "34c0924fb9d657c7",
+            "type": "leaf",
+            "state": {
+              "type": "mk-file-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Spaces"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -238,6 +249,7 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "daily note/2024/11/2024-11-22.md",
     "Spaces/Home/SPA/SPA.md",
     "Spaces/Home/MSA/MSA.md",
@@ -272,7 +284,6 @@
     "Spaces/Home/Protocol/Http/SSE.md",
     "Spaces/Home/Protocol/Http/Socekt.md",
     "daily note/2024/11/2024-11-14.md",
-    "Spaces/Home/Protocol/Http/무제 파일.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
