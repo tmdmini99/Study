@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/SPA/SPA.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SPA"
+              "title": "JPA 설정"
             }
           },
           {
@@ -236,10 +236,10 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "Spaces/Home/SPA/SPA.md",
     "Spaces/Home/MSA/MSA.md",
     "Images/Pasted image 20241121093519.png",
     "daily note/2024/11/2024-11-21.md",
-    "Spaces/Home/SPA/SPA.md",
     "Images/SPA5.jpg",
     "Images/SPA4.jpg",
     "Images/SPA3.jpg",
