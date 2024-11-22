@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/11/2024-11-22.md",
+                "file": "Spaces/Home/SPA/SPA.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-22"
+              "title": "SPA"
             }
           },
           {
@@ -135,8 +135,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -249,8 +248,8 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "daily note/2024/11/2024-11-22.md",
+    "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
     "Spaces/Home/SPA/SPA.md",
     "Spaces/Home/MSA/MSA.md",
     "Images/Pasted image 20241121093519.png",
