@@ -80,7 +80,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "password",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -135,7 +135,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -246,7 +247,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1b19c9e6a50e13c6",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "daily note/2024/11/2024-11-22.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
