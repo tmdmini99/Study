@@ -1186,5 +1186,10 @@ FROM jsonb_array_elements(line_items) AS item
 FROM orders
 ```
 
+
+trigger
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
