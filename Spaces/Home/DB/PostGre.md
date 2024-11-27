@@ -1143,6 +1143,35 @@ AND table_schema = 'public'; -- 필요에 따라 스키마를 변경하세요.
 ```
 
 
+table이 있는지 확인
+```sql
+SELECT EXISTS (
+
+            SELECT 1
+
+            FROM pg_catalog.pg_tables
+
+            WHERE tablename = $1
+
+        );
+
+
+---------------------------- id값이 있는지 확인(유동적으로 변경 가능)
+
+SELECT EXISTS (
+
+            SELECT 1
+
+            FROM information_schema.columns
+
+            WHERE table_name = $1 AND column_name = 'id'
+
+        );
+       
+
+```
+
+
 
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
