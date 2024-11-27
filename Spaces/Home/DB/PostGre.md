@@ -1173,5 +1173,18 @@ SELECT EXISTS (
 
 
 
+jsonb 배열 데이터 SUM
+```sql
+SELECT *, (
+
+SELECT SUM((item->>'quantity')::INTEGER)
+
+FROM jsonb_array_elements(line_items) AS item
+
+) AS total_quantity
+
+FROM orders
+```
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
