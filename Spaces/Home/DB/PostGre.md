@@ -1187,7 +1187,79 @@ FROM orders
 ```
 
 
-trigger
+## trigger
+*트리거(Trigger)**는 데이터베이스에서 특정 이벤트(예: **INSERT**, **UPDATE**, **DELETE**)가 발생했을 때 **자동으로 실행되는 SQL 작업**입니다.
+
+---
+
+### **트리거의 주요 특징**
+
+1. **자동 실행**: 데이터 조작 이벤트 발생 시 트리거가 자동 실행.
+2. **이벤트 기반**: 특정 테이블에서 작업(INSERT, UPDATE, DELETE)이 발생할 때 동작.
+3. **후속 작업 처리**: 로그 기록, 데이터 검증, 복잡한 연산 처리 등에 사용.
+
+---
+
+### **트리거 구성 요소**
+
+1. **대상 테이블**: 트리거가 적용되는 테이블.
+2. **이벤트**: 실행 조건 (INSERT, UPDATE, DELETE).
+3. **타이밍**:
+    - **BEFORE**: 이벤트 실행 전에 트리거 동작.
+    - **AFTER**: 이벤트 실행 후에 트리거 동작.
+4. **트리거 작업**: 트리거가 실행될 때 수행할 SQL 문장.
+
+---
+
+### **트리거 사용 예시**
+
+#### 1. **로그 기록용 트리거**
+
+- 직원 테이블에서 데이터가 수정될 때 로그 테이블에 기록.
+
+```sql
+CREATE TRIGGER log_update
+AFTER UPDATE ON employees
+FOR EACH ROW
+INSERT INTO update_logs(employee_id, updated_at)
+VALUES (NEW.id, NOW());
+```
+
+
+#### 2. **데이터 검증**
+
+- 직원의 급여를 업데이트할 때 음수로 입력되지 않도록 검증.
+
+```sql
+CREATE TRIGGER check_salary
+BEFORE UPDATE ON employees
+FOR EACH ROW
+BEGIN
+  IF NEW.salary < 0 THEN
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Salary cannot be negative';
+  END IF;
+END;
+```
+
+
+### **트리거의 장점**
+
+1. **자동화**: 특정 작업을 수동으로 처리할 필요 없음.
+2. **데이터 무결성**: 데이터의 일관성을 유지.
+3. **보안 강화**: 민감한 작업에 대한 로그를 자동 기록.
+
+---
+
+### **트리거의 단점**
+
+1. **복잡성 증가**: 로직이 데이터베이스에 숨겨져 관리가 어려움.
+2. **성능 부담**: 이벤트 발생 시마다 추가 작업이 실행되어 성능 저하 가능.
+3. **디버깅 어려움**: 트리거 오류 추적이 복잡.
+
+
+
+
 
 
 
