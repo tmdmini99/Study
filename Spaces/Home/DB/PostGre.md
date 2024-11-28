@@ -1295,7 +1295,62 @@ END;
 
 
 
+스키마 데이터 복제
 
+**중복 키를 무시하고 삽입 (ON CONFLICT DO NOTHING):** PostgreSQL 9.5 이상에서는 `ON CONFLICT` 구문을 사용하여 중복 키가 발생할 경우 무시할 수 있습니다.
+```sql
+INSERT INTO web.table_name
+SELECT * FROM public.table_name
+ON CONFLICT (primary_key_column) DO NOTHING;
+```
+
+- `primary_key_column`은 해당 테이블의 PK 또는 UNIQUE 제약 조건이 걸려 있는 컬럼입니다.
+- 중복된 키가 발생하면 해당 행은 무시되고, 나머지 데이터만 삽입됩니다.
+
+예시
+
+```sql
+INSERT INTO web.products
+SELECT * FROM public.products
+ON CONFLICT (id) DO NOTHING;
+```
+
+
+**중복 데이터를 필터링하여 삽입:** 데이터를 복사하기 전에, `web.table_name`에 이미 존재하는 데이터를 제외하고 삽입할 수 있습니다.
+
+```sql
+INSERT INTO web.table_name
+SELECT * 
+FROM public.table_name
+WHERE public.table_name.primary_key_column NOT IN (
+    SELECT primary_key_column FROM web.table_name
+);
+```
+
+
+**업데이트하거나 삽입 (UPSERT 사용):** 중복 키가 발생하면 데이터를 업데이트하도록 설정할 수도 있습니다.
+
+```sql
+INSERT INTO web.table_name
+SELECT * FROM public.table_name
+ON CONFLICT (primary_key_column) 
+DO UPDATE SET column1 = EXCLUDED.column1, column2 = EXCLUDED.column2;
+```
+
+- `ON CONFLICT`는 중복된 키가 발생할 경우, `DO UPDATE`를 통해 기존 데이터를 업데이트합니다.
+- `EXCLUDED`는 새로 삽입하려는 행의 값을 나타냅니다.
+
+
+
+**오류를 방지하고 로그 확인:** 중복 데이터만 확인하고 싶다면 `EXCEPT`를 사용하여 어떤 데이터가 충돌하는지 먼저 확인해 볼 수도 있습니다.
+
+```sql
+SELECT * 
+FROM public.table_name
+EXCEPT
+SELECT * 
+FROM web.table_name;
+```
 
 
 ---
