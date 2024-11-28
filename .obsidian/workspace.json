@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/11/2024-11-28.md",
+                "file": "Spaces/Home/DB/PostGre.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-28"
+              "title": "PostGre"
             }
           }
         ]
@@ -197,10 +197,10 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "daily note/2024/11/2024-11-28.md",
     "Spaces/Home/Git/무제 파일.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/JPA/Maven JPA/JPA 설정.md",
-    "daily note/2024/11/2024-11-28.md",
     "daily note/2024/11/2024-11-19.md",
     "daily note/2024/11/2024-11-06.md",
     "Spaces/Home/DB/PostGre.md",

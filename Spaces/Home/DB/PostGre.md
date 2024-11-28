@@ -1079,6 +1079,41 @@ LEFT JOIN inventory_items i ON variant->>'inventory_item_id' = i.id;
 ```
 
 
+```json
+[
+  {"id": 1, "name": "Alice"},
+  {"id": 2, "name": "Bob"}
+]
+```
+
+
+```sql
+SELECT data->0->>'id' AS first_id FROM my_table;
+```
+
+- **`data->0`**: `JSONB` 배열에서 0번째 요소를 추출합니다. (이 요소는 JSON 객체 형태로 반환됨)
+- **`->>'id'`**: 추출한 JSON 객체에서 `id` 필드의 값을 문자열로 반환합니다.
+
+### 숫자로 변환하기:
+
+만약 `id`가 숫자 타입으로 필요하다면, `::INTEGER`를 사용해 변환합니다:
+
+```sql
+SELECT (data->0->>'id')::INTEGER AS first_id
+FROM my_table;
+```
+
+
+
+0번째 `id`가 특정 값인 행만 조회하고 싶다면:
+```sql
+SELECT *
+FROM my_table
+WHERE (data->0->>'id')::INTEGER = 1;
+```
+
+
+
 jsonb_array_elements(P.variants):
 
 jsonb_array_elements 함수는 JSONB 배열의 각 요소를 개별 행으로 변환합니다.
