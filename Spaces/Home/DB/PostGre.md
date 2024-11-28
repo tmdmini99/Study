@@ -986,6 +986,58 @@ SELECT * FROM find_tables_with_value('7401329033397');
 
 
 
+```sql
+CREATE OR REPLACE FUNCTION find_tables_with_value(search_value TEXT)
+
+RETURNS TABLE(result_table_name TEXT, result_column_name TEXT) AS $$
+
+DECLARE
+    r RECORD;
+    col RECORD;
+    query TEXT;
+    found BOOLEAN;
+BEGIN
+    -- 테이블 순회
+    FOR r IN
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = 'public' -- 원하는 스키마를 지정
+    LOOP
+        RAISE NOTICE 'Checking table: %', r.table_name; -- 현재 검사 중인 테이블 이름 출력
+        
+        -- 각 테이블의 모든 컬럼을 검사
+        FOR col IN
+            SELECT column_name
+            FROM information_schema.columns
+            WHERE table_schema = 'public' AND table_name = r.table_name
+        LOOP
+            query := format('SELECT EXISTS (
+                SELECT 1
+                FROM %I
+                WHERE %I::text ILIKE ''%%%s%%''
+            )', r.table_name, col.column_name, search_value);
+
+            -- 쿼리 실행
+            EXECUTE query INTO found;
+
+            IF found THEN
+                -- 테이블 이름과 컬럼 이름 반환
+                result_table_name := r.table_name;
+                result_column_name := col.column_name;
+                RETURN NEXT; -- 결과 반환
+            END IF;
+        END LOOP;
+    END LOOP;
+END; $$
+
+LANGUAGE plpgsql;
+
+
+--- 함수 호출 예시
+SELECT * FROM find_tables_with_value('8809755505462');
+```
+
+
 다른 테이블 컬럼을 jsonb로 원래 데이터 +로 넣기
 ```sql
 SELECT o.*,
