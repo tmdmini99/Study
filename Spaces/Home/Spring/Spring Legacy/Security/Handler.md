@@ -150,4 +150,23 @@ Spring Security에서 로그인 실패 시의 행동도 개발자가 별도로 �
 
 **`super.onAuthenticationFailure(request, response, exception);`의 역할과 구현**
 
-`super.onAuthenticationFailure(request, response, exception);`는 Spring Security의 `AuthenticationFailureHandler` 인터페이스를 통해 로그인 실패 시 처리 로직을 정의하는 부분입니다. 기본적으로, 이 메소드는 로그인 시도가 실패했을 때 수행될 기본 동작을 실행하는데, 이는 상속받은 핸들러(`SimpleUrlAuthenticationFailureHandler` 등)의 로그인 실패 처리 로직을 호출합니다. 따라서, 별도로 구현한 로직이 없다면, Spring Security의 기본적인 실패 처리가 수행됩니
+`super.onAuthenticationFailure(request, response, exception);`는 Spring Security의 `AuthenticationFailureHandler` 인터페이스를 통해 로그인 실패 시 처리 로직을 정의하는 부분입니다. 기본적으로, 이 메소드는 로그인 시도가 실패했을 때 수행될 기본 동작을 실행하는데, 이는 상속받은 핸들러(`SimpleUrlAuthenticationFailureHandler` 등)의 로그인 실패 처리 로직을 호출합니다. 따라서, 별도로 구현한 로직이 없다면, Spring Security의 기본적인 실패 처리가 수행됩니다.
+
+
+preHandle에서   ajax 요청은 처리되지 않음 
+
+`prehandler`에서 AJAX 요청이 처리되지 않는 이유는 여러 가지가 있을 수 있습니다. 주로 `AJAX` 요청은 `HTTP` 헤더에 `Content-Type`이나 `X-Requested-With` 등의 특수한 헤더를 포함하고 있기 때문에, 이를 제대로 처리하지 않으면 `prehandler`에서 문제가 발생할 수 있습니다.
+
+여기 몇 가지 일반적인 원인과 해결 방법을 설명드립니다:
+
+### 1. **AJAX 요청에서 `X-Requested-With` 헤더가 누락**
+
+`AJAX` 요청은 일반적으로 `X-Requested-With: XMLHttpRequest` 헤더를 포함하여 서버에 요청을 보냅니다. `prehandler`나 인터셉터에서 이 헤더를 확인하는 경우, 헤더가 누락되면 요청이 정상적으로 처리되지 않을 수 있습니다.
+
+
+```java
+// XMLHttpRequest 요청은 인터셉터에서 처리하지 않음  
+if ("XMLHttpRequest".equals(request.getHeader("X-Requested-With"))) {  
+    return true;  
+}
+```

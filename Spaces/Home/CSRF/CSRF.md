@@ -196,9 +196,36 @@ $.ajax({
 ```
 
 
+`<security:http pattern="/barcodes/post/**" security="none"/>`는 **Spring Security**의 설정입니다. 이 설정은 **특정 URL 패턴에 대해 보안 설정을 비활성화**하는 역할을 합니다. 설명을 드리자면:
+
+### 1. **`<security:http>`**: Spring Security에서 HTTP 요청에 대한 보안 설정을 정의하는 요소입니다.
+
+- `http` 요소는 **HTTP 요청에 대한 보안 정책**을 설정하는 데 사용됩니다. 여기에는 인증, 권한 부여, CSRF 보호, CORS 설정 등 여러 가지 보안 관련 설정이 포함될 수 있습니다.
+
+### 2. **`pattern="/barcodes/post/**"`**: 특정 URL 패턴을 지정합니다.
+
+- 이 부분은 **Spring Security**가 보안 정책을 적용할 URL 패턴을 지정하는 곳입니다.
+- `"/barcodes/post/**"`는 **`/barcodes/post/`로 시작하는 모든 경로**에 대해 보안 설정을 적용하겠다는 의미입니다. 예를 들어, `/barcodes/post/something`이나 `/barcodes/post/anything` 등이 포함됩니다.
+
+### 3. **`security="none"`**: 보안을 적용하지 않음.
+
+- `security="none"`는 **해당 경로에 대한 보안 처리를 **아예 비활성화**하겠다는 의미입니다.
+- 즉, **인증(authentication), 권한 부여(authorization), CSRF 보호 등** 어떤 보안 검사를 하지 않겠다는 설정입니다. 이 설정을 사용하면 해당 경로에 대한 모든 보안 처리가 우회됩니다.
+
+### 4. **전체적인 의미**
+
+- `"/barcodes/post/**"` 경로로 들어오는 요청에 대해서 **Spring Security의 기본 보안 설정을 적용하지 않겠다**는 의미입니다.
+    - 예를 들어, 해당 URL에서 로그인 상태나 권한을 확인하지 않게 됩니다.
+    - CSRF 보호, 인증, 권한 검사를 **하지 않도록 설정**하게 됩니다.
 
 ```xml
+<security:http pattern="/barcodes/post/**" security="none"/>
 ```
+
+
+
+
+
 
 ---
 참조 - https://tibetsandfox.tistory.com/11
