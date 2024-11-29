@@ -103,5 +103,51 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
+
+pring Security XML 설정에서 특정 URL에 대해서만 **CSRF 비활성화**를 하려면, XML 단독으로는 지원되지 않습니다. 대신, **Java 설정**과 XML 설정을 함께 사용해야 합니다. 아래는 방법을 설명합니다.
+
+---
+
+### 방법: Java 설정으로 특정 URL에서 CSRF 비활성화
+
+#### 1. **Java 설정 추가**
+
+Spring Security XML 설정만 사용 중이어도, 특정 URL에서만 CSRF를 비활성화하려면 Java 설정을 추가해야 합니다:
+
+```java
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .csrf()
+            .ignoringAntMatchers("/specific-url/**") // 특정 URL에서 CSRF 비활성화
+            .and()
+            .authorizeRequests()
+            .anyRequest().authenticated();
+    }
+}
+
+```
+
+
+
+
+이 설정에서 `/specific-url/**` 패턴에 해당하는 요청은 CSRF 검사를 건너뜁니다.
+
+---
+
+#### 2. **XML과 Java 설정 병합**
+
+XML 설정과 Java 설정을 병합해서 사용할 수 있습니다. 기존 XML 설정을 유지하고, 추가적으로 Java 설정에서 CSRF 예외를 설정합니다.
+
+---
+
+### XML 단독으로 처리하는 방법은 없다?
+
+Spring Security XML에서는 특정 URL에 대해 CSRF를 부분적으로 비활성화하는 기능이 **직접적으로 지원되지 않습니다**. 전체 CSRF를 비활성화하거나(`disabled="true"`), 특정 URL에서 보안을 완전히 비활성화하는(`security="none"`) 방식만 가능합니다.
+
+
 ---
 참조 - https://tibetsandfox.tistory.com/11
