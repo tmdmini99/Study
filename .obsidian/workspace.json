@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/12/2024-12-03.md",
+                "file": "Spaces/Home/IntelliJ/Spring/Spring.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-12-03"
+              "title": "Spring"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "HandlerInterceptor ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,42 +75,6 @@
             }
           },
           {
-            "id": "582007d0b78a203f",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "2b86fcf4121469ee",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "043a85c339895313",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "d556ceae3856e8e2",
             "type": "leaf",
             "state": {
@@ -120,8 +84,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "horizontal",
@@ -234,6 +197,8 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "Images/Intellij Spring.png",
+    "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "daily note/2024/12/2024-12-03.md",
     "daily note/2024/12/2024-12-02.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
@@ -266,8 +231,6 @@
     "Spaces/Home/MSA",
     "Spaces/Home/SPA",
     "Spaces/Home/API/API.md",
-    "Spaces/Home/Shell/Shell Code.md",
-    "Spaces/Home/Shell/Shell.md",
     "Spaces/Home/Shell",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
