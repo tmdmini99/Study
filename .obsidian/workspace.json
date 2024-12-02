@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/Interceptor.md",
+                "file": "daily note/2024/12/2024-12-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Interceptor"
+              "title": "2024-12-02"
             }
           }
         ]
@@ -88,6 +88,18 @@
           },
           {
             "id": "2b86fcf4121469ee",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "043a85c339895313",
             "type": "leaf",
             "state": {
               "type": "mk-file-view",
@@ -209,6 +221,7 @@
   },
   "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "daily note/2024/12/2024-12-02.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Handler.md",
     "Spaces/Home/CSRF/CSRF.md",
     "Spaces/Home/SPA/SPA.md",
@@ -243,7 +256,6 @@
     "Spaces/Home/Shell/Shell.md",
     "Spaces/Home/Spring/Spring Legacy/Session.md",
     "Spaces/Home/Shell",
-    "daily note/2024/11/2024-11-20.md",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
