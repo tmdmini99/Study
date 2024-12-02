@@ -21,8 +21,33 @@
               "icon": "lucide-file",
               "title": "Spring"
             }
+          },
+          {
+            "id": "1ac693911ff4ea53",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Intellij Spring2.png"
+              },
+              "icon": "lucide-image",
+              "title": "Intellij Spring2"
+            }
+          },
+          {
+            "id": "6b7880ebe746615f",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Intellij Spring1.png"
+              },
+              "icon": "lucide-image",
+              "title": "Intellij Spring1"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -195,9 +220,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1b19c9e6a50e13c6",
+  "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Images/Intellij Spring.png",
+    "Images/Intellij Spring2.png",
+    "Images/Intellij Spring1.png",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "daily note/2024/12/2024-12-03.md",
     "daily note/2024/12/2024-12-02.md",
@@ -236,7 +262,6 @@
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
     "Images/Pasted image 20241107132221.png",
-    "Images/Pasted image 20241107132208.png",
     "Spaces/Home/Java/Bluetooth",
     "Spaces/Home/Java Script/Node.js/TypeScript",
     "Spaces/Home/Java/Model",

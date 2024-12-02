@@ -6,9 +6,14 @@ WEB-INF/lib 아래에 사진과같이 jar파일이 추가되어있는지 확인 
 
 Module
 모듈에 추가되어있는지 확인
-![[Intellij Spring.png]]
+![[Intellij Spring1.png]]
 
 
+
+
+Facets 확인
+
+![[Intellij Spring2.png]]
 
 
 
