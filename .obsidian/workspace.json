@@ -26,15 +26,12 @@
             "id": "1ac693911ff4ea53",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "path": "Spaces/Home/Project"
               },
               "icon": "lucide-file",
-              "title": "PostGre"
+              "title": "Project"
             }
           },
           {
@@ -49,8 +46,7 @@
               "title": "Intellij Spring1"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -223,10 +219,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ac693911ff4ea53",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
-    "Spaces/Home/DB/PostgreSql.md",
+    "Spaces/Home/Project/Cde.md",
     "Spaces/Home/DB/PostGre.md",
+    "Spaces/Home/Project",
+    "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
@@ -253,7 +251,6 @@
     "daily note/2024/11/2024-11-22.md",
     "Spaces/Home/MSA/MSA.md",
     "Images/Pasted image 20241121093519.png",
-    "daily note/2024/11/2024-11-21.md",
     "Images/SPA5.jpg",
     "Images/SPA4.jpg",
     "Images/SPA3.jpg",
@@ -270,7 +267,6 @@
     "Spaces/Home/Java/Model",
     "Spaces/Home/Java Script/Node.js/PWA",
     "Spaces/Home/IntelliJ/PWA",
-    "Spaces/Home/Protocol/Http/CORS",
     "무제 파일.canvas"
   ]
 }
