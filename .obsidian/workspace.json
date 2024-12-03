@@ -26,12 +26,15 @@
             "id": "1ac693911ff4ea53",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/Intellij Spring2.png"
+                "file": "Spaces/Home/DB/PostGre.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Intellij Spring2"
+              "icon": "lucide-file",
+              "title": "PostGre"
             }
           },
           {
@@ -222,6 +225,9 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/DB/PostgreSql.md",
+    "Spaces/Home/DB/PostGre.md",
+    "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
@@ -235,7 +241,6 @@
     "Spaces/Home/Spring/Security.md",
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "daily note/2024/11/2024-11-29.md",
-    "Spaces/Home/DB/PostGre.md",
     "daily note/2024/11/2024-11-28.md",
     "Spaces/Home/Git/무제 파일.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
@@ -256,12 +261,10 @@
     "Images/SPA1.png",
     "Spaces/Home/MSA",
     "Spaces/Home/SPA",
-    "Spaces/Home/API/API.md",
     "Spaces/Home/Shell",
     "File/c10d9d74-cf8d-4c5b-ac27-f3343cef4f0c_Export-b53327f6-5621-4819-a86c-c39451577fdb.zip",
     "Images/Pasted image 20241107132226.png",
     "Images/Pasted image 20241107132223.png",
-    "Images/Pasted image 20241107132221.png",
     "Spaces/Home/Java/Bluetooth",
     "Spaces/Home/Java Script/Node.js/TypeScript",
     "Spaces/Home/Java/Model",

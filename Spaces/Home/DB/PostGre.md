@@ -1405,5 +1405,152 @@ FROM web.table_name;
 ```
 
 
+
+시퀀스 생성
+
+
+```sql
+CREATE SEQUENCE sequence_name
+    START WITH start_value
+    INCREMENT BY increment_value
+    MINVALUE min_value
+    MAXVALUE max_value
+    CACHE cache_size;
+
+
+--- 예시
+CREATE SEQUENCE my_sequence
+    START WITH 1
+    INCREMENT BY 1;
+
+---현재 시퀀스 값 조회
+
+SELECT CURRVAL('my_sequence');
+
+---시퀀스 사용 예시
+
+CREATE TABLE my_table (
+    id INTEGER DEFAULT NEXTVAL('my_sequence') PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+
+---시퀀스 수정
+
+ALTER SEQUENCE my_sequence INCREMENT BY 5;
+
+
+
+---시퀀스 삭제
+
+DROP SEQUENCE my_sequence;
+
+```
+
+
+## SERIAL 데이터 타입
+
+
+PostgreSQL에서 테이블의 특정 컬럼이 자동으로 1씩 증가하도록 설정하려면, 해당 컬럼에 시퀀스를 사용하여 기본 키를 설정하면 됩니다. 일반적으로 SERIAL 데이터 타입을 사용하여 이 작업을 간편하게 수행할 수 있습니다. SERIAL은 내부적으로 시퀀스를 생성하고, 해당 컬럼에 자동으로 증가하는 값을 할당합니다.
+
+
+```sql
+CREATE TABLE my_table (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100)
+);
+```
+
+
+위의 예제에서 id 컬럼은 SERIAL 타입으로 정의되어 있습니다. 이 경우 PostgreSQL은 자동으로 시퀀스를 생성하고, 새로운 행이 삽입될 때마다 id 값이 1씩 증가합니다.
+
+데이터 삽입 예시
+이제 my_table에 데이터를 삽입할 때 id 값을 명시하지 않아도 됩니다:
+
+
+```sql
+INSERT INTO my_table (name) VALUES ('Alice');
+INSERT INTO my_table (name) VALUES ('Bob');
+```
+
+
+시퀀스 확인
+자동으로 생성된 시퀀스의 이름은 일반적으로 table_name_column_name_seq 형식입니다. 예를 들어, 위의 예제에서 생성된 시퀀스는 my_table_id_seq가 됩니다. 이 시퀀스의 현재 값을 확인하려면 다음과 같이 할 수 있습니다:
+
+```sql
+SELECT NEXTVAL('my_table_id_seq');
+```
+
+
+2. `GENERATED AS IDENTITY` 사용 (PostgreSQL 10 이상 권장)
+
+
+```sql
+CREATE TABLE example_identity (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- 자동 증가 필드
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+
+
+### 시퀀스 직접 생성 및 연결
+
+직접 시퀀스를 생성하고 테이블 열에 연결할 수도 있습니다.
+
+1. **시퀀스 생성**
+
+
+```sql
+CREATE SEQUENCE custom_sequence START 1 INCREMENT 1;
+
+```
+
+
+테이블 생성 및 시퀀스 연결
+```sql
+CREATE TABLE example_custom (
+    id INT DEFAULT nextval('custom_sequence') PRIMARY KEY, -- 시퀀스를 기본값으로 사용
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+
+시퀀스 값 조정 (선택 사항)
+
+```sql
+SELECT setval('custom_sequence', 100); -- 시퀀스 시작 값을 100으로 변경
+```
+
+
+### 차이점
+
+| **특징**         | **SERIAL**             | **GENERATED AS IDENTITY** |
+| -------------- | ---------------------- | ------------------------- |
+| **시퀀스 생성**     | 자동으로 생성됨               | 자동으로 생성됨                  |
+| **시퀀스 이름 지정**  | 수동 제어 가능 (`nextval()`) | 시스템이 완전 관리                |
+| **표준 SQL 호환성** | 비표준 (PostgreSQL 전용)    | SQL 표준 준수                 |
+| **시퀀스 속성 변경**  | 가능 (`ALTER SEQUENCE`)  | 제한적 (`ALTER TABLE` 필요)    |
+
+### 확인 방법
+
+테이블 생성 후 내부적으로 생성된 시퀀스를 확인하려면 아래 쿼리를 사용할 수 있습니다:
+
+```sql
+-- 테이블의 IDENTITY 속성을 확인
+SELECT column_name, column_default
+FROM information_schema.columns
+WHERE table_name = 'example_identity';
+
+-- 관련 시퀀스 확인
+SELECT * FROM pg_sequences WHERE sequencename LIKE '%example_identity%';
+```
+
+`GENERATED ALWAYS AS IDENTITY`로 생성한 경우에도 PostgreSQL은 내부적으로 시퀀스를 사용하지만, 이를 PostgreSQL이 직접 관리하기 때문에 사용자가 직접 시퀀스를 호출할 필요가 없습니다.
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
