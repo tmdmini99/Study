@@ -1552,5 +1552,50 @@ SELECT * FROM pg_sequences WHERE sequencename LIKE '%example_identity%';
 
 
 
+### 1. **테이블 생성 시 시작 번호 설정**
+
+`GENERATED ALWAYS AS IDENTITY` 구문에서 `START WITH`를 사용하면 시작 번호를 지정할 수 있습니다.
+
+
+
+```sql
+CREATE TABLE example_identity (
+    id INT GENERATED ALWAYS AS IDENTITY (START WITH 100 INCREMENT BY 1) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+
+### 2. **기존 테이블의 시작 번호 변경**
+
+이미 생성된 테이블의 IDENTITY 열에 대해 시작 번호를 변경하려면 `ALTER TABLE ... ALTER COLUMN ... RESTART` 명령을 사용합니다.
+
+```sql
+ALTER TABLE example_identity ALTER COLUMN id RESTART WITH 100;
+```
+
+
+### 3. **시퀀스 직접 변경 (고급)**
+
+PostgreSQL에서 IDENTITY 열은 내부적으로 시퀀스를 사용하므로, 시퀀스 자체를 직접 변경할 수도 있습니다. 시퀀스 이름은 일반적으로 `[테이블명]_[열명]_seq` 형태입니다
+
+
+시퀀스 이름 확인
+```sql
+SELECT sequencename
+FROM pg_sequences
+WHERE sequencename LIKE '%example_identity%';
+```
+
+시퀀스 값 변경
+```sql
+ALTER SEQUENCE example_identity_id_seq RESTART WITH 100;
+```
+
+
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
