@@ -1594,6 +1594,36 @@ ALTER SEQUENCE example_identity_id_seq RESTART WITH 100;
 ```
 
 
+자기 자신 한테  foreign key 줄수 있음
+```sql
+CREATE TABLE board (
+
+id SERIAL PRIMARY KEY, -- 고유 식별자
+
+user_id VARCHAR(20) NOT NULL, -- 사용자 ID
+
+title VARCHAR(255), -- 공지 제목
+
+contents TEXT, -- 공지 내용
+
+reg_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 등록 일시
+
+upt_dt TIMESTAMP, -- 수정 일시
+
+category VARCHAR(50), -- 카테고리
+
+parent_id INT, -- 부모 ID (댓글/대댓글)
+
+CONSTRAINT fk_user FOREIGN KEY (user_id) -- 외래키 제약조건
+
+REFERENCES USERS(user_id) ON DELETE CASCADE,
+
+CONSTRAINT fk_parent FOREIGN KEY (parent_id) -- 자기 참조 외래키
+
+REFERENCES board(id) ON DELETE CASCADE
+
+);
+```
 
 
 
