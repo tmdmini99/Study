@@ -118,6 +118,60 @@ public String ordersList(@PathVariable("id") Long id, Model model) {
 
 
 
-
-
+이런식으로 object로 선언하여 return을 여러가지로 줄수 있음
+```java
+package com.kwm.web.board.controller;  
+  
+import com.kwm.web.board.service.KWM3100Service;  
+  
+import com.kwm.web.board.vo.KWM3100Vo;  
+import com.kwm.web.board.vo.KWM3100Vo;  
+import com.kwm.web.common.vo.BasicParamVo;  
+import lombok.RequiredArgsConstructor;  
+import lombok.extern.log4j.Log4j2;  
+import org.springframework.stereotype.Controller;  
+import org.springframework.ui.Model;  
+import org.springframework.web.bind.annotation.ModelAttribute;  
+import org.springframework.web.bind.annotation.RequestMapping;  
+  
+import javax.servlet.http.HttpServletRequest;  
+import java.util.List;  
+  
+  
+@Log4j2  
+@Controller  
+@RequiredArgsConstructor  
+@RequestMapping("/board")  
+public class KWM3100Controller {  
+    private final KWM3100Service service;  
+  
+    @RequestMapping("/3100")  
+    public String getKWM1200List(@ModelAttribute("BasicParamVo")BasicParamVo paramVo, Model model){  
+        log.info("KWM3100 ::: " + paramVo);  
+        List<KWM3100Vo> list = (List<KWM3100Vo>) service.selectList(paramVo);  
+        if(paramVo.getSc_id() == null){  
+            paramVo.setSc_id(list.get(0).getId());  
+        }  
+        KWM3100Vo data = (KWM3100Vo) service.selectOne(paramVo);  
+        model.addAttribute("list", list);  
+        model.addAttribute("data", list);  
+        return "/board/KWM3100";  
+    }  
+    @RequestMapping("/3100Detail")  
+        public Object getKWM3100Detail(@ModelAttribute("BasicParamVo")BasicParamVo paramVo, Model model, HttpServletRequest request){  
+            log.info("KWM3100Detail ::: " + paramVo);  
+            KWM3100Vo data = (KWM3100Vo) service.selectOne(paramVo);  
+            model.addAttribute("data", data);  
+            log.error(paramVo.getSc_id());  
+            model.addAttribute("BasicParamVo", paramVo);  
+            if (request != null) {  
+                String requestedWith = request.getHeader("X-Requested-With");  
+                if ("XMLHttpRequest".equals(requestedWith)) {  
+                    return "/board/KWM3100";  
+                }  
+            }  
+            return paramVo.getSc_id();  
+        }  
+}
+```
 
