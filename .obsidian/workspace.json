@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Controller/Controller.md",
+                "file": "Spaces/Home/Spring/MyBatis/PageHelper.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller"
+              "title": "PageHelper"
             }
           },
           {
@@ -81,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Mybatis",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -235,8 +235,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "Spaces/Home/Spring/MyBatis/PageHelper.md",
+    "Spaces/Home/Spring/MyBatis/PageHelper",
     "Spaces/Home/Java/Controller/Controller.md",
     "Spaces/Home/Java/Controller/Controller.md",
     "Spaces/Home/Java/삼항 연산자.md",
@@ -265,8 +268,6 @@
     "Spaces/Home/KOTLIN/Kotlin Android/csrf 코드.md",
     "daily note/2024/11/2024-11-29.md",
     "daily note/2024/11/2024-11-28.md",
-    "Spaces/Home/Git/무제 파일.md",
-    "Spaces/Home/Spring/Spring Legacy/Maven/database-context.xml.md",
     "Images/Pasted image 20241121093519.png",
     "Images/SPA5.jpg",
     "Images/SPA4.jpg",
@@ -282,7 +283,6 @@
     "Spaces/Home/Java/Bluetooth",
     "Spaces/Home/Java Script/Node.js/TypeScript",
     "Spaces/Home/Java/Model",
-    "Spaces/Home/Java Script/Node.js/PWA",
     "무제 파일.canvas"
   ]
 }
