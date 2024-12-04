@@ -227,3 +227,34 @@ $(document).on('input', '.Polaris-TextField__Input', async function() {
     }  
 });
 ```
+
+
+
+```js
+fetch('/board/3300Detail?sc_id=' + rowId+'&sc_id = '+ rowId, {  
+    method: 'GET',  // GET 방식으로 요청  
+    headers: {  
+        'X-Requested-With': 'XMLHttpRequest',  // AJAX 요청을 알리기 위한 헤더  
+        'Content-Type': 'application/json'     // 요청 본문 데이터 형식을 JSON으로 설정  
+    }  
+})  // GET 요청과 함께 sc_id 파라미터 전송  
+    .then(response => response.text())  // JSON 형식으로 응답을 받음  
+    .then(data => {  
+        console.log(data);  // 서버에서 받은 데이터 확인  
+         var tbody = document.querySelector('table tbody[data-detail]');  // tbody 요소 선택  
+        console.log(tbody);  // 서버에서 받은 데이터 확인  
+         let newDocument = $.parseHTML(data);  
+         let newContent = $(newDocument).find('table tbody[data-detail]');  
+         console.log(newContent);  
+        $(tbody).html(newContent.html());  
+        var sc_id = document.querySelector('#sc_id');  // tbody 요소 선택  
+        console.log(sc_id);  
+        $(sc_id).val($(newDocument).find('#sc_id').val());  
+        $("#search-form").submit();  
+  
+    })  
+    .catch(error => {  
+        // 요청 실패 시 오류 처리  
+        console.error("Fetch error:", error);  
+    });
+```
