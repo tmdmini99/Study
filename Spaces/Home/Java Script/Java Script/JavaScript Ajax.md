@@ -190,3 +190,82 @@ JSP 파일 내에서 JavaScript를 사용하는 경우에도, **AJAX로 JSP 파�
 - **AJAX**나 **`fetch`**로 JSP 페이지를 로드한 경우, **스크립트**는 자동으로 실행되지 않기 때문에 **수동으로 실행**하거나 **동적으로 `<script>` 태그를 추가**하여 스크립트를 실행해야 합니다.
 - `<script>` 태그를 동적으로 추가하는 방법이나 외부 스크립트를 동적으로 로드하는 방법을 활용하면, 페이지의 스크립트가 정상적으로 실행됩니다.
 
+
+
+```js
+$(document).ready(function() {  
+  
+    // 테이블에서 행 클릭 시 fetch로 데이터 요청  
+    $("table tbody tr[data-id]").on("click", function() {  
+        var rowId = $(this).data("id");  
+        var currentUrl = window.location.pathname;  // 예: /board/3300  
+        var detailUrl = currentUrl + 'Detail';  // 예: /board/3300Detail  
+  
+        // fetch로 AJAX 요청을 보내는 부분  
+        $.ajax({  
+            url: detailUrl,  // 요청 URL            method: 'GET',  // GET 방식으로 요청  
+            data: {  
+                sc_id: rowId  // 파라미터로 sc_id 전송  
+            },  
+            headers: {  
+                'X-Requested-With': 'XMLHttpRequest',  // AJAX 요청을 알리기 위한 헤더  
+                'Content-Type': 'application/json'     // 요청 본문 데이터 형식을 JSON으로 설정  
+            },  
+            success: function(data) {  
+                console.log(data);  // 서버에서 받은 데이터 확인  
+  
+                var tbody = $('table tbody[data-detail]');  // tbody 요소 선택  
+                console.log(tbody);  // 서버에서 받은 데이터 확인  
+  
+                var newDocument = $.parseHTML(data);  // 응답 데이터를 HTML로 파싱  
+                var newContent = $(newDocument).find('table tbody[data-detail]');  // 파싱한 HTML에서 원하는 요소 찾기  
+                console.log(newContent);  
+  
+                tbody.html(newContent.html());  // 기존 tbody의 내용을 새로 받은 데이터로 갱신  
+  
+                var sc_id = $('#sc_id');  // sc_id 요소 선택  
+                console.log(sc_id);  
+  
+                // sc_id 값 설정  
+                sc_id.val($(newDocument).find('#sc_id').val());  
+                var actionUrl = $('#search-form').attr('action');  
+                // var form = $('<form></form>');  // 새로운 form 태그 생성  
+                // form.attr('method', 'POST');  // POST 방식으로 설정  
+                // form.attr('action', actionUrl);  // 적절한 action URL을 설정  
+                //  
+                // // sc_id를 hidden 필드로 추가  
+                // var scIdInput = $('<input>').attr('type', 'hidden').attr('name', 'sc_id').val(sc_id.val());  
+                // form.append(scIdInput);                // var csrf = $('<input>').attr('type', 'hidden').attr('name', $('#csrf').attr('name')).val($('#csrf').val());                // form.append(csrf);                // form.css('display', 'none');  // 폼을 숨김  
+                // $('body').append(form);  
+                // form.submit();  // 폼 제출  
+                // form.remove(); // 폼 삭제  
+                // form 데이터를 객체 형태로 준비  
+                var formData = {  
+                    '_csrf': $('#csrf').val(),  // CSRF 토큰 값  
+                    'sc_id': sc_id.val()  // sc_id 값  
+                };  
+  
+                // AJAX로 폼 데이터를 POST 방식으로 서버에 비동기적으로 전송  
+                $.ajax({  
+                    url: actionUrl,  // 폼의 action URL 사용  
+                    method: 'POST',  
+                    data: formData,  // 폼 데이터를 전송  
+                    success: function(response) {  
+                        // 서버로부터 성공적인 응답을 받았을 때 처리  
+                        console.log('폼 데이터 전송 성공:', response);  
+                    },  
+                    error: function(xhr, status, error) {  
+                        // 요청 실패 시 오류 처리  
+                        console.error("AJAX error:", error);  
+                    }  
+                });  
+            },  
+            error: function(xhr, status, error) {  
+                // 요청 실패 시 오류 처리  
+                console.error("AJAX error:", error);  
+            }  
+        });  
+  
+});  
+});
+```
