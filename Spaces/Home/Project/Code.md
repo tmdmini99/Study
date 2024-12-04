@@ -35,4 +35,54 @@ ORDER BY
 ```
 
 
+```sql
+SELECT
+
+CASE
+
+WHEN parent_id IS NULL THEN ROW_NUMBER() OVER (
+
+) -- 부모글에 대해서만 번호를 1부터 증가시키기
+
+ELSE NULL -- 자식글은 번호를 부여하지 않음
+
+END AS seq,
+
+a.*
+
+FROM (
+
+SELECT
+
+*
+
+FROM
+
+board
+
+ORDER BY
+
+CASE
+
+WHEN parent_id IS NULL THEN 0 -- 부모글을 우선적으로 정렬
+
+ELSE parent_id -- 자식글은 부모의 id 기준으로 묶여 정렬
+
+END ASC,
+
+reg_dt DESC -- 자식글은 부모 아래에 최신순으로 정렬
+
+) a
+
+ORDER BY
+
+CASE
+
+WHEN parent_id IS NULL THEN id -- 부모 글을 먼저 정렬
+
+ELSE parent_id -- 자식 글은 부모의 id 기준으로 묶여 정렬
+
+END DESC
+```
+
 
