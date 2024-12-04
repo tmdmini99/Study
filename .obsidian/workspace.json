@@ -81,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ".ajax",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -124,8 +124,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -236,7 +235,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ac693911ff4ea53",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "Spaces/Home/Java Script/Java Script/fetch.md",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
