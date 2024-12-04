@@ -137,3 +137,194 @@ SELECT * FROM my_table LIMIT #{pageSize} OFFSET #{pageNum}
 
 
 이 방식은 간단하고 빠르지만, 데이터 양이 매우 많을 경우 성능에 영향을 줄 수 있습니다. 대용량 데이터 처리에서는 다른 방식의 페이징 처리 전략을 고려할 수 있습니다.
+
+
+
+
+### MVC 패턴에서 `PageHelper` 사용
+
+1. **Model**: 데이터와 관련된 로직을 처리하는 부분 (MyBatis Mapper).
+2. **View**: 사용자에게 보여지는 부분 (JSP, Thymeleaf, HTML 등).
+3. **Controller**: 사용자 요청을 받고, Model과 View를 연결하는 부분.
+
+`PageHelper`를 **Controller**에서 처리하도록 구현하면 됩니다.
+
+### 1. **Controller에서 페이징 처리**
+
+Controller에서 `PageHelper`를 사용해 페이징을 처리하고, `Model`에 페이징 결과를 담아 **View**로 전달합니다.
+
+#### Controller 클래스
+
+```java
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ProductController {
+
+    @Autowired
+    private ProductMapper productMapper; // ProductMapper를 주입받습니다.
+
+    @RequestMapping("/getProductPage")
+    public String getProductPage(int pageNum, int pageSize, Model model) {
+        // PageHelper로 페이징 처리 시작
+        PageHelper.startPage(pageNum, pageSize);
+
+        // 데이터 가져오기
+        List<Product> productList = productMapper.selectAll();
+
+        // PageInfo 객체로 페이지네이션 정보와 리스트 반환
+        PageInfo<Product> pageInfo = new PageInfo<>(productList);
+
+        // Model에 페이징 정보와 데이터를 담아서 View로 전달
+        model.addAttribute("pageInfo", pageInfo);
+
+        // 페이지를 표시할 View 이름 반환 (예: 'productPage.jsp' 또는 'productPage' (Thymeleaf))
+        return "productPage";
+    }
+}
+```
+
+
+### 2. **MyBatis Mapper XML**
+
+이제 실제 데이터베이스 쿼리를 XML 파일로 작성합니다. `PageHelper`는 쿼리 결과를 자동으로 페이징 처리해주므로, `PageHelper.startPage()`를 호출한 후에는 MyBatis XML에서 정의된 쿼리를 그대로 실행합니다.
+
+#### `ProductMapper.xml`
+
+
+```xml
+<mapper namespace="com.example.mapper.ProductMapper">
+
+    <!-- 모든 상품 데이터를 가져오는 쿼리 -->
+    <select id="selectAll" resultType="com.example.model.Product">
+        SELECT * FROM product
+    </select>
+
+</mapper>
+```
+
+
+ProductMapper.java
+
+```java
+import com.example.model.Product;
+import java.util.List;
+
+public interface ProductMapper {
+
+    // 상품 목록을 가져오는 메서드
+    List<Product> selectAll();
+}
+```
+
+### 3. **MyBatis 설정 파일**
+
+`PageHelper`는 MyBatis 설정에서 사용해야 합니다. `PageHelper`의 설정을 `mybatis-config.xml`에 추가해 주세요.
+
+#### `mybatis-config.xml`
+
+
+```xml
+<configuration>
+    <!-- MyBatis 설정 -->
+    <plugins>
+        <!-- PageHelper 플러그인 설정 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/> <!-- 사용하는 데이터베이스에 맞게 설정 -->
+            <property name="reasonable" value="true"/>
+            <property name="supportMethodsArguments" value="true"/>
+            <property name="params" value="pageNum=pageHelperPageNum,pageSize=pageHelperPageSize"/>
+        </plugin>
+    </plugins>
+
+    <!-- Mapper 파일 위치 -->
+    <mappers>
+        <mapper resource="com/example/mapper/ProductMapper.xml"/>
+    </mappers>
+</configuration>
+```
+
+
+### 4. **View에서 페이징 정보 사용 (JSP 또는 Thymeleaf)**
+
+Controller에서 전달한 `PageInfo` 객체를 **View**에서 사용하여 페이지네이션을 구현할 수 있습니다.
+
+#### JSP 예시
+
+```jsp
+<!-- productPage.jsp -->
+<table>
+    <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <!-- 기타 컬럼 -->
+    </tr>
+    <c:forEach var="product" items="${pageInfo.list}">
+        <tr>
+            <td>${product.column1}</td>
+            <td>${product.column2}</td>
+        </tr>
+    </c:forEach>
+</table>
+
+<!-- 페이지네이션 링크 -->
+<div>
+    <c:if test="${pageInfo.pageNum > 1}">
+        <a href="/getProductPage?pageNum=1&pageSize=${pageInfo.pageSize}">First</a>
+        <a href="/getProductPage?pageNum=${pageInfo.pageNum - 1}&pageSize=${pageInfo.pageSize}">Previous</a>
+    </c:if>
+    
+    <c:forEach var="i" begin="1" end="${pageInfo.pages}">
+        <a href="/getProductPage?pageNum=${i}&pageSize=${pageInfo.pageSize}">${i}</a>
+    </c:forEach>
+
+    <c:if test="${pageInfo.pageNum < pageInfo.pages}">
+        <a href="/getProductPage?pageNum=${pageInfo.pageNum + 1}&pageSize=${pageInfo.pageSize}">Next</a>
+        <a href="/getProductPage?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}">Last</a>
+    </c:if>
+</div>
+```
+
+#### Thymeleaf 예시
+
+```html
+<!-- productPage.html -->
+<table>
+    <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <!-- 기타 컬럼 -->
+    </tr>
+    <tr th:each="product : ${pageInfo.list}">
+        <td th:text="${product.column1}"></td>
+        <td th:text="${product.column2}"></td>
+    </tr>
+</table>
+
+<!-- 페이지네이션 링크 -->
+<div>
+    <a th:if="${pageInfo.pageNum > 1}" th:href="@{/getProductPage(pageNum=1, pageSize=${pageInfo.pageSize})}">First</a>
+    <a th:if="${pageInfo.pageNum > 1}" th:href="@{/getProductPage(pageNum=${pageInfo.pageNum - 1}, pageSize=${pageInfo.pageSize})}">Previous</a>
+
+    <span th:each="i : ${#numbers.sequence(1, pageInfo.pages)}">
+        <a th:href="@{/getProductPage(pageNum=${i}, pageSize=${pageInfo.pageSize})}" th:text="${i}"></a>
+    </span>
+
+    <a th:if="${pageInfo.pageNum < pageInfo.pages}" th:href="@{/getProductPage(pageNum=${pageInfo.pageNum + 1}, pageSize=${pageInfo.pageSize})}">Next</a>
+    <a th:if="${pageInfo.pageNum < pageInfo.pages}" th:href="@{/getProductPage(pageNum=${pageInfo.pages}, pageSize=${pageInfo.pageSize})}">Last</a>
+</div>
+```
+
+### 5. **정리**
+
+- **Controller**에서 `PageHelper.startPage()`로 페이징을 설정하고, `Mapper`에서 쿼리를 실행하여 데이터를 가져옵니다.
+- **Mapper XML**에서 MyBatis 쿼리를 작성하고, `selectAll()` 메서드를 통해 데이터를 가져옵니다.
+- `PageHelper`는 쿼리 결과를 자동으로 페이징 처리합니다.
+- `Model`을 통해 `PageInfo` 객체를 View로 전달하고, View에서 이를 사용하여 페이지네이션을 구현합니다.
+
+이 방법으로 **MyBatis XML**을 사용하여 페이지네이션을 구현할 수 있습니다.
