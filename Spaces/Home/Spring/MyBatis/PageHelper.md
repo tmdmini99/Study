@@ -13,6 +13,36 @@
 </dependency>
 ```
 
+mybatis-config.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>  
+    <settings>  
+        <setting name="mapUnderscoreToCamelCase" value="true" />  
+        <setting name="jdbcTypeForNull" value="NULL" />  
+    </settings>  
+    <plugins>  
+            <plugin interceptor="com.github.pagehelper.PageInterceptor">  
+                <property name="helperDialect" value="postgresql" />  
+            </plugin>  
+        </plugins>  
+</configuration>
+```
+
+
+```xml
+<plugins>  
+    <plugin interceptor="com.github.pagehelper.PageInterceptor">  
+        <property name="helperDialect" value="postgresql" />  
+    </plugin>  
+</plugins>
+```
+
+이런식으로 추가 해줘야함
+
+
 
 Gradle 의존성 추가 (build.gradle)
 
