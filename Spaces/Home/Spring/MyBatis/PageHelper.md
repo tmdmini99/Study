@@ -220,6 +220,14 @@ public class ProductController {
 ```
 
 
+이것도 없어도 됨(java로 mapper 구현했을때만 필요)
+```java
+@Autowired
+    private ProductMapper productMapper; // ProductMapper를 주입받습니다.
+```
+
+
+
 ### 2. **MyBatis Mapper XML**
 
 이제 실제 데이터베이스 쿼리를 XML 파일로 작성합니다. `PageHelper`는 쿼리 결과를 자동으로 페이징 처리해주므로, `PageHelper.startPage()`를 호출한 후에는 MyBatis XML에서 정의된 쿼리를 그대로 실행합니다.
@@ -279,6 +287,14 @@ public interface ProductMapper {
 </configuration>
 ```
 
+
+```xml
+<!-- Mapper 파일 위치 -->
+    <mappers>
+        <mapper resource="com/example/mapper/ProductMapper.xml"/>
+    </mappers>
+```
+이거 없어도 됨
 
 ### 4. **View에서 페이징 정보 사용 (JSP 또는 Thymeleaf)**
 
@@ -358,3 +374,87 @@ Controller에서 전달한 `PageInfo` 객체를 **View**에서 사용하여 페�
 - `Model`을 통해 `PageInfo` 객체를 View로 전달하고, View에서 이를 사용하여 페이지네이션을 구현합니다.
 
 이 방법으로 **MyBatis XML**을 사용하여 페이지네이션을 구현할 수 있습니다.
+
+
+
+controller
+```java
+package com.kwm.web.board.controller;  
+  
+  
+import com.github.pagehelper.PageHelper;  
+import com.github.pagehelper.PageInfo;  
+import com.kwm.web.board.service.KWM3300Service;  
+import com.kwm.web.board.vo.KWM3300Vo;  
+import com.kwm.web.common.vo.BasicParamVo;  
+  
+  
+  
+import lombok.RequiredArgsConstructor;  
+import lombok.extern.log4j.Log4j2;  
+import org.springframework.stereotype.Controller;  
+import org.springframework.ui.Model;  
+import org.springframework.web.bind.annotation.ModelAttribute;  
+import org.springframework.web.bind.annotation.RequestMapping;  
+  
+import javax.servlet.http.HttpServletRequest;  
+import java.util.List;  
+  
+@Log4j2  
+@Controller  
+@RequiredArgsConstructor  
+@RequestMapping("/board")  
+public class KWM3300Controller {  
+    private final KWM3300Service service;  
+  
+  
+    @RequestMapping("/3300")  
+    public String getKWM3300List(@ModelAttribute("BasicParamVo")BasicParamVo paramVo, Model model){  
+        log.info("KWM3300 ::: " + paramVo);  
+        PageHelper.startPage(1, paramVo.getSc_PAGE_SIZE());  
+        List<KWM3300Vo> list = (List<KWM3300Vo>) service.selectList(paramVo);  
+        PageInfo<KWM3300Vo> pageInfo = new PageInfo<>(list);  // PageInfo 객체 생성  
+        if(paramVo.getSc_ID() == null){  
+            paramVo.setSc_ID(list.get(0).getId());  
+        }  
+        model.addAttribute("list", list);  
+        paramVo.setSc_ID((String) getKWM3300Detail(paramVo, model ,null));  
+        log.error(paramVo.getSc_ID());  
+        model.addAttribute("BasicParamVo", paramVo);  
+        model.addAttribute("pageInfo", pageInfo);  // 페이징 정보 추가  
+  
+        return "/board/KWM3300";  
+    }  
+    @RequestMapping("/3300Detail")  
+    public Object getKWM3300Detail(@ModelAttribute("BasicParamVo")BasicParamVo paramVo, Model model, HttpServletRequest request){  
+        log.info("KWM3300Detail ::: " + paramVo);  
+        KWM3300Vo data = (KWM3300Vo) service.selectOne(paramVo);  
+        model.addAttribute("data", data);  
+        model.addAttribute("BasicParamVo", paramVo);  
+        if (request != null) {  
+            String requestedWith = request.getHeader("X-Requested-With");  
+            if ("XMLHttpRequest".equals(requestedWith)) {  
+                return "/board/KWM3300";  
+            }  
+        }  
+        return paramVo.getSc_ID();  
+    }  
+}
+```
+
+list를 선언하기 전에 `PageHelper.startPage(1, paramVo.getSc_PAGE_SIZE());`를 사용
+그 이후 `PageInfo<KWM3300Vo> pageInfo = new PageInfo<>(list);  // PageInfo 객체 생성  `
+하고 `model.addAttribute("pageInfo", pageInfo);  // 페이징 정보 추가 ` 
+
+
+
+데이터 
+```json
+PageInfo {
+    pageNum = 1, pageSize = 5, size = 3, startRow = 1, endRow = 3, total = 3, pages = 1, list = Page {
+        count = true, pageNum = 1, pageSize = 5, startRow = 0, endRow = 5, total = 3, pages = 1, reasonable = false, pageSizeZero = false
+    } [KWM3300Vo(id = 3, userId = null, title = 서비스 이용 요금, contents = 서비스 이용 요금은 무료이며, 일부 프리미엄 서비스는 유료로 제공됩니다., regDt = 2024 - 12 - 04 12: 25: 46.177555, uptDt = null, url = null, seq = 1), KWM3300Vo(id = 2, userId = null, title = 비밀번호를 잊어버렸어요, contents = 비밀번호를 잊으셨다면, "비밀번호 찾기"
+        기능을 이용하여 이메일로 재설정 링크를 받으세요., regDt = 2024 - 12 - 04 12: 25: 44.593955, uptDt = null, url = null, seq = 2), KWM3300Vo(id = 1, userId = null, title = 회원가입 방법, contents = 회원가입은 홈페이지 상단의 "회원가입"
+        버튼을 클릭하여 필요한 정보를 입력하면 완료됩니다., regDt = 2024 - 12 - 04 12: 25: 38.571014, uptDt = null, url = null, seq = 3)], prePage = 0, nextPage = 0, isFirstPage = true, isLastPage = true, hasPreviousPage = false, hasNextPage = false, navigatePages = 8, navigateFirstPage = 1, navigateLastPage = 1, navigatepageNums = [1]
+}
+```
