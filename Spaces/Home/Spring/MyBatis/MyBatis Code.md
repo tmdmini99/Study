@@ -59,19 +59,45 @@ public class BasicCUDParamVo {
 
 
 Mapper XML에서 `parameterType="map"` 사용
-```java
+```xml
 <insert id="insert" parameterType="map">
     INSERT INTO board_notice (user_id, title, contents, category_id, url, file_id)
     VALUES (#{user_id}, #{title}, #{contents}, #{category_id}, #{url}, #{file_id})
 </insert>
 ```
 
-
+Java 코드에서 VO 객체를 전달
 ```java
+BasicCUDParamVo paramVo = new BasicCUDParamVo();
+paramVo.setUserId("user123");
+paramVo.setTitle("New Title");
+paramVo.setContents("This is the content.");
+paramVo.setCategoryId("cat001");
+paramVo.setUrl("http://example.com");
+paramVo.setFileId("file123");
 
+int result = sqlSession.insert("KWM3100Mapper.insert", paramVo);
 ```
 
 
-```java
 
+### 자동 변환 과정:
+
+- MyBatis는 `paramVo` 객체를 **리플렉션을 통해** 분석하여 각 필드 값을 `Map`으로 변환합니다.
+    
+    - 예를 들어 `paramVo.getUserId()` 메서드를 호출하여 `"user123"` 값을 추출하고, 이를 `Map<String, Object>` 형태로 추가합니다.
+    - 변환된 `Map`은 SQL 쿼리에서 `#{user_id}`, `#{title}` 등의 바인딩 변수에 전달됩니다.
+
+```java
+Map<String, Object> paramMap = new HashMap<>();
+paramMap.put("user_id", "user123");
+paramMap.put("title", "New Title");
+paramMap.put("contents", "This is the content.");
+paramMap.put("category_id", "cat001");
+paramMap.put("url", "http://example.com");
+paramMap.put("file_id", "file123");
 ```
+
+
+- **자동으로 변환됩니다**. MyBatis는 `parameterType="map"`으로 설정된 경우, Java 객체를 **자동으로 `Map`으로 변환**하여 SQL 쿼리와 매핑합니다.
+- 그래서 **`BasicCUDParamVo`와 같은 객체를** 직접 전달해도 MyBatis는 내부적으로 **리플렉션을 통해 자동으로 `Map`으로 변환**하여 처리합니다.
