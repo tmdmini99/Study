@@ -175,3 +175,123 @@ public class KWM3100Controller {
 }
 ```
 
+
+
+`MultipartHttpServletRequest`는 **파일 업로드**를 다루기 위한 스프링에서 제공하는 **인터페이스**입니다. 이 인터페이스는 **HTTP 요청**이 파일을 포함한 **멀티파트(multipart)** 데이터로 전송될 때 사용됩니다. 파일 업로드를 처리하는 데 특화된 메서드를 제공하여, 클라이언트로부터 전송된 파일 데이터를 쉽게 처리할 수 있도록 도와줍니다.
+
+### 멀티파트 요청이란?
+
+웹 애플리케이션에서 파일 업로드 시, 일반적인 HTTP 요청은 `application/x-www-form-urlencoded` 형태로 전송됩니다. 그러나 파일과 같은 바이너리 데이터를 포함한 HTTP 요청은 `multipart/form-data` 형태로 전송됩니다. 이 형식은 파일뿐만 아니라 텍스트 데이터도 함께 전송할 수 있게 해줍니다.
+
+`MultipartHttpServletRequest`는 `HttpServletRequest`의 확장 인터페이스로, **멀티파트 형식으로 전송된 HTTP 요청**을 처리할 수 있도록 도와줍니다. 예를 들어, 파일을 포함한 HTML 폼 데이터를 서버로 전송할 때 이 인터페이스를 사용하여 전송된 파일과 데이터를 쉽게 접근하고 처리할 수 있습니다.
+
+### `MultipartHttpServletRequest`의 주요 메서드
+
+`MultipartHttpServletRequest`는 기본 `HttpServletRequest`를 확장하여 멀티파트 요청을 처리하는 몇 가지 유용한 메서드를 제공합니다. 주요 메서드는 다음과 같습니다:
+
+1. **`getFile(String name)`**:
+    
+    - 요청에서 특정 **파일**을 가져옵니다.
+    - `name`은 `<input type="file" name="name">` 태그에서 설정한 파일 필드의 이름입니다.
+    - 반환 타입은 `MultipartFile`로, 실제 파일을 처리할 수 있는 메서드들을 제공합니다.
+    
+    예:
+
+```java
+MultipartFile file = request.getFile("file");
+```
+
+
+**`getFiles(String name)`**:
+
+- 요청에서 **여러 파일**을 가져옵니다. 같은 이름의 파일이 여러 개 전송된 경우, 이를 모두 가져올 수 있습니다.
+- 반환 값은 `List<MultipartFile>`입니다.
+
+예:
+
+
+```java
+List<MultipartFile> files = request.getFiles("files");
+```
+
+
+
+**`getParameter(String name)`**:
+
+- 일반적인 HTTP 요청 파라미터를 가져옵니다. 파일과 텍스트 데이터가 혼합된 멀티파트 요청에서 사용합니다.
+
+예:
+
+
+```java
+String title = request.getParameter("title");
+```
+
+
+**`getParameterMap()`**:
+
+- 요청에 포함된 모든 파라미터를 **맵** 형태로 반환합니다.
+
+예:
+
+```java
+Map<String, String[]> parameterMap = request.getParameterMap();
+```
+
+
+### `MultipartHttpServletRequest` 사용 예시
+
+보통 `MultipartHttpServletRequest`는 파일 업로드가 필요한 컨트롤러에서 사용됩니다. 스프링에서는 `@RequestMapping` 또는 `@PostMapping` 등을 사용하여, 요청을 처리할 수 있습니다.
+
+
+```java
+@Controller
+public class FileUploadController {
+
+    @PostMapping("/upload")
+    public String handleFileUpload(MultipartHttpServletRequest request) {
+        // 요청에서 파일 가져오기
+        MultipartFile file = request.getFile("file");
+        
+        // 파일이 존재하는 경우 처리
+        if (file != null && !file.isEmpty()) {
+            String fileName = file.getOriginalFilename();
+            // 파일 저장 로직 처리
+            try {
+                file.transferTo(new File("/path/to/directory/" + fileName));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        // 기타 파라미터 가져오기
+        String title = request.getParameter("title");
+        
+        // 처리 후 리턴
+        return "fileUploadSuccess";
+    }
+}
+```
+
+### `MultipartHttpServletRequest`와 `HttpServletRequest` 차이점
+
+- **`HttpServletRequest`**: 기본적인 HTTP 요청 정보를 담고 있는 인터페이스로, 파일이 포함된 요청을 다룰 수 없습니다.
+    
+- **`MultipartHttpServletRequest`**: `HttpServletRequest`를 확장한 인터페이스로, 멀티파트 형식의 요청을 처리하는 데 특화된 메서드(`getFile`, `getFiles` 등)를 제공합니다.
+    
+
+### 스프링에서 멀티파트 요청 설정
+
+멀티파트 파일 업로드 기능을 사용하려면, **스프링 설정**에서 멀티파트 업로드 기능을 활성화해야 합니다. 이를 위해 `application.properties` 또는 `application.yml` 파일에서 멀티파트 설정을 해야 합니다.
+
+**`application.properties` 예시**:
+
+```properties
+# 멀티파트 파일 업로드 설정
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=2MB
+spring.servlet.multipart.max-request-size=2MB
+```
+
+
+
