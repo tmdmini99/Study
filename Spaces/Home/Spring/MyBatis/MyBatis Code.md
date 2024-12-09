@@ -28,3 +28,50 @@ sqlSession.insert("namespace.insertCategory", param);
 Integer generatedId = (Integer) param.get("id");
 System.out.println("Generated ID: " + generatedId);
 ```
+
+
+
+## parameterType="map"
+
+
+MyBatis에서는 `parameterType="map"`을 사용하면, **자동으로** 객체를 `Map`으로 변환하여 SQL 쿼리와 매핑해줍니다.
+
+### 왜 자동으로 변환되냐면?
+
+MyBatis는 **객체(VO)를 `Map`으로 변환**하는 기능을 내장하고 있습니다. 기본적으로 MyBatis는 **Java 객체의 필드**와 **SQL 쿼리에서 사용하는 변수**를 매핑할 때, **리플렉션**을 사용해서 객체의 값을 `Map` 형태로 추출합니다. 그래서 특별한 설정 없이 `parameterType="map"`을 사용하면, MyBatis가 **자동으로 객체의 필드 값을 `Map`으로 추출하여** 쿼리에서 사용하는 변수로 바인딩합니다.
+
+### 예시:
+
+1. **Java 객체 (VO)**
+
+```java
+public class BasicCUDParamVo {
+    private String userId;
+    private String title;
+    private String contents;
+    private String categoryId;
+    private String url;
+    private String fileId;
+
+    // getters and setters
+}
+```
+
+
+Mapper XML에서 `parameterType="map"` 사용
+```java
+<insert id="insert" parameterType="map">
+    INSERT INTO board_notice (user_id, title, contents, category_id, url, file_id)
+    VALUES (#{user_id}, #{title}, #{contents}, #{category_id}, #{url}, #{file_id})
+</insert>
+```
+
+
+```java
+
+```
+
+
+```java
+
+```
