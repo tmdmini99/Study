@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Controller/Controller.md",
+                "file": "Spaces/Home/Java Script/Java Script/library.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller"
+              "title": "library"
             }
           },
           {
@@ -225,6 +225,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Controller/Controller.md",
+    "Spaces/Home/Java Script/Java Script/library.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
@@ -233,8 +235,6 @@
     "Spaces/Home/Spring/MyBatis/PageHelper.md",
     "daily note/2024/12/2024-12-05.md",
     "Spaces/Home/Spring/MyBatis/PageHelper",
-    "Spaces/Home/Java/Controller/Controller.md",
-    "Spaces/Home/Java/Controller/Controller.md",
     "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/Controller",
     "Spaces/Home/Java/Optional.md",
@@ -255,7 +255,6 @@
     "Spaces/Home/SPA/SPA.md",
     "Spaces/Home/Spring/Spring Legacy/Maven/security-context.xml.md",
     "Spaces/Home/Spring/Spring Legacy/Security/Security.md",
-    "Spaces/Home/Spring/Security.md",
     "Images/Pasted image 20241121093519.png",
     "Images/SPA5.jpg",
     "Images/SPA4.jpg",
