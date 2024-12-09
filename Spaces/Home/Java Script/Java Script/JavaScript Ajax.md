@@ -269,3 +269,93 @@ $(document).ready(function() {
 });  
 });
 ```
+
+
+request.ajax 사용
+```js
+// request.js 파일에서 공통 AJAX 요청 처리  
+var request = {  
+    ajax: function(url, method, data, successCallback, errorCallback) {  
+        $.ajax({  
+            url: url,           // 요청할 URL            method: method,     // GET, POST, PUT, DELETE 등  
+            data: data,         // 요청할 데이터  
+            success: function(response) {  
+                if (successCallback) {  
+                    successCallback(response);  
+                }  
+            },  
+            error: function(xhr, status, error) {  
+                if (errorCallback) {  
+                    errorCallback(xhr, status, error);  
+                }  
+            }  
+        });  
+    }  
+};
+```
+
+
+
+
+```js
+function changePage(pageNum) {  
+    // 현재 URL에서 경로만 추출  
+    var url = window.location.href + "Category";  
+    // AJAX 요청  
+    request.ajax(url, 'GET', { sc_PAGE_NUM: pageNum }, function(response) {  
+        var categoryData = response.categoryList;  
+        var categoryPageInfo = response.categoryPageInfo;  
+  
+        // 테이블 내용 비우기  
+        $('#categoryData').empty();  
+  
+        // 카테고리 데이터 테이블 생성  
+        categoryData.forEach(function(item, index) {  
+            var $row = $('<tr>');  
+            $row.append($('<td>').text(index + 1)); // 번호  
+            $row.append($('<td>').text(item.krName || 'N/A')); // 국문 이름  
+            $row.append($('<td>').text(item.enName || 'N/A')); // 영문 이름  
+            var $actionsTd = $('<td>');  
+            $actionsTd.append($('<button>').text('수정').attr('onclick', 'editCategory(' + item.id + ')'));  
+            $actionsTd.append($('<button>').text('삭제').attr('onclick', 'deleteCategory(' + item.id + ')'));  
+            $row.append($actionsTd);  
+            $('#categoryData').append($row);  
+        });  
+  
+        // 페이징 처리  
+        var $pagination = $('.pagination');  
+        $pagination.empty();  
+  
+        // 이전 페이지 버튼  
+        var prevDisabled = categoryPageInfo.hasPreviousPage ? '' : 'disabled';  
+        $pagination.append(  
+            $('<li>').addClass('page-item ' + prevDisabled)  
+                .append($('<a>').addClass('page-link')  
+                    .attr('href', 'javascript:void(0);')  
+                    .attr('onclick', 'changePage(' + categoryPageInfo.prePage + ')')  
+                    .html('&laquo;')));  
+  
+        // 페이지 번호들  
+        categoryPageInfo.navigatepageNums.forEach(function(pageNum) {  
+            var activeClass = categoryPageInfo.pageNum === pageNum ? 'active' : '';  
+            $pagination.append(  
+                $('<li>').addClass('page-item ' + activeClass)  
+                    .append($('<a>').addClass('page-link')  
+                        .attr('href', 'javascript:void(0);')  
+                        .attr('onclick', 'changePage(' + pageNum + ')')  
+                        .text(pageNum)));  
+        });  
+  
+        // 다음 페이지 버튼  
+        var nextDisabled = categoryPageInfo.hasNextPage ? '' : 'disabled';  
+        $pagination.append(  
+            $('<li>').addClass('page-item ' + nextDisabled)  
+                .append($('<a>').addClass('page-link')  
+                    .attr('href', 'javascript:void(0);')  
+                    .attr('onclick', 'changePage(' + categoryPageInfo.nextPage + ')')  
+                    .html('&raquo;')));  
+    }, function(xhr, status, error) {  
+        console.error("Error fetching category data: ", error);  
+    });  
+}
+```
