@@ -453,3 +453,65 @@ public Map<String, Object> getKWM3100CategoryList(@ModelAttribute("BasicParamVo"
 
 ResponseBody로 보냄
 
+
+
+
+
+만들어둔 request.ajax await 사용
+
+```js
+$('#addNewBtn').click(async function() {  
+  
+    var url = window.location.href + "Category";  
+    var selectHTML = '<select id="category_id" class="form-control">';  
+    // AJAX 요청  
+    async function fetchCategoryData() {  
+        const url = window.location.href + "Category";  
+  
+        // Promise로 감싸서 비동기 처리  
+        return new Promise((resolve, reject) => {  
+            request.ajax(url, 'GET', null, function(response) {  
+                if (response && response.categoryList) {  
+                    resolve(response.categoryList);  // 성공 시 resolve                } else {  
+                    reject('No category data received');  // 실패 시 reject                }  
+            });  
+        });  
+    }  
+    const category = await fetchCategoryData();  // await로 비동기 처리  
+    selectHTML += '<option value="" disabled selected>카테고리를 선택하세요</option>';  
+  
+   for (let i = 0; i < category.length; i++) {  
+       selectHTML += `<option value="`+category[i].id+`">`+category[i].krName+`</option>`;  
+   }  
+    selectHTML += '</select>';  
+    console.log(category);  
+
+});
+```
+
+만들어둔  request.ajax를 aync function으로 변경
+```js
+async function fetchCategoryData() {  
+        const url = window.location.href + "Category";  
+  
+        // Promise로 감싸서 비동기 처리  
+        return new Promise((resolve, reject) => {  
+            request.ajax(url, 'GET', null, function(response) {  
+                if (response && response.categoryList) {  
+                    resolve(response.categoryList);  // 성공 시 resolve                } else {  
+                    reject('No category data received');  // 실패 시 reject                }  
+            });  
+        });  
+    } 
+    
+```
+
+awit 써서  변수에 저장
+```js
+const category = await fetchCategoryData();  // await로 비동기 처리  
+```
+
+이때 await 쓰는 부모도 aync로 선언해야함
+```js
+$('#addNewBtn').click(async function() {  })
+```
