@@ -359,3 +359,97 @@ function changePage(pageNum) {
     });  
 }
 ```
+
+
+
+ajax로 response 처리 위 코드 활용
+
+```js
+request.ajax(url, 'GET', { sc_PAGE_NUM: pageNum }, function(response) {  
+        var categoryData = response.categoryList;  
+        var categoryPageInfo = response.categoryPageInfo;  
+  
+        // 테이블 내용 비우기  
+        $('#categoryData').empty();  
+  
+        // 카테고리 데이터 테이블 생성  
+        categoryData.forEach(function(item, index) {  
+            var $row = $('<tr>');  
+            $row.append($('<td>').text(index + 1)); // 번호  
+            $row.append($('<td>').text(item.krName || 'N/A')); // 국문 이름  
+            $row.append($('<td>').text(item.enName || 'N/A')); // 영문 이름  
+            var $actionsTd = $('<td>');  
+            $actionsTd.append($('<button>').text('수정').attr('onclick', 'editCategory(' + item.id + ')'));  
+            $actionsTd.append($('<button>').text('삭제').attr('onclick', 'deleteCategory(' + item.id + ')'));  
+            $row.append($actionsTd);  
+            $('#categoryData').append($row);  
+        });  
+  
+        // 페이징 처리  
+        var $pagination = $('.pagination');  
+        $pagination.empty();  
+  
+        // 이전 페이지 버튼  
+        var prevDisabled = categoryPageInfo.hasPreviousPage ? '' : 'disabled';  
+        $pagination.append(  
+            $('<li>').addClass('page-item ' + prevDisabled)  
+                .append($('<a>').addClass('page-link')  
+                    .attr('href', 'javascript:void(0);')  
+                    .attr('onclick', 'changePage(' + categoryPageInfo.prePage + ')')  
+                    .html('&laquo;')));  
+  
+        // 페이지 번호들  
+        categoryPageInfo.navigatepageNums.forEach(function(pageNum) {  
+            var activeClass = categoryPageInfo.pageNum === pageNum ? 'active' : '';  
+            $pagination.append(  
+                $('<li>').addClass('page-item ' + activeClass)  
+                    .append($('<a>').addClass('page-link')  
+                        .attr('href', 'javascript:void(0);')  
+                        .attr('onclick', 'changePage(' + pageNum + ')')  
+                        .text(pageNum)));  
+        });  
+  
+        // 다음 페이지 버튼  
+        var nextDisabled = categoryPageInfo.hasNextPage ? '' : 'disabled';  
+        $pagination.append(  
+            $('<li>').addClass('page-item ' + nextDisabled)  
+                .append($('<a>').addClass('page-link')  
+                    .attr('href', 'javascript:void(0);')  
+                    .attr('onclick', 'changePage(' + categoryPageInfo.nextPage + ')')  
+                    .html('&raquo;')));  
+    }, function(xhr, status, error) {  
+        console.error("Error fetching category data: ", error);  
+    });  
+```
+
+여기서 입력
+
+```js
+var categoryData = response.categoryList;  
+var categoryPageInfo = response.categoryPageInfo;  
+```
+
+controller
+```java
+@RequestMapping("/3100Category")  
+@ResponseBody  
+public Map<String, Object> getKWM3100CategoryList(@ModelAttribute("BasicParamVo")BasicParamVo paramVo){  
+    log.info("KWM3100Category ::: " + paramVo);  
+    Map<String, Object> response = new HashMap<>();  
+    if (paramVo.getSc_ID() == null){  
+        List<KWM3100CategoryVo> list = (List<KWM3100CategoryVo>) service.selectCategory(paramVo);  
+        response.put("categoryList", list);  
+    }else{  
+        PageHelper.startPage(paramVo.getSc_PAGE_NUM(), paramVo.getSc_PAGE_SIZE());  
+        List<KWM3100CategoryVo> list = (List<KWM3100CategoryVo>) service.selectCategory(paramVo);  
+        PageInfo<KWM3100CategoryVo> pageInfo = new PageInfo<>(list);  // PageInfo 객체 생성  
+  
+        response.put("categoryList", list);  
+        response.put("categoryPageInfo", pageInfo);  // 페이징 정보 포함  
+    }  
+    return response;  // 이 객체가 JSON으로 반환됨  
+}
+```
+
+ResponseBody로 보냄
+
