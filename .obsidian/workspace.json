@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/12/2024-12-10.md",
+                "file": "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-12-10"
+              "title": "JavaScript Ajax"
             }
           },
           {
@@ -103,18 +103,6 @@
             }
           },
           {
-            "id": "9f81b48d6de6049a",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "e2e59503979608a0",
             "type": "leaf",
             "state": {
@@ -124,8 +112,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -238,8 +225,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "daily note/2024/12/2024-12-10.md",
+    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",

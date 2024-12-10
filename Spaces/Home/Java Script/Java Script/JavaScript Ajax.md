@@ -515,3 +515,79 @@ const category = await fetchCategoryData();  // await로 비동기 처리
 ```js
 $('#addNewBtn').click(async function() {  })
 ```
+
+
+
+## `requestDetail()` 함수
+
+
+```js
+// AJAX 요청을 위한 함수 정의
+function requestDetail(detailUrl, data, successCallback, errorCallback) {
+    $.ajax({
+        url: detailUrl,
+        method: 'GET',
+        data: data,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Content-Type': 'application/json'
+        },
+        success: function(data) {
+            if (successCallback) successCallback(data);
+        },
+        error: function(xhr, status, error) {
+            if (errorCallback) errorCallback(xhr, status, error);
+        }
+    });
+}
+```
+
+
+#### 장점:
+
+- **간단하고 직관적**입니다. 한 번 호출할 때 필요한 URL, 데이터, 콜백만 전달하면 되므로 코드가 간결합니다.
+- **함수형 프로그래밍**의 장점으로, 함수 하나로 특정 작업을 처리하는 방식입니다.
+- **상태 관리**가 필요 없으며, 독립적으로 동작합니다.
+
+#### 단점:
+
+- **확장성 부족**: 기능이 확장되거나 코드가 커질 경우, `requestDetail()` 함수 내에서 관리해야 할 내용이 많아져서 함수가 복잡해질 수 있습니다. 예를 들어, 추가적인 설정이나 여러 메서드를 처리해야 할 때 관리가 어려워질 수 있습니다.
+- **기능 분리가 어려운 경우**: 여러 기능을 추가할 경우, `requestDetail` 함수가 너무 많은 책임을 가질 수 있습니다.
+
+
+
+2. **객체를 이용한 방식 (`requestDetail.ajax()` 형태)**
+
+```js
+var requestDetail = {
+    ajax: function(detailUrl, data, successCallback, errorCallback) {
+        $.ajax({
+            url: detailUrl,
+            method: 'GET',
+            data: data,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json'
+            },
+            success: function(responseData) {
+                if (successCallback) successCallback(responseData);
+            },
+            error: function(xhr, status, error) {
+                if (errorCallback) errorCallback(xhr, status, error);
+            }
+        });
+    }
+};
+```
+
+
+#### 장점:
+
+- **확장성**: `requestDetail` 객체 내에서 여러 메서드를 관리할 수 있으므로 기능을 추가하거나 수정할 때 유리합니다. 예를 들어, 다른 종류의 HTTP 요청(POST, PUT 등)을 처리하는 `post()`, `put()` 메서드를 추가할 수 있습니다.
+- **구조적이고 명확한 책임 분리**: 메서드가 객체 내부에서 관리되므로 코드가 구조적으로 분리되어 유지보수가 쉬워집니다.
+- **모듈화**: 객체를 사용하여 관련된 기능을 묶어서 관리할 수 있으므로, 향후 다른 코드에서 재사용하기가 용이합니다.
+
+#### 단점:
+
+- **구조가 복잡해짐**: 객체를 사용함에 따라 코드가 다소 복잡해질 수 있습니다. 특히 간단한 용도로 사용하는 경우에는 불필요한 구조일 수 있습니다.
+- **이해도가 떨어질 수 있음**: `requestDetail.ajax()`처럼 메서드를 객체 내부에서 호출하는 방식은 함수형 방식보다 조금 더 복잡하게 보일 수 있습니다.
