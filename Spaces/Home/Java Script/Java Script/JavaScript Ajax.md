@@ -591,3 +591,85 @@ var requestDetail = {
 
 - **구조가 복잡해짐**: 객체를 사용함에 따라 코드가 다소 복잡해질 수 있습니다. 특히 간단한 용도로 사용하는 경우에는 불필요한 구조일 수 있습니다.
 - **이해도가 떨어질 수 있음**: `requestDetail.ajax()`처럼 메서드를 객체 내부에서 호출하는 방식은 함수형 방식보다 조금 더 복잡하게 보일 수 있습니다.
+
+
+
+
+
+Promise와 콜백을 동시에 지원하는 코드:
+
+```js
+var requestDetail = {
+    ajax: function(detailUrl, data, successCallback, errorCallback) {
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                url: detailUrl,  // 요청 URL
+                method: 'GET',  // GET 방식으로 요청
+                data: data,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',  // AJAX 요청을 알리기 위한 헤더
+                    'Content-Type': 'application/json'     // 요청 본문 데이터 형식을 JSON으로 설정
+                },
+                success: function(responseData) {
+                    if (successCallback) successCallback(responseData); // 성공 콜백
+                    resolve(responseData);  // Promise 성공
+                },
+                error: function(xhr, status, error) {
+                    if (errorCallback) errorCallback(xhr, status, error); // 실패 콜백
+                    reject(error);  // Promise 실패
+                }
+            });
+        });
+    }
+};
+
+```
+
+
+
+1. **콜백 기반 사용**:
+
+```js
+requestDetail.ajax(
+    detailUrl,
+    data,
+    function (data) { // 성공 콜백
+        console.log(data);  // 서버에서 받은 데이터 확인
+        var tbody = $('table tbody[data-detail]');
+        console.log(tbody);
+
+        var newDocument = $.parseHTML(data);
+        var newContent = $(newDocument).find('table tbody[data-detail]');
+        console.log(newContent);
+
+        tbody.html(newContent.html());
+        var sc_ID = $('#sc_ID');
+    },
+    function (xhr, status, error) { // 실패 콜백
+        console.error("Error fetching category data:", error);
+    }
+);
+```
+
+
+2. **`async/await` 기반 사용**:
+
+```js
+$(document).on('click', '#editButton', async function () {
+    var rowId = $(this).closest('tbody').data("detail");
+    var currentUrl = window.location.pathname;
+    var detailUrl = currentUrl + 'Detail';
+    var data = { sc_ID: rowId };
+
+    try {
+        const response = await requestDetail.ajax(detailUrl, data);
+        console.log(response); // 응답 데이터 처리
+    } catch (error) {
+        console.error("Error fetching category data:", error);
+    }
+});
+```
+
+
+- `requestDetail.ajax`가 Promise를 반환하면서도 **성공/실패 콜백**을 그대로 지원하므로 기존의 방식도 사용할 수 있습니다.
+- `async/await` 방식은 콜백을 생략하고 바로 Promise를 활용하므로 코드가 깔끔해집니다.
