@@ -673,3 +673,163 @@ $(document).on('click', '#editButton', async function () {
 
 - `requestDetail.ajax`가 Promise를 반환하면서도 **성공/실패 콜백**을 그대로 지원하므로 기존의 방식도 사용할 수 있습니다.
 - `async/await` 방식은 콜백을 생략하고 바로 Promise를 활용하므로 코드가 깔끔해집니다.
+
+
+
+## beforeSend & headers
+
+- `beforeSend`는 요청을 보내기 전에 실행되며, `xhr` 객체를 이용해 동적으로 헤더나 다른 속성을 설정할 수 있습니다.
+- 주로 **CSRF 토큰**을 설정하거나 **동적으로** 헤더를 추가할 때 사용됩니다.
+- 비동기 요청에 대한 설정을 변경할 수 있는 시점을 제공합니다.
+
+
+### 2. `headers`:
+
+`headers`는 AJAX 요청을 정의할 때 요청을 보내기 전에 미리 정의된 HTTP 헤더를 설정하는 옵션입니다. `headers`는 `beforeSend`와 달리 한 번에 모든 헤더를 설정할 수 있으며, 이 방식은 요청이 시작될 때 자동으로 적용됩니다.
+
+
+### 차이점:
+
+| 특성             | `beforeSend`            | `headers`                                   |
+| -------------- | ----------------------- | ------------------------------------------- |
+| **사용 시점**      | 요청이 서버로 전송되기 전에 설정      | 요청을 보내기 전에 한 번 설정                           |
+| **설정 방식**      | 동적으로 설정                 | 고정된 값으로 설정                                  |
+| **주로 사용되는 경우** | CSRF 토큰처럼 동적으로 설정해야 할 값 | `Content-Type`, `X-Requested-With`처럼 고정된 헤더 |
+| **유연성**        | 동적으로 값을 설정할 수 있음        | 미리 설정된 값을 사용                                |
+
+beforeSend
+
+```js
+$.ajax({
+    url: 'example.com',
+    method: 'POST',
+    data: { key: 'value' },
+    beforeSend: function(xhr) {
+        var csrfToken = $('#csrf').val();  // 페이지에 있는 hidden input에서 csrf token을 가져옵니다
+        xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);  // CSRF 토큰을 헤더에 추가
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+});
+```
+
+headers
+```js
+$.ajax({
+    url: 'example.com',
+    method: 'POST',
+    data: { key: 'value' },
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',  // AJAX 요청을 알리기 위한 헤더
+        'Content-Type': 'application/json'     // 요청 본문 데이터 형식을 JSON으로 설정
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+});
+
+```
+
+
+
+`beforeSend` 콜백을 `ajax` 함수 호출 시에 동적으로 전달
+
+```js
+var request = {
+    ajax: function(detailUrl, method, data, successCallback, errorCallback, beforeSendCallback) {
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                url: detailUrl,  // 요청 URL
+                method: method,     // GET, POST, PUT, DELETE 등
+                data: data,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',  // AJAX 요청을 알리기 위한 헤더
+                    'Content-Type': 'application/json'     // 요청 본문 데이터 형식을 JSON으로 설정
+                },
+                beforeSend: beforeSendCallback,  // 동적으로 beforeSend를 추가
+                success: function(responseData) {
+                    if (successCallback) successCallback(responseData); // 성공 콜백
+                    resolve(responseData);  // Promise 성공
+                },
+                error: function(xhr, status, error) {
+                    if (errorCallback) errorCallback(xhr, status, error); // 실패 콜백
+                    reject(error);  // Promise 실패
+                }
+            });
+        });
+    }
+};
+
+```
+
+
+
+```js
+// 사용 예시
+request.ajax(
+    '/your/api/endpoint',  // 요청 URL
+    'GET',  // HTTP 메소드
+    { someData: 'example' },  // 요청 데이터
+    function(response) {
+        console.log('Success:', response);
+    },
+    function(xhr, status, error) {
+        console.error('Error:', error);
+    },
+    function(xhr) {
+        // 이 콜백 함수는 요청 전 beforeSend로 실행됩니다.
+        var csrfToken = $('#csrf').val();  // 예시로 CSRF 토큰을 가져오는 코드
+        xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);  // 헤더에 CSRF 토큰을 추가
+    }
+);
+
+```
+
+
+
+`beforeSend` 콜백을 정의할 때, **`csrfToken`을 가져오는 코드가 필요 없으면 그냥 생략해도 됩니다**.
+
+```js
+
+// 예시 1: `beforeSend` 콜백 생략
+
+request.ajax(
+    '/your/api/endpoint',  // 요청 URL
+    'GET',  // HTTP 메소드
+    { someData: 'example' },  // 요청 데이터
+    function(response) {
+        console.log('Success:', response);
+    },
+    function(xhr, status, error) {
+        console.error('Error:', error);
+    }  // beforeSend를 사용하지 않으므로 생략
+);
+
+
+
+// ------------------------- 예시 2: 빈 `beforeSend` 콜백 전달
+
+request.ajax(
+    '/your/api/endpoint',  // 요청 URL
+    'GET',  // HTTP 메소드
+    { someData: 'example' },  // 요청 데이터
+    function(response) {
+        console.log('Success:', response);
+    },
+    function(xhr, status, error) {
+        console.error('Error:', error);
+    },
+    function(xhr) {
+        // beforeSend 콜백이 빈 함수라면, CSRF 토큰을 설정하지 않아도 됩니다
+    }
+);
+
+
+```
