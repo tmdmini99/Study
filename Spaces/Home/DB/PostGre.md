@@ -1678,5 +1678,70 @@ ELSE parent_id -- 자식 글은 부모의 id 기준으로 묶여 정렬
 END DESC
 ```
 
+
+
+이전행 반환
+```sql
+WITH CTE AS (
+    SELECT 
+        bn.*,
+        LAG(bn.id) OVER (ORDER BY bn.id) AS previous_id,
+        LAG(bn.title) OVER (ORDER BY bn.id) AS previous_title
+    FROM 
+        board_notice bn
+)
+SELECT *
+FROM CTE
+WHERE id = '24'::integer OR id = previous_id;
+```
+
+
+
+```sql
+SELECT 
+    bn.*,
+    LAG(bn.id) OVER (ORDER BY bn.id) AS previous_id,
+    LAG(bn.title) OVER (ORDER BY bn.id) AS previous_title
+FROM 
+    board_notice bn
+WHERE 
+    bn.id = '24'::integer;
+
+```
+
+
+
+```sql
+SELECT *
+FROM board_notice
+WHERE id = (
+    SELECT LAG(id) OVER (ORDER BY id)
+    FROM board_notice
+    WHERE id = '24'::integer
+);
+```
+
+
+- **`LAG` 함수**:
+    
+    - `LAG(column_name) OVER (ORDER BY column_name)`를 사용하여 이전 행의 값을 가져옵니다.
+    - 여기서는 `id`를 기준으로 이전 행의 `id`와 `title`을 가져옵니다.
+- **`OVER` 절**:
+    
+    - `ORDER BY bn.id`를 통해 `id` 순서대로 데이터를 정렬한 후 `LAG`가 이전 데이터를 가져올 수 있도록 설정합니다.
+
+
+```sql
+LAG(bn.id) OVER (ORDER BY bn.id) AS previous_id
+```
+
+
+```sql
+COALESCE(LAG(bn.id) OVER (ORDER BY bn.id), 0) AS previous_id
+```
+
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
