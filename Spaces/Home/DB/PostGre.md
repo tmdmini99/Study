@@ -1742,6 +1742,68 @@ COALESCE(LAG(bn.id) OVER (ORDER BY bn.id), 0) AS previous_id
 
 
 
+다음행 반환
+
+```sql
+LEAD(column_name, offset, default_value) 
+OVER (PARTITION BY partition_column ORDER BY order_column)
+```
+
+- **`column_name`**: 값을 가져올 대상 컬럼입니다.
+- **`offset`** _(옵션)_: 가져올 행의 상대적 위치를 설정합니다. 기본값은 1로, 바로 다음 행의 값을 반환합니다.
+- **`default_value`** _(옵션)_: 지정된 상대적 위치에 값이 없는 경우 반환할 기본값입니다.
+- **`OVER`**: 윈도우(집합) 및 정렬 기준을 지정합니다.
+    - **`PARTITION BY`**: 데이터를 파티션(그룹)으로 나눕니다.
+    - **`ORDER BY`**: 각 파티션 내에서 정렬 기준을 설정합니다.
+
+### **`LEAD` 예시**
+
+#### 1. 다음 행의 값을 가져오기
+
+```sql
+SELECT 
+    id, 
+    title, 
+    LEAD(title) OVER (ORDER BY id) AS next_title
+FROM 
+    board_notice;
+```
+
+- **결과**:
+    - 각 행에 대해 `next_title` 컬럼에 다음 행의 제목(`title`)이 표시됩니다.
+    - 마지막 행은 다음 행이 없으므로 `NULL`을 반환합니다.
+
+#### 2. 특정 파티션 내에서 다음 행 값 가져오기
+
+```sql
+SELECT 
+    category_id, 
+    id, 
+    title, 
+    LEAD(title) OVER (PARTITION BY category_id ORDER BY id) AS next_title
+FROM 
+    board_notice;
+```
+
+- **설명**:
+    - `category_id`를 기준으로 데이터를 그룹화한 뒤, 각 그룹 내에서 `id` 순으로 정렬하여 다음 행의 `title` 값을 가져옵니다.
+
+#### 3. `offset`과 `default_value` 사용
+```sql
+SELECT 
+    id, 
+    title, 
+    LEAD(title, 2, 'No Next') OVER (ORDER BY id) AS next_next_title
+FROM 
+    board_notice;
+```
+
+**설명**:
+
+- `offset`이 2로 설정되어 현재 행 기준 2번째 행의 `title` 값을 반환합니다.
+- 다음 행이 없으면 기본값 `'No Next'`를 반환합니다.
+
+
 
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
