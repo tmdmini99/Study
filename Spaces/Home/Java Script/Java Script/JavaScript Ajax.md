@@ -205,6 +205,15 @@ JSP 파일 내에서 JavaScript를 사용하는 경우에도, **AJAX로 JSP 파�
     
 - **직접 헤더 추가**  
     이미 코드에 다음과 같은 설정이 있다면:
+```js
+headers: {
+    'X-Requested-With': 'XMLHttpRequest'
+}
+```
+이 경우 AJAX 요청이 항상 `true`를 반환합니다.
+
+
+
 
 ```js
 $(document).ready(function() {  
