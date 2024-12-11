@@ -629,6 +629,8 @@ var requestDetail = {
                 url: detailUrl,  // 요청 URL
                 method: 'GET',  // GET 방식으로 요청
                 data: data,
+                contentType: false,  // 'multipart/form-data'는 자동으로 설정  
+				processData: false,  // jQuery가 데이터를 자동으로 처리하지 않도록 설정
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest',  // AJAX 요청을 알리기 위한 헤더
                     'Content-Type': 'application/json'     // 요청 본문 데이터 형식을 JSON으로 설정
@@ -648,6 +650,10 @@ var requestDetail = {
 
 ```
 
+
+```js
+
+```
 
 
 1. **콜백 기반 사용**:
