@@ -864,4 +864,122 @@ request.ajax(
 ```
 
 
+controller
+```java
+@RequestMapping("/3100CUD")  
+    @ResponseBody  
+    public Map<String, Object> getKWM3100CUD(@ModelAttribute("KWM3100CUDParamVo") KWM3100CUDParamVo paramVo, BindingResult bindingResult, MultipartHttpServletRequest request){  
+        log.info("3100CUD ::: " + paramVo);  
+        Map<String, Object> result = new HashMap<>();  
+        String deletedFileList = request.getParameter("deletedFileList");  
+        log.info("삭제된 파일 목록: " + deletedFileList);  
+        try{  
+//            validate(paramVo, bindingResult);  
+            result = service.performWorker(paramVo);  
+  
+            List<MultipartFile> files = request.getFiles("file");  
+            commonService.uploadFiles(request, paramVo,"board_notice", "id");  
+        }catch (Exception e){  
+            e.printStackTrace();  
+  
+            result.put("success", false);  
+            result.put("msg", e.getMessage());  
+        }  
+  
+        return result;  
+    }
+```
+
+
+ajax를 통해 컨트롤러로 `MultipartHttpServletRequest request`로 받으려면
+```java
+MultipartHttpServletRequest request
+```
+
+
+ajax
+```js
+$(document).on('click', '#deleteButton', function () {  
+  
+    if (confirm('정말 삭제하시겠습니까?')) {  
+        var url = window.location.href + "CUD";  
+        var rowId = $(this).closest('tbody').data("detail");  
+        var formData = new FormData();  
+        formData.append('id', rowId);  
+        formData.append('mode', "D");  
+        request.ajax(url,"POST",data, function (response) {  
+            if($("#preId")){  
+                $("#sc_ID").val($("#preId").val());  
+            }  
+            $('#search-form').submit();  
+  
+        }, function(xhr, status, error) {  
+              console.error("Error fetching delete data: ", error);  
+        },function(xhr) {  
+              // 이 콜백 함수는 요청 전 beforeSend로 실행됩니다.  
+              var csrfToken = $('#csrf').val();  // 예시로 CSRF 토큰을 가져오는 코드  
+              xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);  // 헤더에 CSRF 토큰을 추가  
+        });  
+  
+  }  
+});
+```
+
+이렇게 `var formData = new FormData();`로 선언해서 데이터를 보내줘야 한다
+
+
+### **FormData란?**
+
+`FormData`는 파일과 같은 바이너리 데이터를 포함한 양식 데이터를 쉽게 생성하고 전송할 수 있도록 도와주는 객체입니다. 브라우저가 이 객체를 사용해 데이터 경계를 정의하고, `multipart/form-data` 형식으로 전송하도록 자동으로 처리합니다.
+
+
+### **예시로 이해하기**
+
+#### 1. 일반 요청 (JSON 데이터)
+
+```js
+request.ajax(
+    '/api/data',
+    'POST',
+    { name: 'John', age: 30 },  // 일반 객체
+    function(response) { console.log('Success:', response); },
+    function(error) { console.error('Error:', error); }
+);
+```
+- **`data` 타입**: 일반 객체
+- **처리 방식**:
+    - `processData: true` (기본값): 데이터를 `key=value&key2=value2` 형식으로 URL 인코딩.
+    - `contentType: application/x-www-form-urlencoded; charset=UTF-8`.
+
+2. 파일 업로드 요청
+```js
+var formData = new FormData();
+formData.append('file', fileInput.files[0]);  // 파일 추가
+formData.append('userId', '123');
+
+request.ajax(
+    '/api/upload',
+    'POST',
+    formData,  // FormData 객체
+    function(response) { console.log('File uploaded:', response); },
+    function(error) { console.error('File upload error:', error); }
+);
+```
+
+- **`data` 타입**: `FormData` 객체
+- **처리 방식**:
+    - `processData: false`: 데이터를 변환하지 않음.
+    - `contentType: false`: 브라우저가 자동으로 `multipart/form-data`로 처리.
+
+### **문제가 되는 경우**
+
+`FormData` 여부를 확인하지 않고 잘못 설정하면 다음과 같은 문제가 발생할 수 있습니다:
+
+1. **파일 업로드 실패**:
+    
+    - `processData: true`로 설정되면, 브라우저가 파일 데이터를 문자열로 변환하려고 시도해 요청이 실패합니다.
+    - `contentType`을 수동으로 설정하면 경계 정보가 누락되어 서버에서 요청을 올바르게 처리하지 못합니다.
+2. **일반 데이터 처리 오류**:
+    
+    - `processData: false`로 설정하면, JSON 객체가 문자열로 변환되지 않아 서버가 요청 데이터를 인식하지 못합니다.
 
