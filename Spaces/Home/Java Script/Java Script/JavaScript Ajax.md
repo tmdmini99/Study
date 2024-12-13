@@ -983,3 +983,60 @@ request.ajax(
     
     - `processData: false`로 설정하면, JSON 객체가 문자열로 변환되지 않아 서버가 요청 데이터를 인식하지 못합니다.
 
+
+1. **`FormData`의 기본 동작**
+    
+    - `FormData.append()` 메서드는 모든 값을 문자열로 변환합니다. 따라서 `null`을 추가하면 `"null"` 문자열로 처리됩니다.
+2. **서버에서 `null` 문자열을 그대로 처리**
+    
+    - 서버 측에서 `"null"` 문자열을 별도로 처리하지 않으면, MyBatis로 `'null'`로 전달됩니다.
+
+
+### 해결 방법
+
+#### 1. **`FormData`에서 `null` 값 제거**
+
+`null` 값은 `FormData`에 추가하지 않도록 조건을 추가합니다.
+
+
+```js
+if (categoryId !== null) {
+    formData.append("categoryId", categoryId);
+}
+```
+
+#### 2. **서버에서 `"null"` 문자열 처리**
+
+서버에서 `"null"` 문자열을 `null`로 변환합니다.
+
+- **Java Controller 예제**
+
+```java
+if ("null".equals(categoryId)) {
+    categoryId = null;
+}
+```
+
+
+#### 3. **JavaScript 디버깅 추가**
+
+전송 전에 `FormData`의 내용을 확인하여 `categoryId`가 문자열 `"null"`로 처리되지 않는지 확인합니다.
+
+```js
+for (var pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]); // key: value 확인
+}
+```
+
+
+#### 4. **MyBatis에서 조건적으로 처리**
+
+MyBatis 쿼리에서 `categoryId`가 `null`인 경우를 명확히 처리합니다.
+
+- **MyBatis Mapper**:
+
+```xml
+<if test="categoryId != null">
+    AND category_id = #{categoryId}
+</if>
+```
