@@ -1433,6 +1433,145 @@ END$$
 DELIMITER ;
 ```
 
+insertm update 될때 자동으로 Y로 수정
+delete 될때 자동으로 N으로 수정
+```sql
+-- AFTER INSERT 트리거 함수
+
+CREATE OR REPLACE FUNCTION update_comment_exists_after_insert()
+
+RETURNS TRIGGER AS $$
+
+BEGIN
+
+-- Check if parent_id is not NULL
+
+IF NEW.parent_id IS NOT NULL THEN
+
+UPDATE board_qna
+
+SET comment_exists = 'Y'
+
+WHERE id = NEW.parent_id;
+
+END IF;
+
+RETURN NEW;
+
+END;
+
+$$ LANGUAGE plpgsql;
+
+  
+
+-- AFTER INSERT 트리거
+
+CREATE TRIGGER trigger_update_comment_exists_after_insert
+
+AFTER INSERT ON board_qna
+
+FOR EACH ROW
+
+EXECUTE FUNCTION update_comment_exists_after_insert();
+
+  
+
+-- AFTER UPDATE 트리거 함수
+
+CREATE OR REPLACE FUNCTION update_comment_exists_after_update()
+
+RETURNS TRIGGER AS $$
+
+BEGIN
+
+-- Check if parent_id is not NULL
+
+IF NEW.parent_id IS NOT NULL THEN
+
+UPDATE board_qna
+
+SET comment_exists = 'Y'
+
+WHERE id = NEW.parent_id;
+
+END IF;
+
+RETURN NEW;
+
+END;
+
+$$ LANGUAGE plpgsql;
+
+  
+
+-- AFTER UPDATE 트리거
+
+CREATE TRIGGER trigger_update_comment_exists_after_update
+
+AFTER UPDATE ON board_qna
+
+FOR EACH ROW
+
+EXECUTE FUNCTION update_comment_exists_after_update();
+
+  
+
+-- AFTER DELETE 트리거 함수
+
+CREATE OR REPLACE FUNCTION update_comment_exists_after_delete()
+
+RETURNS TRIGGER AS $$
+
+BEGIN
+
+-- Check if the deleted row had a parent_id
+
+IF OLD.parent_id IS NOT NULL THEN
+
+-- Check if there are no more rows with the same parent_id
+
+IF NOT EXISTS (
+
+SELECT 1
+
+FROM board_qna
+
+WHERE parent_id = OLD.parent_id
+
+) THEN
+
+-- Update comment_exists to 'N' for the parent row
+
+UPDATE board_qna
+
+SET comment_exists = 'N'
+
+WHERE id = OLD.parent_id;
+
+END IF;
+
+END IF;
+
+RETURN OLD;
+
+END;
+
+$$ LANGUAGE plpgsql;
+
+  
+
+-- AFTER DELETE 트리거
+
+CREATE TRIGGER trigger_update_comment_exists_after_delete
+
+AFTER DELETE ON board_qna
+
+FOR EACH ROW
+
+EXECUTE FUNCTION update_comment_exists_after_delete();
+```
+
+
 ### **트리거의 장점**
 
 1. **자동화**: 특정 작업을 수동으로 처리할 필요 없음.
