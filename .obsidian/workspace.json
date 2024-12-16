@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/12/2024-12-16.md",
+                "file": "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-12-16"
+              "title": "Shadow DOM"
             }
           },
           {
@@ -81,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "formdata",
+                "query": "shadow",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,30 +103,6 @@
             }
           },
           {
-            "id": "a43ff1becd73adaa",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "1cd8b9858eedf2e0",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "43e8b922936471ef",
             "type": "leaf",
             "state": {
@@ -137,7 +113,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -250,8 +226,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "daily note/2024/12/2024-12-16.md",
+    "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2024/12/2024-12-13.md",
     "daily note/2024/12/2024-12-12.md",

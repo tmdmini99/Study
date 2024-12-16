@@ -392,9 +392,186 @@ function renderIcons() {
 
 
 
+```js
+// menu-component.js  
+  
+class SideMenu extends HTMLElement {  
+    constructor() {  
+        super();  
+  
+        const shadow = this.attachShadow({ mode: 'open' });  
+  
+        fetch('/components/aside.html')  
+            .then(response => response.text())  
+            .then(html => {  
+                const parser = new DOMParser();  
+                const doc = parser.parseFromString(html, 'text/html');  
+                const template = doc.getElementById('aside');  
+  
+                shadow.appendChild(template.content.cloneNode(true));  
+  
+                const link = document.createElement('link');  
+                link.setAttribute('rel', 'stylesheet');  
+                link.setAttribute('href', '/styles/side-menu.css');    
+                shadow.appendChild(link);  
+  
+                const link2 = document.createElement('link');  
+                link2.setAttribute('rel', 'stylesheet');  
+                link2.setAttribute('href', '/styles/styles.css');    
+                shadow.appendChild(link2);  
+  
+                this.initMenu();  
+            })  
+            .catch(error => {  
+                console.error('Error loading the template:', error);  
+            });  
+    }  
+    initMenu() {  
+    const items = this.shadowRoot.querySelectorAll(".menu > .list > .item");  
+  
+    items.forEach(item => {  
+        const parentMenu = item.querySelector('.parent-menu');  
+        const depthMenu = item.querySelector('.depth');  
+  
+        parentMenu.addEventListener('click', () => {  
+            const isActive = item.classList.contains('active');  
+  
+            if (isActive) {  
+                item.classList.remove('active');  
+                if (depthMenu) {  
+                    depthMenu.style.height = '0';  
+                    depthMenu.style.transition = '0.25s';  
+                }  
+            } else {  
+                item.classList.add('active');  
+                if (depthMenu) {  
+                    depthMenu.style.height = `${depthMenu.scrollHeight}px`;  
+                    depthMenu.style.transition = `0.25s`;  
+                }  
+            }  
+        });  
+    });  
+}  
+    }  
+  
+// 커스텀 요소 정의  
+customElements.define('side-menu', SideMenu);
+```
+
+
+`customElements.define('side-menu', SideMenu);` 커스터 태그 생성 코드
+
+이렇게 사용시 안에 적용
+```jsp
+<side-menu></side-menu>
+```
+
+
+```js
+import { Timer } from "./header/timer.js";  
+import { getSubPageText,getSubPageTitle } from "../js/utils/page-title-utils.js";  
+  
+export class Header extends HTMLElement {  
+    constructor() {  
+        super();  
+  
+        const shadow = this.attachShadow({ mode: "open" });  
+  
+        fetch("/components/header.html")  
+            .then((response) => response.text())  
+            .then((html) => {  
+                const parser = new DOMParser();  
+                const doc = parser.parseFromString(html, "text/html");  
+                const template = doc.getElementById("header");  
+  
+                shadow.appendChild(template.content.cloneNode(true));  
+  
+                // 스타일 링크 추가  
+                const link = document.createElement("link");  
+                link.setAttribute("rel", "stylesheet");  
+                link.setAttribute("href", "/styles/header.css");  
+                shadow.appendChild(link);  
+  
+                const link2 = document.createElement("link");  
+                link2.setAttribute("rel", "stylesheet");  
+                link2.setAttribute("href", "/styles/styles.css");  
+                shadow.appendChild(link2);  
+  
+                // 타이머 연장 버튼 이벤트 추가  
+                const extendButton = shadow.querySelector(".timer .extension");  
+                if (extendButton) {  
+                    extendButton.addEventListener("click", () => this.extendTimer());  
+                }  
+  
+                this.initializeTimer(); // 타이머 초기화  
+                this.setDynamicContent(); // URL에 따라 메인 또는 서브 페이지 구성  
+            })  
+            .catch((error) => {  
+                console.error("Error loading the template:", error);  
+            });  
+    }  
+  
+    // 타이머 초기화  
+    initializeTimer() {  
+        const timerElement = this.shadowRoot.querySelector(".timer .time");  
+  
+        if (timerElement) {  
+            this.timer = new Timer(  
+                59 * 60 + 59, // 59분 59초  
+                (remainingTime) => {  
+                    timerElement.textContent = Timer.formatTime(remainingTime);  
+                },  
+                () => {  
+                    window.location.href = "../index.html";  
+                }  
+            );  
+  
+            this.timer.start();  
+        }  
+    }  
+  
+    // 타이머 연장  
+    extendTimer() {  
+        if (this.timer) {  
+            this.timer.reset(60 * 60); // 1시간으로 리셋  
+        }  
+    }  
+  
+    // URL에 따라 메인 검색창 또는 서브 페이지 제목 구성  
+    setDynamicContent() {  
+        const currentPath = window.location.pathname;  
+        const shadow = this.shadowRoot;  
+  
+        const mainSearch = shadow.querySelector(".product-search-contain");  
+        const subPageTitle = shadow.querySelector(".page-title");  
+  
+        if (currentPath === "/pages/main.html") {  
+            // 메인 페이지 -> 메인 검색창 표시  
+            mainSearch.style.display = "flex";  
+            subPageTitle.style.display = "none";  
+        } else {  
+            // 서브 페이지 -> 서브 페이지 제목 표시  
+            mainSearch.style.display = "none";  
+            subPageTitle.style.display = "flex";  
+  
+            // 서브 페이지 제목 동적 설정  
+            const subTitle = shadow.querySelector(".page-title h1");  
+            const subText = shadow.querySelector(".page-title .box-title p");  
+            subTitle.textContent = getSubPageTitle(currentPath); // 동적 제목 설정  
+            subText.textContent = getSubPageText(currentPath); // 동적 내용 설정  
+        }  
+    }  
+}  
+  
+// 커스텀 엘리먼트 정의  
+customElements.define("comm-header", Header);
+```
 
 
 
+```jsp
+<comm-header></comm-header>
+```
 
 
 
