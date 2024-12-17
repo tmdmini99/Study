@@ -247,4 +247,14 @@ th {
 
 
 
+SVG 태그에 `disabled` 속성을 직접 넣어도 브라우저는 이를 인식하지 않습니다. `disabled`는 `<button>`, `<input>` 같은 특정 HTML 요소에서만 동작하는 속성입니다.
 
+
+
+```css
+svg.disabled {
+    pointer-events: none; /* 클릭 이벤트 비활성화 */
+    opacity: 0.5; /* 흐리게 표시 */
+    cursor: not-allowed; /* 마우스 커서 변경 */
+}
+```
