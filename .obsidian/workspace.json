@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/CSRF/CSS/CSS.md",
+                "file": "daily note/2024/12/2024-12-18.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CSS"
+              "title": "2024-12-18"
             }
           },
           {
@@ -118,6 +118,18 @@
             "id": "62ee817553d91e05",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "3a0c624c1429aa7b",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -125,7 +137,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -238,6 +250,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/CSRF/CSS/CSS.md",
+    "daily note/2024/12/2024-12-18.md",
     "daily note/2024/12/2024-12-17.md",
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "daily note/2024/12/2024-12-16.md",
@@ -265,10 +279,8 @@
     "daily note/2024/12/2024-12-04.md",
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Project",
-    "Spaces/Home/DB/PostgreSql.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
-    "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Images/Pasted image 20241121093519.png",
     "Images/SPA5.jpg",
     "Images/SPA4.jpg",
