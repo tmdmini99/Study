@@ -1618,6 +1618,37 @@ EXECUTE FUNCTION update_comment_exists_after_delete();
 ```
 
 
+특정 조건 trigger
+```sql
+CREATE OR REPLACE FUNCTION update_comment_exists_after_update()
+
+RETURNS TRIGGER AS $$
+
+BEGIN
+
+-- 특정 조건: use_yn 변경되고, parent_id가 NULL이 아닌 경우에만 실행
+
+IF NEW.parent_id IS NOT NULL AND OLD.use_yn IS DISTINCT FROM NEW.use_yn THEN
+
+UPDATE public.board_qna
+
+SET comment_exists = 'N'
+
+WHERE id = NEW.parent_id;
+
+END IF;
+
+  
+
+-- 업데이트된 행 반환
+
+RETURN NEW;
+
+END;
+
+$$ LANGUAGE plpgsql;
+```
+
 trigger 삭제
 
 ```sql
