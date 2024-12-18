@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2024/12/2024-12-18.md",
+                "file": "Spaces/Home/Java Script/Java Script/변수.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-12-18"
+              "title": "변수"
             }
           },
           {
@@ -103,30 +103,6 @@
             }
           },
           {
-            "id": "43e8b922936471ef",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "62ee817553d91e05",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "3a0c624c1429aa7b",
             "type": "leaf",
             "state": {
@@ -136,8 +112,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -250,8 +225,13 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Spaces/Home/CSRF/CSS/CSS.md",
+    "Spaces/Home/Java Script/Java Script/Storeage.md",
+    "Spaces/Home/Java Script/Java Script/변수.md",
+    "Spaces/Home/Java Script/Java Script/템플릿 리터럴.md",
+    "Spaces/Home/Java Script/Java Script/fetch.md",
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "daily note/2024/12/2024-12-18.md",
+    "Spaces/Home/CSRF/CSS/CSS.md",
     "daily note/2024/12/2024-12-17.md",
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "daily note/2024/12/2024-12-16.md",
@@ -261,7 +241,6 @@
     "daily note/2024/12/2024-12-12.md",
     "daily note/2024/12/2024-12-11.md",
     "daily note/2024/12/2024-12-10.md",
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
     "Spaces/Home/Java Script/Java Script/library.md",
@@ -273,11 +252,7 @@
     "Spaces/Home/Java/삼항 연산자.md",
     "Spaces/Home/Java/Controller",
     "Spaces/Home/Java/Optional.md",
-    "Spaces/Home/Java Script/Java Script/fetch.md",
     "Spaces/Home/Java Script/Node.js/Node/동기 & 비동기.md",
-    "Spaces/Home/Project/Code.md",
-    "daily note/2024/12/2024-12-04.md",
-    "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/Project",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
