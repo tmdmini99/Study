@@ -105,14 +105,25 @@
             "id": "3a0c624c1429aa7b",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "ddda543788232339",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -225,19 +236,19 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "daily note/2024/12/2024-12-18.md",
+    "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java/Quartz/Quartz.md",
     "Spaces/Home/Java Script/Java Script/변수.md",
     "Spaces/Home/Java Script/Java Script/Storeage.md",
     "Spaces/Home/Java Script/Java Script/템플릿 리터럴.md",
     "Spaces/Home/Java Script/Java Script/fetch.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript.md",
-    "daily note/2024/12/2024-12-18.md",
     "Spaces/Home/CSRF/CSS/CSS.md",
     "daily note/2024/12/2024-12-17.md",
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "daily note/2024/12/2024-12-16.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
-    "Spaces/Home/DB/PostGre.md",
     "daily note/2024/12/2024-12-13.md",
     "daily note/2024/12/2024-12-12.md",
     "daily note/2024/12/2024-12-11.md",

@@ -1329,7 +1329,10 @@ BEGIN
 END;
 ```
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+
+
+
 mysql
 ```sql
 DELIMITER $$
@@ -1569,6 +1572,56 @@ AFTER DELETE ON board_qna
 FOR EACH ROW
 
 EXECUTE FUNCTION update_comment_exists_after_delete();
+```
+
+
+```sql
+CREATE OR REPLACE FUNCTION update_comment_exists_after_delete()
+
+RETURNS TRIGGER AS $$
+
+BEGIN
+
+-- parent_id가 NULL이 아니면 parent_id 값을 가진 id의 comment_exists를 'N'으로 업데이트
+
+IF OLD.parent_id IS NOT NULL THEN
+
+UPDATE public.board_qna
+
+SET comment_exists = 'N'
+
+WHERE id = OLD.parent_id;
+
+END IF;
+
+  
+
+-- 삭제된 행을 그대로 반환 (트리거가 AFTER DELETE이므로 RETURN OLD)
+
+RETURN OLD;
+
+END;
+
+$$ LANGUAGE plpgsql;
+
+  
+
+-- 트리거 생성
+
+CREATE TRIGGER trigger_update_comment_exists_after_delete
+
+AFTER DELETE ON public.board_qna
+
+FOR EACH ROW
+
+EXECUTE FUNCTION update_comment_exists_after_delete();
+```
+
+
+trigger 삭제
+
+```sql
+DROP TRIGGER IF EXISTS trigger_update_comment_exists_after_delete ON public.board_qna;
 ```
 
 
