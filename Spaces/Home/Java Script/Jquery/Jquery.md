@@ -133,3 +133,86 @@ $.ajax({
     }  
 });
 ```
+
+
+
+### **1. jQuery의 `filter()`**
+
+#### **용도**:
+
+jQuery의 `filter()`는 **jQuery 객체**에서 선택된 DOM 요소를 필터링하는 데 사용됩니다. 특정 조건에 맞는 요소만 유지합니다.
+
+```js
+$(selector).filter(selector/function)
+```
+
+#### **인수**:
+
+1. **selector**: 필터링할 기준이 되는 CSS 선택자.
+2. **function(index, element)**: 각 요소에 대해 실행되는 함수.
+    - **`index`**: 요소의 인덱스.
+    - **`element`**: 현재 요소.
+
+#### **예제**:
+
+```js
+// 1. 특정 클래스만 필터링
+$('.items').filter('.active').css('color', 'red');
+
+// 2. 조건 기반 필터링
+$('.items').filter(function(index, element) {
+    return $(element).text() === '특정 텍스트';
+}).css('color', 'blue');
+```
+
+
+#### **특징**:
+
+- jQuery `filter()`는 jQuery 객체를 반환합니다. 따라서, 체이닝이 가능합니다.
+- DOM 요소의 스타일이나 속성을 쉽게 변경할 수 있습니다.
+
+
+filter 거는법
+```js
+$('.btc').filter(function() {  
+    return !$(this).parent().hasClass('category-manage-popup');  
+}).prepend
+```
+
+
+
+### **3. 주요 차이점**
+
+|**특징**|**jQuery `filter()`**|**JavaScript `filter()`**|
+|---|---|---|
+|**대상**|jQuery 객체|배열|
+|**결과 타입**|jQuery 객체|새 배열|
+|**인수**|CSS 선택자 또는 함수|콜백 함수|
+|**체이닝 지원**|가능|불가능|
+|**DOM 요소 필터링**|기본적으로 DOM 요소를 대상으로 동작|NodeList를 배열로 변환해야 사용 가능|
+
+
+### **4. jQuery와 JavaScript의 `filter`를 활용한 동일 작업**
+
+#### **jQuery**:
+
+```js
+$('.items').filter('.active').css('color', 'red');
+```
+
+
+**JavaScript**:
+
+```js
+Array.from(document.querySelectorAll('.items'))
+    .filter(function(el) {
+        return el.classList.contains('active');
+    })
+    .forEach(function(el) {
+        el.style.color = 'red';
+    });
+```
+
+
+- **DOM 요소를 필터링하고 체이닝을 원한다면**: jQuery의 `filter()`.
+- **배열 데이터를 필터링하거나 DOM 조작이 간단하다면**: JavaScript의 `filter()`.

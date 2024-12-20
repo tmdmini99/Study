@@ -114,3 +114,51 @@ $('#addRow').click(function () {
 ```sql
 $("#sc_ROUTE_RUN_TYPE").val("${BasicParamVo.sc_ROUTE_RUN_TYPE}");
 ```
+
+
+### **2. JavaScript의 `filter()`**
+
+#### **용도**:
+
+JavaScript의 `filter()`는 **배열**에서 특정 조건에 맞는 요소만 유지하는 데 사용됩니다.
+
+#### **문법**:
+
+```js
+array.filter(callback(element, index, array), thisArg)
+```
+
+
+#### **인수**:
+
+1. **callback**: 배열의 각 요소에 대해 실행되는 함수.
+    - **`element`**: 현재 요소.
+    - **`index`**: 요소의 인덱스.
+    - **`array`**: 현재 배열.
+2. **thisArg (선택)**: `callback` 함수 내부에서 사용할 `this` 값.
+
+#### **예제**:
+
+```js
+// 1. 숫자 배열 필터링
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(function(num) {
+    return num % 2 === 0;
+});
+console.log(evenNumbers); // [2, 4]
+
+// 2. DOM 요소 필터링 (배열로 변환 필요)
+const elements = Array.from(document.querySelectorAll('.items'));
+const activeElements = elements.filter(function(el) {
+    return el.classList.contains('active');
+});
+console.log(activeElements); // [DOM 요소 리스트]
+```
+
+
+#### **특징**:
+
+- JavaScript `filter()`는 **새 배열**을 반환합니다.
+- 원본 배열은 변경되지 않습니다(불변성).
+
+
