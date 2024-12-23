@@ -102,54 +102,6 @@
             }
           },
           {
-            "id": "3a0c624c1429aa7b",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "ddda543788232339",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "4a9182080f9fa250",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "96d0a826a7394828",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "9947bebdeef2360e",
             "type": "leaf",
             "state": {
@@ -159,8 +111,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
@@ -271,7 +222,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1b19c9e6a50e13c6",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "daily note/2024/12/2024-12-23.md",
