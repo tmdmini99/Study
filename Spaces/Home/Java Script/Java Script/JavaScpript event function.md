@@ -467,3 +467,90 @@ function filterDropdown(type) {
     dropdown.style.display = visibleItems ? "block" : "none";  
 }
 ```
+
+
+이미지 미리보기
+
+```js
+function handleImageUpload(event) {  
+    const file = event.target.files[0];  
+    if (file) {  
+        const reader = new FileReader();  
+        reader.onload = function (e) {  
+            const previewImg = document.getElementById('preview-img');  
+            const emptyText = document.querySelector('.select-img-contain .empty');  
+            if (previewImg) {  
+                previewImg.src = e.target.result;  
+                previewImg.classList.remove('hidden');  
+            }  
+            if (emptyText) {  
+                emptyText.remove();  
+            }  
+        };  
+        reader.readAsDataURL(file);  
+    }  
+}  
+  
+window.handleImageUpload = handleImageUpload;
+```
+
+```jsp
+<div class="select-img-contain" onclick="document.getElementById('file-input').click();">  
+    <div class="empty">이미지 선택</div>  
+    <img id="preview-img" class="hidden" />  
+    <input type="file" id="fileId" name="fileId">  
+    <input id="file-input" type="file" accept="image/*" onchange="handleImageUpload(event)" hidden>  
+</div>
+```
+
+
+```jsp
+<div class="select-img-contain">
+    <p class="empty">이미지를 업로드하세요.</p>
+    <img id="preview-img" class="hidden" alt="미리보기" />
+</div>
+<input type="file" onchange="handleImageUpload(event)" />
+```
+
+### **코드 동작 설명**
+
+1. **`function handleImageUpload(event)`**
+    
+    - 파일 업로드 이벤트를 처리하기 위한 함수입니다.
+    - `event.target.files[0]`는 업로드된 파일 중 첫 번째 파일(단일 파일)을 가져옵니다.
+2. **`if (file)`**
+    
+    - 파일이 정상적으로 선택되었는지 확인합니다.
+    - 파일이 없으면 함수가 종료됩니다.
+3. **`const reader = new FileReader();`**
+    
+    - `FileReader` 객체를 생성합니다.
+    - `FileReader`는 파일(예: 이미지, 텍스트 등)을 읽고 브라우저에서 이를 처리할 수 있는 데이터 URL로 변환하는 데 사용됩니다.
+4. **`reader.onload = function (e)`**
+    
+    - 파일이 성공적으로 읽혔을 때 실행되는 콜백 함수입니다.
+    - `e.target.result`는 읽어들인 파일의 데이터 URL(이미지의 base64 인코딩 값)을 나타냅니다.
+5. **`const previewImg = document.getElementById('preview-img');`**
+    
+    - HTML에서 `id="preview-img"`인 이미지를 찾습니다.
+    - 이 이미지 태그는 업로드된 이미지를 미리보기로 보여줄 역할을 합니다.
+6. **`const emptyText = document.querySelector('.select-img-contain .empty');`**
+    
+    - `.select-img-contain` 내부의 `.empty` 클래스를 가진 요소를 찾습니다.
+    - 업로드 전에 표시되던 빈 상태 텍스트를 제거하기 위한 요소입니다.
+7. **이미지 업데이트 및 상태 변경**
+    
+    - **`previewImg.src = e.target.result;`**
+        - 읽어들인 이미지 데이터를 미리보기 이미지의 `src` 속성에 설정합니다.
+    - **`previewImg.classList.remove('hidden');`**
+        - 미리보기 이미지를 화면에 보이게 하기 위해 `hidden` 클래스를 제거합니다.
+    - **`emptyText.remove();`**
+        - 업로드 전에 표시되던 빈 상태 텍스트를 제거합니다.
+8. **`reader.readAsDataURL(file);`**
+    
+    - 선택된 파일을 데이터 URL로 읽습니다.
+    - 이 데이터 URL은 브라우저가 이미지 데이터를 렌더링할 수 있도록 합니다.
+9. **`window.handleImageUpload = handleImageUpload;`**
+    
+    - 이 함수는 전역 범위에서 접근 가능하도록 `window` 객체에 할당됩니다.
+    - HTML에서 인라인으로 `onchange="handleImageUpload(event)"` 같은 방식으로 호출할 수 있습니다.
