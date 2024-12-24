@@ -320,3 +320,150 @@ $(document).on('click', 'tbody:not(.uncommon) tr:not(.inventory)', function(even
 	alert(2);
 })
 ```
+
+
+`onkeyup`는 HTML에서 사용되는 이벤트 속성으로, **키보드 키를 눌렀다가 뗐을 때** 발생하는 이벤트를 처리합니다.
+
+---
+
+### **`onkeyup`의 동작**
+
+- 사용자가 키보드를 눌렀다가 손을 떼는 순간 이벤트가 발생합니다.
+- 예를 들어, 사용자가 `"A"` 키를 누르고 손을 떼면 `onkeyup` 이벤트가 트리거됩니다.
+
+`onkeyup` 이벤트는 **각 키를 눌렀다가 뗄 때마다 개별적으로 발생**합니다.  
+즉, 사용자가 `"ab"`를 입력하면 다음과 같은 순서로 이벤트가 발생합니다:
+
+---
+
+### **동작 순서**
+
+1. **`a` 키를 눌렀다가 뗌** → `onkeyup` 이벤트가 발생 (첫 번째 이벤트).
+2. **`b` 키를 눌렀다가 뗌** → `onkeyup` 이벤트가 발생 (두 번째 이벤트).
+
+
+### **사용법**
+
+#### **1. HTML에서 사용**
+
+
+```html
+<input type="text" onkeyup="myFunction()">
+```
+
+
+- 사용자가 입력 필드에 키를 입력하고 손을 떼면 `myFunction()` 함수가 실행됩니다.
+
+#### **2. JavaScript에서 사용**
+
+```js
+const inputField = document.getElementById("myInput");
+inputField.onkeyup = function() {
+    console.log("Key released!");
+};
+```
+
+
+- 사용자가 해당 입력 필드에서 키를 눌렀다 떼면 콘솔에 `"Key released!"`가 출력됩니다.
+
+#### **3. Event Listener로 사용**
+
+```js
+const inputField = document.getElementById("myInput");
+inputField.addEventListener("keyup", function(event) {
+    console.log(`Key released: ${event.key}`);
+});
+```
+
+사용자가 키를 떼면 어떤 키가 눌렸는지 확인할 수 있습니다.
+
+### **`onkeyup` 이벤트의 주요 특징**
+
+- **Key 정보 확인**: 이벤트 객체를 통해 어떤 키가 눌렸는지 확인할 수 있습니다
+
+
+```js
+document.addEventListener("keyup", function(event) {
+    console.log(`You pressed: ${event.key}`);
+});
+```
+
+**입력 값 처리**: 입력 필드에서 사용자가 입력한 값을 실시간으로 처리할 수 있습니다
+
+
+```js
+const input = document.getElementById("myInput");
+input.addEventListener("keyup", function() {
+    console.log(input.value); // 사용자가 입력한 값을 출력
+});
+```
+
+
+### **실제 사용 사례**
+
+1. **검색창 자동 완성**
+
+```js
+function filterSearch() {
+    const query = document.getElementById("searchInput").value;
+    console.log(`Searching for: ${query}`);
+}
+```
+
+```jsp
+<input type="text" id="searchInput" onkeyup="filterSearch()">
+```
+
+폼 검증
+```js
+document.getElementById("emailInput").addEventListener("keyup", function() {
+    const email = this.value;
+    if (email.includes("@")) {
+        console.log("Valid email");
+    } else {
+        console.log("Invalid email");
+    }
+});
+```
+
+실시간 데이터 업데이트
+```js
+const inputField = document.getElementById("nameInput");
+const display = document.getElementById("displayName");
+
+inputField.addEventListener("keyup", function() {
+    display.textContent = inputField.value;
+});
+```
+
+```jsp
+<input type="text" id="nameInput" placeholder="Type your name">
+<p>Your name is: <span id="displayName"></span></p>
+```
+
+
+자동 검색
+```js
+function filterDropdown(type) {  
+    const input = document.getElementById(`${type}-input`);  
+    console.log(input);  
+    const filter = input.value.replace(/\s+/g, '').toLowerCase();    
+    const dropdown = document.getElementById(`${type}-dropdown`);  
+    const items = dropdown.getElementsByClassName("dropdown-item");  
+  
+    let visibleItems = false;    
+    for (let i = 0; i < items.length; i++) {  
+        const item = items[i];  
+        const text = item.getElementsByClassName("category-item")[0].textContent.replace(/\s+/g, '').toLowerCase();  
+          
+        if (text.indexOf(filter) > -1) {  
+            item.style.display = "";    
+            visibleItems = true;    
+        } else {  
+            item.style.display = "none";   
+        }  
+    }  
+  
+    dropdown.style.display = visibleItems ? "block" : "none";  
+}
+```
