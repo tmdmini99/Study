@@ -123,8 +123,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -235,8 +234,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1b19c9e6a50e13c6",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Spaces/백준",
     "daily note/2024/12/2024-12-24.md",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
     "daily note/2024/12/2024-12-23.md",
@@ -262,7 +262,6 @@
     "daily note/2024/12/2024-12-10.md",
     "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
     "Spaces/Home/Spring/MyBatis/MyBatis.md",
-    "Spaces/Home/Java Script/Java Script/library.md",
     "Spaces/Home/Spring/MyBatis/PageHelper",
     "Spaces/Home/Java/Controller",
     "Spaces/Home/Project",
