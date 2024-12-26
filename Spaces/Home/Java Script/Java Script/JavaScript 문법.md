@@ -162,3 +162,7 @@ console.log(activeElements); // [DOM 요소 리스트]
 - 원본 배열은 변경되지 않습니다(불변성).
 
 
+## onclick vs clickEvent
+
+HTML 요소에 `onclick="openPopup('artistPopup')"` 속성이 직접 정의되어 있기 때문에 발생합니다. 브라우저는 `.new-add`를 클릭했을 때 **`onclick` 속성을 먼저 실행**하고, 그 후에 `$(document).on('click', '.new-add', ...)`로 바인딩된 이벤트 핸들러를 실행합니다.
+
