@@ -249,12 +249,15 @@ th {
 
 SVG 태그에 `disabled` 속성을 직접 넣어도 브라우저는 이를 인식하지 않습니다. `disabled`는 `<button>`, `<input>` 같은 특정 HTML 요소에서만 동작하는 속성입니다.
 
-
-
 ```css
 svg.disabled {
     pointer-events: none; /* 클릭 이벤트 비활성화 */
     opacity: 0.5; /* 흐리게 표시 */
     cursor: not-allowed; /* 마우스 커서 변경 */
 }
+```
+
+이런식으로 직접 주거나  위에처럼  css로 줘야함
+```jsp
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="15" viewBox="0 0 10 15" fill="none" onclick="changePage(${categoryPageInfo.hasNextPage ?   categoryPageInfo.nextPage   : "" },'category')" style="${categoryPageInfo.hasNextPage ? '' : 'pointer-events: none; opacity: 0.5; cursor: not-allowed;'}">
 ```
