@@ -166,3 +166,13 @@ console.log(activeElements); // [DOM 요소 리스트]
 
 HTML 요소에 `onclick="openPopup('artistPopup')"` 속성이 직접 정의되어 있기 때문에 발생합니다. 브라우저는 `.new-add`를 클릭했을 때 **`onclick` 속성을 먼저 실행**하고, 그 후에 `$(document).on('click', '.new-add', ...)`로 바인딩된 이벤트 핸들러를 실행합니다.
 
+
+
+마우스 클릭시 발생하는 이벤트 순서는 onmousedown -> onmouseup -> click 순이다.
+참고로 onmousedown에서 alert를 띄우면 클릭해도 onmouseup, onclick 이벤트 모두 발생하지 않지만, onmouseup에서 alert를 띄우면 onclick까지 정상적으로 먹는다.
+
+
+
+
+---
+출처 - https://star12ap.github.io/frontend/mouseevent/
