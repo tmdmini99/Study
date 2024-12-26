@@ -2130,6 +2130,21 @@ FROM
 - 다음 행이 없으면 기본값 `'No Next'`를 반환합니다.
 
 
+## TRANSLATE
+
+```sql
+SELECT 
+    TRANSLATE(a.stock_yn, 'YN', 'OX') AS stock_yn
+FROM your_table_name a;
+```
+
+- `TRANSLATE` 함수는 첫 번째 인자로 주어진 문자열에서 두 번째 인자에 해당하는 문자를 세 번째 인자에 해당하는 문자로 변환합니다.
+- 이 경우, `Y`는 `O`로, `N`은 `X`로 변환됩니다.
+
+이 두 방법은 `CASE`문을 사용하는 것보다 간결하게 변환 작업을 할 수 있습니다.
+
+
+
 
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
