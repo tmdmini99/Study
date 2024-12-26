@@ -554,3 +554,9 @@ window.handleImageUpload = handleImageUpload;
     
     - 이 함수는 전역 범위에서 접근 가능하도록 `window` 객체에 할당됩니다.
     - HTML에서 인라인으로 `onchange="handleImageUpload(event)"` 같은 방식으로 호출할 수 있습니다.
+
+
+
+## oninput
+
+
