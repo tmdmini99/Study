@@ -560,3 +560,16 @@ window.handleImageUpload = handleImageUpload;
 ## oninput
 
 
+```jsp
+<input type="text" oninput="handleInput()" />
+<script>
+  function handleInput() {
+    console.log("Input changed");
+  }
+</script>
+```
+
+
+- **`oninput="functionName()"`** 형태로 **`oninput`**을 사용하여 이벤트가 발생할 때마다 해당 함수를 실행할 수 있습니다.
+- **`oninput`**은 키보드 입력뿐만 아니라 **붙여넣기, 드래그&드롭** 등 다양한 방식으로 값을 변경할 때 발생합니다.
+
