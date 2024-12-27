@@ -273,6 +273,51 @@ VALUES ('value1', 'data1'), ('value2', 'data2');
 ```
 
 
+#### 완전 동적 삽입 SQL
+
+##### XML Mapper
+
+```xml
+<insert id="insertDynamic" parameterType="map">
+    INSERT INTO ${tableNm}
+    (
+        <foreach collection="columns" item="column" separator=",">
+            ${column}
+        </foreach>
+    )
+    VALUES
+    (
+        <foreach collection="values" item="value" separator=",">
+            #{value}
+        </foreach>
+    )
+</insert>
+```
+##### Java 코드
+```java
+Map<String, Object> params = new HashMap<>();
+
+// 동적 테이블 이름
+params.put("tableNm", "my_table");
+
+// 동적 컬럼명
+params.put("columns", List.of("column1", "column2", "column3"));
+
+// 동적 값
+params.put("values", List.of("value1", "value2", "value3"));
+
+sqlSession.insert("namespace.insertDynamic", params);
+```
+
+##### 생성되는 SQL
+
+```sql
+INSERT INTO my_table
+(column1, column2, column3)
+VALUES
+('value1', 'value2', 'value3');
+```
+
 ### 예제 4: `index`를 활용한 반복
 
 ```xml
