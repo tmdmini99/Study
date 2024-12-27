@@ -119,3 +119,189 @@ paramMap.put("file_id", "file123");
 mybatis에서 if else if 사용법
 
 
+
+
+MyBatis에서 `for`문을 사용하려면 `<foreach>` 태그를 활용합니다. `<foreach>`는 SQL에서 반복문을 구현하기 위한 MyBatis의 태그로, 주로 리스트나 배열 같은 컬렉션을 처리할 때 사용됩니다.
+
+---
+
+### 기본 문법
+
+
+```xml
+<foreach 
+    collection="list" 
+    item="item" 
+    index="index" 
+    open="(" 
+    separator="," 
+    close=")">
+    #{item}
+</foreach>
+```
+
+
+#### 속성 설명
+
+- **`collection`**: 반복할 데이터 컬렉션의 이름. Java의 `List`, `Set`, `Map`, 배열 등이 가능합니다.
+- **`item`**: 컬렉션의 각 요소를 참조할 변수 이름.
+- **`index`**: (선택 사항) 컬렉션의 인덱스를 참조할 변수 이름.
+- **`open`**: 반복문 시작 전에 추가할 문자열.
+- **`separator`**: 각 요소 사이에 삽입할 구분자.
+- **`close`**: 반복문 종료 후 추가할 문자열.
+
+
+### 예제 1: `IN` 절에서 사용
+
+
+```xml
+<select id="selectByIds" parameterType="list" resultType="MyData">
+    SELECT * FROM my_table
+    WHERE id IN 
+    <foreach collection="list" item="id" open="(" separator="," close=")">
+        #{id}
+    </foreach>
+</select>
+```
+
+
+#### Java 코드
+
+```java
+List<Integer> ids = Arrays.asList(1, 2, 3, 4);
+List<MyData> results = sqlSession.selectList("namespace.selectByIds", ids);
+```
+
+
+#### 생성되는 SQL
+
+```sql
+SELECT * FROM my_table
+WHERE id IN (1, 2, 3, 4);
+```
+
+### 예제 2: 다중 컬럼 삽입
+
+```xml
+<insert id="insertBatch" parameterType="list">
+    INSERT INTO my_table (column1, column2)
+    VALUES 
+    <foreach collection="list" item="item" separator=",">
+        (#{item.column1}, #{item.column2})
+    </foreach>
+</insert>
+```
+
+#### Java 코드
+```java
+List<Map<String, Object>> dataList = new ArrayList<>();
+dataList.add(Map.of("column1", "value1", "column2", "value2"));
+dataList.add(Map.of("column1", "value3", "column2", "value4"));
+
+sqlSession.insert("namespace.insertBatch", dataList);
+```
+
+#### 생성되는 SQL
+
+```sql
+INSERT INTO my_table (column1, column2)
+VALUES ('value1', 'value2'), ('value3', 'value4');
+```
+
+
+### 예제 3: `Map`을 사용한 반복
+
+
+```xml
+<select id="selectByConditions" parameterType="map" resultType="MyData">
+    SELECT * FROM my_table
+    WHERE 1=1
+    <if test="conditions != null">
+        <foreach collection="conditions" item="value" index="key" open="AND (" separator=" OR " close=")">
+            ${key} = #{value}
+        </foreach>
+    </if>
+</select>
+```
+
+
+#### Java 코드
+
+```java
+Map<String, Object> conditions = new HashMap<>();
+conditions.put("column1", "value1");
+conditions.put("column2", "value2");
+
+List<MyData> results = sqlSession.selectList("namespace.selectByConditions", Map.of("conditions", conditions));
+```
+
+
+#### 생성되는 SQL
+
+```sql
+SELECT * FROM my_table
+WHERE 1=1 AND (column1 = 'value1' OR column2 = 'value2');
+```
+
+####  map insert
+
+##### XML Mapper
+
+```xml
+<insert id="insertByConditions" parameterType="map">
+    INSERT INTO my_table (column1, column2)
+    VALUES
+    <foreach collection="conditions" item="value" index="key" separator=",">
+        (#{key}, #{value})
+    </foreach>
+</insert>
+```
+
+##### Java 코드
+```java
+Map<String, Object> conditions = new HashMap<>();
+conditions.put("value1", "data1");
+conditions.put("value2", "data2");
+
+sqlSession.insert("namespace.insertByConditions", Map.of("conditions", conditions));
+```
+
+##### 생성되는 SQL
+```sql
+INSERT INTO my_table (column1, column2)
+VALUES ('value1', 'data1'), ('value2', 'data2');
+```
+
+
+### 예제 4: `index`를 활용한 반복
+
+```xml
+<update id="updateBatch" parameterType="list">
+    <foreach collection="list" item="item" index="index" separator=";">
+        UPDATE my_table
+        SET column1 = #{item.column1}, column2 = #{item.column2}
+        WHERE id = #{item.id}
+    </foreach>
+</update>
+```
+
+#### Java 코드
+
+```java
+List<Map<String, Object>> updateData = new ArrayList<>();
+updateData.add(Map.of("id", 1, "column1", "newValue1", "column2", "newValue2"));
+updateData.add(Map.of("id", 2, "column1", "newValue3", "column2", "newValue4"));
+
+sqlSession.update("namespace.updateBatch", updateData);
+```
+
+#### 생성되는 SQL
+
+```sql
+UPDATE my_table
+SET column1 = 'newValue1', column2 = 'newValue2'
+WHERE id = 1;
+UPDATE my_table
+SET column1 = 'newValue3', column2 = 'newValue4'
+WHERE id = 2;
+```
