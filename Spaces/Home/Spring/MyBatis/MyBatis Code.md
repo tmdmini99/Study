@@ -101,3 +101,4 @@ paramMap.put("file_id", "file123");
 
 - **자동으로 변환됩니다**. MyBatis는 `parameterType="map"`으로 설정된 경우, Java 객체를 **자동으로 `Map`으로 변환**하여 SQL 쿼리와 매핑합니다.
 - 그래서 **`BasicCUDParamVo`와 같은 객체를** 직접 전달해도 MyBatis는 내부적으로 **리플렉션을 통해 자동으로 `Map`으로 변환**하여 처리합니다.
+ - MyBatis는 `parameterType="map"`을 사용하면 `java.util.Map` 객체를 매핑 대상으로 인식합니다

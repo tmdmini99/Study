@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScript 문법.md",
+                "file": "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JavaScript 문법"
+              "title": "MyBatis Code"
             }
           },
           {
@@ -111,6 +111,16 @@
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "c20115a0b5a6214b",
+            "type": "leaf",
+            "state": {
+              "type": "mk-file-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Spaces"
             }
           }
         ]
@@ -226,6 +236,9 @@
   },
   "active": "1b19c9e6a50e13c6",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/MyBatis/MyBatis.md",
+    "daily note/2024/12/2024-12-27.md",
+    "Spaces/Home/Java Script/Java Script/JavaScript 문법.md",
     "Spaces/Home/CSRF/CSS/CSS.md",
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
@@ -234,7 +247,6 @@
     "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/Home/JSP/동기 작업.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
-    "Spaces/Home/Java Script/Java Script/JavaScript 문법.md",
     "Spaces/Home/Java Script/Java Script/library.md",
     "Spaces/Home/Java Script/Java Script/LoadingBar.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript.md",
@@ -251,8 +263,6 @@
     "Spaces/Home/Java Script/Java Script/Shadow DOM.md",
     "daily note/2024/12/2024-12-19.md",
     "daily note/2024/12/2024-12-18.md",
-    "Spaces/Home/Java/Quartz/Quartz.md",
-    "Spaces/Home/Java Script/Java Script/변수.md",
     "Spaces/Home/Spring/MyBatis/PageHelper",
     "Spaces/Home/Java/Controller",
     "Spaces/Home/Project",
