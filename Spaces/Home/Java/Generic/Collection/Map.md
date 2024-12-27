@@ -636,6 +636,102 @@ public class MakeMap<K, V> {
 }
 ```
 
+
+
+Java에서 `Map`에서 값을 꺼내는 방법은 다음과 같습니다.
+
+
+
+### 1. **Key로 Value 가져오기**
+
+`Map`의 `get()` 메서드를 사용하여 특정 키에 해당하는 값을 가져올 수 있습니다.
+
+```java
+Map<String, Object> map = new HashMap<>();
+map.put("key1", "value1");
+map.put("key2", 123);
+map.put("key3", new ArrayList<>());
+
+// 특정 키로 값 가져오기
+Object value1 = map.get("key1");
+System.out.println(value1);  // 출력: value1
+```
+
+
+### 2. **모든 Key-Value 순회하기**
+
+`Map`의 모든 키와 값을 순회하려면 `entrySet()`, `keySet()` 또는 `values()`를 사용할 수 있습니다.
+
+#### a) `entrySet()`으로 순회
+
+
+```java
+for (Map.Entry<String, Object> entry : map.entrySet()) {
+    String key = entry.getKey();
+    Object value = entry.getValue();
+    System.out.println(key + ": " + value);
+}
+```
+
+b) `keySet()`으로 키를 사용해 값 가져오기
+
+```java
+for (String key : map.keySet()) {
+    Object value = map.get(key);
+    System.out.println(key + ": " + value);
+}
+```
+
+
+c) `values()`로 값만 가져오기
+
+```java
+for (Object value : map.values()) {
+    System.out.println(value);
+}
+```
+
+
+### 3. **특정 타입으로 Value 가져오기**
+
+`Map`에서 꺼낸 값이 특정 타입인 경우, 캐스팅하여 사용할 수 있습니다.
+
+```java
+String value1 = (String) map.get("key1");  // String으로 캐스팅
+Integer value2 = (Integer) map.get("key2");  // Integer로 캐스팅
+List<Object> value3 = (List<Object>) map.get("key3");  // List로 캐스팅
+```
+
+
+### 4. **Optional로 Null 안전하게 처리**
+
+`Map`에서 값을 가져올 때 해당 키가 없으면 `null`을 반환합니다. 이를 `Optional`로 감싸 안전하게 처리할 수 있습니다.
+
+```java
+map.entrySet().stream()
+    .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+```
+
+
+예제: `Map`에서 `List` 값 가져오기
+
+```java
+Map<String, Object> map = new HashMap<>();
+map.put("dataList", Arrays.asList("item1", "item2", "item3"));
+
+// List 값 가져오기
+List<String> dataList = (List<String>) map.get("dataList");
+if (dataList != null) {
+    for (String item : dataList) {
+        System.out.println(item);
+    }
+}
+```
+
+
+
+
+
 ---
 ## 참조
 참조 - https://devlogofchris.tistory.com/41 HashMap 

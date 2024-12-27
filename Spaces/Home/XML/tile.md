@@ -54,6 +54,12 @@ servlet-context.xml
 ```
 
 
+```xml
+<beans:value>/WEB-INF/tiles/tiles.xml</beans:value>
+```
+사용법
+
+
 tile.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -98,10 +104,7 @@ tile.xml
 
 tiles.xml에서는 컨트롤러에서 리턴한 String값에 따라 타일즈를 적용할지 말지를 결정하는 설정을 넣습니다. 위의 코드에서는 컨트롤러에서 리턴하는 String 값이 *.tiles일 경우 tiles적용을 *.jsp일 경우 적용을 안하도록 설정했으며 jsp마다 경로의 단계차이가 있을 수 있기 때문에 /*/*.tiles 처럼 몇가지 경로를 더 추가해줬습니다.
 
-```xml
-<beans:value>/WEB-INF/tiles/tiles.xml</beans:value>
-```
-사용법
+
 
 
 
