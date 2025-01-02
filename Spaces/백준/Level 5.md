@@ -54,3 +54,37 @@ public class Main{
 
 그래서 두 원의 중심 좌표와 반지름을 이용해, 두 원이 어떤 관계인지 판별합니다. 이는 주로 기하학 문제에서 원의 교점을 계산하거나 관계를 분석할 때 사용됩니다.
 
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+
+        for (int i = 0; i < a; i++) {
+            int x1 = scanner.nextInt();
+            int y1 = scanner.nextInt();
+            int r1 = scanner.nextInt();
+            int x2 = scanner.nextInt();
+            int y2 = scanner.nextInt();
+            int r2 = scanner.nextInt();
+
+            double distance = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+
+            if (distance == 0 && r1 == r2) {
+                System.out.println(-1);
+            } else if (Math.abs(r1 - r2) == distance || r1 + r2 == distance) {
+                System.out.println(1);
+            } else if (Math.abs(r1 - r2) < distance && distance < (r1 + r2)) {
+                System.out.println(2);
+            } else {
+                System.out.println(0);
+            }
+        }
+        scanner.close();
+    }
+}
+```
+
