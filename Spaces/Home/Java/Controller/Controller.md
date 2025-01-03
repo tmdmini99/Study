@@ -349,15 +349,15 @@ public String handleRequest(@ModelAttribute HashMap<String, Object> map) {
 
 
 
-|어노테이션|용도|데이터 위치|
-|---|---|---|
-|`@RequestBody`|HTTP 본문(JSON, XML 등)|요청 본문|
-|`@RequestParam`|쿼리 파라미터, 폼 데이터|URL 쿼리 또는 폼 데이터|
-|`@ModelAttribute`|객체에 폼 데이터 매핑|폼 데이터|
-|`@PathVariable`|URL 경로 변수|URL 경로|
-|`HttpServletRequest`|HTTP 요청 객체 직접 사용|요청 전반|
-|`@RequestPart`|멀티파트 요청의 특정 파트|멀티파트 데이터|
-|`@RequestHeader`|요청 헤더 데이터|요청 헤더|
+| 어노테이션                | 용도                   | 데이터 위치          |
+| -------------------- | -------------------- | --------------- |
+| `@RequestBody`       | HTTP 본문(JSON, XML 등) | 요청 본문           |
+| `@RequestParam`      | 쿼리 파라미터, 폼 데이터       | URL 쿼리 또는 폼 데이터 |
+| `@ModelAttribute`    | 객체에 폼 데이터 매핑         | 폼 데이터           |
+| `@PathVariable`      | URL 경로 변수            | URL 경로          |
+| `HttpServletRequest` | HTTP 요청 객체 직접 사용     | 요청 전반           |
+| `@RequestPart`       | 멀티파트 요청의 특정 파트       | 멀티파트 데이터        |
+| `@RequestHeader`     | 요청 헤더 데이터            | 요청 헤더           |
 
 ### 3. **멀티파트와 일반 요청을 동시에 지원**
 
