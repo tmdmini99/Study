@@ -1300,6 +1300,15 @@ public class MakeArrayList<E> implements List<E> {
 ```
 
 
+
+
+
+
+
+
+
+
+
 ---
 참고- https://www.nextree.co.kr/p6506/  : Linked vs Array 차이
 https://dev-coco.tistory.com/19 간단명료 이해하기 쉬움

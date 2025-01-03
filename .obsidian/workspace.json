@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Controller/Controller.md",
+                "file": "Spaces/Home/IntelliJ/Spring/Spring.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller"
+              "title": "Spring"
             }
           },
           {
@@ -209,8 +209,13 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
+    "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
+    "Spaces/Home/IntelliJ/PWA/PWA 설정.md",
+    "Spaces/Home/IntelliJ/JVM.md",
+    "Spaces/Home/Java/Generic/Collection/List.md",
+    "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
     "Spaces/Home/Java/Controller/Controller.md",
+    "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
     "daily note/2025/1/2025-01-03.md",
     "Spaces/Home/Java/Quartz/Quartz.md",
     "Spaces/백준/Level 5.md",
@@ -232,12 +237,7 @@
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis ResultMap.md",
     "Spaces/Home/XML/tile.md",
     "Spaces/Home/XML/XML.md",
-    "Spaces/Home/Spring/MyBatis/MyBatis Code.md",
     "Spaces/Home/Java/Generic/Collection/Map.md",
-    "Spaces/Home/Java Script/Java Script/JavaScript 문법.md",
-    "Spaces/Home/CSRF/CSS/CSS.md",
-    "Spaces/Home/DB/PostGre.md",
-    "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/백준",
     "Spaces/Home/Spring/MyBatis/PageHelper",
     "Spaces/Home/Java/Controller",
