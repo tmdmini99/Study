@@ -295,3 +295,66 @@ spring.servlet.multipart.max-request-size=2MB
 
 
 
+- **`@ModelAttribute`의 동작**:
+    
+    - `@ModelAttribute`는 요청 데이터를 Java 객체로 바인딩하는 데 사용됩니다.
+    - Spring은 요청 데이터를 처리하기 위해 객체를 생성해야 하며, 기본적으로 이를 위해 클래스의 기본 생성자 또는 유일한 생성자를 사용합니다.
+    - 그러나 `Map`은 인터페이스이므로 Spring은 이를 직접 인스턴스화할 수 없습니다.
+- **`Map` 타입의 한계**:
+    
+    - `Map` 타입은 인터페이스로, Spring이 객체를 생성하려면 구체적인 구현 클래스(`HashMap`, `LinkedHashMap` 등)가 필요합니다.
+    - `@ModelAttribute`는 기본적으로 `Map`과 같은 타입을 처리하도록 설계되지 않았습니다.
+
+
+
+### 해결 방법
+
+#### 1. **`@RequestParam`으로 처리**
+
+- 요청 데이터를 개별적으로 처리할 수 있다면 `@RequestParam`을 사용하세요
+
+```java
+@PostMapping("/example")
+public String handleRequest(@RequestParam Map<String, Object> map) {
+    // map에 요청 데이터가 바인딩됩니다.
+    return "success";
+}
+```
+
+
+#### **`@RequestBody`로 JSON 요청 처리**
+
+- 요청 데이터가 JSON 형식이라면 `@RequestBody`를 사용하여 `Map`으로 직접 바인딩할 수 있습니다.
+
+```java
+@PostMapping("/example")
+public String handleRequest(@RequestBody Map<String, Object> map) {
+    // map에 JSON 데이터가 바인딩됩니다.
+    return "success";
+}
+```
+
+
+#### **구체적인 `Map` 구현 사용**
+
+- `@ModelAttribute`를 사용해야 한다면 `Map` 대신 구체적인 구현 클래스(`HashMap`)를 사용하세요
+
+```java
+@PostMapping("/example")
+public String handleRequest(@ModelAttribute HashMap<String, Object> map) {
+    // map에 요청 데이터가 바인딩됩니다.
+    return "success";
+}
+```
+
+
+
+|어노테이션|용도|데이터 위치|
+|---|---|---|
+|`@RequestBody`|HTTP 본문(JSON, XML 등)|요청 본문|
+|`@RequestParam`|쿼리 파라미터, 폼 데이터|URL 쿼리 또는 폼 데이터|
+|`@ModelAttribute`|객체에 폼 데이터 매핑|폼 데이터|
+|`@PathVariable`|URL 경로 변수|URL 경로|
+|`HttpServletRequest`|HTTP 요청 객체 직접 사용|요청 전반|
+|`@RequestPart`|멀티파트 요청의 특정 파트|멀티파트 데이터|
+|`@RequestHeader`|요청 헤더 데이터|요청 헤더|
