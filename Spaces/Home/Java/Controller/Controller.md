@@ -358,3 +358,29 @@ public String handleRequest(@ModelAttribute HashMap<String, Object> map) {
 |`HttpServletRequest`|HTTP 요청 객체 직접 사용|요청 전반|
 |`@RequestPart`|멀티파트 요청의 특정 파트|멀티파트 데이터|
 |`@RequestHeader`|요청 헤더 데이터|요청 헤더|
+
+### 3. **멀티파트와 일반 요청을 동시에 지원**
+
+멀티파트 요청인지 확인한 후 동적으로 처리하도록 구현할 수도 있습니다.
+
+
+```java
+@RequestMapping("/modalCUD")
+@ResponseBody
+public Map<String, Object> modalCCud(@RequestParam Map<String, Object> map, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    Map<String, Object> result = new HashMap<>();
+
+    if (request instanceof MultipartHttpServletRequest) {
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        // 멀티파트 요청 처리
+        log.info("Multipart request received.");
+    } else {
+        log.info("Regular request received.");
+    }
+
+    commonService.performWorkerModal(map, result);
+    log.error(result);
+    return result;
+}
+
+```

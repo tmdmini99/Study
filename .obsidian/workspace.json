@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Controller/Controller.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Maven/root-context.xml.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller"
+              "title": "root-context.xml"
             }
           },
           {
@@ -207,8 +207,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Controller/Controller.md",
     "daily note/2025/1/2025-01-03.md",
     "Spaces/Home/Java/Quartz/Quartz.md",
     "Spaces/백준/Level 5.md",
@@ -237,7 +238,6 @@
     "Spaces/Home/DB/PostGre.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/Home/Java Script/Jquery/Jquery.md",
-    "Spaces/Home/Java Script/공부 해야 될것.md",
     "Spaces/백준",
     "Spaces/Home/Spring/MyBatis/PageHelper",
     "Spaces/Home/Java/Controller",
