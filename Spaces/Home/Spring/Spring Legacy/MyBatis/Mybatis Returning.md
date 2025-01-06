@@ -75,4 +75,19 @@ xml
 2. **명확한 데이터 사용**:
     
     - `paramMap`을 수정하고 다시 사용하는 경우, **데이터 덮어쓰기 위험**이 있습니다.
+
+
+해결 방법: 안전하게 사용하고 싶을 때 (복사본 사용)
+
+```java
+public void insertOrder(Map<String, Object> paramMap) {
+    Map<String, Object> safeMap = new HashMap<>(paramMap); // 복사본 생성
+    orderDao.insertModal(safeMap);
+    System.out.println("Generated ID: " + safeMap.get("id"));
+}
+```
+
+- **같은 `paramMap` 사용 가능**: `DAO`에서 수정한 데이터가 `Service`에서도 즉시 반영됨.
+- **주의사항**: **멀티스레드 환경**에서는 **복사본 사용**을 권장.
+- **MyBatis의 `RETURNING`** 기능을 사용하면 **자동 증가 ID**를 안전하게 가져올 수 있음.
 - 
