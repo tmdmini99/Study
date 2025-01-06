@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/매개변수/매개변수.md",
+                "file": "Spaces/Home/Java Script/Java Script/Storeage.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "매개변수"
+              "title": "Storeage"
             }
           },
           {
@@ -221,8 +221,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/Mybatis Returning.md",
     "Spaces/Home/Java/매개변수/매개변수.md",
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/Mybatis Returning.md",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 쿼리.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis Dao.md",

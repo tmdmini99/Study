@@ -84,3 +84,143 @@ $(window).on('beforeunload', function () {
 
 `localStorage`에 저장할 수 있는 값은 문자열만 가능하므로, **DOM 요소의 상태**(예: `class`, `id`, `data-` 속성 등)를 **문자열**로 변환하여 저장합니다
 
+
+```js
+$(document).ready(function () {  
+    AOS.init();  
+})  
+document.addEventListener("DOMContentLoaded", function () {  
+    const rows = document.querySelectorAll("tbody.main-tbody tr");  
+  
+    function updateTotalPrice() {  
+        let totalPrice = 0;   
+  
+        rows.forEach(row => {  
+            const priceElement = row.querySelector(".price input");   
+            const countElement = row.querySelector(".cnt-item input");   
+  
+            if (priceElement && countElement) {  
+                const priceValue = priceElement.value.replace(/[^0-9]/g, '');   
+                const countValue = countElement.value.replace(/[^0-9]/g, '');   
+  
+                const price = parseInt(priceValue, 10) || 0; // NaN일 경우 0 처리  
+  
+                totalPrice += price;   
+            }  
+        });  
+  
+        const totalElement = document.querySelector("#total p");  
+        if (totalElement) {  
+            totalElement.textContent = `상품 합계: ${totalPrice.toLocaleString()}원`;  
+        }  
+    }  
+  
+    function setupStockControl(container) {  
+        const minusButton = container.querySelector(".minus");  
+        const plusButton = container.querySelector(".add");  
+        const countElement = container.querySelector(".cnt-item input");  
+        const priceElement = container.closest("tr").querySelector(".price input");    
+        const albumTitleElement = container.closest("tr").querySelector(".album-title p");   
+  
+        if (!albumTitleElement) {  
+            console.error("Album title not found!");  
+            return;  
+        }  
+  
+        const albumName = albumTitleElement.textContent.trim();  // 앨범 이름  
+        let discountPriceElements = container.closest("tr").querySelectorAll(".discount-price");   
+        let discountPrice = 0;  
+  
+        // discountPrice가 없으면 original 가격 사용  
+        if (discountPriceElements.length > 0) {  
+            discountPrice = parseInt(discountPriceElements[0].textContent.replace(/[^0-9]/g, ''), 10);   
+        } else {  
+            let originalPrice = container.closest("tr").querySelector(".original");    
+            if (originalPrice) {  
+                discountPrice = parseInt(originalPrice.textContent.replace(/[^0-9]/g, ''), 10);  
+            }  
+        }  
+  
+        if (!minusButton || !plusButton || !countElement || !priceElement || isNaN(discountPrice)) {  
+            console.error("Missing required elements for stock control.");  
+            return;  
+        }  
+  
+        // 로컬스토리지에서 가져오는 값을 초기화하는 방법  
+        let count = localStorage.getItem(`stock-${albumName}`)   
+? parseInt(localStorage.getItem(`stock-${albumName}`), 10)  
+                    : parseInt(countElement.value, 10) || 0;  
+  
+        // 초기 수량 값 설정  
+        countElement.value = count;  
+  
+        // 가격 업데이트  
+        priceElement.value = (count * discountPrice).toLocaleString();    
+  
+        minusButton.addEventListener("click", () => {  
+            if (count > 0) {  
+                count--;  
+                countElement.value = count;  
+                priceElement.value = (count * discountPrice).toLocaleString();   
+                localStorage.setItem(`stock-${albumName}`, count); // 쿠키에 저장  
+                updateTotalPrice();   
+            }  
+  
+            if (count === 0) {  
+                localStorage.removeItem(`stock-${albumName}`); // 수량이 0이면 쿠키에서 제거  
+                updateTotalPrice();   
+            }  
+        });  
+  
+        plusButton.addEventListener("click", () => {  
+            count++;  
+            countElement.value = count;  
+            priceElement.value = (count * discountPrice).toLocaleString();    
+            localStorage.setItem(`stock-${albumName}`, count); // 쿠키에 저장  
+            updateTotalPrice();    
+        });  
+    }  
+  
+    rows.forEach(row => {  
+        const controlContainer = row.querySelector(".cnt-input");  
+        if (controlContainer) {  
+            setupStockControl(controlContainer);   
+        }  
+    });  
+  
+  
+    updateTotalPrice();  
+});  
+  
+  
+// 폐반 절판 처리  
+document.addEventListener("DOMContentLoaded", function () {  
+    const rows = document.querySelectorAll("tbody.main-tbody tr");  
+  
+    rows.forEach(row => {  
+        const statusElement = row.querySelector(".product-status");  
+        const controlElements = row.querySelectorAll(".control > *");  
+        const priceElements = row.querySelectorAll(".price > *");  
+  
+        if (statusElement) {  
+            const status = statusElement.textContent.trim();  
+  
+            if (status === "정상") {  
+                controlElements.forEach(element => {  
+                    element.style.display = "flex";  
+                });  
+                priceElements.forEach(element => {  
+                    element.style.display = "flex";  
+                });  
+            } else {  
+                controlElements.forEach(element => {  
+                    element.style.display = "none";  
+                });  
+                priceElements.forEach(element => {  
+                    element.style.display = "none";  
+                });  
+            }  
+        }  
+    });  
+});
+```
