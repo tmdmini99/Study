@@ -573,3 +573,67 @@ window.handleImageUpload = handleImageUpload;
 - **`oninput="functionName()"`** 형태로 **`oninput`**을 사용하여 이벤트가 발생할 때마다 해당 함수를 실행할 수 있습니다.
 - **`oninput`**은 키보드 입력뿐만 아니라 **붙여넣기, 드래그&드롭** 등 다양한 방식으로 값을 변경할 때 발생합니다.
 
+
+```js
+window.addEventListener('beforeunload', (event) => {  
+    const isPaginationClicked = document.activeElement.closest('.pagination-btn, .page-number');  
+    const isMenuClicked = document.activeElement && document.activeElement.tagName === 'A';  
+    alert(isMenuClicked);  
+    if (isMenuClicked && !isPaginationClicked) {  
+        localStorage.clear();  
+    }  
+});
+```
+
+
+### **`beforeunload`의 한계:**
+
+- `beforeunload`는 **페이지를 떠나는 순간** 발생.
+- **`event.target`이 null**이거나 **정확히 클릭 요소를 감지하지 못함.**
+- **`document.activeElement`**를 사용해야만 클릭된 요소를 감지할 수 있음.
+
+
+- **`document.activeElement.tagName === 'A'`:**
+    - 현재 포커스된 요소가 `a` 태그인지 확인.
+- **`alert` 추가:**
+    - **클릭 감지 여부**를 `alert`로 시각적으로 확인.
+- **`isPaginationClicked`:**
+    - **페이지네이션 클릭 감지** 예외 처리.
+
+
+### **해당 코드의 역할:**
+
+```js
+const isMenuClicked = document.activeElement && document.activeElement.tagName === 'A';
+
+```
+
+
+### **1. `document.activeElement`란?**
+
+- **현재 포커스(클릭)된 요소**를 나타냅니다.
+- **HTML 문서에서 사용자가 클릭하거나 포커스한 요소를 참조**합니다.
+
+```js
+console.log(document.activeElement); 
+// 사용자가 클릭한 요소 출력
+```
+
+### **`document.activeElement.tagName === 'A'`란?**
+
+- **포커스된 요소가 `a` 태그인지 확인**합니다.
+- **`tagName`은 항상 대문자로 반환**됩니다.
+- 따라서 **'A'**와 정확히 비교해야 합니다.
+
+```js
+if (document.activeElement.tagName === 'A') {
+    console.log("현재 클릭한 요소는 <a> 태그입니다!");
+}
+```
+
+
+### **`document.activeElement &&`란?**
+
+- **`document.activeElement`가 존재하는지 먼저 검사**합니다.
+- 예를 들어 **`<body>`나 `null`**이 될 수도 있기 때문입니다.
+- **안전한 코딩**을 위해 **`&&` 연산자**를 사용하여 **`null` 체크**를 합니다.
