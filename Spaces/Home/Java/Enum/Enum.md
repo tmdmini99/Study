@@ -280,3 +280,74 @@ public enum CommonAttribute {
 CommonAttribute attr = CommonAttribute.getByTargetTable("category");
 System.out.println(attr.getAttrName());  // categoryList
 ```
+
+
+## 클래스 내부에 선언
+
+```java
+public class CommonAttributeHandler {
+
+    // ✅ 클래스 내부에 선언된 enum (Nested Enum)
+    public enum CommonAttribute {
+        CATEGORY("category", "categoryList"),
+        ARTISTS("artists", "artistsList");
+
+        private final String targetTable;
+        private final String attrName;
+
+        CommonAttribute(String targetTable, String attrName) {
+            this.targetTable = targetTable;
+            this.attrName = attrName;
+        }
+
+        public String getTargetTable() {
+            return targetTable;
+        }
+
+        public String getAttrName() {
+            return attrName;
+        }
+    }
+
+    // ✅ 내부 enum을 순회하여 Model에 데이터를 추가하는 메서드
+    public void addAttributesToModel(Model model) {
+        for (CommonAttribute attribute : CommonAttribute.values()) {
+            model.addAttribute(attribute.getTargetTable(), attribute.getAttrName());
+        }
+    }
+}
+```
+
+
+
+## 외부 클래스에 선언
+
+
+
+```java
+public class OrderController {
+    private final CommonAttributeHandler commonAttributeHandler = new CommonAttributeHandler();
+
+    public void addAttributesToModel(Model model) {
+        commonAttributeHandler.addAttributesToModel(model);
+    }
+
+    public void addSingleAttribute(Model model) {
+        model.addAttribute(
+            CommonAttributeHandler.CommonAttribute.CATEGORY.getTargetTable(),
+            CommonAttributeHandler.CommonAttribute.CATEGORY.getAttrName()
+        );
+    }
+}
+
+```
+
+
+## **4. `enum`을 클래스 내부에 선언할 때의 장점**
+
+1. **캡슐화 강화**:
+    - 해당 클래스와 강하게 결합된 상수를 외부에서 직접 접근하지 못하게 합니다.
+2. **의미 명확화**:
+    - 해당 클래스의 로직과 강하게 관련된 상수임을 명확하게 표현합니다.
+3. **코드 정리**:
+    - 관련 데이터와 로직을 하나의 클래스 내에 유지하여 코드 유지보수가 용이해집니다.
