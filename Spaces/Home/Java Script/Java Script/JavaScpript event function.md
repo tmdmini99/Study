@@ -637,3 +637,282 @@ if (document.activeElement.tagName === 'A') {
 - **`document.activeElement`가 존재하는지 먼저 검사**합니다.
 - 예를 들어 **`<body>`나 `null`**이 될 수도 있기 때문입니다.
 - **안전한 코딩**을 위해 **`&&` 연산자**를 사용하여 **`null` 체크**를 합니다.
+
+
+
+## category Depth 
+
+
+
+```js
+document.querySelectorAll('.add-category').forEach(button => {  
+    button.addEventListener('click', function(event) {  
+        event.stopPropagation();  
+  
+        const subItem = this.closest('.sub-item');  
+        const group = subItem.querySelector('.group');  
+  
+        this.style.display = 'none';  
+  
+        group.classList.add('show-edit-group');  
+  
+        enableCategoryNavigation(subItem);  
+    });  
+});  
+document.querySelectorAll('.sub-item').forEach(item => {  
+    item.addEventListener('click', function(event) {  
+        // 하위 카테고리 수정 버튼, 추가 버튼 클릭 시 처리 안 함  
+        if (event.target.closest('.sub-category-edit') || event.target.closest('.add-category')) {  
+            return;  
+        }  
+  
+        if (event.target.closest('.sub-category-save') || event.target.closest('.sub-category-cancel')) {  
+            return;  
+        }  
+  
+        if (event.target.closest('input')) {  
+            return;  
+        }  
+  
+        const addCategoryButton = this.querySelector('.add-category');  
+        const group = this.querySelector('.group');  
+        const categoryInput = document.getElementById('category-input');  
+  
+        // 'add-category' 버튼이 있고 'show-edit-group' 클래스가 없으면 category-input에 값 설정  
+        if (addCategoryButton && !group.classList.contains('show-edit-group')) {  
+            const input = this.querySelector('input');  
+            categoryInput.value = input.value; // 해당 행의 input 값 설정  
+        }  
+  
+        // 'add-category' 버튼이 없거나, 'show-edit-group' 클래스가 있을 경우에는 이동  
+        if (!addCategoryButton || this.classList.contains('can-move-to-next-depth') || group.classList.contains('show-edit-group')) {  
+            const currentDepth = this.closest('.categories');  
+            const currentDepthNumber = parseInt(currentDepth.getAttribute('data-category-depth'), 10);  
+            const nextDepth = document.querySelector(`.categories[data-category-depth="${currentDepthNumber + 1}"]`);  
+  
+            document.querySelectorAll('.categories').forEach(depth => {  
+                depth.classList.remove('current-depth');  
+            });  
+            nextDepth.classList.add('current-depth');  
+  
+            const categoryValue = this.querySelector('input').value;  
+            const referenceItems = nextDepth.querySelectorAll('.items');  
+            referenceItems.forEach(referenceItem => {  
+                const referenceValue = referenceItem.getAttribute('data-reference');  
+                if (categoryValue === referenceValue) {  
+                    referenceItem.style.display = 'block';  
+                } else {  
+                    referenceItem.style.display = 'none';  
+                }  
+            });  
+  
+            // 경로 업데이트  
+            updateNavi(categoryValue);  
+            resetButtonStates();  
+        }  
+    });  
+});  
+  
+// 카테고리 이동 활성화  
+function enableCategoryNavigation(subItem) {  
+    subItem.classList.add('can-move-to-next-depth');  
+}  
+  
+document.querySelectorAll('.sub-category-edit').forEach(button => {  
+    button.addEventListener('click', function(event) {  
+        event.stopPropagation();  
+  
+        const subItem = this.closest('.sub-item');  
+        const input = subItem.querySelector('input');  
+  
+        input.removeAttribute('readonly');  
+        subItem.querySelector('.sub-category-save').style.display = 'block';  
+        subItem.querySelector('.sub-category-cancel').style.display = 'block';  
+        subItem.querySelector('.sub-category-edit').style.display = 'none';  
+        subItem.querySelector('.sub-category-delete').style.display = 'none';  
+    });  
+});  
+  
+document.querySelectorAll('.sub-category-save').forEach(button => {  
+    button.addEventListener('click', function(event) {  
+        event.stopPropagation();  
+  
+        const subItem = this.closest('.sub-item');  
+        const input = subItem.querySelector('input');  
+  
+        const updatedValue = input.value;  
+  
+        updateCategoryValues(subItem, updatedValue);  
+  
+        changeButtonStates(subItem);  
+  
+        console.log("Updated data-category-value:", updatedValue);  
+    });  
+});  
+  
+document.querySelectorAll('.sub-category-delete').forEach(button => {  
+    button.addEventListener('click', function(event) {  
+        event.stopPropagation();  
+  
+        const subItem = this.closest('.sub-item');  
+  
+        subItem.remove();  
+  
+    });  
+});  
+function updateCategoryValues(subItem, updatedValue) {  
+    subItem.setAttribute('data-category-value', updatedValue);  
+    const referenceItems = document.querySelectorAll(`[data-reference="${subItem.getAttribute('data-category-value')}"]`);  
+  
+    setTimeout(() => {  
+        referenceItems.forEach(item => {  
+            item.setAttribute('data-reference', updatedValue);  
+        });  
+    }, 100);  
+}  
+  
+function changeButtonStates(subItem) {  
+    const input = subItem.querySelector('input');  
+  
+    input.setAttribute('readonly', 'true');  
+  
+    subItem.querySelector('.sub-category-save').style.display = 'none';  
+    subItem.querySelector('.sub-category-cancel').style.display = 'none';  
+    subItem.querySelector('.sub-category-edit').style.display = 'block';  
+    subItem.querySelector('.sub-category-delete').style.display = 'block';  
+}  
+  
+document.querySelectorAll('.sub-category-cancel').forEach(button => {  
+    button.addEventListener('click', function(event) {  
+        event.stopPropagation();  
+  
+        const subItem = this.closest('.sub-item');  
+        const input = subItem.querySelector('input');  
+        const initialValue = subItem.getAttribute('data-category-value'); // 기본값으로 돌아가야 하는 값  
+  
+        // input 값 되돌리기  
+        input.value = initialValue;  
+  
+        input.setAttribute('readonly', 'true');  
+        subItem.querySelector('.sub-category-save').style.display = 'none';  
+        subItem.querySelector('.sub-category-cancel').style.display = 'none';  
+        subItem.querySelector('.sub-category-edit').style.display = 'block';  
+        subItem.querySelector('.sub-category-delete').style.display = 'block';  
+    });  
+});  
+  
+function updateNavi(categoryValue, currentDepth) {  
+    const navi = document.querySelector('.navi');  
+  
+    if (!navi) {  
+        return;  
+    }  
+  
+    const allPaths = navi.querySelectorAll('.path-group');  
+  
+    const existingPath = Array.from(allPaths).find(path => path.querySelector('p').textContent === categoryValue);  
+  
+    if (existingPath) {  
+        return;  
+    }  
+    allPaths.forEach(path => {  
+        path.classList.remove('current-path');  
+    });  
+  
+    const pathGroup = document.createElement('div');  
+    pathGroup.classList.add('path-group');  
+  
+    const pathName = document.createElement('p');  
+    pathName.textContent = categoryValue;  
+    pathGroup.appendChild(pathName);  
+  
+    const pathIcon = document.createElement('img');  
+    pathIcon.src = '/images/icons/product manage/navi-right-arrow.svg';  
+    pathGroup.appendChild(pathIcon);  
+  
+    pathGroup.classList.add('current-path');  
+  
+    navi.appendChild(pathGroup);  
+  
+    if (currentDepth === 1) {  
+        navi.style.display = 'none';  
+    } else {  
+        navi.style.display = 'flex';  
+    }  
+  
+}  
+function goBack() {  
+    const navi = document.querySelector('.navi');  
+    const categories = document.querySelectorAll('.categories');  
+    const currentDepthElement = document.querySelector('.categories.current-depth');  
+    const allPaths = navi.querySelectorAll('.path-group');  
+  
+    if (!navi || categories.length === 0 || !currentDepthElement) return;  
+  
+    // 현재 활성화된 카테고리 뎁스를 찾기  
+    const currentDepth = Array.from(categories).findIndex(cat => cat === currentDepthElement) + 1;  
+  
+    console.log(currentDepth)  
+  
+    if (currentDepth === 2) navi.style.display = "none";  
+  
+    if (currentDepth > 1) {  
+        categories[currentDepth - 1].classList.remove('active');  
+        categories[currentDepth - 1].classList.add('hidden');  
+        categories[currentDepth - 2].classList.remove('hidden');  
+        categories[currentDepth - 2].classList.add('active');  
+  
+        categories[currentDepth - 2].classList.add('current-depth');  
+        currentDepthElement.classList.remove('current-depth');  
+  
+        if (allPaths.length > 0) {  
+            const lastPath = allPaths[allPaths.length - 1];  
+            navi.removeChild(lastPath);  
+        }  
+    }  
+}  
+  
+// 버튼 상태 리셋 함수  
+function resetButtonStates() {  
+    document.querySelectorAll('.sub-item').forEach(subItem => {  
+        const input = subItem.querySelector('input');  
+        input.setAttribute('readonly', 'true');  
+  
+        subItem.querySelector('.sub-category-save').style.display = 'none';  
+        subItem.querySelector('.sub-category-cancel').style.display = 'none';  
+        subItem.querySelector('.sub-category-edit').style.display = 'block';  
+        subItem.querySelector('.sub-category-delete').style.display = 'block';  
+    });  
+}  
+  
+document.getElementById('category-input').addEventListener('input', function(event) {  
+    const searchQuery = event.target.value.toLowerCase();  
+    const subItems = document.querySelectorAll('.sub-item')  
+  
+    subItems.forEach(item => {  
+        if (item.closest('.categories').getAttribute('data-category-depth') === "1") {  
+            const itemText = item.querySelector('input').value.toLowerCase();  
+  
+            if (itemText.includes(searchQuery)) {  
+                item.style.display = 'flex';  
+            } else {  
+                item.style.display = 'none';  
+            }  
+        }  
+    });  
+});  
+document.getElementById('category-input').addEventListener('click', function(event) {  
+    const dropdown = document.getElementById('category-dropdown');  
+    dropdown.style.display = 'block';  
+    event.stopPropagation();  
+});  
+  
+document.addEventListener('click', function(event) {  
+    const dropdown = document.getElementById('category-dropdown');  
+    const categoryInput = document.getElementById('category-input');  
+  
+    if (!dropdown.contains(event.target) && event.target !== categoryInput) {  
+        dropdown.style.display = 'none';  
+    }  
+});
+```
