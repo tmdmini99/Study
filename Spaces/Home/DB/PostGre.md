@@ -2146,5 +2146,156 @@ FROM your_table_name a;
 
 
 
+### **PostgreSQL `RETURNING` 상세 설명**
+
+`RETURNING`은 **PostgreSQL**의 SQL 문법 중 하나로, **`INSERT`, `UPDATE`, `DELETE`**와 함께 사용하여 **영향을 받은 행의 데이터를 바로 반환**하는 기능입니다.
+
+
+## **1. `RETURNING` 문법의 기본 사용법**
+
+`RETURNING`은 **`INSERT`, `UPDATE`, `DELETE`** 이후 **데이터를 바로 조회**할 수 있습니다.
+
+
+
+1.1 `INSERT` 문법 (자동 증가 ID 반환)
+
+
+```sql
+INSERT INTO artists (name, genre) 
+VALUES ('John Doe', 'Rock') 
+RETURNING id;
+```
+
+
+결과:
+
+```plaintext
+id
+---
+1
+```
+
+
+**설명**:
+
+- `RETURNING id`: 삽입한 행의 `id` 값을 반환.
+- `SERIAL`(자동 증가) 컬럼에 유용.
+
+
+1.2 `UPDATE` 문법 (수정 후 변경된 행 반환)
+
+```sql
+UPDATE artists 
+SET genre = 'Jazz' 
+WHERE name = 'John Doe'
+RETURNING *;
+```
+
+결과:
+
+```plaintext
+id | name     | genre
+---+----------+------
+1  | John Doe | Jazz
+```
+
+**설명**:
+
+- `RETURNING *`: **수정된 전체 행**을 반환.
+
+1.3 `DELETE` 문법 (삭제된 데이터 반환)
+
+```sql
+DELETE FROM artists 
+WHERE name = 'John Doe' 
+RETURNING *;
+```
+
+
+결과:
+
+```plaintext
+id | name     | genre
+---+----------+------
+1  | John Doe | Jazz
+```
+
+**설명**:
+
+- `RETURNING *`: **삭제된 행의 모든 데이터**를 반환.
+
+
+## **2. `RETURNING`의 다양한 활용 예제**
+
+### **2.1 여러 컬럼 반환하기**
+
+
+```sql
+INSERT INTO artists (name, genre) 
+VALUES ('Jane Doe', 'Pop') 
+RETURNING id, name;
+```
+
+
+결과:
+
+
+```plaintext
+id | name
+---+---------
+2  | Jane Doe
+```
+
+
+### **2.2 복합 쿼리에서 `RETURNING` 사용**
+
+**서브쿼리에서 `RETURNING` 사용 불가** → 대신 **CTE(Common Table Expression)** 사용 가능
+
+
+```sql
+WITH inserted AS (
+    INSERT INTO artists (name, genre)
+    VALUES ('Taylor Swift', 'Pop')
+    RETURNING id, name
+)
+SELECT * FROM inserted;
+```
+
+
+결과:
+
+```plaintext
+id | name
+---+---------
+3  | Taylor Swift
+```
+
+
+
+## 📌 **4. `RETURNING`의 장점과 단점**
+
+### ✅ **장점:**
+
+- **효율적**: `SELECT`를 별도로 실행할 필요 없이, `INSERT/UPDATE/DELETE`와 동시에 데이터 반환.
+- **간편함**: 한 번의 쿼리로 데이터 삽입 및 확인 가능.
+- **트랜잭션 안정성**: 동일한 트랜잭션 내에서 ID 값을 보장.
+
+### ❌ **단점:**
+
+- **PostgreSQL 전용 기능**: 다른 DBMS(MySQL, Oracle)에서는 지원되지 않을 수 있음.
+- **복잡한 서브쿼리 제한**: 일부 복잡한 쿼리에서는 `CTE`를 사용해야 함.
+
+## **5. `RETURNING`과 `LASTVAL()` 비교**
+
+|기능|`RETURNING`|`LASTVAL()`|
+|---|---|---|
+|**데이터 반환 방식**|`INSERT` 문과 함께 즉시 반환|직전 `SERIAL` 값을 반환|
+|**정확성**|✅ 매우 안전 (동일 트랜잭션 내 정확)|❌ 다중 쓰레드 환경에서 부정확할 수 있음|
+|**사용법**|`INSERT INTO ... RETURNING id`|`SELECT LASTVAL()`|
+|**지원 DB**|PostgreSQL 전용|PostgreSQL 전용|
+|**추천 상황**|✅ 권장 방식 (더 안전함)|❌ 사용 주의 필요|
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
