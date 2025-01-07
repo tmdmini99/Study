@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
+                "file": "Spaces/Home/Spring/AOP/AOP.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JavaScpript event function"
+              "title": "AOP"
             }
           },
           {
@@ -100,6 +100,18 @@
           },
           {
             "id": "01d6fee454f38679",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "a35c76f569c731df",
             "type": "leaf",
             "state": {
               "type": "mk-file-view",
@@ -221,8 +233,9 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
+    "daily note/2025/1/2025-01-07.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
+    "Spaces/Home/Java Script/Java Script/JavaScpript.md",
     "Spaces/Home/Git/무제 파일.md",
     "Spaces/Home/Git/GitHub.md",
     "Spaces/Home/Git/Git.md",
@@ -248,7 +261,6 @@
     "Spaces/Home/IntelliJ/Spring/Spring.md",
     "Spaces/Home/IntelliJ/Spring/MVC 패턴 생성.md",
     "Spaces/Home/IntelliJ/PWA/PWA 설정.md",
-    "Spaces/Home/IntelliJ/JVM.md",
     "daily note/2025/1",
     "daily note/2025",
     "Spaces/백준",
