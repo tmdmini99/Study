@@ -916,3 +916,92 @@ document.addEventListener('click', function(event) {
     }  
 });
 ```
+
+
+
+
+depth +1로 무한정 depth 생성 가능
+```js
+document.querySelectorAll('.sub-item').forEach(item => {  
+    item.addEventListener('click', function(event) {  
+        // 하위 카테고리 수정 버튼, 추가 버튼 클릭 시 처리 안 함  
+        if (event.target.closest('.sub-category-edit') || event.target.closest('.add-category')) {  
+            return;  
+        }  
+  
+        if (event.target.closest('.sub-category-save') || event.target.closest('.sub-category-cancel')) {  
+            return;  
+        }  
+  
+        if (event.target.closest('input')) {  
+            return;  
+        }  
+  
+        const addCategoryButton = this.querySelector('.add-category');  
+        const group = this.querySelector('.group');  
+        const categoryInput = document.getElementById('category-input');  
+  
+        // 'add-category' 버튼이 있고 'show-edit-group' 클래스가 없으면 category-input에 값 설정  
+        if (addCategoryButton && !group.classList.contains('show-edit-group')) {  
+            const hiddenInput = this.querySelector('input[type="hidden"]');  
+            const textInput = this.querySelector('input[type="text"]');  
+            categoryInput.value = textInput.value; // hidden input 값 설정  
+            document.getElementById('category-id').value = hiddenInput.value;  
+        }  
+  
+        // 'add-category' 버튼이 없거나, 'show-edit-group' 클래스가 있을 경우에는 이동  
+        if (!addCategoryButton || this.classList.contains('can-move-to-next-depth') || group.classList.contains('show-edit-group')) {  
+            const currentDepth = this.closest('.categories');  
+            const currentDepthNumber = parseInt(currentDepth.getAttribute('data-category-depth'), 10);  
+            let nextDepth = document.querySelector(`.categories[data-category-depth="${currentDepthNumber + 1}"]`);  
+            let nextDepthNumber = currentDepthNumber + 1;  
+            if (!nextDepth) {  
+            const newDepth = document.createElement('div');  
+            newDepth.classList.add('categories');  
+            newDepth.setAttribute('data-category-depth', nextDepthNumber);  
+            newDepth.innerHTML = `  
+                <ul class="items" data-reference="">  
+                    <li class="sub-item" data-category-value="">  
+                        <input type="text" value="" readonly>  
+                        <input type="hidden" value="" readonly>  
+                        <p class="add-category">하위 카테고리 추가</p>  
+                        <div class="group">  
+                            <div class="sub-category-edit"><img src="/resources/images/icons/product manage/category-edit.svg"></div>  
+                            <div class="sub-category-delete"><img src="/resources/images/icons/product manage/category-del.svg"></div>  
+                            <div class="sub-category-save"><img src="/resources/images/icons/product manage/category-edit-save.svg"></div>  
+                            <div class="sub-category-cancel"><img src="/resources/images/icons/product manage/category-edit-cancel.svg"></div>  
+                        </div>  
+                    </li>  
+                </ul>  
+            `;  
+            currentDepth.parentNode.appendChild(newDepth);  
+            nextDepth = newDepth;  
+        }  
+  
+            document.querySelectorAll('.categories').forEach(depth => {  
+                depth.classList.remove('current-depth');  
+            });  
+            nextDepth.classList.add('current-depth');  
+  
+            const hiddenInputValue = this.querySelector('input[type="hidden"]').value;  
+            const categoryValue = this.querySelector('input').value;  
+            const referenceItems = nextDepth.querySelectorAll('.items');  
+  
+            referenceItems.forEach(referenceItem => {  
+                const referenceValue = referenceItem.getAttribute('data-reference');  
+                if (hiddenInputValue === referenceValue) {  
+                    referenceItem.style.display = 'block';  
+                } else {  
+                    referenceItem.style.display = 'none';  
+                }  
+            });  
+  
+  
+  
+            // 경로 업데이트 및 상태 초기화  
+            updateNavi(categoryValue,null, hiddenInputValue);  
+            resetButtonStates();  
+        }  
+    });  
+});
+```
