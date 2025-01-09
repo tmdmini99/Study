@@ -1005,3 +1005,38 @@ document.querySelectorAll('.sub-item').forEach(item => {
     });  
 });
 ```
+
+
+커서 위치 저장
+
+```js
+$(document).on("keyup change", "input:text[numberhyphenonly]", function (event) {
+    let input = $(this);
+    let value = input.val();
+    let caretPosition = input[0].selectionStart;  // ✅ 커서 위치 저장
+
+    // 숫자와 하이픈 외 모든 문자 제거
+    value = value.replace(/[^0-9\-]/gi, "");
+    
+    // ✅ 기존 커서 위치를 고려하여 업데이트
+    input.val(value);
+    input[0].setSelectionRange(caretPosition, caretPosition);  // ✅ 커서 위치 복원
+});
+```
+
+
+커서 위치 지정
+
+```js
+const inputElement = document.querySelector("input");
+inputElement.setSelectionRange(3, 3); // 커서를 3번째 글자 위치로 이동
+```
+
+
+
+- **`selectionStart`:**
+    - **텍스트 선택의 시작 위치** (커서 위치).
+- **`selectionEnd`:**
+    - **텍스트 선택의 끝 위치.**
+- **`setSelectionRange(start, end)` 메서드:**
+    - **커서 위치를 직접 설정.**
