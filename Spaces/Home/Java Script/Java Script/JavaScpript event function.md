@@ -1040,3 +1040,26 @@ inputElement.setSelectionRange(3, 3); // 커서를 3번째 글자 위치로 이�
     - **텍스트 선택의 끝 위치.**
 - **`setSelectionRange(start, end)` 메서드:**
     - **커서 위치를 직접 설정.**
+
+
+## blur
+
+
+`input`에 포커스가 빠질 때(`blur` 이벤트 발생 시) `input` 값을 유지하거나 사라지게 할 수 있습니다.
+
+### ✅ JavaScript: `blur` 이벤트로 값 사라지게 하기
+
+```js
+// 인풋에서 포커스 아웃(다른 곳 클릭) 시 값이 사라지게 처리
+document.getElementById('artist-input').addEventListener('blur', function (e) {
+    const input = e.target;
+    const hiddenInput = document.getElementById('artist-input-id');
+    const dropdown = document.getElementById('artist-dropdown');
+
+    // dropdown이 열려있는 경우에는 값 유지
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+        input.value = ''; // 값 제거
+        hiddenInput.value = ''; // hidden input 값도 제거
+    }
+});
+```
