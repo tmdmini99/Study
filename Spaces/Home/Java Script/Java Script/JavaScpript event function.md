@@ -1063,3 +1063,95 @@ document.getElementById('artist-input').addEventListener('blur', function (e) {
     }
 });
 ```
+
+
+이벤트로 클릭시에는 값이 안사라지고 클릭하지 않고 넘어가거나 클릭후 수정시 값 사라지게
+
+```js
+function selectItem(type, itemName, itemId) {  
+    const input = document.getElementById(`${type}-input`);  
+    const inputId = document.getElementById(`${type}-input-id`);  
+    console.log(input)  
+    input.value = itemName;  
+    inputId.value = itemId;  
+    const dropdown = document.getElementById(`${type}-dropdown`);  
+    dropdown.style.display = "none";  
+    input.setAttribute('data-selected', 'true');  
+}
+```
+여기서  밑에 플래그로 확인
+
+```js
+input.setAttribute('data-selected', 'true');
+```
+
+
+```js
+function initDropdown(inputSelector, dropdownSelector, hiddenInputSelector) {  
+    const inputField = document.querySelector(inputSelector);  
+    const dropdown = document.querySelector(dropdownSelector);  
+    const hiddenInput = document.querySelector(hiddenInputSelector);  
+  
+    inputField.addEventListener('input', function () {  
+        dropdown.style.display = 'block';  
+        inputField.setAttribute('data-selected', 'false');  // 직접 입력 시 해제  
+        hiddenInput.value = '';  
+    });  
+  
+    document.addEventListener('click', function (event) {  
+        const isSelected = inputField.getAttribute('data-selected') === 'true';  
+        if (!inputField.contains(event.target) && !dropdown.contains(event.target)) {  
+            if (!isSelected) {  
+                inputField.value = '';       // 값 삭제  
+                hiddenInput.value = '';      // hidden input 값 삭제  
+            }  
+            dropdown.style.display = 'none';  
+        }  
+    });  
+  
+    inputField.addEventListener('blur', function () {  
+        const isSelected = inputField.getAttribute('data-selected') === 'true';  
+        if (!isSelected) {  
+            inputField.value = '';  
+            hiddenInput.value = '';  
+        }  
+    });  
+}  
+  
+document.addEventListener('DOMContentLoaded', function () {  
+    initDropdown('#artist-input', '#artist-dropdown', '#artist-input-id');  
+    initDropdown('#media-input', '#media-dropdown', '#media-input-id');  
+    initDropdown('#codes-input', '#codes-dropdown', '#codes-input-id');  
+    initDropdown('#category-input', '#category-dropdown', '#category-input-id');  
+});
+```
+
+
+태그 두개를 같이 검색해서 둘중 하나라도 있으면 표출
+```js
+function filterDropdown(type) {  
+    const input = document.getElementById(`${type}-input`);  
+    const filter = input.value.replace(/\s+/g, '').toLowerCase();  
+    const dropdown = document.getElementById(`${type}-dropdown`);  
+    const items = dropdown.getElementsByClassName("dropdown-item");  
+  
+    let visibleItems = false;  
+    for (let i = 0; i < items.length; i++) {  
+        const item = items[i];  
+        const categoryText = item.getElementsByClassName("category-item")[0].textContent.replace(/\s+/g, '').toLowerCase();  
+  
+  
+        const cidElement = item.getElementsByClassName("cid")[0];  
+        const cidText = cidElement ? cidElement.textContent.replace(/\s+/g, '').toLowerCase() : '';  
+  
+        if (categoryText.indexOf(filter) > -1 || cidText.indexOf(filter) > -1) {  
+            item.style.display = "";  
+            visibleItems = true;  
+        } else {  
+            item.style.display = "none";  
+        }  
+    }  
+  
+    dropdown.style.display = visibleItems ? "block" : "none";  
+}
+```
