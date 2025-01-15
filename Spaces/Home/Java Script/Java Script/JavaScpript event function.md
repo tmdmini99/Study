@@ -1155,3 +1155,40 @@ function filterDropdown(type) {
     dropdown.style.display = visibleItems ? "block" : "none";  
 }
 ```
+
+
+
+`+`  `-` 버튼 클릭시 적용 되게 그리고 수동입력시에도 가능하게
+
+```js
+function setupStockControl(container) {  
+    const minusButton = container.querySelector("#minus");  
+    const plusButton = container.querySelector("#plus");  
+    const countElement = container.querySelector("#cnt input[name='productCnt']");  
+  
+    if (!minusButton || !plusButton || !countElement) {  
+        console.error("Missing required elements for stock control.");  
+        return;  
+    }  
+  
+    let count = parseInt(countElement.value, 10);  
+      
+    minusButton.addEventListener("click", () => {  
+        if (count > 0) {  
+            count--;  
+            countElement.value = count;  
+        }  
+    });  
+  
+  
+    plusButton.addEventListener("click", () => {  
+        count++;  
+        countElement.value = count;  
+    });  
+      
+    countElement.addEventListener("input", () => {  
+        let newValue = parseInt(countElement.value, 10);  
+        count = isNaN(newValue) ? 0 : newValue;  
+    });  
+}
+```
