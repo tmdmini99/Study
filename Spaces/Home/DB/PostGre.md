@@ -2297,5 +2297,68 @@ id | name
 
 
 
+```sql
+INSERT INTO cart_items (
+    user_id,
+    product_id,
+    quantity,
+    reg_dt
+)
+VALUES (
+    'testComp4',
+    2,
+    3,
+    NOW()
+)
+ON CONFLICT (
+    user_id, 
+    product_id
+)
+DO UPDATE
+SET
+    quantity = cart_items.quantity + 1,     -- 추가 수량 +1
+    upt_dt = NOW();
+```
+
+1. `INSERT INTO` (데이터 삽입)
+
+```sql
+INSERT INTO cart_items (
+    user_id,
+    product_id,
+    quantity,
+    reg_dt
+)
+VALUES (
+    'testComp4',
+    2,
+    3,
+    NOW()
+)
+```
+
+
+2. `ON CONFLICT` (중복 발생 시 처리)
+
+```sql
+ON CONFLICT (
+    user_id, 
+    product_id
+)
+```
+
+
+- **중복 조건:** `user_id`와 `product_id`가 **동시에 중복**될 경우, 기존 데이터를 업데이트합니다.
+- **중복 판단 기준:** `user_id`와 `product_id`가 **유니크 제약조건**(UNIQUE CONSTRAINT)으로 설정되어 있어야 합니다.
+
+3. `DO UPDATE` (중복 시 업데이트)
+
+
+
+
+
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
