@@ -90,4 +90,26 @@ public void insertOrder(Map<String, Object> paramMap) {
 - **같은 `paramMap` 사용 가능**: `DAO`에서 수정한 데이터가 `Service`에서도 즉시 반영됨.
 - **주의사항**: **멀티스레드 환경**에서는 **복사본 사용**을 권장.
 - **MyBatis의 `RETURNING`** 기능을 사용하면 **자동 증가 ID**를 안전하게 가져올 수 있음.
-- 
+
+
+
+```xml
+<insert id="insertLabelLang" keyProperty="labelId" useGeneratedKeys="true">
+	INSERT INTO labels_translates
+	(
+	label_nm,
+	reg_id,
+	country_code,
+	label_id
+	)VALUES
+	(
+	#{labelsNm},
+	#{regId},
+	#{countryCode},
+	#{labelId} :: numeric
+	)
+	RETURNING id as label_id
+</insert>
+```
+
+RETURNING id as label_id  별칭 지정시 keyProperty="labelId"로 변경
