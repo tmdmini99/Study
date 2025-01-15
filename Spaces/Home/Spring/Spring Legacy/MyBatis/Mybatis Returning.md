@@ -113,3 +113,55 @@ public void insertOrder(Map<String, Object> paramMap) {
 ```
 
 RETURNING id as label_id  별칭 지정시 keyProperty="labelId"로 변경
+
+
+```java
+public Map<String, Object> performWorker(BasicCUDParamVo paramVo) throws Exception {  
+    Map<String, Object> result = new HashMap<>();  
+    KWM1201CUDParamVo param = (KWM1201CUDParamVo) paramVo;  
+    param.setRegId(LoginUtil.getCurrentUser().getUserId());  
+  
+    if(Objects.equals(paramVo.getMode(), "I")){  
+        param.setTableNm("companies");  
+        String companyId = dao.selectCompany(param);  
+        param.setTableNm("labels");  
+        String labelId = dao.selectLabel(param);  
+        if (labelId == null) {  
+            dao.insertLabel(param);  
+        }  
+        if (companyId == null) {  
+            dao.insertCompany(param);  
+        }  
+        log.error(companyId);  
+        log.error(labelId);  
+        dao.insert(param);  
+        param.setTableNm("companies_translates");  
+        companyId = dao.selectCompanyLang(param);  
+        log.error(companyId);  
+        param.setTableNm("labels_translates");  
+        labelId = dao.selectLabelLang(param);  
+        log.error(labelId);  
+        if (labelId == null) {  
+            dao.insertLabelLang(param);  
+        }  
+        if (companyId == null) {  
+            dao.insertCompanyLang(param);  
+        }  
+        dao.insertTranslates(param);  
+        dao.insertTag(param);  
+        dao.insertTagTranslates(param);  
+    }else if(Objects.equals(paramVo.getMode(), "U")){  
+        dao.update(param);  
+    }else if(Objects.equals(paramVo.getMode(), "D")){  
+        dao.delete(param);  
+    }  
+  
+    result.put("success", true);  
+    result.put("msg", "처리완료");  
+    result.put("mode", paramVo.getMode());  
+  
+    return result;  
+}
+```
+
+이렇게 하면 자동으로 매핑되서 가져온 값을 넣지 않아도 됨
