@@ -1192,3 +1192,170 @@ function setupStockControl(container) {
     });  
 }
 ```
+
+
+
+
+국문 영문 input data 맞추기
+
+```js
+function selectTag(type, tagName, checkbox, id) {  
+    const existingTags = document.getElementById('tag-list').getElementsByClassName('tag');  
+    let tagFound = false;  
+  
+    for (let i = 0; i < existingTags.length; i++) {  
+        if (existingTags[i].textContent.trim() === `#${tagName}`) {  
+            tagFound = true;  
+            break;  
+        }  
+    }  
+  
+    if (checkbox.checked && !tagFound) {  
+        const tagList = document.getElementById('tag-list');  
+        const tagDiv = document.createElement('div');  
+        tagDiv.classList.add('tag');  
+        tagDiv.innerHTML = `  
+        <div class="tag-box">  
+            <div class="tag-name">#${tagName}</div>  
+            <div class="tag-del" onclick="removeTag(this, '${type}-hidden-${id}')">  
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">  
+                    <path d="M1.64145 0.281628C1.26594 -0.093876 0.657132 -0.093876 0.281628 0.281628C-0.093876 0.657132 -0.093876 1.26594 0.281628 1.64145L3.64018 5L0.281628 8.35855C-0.093876 8.73406 -0.093876 9.34287 0.281628 9.71837C0.657132 10.0939 1.26594 10.0939 1.64145 9.71837L5 6.35982L8.35855 9.71837C8.73406 10.0939 9.34287 10.0939 9.71837 9.71837C10.0939 9.34287 10.0939 8.73406 9.71837 8.35855L6.35982 5L9.71837 1.64145C10.0939 1.26594 10.0939 0.657132 9.71837 0.281628C9.34287 -0.093876 8.73406 -0.093876 8.35855 0.281628L5 3.64018L1.64145 0.281628Z" fill="#006638"/>  
+                </svg>  
+            </div>  
+            <input type="hidden" id="${type}-hidden-${id}" name="${type}Id" value="${id}">  
+        </div>  
+        `;  
+        tagList.appendChild(tagDiv);  
+  
+        syncEnglishTag(type, id); // 영어 태그 동기화  
+    } else if (!checkbox.checked && tagFound) {  
+        removeTag(type, id, false);  
+    }  
+  
+    document.getElementById(`${type}-dropdown`).style.display = "none";  
+}  
+  
+function selectTagEn(type, tagName, checkbox, id) {  
+    const existingTags = document.getElementById('tag-list-en').getElementsByClassName('tag');  
+    let tagFound = false;  
+  
+    for (let i = 0; i < existingTags.length; i++) {  
+        if (existingTags[i].textContent.trim() === `#${tagName}`) {  
+            tagFound = true;  
+            break;  
+        }  
+    }  
+  
+    if (checkbox.checked && !tagFound) {  
+        const tagList = document.getElementById('tag-list-en');  
+        const tagDiv = document.createElement('div');  
+        tagDiv.classList.add('tag');  
+        tagDiv.innerHTML = `  
+        <div class="tag-box">  
+            <div class="tag-name">#${tagName}</div>  
+            <div class="tag-del" onclick="removeTag(this, '${type}-hidden-${id}-en')">  
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">  
+                    <path d="M1.64145 0.281628C1.26594 -0.093876 0.657132 -0.093876 0.281628 0.281628C-0.093876 0.657132 -0.093876 1.26594 0.281628 1.64145L3.64018 5L0.281628 8.35855C-0.093876 8.73406 -0.093876 9.34287 0.281628 9.71837C0.657132 10.0939 1.26594 10.0939 1.64145 9.71837L5 6.35982L8.35855 9.71837C8.73406 10.0939 9.34287 10.0939 9.71837 9.71837C10.0939 9.34287 10.0939 8.73406 9.71837 8.35855L6.35982 5L9.71837 1.64145C10.0939 1.26594 10.0939 0.657132 9.71837 0.281628C9.34287 -0.093876 8.73406 -0.093876 8.35855 0.281628L5 3.64018L1.64145 0.281628Z" fill="#006638"/>  
+                </svg>  
+            </div>  
+            <input type="hidden" id="${type}-hidden-${id}-en" name="${type}IdEn" value="${id}">  
+        </div>  
+        `;  
+        tagList.appendChild(tagDiv);  
+        console.log(event.target.closest('li').getAttribute('data-id'));  
+        syncKoreanTag(type, event.target.closest('li').getAttribute('data-id'));  
+        // syncKoreanTag(type, id); // 한국어 태그 동기화  
+    } else if (!checkbox.checked && tagFound) {  
+        removeTagEn(type, id, true);  
+    }  
+  
+    document.getElementById(`${type}-dropdown-en`).style.display = "none";  
+}  
+  
+function syncKoreanTag(type, id) {  
+    const koreanItem = document.querySelector(`#tag-dropdown .dropdown-item[data-id="${id}"]`);  
+    const checkbox = koreanItem ? koreanItem.querySelector('input') : null;  
+    if (checkbox && !checkbox.checked) {  
+        checkbox.checked = true;  
+        selectTag(type, checkbox.dataset.tag, checkbox, id);  
+    }  
+}  
+  
+function syncEnglishTag(type, id) {  
+    const englishItem = document.querySelector(`#tag-dropdown-en .dropdown-item[data-id="${id}"]`);  
+    const checkbox = englishItem ? englishItem.querySelector('input') : null;  
+    if (checkbox && !checkbox.checked) {  
+        checkbox.checked = true;  
+        selectTagEn(type, checkbox.dataset.tag, checkbox, id);  
+    }  
+}
+```
+
+
+
+```js
+function selectItem(type, itemName, itemId) {  
+    const input = document.getElementById(`${type}-input`);  
+    const inputId = document.getElementById(`${type}-input-id`);  
+    console.log(input)  
+    input.value = itemName;  
+    inputId.value = itemId;  
+    const dropdown = document.getElementById(`${type}-dropdown`);  
+    dropdown.style.display = "none";  
+    input.setAttribute('data-selected', 'true');  
+    syncEnglishField(type, itemId);  
+}  
+function selectItemEn(type, itemName, itemId) {  
+    const input = document.getElementById(`${type}-input-en`);  
+    const inputId = document.getElementById(`${type}-input-id-en`);  
+    console.log(input)  
+    input.value = itemName;  
+    inputId.value = itemId;  
+    const dropdown = document.getElementById(`${type}-dropdown-en`);  
+    dropdown.style.display = "none";  
+    input.setAttribute('data-selected', 'true');  
+    // `event` 객체를 활용해 클릭된 요소의 `data-id` 가져오기  
+    const clickedItemId = event.target.closest('.dropdown-item').getAttribute('data-id');  
+    console.log(`Clicked item data-id: ${clickedItemId}`);  
+  
+    // 해당 data-id로 한국어 필드 동기화  
+    syncKoreanField(type, clickedItemId);  
+}  
+  
+function syncEnglishField(type, itemId) {  
+    const englishDropdown = document.getElementById(`${type}-dropdown-en`);  
+    const englishItems = englishDropdown.querySelectorAll('.dropdown-item');  
+  
+    englishItems.forEach(item => {  
+        const itemHiddenId = item.getAttribute('data-id');  
+        if (itemHiddenId === itemId) {  
+            const itemNameEn = item.querySelector('.category-item').innerText;  
+            const inputEn = document.getElementById(`${type}-input-en`);  
+            const inputIdEn = document.getElementById(`${type}-input-id-en`);  
+            inputEn.value = itemNameEn;  
+            inputIdEn.value = itemId;  
+            inputEn.setAttribute('data-selected', 'true');  
+        }  
+    });  
+}  
+  
+function syncKoreanField(type, itemId) {  
+    console.log(`syncKoreanField called with type: ${type}, itemId: ${itemId}`); // 디버깅용  
+    const koreanDropdown = document.getElementById(`${type}-dropdown`);  
+    const koreanItems = koreanDropdown.querySelectorAll('.dropdown-item');  
+  
+    koreanItems.forEach(item => {  
+        const itemHiddenId = item.getAttribute('data-id');  
+        console.log(`Checking item with data-id: ${itemHiddenId}`); // 디버깅용  
+        if (itemHiddenId === itemId) {  
+            const itemNameKr = item.querySelector('.category-item').innerText;  
+            const inputKr = document.getElementById(`${type}-input`);  
+            const inputIdKr = document.getElementById(`${type}-input-id`);  
+            inputKr.value = itemNameKr;  
+            inputIdKr.value = itemId;  
+            inputKr.setAttribute('data-selected', 'true');  
+            console.log(`Updated Korean field: ${itemNameKr}, ${itemId}`); // 디버깅용  
+        }  
+    });  
+}
+```
