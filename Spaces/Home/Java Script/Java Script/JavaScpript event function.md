@@ -1294,7 +1294,7 @@ function syncEnglishTag(type, id) {
 
 
 ```js
-function selectItem(type, itemName, itemId) {  
+function selectItem(type, itemName, itemId, langId) {  
     const input = document.getElementById(`${type}-input`);  
     const inputId = document.getElementById(`${type}-input-id`);  
     console.log(input)  
@@ -1303,9 +1303,9 @@ function selectItem(type, itemName, itemId) {
     const dropdown = document.getElementById(`${type}-dropdown`);  
     dropdown.style.display = "none";  
     input.setAttribute('data-selected', 'true');  
-    syncEnglishField(type, itemId);  
+    syncEnglishField(type, itemId,langId);  
 }  
-function selectItemEn(type, itemName, itemId) {  
+function selectItemEn(type, itemName, itemId, langId) {  
     const input = document.getElementById(`${type}-input-en`);  
     const inputId = document.getElementById(`${type}-input-id-en`);  
     console.log(input)  
@@ -1319,27 +1319,27 @@ function selectItemEn(type, itemName, itemId) {
     console.log(`Clicked item data-id: ${clickedItemId}`);  
   
     // 해당 data-id로 한국어 필드 동기화  
-    syncKoreanField(type, clickedItemId);  
+    syncKoreanField(type, clickedItemId,langId);  
 }  
   
-function syncEnglishField(type, itemId) {  
+function syncEnglishField(type, itemId, langId) {  
     const englishDropdown = document.getElementById(`${type}-dropdown-en`);  
     const englishItems = englishDropdown.querySelectorAll('.dropdown-item');  
-  
     englishItems.forEach(item => {  
         const itemHiddenId = item.getAttribute('data-id');  
         if (itemHiddenId === itemId) {  
             const itemNameEn = item.querySelector('.category-item').innerText;  
+            console.log(itemNameEn);  
             const inputEn = document.getElementById(`${type}-input-en`);  
             const inputIdEn = document.getElementById(`${type}-input-id-en`);  
             inputEn.value = itemNameEn;  
-            inputIdEn.value = itemId;  
+            inputIdEn.value = langId;  
             inputEn.setAttribute('data-selected', 'true');  
         }  
     });  
 }  
   
-function syncKoreanField(type, itemId) {  
+function syncKoreanField(type, itemId, langId) {  
     console.log(`syncKoreanField called with type: ${type}, itemId: ${itemId}`); // 디버깅용  
     const koreanDropdown = document.getElementById(`${type}-dropdown`);  
     const koreanItems = koreanDropdown.querySelectorAll('.dropdown-item');  
@@ -1352,7 +1352,7 @@ function syncKoreanField(type, itemId) {
             const inputKr = document.getElementById(`${type}-input`);  
             const inputIdKr = document.getElementById(`${type}-input-id`);  
             inputKr.value = itemNameKr;  
-            inputIdKr.value = itemId;  
+            inputIdKr.value = langId;  
             inputKr.setAttribute('data-selected', 'true');  
             console.log(`Updated Korean field: ${itemNameKr}, ${itemId}`); // 디버깅용  
         }  
