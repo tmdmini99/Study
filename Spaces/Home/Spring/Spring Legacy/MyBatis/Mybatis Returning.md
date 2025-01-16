@@ -165,3 +165,19 @@ public Map<String, Object> performWorker(BasicCUDParamVo paramVo) throws Excepti
 ```
 
 이렇게 하면 자동으로 매핑되서 가져온 값을 넣지 않아도 됨
+
+
+여기서 useGeneratedKeys="true" 없을 경우 자동 매핑 x
+```xml
+<insert id="insertModal" parameterType="map" keyProperty="id" useGeneratedKeys="true">  
+    INSERT INTO ${tableNm}  
+    (        <foreach collection="columns" item="column" separator=",">  
+            ${column}  
+        </foreach>  
+        ,reg_id  
+    )    VALUES    (        <foreach collection="values" item="value" separator=",">  
+            #{value}  
+        </foreach>  
+    )  
+    RETURNING id</insert>
+```
