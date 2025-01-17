@@ -2353,7 +2353,26 @@ ON CONFLICT (
 
 3. `DO UPDATE` (중복 시 업데이트)
 
+```sql
+DO UPDATE
+SET
+    quantity = cart_items.quantity + 1,
+    upt_dt = NOW();
+```
 
+**중복된 경우 업데이트 수행**:
+
+- **`quantity` 증가**: 기존 수량에 `+1`을 더합니다.
+
+```sql
+quantity = cart_items.quantity + 1
+```
+
+**`upt_dt` 갱신**: 데이터가 업데이트된 시간을 현재 시간으로 설정합니다.
+
+```sql
+upt_dt = NOW()
+```
 
 
 
