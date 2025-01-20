@@ -1673,10 +1673,66 @@ DROP TRIGGER IF EXISTS trigger_update_comment_exists_after_delete ON public.boar
 2. **성능 부담**: 이벤트 발생 시마다 추가 작업이 실행되어 성능 저하 가능.
 3. **디버깅 어려움**: 트리거 오류 추적이 복잡.
 
+`TG_OP`는 PostgreSQL 트리거 함수 내에서 **작업 유형(`INSERT`, `UPDATE`, `DELETE`)을 확인**하는 데 표준적으로 사용하는 가상 변수입니다. 특정 동작을 구현할 때는 `TG_OP` 외에도 PostgreSQL에서 제공하는 다양한 **트리거 관련 변수**를 사용할 수 있습니다.
+
+
+### PostgreSQL에서 사용할 수 있는 주요 트리거 변수
+
+1. **`TG_OP`**
+    
+    - 현재 트리거를 실행한 작업 유형(`INSERT`, `UPDATE`, `DELETE`)을 반환합니다.
+2. **`NEW`**
+    
+    - `INSERT` 또는 `UPDATE` 작업에서 새로 삽입되거나 수정된 행을 참조합니다.
+    - 예: `NEW.column_name`
+3. **`OLD`**
+    
+    - `UPDATE` 또는 `DELETE` 작업에서 이전 행을 참조합니다.
+    - 예: `OLD.column_name`
+4. **`TG_TABLE_NAME`**
+    
+    - 트리거가 호출된 테이블의 이름을 반환합니다.
+5. **`TG_TABLE_SCHEMA`**
+    
+    - 트리거가 호출된 테이블의 스키마를 반환합니다.
+6. **`TG_WHEN`**
+    
+    - 트리거가 호출된 시점(`BEFORE` 또는 `AFTER`)을 반환합니다.
+7. **`TG_LEVEL`**
+    
+    - 트리거가 호출된 레벨(`ROW` 또는 `STATEMENT`)을 반환합니다.
+8. **`TG_ARGV[]`**
+    
+    - 트리거를 정의할 때 전달된 사용자 지정 인수 배열입니다
 
 
 
-스키마 데이터 복제
+```sql
+CREATE OR REPLACE FUNCTION example_trigger_function()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        RAISE NOTICE 'Triggered by INSERT';
+    ELSIF TG_OP = 'UPDATE' THEN
+        RAISE NOTICE 'Triggered by UPDATE';
+    ELSIF TG_OP = 'DELETE' THEN
+        RAISE NOTICE 'Triggered by DELETE';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+
+```sql
+CREATE TRIGGER example_trigger
+AFTER INSERT OR UPDATE OR DELETE ON your_table
+FOR EACH ROW
+EXECUTE FUNCTION example_trigger_function();
+```
+
+
+## 스키마 데이터 복제
 
 **중복 키를 무시하고 삽입 (ON CONFLICT DO NOTHING):** PostgreSQL 9.5 이상에서는 `ON CONFLICT` 구문을 사용하여 중복 키가 발생할 경우 무시할 수 있습니다.
 ```sql
