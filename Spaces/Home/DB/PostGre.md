@@ -2434,8 +2434,76 @@ upt_dt = NOW()
 ```
 
 
+array로 묶는 쿼리문
+```sql
+SELECT
 
+a_1.product_id,
 
+a_1.product_name,
+
+CASE
+
+WHEN array_length(a_1.tag_array, 1) >= 1 THEN a_1.tag_array[1]
+
+ELSE NULL::character varying
+
+END AS tag_1,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 1 THEN a_1.tag_id_array[1]
+
+ELSE NULL::integer
+
+END AS tag_1_id,
+
+CASE
+
+WHEN array_length(a_1.tag_array, 1) >= 2 THEN a_1.tag_array[2]
+
+ELSE NULL::character varying
+
+END AS tag_2,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 2 THEN a_1.tag_id_array[2]
+
+ELSE NULL::integer
+
+END AS tag_2_id
+
+FROM (
+
+SELECT
+
+p.id AS product_id,
+
+p.product_nm AS product_name,
+
+array_agg(t.tag_nm ORDER BY t.tag_nm) AS tag_array,
+
+array_agg(t.id ORDER BY t.tag_nm) AS tag_id_array
+
+FROM
+
+products p
+
+LEFT JOIN
+
+product_tags pt ON p.id = pt.product_id
+
+LEFT JOIN
+
+tags t ON pt.tag_id = t.id
+
+GROUP BY
+
+p.id, p.product_nm
+
+) a_1;
+```
 
 
 ---
