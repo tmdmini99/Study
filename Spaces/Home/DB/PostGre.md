@@ -2506,5 +2506,139 @@ p.id, p.product_nm
 ```
 
 
+## WITH RECURSIVE
+
+재귀적 조인
+
+
+
+## 초성 추출
+
+초성 추출
+
+function 생성
+```sql
+CREATE OR REPLACE FUNCTION public.fn_get_chosung(text)
+
+RETURNS text
+
+LANGUAGE plpgsql
+
+AS $function$
+
+DECLARE
+
+v_text ALIAS FOR $1;
+
+v_char text;
+
+v_result text;
+
+BEGIN
+
+v_result := '';
+
+FOR i IN 1..char_length(v_text) LOOP
+
+v_char := substring(v_text FROM i FOR 1);
+
+-- 한글 처리
+
+IF v_char >= '가' AND v_char <= '힣' THEN
+
+CASE
+
+WHEN v_char < '까' THEN v_result := v_result || 'ㄱ';
+
+WHEN v_char < '나' THEN v_result := v_result || 'ㄲ';
+
+WHEN v_char < '다' THEN v_result := v_result || 'ㄴ';
+
+WHEN v_char < '따' THEN v_result := v_result || 'ㄷ';
+
+WHEN v_char < '라' THEN v_result := v_result || 'ㄸ';
+
+WHEN v_char < '마' THEN v_result := v_result || 'ㄹ';
+
+WHEN v_char < '바' THEN v_result := v_result || 'ㅁ';
+
+WHEN v_char < '빠' THEN v_result := v_result || 'ㅂ';
+
+WHEN v_char < '사' THEN v_result := v_result || 'ㅃ';
+
+WHEN v_char < '싸' THEN v_result := v_result || 'ㅅ';
+
+WHEN v_char < '아' THEN v_result := v_result || 'ㅆ';
+
+WHEN v_char < '자' THEN v_result := v_result || 'ㅇ';
+
+WHEN v_char < '짜' THEN v_result := v_result || 'ㅈ';
+
+WHEN v_char < '차' THEN v_result := v_result || 'ㅉ';
+
+WHEN v_char < '카' THEN v_result := v_result || 'ㅊ';
+
+WHEN v_char < '타' THEN v_result := v_result || 'ㅋ';
+
+WHEN v_char < '파' THEN v_result := v_result || 'ㅌ';
+
+WHEN v_char < '하' THEN v_result := v_result || 'ㅍ';
+
+ELSE v_result := v_result || 'ㅎ';
+
+END CASE;
+
+-- 한글 자음
+
+ELSIF v_char >= 'ㄱ' AND v_char <= 'ㅎ' THEN
+
+v_result := v_result || v_char;
+
+-- 한글 모음
+
+ELSIF v_char >= 'ㅏ' AND v_char <= 'ㅣ' THEN
+
+v_result := v_result || v_char;
+
+-- 영문 대문자
+
+ELSIF v_char >= 'A' AND v_char <= 'Z' THEN
+
+v_result := v_result || v_char;
+
+-- 영문 소문자
+
+ELSIF v_char >= 'a' AND v_char <= 'z' THEN
+
+v_result := v_result || upper(v_char);
+
+-- 숫자
+
+ELSIF v_char >= '0' AND v_char <= '9' THEN
+
+v_result := v_result || v_char;
+
+-- 그 외 문자는 그대로 유지
+
+ELSE
+
+v_result := v_result || v_char;
+
+END IF;
+
+END LOOP;
+
+RETURN v_result;
+
+END;
+
+$function$
+
+;
+```
+
+
+
+
 ---
 출처 - https://yeongunheo.tistory.com/entry/PostgreSQL-json-jsonb-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90#--%--json%--vs%--jsonb%--%ED%--%--%EC%-E%--
