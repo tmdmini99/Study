@@ -1040,3 +1040,183 @@ MyBatis 쿼리에서 `categoryId`가 `null`인 경우를 명확히 처리합니�
     AND category_id = #{categoryId}
 </if>
 ```
+
+ajax function
+```js
+  
+// AJAX 요청을 위한 함수 정의  
+function reqAjax(targetUrl, data, callback, async, errorCallback) {  
+    if(async === undefined){  
+        async = false;  
+    }  
+  
+    $.ajax({  
+        url : targetUrl,  
+        type : 'POST',  
+        async : async,  
+        data : data,  
+        headers: {  
+            'X-Requested-With': 'XMLHttpRequest'  // AJAX 요청을 알리기 위한 헤더  
+        },  
+        beforeSend : function (xmlHttpRequest){  
+            // $("body").mLoading('show');  
+        },  
+        success : function(result) {  
+            if(callback) callback(result);  
+        },  
+        error : function(request, status, error) {  
+            if (errorCallback) {  
+                errorCallback(request, status, error);  // errorCallback이 제공되면 호출  
+            } else {  
+                alert("오류가 발생했습니다.");  // errorCallback이 없으면 기본적으로 알림  
+            }  
+        },  
+        complete: function() {  
+            // $("body").mLoading('hide');  
+        }  
+    });  
+}  
+  
+// AJAX 요청을 위한 함수 정의  
+function reqAjaxJson(targetUrl, data, callback, async, errorCallback) {  
+    if(async === undefined){  
+        async = false;  
+    }  
+    $.ajax({  
+        url : targetUrl,  
+        type : 'POST',  
+        async : async,  
+        data : data,  
+        contentType:'application/json',  
+        headers: {  
+            'X-Requested-With': 'XMLHttpRequest'  // AJAX 요청을 알리기 위한 헤더  
+        },  
+        beforeSend : function (xmlHttpRequest){  
+            // $("body").mLoading('show');  
+        },  
+        success : function(result) {  
+            if(callback) callback(result);  
+        },  
+        error : function(request, status, error) {  
+            if (errorCallback) {  
+                errorCallback(request, status, error);  // errorCallback이 제공되면 호출  
+            } else {  
+                alert("오류가 발생했습니다.");  // errorCallback이 없으면 기본적으로 알림  
+            }  
+        },  
+        complete: function() {  
+            // $("body").mLoading('hide');  
+        }  
+    });  
+}  
+  
+  
+function reqFileAjax(targetUrl, data, callback, async) {  
+    if(async === undefined){  
+        async = false;  
+    }  
+  
+    let formData = new FormData();  
+  
+    if (data instanceof FormData) {  
+        formData = data;  
+    } else if (typeof data === 'string') {  
+        data.split("&").forEach((pair) => {  
+            const [key, value] = pair.split("=").map(decodeURIComponent);  
+            formData.append(key, value);  
+        });  
+    }  
+  
+    // 서버로 데이터 전송 (AJAX 예시)  
+    if (uploadFiles.length > 0) {  
+        for(let i=0; i<uploadFiles.length; i++){  
+            formData.append('file', uploadFiles[i]);  
+        }  
+        try {  
+            // S3에 파일 업로드  
+            let response;  
+  
+            $.ajax({  
+                url: '/common/upload/s3',  
+                type: 'POST',  
+                data: formData,  
+                processData: false,  
+                contentType: false,  
+                async : async,  
+                headers: {  
+                    'X-Requested-With': 'XMLHttpRequest'  // AJAX 요청을 알리기 위한 헤더  
+                },  
+                success : function(result) {  
+                    response = result;  
+                },  
+            });  
+  
+            let presignedUrls = response.data.presignedUrls;  
+  
+            // presignedUrls를 사용해 S3에 파일 업로드  
+            uploadToS3(uploadFiles, presignedUrls);  
+  
+            // S3 업로드 완료 후 presignedUrls를 data에 추가  
+            formData.append('fileData', JSON.stringify(presignedUrls));  
+            console.log("data 확인:", Array.from(formData.entries()));  
+        } catch (error) {  
+            alert(error);  
+            return;  
+        }  
+    }  
+  
+    if(delFiles.length > 0) {  
+        formData.append('deletedFileList', delFiles)  
+    }  
+  
+    formData.delete("file");  
+  
+    $.ajax({  
+        url: targetUrl,  
+        type: 'POST',  
+        data: formData,  
+        processData: false,  
+        contentType: false,  
+        async: async,  
+        success : function(result) {  
+            if(callback) callback(result);  
+        },  
+    });  
+}
+```
+
+
+사용
+```js
+$(document).on('click', '.cart-btn', function () {  
+    const allRowsData = [];  
+  
+    // 모든 tr 데이터를 수집  
+    $('.tr-caculate').each(function () {  
+        const $row = $(this); // 현재 tr 요소  
+  
+        // tr에서 productId와 quantity 값 추출  
+        const productId = $row.find('input[name="productId"]').val();  
+        const quantity = parseInt($row.find('input[name="quantity"]').val(), 10);  
+  
+        // 수량이 0보다 큰 경우만 추가  
+        if (quantity > 0) {  
+            allRowsData.push({ productId, quantity });  
+        }  
+    });  
+  
+    console.log('All Rows Data:', allRowsData);  
+  
+    // 요청 URL    const url = window.location.pathname +"Cart";  
+  
+    // 데이터 전송 (AJAX)    reqAjaxJson(url, JSON.stringify(allRowsData), function (response) {  
+        if (response.success) {  
+            alert('Data sent successfully!');  
+        } else {  
+            alert('Failed to send data.');  
+        }  
+    }, {  
+        contentType: 'application/json' // JSON 데이터 전송  
+    });  
+});
+```
