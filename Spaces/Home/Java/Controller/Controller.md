@@ -384,3 +384,30 @@ public Map<String, Object> modalCCud(@RequestParam Map<String, Object> map, Http
 }
 
 ```
+
+
+
+## @RequestParam
+
+#### **파라미터를 선택 사항으로 설정**
+
+- `@RequestParam`에 `required = false`를 설정하여 파라미터를 선택적으로 받을 수 있도록 수정하세요.
+```java
+@GetMapping("/example")
+public String example(@RequestParam(required = false) String name) {
+    if (name == null || name.isEmpty()) {
+        name = "Default Name"; // 기본값 설정
+    }
+    return "Hello, " + name;
+}
+```
+
+#### **기본값 제공**
+
+- `@RequestParam`에 `defaultValue` 속성을 추가하여 요청 파라미터가 없을 때 사용할 기본값을 지정할 수 있습니다.
+```java
+@GetMapping("/example")
+public String example(@RequestParam(defaultValue = "Guest") String name) {
+    return "Hello, " + name;
+}
+```
