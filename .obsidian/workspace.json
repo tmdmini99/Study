@@ -13,13 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Controller/Controller.md",
+                "file": "daily note/2025/2/2025-02-03.md",
                 "mode": "source",
+                "source": false,
                 "backlinks": true,
-                "source": false
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "Controller"
+              "title": "2025-02-03"
             }
           },
           {
@@ -53,7 +62,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -102,10 +112,26 @@
             "id": "7406bfbbe73b4d19",
             "type": "leaf",
             "state": {
-              "type": "mk-file-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Spaces"
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "9f7dfa1be776e6fc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
             }
           }
         ]
@@ -209,10 +235,10 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:퀵 스위처 열기": false,
+      "switcher:빠른 전환기 열기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
       "canvas:새 캔버스 만들기": false,
       "templates:템플릿 삽입": false,
-      "daily-notes:오늘의 데일리 노트 열기": false,
       "graph:그래프 뷰 열기": false,
       "command-palette:명령어 팔레트 열기": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
@@ -221,6 +247,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-03.md",
+    "daily note/2025/2",
     "daily note/2025/1/2025-01-23.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/Home/Java Script/Java Script/라이브러리/라이브러리.md",
@@ -247,7 +275,6 @@
     "Spaces/Home/Spring/Dependency Injection/DI.md",
     "Spaces/Home/Java/Controller/Controller.md",
     "Spaces/Home/Spring/AOP/AOP.md",
-    "Spaces/Home/Spring/Dependency Injection/Annotation.md",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
@@ -256,7 +283,6 @@
     "Spaces/백준",
     "Spaces/Home/Spring/MyBatis/PageHelper",
     "Spaces/Home/Java/Controller",
-    "Spaces/Home/Project",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
