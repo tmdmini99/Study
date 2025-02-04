@@ -1778,6 +1778,65 @@ DO UPDATE SET column1 = EXCLUDED.column1, column2 = EXCLUDED.column2;
 - `EXCLUDED`는 새로 삽입하려는 행의 값을 나타냅니다.
 
 
+### **2. `WITH ... INSERT / UPDATE` (MERGE와 유사)**
+
+만약 `ON CONFLICT`가 아닌 **좀 더 복잡한 조건을 반영한 `MERGE` 대체 기능**이 필요하다면 `WITH ... INSERT / UPDATE` 구조를 사용할 수 있습니다.
+
+
+```sql
+WITH updated AS (
+    UPDATE your_table
+    SET name = 'example_updated', value = 200
+    WHERE id = 1
+    RETURNING *
+)
+INSERT INTO your_table (id, name, value)
+SELECT 1, 'example', 100
+WHERE NOT EXISTS (SELECT 1 FROM updated);
+
+```
+
+
+- 먼저 `UPDATE` 실행 → 조건에 맞는 행을 업데이트 후 `RETURNING *`
+- `INSERT` 실행 → 업데이트된 데이터가 없으면 새 데이터 삽입
+
+- `id = 99`가 존재하지 않아서 `UPDATE`가 아무 행도 변경하지 않음
+- `updated`가 비어 있음 → `NOT EXISTS (SELECT 1 FROM updated)`는 `TRUE`
+
+- select를 넣은 이유 : where 절로 update를 먼저 실행 시킨후 없을 경우 값 가져오게 하기 위함
+
+
+📌 **이 방식은 `ON CONFLICT`보다 유연하지만 성능이 살짝 떨어질 수 있음**
+
+
+### **3. `PL/pgSQL`을 활용한 MERGE 함수**
+
+더 복잡한 `MERGE` 로직이 필요하다면 **PL/pgSQL (Stored Procedure)**을 사용해서 직접 `MERGE` 기능을 구현할 수도 있습니다.
+
+
+```sql
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM your_table WHERE id = 1) THEN
+        UPDATE your_table
+        SET name = 'example_updated', value = 200
+        WHERE id = 1;
+    ELSE
+        INSERT INTO your_table (id, name, value)
+        VALUES (1, 'example', 100);
+    END IF;
+END $$;
+```
+
+
+- `IF EXISTS (SELECT 1 FROM your_table WHERE id = 1)` → ID가 존재하면 `UPDATE`
+- 존재하지 않으면 `INSERT` 실행
+
+
+
+---
+
+
 
 **오류를 방지하고 로그 확인:** 중복 데이터만 확인하고 싶다면 `EXCEPT`를 사용하여 어떤 데이터가 충돌하는지 먼저 확인해 볼 수도 있습니다.
 
@@ -2354,84 +2413,6 @@ id | name
 |**지원 DB**|PostgreSQL 전용|PostgreSQL 전용|
 |**추천 상황**|✅ 권장 방식 (더 안전함)|❌ 사용 주의 필요|
 
-
-
-```sql
-INSERT INTO cart_items (
-    user_id,
-    product_id,
-    quantity,
-    reg_dt
-)
-VALUES (
-    'testComp4',
-    2,
-    3,
-    NOW()
-)
-ON CONFLICT (
-    user_id, 
-    product_id
-)
-DO UPDATE
-SET
-    quantity = cart_items.quantity + 1,     -- 추가 수량 +1
-    upt_dt = NOW();
-```
-
-1. `INSERT INTO` (데이터 삽입)
-
-```sql
-INSERT INTO cart_items (
-    user_id,
-    product_id,
-    quantity,
-    reg_dt
-)
-VALUES (
-    'testComp4',
-    2,
-    3,
-    NOW()
-)
-```
-
-
-2. `ON CONFLICT` (중복 발생 시 처리)
-
-```sql
-ON CONFLICT (
-    user_id, 
-    product_id
-)
-```
-
-
-- **중복 조건:** `user_id`와 `product_id`가 **동시에 중복**될 경우, 기존 데이터를 업데이트합니다.
-- **중복 판단 기준:** `user_id`와 `product_id`가 **유니크 제약조건**(UNIQUE CONSTRAINT)으로 설정되어 있어야 합니다.
-
-3. `DO UPDATE` (중복 시 업데이트)
-
-```sql
-DO UPDATE
-SET
-    quantity = cart_items.quantity + 1,
-    upt_dt = NOW();
-```
-
-**중복된 경우 업데이트 수행**:
-
-- **`quantity` 증가**: 기존 수량에 `+1`을 더합니다.
-
-```sql
-quantity = cart_items.quantity + 1
-```
-
-**`upt_dt` 갱신**: 데이터가 업데이트된 시간을 현재 시간으로 설정합니다.
-
-```sql
-upt_dt = NOW()
-```
 
 
 array로 묶는 쿼리문
