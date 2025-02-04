@@ -1804,6 +1804,15 @@ WHERE NOT EXISTS (SELECT 1 FROM updated);
 - `updated`가 비어 있음 → `NOT EXISTS (SELECT 1 FROM updated)`는 `TRUE`
 
 - select를 넣은 이유 : where 절로 update를 먼저 실행 시킨후 없을 경우 값 가져오게 하기 위함
+- from 이 없어도 실행 가능
+- from 이 필요한 경우 : table에서 데이터를 직접 가져와야 할때 ex
+
+```sql
+INSERT INTO my_table (id, name)
+SELECT some_id, some_name
+FROM another_table
+WHERE NOT EXISTS (SELECT 1 FROM my_table WHERE my_table.id = another_table.some_id);
+```
 
 
 📌 **이 방식은 `ON CONFLICT`보다 유연하지만 성능이 살짝 떨어질 수 있음**
