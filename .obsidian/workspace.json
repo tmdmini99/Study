@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/소수점.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/Mybatis Returning.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "소수점"
+              "title": "Mybatis Returning"
             }
           },
           {
