@@ -30,18 +30,6 @@
               "icon": "lucide-file",
               "title": "MyBatis 필요"
             }
-          },
-          {
-            "id": "6b7880ebe746615f",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Intellij Spring1.png"
-              },
-              "icon": "lucide-image",
-              "title": "Intellij Spring1"
-            }
           }
         ]
       }
