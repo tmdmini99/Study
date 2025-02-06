@@ -1185,6 +1185,44 @@ function reqFileAjax(targetUrl, data, callback, async) {
 }
 ```
 
+formData와 같이사용하기 위해 사용하는 코드
+```js
+function reqAjax(targetUrl, data, callback, async, errorCallback) {  
+    if(async === undefined){  
+        async = false;  
+    }  
+  
+    let isFormData = data instanceof FormData;  
+  
+    $.ajax({  
+        url : targetUrl,  
+        type : 'POST',  
+        processData: !isFormData, // FormData 사용 시 false        contentType: isFormData ? false : "application/x-www-form-urlencoded; charset=UTF-8",  
+        async : async,  
+        data : data,  
+        headers: {  
+            'X-Requested-With': 'XMLHttpRequest'  // AJAX 요청을 알리기 위한 헤더  
+        },  
+        beforeSend : function (xmlHttpRequest){  
+            // $("body").mLoading('show');  
+        },  
+        success : function(result) {  
+            if(callback) callback(result);  
+        },  
+        error : function(request, status, error) {  
+            if (errorCallback) {  
+                errorCallback(request, status, error);  // errorCallback이 제공되면 호출  
+            } else {  
+                alert("오류가 발생했습니다.");  // errorCallback이 없으면 기본적으로 알림  
+            }  
+        },  
+        complete: function() {  
+            // $("body").mLoading('hide');  
+        }  
+    });  
+}
+```
+
 
 사용
 ```js
