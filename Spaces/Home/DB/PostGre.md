@@ -2628,6 +2628,79 @@ $function$
 ```
 
 
+이렇게 tag가 10개가 일렬로 있을경우
+```sql
+tag_1_id, tag_2_id, tag_3_id, tag_4_id, tag_5_id, tag_6_id, tag_7_id, tag_8_id, tag_9_id, tag_10_id
+```
+
+
+
+**1. `ARRAY`를 활용한 간단한 태그 검색**
+
+```sql
+SELECT * 
+FROM product_info 
+WHERE ARRAY[
+    tag_1, tag_2, tag_3, tag_4, tag_5,
+    tag_6, tag_7, tag_8, tag_9, tag_10
+] @> ARRAY['검색할 태그'];
+```
+
+
+**📌 설명**
+
+- `ARRAY[...]` 안에 `tag_1 ~ tag_10`을 넣어서 배열로 변환
+- `@>` 연산자를 사용하여 `'검색할 태그'`가 배열 안에 포함되어 있는지 검사
+- 한 줄만 추가하면 여러 태그 컬럼을 동시에 검색할 수 있음
+
+
+🔹 **2. `UNNEST()`를 활용한 더 강력한 검색**
+
+
+```sql
+SELECT * 
+FROM product_info, 
+LATERAL UNNEST(ARRAY[
+    tag_1, tag_2, tag_3, tag_4, tag_5,
+    tag_6, tag_7, tag_8, tag_9, tag_10
+]) AS tag_name
+WHERE tag_name = '검색할 태그';
+```
+
+
+- `LATERAL UNNEST(ARRAY[...])`를 사용하면 각 행을 여러 개의 행으로 변환
+- `WHERE tag_name = '검색할 태그'`를 적용하면 하나라도 일치하는 제품을 검색할 수 있음
+- **이 방법은 가독성이 뛰어나고 유지보수하기 쉬움**
+
+
+🔹 **3. 태그 ID로 검색하기 (더 간단하게)**
+
+```sql
+SELECT * 
+FROM product_info 
+WHERE ARRAY[
+    tag_1_id, tag_2_id, tag_3_id, tag_4_id, tag_5_id,
+    tag_6_id, tag_7_id, tag_8_id, tag_9_id, tag_10_id
+] @> ARRAY[123];
+```
+
+
+🔹 **4. 여러 개의 태그 검색 (OR 조건 적용)**
+
+
+```sql
+SELECT * 
+FROM product_info
+WHERE ARRAY[
+    tag_1, tag_2, tag_3, tag_4, tag_5,
+    tag_6, tag_7, tag_8, tag_9, tag_10
+] && ARRAY['태그1', '태그2'];
+```
+
+
+- `&&` 연산자는 **배열 간의 교집합을 검사**
+- 즉, `'태그1'` 또는 `'태그2'`를 포함하는 제품을 검색할 수 있음
+
 
 
 ---

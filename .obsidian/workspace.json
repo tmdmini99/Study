@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-02-06.md",
+                "file": "Spaces/Home/DB/PostGre.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-02-06"
+              "title": "PostGre"
             }
           },
           {
@@ -75,7 +75,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "검색",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,32 +97,6 @@
             }
           },
           {
-            "id": "63d0862d42e1e138",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "74a0b022b5475f64",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "17413767137fbe1a",
             "type": "leaf",
             "state": {
@@ -133,7 +107,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -244,7 +218,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ac693911ff4ea53",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "daily note/2025/2/2025-02-06.md",
     "Spaces/Home/DB/DB 개념/소수점.md",
