@@ -2699,8 +2699,28 @@ WHERE ARRAY[
 ```
 
 
+```sql
+SELECT *
+
+FROM product_info
+
+WHERE product_cd = '1'
+
+AND ARRAY[
+
+tag_1, tag_2, tag_3, tag_4, tag_5,
+
+tag_6, tag_7, tag_8, tag_9, tag_10
+
+]::TEXT[] &&
+
+STRING_TO_ARRAY('r1,댄스', ',')::TEXT[]
+```
+
 - `&&` 연산자는 **배열 간의 교집합을 검사**
 - 즉, `'태그1'` 또는 `'태그2'`를 포함하는 제품을 검색할 수 있음
+
+String
 
 
 ### **결론**
