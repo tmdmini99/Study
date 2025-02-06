@@ -2720,7 +2720,41 @@ STRING_TO_ARRAY('r1,댄스', ',')::TEXT[]
 - `&&` 연산자는 **배열 간의 교집합을 검사**
 - 즉, `'태그1'` 또는 `'태그2'`를 포함하는 제품을 검색할 수 있음
 
-String
+`STRING_TO_ARRAY()` 함수는 **PostgreSQL에서 문자열을 특정 구분자로 분할하여 배열로 변환하는 함수**입니다.
+
+
+```sql
+STRING_TO_ARRAY(text, delimiter)
+```
+
+- `text`: 변환할 문자열
+- `delimiter`: 문자열을 나눌 기준이 되는 구분자
+
+실제 동작 예시
+
+```sql
+SELECT STRING_TO_ARRAY('신,r1,kpop', ',');
+```
+
+🔹 **결과**
+```bash
+{신,r1,kpop}
+```
+
+**`::TEXT[]`가 필요한가?**
+
+`STRING_TO_ARRAY()`의 결과는 **TEXT[] 타입**이므로, 비교 연산을 위해 `::TEXT[]` 형 변환을 해줘야 합니다.
+
+```sql
+STRING_TO_ARRAY('신,r1,kpop', ',')::TEXT[]
+```
+
+
+- `::TEXT[]`를 붙이지 않으면 PostgreSQL이 배열 타입으로 인식하지 못할 수 있습니다.
+- **형 변환을 통해 `ARRAY && ARRAY` 연산이 가능하도록 만듭니다.**
+
+
+
 
 
 ### **결론**

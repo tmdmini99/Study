@@ -1359,3 +1359,173 @@ function syncKoreanField(type, itemId, langId) {
     });  
 }
 ```
+
+
+
+입력시 동적 검사 후 보이기
+
+```js
+document.addEventListener("DOMContentLoaded", () => {  
+    const input = document.getElementById("tag-search-input");  
+    const tagList = document.querySelector(".tag-list ul");  
+    const tagBox = document.querySelector(".tag-box");  
+  
+    if (!tagList || !tagBox) {  
+        console.error("Tag list or tag box elements are missing.");  
+        return;  
+    }  
+  
+    const MAX_TAGS = 6;  
+    let tags = [];  
+    let debounceTimeout;  
+  
+    //  태그 표시 함수  
+    function displayTags() {  
+        tagBox.innerHTML = '';  
+  
+        const visibleTags = tags.slice(0, MAX_TAGS);  
+        visibleTags.forEach(tag => {  
+            const tagElement = document.createElement("div");  
+            tagElement.classList.add("box", "tag-box");  
+            tagElement.innerHTML = `  
+                <div class="tag">#${tag}  
+                    <input type="hidden" name="tagId" value="${tag}">  
+                    <div class="tag-del">  
+                        <img src="/resources/images/icons/cancelTag.svg">  
+                    </div>  
+                </div>  
+            `;  
+            tagBox.appendChild(tagElement);  
+        });  
+  
+        const remainingTags = tags.length - MAX_TAGS;  
+        if (remainingTags > 0) {  
+            const plusTag = document.createElement("div");  
+            plusTag.classList.add("tag", "plus-tag");  
+            plusTag.textContent = `+${remainingTags}`;  
+            tagBox.appendChild(plusTag);  
+        }  
+  
+        updateCheckboxState(); //  체크박스 상태 유지  
+    }  
+  
+    //  태그 추가 함수  
+    function addTag(tagText) {  
+        if (!tags.includes(tagText)) {  
+            tags.push(tagText);  
+            displayTags();  
+        }  
+    }  
+  
+    //  태그 삭제 함수  
+    function removeTag(tagText) {  
+        tags = tags.filter(tag => tag !== tagText);  
+        displayTags();  
+  
+        //  태그 삭제 시 체크박스도 해제  
+        document.querySelectorAll(".tag-list .tag-checkbox").forEach(checkbox => {  
+            if (checkbox.dataset.tag === tagText) {  
+                checkbox.checked = false;  
+            }  
+        });  
+    }  
+  
+    //  동적으로 추가된 태그 삭제 이벤트 (이벤트 위임)  
+    tagBox.addEventListener("click", function (event) {  
+        if (event.target.closest(".tag-del")) {  
+            const tagElement = event.target.closest(".box.tag-box");  
+            const tagText = tagElement.querySelector(".tag").textContent.trim().substring(1);  
+            removeTag(tagText);  
+        }  
+    });  
+  
+    //  태그 검색 (AJAX)    function handleTagSearchAjax(value) {  
+        clearTimeout(debounceTimeout);  
+        debounceTimeout = setTimeout(() => {  
+            if (!value.trim()) {  
+                document.querySelector(".tag-list").style.display = "none";  
+                return;  
+            }  
+  
+            let url = window.location.pathname + "ModalSearch";  
+            let data = {  
+                sc_MODAL: "tags",  
+                sc_SEARCH: value  
+            };  
+  
+            $.ajax({  
+                url: url,  
+                type: "GET",  
+                data: data,  
+                success: function (response) {  
+                    tagList.innerHTML = '';  
+                    if (response.length > 0) {  
+                        response.forEach(item => {  
+                            const tagName = item.tag_nm;  
+                            const listItem = document.createElement("li");  
+                            listItem.innerHTML = `  
+                                <label class="item">  
+                                    <input type="checkbox" class="tag-checkbox" data-tag="${tagName}">  
+                                    <p class="font-black">${tagName}</p>  
+                                </label>  
+                            `;  
+                            tagList.appendChild(listItem);  
+                        });  
+                        document.querySelector(".tag-list").style.display = "block";  
+                        updateCheckboxState(); //  추가된 태그 리스트에서도 체크박스 상태 유지  
+                    } else {  
+                        document.querySelector(".tag-list").style.display = "none";  
+                    }  
+                },  
+                error: function () {  
+                    console.error("태그 검색 오류 발생");  
+                }  
+            });  
+        }, 300);  
+    }  
+  
+    //  태그 검색 입력 이벤트  
+    input.addEventListener("input", function () {  
+        handleTagSearchAjax(this.value);  
+    });  
+  
+    //  태그 클릭 시 추가 및 제거 (체크박스 클릭 이벤트)  
+    tagList.addEventListener("change", function (event) {  
+        if (event.target.classList.contains("tag-checkbox")) {  
+            const tagText = event.target.closest("label").querySelector(".font-black").textContent.trim();  
+            if (event.target.checked) {  
+                addTag(tagText);  
+            } else {  
+                removeTag(tagText);  
+            }  
+        }  
+    });  
+  
+    //  태그 리스트가 다시 열릴 때, 기존 태그들이 체크 상태 유지  
+    function updateCheckboxState() {  
+        document.querySelectorAll(".tag-list .tag-checkbox").forEach(checkbox => {  
+            const tagText = checkbox.closest("label").querySelector(".font-black").textContent.trim();  
+            checkbox.checked = tags.includes(tagText);  
+        });  
+    }  
+  
+    //  외부 클릭 시 태그 리스트 숨김  
+    document.addEventListener("click", function (event) {  
+        if (!input.contains(event.target) && !document.querySelector(".tag-list").contains(event.target)) {  
+            document.querySelector(".tag-list").style.display = "none";  
+        }  
+    });  
+  
+    //  체크박스 클릭 시 자동으로 태그 리스트 닫기  
+    tagList.addEventListener("click", function (event) {  
+        if (event.target.classList.contains("tag-checkbox")) {  
+            setTimeout(() => {  
+                document.querySelector(".tag-list").style.display = "none";  
+                input.value = '';  
+            }, 200);  
+        }  
+    });  
+});
+```
+
+
