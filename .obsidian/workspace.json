@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "JavaScript Ajax"
+              "title": "MyBatis 필요"
             }
           },
           {
@@ -106,8 +106,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -220,6 +219,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
     "daily note/2025/2/2025-02-06.md",
     "Spaces/Home/DB/DB 개념/소수점.md",
     "daily note/2025/2/2025-02-05.md",
@@ -247,7 +247,6 @@
     "daily note/2024/10/2024-10-08.md",
     "daily note/2025/1/2025-01-20.md",
     "Spaces/Home/DB/PostgreSql.md",
-    "daily note/2025/1/2025-01-17.md",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
