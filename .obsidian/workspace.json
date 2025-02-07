@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
+                "file": "daily note/2025/2/2025-02-07.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MyBatis 필요"
+              "title": "2025-02-07"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "17413767137fbe1a",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "ac44d8f840bb782c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-07.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
     "daily note/2025/2/2025-02-06.md",
     "Spaces/Home/DB/DB 개념/소수점.md",
@@ -234,7 +249,6 @@
     "Spaces/Home/JSP/JSTL.md",
     "daily note/2024/10/2024-10-08.md",
     "daily note/2025/1/2025-01-20.md",
-    "Spaces/Home/DB/PostgreSql.md",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
