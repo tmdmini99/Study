@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis If.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MyBatis 필요"
+              "title": "MyBatis If"
             }
           }
         ]
@@ -207,6 +207,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis If.md",
     "daily note/2025/2/2025-02-10.md",
     "daily note/2025/2/2025-02-07.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
@@ -234,7 +235,6 @@
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "daily note/2025/1/2025-01-21.md",
     "Spaces/Home/JSP/JSTL.md",
-    "daily note/2024/10/2024-10-08.md",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
