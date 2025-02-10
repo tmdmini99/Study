@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-02-07.md",
+                "file": "Spaces/Home/SPA/SPA.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-02-07"
+              "title": "SPA"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "reqAja",
+                "query": "react",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,20 +85,7 @@
             }
           },
           {
-            "id": "17413767137fbe1a",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "ac44d8f840bb782c",
+            "id": "c75bbbaf77a806d2",
             "type": "leaf",
             "state": {
               "type": "mk-file-view",
@@ -108,7 +95,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -221,6 +208,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-10.md",
     "daily note/2025/2/2025-02-07.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 필요.md",
     "daily note/2025/2/2025-02-06.md",
@@ -248,7 +236,6 @@
     "daily note/2025/1/2025-01-21.md",
     "Spaces/Home/JSP/JSTL.md",
     "daily note/2024/10/2024-10-08.md",
-    "daily note/2025/1/2025-01-20.md",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
