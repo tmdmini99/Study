@@ -2782,6 +2782,98 @@ WHERE to_tsvector('simple', kr_name || ' ' || en_name) @@ plainto_tsquery('검�
 - `"검색어 예제"`를 검색하면 **"검색어" 또는 "예제"가 포함된 레코드**를 반환할 수도 있음.
 
 
+### `to_tsvector('simple', ...)`에서 `'simple'`이 의미하는 것
+
+PostgreSQL의 `to_tsvector()` 함수에서 첫 번째 인자로 들어가는 문자열(`'simple'`)은 **텍스트 검색 설정 (Text Search Configuration)** 을 지정하는 것입니다.
+
+
+## **1. `simple`은 어떤 역할을 하는가?**
+
+- `'simple'`은 **언어 설정이 없는 기본 토큰화 방식**을 의미합니다.
+- 즉, **형태소 분석 없이 공백 및 특수문자를 기준으로 단순하게 단어를 분리**합니다.
+- **불용어(stop words)를 제거하지 않고, 단순한 단어 검색만 수행**합니다.
+
+### 📌 `simple` 설정의 동작 방식
+
+
+```sql
+SELECT to_tsvector('simple', 'The quick brown fox jumps over the lazy dog.');
+```
+
+결과 :
+
+```bash
+'the' 'quick' 'brown' 'fox' 'jumps' 'over' 'lazy' 'dog'
+```
+
+- 모든 단어가 그대로 유지됨 (영어 불용어 제거 안됨).
+- `'quick'`과 `'quickly'`는 다르게 취급됨 (형태소 분석 없음).
+
+## **2. 다른 언어 설정과 비교 (`english` vs `simple`)**
+
+### 📌 `english` 설정을 사용한 경우
+
+
+```sql
+SELECT to_tsvector('english', 'The quick brown fox jumps over the lazy dog.');
+```
+
+결과:
+```bash
+'quick' 'brown' 'fox' 'jump' 'lazi' 'dog'
+```
+
+- **불용어 (`the`, `over`) 제거됨.**
+- **형태소 분석 적용됨 (`jumps` → `jump`, `lazy` → `lazi`)**.
+
+### 📌 `simple` vs `english` 비교
+
+
+|설정 값|불용어 제거|형태소 분석|검색 방식|
+|---|---|---|---|
+|`simple`|❌ X|❌ X|단순한 토큰화|
+|`english`|✅ O|✅ O|단어 정규화 및 불용어 제거|
+
+✅ **즉, `simple`은 입력된 텍스트를 단순히 단어 단위로 분리하지만, `english` 같은 언어 설정은 단어를 정규화하고 불용어를 제거하여 검색 정확도를 높입니다.**
+
+
+### 한글과 영어가 섞여 있는 경우 (`kr_name || ' ' || en_name`)
+
+1. **`simple` 사용 시**
+
+```sql
+SELECT to_tsvector('simple', '안녕하세요 Hello World');
+```
+
+결과:
+
+```bash
+'안녕하세요' 'hello' 'world'
+```
+
+- - 한글과 영어가 그대로 분리됨 (형태소 분석 없음).
+    - `"안녕"`을 검색해도 `"안녕하세요"`를 찾지 못함.
+- **`english` 사용 시**
+
+```sql
+SELECT to_tsvector('english', 'The running man was jumping.');
+```
+
+
+결과:
+
+```sql
+'run' 'man' 'jump'
+```
+
+- - `running` → `run`, `jumping` → `jump` (형태소 분석됨).
+- **`simple`과 `english`를 혼합해야 하나?**
+    
+    - **한글 검색을 위해서는 `simple`보다 `kr`(한국어 형태소 분석 지원) 설정이 필요**합니다.
+    - PostgreSQL 기본 설정에는 `kr`이 없으므로 별도의 **한국어 텍스트 검색 설정**을 추가해야 합니다.
+    - 하지만 한글과 영어를 동시에 다루려면 보통 `simple`을 쓰는 것이 무난합니다.
+
+
 
 
 
