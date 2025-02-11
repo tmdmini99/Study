@@ -2766,6 +2766,23 @@ STRING_TO_ARRAY('신,r1,kpop', ',')::TEXT[]
 | `ARRAY @> (ID 검색)` | `WHERE ARRAY[...] @> ARRAY[태그 ID]`        | 태그 ID 검색 가능        | 태그 이름 검색에는 적절하지 않음   |
 | `ARRAY && (OR 검색)` | `WHERE ARRAY[...] && ARRAY['태그1', '태그2']` | 여러 개의 태그를 검색 가능    | 태그 수가 많을 경우 성능 저하 가능 |
 
+## 단어 단위 검색
+
+
+
+`to_tsvector` + `plainto_tsquery` 사용 예제:
+
+```sql
+SELECT * FROM board_category
+WHERE to_tsvector('simple', kr_name || ' ' || en_name) @@ plainto_tsquery('검색어');
+```
+
+- `"검색어"`뿐만 아니라 `"검색"`, `"검색하는"`, `"검색했다"` 등 변형된 형태도 검색 가능.
+- 검색어를 **단어 단위로 파싱**하여 빠르게 찾음.
+- `"검색어 예제"`를 검색하면 **"검색어" 또는 "예제"가 포함된 레코드**를 반환할 수도 있음.
+
+
+
 
 
 ---
