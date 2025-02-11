@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis If.md",
+                "file": "daily note/2025/2/2025-02-11.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MyBatis If"
+              "title": "2025-02-11"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "c75bbbaf77a806d2",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "228b5ae41fad13ce",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-11.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis If.md",
     "daily note/2025/2/2025-02-10.md",
     "daily note/2025/2/2025-02-07.md",
@@ -234,7 +249,6 @@
     "daily note/2025/1/2025-01-22.md",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "daily note/2025/1/2025-01-21.md",
-    "Spaces/Home/JSP/JSTL.md",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
