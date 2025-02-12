@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/MyBatis/MyBatis If.md",
+                "file": "daily note/2025/2/2025-02-12.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MyBatis If"
+              "title": "2025-02-12"
             }
           }
         ]
@@ -101,13 +101,27 @@
             "id": "228b5ae41fad13ce",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "875ae60b0d595f5a",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -220,6 +234,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-12.md",
     "Spaces/Home/Java/String/String 문법.md",
     "daily note/2025/2/2025-02-11.md",
     "Spaces/Home/Spring/MyBatis/MyBatis If.md",
@@ -246,7 +261,6 @@
     "Spaces/Home/Spring/MyBatis/MyBatis Handler.md",
     "Spaces/Home/Java Script/Java Script/JavaScript Ajax.md",
     "Spaces/Home/Spring/MyBatis/Mybatis Returning.md",
-    "daily note/2025/1/2025-01-22.md",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
