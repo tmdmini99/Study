@@ -1529,3 +1529,172 @@ document.addEventListener("DOMContentLoaded", () => {
 ```
 
 
+
+## blur와 alert은 같이 사용할수 없음
+
+
+### **`blur` 이벤트가 여러 번 실행되는 문제 해결**
+
+👉 **AJAX 요청이 완료되기 전에 `blur` 이벤트가 다시 발생하여 여러 번 실행됨**  
+👉 **`alert()`이 실행되면 입력 필드가 포커스를 잃었다가 다시 얻으며 `blur`가 반복 호출됨**  
+👉 **`focus()` 실행 후 `blur`가 다시 발생하면서 AJAX가 중첩 호출됨**
+
+blur 대신 change 사용
+```js
+$("input[data-unique]").on("blur", function () {  
+    if (isProcessing) return;  
+    const $input = $(this);  
+    let value = $input.val().trim();  
+    let lang; // 언어 값 설정  
+  
+    if ($input.hasClass("product-en")) {  
+       lang = "EN";  
+    }  
+  
+    let dataToSend = { sc_LANG: lang };  
+  
+    //  `product-en`과 `product-kr` 클래스가 없는 경우 → `sc_SELL_NO` 사용  
+    if (!$input.hasClass("product-en") && !$input.hasClass("product-kr")) {  
+       let sellCodeValue = $("input[name='sellcode']").val()?.trim() || ""; // 셀코드 값  
+       let codeInputValue = $("#code-input").val()?.trim() || ""; // 코드 입력값  
+  
+       // ✅ 입력 필드가 `code-input`이면 `sellcode`를 추가  
+       if ($input.attr("id") === "code-input") {  
+          value = sellCodeValue + value;  
+       }  
+       // ✅ 입력 필드가 `sellcode`이면 `code-input`을 추가  
+       else if ($input.attr("name") === "sellcode") {  
+          value = value + codeInputValue;  
+       }  
+  
+       console.log("sc_SELL_NO 값:", value); // 디버깅용 콘솔 출력  
+       dataToSend["sc_SELL_NO"] = value; // ✅ `sc_SELL_NO`로 전송  
+    } else {  
+       dataToSend["sc_PRODUCT_NM"] = value; //  기본 `sc_PRODUCT_NM`으로 전송  
+    }  
+  
+    //  값이 비어 있으면 중복 검사 안 하고 초기화  
+    if (value === "") {  
+       resetValidation($input);  
+       $input.attr("data-unique", "true");  
+       return;  
+    }  
+    isProcessing = true;  
+    //  AJAX 중복 검사 실행  
+    $.ajax({  
+       url: window.location.pathname + "Check",  
+       type: "POST",  
+       data: dataToSend, //  동적으로 `sc_PRODUCT_NM` 또는 `sc_SELL_NO` 전송  
+       success: function (response) {  
+          if (response) {  
+  
+             showValidationError($input, "중복된 값입니다.");  
+             $input.attr("data-unique", "false"); // 중복됨  
+  
+  
+  
+             //  `display: none;` 상태라면 탭 전환 후 focus()             if ($input.css("display") === "none") {  
+                switchTabAndFocus($input);  
+             } else {  
+                // ✅ `alert()` 대신 `setTimeout()`으로 포커스 유지  
+                setTimeout(() => {  
+                   alert("중복된 값입니다.");  
+                   $input.focus();  
+                }, 100);  
+             }  
+  
+  
+          } else {  
+             resetValidation($input);  
+             $input.attr("data-unique", "true"); // 사용 가능  
+          }  
+       },  
+       error: function () {  
+          console.error("AJAX 요청 실패");  
+       },  
+       complete: function () {  
+          isProcessing = false; // ✅ AJAX 요청 완료 후 플래그 초기화  
+       }  
+    });  
+});
+```
+
+
+```js
+$("input[data-unique]").on("change", function () {  
+    if (isProcessing) return;  
+    const $input = $(this);  
+    let value = $input.val().trim();  
+    let lang; // 언어 값 설정  
+  
+    if ($input.hasClass("product-en")) {  
+       lang = "EN";  
+    }  
+  
+    let dataToSend = { sc_LANG: lang };  
+  
+    //  `product-en`과 `product-kr` 클래스가 없는 경우 → `sc_SELL_NO` 사용  
+    if (!$input.hasClass("product-en") && !$input.hasClass("product-kr")) {  
+       let sellCodeValue = $("input[name='sellcode']").val()?.trim() || ""; // 셀코드 값  
+       let codeInputValue = $("#code-input").val()?.trim() || ""; // 코드 입력값  
+  
+       // ✅ 입력 필드가 `code-input`이면 `sellcode`를 추가  
+       if ($input.attr("id") === "code-input") {  
+          value = sellCodeValue + value;  
+       }  
+       // ✅ 입력 필드가 `sellcode`이면 `code-input`을 추가  
+       else if ($input.attr("name") === "sellcode") {  
+          value = value + codeInputValue;  
+       }  
+  
+       console.log("sc_SELL_NO 값:", value); // 디버깅용 콘솔 출력  
+       dataToSend["sc_SELL_NO"] = value; // ✅ `sc_SELL_NO`로 전송  
+    } else {  
+       dataToSend["sc_PRODUCT_NM"] = value; //  기본 `sc_PRODUCT_NM`으로 전송  
+    }  
+  
+    //  값이 비어 있으면 중복 검사 안 하고 초기화  
+    if (value === "") {  
+       resetValidation($input);  
+       $input.attr("data-unique", "true");  
+       return;  
+    }  
+    isProcessing = true;  
+    //  AJAX 중복 검사 실행  
+    $.ajax({  
+       url: window.location.pathname + "Check",  
+       type: "POST",  
+       data: dataToSend, //  동적으로 `sc_PRODUCT_NM` 또는 `sc_SELL_NO` 전송  
+       success: function (response) {  
+          if (response) {  
+  
+             showValidationError($input, "중복된 값입니다.");  
+             $input.attr("data-unique", "false"); // 중복됨  
+  
+  
+  
+             //  `display: none;` 상태라면 탭 전환 후 focus()             if ($input.css("display") === "none") {  
+                switchTabAndFocus($input);  
+             } else {  
+                // ✅ `alert()` 대신 `setTimeout()`으로 포커스 유지  
+                setTimeout(() => {  
+                   alert("중복된 값입니다.");  
+                   $input.focus();  
+                }, 100);  
+             }  
+  
+  
+          } else {  
+             resetValidation($input);  
+             $input.attr("data-unique", "true"); // 사용 가능  
+          }  
+       },  
+       error: function () {  
+          console.error("AJAX 요청 실패");  
+       },  
+       complete: function () {  
+          isProcessing = false; // ✅ AJAX 요청 완료 후 플래그 초기화  
+       }  
+    });  
+});
+```
