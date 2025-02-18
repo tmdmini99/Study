@@ -30,8 +30,33 @@
               "icon": "lucide-file",
               "title": "2025-02-18"
             }
+          },
+          {
+            "id": "9cda3d83766c82a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily note/2025/2/2025-02-19.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2025-02-19"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -127,6 +152,19 @@
             "id": "b6d73e38db9292f6",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "97b0bef538de1ff5",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -134,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -245,8 +283,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ac693911ff4ea53",
+  "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-19.md",
     "daily note/2025/2/2025-02-18.md",
     "daily note/2025/2/2025-02-17.md",
     "daily note/2025/2/2025-02-14.md",
@@ -275,7 +314,6 @@
     "Spaces/Home/JSP/태그.md",
     "Spaces/Home/Spring/MyBatis/Mybatis Foreach.md",
     "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 설정.md",
-    "Spaces/Home/Spring/Spring Legacy/MyBatis/MyBatis 컬럼관리.md",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
