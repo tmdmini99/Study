@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-02-19.md",
+                "file": "Spaces/Home/DB/PostGre.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-02-19"
+              "title": "PostGre"
             }
           }
         ],
@@ -171,8 +171,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
@@ -283,7 +282,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9cda3d83766c82a0",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "daily note/2025/2/2025-02-19.md",
     "daily note/2025/2/2025-02-18.md",
