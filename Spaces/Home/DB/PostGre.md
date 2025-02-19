@@ -2423,6 +2423,104 @@ id | name
 |**추천 상황**|✅ 권장 방식 (더 안전함)|❌ 사용 주의 필요|
 
 
+update returing
+
+```sql
+UPDATE
+products
+SET
+product_nm = # {
+        productNm
+    },
+    artist_id = # {
+        artistId
+    }::numeric,
+    company_id = # {
+        companyId
+    }::numeric,
+    label_id = # {
+        labelId
+    }::numeric,
+    category_id = # {
+        categoryId
+    }::numeric,
+    media_id = # {
+        mediaId
+    }::numeric,
+    order_st_dt = # {
+        orderStDt
+    }::timestamp,
+    order_ed_dt = # {
+        orderEdDt
+    }::timestamp,
+    new_item_st_dt = # {
+        newItemStDt
+    }::timestamp,
+    new_item_ed_dt = # {
+        newItemEdDt
+    }::timestamp,
+    search_st_dt = # {
+        searchStDt
+    }::timestamp,
+    search_ed_dt = # {
+        searchEdDt
+    }::timestamp,
+    product_cd = # {
+        productCd
+    },
+    barcode = # {
+        barcode
+    },
+    sellcode = # {
+        sellcode
+    },
+    special_code = # {
+        specialCode
+    },
+    factory_price = REPLACE(# {
+        factoryPrice
+    }, ',', '')::numeric,
+    weight = REPLACE(# {
+        weight
+    }, ',', '')::numeric,
+    search_cd = # {
+        searchCd
+    },
+    discount_yn = # {
+        discountYn
+    },
+    refund_yn = # {
+        refundYn
+    },
+    tax_yn = # {
+        taxYn
+    },
+    stock_yn = # {
+        stockYn
+    },
+    import_yn = # {
+        importYn
+    },
+    description = # {
+        description
+    },
+    product_cnt = # {
+        productCnt
+    }::numeric,
+    reg_dt = now(),
+    reg_id = # {
+        regId
+    }
+WHERE
+id = # {
+    pk_ID
+}::numeric
+RETURNING id
+```
+
+update에서 사용 가능
+
+
 
 array로 묶는 쿼리문
 ```sql
