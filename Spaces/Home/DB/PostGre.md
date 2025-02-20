@@ -1659,6 +1659,9 @@ DROP TRIGGER IF EXISTS trigger_update_comment_exists_after_delete ON public.boar
 ```
 
 
+```sql
+```
+
 ### **트리거의 장점**
 
 1. **자동화**: 특정 작업을 수동으로 처리할 필요 없음.
