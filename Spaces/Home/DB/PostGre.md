@@ -1658,8 +1658,41 @@ trigger 삭제
 DROP TRIGGER IF EXISTS trigger_update_comment_exists_after_delete ON public.board_qna;
 ```
 
-
+use_yn이 바뀌면 그 이하 parent_id도 같이 use_yn이 바뀜
 ```sql
+CREATE OR REPLACE FUNCTION update_child_use_yn()
+
+RETURNS TRIGGER AS $$
+
+BEGIN
+
+-- 부모 ID의 use_yn을 "N"으로 변경하면, 자식들도 변경
+
+UPDATE board_qna
+
+SET use_yn = 'N'
+
+WHERE parent_id = NEW.id::numeric;
+
+RETURN NEW;
+
+END;
+
+$$ LANGUAGE plpgsql;
+
+  
+
+-- 2. 트리거 생성
+
+CREATE TRIGGER trg_update_child_use_yn
+
+AFTER UPDATE ON board_qna
+
+FOR EACH ROW
+
+WHEN (NEW.use_yn = 'N') -- use_yn이 'N'으로 변경될 때만 실행
+
+EXECUTE FUNCTION update_child_use_yn();
 ```
 
 ### **트리거의 장점**
