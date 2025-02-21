@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md",
+                "file": "daily note/2025/2/2025-02-21.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "PostGre"
+              "title": "2025-02-21"
             }
           }
         ],
@@ -113,6 +113,19 @@
             "id": "a58dfc0aa33169e6",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "0faa35d93a8e9992",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -120,7 +133,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -233,6 +246,7 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-21.md",
     "daily note/2025/2/2025-02-20.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2025/2/2025-02-19.md",
@@ -261,7 +275,6 @@
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
     "Spaces/Home/Java Script/Java Script/라이브러리/라이브러리.md",
     "Spaces/Home/JSP/태그.md",
-    "Spaces/Home/Spring/MyBatis/Mybatis Foreach.md",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
