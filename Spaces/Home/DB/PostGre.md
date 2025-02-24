@@ -3033,8 +3033,55 @@ WHERE a.artist_id = b.id AND a.media_id = d.id AND a.id = e.product_id AND a.id 
 여기서 현재 날짜가 포함되어있으면 표출 없을 경우 미 표출하는 쿼리
 
 ```sql
+SELECT a_1.product_id,
+CASE
 
+WHEN array_length(a_1.tag_name_array, 1) > 10 THEN ('+'::text || ((array_length(a_1.tag_name_array, 1) - 10)::text)) || ' more'::text
+
+ELSE NULL::text
+
+END AS additional_tags
+
+FROM ( SELECT p.id AS product_id,
+
+p.product_nm AS product_name,
+
+array_agg(t.tag_nm ORDER BY t.tag_nm) AS tag_name_array,
+
+array_agg(t.id ORDER BY t.tag_nm) AS tag_id_array
+
+FROM products p
+
+LEFT JOIN product_tags pt ON p.id = pt.product_id
+
+LEFT JOIN tags t ON pt.tag_id = t.id
+
+GROUP BY p.id, p.product_nm) a_1
 ```
+
+이렇게 선언 후
+
+```sql
+CASE
+
+WHEN (a.new_item_st_dt IS NOT NULL AND a.new_item_ed_dt IS NOT NULL AND now() BETWEEN a.new_item_st_dt AND a.new_item_ed_dt)
+
+THEN
+
+CASE
+
+WHEN f.additional_tags IS NOT NULL THEN f.additional_tags || ', #신보'
+
+ELSE '#신보'
+
+END
+
+ELSE f.additional_tags
+
+END AS additional_tags
+```
+
+이렇게 선언
 
 
 
