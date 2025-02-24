@@ -2643,122 +2643,65 @@ p.id, p.product_nm
 function 생성
 ```sql
 CREATE OR REPLACE FUNCTION public.fn_get_chosung(text)
-
-RETURNS text
-
-LANGUAGE plpgsql
-
+ RETURNS text
+ LANGUAGE plpgsql
 AS $function$
-
 DECLARE
-
-v_text ALIAS FOR $1;
-
-v_char text;
-
-v_result text;
-
+    v_text ALIAS FOR $1;
+    v_char text;
+    v_result text := '';
+    v_uni int;
+    v_initial text;
+    v_vowel text;
+    
+    -- 초성 리스트
+    v_initials text[] := ARRAY['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+    
+    -- 중성 리스트
+    v_vowels text[] := ARRAY['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ'];
+    
 BEGIN
+    IF v_text IS NULL OR char_length(v_text) = 0 THEN
+        RETURN NULL; -- 입력값이 NULL이거나 빈 문자열이면 NULL 반환
+    END IF;
 
-v_result := '';
+    FOR i IN 1..char_length(v_text) LOOP
+        v_char := substring(v_text FROM i FOR 1);
+        
+        -- 한글인지 확인
+        IF v_char >= '가' AND v_char <= '힣' THEN
+            v_uni := ascii(v_char) - 44032; -- 유니코드 기준 '가'를 0으로 정규화
+            v_initial := v_initials[(v_uni / 588) + 1]; -- 초성 추출
+            v_vowel := v_vowels[((v_uni % 588) / 28) + 1]; -- 중성 추출
 
-FOR i IN 1..char_length(v_text) LOOP
-
-v_char := substring(v_text FROM i FOR 1);
-
--- 한글 처리
-
-IF v_char >= '가' AND v_char <= '힣' THEN
-
-CASE
-
-WHEN v_char < '까' THEN v_result := v_result || 'ㄱ';
-
-WHEN v_char < '나' THEN v_result := v_result || 'ㄲ';
-
-WHEN v_char < '다' THEN v_result := v_result || 'ㄴ';
-
-WHEN v_char < '따' THEN v_result := v_result || 'ㄷ';
-
-WHEN v_char < '라' THEN v_result := v_result || 'ㄸ';
-
-WHEN v_char < '마' THEN v_result := v_result || 'ㄹ';
-
-WHEN v_char < '바' THEN v_result := v_result || 'ㅁ';
-
-WHEN v_char < '빠' THEN v_result := v_result || 'ㅂ';
-
-WHEN v_char < '사' THEN v_result := v_result || 'ㅃ';
-
-WHEN v_char < '싸' THEN v_result := v_result || 'ㅅ';
-
-WHEN v_char < '아' THEN v_result := v_result || 'ㅆ';
-
-WHEN v_char < '자' THEN v_result := v_result || 'ㅇ';
-
-WHEN v_char < '짜' THEN v_result := v_result || 'ㅈ';
-
-WHEN v_char < '차' THEN v_result := v_result || 'ㅉ';
-
-WHEN v_char < '카' THEN v_result := v_result || 'ㅊ';
-
-WHEN v_char < '타' THEN v_result := v_result || 'ㅋ';
-
-WHEN v_char < '파' THEN v_result := v_result || 'ㅌ';
-
-WHEN v_char < '하' THEN v_result := v_result || 'ㅍ';
-
-ELSE v_result := v_result || 'ㅎ';
-
-END CASE;
-
--- 한글 자음
-
-ELSIF v_char >= 'ㄱ' AND v_char <= 'ㅎ' THEN
-
-v_result := v_result || v_char;
-
--- 한글 모음
-
-ELSIF v_char >= 'ㅏ' AND v_char <= 'ㅣ' THEN
-
-v_result := v_result || v_char;
-
--- 영문 대문자
-
-ELSIF v_char >= 'A' AND v_char <= 'Z' THEN
-
-v_result := v_result || v_char;
-
--- 영문 소문자
-
-ELSIF v_char >= 'a' AND v_char <= 'z' THEN
-
-v_result := v_result || upper(v_char);
-
--- 숫자
-
-ELSIF v_char >= '0' AND v_char <= '9' THEN
-
-v_result := v_result || v_char;
-
--- 그 외 문자는 그대로 유지
-
-ELSE
-
-v_result := v_result || v_char;
-
-END IF;
-
-END LOOP;
-
-RETURN v_result;
-
+            v_result := v_result || v_initial || v_vowel;
+        
+        -- 한글 자음 (초성만 있는 경우)
+        ELSIF v_char >= 'ㄱ' AND v_char <= 'ㅎ' THEN
+            v_result := v_result || v_char;
+            
+        -- 한글 모음 (단독 모음)
+        ELSIF v_char >= 'ㅏ' AND v_char <= 'ㅣ' THEN
+            v_result := v_result || v_char;
+            
+        -- 영문 대문자 변환
+        ELSIF v_char ~ '[a-zA-Z]' THEN
+            v_result := v_result || upper(v_char);
+            
+        -- 숫자는 그대로 유지
+        ELSIF v_char >= '0' AND v_char <= '9' THEN
+            v_result := v_result || v_char;
+            
+        -- 그 외 문자 유지
+        ELSE
+            v_result := v_result || v_char;
+        END IF;
+    END LOOP;
+    
+    RETURN v_result;
 END;
+$function$;
 
-$function$
-
-;
 ```
 
 
