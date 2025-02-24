@@ -2859,6 +2859,66 @@ WHERE to_tsvector('simple', kr_name || ' ' || en_name) @@ plainto_tsquery('검�
 - `"검색어 예제"`를 검색하면 **"검색어" 또는 "예제"가 포함된 레코드**를 반환할 수도 있음.
 
 
+```sql
+SELECT * FROM PRODUCT_INFO
+WHERE tsv_chosung @@ to_tsquery(fn_get_chosung('ㅎ') || ':*');
+```
+
+
+`to_tsquery`는 PostgreSQL의 **Full-Text Search(FTS)** 기능 중 하나로,  
+검색할 때 사용할 **검색어(검색 토큰, tsquery)를 만드는 함수**
+
+
+## **1. `to_tsquery` vs `plainto_tsquery` 차이점**
+
+|함수명|설명|
+|---|---|
+|`to_tsquery('검색어')`|**정확한 검색어**만 찾음 (논리 연산자 사용 가능)|
+|`plainto_tsquery('검색어')`|**자동 토큰화(단어 나누기) 후 검색**|
+|`to_tsquery('검색어:*')`|**부분 검색 가능 (`:*` 활용)**|
+
+## **2. `to_tsquery`의 기본 사용법**
+
+```sql
+SELECT to_tsquery('포스트그레');
+-- 결과: '포스트그레'
+```
+
+🔹 **그냥 `to_tsquery('포스트그레')` 하면 정확히 `"포스트그레"`인 단어만 검색됨**  
+🔹 `"포스트그레스QL"` 같은 단어는 검색되지 않음
+
+
+1. `to_tsquery`를 `to_tsvector`와 함께 사용
+
+
+```sql
+SELECT '포스트그레스QL 데이터베이스'::tsvector @@ to_tsquery('포스트그레');
+-- 결과: FALSE (매칭 안 됨)
+
+SELECT '포스트그레스QL 데이터베이스'::tsvector @@ to_tsquery('포스트그레:*');
+-- 결과: TRUE (매칭됨 ✅)
+```
+
+🔹 `:*`를 붙이면 **"포스트그레"로 시작하는 모든 단어**가 검색됨  
+🔹 `"포스트그레스QL"` 같은 단어도 포함되어 검색 가능!
+
+---
+
+## **4. `ILIKE` 없이 `to_tsquery`로 초성 검색하기**
+
+초성 검색을 위해 `fn_get_chosung()`을 결합하면 `ILIKE` 없이 검색 가능!
+
+
+```sql
+SELECT * FROM PRODUCT_INFO
+WHERE to_tsvector('simple', fn_get_chosung(product_nm) || ' ' || fn_get_chosung(artist_nm)) 
+      @@ to_tsquery(fn_get_chosung('ㅎ') || ':*');
+```
+
+🔹 `fn_get_chosung('ㅎ') || ':*'` → 초성으로 시작하는 모든 단어 검색  
+🔹 `"ㅎ"` → `"한글, 하늘, 호랑이"` 같은 단어 검색 가능!
+
+
 ### `to_tsvector('simple', ...)`에서 `'simple'`이 의미하는 것
 
 PostgreSQL의 `to_tsvector()` 함수에서 첫 번째 인자로 들어가는 문자열(`'simple'`)은 **텍스트 검색 설정 (Text Search Configuration)** 을 지정하는 것입니다.
