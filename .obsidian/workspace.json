@@ -88,7 +88,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "WITH RECURSIVE",
+                "query": "STRING_TO_ARRAY",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -257,7 +257,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0705d70457345ec",
+  "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
     "daily note/2025/2/2025-02-24.md",
     "daily note/2025/2/2025-02-21.md",
