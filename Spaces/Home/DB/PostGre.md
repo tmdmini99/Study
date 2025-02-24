@@ -2557,8 +2557,9 @@ RETURNING id
 update에서 사용 가능
 
 
+## array로 묶는 쿼리문
 
-array로 묶는 쿼리문
+
 ```sql
 SELECT
 
@@ -2630,10 +2631,468 @@ p.id, p.product_nm
 ```
 
 
+
+```sql
+-- public.product_info source
+
+  
+
+CREATE OR REPLACE VIEW public.product_info
+
+AS SELECT a.id,
+
+a.artist_id,
+
+e.file_path,
+
+b.artist_nm,
+
+a.product_nm,
+
+d.media_nm,
+
+a.barcode,
+
+a.sellcode,
+
+to_char(a.release_dt, 'YYYY-MM-DD HH24:MI'::text) AS release_dt,
+
+round(a.factory_price) AS factory_price,
+
+round(a.factory_price * 0.1) AS tax_price,
+
+CASE
+
+WHEN a.stock_yn = 'Y'::bpchar THEN 'O'::bpchar
+
+WHEN a.stock_yn = 'N'::bpchar THEN 'X'::bpchar
+
+ELSE a.stock_yn
+
+END AS stock_yn,
+
+CASE
+
+WHEN a.refund_yn = 'Y'::bpchar THEN 'O'::bpchar
+
+WHEN a.refund_yn = 'N'::bpchar THEN 'X'::bpchar
+
+ELSE a.refund_yn
+
+END AS refund_yn,
+
+CASE
+
+WHEN a.tax_yn = 'Y'::bpchar THEN 'O'::bpchar
+
+WHEN a.tax_yn = 'N'::bpchar THEN 'X'::bpchar
+
+ELSE a.tax_yn
+
+END AS tax_yn,
+
+CASE
+
+WHEN a.import_yn = 'Y'::bpchar THEN 'O'::bpchar
+
+WHEN a.import_yn = 'N'::bpchar THEN 'X'::bpchar
+
+ELSE a.import_yn
+
+END AS import_yn,
+
+a.preorder_yn,
+
+a.weight,
+
+a.product_cnt,
+
+to_char(a.order_st_dt, 'YYYY-MM-DD HH24:MI'::text) AS order_st_dt,
+
+to_char(a.order_ed_dt, 'YYYY-MM-DD HH24:MI'::text) AS order_ed_dt,
+
+a.search_cd,
+
+a.product_cd,
+
+f.tag_1,
+
+f.tag_2,
+
+f.tag_3,
+
+f.tag_4,
+
+f.tag_5,
+
+f.tag_6,
+
+f.tag_7,
+
+f.tag_8,
+
+f.tag_9,
+
+f.tag_10,
+
+f.tag_1_id,
+
+f.tag_2_id,
+
+f.tag_3_id,
+
+f.tag_4_id,
+
+f.tag_5_id,
+
+f.tag_6_id,
+
+f.tag_7_id,
+
+f.tag_8_id,
+
+f.tag_9_id,
+
+f.tag_10_id,
+
+CASE
+
+WHEN (a.new_item_st_dt IS NOT NULL AND a.new_item_ed_dt IS NOT NULL AND now() BETWEEN a.new_item_st_dt AND a.new_item_ed_dt)
+
+THEN
+
+CASE
+
+WHEN f.additional_tags IS NOT NULL THEN f.additional_tags || ', #신보'
+
+ELSE '#신보'
+
+END
+
+ELSE f.additional_tags
+
+END AS additional_tags,
+
+c.company_nm,
+
+c.id AS company_id,
+
+l.label_nm,
+
+l.id AS label_id,
+
+a.description,
+
+ct.category_nm,
+
+ct.id AS category_id,
+
+d.id AS media_id,
+
+to_char(a.new_item_st_dt, 'YYYY-MM-DD HH24:MI'::text) AS new_item_st_dt,
+
+to_char(a.new_item_ed_dt, 'YYYY-MM-DD HH24:MI'::text) AS new_item_ed_dt,
+
+to_char(a.search_st_dt, 'YYYY-MM-DD HH24:MI'::text) AS search_st_dt,
+
+to_char(a.search_ed_dt, 'YYYY-MM-DD HH24:MI'::text) AS search_ed_dt,
+
+sc.special_code_nm,
+
+sc.cid_nm,
+
+sc.id AS special_code_id,
+
+CASE
+
+WHEN a.discount_yn = 'Y'::bpchar THEN 'O'::bpchar
+
+WHEN a.discount_yn = 'N'::bpchar THEN 'X'::bpchar
+
+ELSE a.discount_yn
+
+END AS discount_yn,
+
+ct.category_depth,
+
+ct.parent_id,
+
+e.file_onm,
+
+e.file_snm,
+
+e.file_size
+
+FROM products a
+
+LEFT JOIN special_code sc ON sc.id::numeric = a.special_code::numeric,
+
+artists b,
+
+media d,
+
+product_images e,
+
+companies c,
+
+labels l,
+
+category ct,
+
+( SELECT a_1.product_id,
+
+a_1.product_name,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 1 THEN a_1.tag_name_array[1]
+
+ELSE NULL::character varying
+
+END AS tag_1,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 1 THEN a_1.tag_id_array[1]
+
+ELSE NULL::integer
+
+END AS tag_1_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 2 THEN a_1.tag_name_array[2]
+
+ELSE NULL::character varying
+
+END AS tag_2,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 2 THEN a_1.tag_id_array[2]
+
+ELSE NULL::integer
+
+END AS tag_2_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 3 THEN a_1.tag_name_array[3]
+
+ELSE NULL::character varying
+
+END AS tag_3,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 3 THEN a_1.tag_id_array[3]
+
+ELSE NULL::integer
+
+END AS tag_3_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 4 THEN a_1.tag_name_array[4]
+
+ELSE NULL::character varying
+
+END AS tag_4,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 4 THEN a_1.tag_id_array[4]
+
+ELSE NULL::integer
+
+END AS tag_4_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 5 THEN a_1.tag_name_array[5]
+
+ELSE NULL::character varying
+
+END AS tag_5,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 5 THEN a_1.tag_id_array[5]
+
+ELSE NULL::integer
+
+END AS tag_5_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 6 THEN a_1.tag_name_array[6]
+
+ELSE NULL::character varying
+
+END AS tag_6,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 6 THEN a_1.tag_id_array[6]
+
+ELSE NULL::integer
+
+END AS tag_6_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 7 THEN a_1.tag_name_array[7]
+
+ELSE NULL::character varying
+
+END AS tag_7,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 7 THEN a_1.tag_id_array[7]
+
+ELSE NULL::integer
+
+END AS tag_7_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 8 THEN a_1.tag_name_array[8]
+
+ELSE NULL::character varying
+
+END AS tag_8,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 8 THEN a_1.tag_id_array[8]
+
+ELSE NULL::integer
+
+END AS tag_8_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 9 THEN a_1.tag_name_array[9]
+
+ELSE NULL::character varying
+
+END AS tag_9,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 9 THEN a_1.tag_id_array[9]
+
+ELSE NULL::integer
+
+END AS tag_9_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) >= 10 THEN a_1.tag_name_array[10]
+
+ELSE NULL::character varying
+
+END AS tag_10,
+
+CASE
+
+WHEN array_length(a_1.tag_id_array, 1) >= 10 THEN a_1.tag_id_array[10]
+
+ELSE NULL::integer
+
+END AS tag_10_id,
+
+CASE
+
+WHEN array_length(a_1.tag_name_array, 1) > 10 THEN ('+'::text || ((array_length(a_1.tag_name_array, 1) - 10)::text)) || ' more'::text
+
+ELSE NULL::text
+
+END AS additional_tags
+
+FROM ( SELECT p.id AS product_id,
+
+p.product_nm AS product_name,
+
+array_agg(t.tag_nm ORDER BY t.tag_nm) AS tag_name_array,
+
+array_agg(t.id ORDER BY t.tag_nm) AS tag_id_array
+
+FROM products p
+
+LEFT JOIN product_tags pt ON p.id = pt.product_id
+
+LEFT JOIN tags t ON pt.tag_id = t.id
+
+GROUP BY p.id, p.product_nm) a_1) f
+
+WHERE a.artist_id = b.id AND a.media_id = d.id AND a.id = e.product_id AND a.id = f.product_id AND a.company_id = c.id AND a.label_id = l.id AND a.category_id = ct.id;
+```
+
+여기서 현재 날짜가 포함되어있으면 표출 없을 경우 미 표출하는 쿼리
+
+```sql
+
+```
+
+
+
 ## WITH RECURSIVE
 
 재귀적 조인
 
+
+
+```sql
+WITH RECURSIVE category_tree AS(
+        --최상위 카테고리 선택 SELECT c.id,
+        c.parent_id,
+        c.category_depth,
+        c.category_nm,
+        c.hs_code,
+        trans.id AS translates_id,
+        trans.category_nm AS category_translates_nm,
+        1 AS level,
+        c.category_nm AS path, --초기 경로는 자기 자신만 포함 trans.category_nm AS trans_path, --초기 번역 경로 c.category_nm AS full_path, --초기 full_path는 자기 자신 trans.category_nm AS full_trans_path--초기 full_trans_path는 자기 자신 FROM category c LEFT JOIN category_translates trans ON c.id = trans.category_id WHERE c.parent_id = '0'
+
+        UNION ALL
+
+        --하위 카테고리 재귀 조회 SELECT c.id,
+        c.parent_id,
+        c.category_depth,
+        c.category_nm,
+        c.hs_code,
+        trans.id AS translates_id,
+        trans.category_nm AS category_translates_nm,
+        ct.level + 1,
+        --NULL을 건너뛰면서 경로 누적 CASE WHEN c.category_nm IS NOT NULL THEN ct.path || ' > ' || c.category_nm ELSE ct.path END AS path,
+        CASE WHEN trans.category_nm IS NOT NULL THEN ct.trans_path || ' > ' || trans.category_nm ELSE ct.trans_path END AS trans_path,
+        --마지막 요소 제거(NULL 포함 방지) CASE WHEN c.category_nm IS NOT NULL THEN regexp_replace(ct.path || ' > ' || c.category_nm, '( > [^>]+)$', '') ELSE ct.path END AS full_path,
+        CASE WHEN trans.category_nm IS NOT NULL THEN regexp_replace(ct.trans_path || ' > ' || trans.category_nm, '( > [^>]+)$', '') ELSE ct.trans_path END AS full_trans_path FROM category c LEFT JOIN category_translates trans ON c.id = trans.category_id INNER JOIN category_tree ct ON ct.id::VARCHAR = c.parent_id
+    ),
+    --상위 노드(parent_id) 의 정보를 가져오기 위해 추가적인 CTE 정의
+parent_hierarchy AS(
+    SELECT c.id AS child_id,
+    c.parent_id,
+    c.hs_code,
+    p.id AS parent_id_info,
+    p.parent_id AS grand_parent_id, --상위 parent_id p.category_nm AS parent_category_nm FROM category c LEFT JOIN category p ON c.parent_id::VARCHAR = p.id::VARCHAR--명시적 변환
+)
+SELECT
+t.*,
+    ph.parent_id_info, --상위 parent_id
+ph.grand_parent_id, --grand parent_id 추가
+ph.parent_category_nm, --상위 카테고리 이름
+CASE
+WHEN EXISTS(
+    SELECT 1 FROM category c WHERE c.parent_id = t.id::VARCHAR
+) THEN true
+ELSE false
+END AS has_children
+FROM category_tree t
+LEFT JOIN parent_hierarchy ph ON t.id::VARCHAR = ph.child_id::VARCHAR--상위 노드와 연결
+```
 
 
 ## 초성 추출

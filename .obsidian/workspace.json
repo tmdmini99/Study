@@ -88,7 +88,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "USING GIN",
+                "query": "WITH RECURSIVE",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
