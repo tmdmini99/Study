@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/PostGre.md",
+                "file": "daily note/2025/2/2025-02-25.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "PostGre"
+              "title": "2025-02-25"
             }
           }
         ],
@@ -139,6 +139,19 @@
             "id": "2411972010582bd6",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "f56c06265a422b17",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -146,7 +159,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -259,6 +272,7 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-25.md",
     "daily note/2025/2/2025-02-24.md",
     "daily note/2025/2/2025-02-21.md",
     "daily note/2025/2/2025-02-20.md",
@@ -287,7 +301,6 @@
     "daily note/2025/2",
     "daily note/2025/1/2025-01-23.md",
     "Spaces/Home/Java Script/Java Script/JavaScpript event function.md",
-    "Spaces/Home/Java Script/Java Script/라이브러리/라이브러리.md",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
