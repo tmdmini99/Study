@@ -73,6 +73,8 @@ public class MessageConfig {
 }
 ```
 
+만약 config가 아니라 xml 일경우 [[properties]] 참고
+
 
 ### **(2) `MessageSource`를 서비스에서 사용하기**
 
@@ -136,4 +138,87 @@ public class Main {
 }
 ```
 
+## **3. `LocaleContextHolder.getLocale()`을 사용해야 하는 이유**
 
+Spring은 **각 사용자의 요청(Request)마다 Locale을 다르게 설정할 수 있도록 `LocaleContextHolder`를 제공**합니다.
+
+✅ **Spring 웹 애플리케이션에서는 `LocaleContextHolder.getLocale()`을 사용하면 현재 사용자의 로케일을 자동으로 가져올 수 있습니다.**  
+✅ **웹 요청이 아닌 일반 Java 환경에서는 `Locale.KOREA` 등의 고정 로케일을 사용해야 합니다.**
+
+---
+
+## **4. `MessageSource`에서 동적으로 로케일 변경하는 방법**
+
+### **(1) `LocaleResolver`를 이용해 Locale 변경**
+
+웹 애플리케이션에서 동적으로 Locale을 변경하려면 `LocaleResolver`를 설정해야 합니다.
+
+#### **✅ `LocaleResolver` 설정**
+
+
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import java.util.Locale;
+
+@Configuration
+public class LocaleConfig {
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver slr = new SessionLocaleResolver();
+        slr.setDefaultLocale(Locale.KOREA); // 기본 로케일 한국어
+        return slr;
+    }
+}
+```
+
+
+
+✅ 컨트롤러에서 로케일 변경
+
+
+```java
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.LocaleResolver;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Locale;
+
+@RestController
+public class LocaleController {
+
+    private final LocaleResolver localeResolver;
+
+    public LocaleController(LocaleResolver localeResolver) {
+        this.localeResolver = localeResolver;
+    }
+
+    @GetMapping("/change-locale")
+    public String changeLocale(@RequestParam String lang, HttpServletRequest request) {
+        Locale newLocale = new Locale(lang);
+        localeResolver.setLocale(request, null, newLocale);
+        return "Locale changed to: " + newLocale.getLanguage();
+    }
+}
+```
+
+
+- 예제: `/change-locale?lang=en` 을 호출하면 **로케일이 영어로 변경**됨.
+
+---
+
+## **5. 결론**
+
+|개념|설명|
+|---|---|
+|`MessageSource`|Spring의 다국어 메시지 처리를 위한 인터페이스|
+|`getMessage()`|코드 기반 메시지 조회 (`messages.properties` 사용)|
+|`LocaleContextHolder.getLocale()`|현재 요청의 로케일을 자동 감지하여 메시지를 가져옴|
+|`ResourceBundleMessageSource`|`.properties` 파일에서 메시지를 로드하는 기본 구현체|
+|`LocaleResolver`|웹 애플리케이션에서 로케일을 동적으로 변경할 때 사용|

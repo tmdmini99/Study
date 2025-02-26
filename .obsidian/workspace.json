@@ -88,7 +88,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "STRING_TO_ARRAY",
+                "query": "다국",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
