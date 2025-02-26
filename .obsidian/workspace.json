@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Locale/Locale.md",
+                "file": "Spaces/Home/Java/MessageSource/MessageSource.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Locale"
+              "title": "MessageSource"
             }
           }
         ],
