@@ -106,3 +106,62 @@ document.getElementById("changeToKorean").addEventListener("click", function () 
 ```
 
 
+```js
+$(document).ready(function () {
+    const locale = getCookie("localeCookie") || "ko"; // 쿠키가 없으면 기본값 'ko'
+    console.log("쿠키에서 가져온 로케일:", locale);
+    
+    loadProperties(locale); // 쿠키에서 가져온 언어로 로드
+
+    // 버튼 클릭 시 언어 변경 & 쿠키 저장
+    $(".changeLang").on("click", function () {
+        let lang = $(this).data("lang");
+        document.cookie = "localeCookie=" + lang + "; path=/"; // 쿠키 저장
+        loadProperties(lang);
+    });
+});
+
+// 쿠키 값 가져오는 함수
+function getCookie(name) {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split("=");
+        if (cookieName === name) {
+            return cookieValue;
+        }
+    }
+    return null; // 쿠키가 없으면 null 반환
+}
+
+// 다국어 메시지 불러오는 함수
+function loadProperties(lang) {
+    $.i18n.properties({
+        name: "messages", // 파일명 (messages_ko.properties, messages_en.properties)
+        path: "messages/", // properties 파일 경로
+        mode: "map",
+        language: lang, // 쿠키에서 가져온 언어 사용
+        callback: function () {
+            $("#orderPriceText").text($.i18n.prop("order.price"));
+        }
+    });
+}
+```
+
+
+여기서 파일명은
+
+common-message_en.properties 이 부분에서 common-message이 부분을 적어야한다
+```js
+function loadProperties(lang) {
+    $.i18n.properties({
+        name: "common-message", // 파일명 앞부분
+        path: "messages/", // properties 파일 경로
+        mode: "map",
+        language: lang, // ex: en → common-message_en.properties
+        callback: function () {
+            $("#orderPriceText").text($.i18n.prop("order.price"));
+        }
+    });
+}
+
+```
