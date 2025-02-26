@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/MessageSource/MessageSource.md",
+                "file": "Spaces/Home/Java/Locale/Locale.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MessageSource"
+              "title": "Locale"
             }
           }
         ],
@@ -232,6 +232,8 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Locale/Locale.md",
+    "Spaces/Home/Java/Locale",
     "Spaces/Home/Java/MessageSource/MessageSource.md",
     "Spaces/Home/Java/MessageSource",
     "daily note/2025/2/2025-02-26.md",
@@ -260,14 +262,12 @@
     "Spaces/Home/DB/DB 개념/소수점.md",
     "daily note/2025/2/2025-02-05.md",
     "daily note/2025/2/2025-02-04.md",
-    "daily note/2025/2/2025-02-03.md",
     "daily note/2025/2",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
     "Spaces/Home/Java/Enum",
     "daily note/2025/1",
-    "daily note/2025",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
