@@ -165,3 +165,81 @@ function loadProperties(lang) {
 }
 
 ```
+
+
+되게끔 한 코드
+
+```js
+$.i18n.prop()
+```
+이건 실패로 다르게 가져옴
+
+
+```js
+function getCookie(name) {  
+    const cookies = document.cookie.split("; ");  
+    for (let cookie of cookies) {  
+        const [cookieName, cookieValue] = cookie.split("=");  
+        if (cookieName === name) {  
+            return cookieValue;  
+        }  
+    }  
+    return null; // 쿠키가 없으면 null 반환  
+}  
+  
+  
+function loadProperties(lang) {  
+    console.log(lang)  
+    if (typeof $.i18n === "undefined") {  
+        console.error("❌ `jquery-i18n-properties`가 로드되지 않았습니다.");  
+        return;  
+    }  
+    console.log("✅ jQuery 버전:", $.fn.jquery);  
+    console.log("✅ jQuery i18n Properties 로드 확인:", typeof $.i18n);  
+    if (typeof settings === "undefined") {  
+        console.warn("⚠ `settings` 객체가 정의되지 않았습니다.");  
+    }  
+    $.i18n.properties({  
+        name: "common-message", // 파일명 앞부분 (common-message_ko.properties, common-message_en.properties)        path: "/common/message/", // properties 파일 경로  
+        mode: "map",  
+        language: lang, // 쿠키에서 가져온 언어 사용  
+        additionalParameters: { lang: lang },  
+        callback : function(){  
+            console.log("✅ 다국어 파일 로드 완료:", lang);  
+            console.log("📌 $.i18n.map 데이터:", $.i18n.map);  
+            console.log("📌 $.i18n.map 데이터2:", $.i18n.map["board.insert"]);  
+            console.log("📌 현재 로드된 모든 키:", Object.keys($.i18n.map["board.insert"]));  
+        }  
+  
+    });  
+}  
+$(document).ready(function () {  
+  
+    // `localeCookie` 값 가져오기  
+    const locale = getCookie("localeCookie");  
+    console.log("쿠키에서 가져온 로케일:", locale); // "en"  
+    loadProperties(locale);
+
+)}
+```
+
+
+컨트롤러
+
+```java
+@RequestMapping("/message/{filename}")  
+@ResponseBody  
+public String getMessageFile(@PathVariable String filename, @RequestParam(value = "lang", required = false) String lang) throws IOException {  
+  
+    log.info("lang {}",lang);  
+    String filePath = "message/" + filename;  
+    log.info("filePath {}",filePath);  
+    Resource resource = new ClassPathResource(filePath);  
+  
+    if (!resource.exists()) {  
+        throw new IOException("파일을 찾을 수 없습니다: " + filePath);  
+    }  
+  
+    return new String(Files.readAllBytes(Paths.get(resource.getURI())));  
+}
+```
