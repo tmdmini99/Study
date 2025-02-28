@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/Jquery/다국어 처리/i18next.md",
+                "file": "daily note/2025/2/2025-02-28.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "i18next"
+              "title": "2025-02-28"
             }
           }
         ],
@@ -113,13 +113,27 @@
             "id": "631cdd1484d078a5",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "cecbb377d4b631c8",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -232,6 +246,7 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-02-28.md",
     "Spaces/Home/Java Script/Jquery/다국어 처리/i18next.md",
     "Spaces/Home/Java Script/Jquery/다국어 처리/i18n.properties.md",
     "Spaces/Home/Java Script/Jquery/다국어 처리",
@@ -262,7 +277,6 @@
     "daily note/2025/2/2025-02-07.md",
     "Spaces/Home/Spring/MyBatis/MyBatis 필요.md",
     "daily note/2025/2/2025-02-06.md",
-    "Spaces/Home/DB/DB 개념/소수점.md",
     "daily note/2025/2",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
