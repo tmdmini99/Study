@@ -152,10 +152,13 @@
             "id": "c32f444884fe1537",
             "type": "leaf",
             "state": {
-              "type": "mk-file-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Spaces"
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
             }
           }
         ],
