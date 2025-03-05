@@ -119,7 +119,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -230,7 +231,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9cda3d83766c82a0",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "Spaces/Home/Java/Switch.md",
     "daily note/2025/2/2025-03-05.md",
