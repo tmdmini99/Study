@@ -30,6 +30,25 @@ System.out.println("Generated ID: " + generatedId);
 ```
 
 
+```xml
+<insert id="insertOrders" parameterType="map" useGeneratedKeys="true" keyProperty="userId,id">
+    INSERT INTO orders (
+    user_id,
+    user_address_id,
+    request_message
+    ) VALUES (
+    #{userId},
+    #{userAddressHistId}::numeric,
+    #{requestMessage}
+    )
+    RETRUNIG user_id, id
+</insert>
+```
+
+이렇게 returing값이 두개인 경우 keProperty를 두개 매핑 시켜주면 된다
+
+
+
 
 ## parameterType="map"
 
