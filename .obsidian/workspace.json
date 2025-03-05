@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-05.md",
+                "file": "Spaces/Home/Java/Switch.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-05"
+              "title": "Switch"
             }
           }
         ],
@@ -110,58 +110,6 @@
             }
           },
           {
-            "id": "d53f3fd5d4ade087",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "717076ca79823e0b",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "ccfecd701b528fe9",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "1274167c8bcf8612",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "f4b80dfff6f0caf0",
             "type": "leaf",
             "state": {
@@ -171,8 +119,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
@@ -285,6 +232,7 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Switch.md",
     "daily note/2025/2/2025-03-05.md",
     "daily note/2025/2/2025-03-04.md",
     "daily note/2025/2/2025-02-28.md",
@@ -315,7 +263,6 @@
     "daily note/2025/2/2025-02-11.md",
     "Spaces/Home/Spring/MyBatis/MyBatis If.md",
     "daily note/2025/2/2025-02-10.md",
-    "daily note/2025/2/2025-02-07.md",
     "daily note/2025/2",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
