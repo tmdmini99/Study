@@ -48,6 +48,14 @@ System.out.println("Generated ID: " + generatedId);
 이렇게 returing값이 두개인 경우 keProperty를 두개 매핑 시켜주면 된다
 
 
+ 여기서 `keyProperty="commonId, statusCd, user_id"` 를 할 경우
+Map으로 되어있는 애들은 `param.get(' statusCd')`이렇게 사용해야함 주의 필요
+
+```xml
+<update id="updateLedgers" parameterType="map" useGeneratedKeys="true" keyProperty="commonId,statusCd,user_id" keyColumn="id,status_cd,user_id">
+```
+
+
 
 
 ## parameterType="map"
