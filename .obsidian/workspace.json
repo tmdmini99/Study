@@ -158,9 +158,19 @@
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
             }
+          },
+          {
+            "id": "5981293b3576eaec",
+            "type": "leaf",
+            "state": {
+              "type": "mk-file-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Spaces"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
