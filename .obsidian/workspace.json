@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-07.md",
+                "file": "daily note/2025/2/2025-03-10.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-07"
+              "title": "2025-03-10"
             }
           },
           {
@@ -163,6 +163,19 @@
             "id": "5981293b3576eaec",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "11f2700a18b1bf2c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -170,7 +183,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -283,6 +296,7 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-03-10.md",
     "daily note/2025/2/2025-03-07.md",
     "daily note/2025/2/2025-03-06.md",
     "Spaces/Home/Java/Switch.md",
@@ -313,7 +327,6 @@
     "daily note/2025/2/2025-02-13.md",
     "daily note/2025/2/2025-02-12.md",
     "Spaces/Home/Java/String/String 문법.md",
-    "daily note/2025/2/2025-02-11.md",
     "daily note/2025/2",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
