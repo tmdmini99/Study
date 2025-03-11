@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-10.md",
+                "file": "daily note/2025/2/2025-03-11.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-10"
+              "title": "2025-03-11"
             }
           },
           {
@@ -176,6 +176,19 @@
             "id": "11f2700a18b1bf2c",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "db272672c42d5b14",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -183,7 +196,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -296,6 +309,7 @@
   },
   "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-03-11.md",
     "daily note/2025/2/2025-03-10.md",
     "daily note/2025/2/2025-03-07.md",
     "daily note/2025/2/2025-03-06.md",
@@ -326,7 +340,6 @@
     "Spaces/Home/Java/등록 시간",
     "daily note/2025/2/2025-02-13.md",
     "daily note/2025/2/2025-02-12.md",
-    "Spaces/Home/Java/String/String 문법.md",
     "daily note/2025/2",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
