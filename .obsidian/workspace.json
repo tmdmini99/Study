@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-11.md",
+                "file": "Spaces/Home/Netty/Netty.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-11"
+              "title": "Netty"
             }
           },
           {
@@ -143,8 +143,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -255,8 +254,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0705d70457345ec",
+  "active": "9cda3d83766c82a0",
   "lastOpenFiles": [
+    "Spaces/Home/Netty/Netty.md",
+    "Spaces/Home/Netty",
     "daily note/2025/2/2025-03-11.md",
     "daily note/2025/2/2025-03-10.md",
     "daily note/2025/2/2025-03-07.md",
@@ -287,12 +288,10 @@
     "Spaces/Home/Java/등록 시간/등록시간.md",
     "Spaces/Home/Java/등록 시간",
     "daily note/2025/2/2025-02-13.md",
-    "daily note/2025/2/2025-02-12.md",
     "daily note/2025/2",
     "Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Java/자연어 처리",
     "Spaces/Home/Java/매개변수",
-    "Spaces/Home/Java/Enum",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
