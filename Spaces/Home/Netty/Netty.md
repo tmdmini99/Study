@@ -919,6 +919,222 @@ public class NettySpringServer {
 💡 **결론적으로, Spring MVC는 유지하면서 WebSocket/TCP 서버만 Netty로 실행하는 것이 가장 좋은 방법입니다!** 🚀
 
 
+### **Spring Legacy(Spring MVC) + Netty에서 오프라인 메시지 저장 기능 구현하기**
+
+✅ **맞습니다! 카카오톡처럼 사용자가 오프라인이어도 메시지를 보내고, 나중에 접속했을 때 받을 수 있도록 해야 합니다.**  
+이를 위해 **Redis나 데이터베이스(DB)를 활용하여 오프라인 메시지를 저장하고, 접속 시 전달하는 기능**을 추가하면 됩니다.
+
+---
+
+## **1. 오프라인 메시지 저장을 위한 핵심 원리**
+
+1. **사용자가 접속 중인지 확인 (WebSocket 연결 여부 확인)**
+2. **접속 중이라면?** → **바로 메시지 전송**
+3. **접속 중이 아니라면?** → **메시지를 Redis 또는 DB에 저장**
+4. **사용자가 다시 접속하면?** → **저장된 메시지를 가져와 전달 후 삭제**
+
+
+```xml
+<dependencies>
+    <!-- Netty -->
+    <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>4.1.100.Final</version>
+    </dependency>
+
+    <!-- Redis (Jedis) -->
+    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>4.3.1</version>
+    </dependency>
+
+    <!-- SLF4J (로그) -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.36</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.36</version>
+    </dependency>
+</dependencies>
+```
+
+✅ **2) Netty WebSocket 서버 구현 (`NettyWebSocketServer.java`)**
+
+```java
+import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.*;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpServerCodec;
+import io.netty.handler.codec.http.websocketx.*;
+import redis.clients.jedis.Jedis;
+
+import java.util.concurrent.ConcurrentHashMap;
+
+public class NettyWebSocketServer {
+    private static final int PORT = 8081;
+    private static final ConcurrentHashMap<String, Channel> clients = new ConcurrentHashMap<>();
+    private static final Jedis redis = new Jedis("localhost", 6379); // Redis 연결
+
+    public static void main(String[] args) throws Exception {
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+
+        try {
+            ServerBootstrap bootstrap = new ServerBootstrap();
+            bootstrap.group(bossGroup, workerGroup)
+                    .channel(NioServerSocketChannel.class)
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        protected void initChannel(SocketChannel ch) {
+                            ch.pipeline().addLast(new HttpServerCodec());
+                            ch.pipeline().addLast(new HttpObjectAggregator(65536));
+                            ch.pipeline().addLast(new WebSocketServerProtocolHandler("/ws"));
+                            ch.pipeline().addLast(new WebSocketServerHandler());
+                        }
+                    });
+
+            ChannelFuture future = bootstrap.bind(PORT).sync();
+            System.out.println("Netty WebSocket 1:1 Chat Server started on port: " + PORT);
+            future.channel().closeFuture().sync();
+        } finally {
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
+            redis.close();
+        }
+    }
+
+    static class WebSocketServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
+        @Override
+        public void handlerAdded(ChannelHandlerContext ctx) {
+            System.out.println("New client connected: " + ctx.channel().id().asShortText());
+        }
+
+        @Override
+        public void handlerRemoved(ChannelHandlerContext ctx) {
+            clients.values().remove(ctx.channel());
+            System.out.println("Client disconnected: " + ctx.channel().remoteAddress());
+        }
+
+        @Override
+        protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
+            String message = msg.text();
+            System.out.println("Received: " + message);
+
+            String[] parts = message.split(":", 3); // "CONNECT:사용자ID" or "MSG:받는사람ID:내용"
+            if (parts.length < 2) return;
+
+            String command = parts[0];
+            String senderOrReceiver = parts[1];
+
+            if ("CONNECT".equals(command)) {
+                clients.put(senderOrReceiver, ctx.channel()); // 사용자 ID와 WebSocket 채널 저장
+                ctx.channel().writeAndFlush(new TextWebSocketFrame("CONNECTED AS " + senderOrReceiver));
+
+                // 저장된 오프라인 메시지 전달 후 삭제
+                while (redis.llen("offline:" + senderOrReceiver) > 0) {
+                    String offlineMessage = redis.lpop("offline:" + senderOrReceiver);
+                    ctx.channel().writeAndFlush(new TextWebSocketFrame("Offline Message: " + offlineMessage));
+                }
+            } else if ("MSG".equals(command) && parts.length == 3) {
+                String receiverId = parts[1];
+                String chatMessage = parts[2];
+
+                Channel receiverChannel = clients.get(receiverId);
+                if (receiverChannel != null) {
+                    receiverChannel.writeAndFlush(new TextWebSocketFrame("From " + senderOrReceiver + ": " + chatMessage));
+                } else {
+                    // 오프라인이면 Redis에 메시지 저장
+                    redis.rpush("offline:" + receiverId, senderOrReceiver + ": " + chatMessage);
+                }
+            }
+        }
+    }
+}
+```
+
+3. 클라이언트(JavaScript)에서 WebSocket 연결
+
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Netty 1:1 WebSocket Chat</title>
+</head>
+<body>
+    <h2>1:1 채팅</h2>
+    <label>내 ID:</label>
+    <input type="text" id="userId" placeholder="사용자 ID 입력">
+    <button onclick="connect()">연결</button>
+    <hr>
+    
+    <label>받는 사람 ID:</label>
+    <input type="text" id="receiverId" placeholder="받는 사람 ID">
+    <label>메시지:</label>
+    <input type="text" id="message" placeholder="메시지를 입력하세요">
+    <button onclick="sendMessage()">전송</button>
+    
+    <h3>채팅 로그</h3>
+    <ul id="messages"></ul>
+
+    <script>
+        let socket;
+        let userId;
+
+        function connect() {
+            userId = document.getElementById("userId").value;
+            if (!userId) {
+                alert("사용자 ID를 입력하세요.");
+                return;
+            }
+
+            socket = new WebSocket("ws://localhost:8081/ws");
+
+            socket.onopen = function () {
+                console.log("WebSocket 연결됨!");
+                socket.send("CONNECT:" + userId);
+            };
+
+            socket.onmessage = function (event) {
+                let msgList = document.getElementById("messages");
+                let msgItem = document.createElement("li");
+                msgItem.textContent = event.data;
+                msgList.appendChild(msgItem);
+            };
+        }
+
+        function sendMessage() {
+            let receiverId = document.getElementById("receiverId").value;
+            let message = document.getElementById("message").value;
+            socket.send("MSG:" + receiverId + ":" + message);
+        }
+    </script>
+</body>
+</html>
+```
+
+## **4. 결론**
+
+✅ **카톡처럼 사용자가 오프라인이어도 메시지 저장 후 접속하면 받을 수 있음**  
+✅ **Redis를 활용하여 오프라인 메시지를 저장하고, 로그인 시 전달**  
+✅ **이제 Netty 기반으로 실제 채팅 앱처럼 동작 가능!**
+
+💡 **이제 Spring MVC + Netty로 오프라인 메시지를 처리할 수 있습니다! 🚀**
+
+
+
+
 
 
 ---
