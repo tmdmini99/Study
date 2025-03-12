@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-12.md",
+                "file": "daily note/2025/2/2025-03-13.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-12"
+              "title": "2025-03-13"
             }
           }
         ]
@@ -101,6 +101,19 @@
             "id": "e9f0c1938c968ec7",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "f77488ba727ed49c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -108,7 +121,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -221,6 +234,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-03-13.md",
     "daily note/2025/2/2025-03-12.md",
     "Spaces/Home/Network/Redis.md",
     "Images/Netty",
@@ -262,7 +276,6 @@
     "daily note/2025/2/2025-02-19.md",
     "daily note/2025/2/2025-02-18.md",
     "daily note/2025/2/2025-02-17.md",
-    "daily note/2025/2/2025-02-14.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
