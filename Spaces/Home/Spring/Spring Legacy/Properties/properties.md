@@ -229,7 +229,7 @@ servlet-context.xml
 여기 부분들 확인 
 
 
-Spring lagacy에서 .properties 파일이 자기 자신 참조 하게 하는법 
+Spring lagacy에서 .properties 파일이  참조 하게 하는법 
 
 
 ```properties
@@ -258,3 +258,178 @@ public class MessageConfig {
     }
 }
 ```
+
+
+```java
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import java.text.MessageFormat;
+import java.util.Locale;
+
+public class CustomMessageSource extends ReloadableResourceBundleMessageSource {
+
+    @Override
+    protected String resolveCodeWithoutArguments(String code, Locale locale) {
+        String message = super.resolveCodeWithoutArguments(code, locale);
+        if (message != null && message.startsWith("@")) {
+            // "@" 뒤에 나오는 키로 메시지 다시 참조
+            return resolveCodeWithoutArguments(message.substring(1), locale);
+        }
+        return message;
+    }
+
+    @Override
+    protected MessageFormat resolveCode(String code, Locale locale) {
+        String msg = resolveCodeWithoutArguments(code, locale);
+        return createMessageFormat(msg, locale);
+    }
+}
+```
+
+
+
+
+자기 자신 참조
+
+```java
+@Configuration
+public class MessageConfig {
+
+    @Bean
+    public ReloadableResourceBundleMessageSource messageSource() {
+        ReloadableResourceBundleMessageSource source = new CustomMessageSource();
+        source.setBasenames("classpath:messages/common");
+        source.setDefaultEncoding("UTF-8");
+        source.setCacheSeconds(60);
+        source.setUseCodeAsDefaultMessage(true);
+        return source;
+    }
+}
+```
+
+
+
+```java
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import java.text.MessageFormat;
+import java.util.Locale;
+
+public class CustomMessageSource extends ReloadableResourceBundleMessageSource {
+
+    @Override
+    protected String resolveCodeWithoutArguments(String code, Locale locale) {
+        String message = super.resolveCodeWithoutArguments(code, locale);
+        
+        // 순환 참조 방지를 위한 처리
+        int maxDepth = 10;
+        while (message != null && message.startsWith("@") && maxDepth-- > 0) {
+            String referencedCode = message.substring(1);
+            message = super.resolveCodeWithoutArguments(referencedCode, locale);
+        }
+        
+        return message;
+    }
+}
+```
+
+
+
+✅ **XML 방식의 Spring MessageSource 설정 예시**
+
+
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="messageSource" class="com.yourpackage.CustomMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:messages/common</value>
+            </list>
+        </bean>
+
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="cacheSeconds" value="60"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+
+    </bean>
+
+</beans>
+```
+
+
+
+```java
+package egovframework.message;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
+import java.util.Locale;
+
+public class EgovWildcardReloadableResourceBundleMessageSource extends
+        ReloadableResourceBundleMessageSource {
+
+    private ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+
+    // 기존 코드 유지...
+
+    public void setEgovBasenames(String... basenames) {
+        // 이 부분은 기존 코드 그대로 유지하세요. (위에 적으신 코드 그대로)
+    }
+
+    String processBasename(String baseName) {
+        // 이 부분도 기존 코드 그대로 유지하세요.
+    }
+
+    @Override
+    protected String resolveCodeWithoutArguments(String code, Locale locale) {
+        String message = super.resolveCodeWithoutArguments(code, locale);
+
+        int maxDepth = 10; // 무한 참조 방지 (순환 참조 방지)
+        while (message != null && message.startsWith("@") && maxDepth-- > 0) {
+            String referencedCode = message.substring(1);
+            message = super.resolveCodeWithoutArguments(referencedCode, locale);
+        }
+
+        return message;
+    }
+}
+```
+
+
+```java
+@Override
+protected String resolveCodeWithoutArguments(String code, Locale locale) {
+    // ① code로부터 실제 메시지를 가져옴
+    String message = super.resolveCodeWithoutArguments(code, locale);
+
+    int maxDepth = 10; // ② 참조 횟수 제한 (무한 루프 방지)
+    
+    // ③ 가져온 메시지가 "@"로 시작하면, 다른 key를 참조하는 것임
+    while (message != null && message.startsWith("@") && maxDepth-- > 0) {
+        
+        // ④ "@" 뒤에 붙은 실제 키 값을 추출 (예: @common.content → common.content)
+        String referencedCode = message.substring(1);
+        
+        // ⑤ 다시 그 키(referencedCode)를 이용해 메시지를 가져옴
+        message = super.resolveCodeWithoutArguments(referencedCode, locale);
+        
+        // 이 과정을 최대 10번 반복하며, 중첩된 참조를 처리
+    }
+
+    // 최종적으로 참조가 끝난 메시지를 반환
+    return message;
+}
+```
+## 📌 **무한 루프 방지(maxDepth)**
+
+만약 다음처럼 **순환 참조**가 있으면 무한 반복이 발생할 수 있습니다.
+
+```properties
+a=@b
+b=@a
+```
+
