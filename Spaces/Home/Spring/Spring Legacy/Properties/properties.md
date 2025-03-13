@@ -227,3 +227,34 @@ servlet-context.xml
 
 
 여기 부분들 확인 
+
+
+Spring lagacy에서 .properties 파일이 자기 자신 참조 하게 하는법 
+
+
+```properties
+common.content=공통 메시지입니다.
+main.content=@common.content
+sub.content=@main.content
+```
+
+
+```java
+@Configuration
+public class MessageConfig {
+
+    @Bean
+    public ReloadableResourceBundleMessageSource messageSource() {
+        CustomMessageSource source = new CustomMessageSource();
+        source.setBasenames(
+            "classpath:messages/common",
+            "classpath:messages/board",
+            "classpath:messages/chart"
+        );
+        source.setDefaultEncoding("UTF-8");
+        source.setCacheSeconds(60);
+        source.setUseCodeAsDefaultMessage(true);
+        return source;
+    }
+}
+```
