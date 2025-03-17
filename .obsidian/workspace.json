@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Cafe24/workspace/Cafe24 Authorization Code &PostMan & Access Token.md",
+                "file": "daily note/2025/2/2025-03-17.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Cafe24 Authorization Code &PostMan & Access Token"
+              "title": "2025-03-17"
             }
           }
         ]
@@ -127,6 +127,19 @@
             "id": "f7d9ba2e21bd4e0a",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "ec7d9f94c2e074ad",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -134,7 +147,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -247,6 +260,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-03-17.md",
     "daily note/2025/2/2025-03-14.md",
     "daily note/2025/2/2025-03-13.md",
     "daily note/2025/2/2025-03-12.md",
@@ -288,7 +302,6 @@
     "daily note/2025/2/2025-02-20.md",
     "Spaces/Home/DB/PostGre.md",
     "daily note/2025/2/2025-02-19.md",
-    "daily note/2025/2/2025-02-18.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
