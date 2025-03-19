@@ -433,3 +433,20 @@ a=@b
 b=@a
 ```
 
+
+📌 **🔧 JS에서 참조 값(`@key`)을 재귀적으로 변환하는 함수 추가**
+```js
+function getI18nMessage(key) {
+    let message = $.i18n.map[key];
+
+    let maxDepth = 10; // 무한 루프 방지
+    while (message && message.startsWith("@") && maxDepth-- > 0) {
+        let referencedKey = message.substring(1); // `@` 제거 후 참조 키 추출
+        message = $.i18n.map[referencedKey] || message; // 참조 값이 없으면 원래 값 유지
+    }
+
+    return message;
+}
+
+```
+
