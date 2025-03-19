@@ -87,3 +87,30 @@ bootstrap5와 사용시
 
 
 ```
+
+
+
+![[summernote1.png]]
+
+위 상황일 경우
+```js
+dialogsInBody: true,
+```
+추가
+
+```js
+$('#newContent').summernote({  
+    height: 300, // SummerNote 편집기의 높이 설정  
+    placeholder: $.i18n.map["common.placehold.msg"],  
+    toolbar: [  
+        ['style', ['bold', 'italic', 'underline', 'clear']],  
+        ['font', ['strikethrough', 'superscript', 'subscript']],  
+        ['para', ['ul', 'ol', 'paragraph']],  
+        ['insert', ['link', 'picture', 'video']],  
+        ['view', ['fullscreen', 'codeview']]  
+    ],  
+    dialogsInBody: true  
+});
+```
+
+실제 적용
