@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-25.md",
+                "file": "daily note/2025/2/2025-03-26.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-25"
+              "title": "2025-03-26"
             }
           }
         ]
@@ -127,6 +127,19 @@
             "id": "23704fc30e1d77e9",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "672f370ff465d486",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -134,7 +147,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -247,6 +260,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-03-26.md",
     "daily note/2025/2/2025-03-25.md",
     "daily note/2025/2/2025-03-24.md",
     "daily note/2025/2/2025-03-20.md",
@@ -289,7 +303,6 @@
     "Spaces/Home/Java/Locale/Locale.md",
     "Spaces/Home/Java/MessageSource/MessageSource.md",
     "daily note/2025/2/2025-02-26.md",
-    "daily note/2025/2/2025-02-25.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
