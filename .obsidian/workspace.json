@@ -153,6 +153,19 @@
             "id": "9e479f072e016f43",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "34420f80947e082a",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -160,7 +173,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
