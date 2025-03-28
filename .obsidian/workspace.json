@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Error/Error.md",
+                "file": "Spaces/Home/AWS/AWS 자바/AWS JAVA.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Error"
+              "title": "AWS JAVA"
             }
           }
         ]
@@ -207,6 +207,9 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/AWS/AWS 자바/AWS JAVA.md",
+    "Spaces/Home/AWS/AWS 자바",
+    "Spaces/Home/AWS/AWS 실습",
     "Spaces/Home/Java/Error/Error.md",
     "Spaces/Home/Java/Error",
     "daily note/2025/2/2025-03-28.md",
@@ -237,9 +240,7 @@
     "Images/Netty2.png.crdownload",
     "Netty1.md",
     "Images/Netty/Netty1.png",
-    "Images/Netty1.png.crdownload",
     "Spaces/Home/Netty/Netty.md",
-    "Spaces/Home/Netty",
     "daily note/2025/2/2025-03-11.md",
     "daily note/2025/2/2025-03-10.md",
     "daily note/2025/2/2025-03-07.md",
@@ -249,7 +250,6 @@
     "daily note/2025/2/2025-03-04.md",
     "daily note/2025/2/2025-02-28.md",
     "Spaces/Home/Java Script/Jquery/다국어 처리/i18next.md",
-    "Spaces/Home/Java Script/Jquery/다국어 처리/i18n.properties.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
