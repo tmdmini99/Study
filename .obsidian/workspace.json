@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-03-28.md",
+                "file": "Spaces/Home/Java/Error/Error.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-03-28"
+              "title": "Error"
             }
           }
         ]
@@ -85,97 +85,6 @@
             }
           },
           {
-            "id": "79e65bc74635a8ea",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "b3ffc69dd0e5f544",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "a07df9afd04d71fd",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "23704fc30e1d77e9",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "672f370ff465d486",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "9e479f072e016f43",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "34420f80947e082a",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "529afa1c939959a3",
             "type": "leaf",
             "state": {
@@ -185,8 +94,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "horizontal",
@@ -299,6 +207,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Error/Error.md",
+    "Spaces/Home/Java/Error",
     "daily note/2025/2/2025-03-28.md",
     "daily note/2025/2/2025-03-27.md",
     "daily note/2025/2/2025-03-26.md",
@@ -340,8 +250,6 @@
     "daily note/2025/2/2025-02-28.md",
     "Spaces/Home/Java Script/Jquery/다국어 처리/i18next.md",
     "Spaces/Home/Java Script/Jquery/다국어 처리/i18n.properties.md",
-    "Spaces/Home/Java Script/Jquery/다국어 처리",
-    "Spaces/Home/Java/Locale/Locale.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
