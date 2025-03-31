@@ -30,6 +30,39 @@ System.out.println("Generated ID: " + generatedId);
 ```
 
 
+## 필수 조건 정리
+
+| 항목                        | 설명                                                                        |
+| ------------------------- | ------------------------------------------------------------------------- |
+| `useGeneratedKeys="true"` | JDBC의 auto-generated key 사용                                               |
+| `keyProperty="id"`        | Java 객체 내에서 세팅할 필드명 (`paramMap.get("id")` or VO의 `setId()` 호출됨)           |
+| `id` 컬럼                   | `AUTO_INCREMENT`, `SERIAL`, `IDENTITY`, `BIGSERIAL` 등 DB가 자동 생성하는 컬럼이어야 함 |
+| `parameterType="map"`     | 여기선 `Map<String, Object>`로 받고 있으므로 `map.put("id", ...)`으로 세팅됨             |
+
+## 예시 동작 흐름
+
+1. DB에서 `id`가 자동 생성됨 (예: PostgreSQL의 `SERIAL`, MySQL의 `AUTO_INCREMENT`)
+    
+2. MyBatis가 생성된 키를 가져와서 `map.put("id", generatedId)` 형식으로 넣어줌
+    
+3. 이후 코드에서 `map.get("id")` 하면 **바로 접근 가능**
+    
+
+---
+
+## 주의할 점
+
+- **DB의 해당 컬럼(`id`)이 실제로 auto-increment 설정이 되어 있어야** 작동합니다
+    
+- `parameterType="map"`일 경우 `Map`에 직접 `id` 키가 들어감  
+    → 만약 VO였다면 해당 VO의 `setId()` 메서드로 값이 들어갑니다
+
+
+
+---
+
+
+
 ```xml
 <insert id="insertOrders" parameterType="map" useGeneratedKeys="true" keyProperty="userId,id">
     INSERT INTO orders (
