@@ -175,6 +175,41 @@ jsoup은 CSS 스타일의 선택 기능을 제공합니다. 이 기능을 Docume
 
 
 
+```java
+String html = // DB에서 가져온 Summernote HTML;
+Document doc = Jsoup.parse(html);
+
+for (Element aTag : doc.select("a[data]")) {
+    String dataAttr = aTag.attr("data"); // 예: "53,46,40"
+    List<String> idList = new ArrayList<>(Arrays.asList(dataAttr.split(",")));
+    idList.remove("53"); // 삭제된 ID 제거
+    aTag.attr("data", String.join(",", idList));
+}
+
+String updatedHtml = doc.body().html();
+
+```
+
+메소드 화
+```java
+public String removeIdFromDataAttr(String html, String idToRemove) {
+    if (html == null || html.isEmpty()) return html;
+
+    Document doc = Jsoup.parse(html);
+
+    for (Element aTag : doc.select("a[data]")) {
+        String dataAttr = aTag.attr("data");
+        List<String> idList = new ArrayList<>(Arrays.asList(dataAttr.split(",")));
+        idList.removeIf(id -> id.trim().equals(idToRemove));
+        aTag.attr("data", String.join(",", idList));
+    }
+
+    return doc.body().html();
+}
+```
+
+
+
 ---
 참조 -  https://pso62.tistory.com/19
 https://offbyone.tistory.com/116
