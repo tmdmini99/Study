@@ -17,6 +17,25 @@ public void initBinder(WebDataBinder binder) {
 }
 ```
 
+```java
+@InitBinder  
+public void initBinder(WebDataBinder binder) {  
+    binder.registerCustomEditor(List.class, "sc_ID_List", new PropertyEditorSupport() {  
+        @Override  
+        public void setAsText(String text) {  
+            List<Integer> list = new ArrayList<>();  
+            text = text.replaceAll("\\[|\\]", ""); // 대괄호 제거  
+            for (String s : text.split(",")) {  
+                try {  
+                    list.add(Integer.parseInt(s.trim()));  
+                } catch (NumberFormatException ignore) {}  
+            }  
+            setValue(list);  
+        }  
+    });  
+}
+```
+
 
 ## 적용 위치
 
