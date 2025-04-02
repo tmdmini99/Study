@@ -210,6 +210,51 @@ public String removeIdFromDataAttr(String html, String idToRemove) {
 
 
 
+
+list로 가져와서 비교 연산
+```java
+public void removeIdFromDataAttr(List<KWM3100Vo> list, List<Integer> idList) throws Exception {  
+    if (list == null || list.isEmpty() || idList == null || idList.isEmpty()) return;  
+  
+    for (KWM3100Vo vo : list) {  
+        String html = vo.getContents();  
+        if (html == null || html.isEmpty() || !html.contains("data=\"")) continue;  
+  
+        Document doc = Jsoup.parse(html);  
+  
+        for (Element aTag : doc.select("a[data]")) {  
+            String dataAttr = aTag.attr("data");  
+            List<String> dataValues = new ArrayList<>(Arrays.asList(dataAttr.split(",")));  
+  
+            // 디버깅 로그  
+            System.out.println("삭제 전 dataAttr: " + dataAttr);  
+            System.out.println("삭제 대상 리스트: " + idList);  
+  
+            boolean removed = dataValues.removeIf(id -> {  
+                try {  
+                    return idList.contains(Integer.parseInt(id.trim()));  
+                } catch (NumberFormatException e) {  
+                    return false;  
+                }  
+            });  
+  
+            if (removed) {  
+                if (dataValues.isEmpty()) {  
+                    aTag.remove(); // 다 빠졌으면 태그 자체 삭제  
+                } else {  
+                    aTag.attr("data", String.join(",", dataValues)); // 수정된 값 적용  
+                }  
+  
+                KWM3100CUDParamVo paramVo = new KWM3100CUDParamVo();  
+                paramVo.setId(vo.getId());  
+                paramVo.setContents(doc.body().html());  
+                dao.updateBoard(paramVo); // 즉시 update            }  
+        }  
+    }  
+}
+```
+
+
 ---
 참조 -  https://pso62.tistory.com/19
 https://offbyone.tistory.com/116
