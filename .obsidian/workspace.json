@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Crawler/JSOUP.md",
+                "file": "Spaces/Home/Java/Collection/Collection Interface.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "JSOUP"
+              "title": "Collection Interface"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "jsoup",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,8 +94,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -208,6 +207,8 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Collection/Collection Interface.md",
+    "Spaces/Home/Java/Collection",
     "daily note/2025/2/2025-04-02.md",
     "Spaces/Home/Java/Anntoation/@InitBinder.md",
     "daily note/2025/2/2025-04-01.md",
@@ -242,7 +243,6 @@
     "Images/Netty/Netty3.png",
     "Images/Netty3.png.crdownload",
     "Images/Netty/Netty2.png",
-    "Images/Netty2.png.crdownload",
     "Netty1.md",
     "Images/Netty/Netty1.png",
     "Spaces/Home/Netty/Netty.md",
@@ -250,7 +250,6 @@
     "daily note/2025/2/2025-03-10.md",
     "daily note/2025/2/2025-03-07.md",
     "daily note/2025/2/2025-03-06.md",
-    "Spaces/Home/Java/Switch.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",

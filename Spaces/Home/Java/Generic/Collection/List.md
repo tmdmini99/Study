@@ -695,7 +695,7 @@ public E peek(){
 # **<font color="#ff0000">Vector</font>**  
 
 과거에 대용량 처리를 위해 사용했으며, 내부에서 자동으로 동기화처리가 일어나 비교적 성능이 좋지 않고 무거워 잘 쓰이지 않음  
-Vector란 [[Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
+Vector란 [[Spaces/Home/Java/Generic/Collection/Collection]] 프레임워크의 일부이며 java.util 패키지에 소속되어 있습니다
 ArrayList와 동일한 구조를 가지며 배열의 크기가 늘어나고, 줄어듬에 따라서 자동으로 크기가 조절이 됩니다
 Vector의 특이한 점이라면 항상 동기화되어있고 Collection 프레임워크에 없는 메서드들을 사용이 가능합니다
 하지만 동기화라는 특징이 있어 스레드가 아닌 환경에서는 거의 사용이 되지 않습니다
