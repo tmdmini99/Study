@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/DB 개념/GROUP BY.md",
+                "file": "daily note/2025/2/2025-04-04.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "GROUP BY"
+              "title": "2025-04-04"
             }
           }
         ]
@@ -101,10 +101,13 @@
             "id": "e3c30ebcf2950387",
             "type": "leaf",
             "state": {
-              "type": "mk-file-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Spaces"
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
             }
           }
         ],
@@ -221,6 +224,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-04-04.md",
     "daily note/2025/2/2025-04-03.md",
     "Spaces/Home/Java/Collection/Collection Interface.md",
     "Spaces/Home/Java/Collection",
@@ -263,7 +267,6 @@
     "Spaces/Home/Netty/Netty.md",
     "daily note/2025/2/2025-03-11.md",
     "daily note/2025/2/2025-03-10.md",
-    "daily note/2025/2/2025-03-07.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
