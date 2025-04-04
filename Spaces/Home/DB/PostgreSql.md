@@ -65,5 +65,26 @@ ALTER USER postgres PASSWORD '새로운비밀번호';
     
     - ex) **`SELECT** **max**(amount) **FROM** payment **WHERE** amount **<** 4;`
 
+
+
+시간에 따라 표출
+```sql
+case
+  --1 시간 이내
+  when CURRENT_TIMESTAMP - a.reg_dt < ! [CDATA[ <= ]] > interval '1 hour'
+then
+case
+when EXTRACT(minute from(CURRENT_TIMESTAMP - a.reg_dt)) < ![CDATA[ < ]] > 1 then '방금 전'
+else EXTRACT(minute from(CURRENT_TIMESTAMP - a.reg_dt)) || '분 전'
+end
+--24 시간 이내
+when CURRENT_TIMESTAMP - a.reg_dt < ![CDATA[ <= ]] > interval '24 hours'
+then
+EXTRACT(hour from(CURRENT_TIMESTAMP - a.reg_dt)) || '시간 전'
+    --24 시간 이후
+else to_char(a.reg_dt, 'yyyy-mm-dd')
+end as reg_dt
+```
+
 ---
 참조 - https://blog.naver.com/wiseyoun07/221146431131 upsert
