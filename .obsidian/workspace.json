@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/DB/PostgreSql.md",
+                "file": "daily note/2025/2/2025-04-07.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "PostgreSql"
+              "title": "2025-04-07"
             }
           }
         ]
@@ -88,6 +88,19 @@
             "id": "e2bd4d22a110c16f",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "4cae29bfb462432b",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -95,7 +108,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -208,6 +221,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-04-07.md",
     "daily note/2025/2/2025-04-04.md",
     "daily note/2025/2/2025-04-03.md",
     "Spaces/Home/Java/Collection/Collection Interface.md",
@@ -250,7 +264,6 @@
     "Images/Netty/Netty1.png",
     "Spaces/Home/Netty/Netty.md",
     "daily note/2025/2/2025-03-11.md",
-    "daily note/2025/2/2025-03-10.md",
     "Images/Intellij Spring2.png",
     "Images/Intellij Spring1.png",
     "Images/Pasted image 20241121093519.png",
