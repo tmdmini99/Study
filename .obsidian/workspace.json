@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md",
+                "file": "Spaces/Home/Spring/Spring Legacy/Properties/properties.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "AOP"
+              "title": "properties"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "aop",
+                "query": "@common.",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
