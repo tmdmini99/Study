@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-04-10.md",
+                "file": "daily note/2025/2/2025-04-13.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-04-10"
+              "title": "2025-04-13"
             }
           }
         ]
@@ -116,8 +116,8 @@
             "state": {
               "type": "mk-file-view",
               "state": {},
-              "icon": "layout-grid",
-              "title": "Spaces"
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화돼있지 않음"
             }
           }
         ]
@@ -198,8 +198,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화돼있지 않음"
             }
           },
           {
@@ -208,8 +208,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화돼있지 않음"
             }
           }
         ],
@@ -226,15 +226,14 @@
       "canvas:새 캔버스 만들기": false,
       "templates:템플릿 삽입": false,
       "graph:그래프 뷰 열기": false,
-      "command-palette:명령어 팔레트 열기": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:명령어 팔레트 열기": false
     }
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
-    "File/kpop_merch_wholesale_mall.zip",
     "daily note/2025/2/2025-04-10.md",
+    "daily note/2025/2/2025-04-13.md",
+    "File/kpop_merch_wholesale_mall.zip",
     "Images/FigmaSetup.exe",
     "Images/미확인 871692.crdownload",
     "Spaces/Home/Spring/AOP/XML AOP.md",
@@ -271,7 +270,6 @@
     "Images/Netty/Netty6.png",
     "Images/Netty6.png.crdownload",
     "Images/Netty/Netty5.png",
-    "Images/Netty5.png.crdownload",
     "Images/Netty/Netty4.png",
     "Images/Netty/Netty3.png",
     "Images/Netty/Netty2.png",
