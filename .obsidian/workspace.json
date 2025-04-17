@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java Script/공부 해야 될것.md",
+                "file": "daily note/2025/2/2025-04-17.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "공부 해야 될것"
+              "title": "2025-04-17"
             }
           }
         ]
@@ -166,6 +166,19 @@
             "id": "9100d42cbcad74eb",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "9ec0aacbd71a98a3",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -173,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 10
       }
     ],
     "direction": "horizontal",
@@ -286,6 +299,7 @@
   },
   "active": "1ac693911ff4ea53",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-04-17.md",
     "daily note/2025/2/2025-04-16.md",
     "daily note/2025/2/2025-04-13.md",
     "daily note/2025/2/2025-04-14.md",
@@ -320,7 +334,6 @@
     "Images/summernote1.png",
     "Images/summernote1.png.crdownload",
     "daily note/2025/2/2025-03-19.md",
-    "daily note/2025/2/2025-03-18.md",
     "Images/Netty",
     "Images/Netty/Netty6.png",
     "Images/Netty6.png.crdownload",
