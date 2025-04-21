@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Anntoation/직접 Annotaion 만들어 사용.md",
+                "file": "Spaces/Home/Java/람다/람다표현식.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "직접 Annotaion 만들어 사용"
+              "title": "람다표현식"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Sortable",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,97 +82,6 @@
               "state": {},
               "icon": "lucide-bookmark",
               "title": "북마크"
-            }
-          },
-          {
-            "id": "0bfcdbbecc8ffb6c",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "662fcfe0b8b8d12d",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "0cd74bc13dce5b42",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "693a78f04bff9d86",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "baa80176491c822c",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "b890d4ae132b2e70",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "9100d42cbcad74eb",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
             }
           },
           {
