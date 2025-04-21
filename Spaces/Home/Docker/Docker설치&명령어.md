@@ -330,6 +330,11 @@ docker exec -it my-postgres bash
 
 내가 설정한 비밀번호 혹은 mac 비밀번호를 입력
 
+그 후 
+
+
+![[dbeaber1.png]]
+
 
 
 
