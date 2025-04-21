@@ -310,9 +310,6 @@ database.xml로 변경 해줘야함
 
 
 
-
-
-
 ```
 docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 
@@ -325,6 +322,13 @@ ALTER USER postgres PASSWORD '새로운비밀번호';
 
 
 
+맥에서 접속 시 
+
+```bash
+docker exec -it my-postgres bash
+```
+
+내가 설정한 비밀번호 혹은 mac 비밀번호를 입력
 
 
 
