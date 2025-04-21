@@ -330,7 +330,20 @@ docker exec -it my-postgres bash
 
 내가 설정한 비밀번호 혹은 mac 비밀번호를 입력
 
-그 후 
+그 후
+ 
+```bash
+CREATE DATABASE kpopAdmin;
+
+CREATE DATABASE kpopWholeSaleMall;
+
+CREATE USER admin WITH PASSWORD '1234';
+
+GRANT ALL PRIVILEGES ON DATABASE kpopAdmin TO admin;
+
+```
+
+user 생성 후 권한 주기
 
 
 ![[dbeaber1.png]]
