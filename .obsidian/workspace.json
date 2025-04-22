@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-04-22.md",
+                "file": "daily note/2024/7/2024-07-09.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-04-22"
+              "title": "2024-07-09"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "redF",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,32 +85,6 @@
             }
           },
           {
-            "id": "9ec0aacbd71a98a3",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "831b037e0f82adbd",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "6b929399ee73008c",
             "type": "leaf",
             "state": {
@@ -121,7 +95,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
