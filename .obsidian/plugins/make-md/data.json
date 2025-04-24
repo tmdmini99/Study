@@ -61,7 +61,6 @@
     "//Spaces/Spaces/Home/Spaces/Home/Mark/Spaces/Home/Mark/MarkUp",
     "//daily note",
     "Spaces/Home/Spaces/Home/Mark",
-    "Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/JVM",
     "Spaces/Home/Spaces/Home/IntelliJ/Spaces/Home/IntelliJ/Tomcat",
     "Spaces/Home/Spaces/Home/Spring",
     "Spaces/Home/Spaces/Home/IntelliJ/Spaces/Home/IntelliJ/Spring",
@@ -74,7 +73,6 @@
     "Spaces/Home/Spaces/Home/Java Script/Spaces/Home/Java Script/Java Script/Spaces/Home/Java Script/Java Script/라이브러리",
     "Spaces/Home/Spaces/Home/Java Script/Spaces/Home/Java Script/Jquery",
     "Spaces/Home/Spaces/Home/Java Script/Spaces/Home/Java Script/Jquery/Spaces/Home/Java Script/Jquery/이벤트 일시적 해제",
-    "Spaces/Home/Spaces/Home/JSP",
     "Spaces/Home/Spaces/Home/Spring",
     "Spaces/Home/Spaces/Home/Spring/Spaces/Home/Spring/Spring Legacy",
     "Spaces/Home/Spaces/Home/Java Script/Spaces/Home/Java Script/Java Script",
@@ -85,7 +83,11 @@
     "Spaces/Home/Spaces/Home/CSRF",
     "Spaces/Home/Spaces/Home/AWS",
     "Spaces/Home/Spaces/Home/API",
-    "Spaces/Home/Spaces/Home/Docker"
+    "Spaces/Home/Spaces/Home/Java",
+    "Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/함수",
+    "Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/함수",
+    "Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/함수",
+    "Spaces/Home/Spaces/Home/Java/Spaces/Home/Java/함수"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
@@ -111,7 +113,8 @@
     "spaces://$tags"
   ],
   "rootSpaces": [
-    "Spaces/Home/Java/Stack"
+    "Spaces/Home/Java/Stack",
+    "Spaces/Home/Java/함수"
   ],
   "spacesUseAlias": false,
   "fmKeyAlias": "aliases",

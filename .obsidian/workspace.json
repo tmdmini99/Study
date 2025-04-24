@@ -35,24 +35,10 @@
             "id": "158d86219ab03815",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily note/2025/2/2025-04-24.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-04-24"
+              "title": "새 탭"
             }
           }
         ],
@@ -246,6 +232,10 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Java/함수/Untitled 1.md",
+    "Spaces/Home/Java/함수/Untitled.md",
+    "Spaces/Home/Java/함수/함수.md",
+    "Spaces/Home/Java/함수",
     "daily note/2025/2/2025-04-24.md",
     "daily note/2025/2/2025-04-23.md",
     "daily note/2025/2/2025-04-22.md",
@@ -277,14 +267,10 @@
     "Spaces/Home/AWS/AWS 실습",
     "Spaces/Home/Java/Error/Error.md",
     "Spaces/Home/Java/Error",
-    "daily note/2025/2/2025-03-28.md",
-    "daily note/2025/2/2025-03-27.md",
-    "daily note/2025/2/2025-03-26.md",
     "Images/summernote1.png",
     "Images/summernote1.png.crdownload",
     "Images/Netty",
     "Images/Netty/Netty6.png",
-    "Images/Netty6.png.crdownload",
     "Images/Netty/Netty5.png",
     "Images/Netty/Netty4.png",
     "Images/Netty/Netty3.png",
