@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Math/Math.md",
+                "file": "daily note/2025/2/2025-04-26.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Math"
+              "title": "2025-04-26"
             }
           }
         ],
@@ -113,13 +113,27 @@
             "id": "b8beb5df9c032f76",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "1af5dc5a8e0a1f45",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -232,6 +246,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-04-26.md",
     "daily note/2025/2/2025-04-25.md",
     "Spaces/Home/Java/Java.md",
     "Spaces/Home/Java/함수/함수.md",
@@ -264,7 +279,6 @@
     "daily note/2025/2/2025-04-02.md",
     "Spaces/Home/Java/Anntoation/@InitBinder.md",
     "daily note/2025/2/2025-04-01.md",
-    "daily note/2025/2/2025-03-31.md",
     "Spaces/Home/AWS/AWS 자바",
     "Spaces/Home/AWS/AWS 실습",
     "Spaces/Home/Java/Error",
