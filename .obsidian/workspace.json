@@ -132,8 +132,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -244,7 +243,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "daily note/2025/2/2025-04-26.md",
     "daily note/2025/2/2025-04-25.md",
