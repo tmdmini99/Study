@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Arrays/Arrays.md",
+                "file": "daily note/2025/2/2025-04-28.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Arrays"
+              "title": "2025-04-28"
             }
           }
         ],
@@ -126,13 +126,27 @@
             "id": "1af5dc5a8e0a1f45",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "243d661ccb062e5c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -245,6 +259,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-04-28.md",
     "Spaces/Home/Java/Arrays/Arrays.md",
     "Spaces/Home/Java/Arrays",
     "daily note/2025/2/2025-04-26.md",
@@ -278,7 +293,6 @@
     "Spaces/Home/Java/Collection/Collection Interface.md",
     "Spaces/Home/Java/Collection",
     "daily note/2025/2/2025-04-02.md",
-    "Spaces/Home/Java/Anntoation/@InitBinder.md",
     "Spaces/Home/AWS/AWS 자바",
     "Spaces/Home/AWS/AWS 실습",
     "Spaces/Home/Java/Error",
