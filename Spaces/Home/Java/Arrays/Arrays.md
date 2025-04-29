@@ -209,6 +209,8 @@ Arrays.asList(array).contains(value);
 ## Collections
 
 
+### Collections.swap
+
 ```java
 import java.util.*;
 
@@ -225,4 +227,21 @@ public class SwapExample {
     }
 }
 
+```
+
+### Collections.min
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(5, 2, 8, 1, 4);
+        
+        // 가장 작은 값 찾기
+        int minValue = Collections.min(list);
+        
+        System.out.println("가장 작은 값: " + minValue);  // 1
+    }
+}
 ```
