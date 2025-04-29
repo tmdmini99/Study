@@ -204,3 +204,25 @@ Arrays.asList(array).contains(value);
 ```
 
 이렇게 사용 가능
+
+
+## Collections
+
+
+```java
+import java.util.*;
+
+public class SwapExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        
+        System.out.println("Before swap: " + list);
+        
+        // 인덱스 1과 3의 요소를 바꿈 ("B" <-> "D")
+        Collections.swap(list, 1, 3);
+        
+        System.out.println("After swap: " + list);
+    }
+}
+
+```
