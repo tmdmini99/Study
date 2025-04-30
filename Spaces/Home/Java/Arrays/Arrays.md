@@ -247,6 +247,12 @@ public class Main {
 ```
 
 
+특정 구간 배열 제거
+
 ```java
-list.subList(1, 5).clear();
+List<Integer> list = new ArrayList<>(Arrays.asList(2, 3, 1, 2, 3, 1, 3, 3));
+
+// 예를 들어, index 1부터 5까지가 [2, 3, 1, 3]이라면
+list.subList(1, 5).clear();  // 1번 인덱스부터 4번 인덱스까지 제거 (5는 포함 X)
+
 ```
