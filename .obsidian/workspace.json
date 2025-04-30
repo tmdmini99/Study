@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Arrays/Arrays.md",
+                "file": "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Arrays"
+              "title": "브루트포스 (Brute Force)"
             }
           }
         ],
@@ -245,6 +245,15 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/알고리즘/동적 프로그래밍 (DP, Dynamic Programming).md",
+    "Spaces/Home/알고리즘/그리디 (Greedy).md",
+    "Spaces/Home/알고리즘/백트래킹 (Backtracking).md",
+    "Spaces/Home/알고리즘/DFS  BFS (깊이우선 너비우선 탐색).md",
+    "Spaces/Home/알고리즘/이분 탐색 (Binary Search).md",
+    "Spaces/Home/알고리즘/투 포인터 (Two Pointers).md",
+    "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
+    "Spaces/Home/알고리즘/슬라이딩 윈도우(Sliding Window).md",
+    "Spaces/Home/알고리즘",
     "daily note/2025/2/2025-04-30.md",
     "daily note/2025/2/2025-04-29.md",
     "daily note/2025/2/2025-04-28.md",
@@ -267,23 +276,14 @@
     "daily note/2025/2/2025-04-16.md",
     "daily note/2025/2/2025-04-13.md",
     "daily note/2025/2/2025-04-14.md",
-    "daily note/2025/2/2025-04-10.md",
     "File/kpop_merch_wholesale_mall.zip",
     "Images/FigmaSetup.exe",
     "Images/미확인 871692.crdownload",
-    "Spaces/Home/Spring/AOP/XML AOP.md",
-    "daily note/2025/2/2025-04-09.md",
-    "Spaces/Home/Java/Anntoation/@Transactional.md",
-    "daily note/2025/2/2025-04-08.md",
-    "daily note/2025/2/2025-04-07.md",
-    "daily note/2025/2/2025-04-04.md",
-    "daily note/2025/2/2025-04-03.md",
     "Spaces/Home/Java/Collection",
     "Spaces/Home/AWS/AWS 자바",
     "Spaces/Home/AWS/AWS 실습",
     "Spaces/Home/Java/Error",
     "Images/summernote1.png",
-    "Images/summernote1.png.crdownload",
     "Images/Netty/Netty6.png",
     "Images/Netty/Netty5.png",
     "Images/Netty/Netty4.png",
