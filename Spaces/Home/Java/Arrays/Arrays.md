@@ -245,3 +245,8 @@ public class Main {
     }
 }
 ```
+
+
+```java
+list.subList(1, 5).clear();
+```
