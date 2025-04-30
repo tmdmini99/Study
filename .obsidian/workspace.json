@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
+                "file": "Spaces/Home/Java/Arrays/Arrays.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "브루트포스 (Brute Force)"
+              "title": "Arrays"
             }
           }
         ],
