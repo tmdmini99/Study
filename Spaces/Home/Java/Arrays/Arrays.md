@@ -156,6 +156,12 @@ list.contains("banana");  // true
 list.contains("orange");  // false
 ```
 
+```java
+String[] arr = {"apple", "banana", "cherry"};
+boolean exists = Arrays.asList(arr).contains("banana");  // true
+```
+
+이렇게 사용 가능
 
 ### 3. **전체 흐름**
 
