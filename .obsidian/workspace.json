@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Arrays/Arrays.md",
+                "file": "Spaces/Home/알고리즘/그리디 (Greedy).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Arrays"
+              "title": "그리디 (Greedy)"
             }
           }
         ],
