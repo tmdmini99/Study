@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/슬라이딩 윈도우(Sliding Window).md",
+                "file": "Spaces/Home/Java/Arrays/Arrays.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "슬라이딩 윈도우(Sliding Window)"
+              "title": "Arrays"
             }
           }
         ],
