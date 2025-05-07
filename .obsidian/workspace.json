@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/DFS  BFS (깊이우선 너비우선 탐색).md",
+                "file": "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "DFS  BFS (깊이우선 너비우선 탐색)"
+              "title": "브루트포스 (Brute Force)"
             }
           }
         ],
