@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/동적 프로그래밍 (DP, Dynamic Programming).md",
+                "file": "Spaces/Home/알고리즘/슬라이딩 윈도우(Sliding Window).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "동적 프로그래밍 (DP, Dynamic Programming)"
+              "title": "슬라이딩 윈도우(Sliding Window)"
             }
           }
         ],
