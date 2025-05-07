@@ -82,6 +82,9 @@ public class Main {
 }
 ```
 
+### Arrays.sort()는 list에서는 사용 불가
+
+
 
 ### 4. **`Arrays.sort()`의 복잡도**
 
