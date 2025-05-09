@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/제곱근 탐색.md",
+                "file": "Spaces/프로그래머스/최소 직사각형.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "제곱근 탐색"
+              "title": "최소 직사각형"
             }
           }
         ],
@@ -245,6 +245,8 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/프로그래머스/최소 직사각형.md",
+    "Spaces/프로그래머스",
     "Spaces/Home/알고리즘/제곱근 탐색.md",
     "daily note/2025/2/2025-05-09.md",
     "daily note/2025/2/2025-05-07.md",
@@ -274,7 +276,6 @@
     "daily note/2025/2/2025-04-24.md",
     "daily note/2025/2/2025-04-23.md",
     "daily note/2025/2/2025-04-22.md",
-    "daily note/2025/2/2025-04-21.md",
     "Images/dbeaber1.png",
     "File/kpop_merch_wholesale_mall.zip",
     "Images/FigmaSetup.exe",
@@ -282,7 +283,6 @@
     "Spaces/Home/Java/Collection",
     "Spaces/Home/AWS/AWS 자바",
     "Spaces/Home/AWS/AWS 실습",
-    "Spaces/Home/Java/Error",
     "Images/summernote1.png",
     "Images/Netty/Netty6.png",
     "Images/Netty/Netty5.png",
