@@ -283,6 +283,31 @@ for(Integer i : map.keySet()){ //저장된 key값 확인
 HashMap을 출력하는 방법에는 다양한 방법이 있습니다. 그냥 print하게 되면 {}로 묶어 Map의 전체 key값, value가 출력됩니다. 특정 key값의 value를 가져오고싶다면 get(key)를 사용하면 되고 전체를 출력하려면 entrySet()이나 keySet()메소드를 활용하여 Map의 객체를 반환받은 후 출력하면 됩니다. entrySet()은 key와 value 모두가 필요할 경우 사용하며 keySet()은 key 값만 필요할 경우 사용하는데 key값만 받아서 get(key)를 활용하여 value도 출력할 수도 있기에 어떤 메소드를 선택하든지 간에 큰 상관이 없어 대부분 코드가 간단한 keySet을 활용하시던데 key값을 이용해서 value를 찾는 과정에서 시간이 많이 소모되므로 많은 양의 데이터를 가져와야 한다면 entrySet()이 좋습니다.(약 20%~200% 성능 저하가 있음)
 
 
+### Map.of
+
+`Map.of()`는 **Java 9 이상**에서 사용할 수 있는 기능으로, **`Map`을 간결하게 한 번에 초기화**할 수 있게 해줍니다.
+
+```java
+Map<String, Integer> wordToNumber = Map.of(
+    "zero", 0,
+    "one", 1,
+    "two", 2,
+    "three", 3,
+    "four", 4,
+    "five", 5,
+    "six", 6,
+    "seven", 7,
+    "eight", 8,
+    "nine", 9
+);
+
+```
+
+- 불변(immutable) 맵이 만들어짐 → 값을 나중에 수정하려고 하면 `UnsupportedOperationException` 발생.
+    
+- **요소가 10개 이하일 때만 사용 가능** (10쌍 넘으면 `Map.ofEntries()` 사용해야 함).
+
+
 
 ### Iterator 사용
 

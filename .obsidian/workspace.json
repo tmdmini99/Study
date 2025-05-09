@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/제곱근 탐색.md",
+                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "제곱근 탐색"
+              "title": "Map"
             }
           }
         ],
