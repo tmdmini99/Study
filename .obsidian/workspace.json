@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/그리디 (Greedy).md",
+                "file": "daily note/2025/2/2025-05-09.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "그리디 (Greedy)"
+              "title": "2025-05-09"
             }
           }
         ],
@@ -113,13 +113,27 @@
             "id": "bf71b123b7e422fd",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "fb46ca452645e788",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -232,6 +246,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-05-09.md",
     "daily note/2025/2/2025-05-07.md",
     "daily note/2025/2/2025-05-02.md",
     "Spaces/Home/알고리즘/동적 프로그래밍 (DP, Dynamic Programming).md",
@@ -262,7 +277,6 @@
     "daily note/2025/2/2025-04-21.md",
     "Images/dbeaber1.png",
     "daily note/2025/2/2025-04-17.md",
-    "daily note/2025/2/2025-04-16.md",
     "File/kpop_merch_wholesale_mall.zip",
     "Images/FigmaSetup.exe",
     "Images/미확인 871692.crdownload",
