@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Spring/AOP/AOP.md",
+                "file": "Spaces/Home/Java/정규표현식/정규표현식.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "AOP"
+              "title": "정규표현식"
             }
           }
         ]
@@ -205,23 +205,34 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
-    "Images/Interceptor",
+    "Images/dbeaber/dbeaber1.png",
+    "Images/dbeaber",
     "Images/무제 폴더",
-    "Images/CHAPCHA/CAPTCHA1.png",
-    "Images/CHAPCHA",
-    "무제 폴더",
-    "Images/window2.png",
-    "Images/정규표현식1.png",
+    "Images/Iframe/Iframe1.png",
+    "Images/Iframe",
+    "Images/iframe",
+    "Images/window/window3.png",
+    "Images/window/window2.png",
+    "Images/window/window1.png",
+    "Images/window",
+    "Images/windwo",
+    "Images/summernote/summernote1.png",
+    "Images/summernote",
+    "Images/SPA/SPA5.jpg",
+    "Images/SPA/SPA4.jpg",
+    "Images/SPA/SPA3.jpg",
+    "Images/SPA/SPA2.jpg",
+    "Images/SPA/SPA1.png",
+    "Images/SPA",
+    "Images/Shdow DOM",
+    "Images/PWA",
     "Spaces/Home/Java/정규표현식/정규표현식.md",
-    "Spaces/Home/Java/정규표현식",
     "Spaces/Home/Java/Generic/Collection/List/List 예제.md",
-    "Spaces/Home/Java/Generic/Collection/List",
     "daily note/2025/2/2025-05-12.md",
     "Spaces/프로그래머스/숫자 문자열과 영단어.md",
     "Spaces/프로그래머스/최소 직사각형.md",
-    "Spaces/프로그래머스",
     "Spaces/Home/알고리즘/제곱근 탐색.md",
     "daily note/2025/2/2025-05-09.md",
     "daily note/2025/2/2025-05-07.md",
@@ -234,26 +245,15 @@
     "Spaces/Home/알고리즘/투 포인터 (Two Pointers).md",
     "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
     "Spaces/Home/알고리즘/슬라이딩 윈도우(Sliding Window).md",
-    "Spaces/Home/알고리즘",
     "daily note/2025/2/2025-04-30.md",
     "daily note/2025/2/2025-04-29.md",
     "daily note/2025/2/2025-04-28.md",
     "Spaces/Home/Java/Arrays/Arrays.md",
-    "Spaces/Home/Java/Arrays",
     "daily note/2025/2/2025-04-26.md",
     "daily note/2025/2/2025-04-25.md",
     "Spaces/Home/Java/Java.md",
     "Spaces/Home/Java/함수/함수.md",
-    "Spaces/Home/Java/함수",
     "Spaces/Home/Java/Canvas.canvas",
-    "Images/dbeaber1.png",
-    "File/kpop_merch_wholesale_mall.zip",
-    "Images/summernote1.png",
-    "Images/Netty/Netty6.png",
-    "Images/Netty/Netty5.png",
-    "Images/Netty/Netty4.png",
-    "Images/Netty/Netty3.png",
-    "Images/Netty/Netty2.png",
     "무제 파일.canvas"
   ]
 }
