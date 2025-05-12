@@ -214,6 +214,33 @@ Arrays.asList(array).contains(value);
 
 이렇게 사용 가능
 
+### Arrays.copyOfRange
+
+
+```java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] original = {10, 20, 30, 40, 50, 60, 70};
+        // index 1부터 5까지 (2번째부터 5번째까지 → index 1~4)
+        int[] sliced = Arrays.copyOfRange(original, 1, 5);
+
+        System.out.println(Arrays.toString(sliced)); // [20, 30, 40, 50]
+    }
+}
+
+```
+
+- `Arrays.copyOfRange(array, from, to)`
+    
+- `from`: 시작 인덱스 (포함)
+    
+- `to`: 끝 인덱스 (불포함)
+    
+
+→ 즉, **index 1부터 index 4까지** 잘라서 새로운 배열로 반환합니다.
+
 
 ## Collections
 
