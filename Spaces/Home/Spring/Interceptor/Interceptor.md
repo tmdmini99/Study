@@ -261,7 +261,7 @@ public class CustomInterceptor implements HandlerInterceptor {
 
 
 ![[Interceptor9.png]]
-![[Pasted image 20240930125542.png]]
+![[Interceptor13.png]]
 
 
 

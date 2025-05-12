@@ -62,7 +62,7 @@ API 서버 B에서 CORS 허용 설정이 되어 있지 않으면 웹 �
 
 
 
-![[Pasted image 20241022090658.png]]
+![[CORS1.png]]
 
 
 
@@ -86,7 +86,7 @@ API 서버 B에서 CORS 허용 설정이 되어 있지 않으면 웹 �
 두 개의 출처가 서로 같다고 판단하는 로직은, 두 URL의 구성 요소 중 **`Scheme(프로토콜)`**, **`Host(도메인)`**, **`Port`**, 이 3가지만 동일하면 된다.
 
 
-![[Pasted image 20241022090710.png]]
+![[CORS2.png]]
 
 
 `https://evan-moon.github.io:80` 라는 출처를 예로 들면  
@@ -116,7 +116,7 @@ https:// 이라는 스킴에 evan-moon.github.io 호스트를 가지고
 
 
 
-![[Pasted image 20241022090808.png]]
+![[CORS3.png]]
 
 
 
@@ -153,7 +153,7 @@ https:// 이라는 스킴에 evan-moon.github.io 호스트를 가지고
 서로 다른 도메인의 서버가 리소스를 요청하는 CORS 상황이 발생했을 때, 브라우저는 다음과 같은 절차를 사용한다.
 
 
-![[Pasted image 20241022090823.png]]
+![[CORS4.png]]
 
 
 
@@ -201,13 +201,13 @@ Access-Control-Allow-Origin: https://example.com
 
 
 
-![[Pasted image 20241022090837.png]]
+![[CORS5.png]]
 
 
 preflight 시나리오의 플로우를 자세히 살펴보면 아래와 같다.
 
 
-![[Pasted image 20241022090848.png]]
+![[CORS6.png]]
 
 
 
@@ -260,13 +260,13 @@ Access-Control-Max-Age : 응답 캐시가 유효 시간
 > 1. **Access-Control-Allow-Origin** 허용한 상태
 
 
-![[Pasted image 20241022090900.png]]
+![[CORS7.png]]
 
 
 2. **Access-Control-Allow-Origin** 허용하지 않은 상태
 
 
-![[Pasted image 20241022090905.png]]
+![[CORS8.png]]
 
 
 > > 두 캡처 사진에서 볼 수 있듯이 응답 상태는 200이지만, **Access-Control-Allow-Origin**에서 차이가 있는 것을 확인 가능.

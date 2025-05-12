@@ -44,7 +44,7 @@ iframe 요소를 이용하면 해당 웹 페이지 안에 어떠한 제한 없�
 
 
 
-![[Pasted image 20241023134628.png]]
+![[Iframe1.png]]
 
 
 

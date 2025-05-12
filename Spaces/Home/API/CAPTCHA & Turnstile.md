@@ -32,7 +32,7 @@
 ## 3. 찍어먹어 보기
 
 
-![[Pasted image 20241107132119.png]]
+![[CAPTCHA1.png]]
 
 [일단 개발자 문자가 잘 되어 있다.](https://developers.cloudflare.com/turnstile/) 그리고 리액트 라이브러리도 존재한다. [깃허브 데모 레포](https://github.com/cloudflare/turnstile-demo-workers) 에서 빠르게 적용된 코드 역시 확인 가능하다 .
 
@@ -48,11 +48,11 @@ npm run dev
 ```
 
 
-![[Pasted image 20241107132128.png]]
+![[CAPTCHA2.png]]
 
 
 
-![[Pasted image 20241107132131.png]]
+![[CAPTCHA3.png]]
 
 
 
@@ -66,7 +66,7 @@ npm run dev
 
 
 
-![[Pasted image 20241107132140.png]]
+![[CAPTCHA4.png]]
 
 
 
@@ -77,16 +77,16 @@ npm run dev
 ### 3) 고오급 기능 맛보기
 
 
-![[Pasted image 20241107132151.png]]
+![[CAPTCHA5.png]]
 
 
 
-![[Pasted image 20241107132155.png]]
+![[CAPTCHA6.png]]
 
 
 아래 docs를 보고 복사 - 붙여넣기
 
-![[Pasted image 20241107132208.png]]
+![[CAPTCHA7.png]]
 
 
 #### 참고로 더 쉽게하는 방법이 있다.
@@ -94,13 +94,13 @@ npm run dev
 일단 Turnstile 등록을 했으면, 깃허브 레포에서 가져온 코드를 바꾸면 된다. 그러면 진짜 배포버전을 맛볼 수 있다. 아래 부분의 값을 위에서 만든 값으로 바꿔주자
 
 
-![[Pasted image 20241107132221.png]]
+![[CAPTCHA8.png]]
 
 
-![[Pasted image 20241107132223.png]]
+![[CAPTCHA9.png]]
 
 
-![[Pasted image 20241107132226.png]]
+![[CAPTCHA10.png]]
 
 
 **_"`npm run deploy`"_** 를 사용하면 된다. 그러면 [cloud flare server less platform인 workers](https://ryanking13.github.io/2020/07/26/introducing-cf-workers-2.html) 라는 앱으로 등록이 된다. (이 과정에 cloud flare 인증이 조금 필요하다.) 그러면 끝!

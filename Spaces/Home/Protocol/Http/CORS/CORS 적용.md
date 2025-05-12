@@ -107,7 +107,7 @@ public class DemoController {
 Controller 에 @CrossOrigin 을 추가했을 때 정상적으로 실행되는 걸 확인 할 수 있습니다.
 
 
-![[Pasted image 20241022093844.png]]
+![[CORS13.png]]
 
 
 
@@ -178,7 +178,7 @@ https://cors-anywhere.herokuapp.com/https://soyeon207.com
 
 CORS 처리를 백엔드 개발자에게 요청할 필요없이 React 라이브러리, Webpack Dev Server에서 제공하는 proxy기능을 사용하면 CORS 정책을 우회할 수 있다. 이는 별도의 응답 헤더를 받을 필요 없이 브라우저는 React 앱으로 데이터를 요청하고, 해당 요청을 백엔드로 전달하게 됩니다. 여기서 React 앱이 서버로부터 받은 응답 데이터를 다시 브라우저로 전달하는 방법을 쓰기 때문에 브라우저는 CORS 정책을 위반했는지 모르게 됩니다. 브라우저를 proxy 기능을 통해 속이는 것입니다.
 
-![[img1.daumcdn.webp]]
+![[CORS14.webp]]
 
 
 
@@ -201,7 +201,7 @@ CORS 처리를 백엔드 개발자에게 요청할 필요없이 React 라이브�
 
 
 
-![[Pasted image 20241022150508.png]]
+![[CORS15.png]]
 
 
 
@@ -209,7 +209,7 @@ CORS 처리를 백엔드 개발자에게 요청할 필요없이 React 라이브�
 
 
 
-![[Pasted image 20241022150516.png]]
+![[CORS16.png]]
 
 
 
@@ -237,7 +237,7 @@ npm install http-proxy-middleware --save
 
 
 
-![[Pasted image 20241022150523.png]]
+![[CORS17.png]]
 
 
 파일명은 무조건 **setupProxy.js**로 해야한다.
@@ -247,13 +247,13 @@ npm install http-proxy-middleware --save
 **첫번째 방법: 여러개의 app.use()로 각각 처리**
 
 
-![[Pasted image 20241022150529.png]]
+![[CORS18.png]]
 
 
 **두번째 방법: 라우터 이용하기**
 
 
-![[Pasted image 20241022150534.png]]
+![[CORS19.png]]
 
 
 

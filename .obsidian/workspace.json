@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/정규표현식/정규표현식.md",
+                "file": "Spaces/Home/Spring/AOP/AOP.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "정규표현식"
+              "title": "AOP"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "redF",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -205,8 +205,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
+    "Images/Interceptor",
+    "Images/무제 폴더",
+    "Images/CHAPCHA/CAPTCHA1.png",
+    "Images/CHAPCHA",
+    "무제 폴더",
+    "Images/window2.png",
     "Images/정규표현식1.png",
     "Spaces/Home/Java/정규표현식/정규표현식.md",
     "Spaces/Home/Java/정규표현식",
@@ -242,18 +248,12 @@
     "Spaces/Home/Java/Canvas.canvas",
     "Images/dbeaber1.png",
     "File/kpop_merch_wholesale_mall.zip",
-    "Images/FigmaSetup.exe",
-    "Images/미확인 871692.crdownload",
-    "Spaces/Home/Java/Collection",
     "Images/summernote1.png",
     "Images/Netty/Netty6.png",
     "Images/Netty/Netty5.png",
     "Images/Netty/Netty4.png",
     "Images/Netty/Netty3.png",
     "Images/Netty/Netty2.png",
-    "Images/Netty/Netty1.png",
-    "Images/Intellij Spring2.png",
-    "Images/Intellij Spring1.png",
     "무제 파일.canvas"
   ]
 }

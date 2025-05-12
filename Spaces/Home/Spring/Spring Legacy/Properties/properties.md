@@ -213,7 +213,7 @@ servlet-context.xml
 그래도 안될시 
 
 
-![[Pasted image 20241015132634.png]]
+![[Properties1.png]]
 
 
 여기 부분이 UTF-8인지 확인 
@@ -223,7 +223,7 @@ servlet-context.xml
 `Editor` > `File Encodings`에서 `Project Encoding`과 `Default encoding for properties files`를 `UTF-8`로 설정
 
 
-![[Pasted image 20241015132802.png]]
+![[Properties2.png]]
 
 
 여기 부분들 확인 

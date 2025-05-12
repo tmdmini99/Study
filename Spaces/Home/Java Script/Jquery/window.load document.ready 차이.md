@@ -68,9 +68,9 @@ function ready(val) {
 
 위 코드를 직접 console에 찍어보면 아래와 같은 결과를 확인하실 수 있습니다.
 
-![[Pasted image 20241021104242.png]]
+![[window1.png]]
 
-![](https://blog.kakaocdn.net/dn/CoTkd/btqGfs9ryxj/vTU0KehJef14o3n8TaEnr0/img.png)
+![[window2.png]]
 
 console에서 찍어본다면.
 
@@ -79,7 +79,7 @@ console에서 찍어본다면.
 **대략 이런느낌**
 
 
-![[Pasted image 20241021104250.png]]
+![[window3.png]]
 
 음.. 내일부터는 또 한 주의 시작이네요.
 
