@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/정규표현식/정규표현식.md",
+                "file": "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "정규표현식"
+              "title": "StringBuffer&StringBuilder"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "StringBuilder",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +94,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -207,6 +208,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Generic/Generic Type.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/dbeaber",
     "Images/무제 폴더",
@@ -224,7 +226,6 @@
     "Images/SPA/SPA4.jpg",
     "Images/SPA/SPA3.jpg",
     "Images/SPA/SPA2.jpg",
-    "Images/SPA/SPA1.png",
     "Images/SPA",
     "Images/Shdow DOM",
     "Images/PWA",
