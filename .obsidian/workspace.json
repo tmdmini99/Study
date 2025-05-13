@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Set.md",
+                "file": "daily note/2025/2/2025-05-13.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Set"
+              "title": "2025-05-13"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "57fc43061a77bada",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "2de832d3b64bf19c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-05-13.md",
     "Spaces/Home/Java/Generic/Generic Type.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/dbeaber",
@@ -252,7 +267,6 @@
     "daily note/2025/2/2025-04-26.md",
     "daily note/2025/2/2025-04-25.md",
     "Spaces/Home/Java/Java.md",
-    "Spaces/Home/Java/함수/함수.md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
