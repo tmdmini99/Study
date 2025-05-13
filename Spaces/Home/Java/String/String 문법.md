@@ -35,3 +35,18 @@ System.out.println(result);  // 출력: *****
 - `"*"`: 반복할 문자열
     
 - `.repeat(5)`: 이 문자열을 **5번 반복**
+
+
+
+## String 한글자씩 가져오기
+
+
+```java
+String xString = Integer.toString(x);
+        
+int sum = 0;
+for (int i = 0; i < s.length(); i++) {
+    int digit = s.charAt(i) - '0';
+    System.out.println(digit);
+}
+```
