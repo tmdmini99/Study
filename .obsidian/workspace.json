@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/JWT 설치.md",
+                "file": "Spaces/Home/Node/env.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "JWT 설치"
+              "title": "env"
             }
           }
         ]
@@ -207,6 +207,8 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Node/mongodb 사용.md",
+    "Spaces/Home/Node/env.md",
     "Spaces/Home/DB/MongoDb.md",
     "Spaces/Home/Node/JWT 설치.md",
     "Spaces/Home/Node/Nest js 설치.md",
@@ -251,8 +253,6 @@
     "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
     "Spaces/Home/알고리즘/슬라이딩 윈도우(Sliding Window).md",
     "daily note/2025/2/2025-04-30.md",
-    "daily note/2025/2/2025-04-29.md",
-    "daily note/2025/2/2025-04-28.md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
