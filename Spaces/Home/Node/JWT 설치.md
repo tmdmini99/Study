@@ -288,6 +288,56 @@ mongo:
     - nest-network
 ```
 
+```bash
+event-task/
+├── src/
+├── test/
+├── node_modules/
+├── dist/
+├── package.json
+├── docker/
+│   └── init-mongo.js
+└── docker-compose.yml
+
+```
+
+docker 파일 생성 후 그 안에 js파일 생성
+```yaml
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./docker/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: example
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: my_database
+    networks:
+      - event-task-network
+
+  # 다른 서비스들 (예: NestJS 서버 등)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: event-task-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    networks:
+      - event-task-network
+
+networks:
+  event-task-network:
+    driver: bridge
+
+```
 
 ### 5. Docker Compose 실행
 
