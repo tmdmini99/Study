@@ -17,6 +17,7 @@ cd auth-service
 npm install
 ```
 
+nest server 실행
 ```bash
-
+npm run start:dev
 ```
