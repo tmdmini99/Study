@@ -343,6 +343,71 @@ networks:
 
 이제 모든 설정이 완료되었습니다. 아래 명령어를 통해 Docker Compose를 실행하고 모든 서비스를 시작할 수 있습니다.
 
+```yaml
+version: '3.8'
+
+services:
+  # MongoDB for auth-server
+  mongo-auth:
+    image: mongo:latest
+    container_name: mongo-auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: auth-db
+    ports:
+      - "27017:27017"  # 포트는 필요에 따라 조정 가능
+    volumes:
+      - mongo-auth-data:/data/db
+    restart: always
+
+  # MongoDB for event-server
+  mongo-event:
+    image: mongo:latest
+    container_name: mongo-event
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: event-db
+    ports:
+      - "27018:27017"  # 두 번째 MongoDB는 다른 포트를 사용
+    volumes:
+      - mongo-event-data:/data/db
+    restart: always
+
+  # auth-server
+  auth-server:
+    build:
+      context: ./auth-server
+    environment:
+      - MONGO_URI=mongodb://root:rootpassword@mongo-auth:27017/auth-db?authSource=admin
+      - JWT_SECRET_KEY=your-secret-key
+      - JWT_EXPIRATION_TIME=3600
+    ports:
+      - "3001:3000"
+    depends_on:
+      - mongo-auth
+    restart: always
+
+  # event-server
+  event-server:
+    build:
+      context: ./event-server
+    environment:
+      - MONGO_URI=mongodb://root:rootpassword@mongo-event:27017/event-db?authSource=admin
+    ports:
+      - "3002:3000"
+    depends_on:
+      - mongo-event
+    restart: always
+
+volumes:
+  mongo-auth-data:
+  mongo-event-data:
+
+```
+
+
 ```bash
 docker-compose up --build
 ```
