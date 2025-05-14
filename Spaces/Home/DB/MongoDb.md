@@ -48,3 +48,13 @@ dbeaver에서 접속 방법
 5. **연결 완료**:
     
     - 연결이 성공하면 DBeaver의 왼쪽 메뉴에서 MongoDB 연결이 나타납니다. 해당 연결을 클릭하면 데이터베이스 및 컬렉션을 탐색할 수 있습니다.
+
+
+mongo compass
+
+url에
+```bash
+mongodb://root:rootpassword@localhost:27017/admin
+```
+입력
+

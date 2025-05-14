@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/mongodb 사용.md",
+                "file": "Spaces/Home/DB/MongoDb.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "mongodb 사용"
+              "title": "MongoDb"
             }
           }
         ]
