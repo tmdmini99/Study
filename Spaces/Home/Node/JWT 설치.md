@@ -137,6 +137,14 @@ export class User extends Document {
 export const UserSchema = SchemaFactory.createForClass(User);
 ```
 
+
+```bash
+npm install @nestjs/jwt @nestjs/passport passport passport-jwt
+npm install --save-dev @types/passport-jwt    
+npm install @nestjs/passport passport passport-jwt  
+```
+
+
 ### 2. MongoDB 연결 설정
 
 NestJS에서 MongoDB에 연결하려면 **MongooseModule**을 설정해야 합니다. `app.module.ts` 파일에 MongoDB 연결 정보를 추가합니다.
