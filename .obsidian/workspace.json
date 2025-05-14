@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/코드 리뷰.md",
+                "file": "Spaces/Home/Node/무제.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "코드 리뷰"
+              "title": "무제"
             }
           }
         ]
@@ -207,6 +207,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Node/무제.md",
     "Spaces/Home/Node/코드 리뷰.md",
     "Spaces/Home/Node/mongodb 사용.md",
     "Spaces/Home/Node/env.md",
@@ -252,7 +253,6 @@
     "Spaces/Home/알고리즘/이분 탐색 (Binary Search).md",
     "Spaces/Home/알고리즘/투 포인터 (Two Pointers).md",
     "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
-    "Spaces/Home/알고리즘/슬라이딩 윈도우(Sliding Window).md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
