@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/무제.md",
+                "file": "Spaces/Home/Node/userschema.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "무제"
+              "title": "userschema"
             }
           }
         ]
@@ -207,7 +207,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
-    "Spaces/Home/Node/무제.md",
+    "Spaces/Home/Node/userschema.md",
     "Spaces/Home/Node/코드 리뷰.md",
     "Spaces/Home/Node/mongodb 사용.md",
     "Spaces/Home/Node/env.md",
