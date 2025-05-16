@@ -150,6 +150,8 @@ npm install @nestjs/passport passport passport-jwt
 발급 받을때 auth.service.ts에서
 ```ts
 const expiresIn = this.configService.get<string>('JWT_EXPIRATION_TIME') || '3600';
+// 숫자로 되어야 함
+const expiresIn = Number(this.configService.get<string>('JWT_EXPIRATION_TIME')) || 3600;
 
 const accessToken = this.jwtService.sign(payload, { expiresIn });
 ```
