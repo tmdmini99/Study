@@ -144,6 +144,18 @@ npm install --save-dev @types/passport-jwt
 npm install @nestjs/passport passport passport-jwt  
 ```
 
+## Jwt 토큰 시간 늘리는 법
+
+
+발급 받을때 auth.service.ts에서
+```ts
+const expiresIn = this.configService.get<string>('JWT_EXPIRATION_TIME') || '3600';
+
+const accessToken = this.jwtService.sign(payload, { expiresIn });
+```
+
+시간을 명시적으로 해줘야 함 아닐 경우 기본 1초로 적용되어 바로 만료
+
 
 ### 2. MongoDB 연결 설정
 
