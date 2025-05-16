@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/JWT 설치.md",
+                "file": "Spaces/Home/Node/코드 리뷰.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "JWT 설치"
+              "title": "코드 리뷰"
             }
           }
         ]
