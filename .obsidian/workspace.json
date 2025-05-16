@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-05-16.md",
+                "file": "Spaces/Home/Node/nest js 시간.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-05-16"
+              "title": "nest js 시간"
             }
           }
         ]
@@ -120,8 +120,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -234,6 +233,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Node/nest js 시간.md",
     "daily note/2025/2/2025-05-16.md",
     "daily note/2025/2/2025-05-15.md",
     "Spaces/Home/Node/userschema.md",
@@ -279,7 +279,6 @@
     "Spaces/Home/알고리즘/그리디 (Greedy).md",
     "Spaces/Home/알고리즘/백트래킹 (Backtracking).md",
     "Spaces/Home/알고리즘/DFS  BFS (깊이우선 너비우선 탐색).md",
-    "Spaces/Home/알고리즘/이분 탐색 (Binary Search).md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
