@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/docke-compose.md",
+                "file": "Spaces/Home/Docker/Docker-Compose설치&명령어.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "docke-compose"
+              "title": "Docker-Compose설치&명령어"
             }
           }
         ]

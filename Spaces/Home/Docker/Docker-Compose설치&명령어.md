@@ -498,6 +498,12 @@ ALTER USER sys IDENTIFIED BY 1234;
 여기서 sys 입력후 role에 normal대신 다른것 입력
 
 
+이전 캐쉬 삭제
+
+```bash
+docker-compose down -v
+docker builder prune --force
+```
 
 
 ---
