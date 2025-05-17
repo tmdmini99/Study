@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/코드 리뷰.md",
+                "file": "daily note/2025/2/2025-05-17.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "코드 리뷰"
+              "title": "2025-05-17"
             }
           }
         ]
@@ -114,13 +114,27 @@
             "id": "f444bb2d7bcd2a67",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "52619d3fd474009c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -233,6 +247,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/2/2025-05-17.md",
     "Spaces/Home/Node/nest js 시간.md",
     "daily note/2025/2/2025-05-16.md",
     "daily note/2025/2/2025-05-15.md",
@@ -278,7 +293,6 @@
     "Spaces/Home/알고리즘/동적 프로그래밍 (DP, Dynamic Programming).md",
     "Spaces/Home/알고리즘/그리디 (Greedy).md",
     "Spaces/Home/알고리즘/백트래킹 (Backtracking).md",
-    "Spaces/Home/알고리즘/DFS  BFS (깊이우선 너비우선 탐색).md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
