@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/2/2025-05-17.md",
+                "file": "Spaces/Home/Node/docke-compose.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-05-17"
+              "title": "docke-compose"
             }
           }
         ]
@@ -133,8 +133,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "horizontal",
@@ -247,6 +246,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Node/docke-compose.md",
     "daily note/2025/2/2025-05-17.md",
     "Spaces/Home/Node/nest js 시간.md",
     "daily note/2025/2/2025-05-16.md",
@@ -292,7 +292,6 @@
     "daily note/2025/2/2025-05-02.md",
     "Spaces/Home/알고리즘/동적 프로그래밍 (DP, Dynamic Programming).md",
     "Spaces/Home/알고리즘/그리디 (Greedy).md",
-    "Spaces/Home/알고리즘/백트래킹 (Backtracking).md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
