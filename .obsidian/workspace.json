@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Node/코드 리뷰.md",
+                "file": "daily note/2025/5/2025-05-19.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "코드 리뷰"
+              "title": "2025-05-19"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "29af111454c121aa",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "bce9f58b2f54b2ca",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-05-19.md",
     "daily note/2025/12",
     "daily note/2025/11",
     "daily note/2025/10",
@@ -230,7 +245,6 @@
     "Spaces/Home/DB/MongoDb.md",
     "Spaces/Home/Node/JWT 설치.md",
     "Spaces/Home/Node/Nest js 설치.md",
-    "Spaces/Home/Node",
     "daily note/2025/5/2025-05-14.md",
     "daily note/2025/5/2025-05-13.md",
     "Spaces/Home/Java/Generic/Generic Type.md",
