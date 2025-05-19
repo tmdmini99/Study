@@ -450,7 +450,168 @@ db: MySQL을 사용하여 Data Layer를 구성하는 서비스입니다. 
   
 이렇게 Docker Compose를 사용하여 3-Tier 아키텍처를 구성하면, 각각의 레이어를 독립적으로 구성할 수 있으며, 서로 다른 서버에서 실행될 때 발생할 수 있는 호환성 문제를 최소화할 수 있습니다. 또한, Docker Compose를 사용하여 레이어 간의 의존성 및 관계를 쉽게 관리할 수 있으며, 스케일링과 관리도 용이합니다.
 
+### expose
 
+
+내부접속만 가능하게 정의
+
+```yml
+version: '3.8'
+
+  
+
+services:
+
+mongo-auth:
+
+image: mongo:6
+
+container_name: mongo-auth
+
+restart: always
+
+ports:
+
+- "27017:27017"
+
+environment:
+
+MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+
+MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+
+volumes:
+
+- ./auth-server/init-auth.js:/docker-entrypoint-initdb.d/init-auth.js:ro
+
+- mongo-auth-data:/data/db
+
+  
+
+mongo-event:
+
+image: mongo:6
+
+container_name: mongo-event
+
+restart: always
+
+ports:
+
+- "27018:27017"
+
+environment:
+
+MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+
+MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+
+volumes:
+
+- ./event-server/init-event.js:/docker-entrypoint-initdb.d/init-event.js:ro
+
+- mongo-event-data:/data/db
+
+  
+
+auth-server:
+
+container_name: auth-server
+
+image: node:20
+
+expose:
+
+- "3001"
+
+depends_on:
+
+- mongo-auth
+
+env_file:
+
+- .env
+
+working_dir: /usr/src/app
+
+volumes:
+
+- ./auth-server:/usr/src/app
+
+- /usr/src/app/node_modules
+
+command: sh -c "npm install && npm run start:dev"
+
+  
+
+event-server:
+
+container_name: event-server
+
+image: node:20
+
+expose:
+
+- "3002"
+
+depends_on:
+
+- mongo-event
+
+env_file:
+
+- .env
+
+working_dir: /usr/src/app
+
+volumes:
+
+- ./event-server:/usr/src/app
+
+- /usr/src/app/node_modules
+
+command: sh -c "npm install && npm run start:dev"
+
+  
+
+gateway-server:
+
+container_name: gateway-server
+
+image: node:20
+
+ports:
+
+- "3000:3000"
+
+depends_on:
+
+- auth-server
+
+- event-server
+
+env_file:
+
+- .env
+
+working_dir: /usr/src/app
+
+volumes:
+
+- ./gateway-server:/usr/src/app
+
+- /usr/src/app/node_modules
+
+command: sh -c "npm install && npm run start:dev"
+
+  
+
+volumes:
+
+mongo-auth-data:
+
+mongo-event-data:
+```
 
 ---
 참조 - https://seosh817.tistory.com/387
