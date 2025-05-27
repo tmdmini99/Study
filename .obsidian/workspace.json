@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-05-26.md",
+                "file": "daily note/2025/5/2025-05-27.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-05-26"
+              "title": "2025-05-27"
             }
           }
         ]
@@ -140,6 +140,19 @@
             "id": "82b75a3b2522ccbc",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "0627719e1e7231dd",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -147,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
@@ -260,6 +273,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-05-27.md",
     "daily note/2025/5/2025-05-26.md",
     "daily note/2025/5/2025-05-22.md",
     "daily note/2025/5/2025-05-20.md",
@@ -305,7 +319,6 @@
     "daily note/2025/5/2025-05-12.md",
     "Spaces/프로그래머스/숫자 문자열과 영단어.md",
     "Spaces/프로그래머스/최소 직사각형.md",
-    "Spaces/Home/알고리즘/제곱근 탐색.md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
