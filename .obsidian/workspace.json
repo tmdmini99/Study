@@ -107,8 +107,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -219,7 +218,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "Spaces/Home/Operator/기타 연산자.md",
     "Spaces/Home/Operator/조건 (삼항) 연산자 (Ternary Operator).md",
