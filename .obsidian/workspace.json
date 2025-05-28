@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/String/String 문법.md",
+                "file": "Spaces/Home/알고리즘/제곱근 탐색.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "String 문법"
+              "title": "제곱근 탐색"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "약수",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -218,8 +219,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Operator/기타 연산자.md",
+    "Spaces/Home/Operator/조건 (삼항) 연산자 (Ternary Operator).md",
+    "Spaces/Home/Operator/증감 연산자.md",
+    "Spaces/Home/Operator/비트 연산자.md",
+    "Spaces/Home/Operator/논리 연산자.md",
+    "Spaces/Home/Operator/비교 연산자.md",
+    "Spaces/Home/Operator/대입 연산자.md",
+    "Spaces/Home/Operator/산술 연산자.md",
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer/Integer 문법.md",
     "Spaces/Home/Java/Integer",
@@ -237,7 +246,6 @@
     "daily note/2025/7",
     "daily note/2025/6",
     "daily note/2025/5",
-    "daily note/2025/4",
     "daily note/2025/5/2025-05-18.md",
     "Spaces/Home/Node/docke-compose.md",
     "daily note/2025/5/2025-05-17.md",
@@ -249,11 +257,6 @@
     "Spaces/Home/Node/mongodb 사용.md",
     "Spaces/Home/Node/env.md",
     "Spaces/Home/DB/MongoDb.md",
-    "Spaces/Home/Node/JWT 설치.md",
-    "Spaces/Home/Node/Nest js 설치.md",
-    "daily note/2025/5/2025-05-14.md",
-    "daily note/2025/5/2025-05-13.md",
-    "Spaces/Home/Java/Generic/Generic Type.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
@@ -264,8 +267,6 @@
     "Images/SPA/SPA4.jpg",
     "Images/SPA/SPA3.jpg",
     "Images/SPA/SPA2.jpg",
-    "Spaces/Home/Java/정규표현식/정규표현식.md",
-    "Spaces/Home/Java/Generic/Collection/List/List 예제.md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
