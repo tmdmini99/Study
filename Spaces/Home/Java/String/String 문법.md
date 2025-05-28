@@ -46,7 +46,7 @@ String xString = Integer.toString(x);
         
 int sum = 0;
 for (int i = 0; i < s.length(); i++) {
-    int digit = s.charAt(i) - '0';
+    int digit = s.charAt(i) - '0'; // -'0'을 해주면 정수로 가져올수 있다.
     System.out.println(digit);
 }
 ```
