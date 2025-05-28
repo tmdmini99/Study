@@ -50,3 +50,21 @@ for (int i = 0; i < s.length(); i++) {
     System.out.println(digit);
 }
 ```
+
+
+## String.format()
+
+
+```java
+String b = String.format("%05d", Integer.parseInt(Integer.toBinaryString(14))); System.out.print(b); // 01110
+```
+
+%d -정수
+%f -실수
+%s -문자열
+%**5**d - 5자리 표현
+-> 뒤에값이 5자리 미만이라면 공백으로표시
+%**0**5d - 공백대신 0으로 표시
+받은 정수를 형식에 맞춰서 string에 저장한다.
+
+​

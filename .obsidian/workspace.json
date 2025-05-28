@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Arrays/Arrays.md",
+                "file": "Spaces/Home/Java/String/String 문법.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Arrays"
+              "title": "String 문법"
             }
           }
         ]
@@ -220,8 +220,9 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Integer/Integer 문법.md",
+    "Spaces/Home/Java/Integer",
     "daily note/2025/5/2025-05-28.md",
-    "Spaces/Home/Java/무제",
     "daily note/2025/5/2025-05-27.md",
     "daily note/2025/5/2025-05-26.md",
     "daily note/2025/5/2025-05-22.md",
@@ -265,7 +266,6 @@
     "Spaces/Home/Java/정규표현식/정규표현식.md",
     "Spaces/Home/Java/Generic/Collection/List/List 예제.md",
     "daily note/2025/5/2025-05-12.md",
-    "Spaces/프로그래머스/숫자 문자열과 영단어.md",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
