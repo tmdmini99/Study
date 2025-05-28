@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/제곱근 탐색.md",
+                "file": "Spaces/Home/Java/Generic/Collection/Set.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "제곱근 탐색"
+              "title": "Set"
             }
           }
         ]
@@ -218,7 +218,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
     "Spaces/Home/Operator/기타 연산자.md",
     "Spaces/Home/Operator/조건 (삼항) 연산자 (Ternary Operator).md",
