@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/그리디 (Greedy).md",
+                "file": "Spaces/Home/Java/정규표현식/정규표현식.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "그리디 (Greedy)"
+              "title": "정규표현식"
             }
           }
         ]
