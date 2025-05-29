@@ -20,6 +20,8 @@ Map 인터페이스는 Collection 인터페이스와는 다른 저장 방식�
 - **TreeMap**  
     - 정렬된 순서대로 키(Key)와 값(Value)을 저장하여 검색이 빠름
   
+- **LinkedHashMap**
+    - 입력한 순서대로 key, value가 순회됨
 
 ##  **Hashtable**  
     - HashMap보다는 느리지만 동기화 지원  
@@ -357,11 +359,12 @@ HashMap의 전체출력 시 반복문을 사용하지 않고 Iterator를 사용�
 따라서, 키를 해시코드로 변환하고, 이를 배열의 인덱스로 매핑하여 데이터를 저장하는 것은 빠른 데이터 접근과 데이터 분산을 위한 목적을 가지고 있다. 
 
 
+---
+
+## **LinkedHashMap**
 
 
 
-
-      
 
 
 ---
@@ -752,6 +755,43 @@ if (dataList != null) {
     }
 }
 ```
+
+
+
+
+## getOrDefault
+
+Java 8 이상
+
+```java
+map.put(key, map.getOrDefault(key, 0) + 1);
+```
+
+- `map.getOrDefault(key, 0)` → 키가 없으면 0으로 간주
+- 그 뒤에 `+1` 해서 넣음 
+
+
+## .entrySet()
+
+
+`Map.entrySet()`은 `Map`에 들어 있는 **key-value 쌍(Set of Map.Entry)** 전체를 반환합니다.
+
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("apple", 2);
+map.put("banana", 5);
+
+// key와 value를 동시에 접근
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println("key: " + entry.getKey() + ", value: " + entry.getValue());
+}
+```
+
+## `Map.Entry<K, V>`란?
+
+- `Map.Entry`는 하나의 key-value 쌍을 나타내는 객체입니다.
+    
+- 내부적으로 `Set<Map.Entry<K, V>>` 타입이기 때문에 `for-each` 루프에 사용 가능합니다.
 
 
 
