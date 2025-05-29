@@ -343,9 +343,15 @@ while(keys.hasNext()){
 
 HashMap의 전체출력 시 반복문을 사용하지 않고 Iterator를 사용하여도 됩니다. iterator로 Map안의 전체 요소를 출력하는 방법은 위와 같습니다.
 
+`HashMap`에서 `iterator()`로 순회할 때의 **순서는 보장되지 않습니다**
 
 
-
+| 연산            | 시간 복잡도           | 설명                      |
+| ------------- | ---------------- | ----------------------- |
+| 삽입 (`put`)    | 평균 O(1), 최악 O(n) | 해시 충돌이 많거나 리사이징 시       |
+| 조회 (`get`)    | 평균 O(1), 최악 O(n) | 해시 충돌이 많으면 체이닝 구조 탐색 필요 |
+| 삭제 (`remove`) | 평균 O(1), 최악 O(n) | 동일하게 충돌에 따라 시간 증가 가능    |
+| 순회 (`for`)    | O(n), 순서 비보장     | 무작위 순서로 순회됨 (삽입 순서 X)   |
 
 
 
@@ -363,8 +369,51 @@ HashMap의 전체출력 시 반복문을 사용하지 않고 Iterator를 사용�
 
 ## **LinkedHashMap**
 
+`LinkedHashMap`은 `HashMap`을 상속한 클래스이며,  
+**키-값의 쌍을 "삽입된 순서"대로 저장**합니다.
 
+```java
+Map<String, Integer> map = new LinkedHashMap<>();
+map.put("apple", 1);
+map.put("banana", 2);
+map.put("cherry", 3);
 
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " : " + entry.getValue());
+}
+// 출력 순서: apple → banana → cherry
+```
+
+## 내부 구조
+
+- `HashMap`처럼 해시 테이블을 사용합니다.
+    
+- **추가적으로** 이중 연결 리스트(doubly-linked list)를 사용해 **삽입 순서를 기억**합니다.
+    
+
+즉, 속도는 거의 비슷하지만 공간을 좀 더  씀.
+
+| 연산            | 시간 복잡도      |
+| ------------- | ----------- |
+| 삽입 (`put`)    | O(1)        |
+| 조회 (`get`)    | O(1)        |
+| 삭제 (`remove`) | O(1)        |
+| 순회 (`for`)    | O(n), 순서 유지 |
+|               |             |
+일반 `HashMap`과 성능은 거의 비슷하지만, **약간 더 느릴 수 있음 (순서 저장 때문에)**
+
+## 접근 순서 정렬 옵션
+
+`LinkedHashMap`은 생성자에서 **"접근 순서"로 정렬되게도 설정**가능
+
+```java
+// 접근 순서 기준 정렬 (LRU 캐시 등에 사용됨)
+LinkedHashMap<String, String> map = new LinkedHashMap<>(16, 0.75f, true);
+```
+
+- `true`를 주면, 가장 마지막에 `get()`된 키가 뒤로 가게 됩니다.
+    
+- 이걸 활용하면 LRU 캐시 만들기도 쉬워요.
 
 
 ---

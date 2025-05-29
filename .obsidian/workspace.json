@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "iterator",
+                "query": "``",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -206,7 +206,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "daily note/2025/5/2025-05-29.md",
     "Spaces/Home/Operator/기타 연산자.md",
