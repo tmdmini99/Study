@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
+                "file": "Spaces/Home/알고리즘/유클리드 호제법.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Map"
+              "title": "유클리드 호제법"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "``",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,8 +94,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -206,8 +205,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0705d70457345ec",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/알고리즘/유클리드 호제법.md",
     "daily note/2025/5/2025-05-29.md",
     "Spaces/Home/Operator/기타 연산자.md",
     "Spaces/Home/Operator/조건 (삼항) 연산자 (Ternary Operator).md",
@@ -243,7 +243,6 @@
     "Spaces/Home/Node/userschema.md",
     "Spaces/Home/Node/코드 리뷰.md",
     "Spaces/Home/Node/mongodb 사용.md",
-    "Spaces/Home/Node/env.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
