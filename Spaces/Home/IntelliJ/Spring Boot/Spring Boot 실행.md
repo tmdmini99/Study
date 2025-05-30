@@ -53,3 +53,16 @@ test 코드 실행 시
     
 - Project SDK가 원하는 Java 버전으로 설정되어 있는지 확인.
 랑 똑같이 설정 되어있는지 확인
+
+윈도우에서 캐시가 꼬였을 경우
+
+```bash
+gradlew --stop
+rd /s /q "%USERPROFILE%\.gradle\caches"
+rd /s /q "%USERPROFILE%\.gradle\daemon"
+gradlew clean build --refresh-dependencies
+
+```
+
+멈추고 삭제 후 다시 로드
+멈추지 않으면 캐시를 삭제해도 적용이 안될수도 있음
