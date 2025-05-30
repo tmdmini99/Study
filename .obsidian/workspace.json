@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/제곱근 탐색.md",
+                "file": "daily note/2025/5/2025-05-30.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "제곱근 탐색"
+              "title": "2025-05-30"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "860df56ae6b4be44",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "6493beaaa21f670d",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -205,8 +219,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-05-30.md",
     "Spaces/Home/알고리즘/유클리드 호제법.md",
     "daily note/2025/5/2025-05-29.md",
     "Spaces/Home/Operator/기타 연산자.md",
@@ -242,7 +257,6 @@
     "daily note/2025/5/2025-05-15.md",
     "Spaces/Home/Node/userschema.md",
     "Spaces/Home/Node/코드 리뷰.md",
-    "Spaces/Home/Node/mongodb 사용.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
