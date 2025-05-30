@@ -93,3 +93,6 @@ String[] parts = s.split(" ", -1);
 `limit > 0`: 최대 n개까지만 결과 반환  
 `limit < 0`: **모든 결과를 포함**, 빈 문자열도 포함
 
+
+## .compareTo(String st)
+
