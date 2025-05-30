@@ -68,3 +68,28 @@ String b = String.format("%05d", Integer.parseInt(Integer.toBinaryString(14))); 
 받은 정수를 형식에 맞춰서 string에 저장한다.
 
 ​
+## .split()
+
+
+Java의 `String.split(String regex)`는 내부적으로 **`split(regex, 0)`** 과 동일하게 작동합니다.
+
+- 여기서 `limit = 0`은 의미 있는 값만 포함시키고,
+    
+- **마지막에 오는 빈 문자열은 모두 제거**하는 동작을 합니다.
+
+Java의 `String.split(String regex)` 메서드는 **기본적으로 마지막 빈 문자열(= trailing empty strings)**은 결과 배열에서 **버립니다**.
+```java
+String s = "  TrY HeLlO  WoRlD ";
+String[] parts = s.split(" ");
+```
+
+만약 **마지막 공백도 포함되게 하고 싶다면**, `split`에 **두 번째 매개변수(limit)** 를 주어야 합니다.
+
+```java
+String[] parts = s.split(" ", -1);
+```
+
+`limit = 0`: 빈 문자열 결과는 **제거**함.  
+`limit > 0`: 최대 n개까지만 결과 반환  
+`limit < 0`: **모든 결과를 포함**, 빈 문자열도 포함
+

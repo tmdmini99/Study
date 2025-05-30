@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Integer/Integer 문법.md",
+                "file": "Spaces/Home/Java/String/String 문법.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Integer 문법"
+              "title": "String 문법"
             }
           }
         ]
