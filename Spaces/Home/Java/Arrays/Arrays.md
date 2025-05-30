@@ -127,6 +127,52 @@ public class Main {
 - **내림차순 정렬**: `Arrays.sort(array, Comparator.reverseOrder())`
     
 
+자바에서 `Arrays.sort()`에 람다식 `(s1, s2) -> { ... }` 을 넣으면, 내부적으로 **Comparator** 를 사용해서 정렬을 수행합니다. 정렬이 되는 이유는 **반환값의 부호**(음수, 0, 양수)를 기준으로 **요소의 순서를 바꾸기 때문**이에요.
+
+
+### Comparator 정렬 원리
+
+Comparator의 반환값 기준:
+
+| 반환값        | 의미                   |
+| ---------- | -------------------- |
+| 음수 (`< 0`) | `s1`이 `s2`보다 앞에 와야 함 |
+| 0          | 순서 변경 없음             |
+| 양수 (`> 0`) | `s1`이 `s2`보다 뒤에 와야 함 |
+
+```java
+return Character.compare(s1.charAt(n), s2.charAt(n));
+```
+
+
+- `s1.charAt(n) < s2.charAt(n)`이면 음수 → `s1`이 앞
+    
+- `s1.charAt(n) > s2.charAt(n)`이면 양수 → `s2`가 앞
+    
+
+이렇게 자바 내부에서 `Arrays.sort()`가 두 값을 비교하고, 결과에 따라 배열 요소들의 위치를 바꿔요.
+
+`Arrays.sort()`는 람다식에서 **반환된 정수의 부호**를 기반으로 내부적으로 정렬 알고리즘 (TimSort)을 실행합니다.  
+즉, **비교 결과가 음수이면 순서를 유지하고, 양수이면 순서를 바꿔서 정렬**하는 구조예요.
+
+
+```java
+import java.util.*;
+
+class Solution {
+    public String[] solution(String[] strings, int n) {
+        Arrays.sort(strings, (s1, s2) -> {
+            if (s1.charAt(n) == s2.charAt(n)) {
+                return s1.compareTo(s2); // 사전순 비교
+            }
+            return Character.compare(s1.charAt(n), s2.charAt(n));
+        });
+        return strings;
+    }
+}
+```
+
+
 ### 7. **예외 처리**
 
 배열에 **`null`** 값이 포함된 경우 `Arrays.sort()`는 **`NullPointerException`**을 던질 수 있습니다. 따라서, 배열에 **`null`** 값이 포함될 가능성이 있는 경우에는 `Comparator`를 이용해 정렬할 수 있도록 처리하는 것이 좋습니다.

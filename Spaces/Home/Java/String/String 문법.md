@@ -96,3 +96,14 @@ String[] parts = s.split(" ", -1);
 
 ## .compareTo(String st)
 
+### `String.compareTo(String anotherString)`의 동작 방식
+
+- `s1.compareTo(s2)`  
+    → `s1`이 `s2`보다 **앞서면 음수**, **같으면 0**, **뒤면 양수**를 반환해요.
+
+```java
+System.out.println("apple".compareTo("banana")); // -1 (apple이 더 앞)
+System.out.println("cat".compareTo("cat"));     // 0  (같음)
+System.out.println("zebra".compareTo("ant"));   // 양수 (zebra가 더 뒤)
+
+```
