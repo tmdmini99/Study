@@ -36,3 +36,20 @@
 
 gs-serving-web-content 폴더를 여는것이 아닌
 그 안에 pom이 있는 파일 complete 파일을 열어야 함
+
+
+## test 
+
+test 코드 실행 시
+
+- - `File > Settings (Preferences on Mac) > Build, Execution, Deployment > Build Tools > Gradle`
+        
+    - 여기서 `Gradle JVM`을 프로젝트 SDK(예: Java 17 또는 21)와 동일하게 설정해 주세요.
+ 이 부분이 
+
+**프로젝트 SDK 설정:**
+
+- `File > Project Structure > Project`
+    
+- Project SDK가 원하는 Java 버전으로 설정되어 있는지 확인.
+랑 똑같이 설정 되어있는지 확인
