@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/IntelliJ/Spring Boot/Spring Boot 실행.md",
+                "file": "daily note/2025/5/2025-05-31.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Spring Boot 실행"
+              "title": "2025-05-31"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "3e89ad27d1191b3c",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "ca162caae7484c45",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-05-31.md",
     "Spaces/Home/IntelliJ/Spring Boot/Spring Boot 실행.md",
     "Spaces/Home/IntelliJ/Spring Boot",
     "Spaces/Home/Java/Character/Character 문법.md",
@@ -242,7 +257,6 @@
     "daily note/2025/5/2025-05-17.md",
     "Spaces/Home/Node/nest js 시간.md",
     "daily note/2025/5/2025-05-16.md",
-    "daily note/2025/5/2025-05-15.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
