@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-05-30.md",
+                "file": "Spaces/Home/IntelliJ/Spring Boot/Spring Boot 실행.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-05-30"
+              "title": "Spring Boot 실행"
             }
           }
         ]
@@ -85,32 +85,6 @@
             }
           },
           {
-            "id": "860df56ae6b4be44",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
-            "id": "6493beaaa21f670d",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "3e89ad27d1191b3c",
             "type": "leaf",
             "state": {
@@ -120,8 +94,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -234,6 +207,8 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/IntelliJ/Spring Boot/Spring Boot 실행.md",
+    "Spaces/Home/IntelliJ/Spring Boot",
     "Spaces/Home/Java/Character/Character 문법.md",
     "Spaces/Home/Java/Character",
     "daily note/2025/5/2025-05-30.md",
@@ -262,14 +237,12 @@
     "daily note/2025/9",
     "daily note/2025/8",
     "daily note/2025/7",
-    "daily note/2025/6",
     "daily note/2025/5/2025-05-18.md",
     "Spaces/Home/Node/docke-compose.md",
     "daily note/2025/5/2025-05-17.md",
     "Spaces/Home/Node/nest js 시간.md",
     "daily note/2025/5/2025-05-16.md",
     "daily note/2025/5/2025-05-15.md",
-    "Spaces/Home/Node/userschema.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
