@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/String/String 문법.md",
+                "file": "Spaces/Home/알고리즘/제곱근 탐색.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "String 문법"
+              "title": "제곱근 탐색"
             }
           }
         ]
