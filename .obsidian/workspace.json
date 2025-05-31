@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "중복",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +94,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -205,7 +206,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "daily note/2025/5/2025-05-31.md",
     "Spaces/Home/IntelliJ/Spring Boot/Spring Boot 실행.md",
