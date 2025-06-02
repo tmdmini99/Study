@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
+                "file": "Spaces/Home/Java/Stack&Queue/Stack.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "StringBuffer&StringBuilder"
+              "title": "Stack"
             }
           }
         ]
