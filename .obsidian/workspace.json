@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/연산/bit 연산.md",
+                "file": "Spaces/Home/Java/String/StringBuffer&StringBuilder.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "bit 연산"
+              "title": "StringBuffer&StringBuilder"
             }
           }
         ]

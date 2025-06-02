@@ -81,3 +81,31 @@ XOR        = 0011110
 0011110 (30) / postPattern (2) = 15 → 01111
 ```
 
+오른쪽 2비트 쉬프트
+
+```java
+01111 >> 2 = 00011 → 3
+```
+
+smallPattern = 3
+
+```java
+return n + postPattern | smallPattern;
+```
+
+- `n + postPattern = 80`
+    
+- `smallPattern = 3`
+    
+- `80 = 1010000`
+    
+- `3 = 0000011`
+
+```markdown
+1010000
+0000011
+--------
+1010011
+```
+
+결과: **83**
