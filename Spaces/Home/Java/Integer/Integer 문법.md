@@ -44,3 +44,11 @@ Integer.toString(n)           // 정수를 문자열로 변환 (예: 321 -> "321
     
 
 > 결국 숫자의 각 자릿수를 오름차순으로 정렬해서 **거꾸로(res 앞에 붙이기)** 저장하는 코드입니다.
+
+
+## Integer.bitCount(n)
+
+
+```java
+int count = Integer.bitCount(n); // n을 2진수로 변환 후 1의 갯수
+```
