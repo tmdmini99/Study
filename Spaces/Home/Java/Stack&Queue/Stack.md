@@ -225,6 +225,34 @@ public class MakeStack<E> extends Vector<E> {
 
 
 
+## Stack 연속된 문자 제거
+
+```java
+import java.util.*;
+
+class Solution
+{
+    public int solution(String s)
+    {
+        Stack<Character> stack = new Stack<>();
+        for(char c : s.toCharArray()){
+            if(!stack.contains(c)){
+                stack.push(c);
+            }else{
+                if(stack.peek() == c){
+                    stack.pop();
+                }else{
+                    stack.push(c);
+                }
+            }
+        }
+        
+
+        return stack.empty() ? 1 : 0;
+    }
+}
+```
+
 
 
 
