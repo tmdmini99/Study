@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/피보나치 수열.md",
+                "file": "Spaces/Home/알고리즘/동적 계획법 (DP, Dynamic Programming).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "피보나치 수열"
+              "title": "동적 계획법 (DP, Dynamic Programming)"
             }
           }
         ]
