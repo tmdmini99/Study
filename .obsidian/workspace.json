@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/투 포인터 (Two Pointers).md",
+                "file": "Spaces/Home/알고리즘/브루트포스 (Brute Force).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "투 포인터 (Two Pointers)"
+              "title": "브루트포스 (Brute Force)"
             }
           }
         ]
