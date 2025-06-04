@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/이분 탐색 (Binary Search).md",
+                "file": "Spaces/Home/알고리즘/DFS  BFS (깊이우선 너비우선 탐색).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "이분 탐색 (Binary Search)"
+              "title": "DFS  BFS (깊이우선 너비우선 탐색)"
             }
           }
         ]
