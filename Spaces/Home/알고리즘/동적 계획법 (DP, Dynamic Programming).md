@@ -36,3 +36,36 @@ public int minCountToTarget(int[] numbers, int target) {
 ```
 
 
+```java
+long[] memo = new long[2001];
+
+public long solution(int n) {
+    return re(n);
+}
+
+public long re(int n){
+    if (n == 1 || n == 2) return 1;
+    if (memo[n] != 0) return memo[n];
+    return memo[n] = re(n - 1) + re(n - 2);
+}
+
+```
+
+
+## i칸에 도달하는 방법 수 = (i-1칸까지 오는 방법 수) + (i-2칸까지 오는 방법 수)
+
+
+```java
+int[] dp = new int[n + 1];
+dp[1] = 1;
+dp[2] = 2;
+```
+
+`long[] dp = new long[n + 1];`  
+이 코드에서 `+1`을 해주는 이유는 **배열의 인덱스와 실제 문제에서 사용하는 숫자(n)를 일치시키기 위해서**
+
+
+
+
+
+
