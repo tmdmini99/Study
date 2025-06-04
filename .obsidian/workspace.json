@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Stack&Queue/Stack.md",
+                "file": "daily note/2025/5/2025-06-04.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Stack"
+              "title": "2025-06-04"
             }
           }
         ]
@@ -101,13 +101,27 @@
             "id": "ed186573daa24d6a",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "3d5932adc5aac9fe",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -220,6 +234,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-06-04.md",
     "Spaces/Home/연산/bit 연산.md",
     "Spaces/Home/연산",
     "Spaces/Home/Java/이진수/이진수.md",
@@ -255,7 +270,6 @@
     "daily note/2025/10",
     "daily note/2025/9",
     "daily note/2025/5/2025-05-18.md",
-    "Spaces/Home/Node/docke-compose.md",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
