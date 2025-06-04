@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/탐욕법 (Greedy).md",
+                "file": "Spaces/Home/알고리즘/투 포인터 (Two Pointers).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "탐욕법 (Greedy)"
+              "title": "투 포인터 (Two Pointers)"
             }
           }
         ]
