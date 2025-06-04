@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/프로그래머스/테두리 공식.md",
+                "file": "Spaces/Home/알고리즘/탐욕법 (Greedy).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "테두리 공식"
+              "title": "탐욕법 (Greedy)"
             }
           }
         ]
