@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Set.md",
+                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Set"
+              "title": "Map"
             }
           }
         ]
