@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "}{}{{}{}",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,8 @@
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -218,7 +219,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "e0705d70457345ec",
   "lastOpenFiles": [
     "Spaces/Home/알고리즘/원형 수열.md",
     "Spaces/Home/알고리즘/완전 이진 트리.md",
