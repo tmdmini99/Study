@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/피보나치 수열.md",
+                "file": "Spaces/Home/알고리즘/원형 수열.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "피보나치 수열"
+              "title": "원형 수열"
             }
           }
         ]
@@ -220,6 +220,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/알고리즘/원형 수열.md",
     "Spaces/Home/알고리즘/완전 이진 트리.md",
     "daily note/2025/5/2025-06-05.md",
     "Spaces/프로그래머스/테두리 공식.md",
@@ -252,7 +253,6 @@
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer/Integer 문법.md",
     "Spaces/Home/Java/Integer",
-    "daily note/2025/5/2025-05-28.md",
     "daily note/2025/12",
     "daily note/2025/11",
     "daily note/2025/10",
