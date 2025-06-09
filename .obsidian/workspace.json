@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/원형 수열.md",
+                "file": "Spaces/프로그래머스/괄호 회전하기.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "원형 수열"
+              "title": "괄호 회전하기"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "}{}{{}{}",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,8 +107,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -219,8 +218,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0705d70457345ec",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/프로그래머스/괄호 회전하기.md",
     "Spaces/Home/알고리즘/원형 수열.md",
     "Spaces/Home/알고리즘/완전 이진 트리.md",
     "daily note/2025/5/2025-06-05.md",
@@ -252,7 +252,6 @@
     "Spaces/Home/Operator/대입 연산자.md",
     "Spaces/Home/Operator/산술 연산자.md",
     "Spaces/Home/Operator",
-    "Spaces/Home/Java/Integer/Integer 문법.md",
     "Spaces/Home/Java/Integer",
     "daily note/2025/12",
     "daily note/2025/11",
