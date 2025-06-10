@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/이분 탐색 (Binary Search).md",
+                "file": "Spaces/프로그래머스/H-INDEX.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "이분 탐색 (Binary Search)"
+              "title": "H-INDEX"
             }
           }
         ]
@@ -207,6 +207,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/프로그래머스/H-INDEX.md",
     "Images/행렬의 곱셈/행렬의 곱셈1.png",
     "Images/행렬의 곱셈",
     "Spaces/프로그래머스/행렬의 곱셈.md",
@@ -252,7 +253,6 @@
     "Images/SPA/SPA5.jpg",
     "Images/SPA/SPA4.jpg",
     "Images/SPA/SPA3.jpg",
-    "Images/SPA/SPA2.jpg",
     "Spaces/Home/Java/Canvas.canvas",
     "무제 파일.canvas"
   ]
