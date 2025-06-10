@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Arrays/Arrays.md",
+                "file": "Spaces/프로그래머스/n의2승 배열 자르기.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Arrays"
+              "title": "n의2승 배열 자르기"
             }
           }
         ]
@@ -207,6 +207,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/프로그래머스/n의2승 배열 자르기.md",
     "daily note/2025/5/2025-06-10.md",
     "daily note/2025/5/2025-06-09.md",
     "Spaces/프로그래머스/괄호 회전하기.md",
@@ -237,7 +238,6 @@
     "Spaces/Home/Operator/증감 연산자.md",
     "Spaces/Home/Operator/비트 연산자.md",
     "Spaces/Home/Operator/논리 연산자.md",
-    "Spaces/Home/Operator/비교 연산자.md",
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer",
     "daily note/2025/12",
