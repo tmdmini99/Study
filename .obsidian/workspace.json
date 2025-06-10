@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-06-09.md",
+                "file": "daily note/2025/5/2025-06-10.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-06-09"
+              "title": "2025-06-10"
             }
           }
         ]
@@ -127,6 +127,19 @@
             "id": "f8a602c5199f8246",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "10d131a828ef3e8b",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -134,7 +147,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -247,6 +260,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-06-10.md",
     "daily note/2025/5/2025-06-09.md",
     "Spaces/프로그래머스/괄호 회전하기.md",
     "Spaces/Home/알고리즘/원형 수열.md",
@@ -277,7 +291,6 @@
     "Spaces/Home/Operator/비트 연산자.md",
     "Spaces/Home/Operator/논리 연산자.md",
     "Spaces/Home/Operator/비교 연산자.md",
-    "Spaces/Home/Operator/대입 연산자.md",
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer",
     "daily note/2025/12",
