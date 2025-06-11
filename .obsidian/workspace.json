@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/프로그래머스/H-INDEX.md",
+                "file": "daily note/2025/5/2025-06-11.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "H-INDEX"
+              "title": "2025-06-11"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "10d131a828ef3e8b",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "78e9a4fa2310df8c",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-06-11.md",
     "Spaces/프로그래머스/H-INDEX.md",
     "Images/행렬의 곱셈/행렬의 곱셈1.png",
     "Images/행렬의 곱셈",
@@ -239,7 +254,6 @@
     "daily note/2025/5/2025-05-29.md",
     "Spaces/Home/Operator/기타 연산자.md",
     "Spaces/Home/Operator/조건 (삼항) 연산자 (Ternary Operator).md",
-    "Spaces/Home/Operator/증감 연산자.md",
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer",
     "daily note/2025/12",
