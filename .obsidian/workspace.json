@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "startsWith",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -205,7 +205,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "158d86219ab03815",
+  "active": "599941f4b5edb2ac",
   "lastOpenFiles": [
     "Spaces/Home/Java/Trie Node/Trie Node.md",
     "Spaces/Home/Java/Trie Node",
