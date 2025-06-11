@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/완전탐색 (Brute Force).md",
+                "file": "Spaces/Home/알고리즘/백트래킹 (Backtracking).md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "완전탐색 (Brute Force)"
+              "title": "백트래킹 (Backtracking)"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "(a, b)",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,8 +94,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -206,7 +205,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0705d70457345ec",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
     "daily note/2025/5/2025-06-11.md",
     "Spaces/프로그래머스/H-INDEX.md",

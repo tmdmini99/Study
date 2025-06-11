@@ -173,6 +173,75 @@ class Solution {
 ```
 
 
+```java
+class Solution {
+    public int solution(int k, int[][] dungeons) {
+        int answer = 0;
+
+        
+        return answer;
+    }
+}
+```
+
+`dungeons[i][0]` 기준 오름차순 정렬
+첫번째 기준 오름차순
+```java
+Arrays.sort(dungeons, (a, b) -> Integer.compare(a[0], b[0]));
+```
+
+`dungeons[i][1]` 기준 내림차순 정렬
+두번 째 기준 내림차순 정렬
+```java
+Arrays.sort(dungeons, (a, b) -> Integer.compare(b[1], a[1]));
+```
+
+`dungeons[i][0] - dungeons[i][1]` 기준 오름차순
+두 값의 차 기준 오름차순 정렬
+```java
+int[][] dungeons = {
+            {80, 20},
+            {50, 40},
+            {30, 10}
+        };
+```
+여기서 80 - 20 , 50 - 40, 30-10 기준 올음차순 정렬
+
+
+```java
+Arrays.sort(dungeons, (a, b) -> Integer.compare(a[0] - a[1], b[0] - b[1]));
+```
+
+
+```java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] dungeons = {
+            {80, 20},
+            {50, 40},
+            {30, 10}
+        };
+
+        // 정렬 (첫 번째 값 기준 오름차순)
+        Arrays.sort(dungeons, (a, b) -> Integer.compare(a[0], b[0]));
+
+        for (int[] d : dungeons) {
+            System.out.println(Arrays.toString(d));
+        }
+    }
+}
+```
+
+
+첫번째 기준 내림차순 정렬
+```java
+Arrays.sort(dungeons, (a, b) -> Integer.compare(b[0], a[0]));
+```
+
+
+
 ### 7. **예외 처리**
 
 배열에 **`null`** 값이 포함된 경우 `Arrays.sort()`는 **`NullPointerException`**을 던질 수 있습니다. 따라서, 배열에 **`null`** 값이 포함될 가능성이 있는 경우에는 `Comparator`를 이용해 정렬할 수 있도록 처리하는 것이 좋습니다.
