@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-06-11.md",
+                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-06-11"
+              "title": "Map"
             }
           }
         ]
@@ -85,19 +85,6 @@
             }
           },
           {
-            "id": "10d131a828ef3e8b",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "파일 탐색기"
-            }
-          },
-          {
             "id": "78e9a4fa2310df8c",
             "type": "leaf",
             "state": {
@@ -107,8 +94,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
