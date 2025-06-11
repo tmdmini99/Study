@@ -51,6 +51,35 @@ public class Permutations {
 
 ```
 
+던전 돌때 제일 많이 돌수 있는 경우의 수
+```java
+import java.util.*;
+class Solution {
+    public int solution(int k, int[][] dungeons) {
+        boolean[] visited = new boolean[dungeons.length];
+        int[] maxCount = new int[1];
+
+        dfs(k, dungeons, visited, 0, maxCount);
+
+        return maxCount[0];
+    }
+
+    private void dfs(int currentK, int[][] dungeons, boolean[] visited, int count, int[] maxCount) {
+        if (count > maxCount[0]) maxCount[0] = count;
+
+        for (int i = 0; i < dungeons.length; i++) {
+            if (visited[i]) continue;
+
+            if (currentK >= dungeons[i][0]) {
+                visited[i] = true;
+                dfs(currentK - dungeons[i][1], dungeons, visited, count + 1, maxCount);
+                visited[i] = false;
+            }
+        }
+    }
+}
+```
+
 
 dfs로 호출하고 그 안에서 for문이 돌면서 또 dfs를 호출하고 또 그안에서 for문 돌고 거기서 dfs를 호출
 그리고 제일 마지막 dfs가 끝나면 for문이 돌면서 지우고 그다음 이 for문이 끝나면 또 밖에 for문이 마저 돌면서 dfs 호출이 끝남
