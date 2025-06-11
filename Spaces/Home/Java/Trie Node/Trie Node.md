@@ -68,3 +68,53 @@ class Trie {
 - 사전(dictionary) 만들기
     
 - 자동 완성 기능 구현
+
+
+```java
+(root)
+ ├─ '1' ── '1' ── '9' (isEndOfWord = true)
+ │                     └─ '5' ── '5' ── '2' ── '4' ── '4' ── '2' ── '1' (isEndOfWord = true)
+ └─ '9' ── '7' ── '6' ── '7' ── '4' ── '2' ── '2' ── '3' (isEndOfWord = true)
+```
+
+
+예시
+```java
+import java.util.*;
+
+class Solution {
+    public boolean solution(String[] phone_book) {
+        TrieNode root = new TrieNode();
+
+        for (String number : phone_book) {
+            if (!insert(root, number)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // 트라이 삽입 시 접두어 충돌 검사
+    private boolean insert(TrieNode root, String word) {
+        TrieNode node = root;
+
+        for (char ch : word.toCharArray()) {
+            if (node.isEndOfWord) return false; // 다른 번호가 이 번호의 접두어인 경우
+
+            node = node.children.computeIfAbsent(ch, c -> new TrieNode());
+        }
+
+        if (!node.children.isEmpty()) return false; // 현재 번호가 다른 번호의 접두어인 경우
+
+        node.isEndOfWord = true;
+        return true;
+    }
+
+    class TrieNode {
+        Map<Character, TrieNode> children = new HashMap<>();
+        boolean isEndOfWord = false;
+    }
+}
+
+```
