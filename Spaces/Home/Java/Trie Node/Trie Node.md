@@ -118,3 +118,6 @@ class Solution {
 }
 
 ```
+
+root부터시작해서 이미 있을 경우 다음껄 가져오고 그 다음꺼가 마지막인 확인하기 위해  `if (node.isEndOfWord) return false;` 사용
+만약 뒤에 없을 경우에는 `new TrieNode()`로 새롭게 새로운 `TrideNode`를 생성
