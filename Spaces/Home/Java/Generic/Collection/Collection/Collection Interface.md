@@ -73,3 +73,5 @@ List<String> list = List.of("apple", "banana", "cherry");
 list.parallelStream()
     .forEach(System.out::println); // 병렬 출력 (순서 보장 X)
 ```
+
+
