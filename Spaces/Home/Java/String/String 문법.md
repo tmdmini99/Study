@@ -107,3 +107,22 @@ System.out.println("cat".compareTo("cat"));     // 0  (같음)
 System.out.println("zebra".compareTo("ant"));   // 양수 (zebra가 더 뒤)
 
 ```
+
+## startsWith
+
+
+```java
+class Solution {
+    public boolean solution(String[] phoneBook) {
+       for(int i=0; i<phoneBook.length-1; i++) {
+            for(int j=i+1; j<phoneBook.length; j++) {
+                if(phoneBook[i].startsWith(phoneBook[j])) {return false;}
+                if(phoneBook[j].startsWith(phoneBook[i])) {return false;}
+            }
+        }
+        return true;
+    }
+}
+```
+
+그 부분으로 시작하는지 확인

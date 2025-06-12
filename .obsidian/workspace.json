@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Trie Node/Trie Node.md",
+                "file": "Spaces/Home/Java/String/String 문법.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Trie Node"
+              "title": "String 문법"
             }
           }
         ]
@@ -205,7 +205,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
     "Spaces/Home/Java/Trie Node/Trie Node.md",
     "Spaces/Home/Java/Trie Node",
