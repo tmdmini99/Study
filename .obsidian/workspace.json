@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-06-12.md",
+                "file": "Spaces/Home/Java/Paging/Json 페이징.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-06-12"
+              "title": "Json 페이징"
             }
           }
         ]
@@ -218,8 +218,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "599941f4b5edb2ac",
+  "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/Home/Java/Paging/Json 페이징.md",
+    "Spaces/Home/Java/Paging",
     "daily note/2025/5/2025-06-12.md",
     "Spaces/Home/Java/Trie Node/Trie Node.md",
     "Spaces/Home/Java/Trie Node",
@@ -253,10 +255,8 @@
     "Spaces/Home/Java/Character",
     "daily note/2025/5/2025-05-30.md",
     "Spaces/Home/알고리즘/유클리드 호제법.md",
-    "daily note/2025/5/2025-05-29.md",
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer",
-    "daily note/2025/12",
     "Images/dbeaber/dbeaber1.png",
     "Images/Iframe/Iframe1.png",
     "Images/window/window3.png",
