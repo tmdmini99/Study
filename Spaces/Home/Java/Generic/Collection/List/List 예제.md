@@ -14,3 +14,4 @@ System.out.println(sliced);
 
 
 `subList(fromIndex, toIndex)`는 **fromIndex 이상, toIndex 미만** 구간을 반환합니다.
+

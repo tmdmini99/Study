@@ -1302,6 +1302,19 @@ public class MakeArrayList<E> implements List<E> {
 
 
 
+## List.of()
+
+
+`List.of()`는 **Java 9 이상**에서 제공되는 기능으로, **불변(immutable) 리스트**를 생성할 때 사용하는 메서드입니다.
+
+```java
+if (fromIndex > logs.size()) {
+    return List.of(); // 빈 리스트 반환
+}
+```
+**요청한 페이지 범위가 실제 데이터 범위를 초과했을 경우** →  
+**빈 리스트를 안전하게 반환하겠다**는 뜻입니다.
+
 
 
 
