@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/String/String 문법.md",
+                "file": "daily note/2025/5/2025-06-12.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "String 문법"
+              "title": "2025-06-12"
             }
           }
         ]
@@ -88,13 +88,27 @@
             "id": "78e9a4fa2310df8c",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "9ddbe4f96bbc8fa2",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -207,6 +221,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-06-12.md",
     "Spaces/Home/Java/Trie Node/Trie Node.md",
     "Spaces/Home/Java/Trie Node",
     "daily note/2025/5/2025-06-11.md",
@@ -240,7 +255,6 @@
     "daily note/2025/5/2025-05-30.md",
     "Spaces/Home/알고리즘/유클리드 호제법.md",
     "daily note/2025/5/2025-05-29.md",
-    "Spaces/Home/Operator/기타 연산자.md",
     "Spaces/Home/Operator",
     "Spaces/Home/Java/Integer",
     "daily note/2025/12",
