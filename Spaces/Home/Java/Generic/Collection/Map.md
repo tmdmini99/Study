@@ -162,22 +162,22 @@ key(X)를 해싱함수(function)에 넣어 인덱스(Y)를 산출한 후, 해당
 
 주요 메소드
 
-| 메소드                                         | 설명                                                                                                                              |
-| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| void clear()                                   | 해당 맵(map)의 모든 매핑(mapping)을 제거함.                                                                                       |
-| boolean containsKey(Object key)                | 해당 맵이 전달된 키를 포함하고 있는지를 확인함.                                                                                   |
-| boolean containsValue(Object value)            | 해당 맵이 전달된 값에 해당하는 하나 이상의 키를 포함하고 있는지를 확인함.                                                         |
+| 메소드                                            | 설명                                                                               |
+| ---------------------------------------------- | -------------------------------------------------------------------------------- |
+| void clear()                                   | 해당 맵(map)의 모든 매핑(mapping)을 제거함.                                                  |
+| boolean containsKey(Object key)                | 해당 맵이 전달된 키를 포함하고 있는지를 확인함.                                                      |
+| boolean containsValue(Object value)            | 해당 맵이 전달된 값에 해당하는 하나 이상의 키를 포함하고 있는지를 확인함.                                       |
 | V get(Object key)                              | 해당 맵에서 전달된 키에 대응하는 값을 반환함.<br><br>만약 해당 맵이 전달된 키를 포함한 매핑을 포함하고 있지 않으면 null을 반환함. |
-| boolean isEmpty()                              | 해당 맵이 비어있는지를 확인함.                                                                                                    |
-| Set'<'K> keySet()                              | 해당 맵에 포함되어 있는 모든 키로 만들어진 Set 객체를 반환함.                                                                     |
-| V put(K key, V value)                          | 해당 맵에 전달된 키에 대응하는 값으로 특정 값을 매핑함.                                                                           |
-| V remove(Object key)                           | 해당 맵에서 전달된 키에 대응하는 매핑을 제거함.                                                                                   |
-| boolean remove(Object key, Object value)       | 해당 맵에서 특정 값에 대응하는 특정 키의 매핑을 제거함.                                                                           |
-| V replace(K key, V value)                      | 해당 맵에서 전달된 키에 대응하는 값을 특정 값으로 대체함.                                                                         |
-| boolean replace(K key, V oldValue, V newValue) | 해당 맵에서 특정 값에 대응하는 전달된 키의 값을 새로운 값으로 대체함.                                                             |
-| int size()                                     | 해당 맵의 매핑의 총 개수를 반환함.                                                                                                |
-| V getKey()                                     | key값                                                                                                                           |
-| V getValue()                                   | value값                                                                                                                                  |
+| boolean isEmpty()                              | 해당 맵이 비어있는지를 확인함.                                                                |
+| Set'<'K> keySet()                              | 해당 맵에 포함되어 있는 모든 키로 만들어진 Set 객체를 반환함.                                            |
+| V put(K key, V value)                          | 해당 맵에 전달된 키에 대응하는 값으로 특정 값을 매핑함.                                                 |
+| V remove(Object key)                           | 해당 맵에서 전달된 키에 대응하는 매핑을 제거함.                                                      |
+| boolean remove(Object key, Object value)       | 해당 맵에서 특정 값에 대응하는 특정 키의 매핑을 제거함.                                                 |
+| V replace(K key, V value)                      | 해당 맵에서 전달된 키에 대응하는 값을 특정 값으로 대체함.                                                |
+| boolean replace(K key, V oldValue, V newValue) | 해당 맵에서 특정 값에 대응하는 전달된 키의 값을 새로운 값으로 대체함.                                         |
+| int size()                                     | 해당 맵의 매핑의 총 개수를 반환함.                                                             |
+| V getKey()                                     | key값                                                                             |
+| V getValue()                                   | value값                                                                           |
 
 
 
@@ -204,6 +204,9 @@ key(X)를 해싱함수(function)에 넣어 인덱스(Y)를 산출한 후, 해당
 | **V** putIfAbsent(K key, V value)                                                                 | putIfAbsent의 성공시 반환값은 put과 동일하다. (key가 존재하지 않아서 성공하면 null 반환) 그러나 put은 key가 이미 존재하면 새로운 value로 업데이트를 해버린다. putIfAbsent는 key가 기존에 없을 때만 put이 진행된다. 기존에 이미 key가 존재한다면, 그 key에 매핑되는 value를 반환하고, 새로운 value를 업데이트 하지 않는다. |
 | **V** computeIfAbsent(K key, Function'<''? super K, ? extends V> mappingFunction)                 | computeIfAbsent()는 HashMap에 파라미터로 전달된 key가 없으면, mappingFunction이 호출되는 구조이다. 만약 key가 있다면, mappingFunction은 호출되지 않는다. key가 없으면 값을 구하기 위하여 mappingFunction을 호출하여 가져온 후, key=value 값을 HashMap에 추가한다.                      |
 | **V** computeIfPresent(K key, BiFunction'<''? super K, ? super V, ? extends V> remappingFunction) | computeIfPresent()는 HashMap에 파라미터로 전달된 key가 있으면, remappingFunction이 호출되는 구조이다. 만약 key가 없다면, remappingFunction은 호출되지 않는다. key가 있으면 값을 구하기 위하여 remappingFunction을 호출하여 가져온 후, key=value 값을 HashMap에 갱신한다.               |
+| **V** merge(K key, V value, BiFunction\<? super V, ? super V, ? extends V> remappingFunction)     | 키가 존재하면 `remappingFunction.apply(oldValue, newValue)` 호출해서 결과로 값 업데이트<br>키가 존재하지 않으면 `map.put(key, value)`처럼 작동                                                                                                       |
+|                                                                                                   |                                                                                                                                                                                                                       |
+|                                                                                                   |                                                                                                                                                                                                                       |
 
 
 
@@ -843,6 +846,40 @@ for (Map.Entry<String, Integer> entry : map.entrySet()) {
 - 내부적으로 `Set<Map.Entry<K, V>>` 타입이기 때문에 `for-each` 루프에 사용 가능합니다.
 
 
+
+
+## .merge
+
+
+```java
+Map<String, Integer> map = new HashMap<>();
+
+map.put("apple", 3);
+
+map.merge("apple", -1, (a, b) -> a + b); // 3 + (-1) = 2
+map.merge("banana", -1, (a, b) -> a + b); // banana 없으므로 -1 저장
+
+System.out.println(map); // 👉 {apple=2, banana=-1}
+```
+
+- `topping[i]` 라는 키가 **존재하지 않으면** → `-1`을 값으로 넣는다.
+    
+- `topping[i]` 키가 **이미 존재하면** → 기존 값(`a`)과 새 값 `-1`(`b`)을 **더해서 저장**한다.
+
+
+```java
+Map<String, Integer> map = new HashMap<>();
+
+map.put("apple", 1);
+map.merge("apple", 1, Integer::sum);  // 기존 값 1 + 새 값 1 = 2
+map.merge("banana", 1, Integer::sum); // banana 없으므로 1 추가
+
+System.out.println(map); // 👉 {apple=2, banana=1}
+```
+
+- `"apple"` 키가 있으면: `Integer::sum`이 `1 + 1`을 계산해서 저장
+    
+- `"banana"` 키가 없으면: 그냥 `1`을 넣음
 
 
 
