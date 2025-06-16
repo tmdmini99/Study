@@ -125,7 +125,64 @@ public class MakeQue<E> extends LinkedList<E> {
 ```
 
 
+## PriorityQueue
+
+`PriorityQueue`는 **우선순위 큐**입니다.
+
+- 일반 큐와 달리, 들어온 순서가 아니라 **우선순위가 높은 값이 먼저 나감**.
+    
+- 기본적으로는 **작은 숫자(낮은 값)** 일수록 우선순위가 높습니다.
+    
+- 내부적으로는 **힙(Heap)** 자료구조를 사용합니다.
 
 
+```java
+PriorityQueue<Integer> pq = new PriorityQueue<>();
+pq.add(10);
+pq.add(5);
+pq.add(20);
+System.out.println(pq.poll()); // 5 출력 (가장 작은 값)
+```
+
+
+### Collections.reverseOrder()
+
+- `PriorityQueue`는 기본적으로 **오름차순**(작은 값부터) 정렬됩니다.
+    
+- `Collections.reverseOrder()`를 사용하면, **내림차순**(큰 값부터) 정렬된 우선순위 큐가 됩니다.
+
+```java
+PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+pq.add(10);
+pq.add(5);
+pq.add(20);
+System.out.println(pq.poll()); // 20 출력 (가장 큰 값)
+```
+
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // 내림차순 우선순위 큐 (가장 큰 값이 먼저)
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+        maxHeap.add(3);
+        maxHeap.add(1);
+        maxHeap.add(4);
+        maxHeap.add(2);
+
+        while (!maxHeap.isEmpty()) {
+            System.out.print(maxHeap.poll() + " ");  // 4 3 2 1 출력
+        }
+    }
+}
+```
+
+
+
+
+---
 
 참조 -   https://coding-factory.tistory.com/602
