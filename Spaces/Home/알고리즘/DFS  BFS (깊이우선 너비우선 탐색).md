@@ -65,3 +65,16 @@ class Solution {
 `while (!queue.isEmpty())`은 `int[] pos = queue.poll();`로 꺼내면서 지우고 만약 다음 탐색할 곳이 있으면
 `queue.offer(new int[]{nr, nc});`를 넣어서 while문이 계속 돌게 된다.
 
+여기서 
+
+```java
+for (int i = 0; i < 4; i++){
+                int nr = r + dr[i], nc = c + dc[i];
+                if (0 <= nr && nr < lr && 0 <= nc && nc < lc && maps[nr][nc] == 1 && visited[nr][nc] == 0) {
+                    queue.offer(new int[]{nr, nc});
+                    visited[nr][nc] = visited[r][c] + 1;
+                }
+            }
+```
+
+여길 통해 갈수 있는 방향을 모두 저장한 후 다음 껄 다시 가져와서 비교를 한다 근데 짧은 거리로 갈 경우 이미 도착해서 멈ㅊ
