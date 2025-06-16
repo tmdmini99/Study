@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/Java/Generic/Collection/Map.md",
+                "file": "Spaces/프로그래머스/이웃한 칸.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Map"
+              "title": "이웃한 칸"
             }
           }
         ]
@@ -220,6 +220,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "Spaces/프로그래머스/이웃한 칸.md",
     "Spaces/Home/Java/Method/Method 참조.md",
     "Spaces/Home/Java/Method",
     "daily note/2025/5/2025-06-16.md",
@@ -254,7 +255,6 @@
     "Spaces/Home/Java/이진수",
     "daily note/2025/5/2025-06-02.md",
     "daily note/2025/5/2025-05-31.md",
-    "Spaces/Home/IntelliJ/Spring Boot/Spring Boot 실행.md",
     "Spaces/Home/IntelliJ/Spring Boot",
     "Spaces/Home/Java/Character",
     "Images/dbeaber/dbeaber1.png",
