@@ -98,6 +98,35 @@ dfs(0, 0):
 
 
 
+원하는 문자열 맞추기
+```java
+class Solution {
+    int answer = 0;
+    int result = 0;
+    String [] st = {"A","E","I","O","U"};
+    public int solution(String word) {
+        
+        dfs("", word);
+        return answer;
+    }
+    public void dfs(String s, String word){
+        if(s.equals(word)){
+            answer = result;
+            return;
+        }
+        if(s.length() == 5) return;
+        
+        for(String ss : st){
+            result++;
+            dfs(s+ss, word);
+        }
+        
+    }
+}
+```
+
+
+
 ---
 ## BFS
 
