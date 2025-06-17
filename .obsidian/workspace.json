@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/DFS  BFS (깊이우선 너비우선 탐색).md",
+                "file": "daily note/2025/5/2025-06-17.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "DFS  BFS (깊이우선 너비우선 탐색)"
+              "title": "2025-06-17"
             }
           }
         ]
@@ -101,13 +101,27 @@
             "id": "80fb35707bb0c206",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "9f90ea4515dcd2f8",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -220,6 +234,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-06-17.md",
     "Spaces/프로그래머스/이웃한 칸.md",
     "Spaces/Home/Java/Method/Method 참조.md",
     "Spaces/Home/Java/Method",
@@ -254,7 +269,6 @@
     "Spaces/Home/Java/이진수/이진수.md",
     "Spaces/Home/Java/이진수",
     "daily note/2025/5/2025-06-02.md",
-    "daily note/2025/5/2025-05-31.md",
     "Spaces/Home/IntelliJ/Spring Boot",
     "Spaces/Home/Java/Character",
     "Images/dbeaber/dbeaber1.png",
