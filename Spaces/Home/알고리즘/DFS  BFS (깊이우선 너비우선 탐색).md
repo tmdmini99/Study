@@ -17,6 +17,95 @@ void dfs(int node, boolean[] visited, List<List<Integer>> graph) {
 ```
 
 
+```java
+class Solution {
+    public int solution(int[] numbers, int target) {
+        return dfs(numbers, target, 0, 0);
+    }
+
+    private int dfs(int[] numbers, int target, int depth, int sum) {
+        // 모든 숫자를 다 사용한 경우
+        if (depth == numbers.length) {
+            // 누적합이 target이면 경우의 수 +1
+            return sum == target ? 1 : 0;
+        }
+
+        // 다음 숫자를 +로 더하는 경우와 -로 빼는 경우를 각각 재귀 호출
+        int plus = dfs(numbers, target, depth + 1, sum + numbers[depth]);
+        int minus = dfs(numbers, target, depth + 1, sum - numbers[depth]);
+
+        return plus + minus;
+    }
+}
+
+```
+
+1단계: `numbers[0] = 4`
+```mardown
+                0
+               / \
+          +4       -4
+```
+
+2단계: `numbers[1] = 1`
+```mardown
+         +4               -4
+        /  \             /   \
+     +4+1  +4-1      -4+1   -4-1
+      5     3         -3    -5
+```
+3단계: `numbers[2] = 2`
+```mardown
+         5        3        -3       -5
+       /  \     /  \     /  \     /   \
+      7   3    5   1    -1  -5   -3   -7
+```
+
+
+4단계: `numbers[3] = 1`
+```mardown
+    7    3    5    1   -1   -5  -3   -7
+   / \  / \  / \  / \  / \  / \ / \  / \
+  8  6 4  2 6  4 2  0 -2 -6 -4 -6 -2 -8
+```
+
+```java
+// 마지막 노드 (depth == 4)
+dfs(4, 4) → return 1;
+
+// 위로 올라감
+dfs(3, 5):
+    plus = dfs(4, 6) → 실패 → return 0
+    minus = dfs(4, 4) → 성공 → return 1
+    return 0 + 1 = 1
+
+dfs(2, 3):
+    plus = dfs(3, 5) → return 1 (성공 경로)
+    minus = dfs(3, 1) → 나중에 또 재귀 탐색 → return 0
+    return 1 + 0 = 1
+
+dfs(1, 4):
+    plus = dfs(2, 5) → 실패 경로
+    minus = dfs(2, 3) → return 1 (성공)
+    return 0 + 1 = 1
+
+dfs(0, 0):
+    plus = dfs(1, 4) → return 1
+    minus = dfs(1, -4) → 실패
+    return 1 + 0 = **1**
+```
+
+4번째에서 성공했을때 3번째에서 플러스1 마이너스 0이고 2번째에서 1이되고 리턴된값이 있으면 계속 더해서 값을 가져옴
+
+4번째 +, -
+
+```java
+
+```
+
+
+
+---
 ## BFS
 
 
