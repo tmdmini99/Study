@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spaces/Home/알고리즘/완전탐색 (Brute Force).md",
+                "file": "Spaces/Home/알고리즘/원형 수열.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "완전탐색 (Brute Force)"
+              "title": "원형 수열"
             }
           }
         ]
