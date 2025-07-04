@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-07-01.md",
+                "file": "daily note/2025/5/2025-07-04.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-07-01"
+              "title": "2025-07-04"
             }
           }
         ]
@@ -166,6 +166,19 @@
             "id": "b2325cd421617d24",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "1c4eda54fcc3be90",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -173,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "horizontal",
@@ -286,6 +299,7 @@
   },
   "active": "158d86219ab03815",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-07-04.md",
     "daily note/2025/5/2025-07-01.md",
     "daily note/2025/5/2025-06-29.md",
     "daily note/2025/5/2025-06-26.md",
@@ -318,7 +332,6 @@
     "Spaces/Home/알고리즘/재귀 알고리즘.md",
     "Spaces/Home/Java/재귀함수/재귀함수.md",
     "Spaces/Home/Java/재귀함수",
-    "Spaces/Home/알고리즘/피보나치 수열.md",
     "Spaces/Home/연산",
     "Spaces/Home/Java/이진수",
     "Spaces/Home/IntelliJ/Spring Boot",
