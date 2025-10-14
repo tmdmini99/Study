@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily note/2025/5/2025-09-23.md",
+                "file": "daily note/2025/5/2025-10-14.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-09-23"
+              "title": "2025-10-14"
             }
           }
         ],
@@ -165,6 +165,19 @@
             "id": "bb34623fba10f492",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "d573f13e7cb18394",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -172,7 +185,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
@@ -286,6 +299,7 @@
   },
   "active": "ccac29359de999b3",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-10-14.md",
     "daily note/2025/5/2025-09-23.md",
     "daily note/2025/5/2025-07-28.md",
     "daily note/2025/5/2025-07-08.md",
@@ -317,7 +331,6 @@
     "Spaces/프로그래머스/괄호 회전하기.md",
     "Spaces/Home/알고리즘/원형 수열.md",
     "Spaces/Home/알고리즘/완전 이진 트리.md",
-    "daily note/2025/5/2025-06-05.md",
     "Spaces/Home/Java/재귀함수",
     "Spaces/Home/연산",
     "Spaces/Home/Java/이진수",
