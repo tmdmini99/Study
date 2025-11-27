@@ -54,9 +54,33 @@
               "icon": "lucide-file",
               "title": "2025-10-14"
             }
+          },
+          {
+            "id": "29117da31f961688",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily note/2025/5/2025-11-27.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2025-11-27"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -178,6 +202,19 @@
             "id": "d573f13e7cb18394",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "e64abe6efc51f517",
+            "type": "leaf",
+            "state": {
               "type": "mk-file-view",
               "state": {},
               "icon": "layout-grid",
@@ -185,7 +222,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
@@ -297,8 +334,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ccac29359de999b3",
+  "active": "29117da31f961688",
   "lastOpenFiles": [
+    "daily note/2025/5/2025-11-27.md",
     "daily note/2025/5/2025-10-14.md",
     "daily note/2025/5/2025-09-23.md",
     "daily note/2025/5/2025-07-28.md",
@@ -330,7 +368,6 @@
     "daily note/2025/5/2025-06-09.md",
     "Spaces/프로그래머스/괄호 회전하기.md",
     "Spaces/Home/알고리즘/원형 수열.md",
-    "Spaces/Home/알고리즘/완전 이진 트리.md",
     "Spaces/Home/Java/재귀함수",
     "Spaces/Home/연산",
     "Spaces/Home/Java/이진수",
